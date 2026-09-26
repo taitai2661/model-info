@@ -1,0 +1,314 @@
+{
+  "model": {
+    "model_id": "llama-3.3-70b-instruct",
+    "name": "Llama 3.3 70B Instruct",
+    "display_name": "Llama 3.3 70B Instruct",
+    "model_provider": "meta",
+    "family": "Llama",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Meta's 70-billion parameter instruct model with a 128K context window; open weights released under the Llama 3.3 community license.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": false,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-meta-llama-3-3-70b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "Amazon Bedrock model card",
+        "notes": "128K context window; Bedrock caps max output at 4K tokens, other providers publish different output limits, so no single model-level max output is recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "Open-weight release",
+        "notes": "Weights and Llama 3.3 license on Hugging Face."
+      },
+      {
+        "type": "official",
+        "url": "https://console.groq.com/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Groq supported models",
+        "notes": "131,072 context window and 32,768 max completion tokens for llama-3.3-70b-versatile."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window for id meta-llama/llama-3.3-70b-instruct cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "meta-llama/llama-3.3-70b-instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.1,
+        "output": 0.32
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 16384
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "groq",
+      "model_id": "llama-3.3-70b-versatile",
+      "notes": "Groq lists this row as 'Llama 3.3 70B' with provider model id llama-3.3-70b-versatile.",
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://console.groq.com/docs/models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        }
+      ],
+      "provider": {
+        "id": "groq",
+        "name": "Groq",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://groq.com",
+        "documentation_url": "https://console.groq.com/docs/quickstart",
+        "status": "active",
+        "description": "Inference platform serving third-party open models on custom LPU hardware via an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.groq.com/openai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://console.groq.com/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "Groq quickstart"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "together",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+      "notes": "Together AI lists 'Llama 3.3 70B Instruct Turbo', its Turbo deployment of Llama 3.3 70B Instruct, as meta-llama/Llama-3.3-70B-Instruct-Turbo.",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.04,
+        "output": 1.04
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ],
+      "provider": {
+        "id": "together",
+        "name": "Together AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://www.together.ai",
+        "documentation_url": "https://docs.together.ai/docs/serverless",
+        "status": "active",
+        "description": "Cloud platform running open-source third-party models (serverless and dedicated) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.together.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.together.ai/docs/serverless",
+            "retrieved_at": "2026-09-26",
+            "title": "Together serverless inference"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "meta.llama3-3-70b-instruct-v1:0",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-meta-llama-3-3-70b-instruct",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: us.meta.llama3-3-70b-instruct-v1:0.",
+      "provider": {
+        "id": "aws-bedrock",
+        "name": "Amazon Bedrock",
+        "types": [
+          "api_provider",
+          "gateway"
+        ],
+        "website": "https://aws.amazon.com/bedrock/",
+        "documentation_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+        "status": "active",
+        "description": "AWS's serverless platform for foundation models from many providers: one endpoint over Anthropic, OpenAI, Meta, Mistral, Moonshot AI, MiniMax, Z.ai and xAI models, behind AWS credentials or a Bedrock API key.",
+        "api": {
+          "base_url": "https://bedrock-runtime.{region}.amazonaws.com",
+          "protocol": "https",
+          "api_style": "custom",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "AWS credentials (Signature Version 4) or an Amazon Bedrock API key, sent as Authorization: Bearer. A second endpoint, https://bedrock-mantle.{region}.api.aws, serves the same OpenAI-compatible paths at /v1 plus Anthropic Messages at /anthropic/v1/messages. The OpenAI-compatible GET /models operation is not implemented; use ListFoundationModels and ListInferenceProfiles instead."
+          },
+          "endpoints": {
+            "chat_completions": "/openai/v1/chat/completions",
+            "responses": "/openai/v1/responses"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://aws.amazon.com/bedrock/",
+            "retrieved_at": "2026-09-26",
+            "title": "Amazon Bedrock"
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints",
+            "retrieved_at": "2026-09-26",
+            "title": "Endpoints supported by Amazon Bedrock",
+            "notes": "bedrock-runtime base URL and the /openai/v1 OpenAI-compatible paths."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-chat-completions",
+            "retrieved_at": "2026-09-26",
+            "title": "Chat Completions API",
+            "notes": "Per-region chat-completion URLs and the SigV4 / API-key authentication options."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards",
+            "retrieved_at": "2026-09-26",
+            "title": "Models at a glance",
+            "notes": "Catalogue of model cards used to build the relationship entries."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

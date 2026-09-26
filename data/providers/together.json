@@ -1,0 +1,36 @@
+{
+  "id": "together",
+  "name": "Together AI",
+  "types": [
+    "api_provider",
+    "platform"
+  ],
+  "website": "https://www.together.ai",
+  "documentation_url": "https://docs.together.ai/docs/serverless",
+  "status": "active",
+  "description": "Cloud platform running open-source third-party models (serverless and dedicated) behind an OpenAI-compatible API.",
+  "api": {
+    "base_url": "https://api.together.ai/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models",
+      "embeddings": "/embeddings",
+      "rerank": "/rerank"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.together.ai/docs/serverless",
+      "retrieved_at": "2026-09-26",
+      "title": "Together serverless inference"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

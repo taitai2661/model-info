@@ -1,0 +1,68 @@
+{
+  "model_id": "claude-sonnet-4-5",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "anthropic",
+      "model_id": "claude-sonnet-4-5"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "anthropic/claude-sonnet-4.5",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 64000
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "claude-sonnet-4-5",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3,
+        "cached_write": 3.75
+      },
+      "notes": ">200K tokens: input $6.00, output $22.50, cached read $0.60, cached write $7.50.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "anthropic.claude-sonnet-4-5-20250929-v1:0",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-5",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: au.anthropic.claude-sonnet-4-5-20250929-v1:0, eu.anthropic.claude-sonnet-4-5-20250929-v1:0, jp.anthropic.claude-sonnet-4-5-20250929-v1:0, us.anthropic.claude-sonnet-4-5-20250929-v1:0; global inference profile ids: global.anthropic.claude-sonnet-4-5-20250929-v1:0."
+    }
+  ]
+}

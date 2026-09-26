@@ -1,0 +1,4853 @@
+[
+  {
+    "model_id": "claude-fable-5",
+    "name": "Claude Fable 5",
+    "display_name": "Claude Fable 5",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 10.0,
+      "output": 50.0,
+      "cached_input": 1.0,
+      "cached_write": 12.5
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/fable-5/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing (first-party price)"
+      }
+    ],
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true,
+      "json_mode": null
+    }
+  },
+  {
+    "model_id": "claude-fable-5-1",
+    "name": "Claude Fable 5.1",
+    "display_name": "Claude Fable 5.1",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "preview",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 10.0,
+      "output": 50.0,
+      "cached_input": 0.25,
+      "cached_write": 12.5
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing (first-party price)"
+      }
+    ],
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true,
+      "json_mode": null
+    }
+  },
+  {
+    "model_id": "claude-haiku-4-5",
+    "name": "Claude Haiku 4.5",
+    "display_name": "Claude Haiku 4.5",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Claude model positioned as the fastest model with near-frontier intelligence.",
+    "context": {
+      "window": 200000,
+      "max_output_tokens": 64000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1,
+      "output": 5,
+      "cached_input": 0.1,
+      "cached_write": 1.25
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Models overview"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Pricing"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-opus-4-5",
+    "name": "Claude Opus 4.5",
+    "display_name": "Claude Opus 4.5",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 200000,
+      "max_output_tokens": 64000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 5.0,
+      "output": 25.0,
+      "cached_input": 0.5,
+      "cached_write": 6.25
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/opus-4-5/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing (first-party price)"
+      }
+    ],
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true,
+      "json_mode": null
+    }
+  },
+  {
+    "model_id": "claude-opus-4-6",
+    "name": "Claude Opus 4.6",
+    "display_name": "Claude Opus 4.6",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 5.0,
+      "output": 25.0,
+      "cached_input": 0.5,
+      "cached_write": 6.25
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/opus-4-6/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing (first-party price)"
+      }
+    ],
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true,
+      "json_mode": null
+    }
+  },
+  {
+    "model_id": "claude-opus-4-7",
+    "name": "Claude Opus 4.7",
+    "display_name": "Claude Opus 4.7",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 5.0,
+      "output": 25.0,
+      "cached_input": 0.5,
+      "cached_write": 6.25
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/opus-4-7/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing (first-party price)"
+      }
+    ],
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true,
+      "json_mode": null
+    }
+  },
+  {
+    "model_id": "claude-opus-4-8",
+    "name": "Claude Opus 4.8",
+    "display_name": "Claude Opus 4.8",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 5.0,
+      "output": 25.0,
+      "cached_input": 0.5,
+      "cached_write": 6.25
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/opus-4-8/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing (first-party price)"
+      }
+    ],
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true,
+      "json_mode": null
+    }
+  },
+  {
+    "model_id": "claude-opus-5",
+    "name": "Claude Opus 5",
+    "display_name": "Claude Opus 5",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 5.0,
+      "output": 25.0,
+      "cached_input": 0.5,
+      "cached_write": 6.25
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/opus-5/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing (first-party price)"
+      }
+    ],
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true,
+      "json_mode": null,
+      "structured_output": true
+    }
+  },
+  {
+    "model_id": "claude-opus-5-5",
+    "name": "Claude Opus 5.5",
+    "display_name": "Claude Opus 5.5",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Claude model for long-running agentic coding and knowledge work.",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 4,
+      "output": 20,
+      "cached_input": 0.2,
+      "cached_write": 5.0
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Models overview"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Pricing"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-sonnet-4",
+    "name": "Claude Sonnet 4",
+    "display_name": "Claude Sonnet 4",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "retired",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 200000,
+      "max_output_tokens": 64000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 3.0,
+      "output": 15.0,
+      "cached_input": 0.3,
+      "cached_write": 3.75
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing",
+        "notes": "Listed as retired except on Bedrock and Google Cloud."
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Models overview (legacy models still available)"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window and max output for this retired model come from OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "claude-sonnet-4-5",
+    "name": "Claude Sonnet 4.5",
+    "display_name": "Claude Sonnet 4.5",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 200000,
+      "max_output_tokens": 64000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 3.0,
+      "output": 15.0,
+      "cached_input": 0.3,
+      "cached_write": 3.75
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-4-5/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing (first-party price)"
+      }
+    ],
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true,
+      "json_mode": null
+    }
+  },
+  {
+    "model_id": "claude-sonnet-4-6",
+    "name": "Claude Sonnet 4.6",
+    "display_name": "Claude Sonnet 4.6",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 3.0,
+      "output": 15.0,
+      "cached_input": 0.3,
+      "cached_write": 3.75
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-4-6/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing (first-party price)"
+      }
+    ],
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true,
+      "json_mode": null
+    }
+  },
+  {
+    "model_id": "claude-sonnet-5",
+    "name": "Claude Sonnet 5",
+    "display_name": "Claude Sonnet 5",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Claude model positioned as the best combination of speed and intelligence.",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2,
+      "output": 10,
+      "cached_input": 0.2,
+      "cached_write": 2.5
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Models overview"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Pricing"
+      }
+    ]
+  },
+  {
+    "model_id": "deepseek-flash",
+    "name": "DeepSeek Flash",
+    "display_name": "DeepSeek Flash",
+    "model_provider": "deepseek",
+    "family": "DeepSeek",
+    "version": "DeepSeek-V4.1-Flash",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "DeepSeek's fast multimodal model (model version DeepSeek-V4.1-Flash) with thinking and non-thinking modes, vision, tool calls, JSON output, and Responses API support.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 393216
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": null,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.15,
+      "output": 0.6,
+      "cached_input": 0.003
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Models & pricing",
+        "notes": "Prices are off-peak rates; peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri, excluding PRC public holidays) cost 2x. Max output is stated as 384K."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter public model list",
+        "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+      },
+      {
+        "type": "official",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+        "retrieved_at": "2026-09-26",
+        "title": "Model weights"
+      }
+    ]
+  },
+  {
+    "model_id": "deepseek-v4-flash",
+    "name": "DeepSeek V4 Flash",
+    "display_name": "DeepSeek V4 Flash",
+    "model_provider": "deepseek",
+    "family": "DeepSeek",
+    "version": null,
+    "status": "retired",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Legacy alias: DeepSeek states requests are served by the DeepSeek-V4.1-Flash model and billed at the flash price; context/max output follow the serving model.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 393216
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": null,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.15,
+      "output": 0.6,
+      "cached_input": 0.003
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "DeepSeek models & pricing",
+        "notes": "Legacy name; DeepSeek serves these requests with the DeepSeek-V4.1-Flash model and bills at the flash price (off-peak). Max output stated as 384K; context/max output follow the serving model."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "deepseek-v4-flash-vision-exp",
+    "name": "DeepSeek V4 Flash Vision Exp",
+    "display_name": "DeepSeek V4 Flash Vision Exp",
+    "model_provider": "deepseek",
+    "family": "DeepSeek",
+    "version": null,
+    "status": "retired",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Legacy alias: DeepSeek states requests are served by the DeepSeek-V4.1-Flash model and billed at the flash price; context/max output follow the serving model.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 393216
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": null,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.15,
+      "output": 0.6,
+      "cached_input": 0.003
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "DeepSeek models & pricing",
+        "notes": "Legacy name; DeepSeek serves these requests with the DeepSeek-V4.1-Flash model and bills at the flash price (off-peak). Max output stated as 384K; context/max output follow the serving model."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "deepseek-v4-pro",
+    "name": "DeepSeek V4 Pro",
+    "display_name": "DeepSeek V4 Pro",
+    "model_provider": "deepseek",
+    "family": "DeepSeek",
+    "version": "DeepSeek-V4-Pro-0813",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "DeepSeek's flagship Pro model (model version DeepSeek-V4-Pro-0813) with thinking and non-thinking modes, tool calls, JSON output, and Responses API support; no vision input.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 384000
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": null,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.66,
+      "output": 1.98,
+      "cached_input": 0.022
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Models & pricing",
+        "notes": "Prices are off-peak rates; peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri, excluding PRC public holidays) cost 2x. Max output is stated as 384K."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter public model list",
+        "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+      },
+      {
+        "type": "official",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+        "retrieved_at": "2026-09-26",
+        "title": "Model weights"
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-2.5-flash",
+    "name": "Gemini 2.5 Flash",
+    "display_name": "Gemini 2.5 Flash",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Gemini hybrid reasoning model with a 1M token context window and thinking budgets.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 65535
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.3,
+      "output": 2.5,
+      "cached_input": 0.03
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API pricing"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter public model list",
+        "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models",
+        "retrieved_at": "2026-09-26",
+        "notes": "Audio input costs $1.00 per 1M tokens. Google limits access to the 2.5 models to accounts that have actively used them; the models are not deprecated."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-2.5-pro",
+    "name": "Gemini 2.5 Pro",
+    "display_name": "Gemini 2.5 Pro",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Gemini Pro model that excels at coding and complex reasoning tasks.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.25,
+      "output": 10.0,
+      "cached_input": 0.125
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API pricing"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter public model list",
+        "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models",
+        "retrieved_at": "2026-09-26",
+        "notes": "Prompts over 200k tokens cost $2.50 input / $15.00 output and $0.25 cached input per 1M tokens."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3-flash-preview",
+    "name": "Gemini 3 Flash",
+    "display_name": "Gemini 3 Flash",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "preview",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google's legacy Flash model, providing baseline speed and intelligence.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file",
+        "audio",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.5,
+      "output": 3.0,
+      "cached_input": 0.05
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API pricing (first-party price)"
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API models"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3.1-pro-preview",
+    "name": "Gemini 3.1 Pro",
+    "display_name": "Gemini 3.1 Pro",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "preview",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google's third-generation Pro model for multimodal understanding, agentic capabilities, and coding.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "audio",
+        "image",
+        "video",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2.0,
+      "output": 12.0,
+      "cached_input": 0.2
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API pricing"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter public model list",
+        "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models",
+        "retrieved_at": "2026-09-26",
+        "notes": "Prompts over 200k tokens cost $4.00 input / $18.00 output and $0.40 cached input per 1M tokens."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3.5-flash",
+    "name": "Gemini 3.5 Flash",
+    "display_name": "Gemini 3.5 Flash",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google's earlier Flash model, built for speed and foundational performance across routine, high-throughput workloads.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video",
+        "file",
+        "audio"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.5,
+      "output": 9.0,
+      "cached_input": 0.15
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API pricing (first-party price)"
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API models"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3.5-flash-lite",
+    "name": "Gemini 3.5 Flash-Lite",
+    "display_name": "Gemini 3.5 Flash-Lite",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google's cost-efficient model, optimized for high-volume agentic tasks, translation, and simple data processing.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video",
+        "file",
+        "audio"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.3,
+      "output": 2.5,
+      "cached_input": 0.03
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API pricing (first-party price)"
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API models"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3.6-flash",
+    "name": "Gemini 3.6 Flash",
+    "display_name": "Gemini 3.6 Flash",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google's previous-generation Flash model, balancing speed and multimodal capabilities across general agentic and everyday tasks.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video",
+        "file",
+        "audio"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.75,
+      "output": 3.75,
+      "cached_input": 0.075
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API pricing (first-party price)",
+        "notes": "Promotional price valid through 2026-12-31; from 2027-01-01 input $1.50, output $7.50, cached input $0.15 per 1M tokens."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API models"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3.7-flash",
+    "name": "Gemini 3.7 Flash",
+    "display_name": "Gemini 3.7 Flash",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google's high-speed, efficient Flash model built for everyday coding, agentic tool use, and reliable multi-step execution.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video",
+        "file",
+        "audio"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.75,
+      "output": 3.75,
+      "cached_input": 0.075
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API pricing (first-party price)",
+        "notes": "Promotional price valid through 2026-12-31; from 2027-01-01 input $1.50, output $7.50, cached input $0.15 per 1M tokens."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API models"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3.8-flash",
+    "name": "Gemini 3.8 Flash",
+    "display_name": "Gemini 3.8 Flash",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google's most intelligent Flash model, engineered for long-horizon software engineering, autonomous agents, and complex enterprise workflows.",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.75,
+      "output": 3.75,
+      "cached_input": 0.075
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API pricing"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter public model list",
+        "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models",
+        "retrieved_at": "2026-09-26",
+        "notes": "Promotional price valid through 2026-12-31; from 2027-01-01 the listed prices become input $1.50, output $7.50, cached input $0.15 per 1M tokens."
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5",
+    "name": "GLM-5",
+    "display_name": "GLM-5",
+    "model_provider": "zai",
+    "family": "GLM",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 204800,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.0,
+      "output": 3.2,
+      "cached_input": 0.2
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.ai pricing (first-party price)"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/quick-start",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.ai quick start"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5.1",
+    "name": "GLM-5.1",
+    "display_name": "GLM-5.1",
+    "model_provider": "zai",
+    "family": "GLM",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 204800,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.4,
+      "output": 4.4,
+      "cached_input": 0.26
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.ai pricing (first-party price)"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/quick-start",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.ai quick start"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5.2",
+    "name": "GLM-5.2",
+    "display_name": "GLM-5.2",
+    "model_provider": "zai",
+    "family": "GLM",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.4,
+      "output": 4.4,
+      "cached_input": 0.26
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.ai pricing (first-party price)"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/quick-start",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.ai quick start"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5.3",
+    "name": "GLM-5.3",
+    "display_name": "GLM-5.3",
+    "model_provider": "zai",
+    "family": "GLM",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1310720,
+      "max_output_tokens": 943717
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.4,
+      "output": 4.4,
+      "cached_input": 0.26
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.ai pricing (first-party price)"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/quick-start",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.ai quick start"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "display_name": "GLM-5.3-Flash",
+    "model_provider": "zai",
+    "family": "GLM",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1310720,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.15,
+      "output": 0.5,
+      "cached_input": 0.03
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.ai pricing (first-party price)"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/quick-start",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.ai quick start"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5",
+    "name": "GPT-5",
+    "display_name": "GPT-5",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000,
+      "max_input_tokens": 272000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.25,
+      "output": 10.0,
+      "cached_input": 0.125
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing",
+        "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5-codex",
+    "name": "GPT-5-Codex",
+    "display_name": "GPT-5-Codex",
+    "model_provider": "openai",
+    "family": "GPT-5 Codex",
+    "version": null,
+    "status": "deprecated",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000,
+      "max_input_tokens": 272000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.25,
+      "output": 10.0,
+      "cached_input": 0.125
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5-codex",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/deprecations",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI deprecations",
+        "notes": "Deprecation date July 23, 2026 (replaced by newer models)."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5-nano",
+    "name": "GPT-5 nano",
+    "display_name": "GPT-5 nano",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000,
+      "max_input_tokens": 272000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.05,
+      "output": 0.4,
+      "cached_input": 0.005
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5-nano",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.1",
+    "name": "GPT-5.1",
+    "display_name": "GPT-5.1",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.25,
+      "output": 10.0,
+      "cached_input": 0.125
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.1",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing",
+        "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.1-codex",
+    "name": "GPT-5.1-Codex",
+    "display_name": "GPT-5.1-Codex",
+    "model_provider": "openai",
+    "family": "GPT-5 Codex",
+    "version": null,
+    "status": "deprecated",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.25,
+      "output": 10.0,
+      "cached_input": 0.125
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.1-codex",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/deprecations",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI deprecations",
+        "notes": "Deprecation date July 23, 2026 (replaced by newer models)."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.1-codex-max",
+    "name": "GPT-5.1-Codex-Max",
+    "display_name": "GPT-5.1-Codex-Max",
+    "model_provider": "openai",
+    "family": "GPT-5 Codex",
+    "version": null,
+    "status": "deprecated",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.25,
+      "output": 10.0,
+      "cached_input": 0.125
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.1-codex-max",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/deprecations",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI deprecations",
+        "notes": "Deprecation date July 23, 2026 (replaced by newer models)."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.1-codex-mini",
+    "name": "GPT-5.1-Codex Mini",
+    "display_name": "GPT-5.1-Codex Mini",
+    "model_provider": "openai",
+    "family": "GPT-5 Codex",
+    "version": null,
+    "status": "deprecated",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.25,
+      "output": 2.0,
+      "cached_input": 0.025
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.1-codex-mini",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/deprecations",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI deprecations",
+        "notes": "Deprecation date July 23, 2026 (replaced by newer models)."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.2",
+    "name": "GPT-5.2",
+    "display_name": "GPT-5.2",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.75,
+      "output": 14.0,
+      "cached_input": 0.175
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.2",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing",
+        "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.2-codex",
+    "name": "GPT-5.2-Codex",
+    "display_name": "GPT-5.2-Codex",
+    "model_provider": "openai",
+    "family": "GPT-5 Codex",
+    "version": null,
+    "status": "deprecated",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000,
+      "max_input_tokens": 272000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.75,
+      "output": 14.0,
+      "cached_input": 0.175
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.2-codex",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/deprecations",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI deprecations",
+        "notes": "Deprecation date July 23, 2026 (replaced by newer models)."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.3-codex",
+    "name": "GPT-5.3-Codex",
+    "display_name": "GPT-5.3-Codex",
+    "model_provider": "openai",
+    "family": "GPT-5 Codex",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000,
+      "max_input_tokens": 272000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.75,
+      "output": 14.0,
+      "cached_input": 0.175
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.3-codex",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.4",
+    "name": "GPT-5.4",
+    "display_name": "GPT-5.4",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1050000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2.5,
+      "output": 15.0,
+      "cached_input": 0.25
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing",
+        "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.4-mini",
+    "name": "GPT-5.4 Mini",
+    "display_name": "GPT-5.4 Mini",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000,
+      "max_input_tokens": 272000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.75,
+      "output": 4.5,
+      "cached_input": 0.075
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.4-nano",
+    "name": "GPT-5.4 nano",
+    "display_name": "GPT-5.4 nano",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 400000,
+      "max_output_tokens": 128000,
+      "max_input_tokens": 272000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.2,
+      "output": 1.25,
+      "cached_input": 0.02
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.4-nano",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.4-pro",
+    "name": "GPT-5.4 Pro",
+    "display_name": "GPT-5.4 Pro",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1050000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 30.0,
+      "output": 180.0
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.4-pro",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing",
+        "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.5",
+    "name": "GPT-5.5",
+    "display_name": "GPT-5.5",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1050000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 5.0,
+      "output": 30.0,
+      "cached_input": 0.5
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.5",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing",
+        "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.5-pro",
+    "name": "GPT-5.5 Pro",
+    "display_name": "GPT-5.5 Pro",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1050000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 30.0,
+      "output": 180.0
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.5-pro",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing",
+        "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.6-luna",
+    "name": "GPT-5.6 Luna",
+    "display_name": "GPT-5.6 Luna",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1050000,
+      "max_output_tokens": 128000,
+      "max_input_tokens": 922000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.2,
+      "output": 1.2,
+      "cached_input": 0.02,
+      "cached_write": 0.125
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing",
+        "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.6-sol",
+    "name": "GPT-5.6 Sol",
+    "display_name": "GPT-5.6 Sol",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1050000,
+      "max_output_tokens": 128000,
+      "max_input_tokens": 922000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 4.0,
+      "output": 20.0,
+      "cached_input": 0.4,
+      "cached_write": 5.0
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing",
+        "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.6-terra",
+    "name": "GPT-5.6 Terra",
+    "display_name": "GPT-5.6 Terra",
+    "model_provider": "openai",
+    "family": "GPT-5",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1050000,
+      "max_output_tokens": 128000,
+      "max_input_tokens": 922000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2.0,
+      "output": 12.0,
+      "cached_input": 0.2,
+      "cached_write": 2.5
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing",
+        "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-6-astra",
+    "name": "GPT-6 Astra",
+    "display_name": "GPT-6 Astra",
+    "model_provider": "openai",
+    "family": "GPT-6",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "OpenAI's most capable model, built for complex reasoning, coding, computer use, research, and document creation.",
+    "context": {
+      "window": 1050000,
+      "max_input_tokens": 922000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 10,
+      "output": 50,
+      "cached_input": 1,
+      "cached_write": 12.5
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Pricing"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/quickstart",
+        "retrieved_at": "2026-09-26",
+        "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+        "retrieved_at": "2026-09-26",
+        "title": "Structured outputs guide",
+        "notes": "Documents JSON mode (response_format json_object) and structured outputs."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-6-luna",
+    "name": "GPT-6 Luna",
+    "display_name": "GPT-6 Luna",
+    "model_provider": "openai",
+    "family": "GPT-6",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "OpenAI's most efficient GPT-6 model for focused, high-volume tasks.",
+    "context": {
+      "window": 1050000,
+      "max_input_tokens": 922000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.1,
+      "output": 0.5,
+      "cached_input": 0.01,
+      "cached_write": 0.125
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Pricing"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/quickstart",
+        "retrieved_at": "2026-09-26",
+        "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+        "retrieved_at": "2026-09-26",
+        "title": "Structured outputs guide",
+        "notes": "Documents JSON mode (response_format json_object) and structured outputs."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-6-sol",
+    "name": "GPT-6 Sol",
+    "display_name": "GPT-6 Sol",
+    "model_provider": "openai",
+    "family": "GPT-6",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "OpenAI model built to power complex coding and agentic workflows, balancing intelligence and cost.",
+    "context": {
+      "window": 1050000,
+      "max_input_tokens": 922000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2,
+      "output": 10,
+      "cached_input": 0.2,
+      "cached_write": 2.5
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Pricing"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/quickstart",
+        "retrieved_at": "2026-09-26",
+        "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+        "retrieved_at": "2026-09-26",
+        "title": "Structured outputs guide",
+        "notes": "Documents JSON mode (response_format json_object) and structured outputs."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-oss-120b",
+    "name": "GPT-OSS 120B",
+    "display_name": "GPT-OSS 120B",
+    "model_provider": "openai",
+    "family": "GPT-OSS",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "OpenAI's most powerful open-weight model: 117B parameters with 5.1B active, released under the Apache 2.0 license and sized to fit a single H100 GPU.",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-oss-120b",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI model page",
+        "notes": "Model ID, 131,072 context window, 131,072 max output tokens, text-only modalities, supported features (streaming, structured outputs, function calling), Apache 2.0 license. No OpenAI API token price is published and the page lists a zero rate limit for every usage tier, so no first-party price is recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://huggingface.co/openai/gpt-oss-120b",
+        "retrieved_at": "2026-09-26",
+        "title": "Open-weight release",
+        "notes": "Apache 2.0 weights on Hugging Face."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window for id openai/gpt-oss-120b cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "grok-4.5",
+    "name": "Grok 4.5",
+    "display_name": "Grok 4.5",
+    "model_provider": "xai",
+    "family": "Grok",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 500000,
+      "max_output_tokens": 450000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2.0,
+      "output": 6.0,
+      "cached_input": 0.3
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/models",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI model page"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI pricing (first-party price)",
+        "notes": "Base price below the model's long-context threshold (200k tokens; 256k for Grok Build 0.1). Prompts at or above the threshold bill at 2x base rates for the whole request."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "grok-4.6",
+    "name": "Grok 4.6",
+    "display_name": "Grok 4.6",
+    "model_provider": "xai",
+    "family": "Grok",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 500000,
+      "max_output_tokens": 450000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2.0,
+      "output": 6.0,
+      "cached_input": 0.5
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/models",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI model page"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI pricing (first-party price)",
+        "notes": "Base price below the model's long-context threshold (200k tokens; 256k for Grok Build 0.1). Prompts at or above the threshold bill at 2x base rates for the whole request."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "grok-4.7",
+    "name": "Grok 4.7",
+    "display_name": "Grok 4.7",
+    "model_provider": "xai",
+    "family": "Grok",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 500000,
+      "max_output_tokens": 450000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2.0,
+      "output": 6.0,
+      "cached_input": 0.5
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/models",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI model page"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI pricing (first-party price)",
+        "notes": "Base price below the model's long-context threshold (200k tokens; 256k for Grok Build 0.1). Prompts at or above the threshold bill at 2x base rates for the whole request."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "grok-build-0.1",
+    "name": "Grok Build 0.1",
+    "display_name": "Grok Build 0.1",
+    "model_provider": "xai",
+    "family": "Grok",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 256000,
+      "max_output_tokens": 230400
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.0,
+      "output": 2.0,
+      "cached_input": 0.2
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/models",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI model page"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI pricing (first-party price)",
+        "notes": "Base price below the model's long-context threshold (200k tokens; 256k for Grok Build 0.1). Prompts at or above the threshold bill at 2x base rates for the whole request."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "hy3",
+    "name": "Hy3",
+    "display_name": "Hy3",
+    "model_provider": "tencent",
+    "family": "Hy",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 262144,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://github.com/Tencent-Hunyuan/Hy3",
+        "retrieved_at": "2026-09-26",
+        "title": "Tencent Hy3 repository",
+        "notes": "Hy3 is Tencent's 295B (A21B) reasoning and agent model per the official repository."
+      }
+    ]
+  },
+  {
+    "model_id": "hy3-preview",
+    "name": "Hy3 Preview",
+    "display_name": "Hy3 Preview",
+    "model_provider": "tencent",
+    "family": "Hy",
+    "version": null,
+    "status": "preview",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://hy.tencent.ai/research/hy3-preview",
+        "retrieved_at": "2026-09-26",
+        "title": "Tencent Hy3 preview research page",
+        "notes": "Preview release per Tencent's official research page and repository."
+      },
+      {
+        "type": "official",
+        "url": "https://github.com/Tencent-Hunyuan/Hy3-Preview",
+        "retrieved_at": "2026-09-26",
+        "title": "Tencent Hy3 preview repository"
+      }
+    ]
+  },
+  {
+    "model_id": "hy4-preview",
+    "name": "Hy4 Preview",
+    "display_name": "Hy4 Preview",
+    "model_provider": "tencent",
+    "family": "Hy",
+    "version": null,
+    "status": "preview",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://hy.tencent.ai/research/hy4-preview",
+        "retrieved_at": "2026-09-26",
+        "title": "Tencent Hy4 preview research page",
+        "notes": "Preview release per Tencent's official research page."
+      }
+    ]
+  },
+  {
+    "model_id": "jev-1.13.0",
+    "name": "Jev 1.13",
+    "display_name": "Jev 1.13",
+    "model_provider": "typesafe-ai",
+    "family": "Jev",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.typesafe.ai/models",
+        "retrieved_at": "2026-09-26",
+        "title": "TypeSafe AI model list"
+      },
+      {
+        "type": "official",
+        "url": "https://opencode.ai/docs/zen/",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenCode Zen docs",
+        "notes": "Zen documents 'Jev 1.13' (id jev-1.13) and links to TypeSafe AI documentation."
+      }
+    ]
+  },
+  {
+    "model_id": "kimi-k2.5",
+    "name": "Kimi K2.5",
+    "display_name": "Kimi K2.5",
+    "model_provider": "moonshot",
+    "family": "Kimi",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 262144,
+      "max_output_tokens": 235929
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.kimi.ai/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Moonshot model list"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "kimi-k2.6",
+    "name": "Kimi K2.6",
+    "display_name": "Kimi K2.6",
+    "model_provider": "moonshot",
+    "family": "Kimi",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 262144,
+      "max_output_tokens": 235929
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.kimi.ai/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Moonshot model list"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "kimi-k2.7-code",
+    "name": "Kimi K2.7 Code",
+    "display_name": "Kimi K2.7 Code",
+    "model_provider": "moonshot",
+    "family": "Kimi",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 262144,
+      "max_output_tokens": 235929
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.kimi.ai/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Moonshot model list"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "kimi-k3",
+    "name": "Kimi K3",
+    "display_name": "Kimi K3",
+    "model_provider": "moonshot",
+    "family": "Kimi",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 943718
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.kimi.ai/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Moonshot model list"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "ling-3.0-flash-fin",
+    "name": "Ling-3.0-flash-Fin",
+    "display_name": "Ling-3.0-flash-Fin",
+    "model_provider": "ant-group",
+    "family": "Ling",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+        "retrieved_at": "2026-09-26",
+        "title": "Ant Group model card",
+        "notes": "Model card states it is developed by Ant Group (InclusionAI / Ant Ling family)."
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.3-70b-instruct",
+    "name": "Llama 3.3 70B Instruct",
+    "display_name": "Llama 3.3 70B Instruct",
+    "model_provider": "meta",
+    "family": "Llama",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Meta's 70-billion parameter instruct model with a 128K context window; open weights released under the Llama 3.3 community license.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": false,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-meta-llama-3-3-70b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "Amazon Bedrock model card",
+        "notes": "128K context window; Bedrock caps max output at 4K tokens, other providers publish different output limits, so no single model-level max output is recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "Open-weight release",
+        "notes": "Weights and Llama 3.3 license on Hugging Face."
+      },
+      {
+        "type": "official",
+        "url": "https://console.groq.com/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Groq supported models",
+        "notes": "131,072 context window and 32,768 max completion tokens for llama-3.3-70b-versatile."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window for id meta-llama/llama-3.3-70b-instruct cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "longcat-2.0",
+    "name": "LongCat-2.0",
+    "display_name": "LongCat-2.0",
+    "model_provider": "meituan",
+    "family": "LongCat",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1048756,
+      "max_output_tokens": 262144
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://github.com/meituan-longcat/LongCat-2.0",
+        "retrieved_at": "2026-09-26",
+        "title": "Meituan LongCat repository"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "mimo-v2-omni",
+    "name": "MiMo V2 Omni",
+    "display_name": "MiMo V2 Omni",
+    "model_provider": "xiaomi",
+    "family": "MiMo",
+    "version": null,
+    "status": "unknown",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+        "retrieved_at": "2026-09-26",
+        "title": "Xiaomi MiMo model page",
+        "notes": "Not currently listed on Xiaomi's model page; registered from the OpenCode Go catalog."
+      },
+      {
+        "type": "official",
+        "url": "https://opencode.ai/zen/go/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenCode Go model list"
+      }
+    ]
+  },
+  {
+    "model_id": "mimo-v2-pro",
+    "name": "MiMo V2 Pro",
+    "display_name": "MiMo V2 Pro",
+    "model_provider": "xiaomi",
+    "family": "MiMo",
+    "version": null,
+    "status": "unknown",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+        "retrieved_at": "2026-09-26",
+        "title": "Xiaomi MiMo model page",
+        "notes": "Not currently listed on Xiaomi's model page; registered from the OpenCode Go catalog."
+      },
+      {
+        "type": "official",
+        "url": "https://opencode.ai/zen/go/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenCode Go model list"
+      }
+    ]
+  },
+  {
+    "model_id": "mimo-v2.5",
+    "name": "MiMo-V2.5",
+    "display_name": "MiMo-V2.5",
+    "model_provider": "xiaomi",
+    "family": "MiMo",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1050000,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "audio",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+        "retrieved_at": "2026-09-26",
+        "title": "Xiaomi MiMo model page",
+        "notes": "Xiaomi has announced that mimo-v2.5-pro and mimo-v2.5 will be deprecated at 10:00 Beijing time on 2026-10-21."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "mimo-v2.5-pro",
+    "name": "MiMo-V2.5-Pro",
+    "display_name": "MiMo-V2.5-Pro",
+    "model_provider": "xiaomi",
+    "family": "MiMo",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1050000,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+        "retrieved_at": "2026-09-26",
+        "title": "Xiaomi MiMo model page",
+        "notes": "Xiaomi has announced that mimo-v2.5-pro and mimo-v2.5 will be deprecated at 10:00 Beijing time on 2026-10-21."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "mimo-v2.6-flash",
+    "name": "MiMo-V2.6-Flash",
+    "display_name": "MiMo-V2.6-Flash",
+    "model_provider": "xiaomi",
+    "family": "MiMo",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video",
+        "audio"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+        "retrieved_at": "2026-09-26",
+        "title": "Xiaomi MiMo model page"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "mimo-v2.6-pro",
+    "name": "MiMo-V2.6-Pro",
+    "display_name": "MiMo-V2.6-Pro",
+    "model_provider": "xiaomi",
+    "family": "MiMo",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video",
+        "audio"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+        "retrieved_at": "2026-09-26",
+        "title": "Xiaomi MiMo model page"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "minimax-m2.5",
+    "name": "MiniMax M2.5",
+    "display_name": "MiniMax M2.5",
+    "model_provider": "minimax",
+    "family": "MiniMax",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 204800,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.minimax.io/docs/guides/models-intro",
+        "retrieved_at": "2026-09-26",
+        "title": "MiniMax model list",
+        "notes": "MiniMax M2.5 is listed under 'Legacy Models' on the official docs."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "minimax-m2.7",
+    "name": "MiniMax M2.7",
+    "display_name": "MiniMax M2.7",
+    "model_provider": "minimax",
+    "family": "MiniMax",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 204800,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.minimax.io/docs/guides/models-intro",
+        "retrieved_at": "2026-09-26",
+        "title": "MiniMax model list"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "minimax-m3",
+    "name": "MiniMax M3",
+    "display_name": "MiniMax M3",
+    "model_provider": "minimax",
+    "family": "MiniMax",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 512000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.minimax.io/docs/guides/models-intro",
+        "retrieved_at": "2026-09-26",
+        "title": "MiniMax model list"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-large-2512",
+    "name": "Mistral Large 3",
+    "display_name": "Mistral Large 3",
+    "model_provider": "mistral",
+    "family": "Mistral",
+    "version": "25.12",
+    "status": "active",
+    "release_date": "2025-12-02",
+    "updated_at": "2026-09-26",
+    "description": "State-of-the-art open-weight general-purpose multimodal model with a granular Mixture-of-Experts architecture (41B active, 675B total parameters), released under Apache 2.0.",
+    "context": {
+      "window": 262144,
+      "max_output_tokens": 209715
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": null,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.5,
+      "output": 1.5,
+      "cached_input": 0.05
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.mistral.ai/models/mistral-large-3-25-12",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.mistral.ai/inference/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Pricing"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter public model list",
+        "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+      }
+    ],
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    }
+  },
+  {
+    "model_id": "mistral-medium-3-5",
+    "name": "Mistral Medium 3.5",
+    "display_name": "Mistral Medium 3.5",
+    "model_provider": "mistral",
+    "family": "Mistral",
+    "version": "26.04",
+    "status": "active",
+    "release_date": "2026-04-28",
+    "updated_at": "2026-09-26",
+    "description": "Frontier-class multimodal model optimized for agentic and coding use cases, released as open weights under a Modified MIT license.",
+    "context": {
+      "window": 262144,
+      "max_output_tokens": 209715
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": null,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.5,
+      "output": 7.5,
+      "cached_input": 0.15
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.mistral.ai/models/mistral-medium-3-5-26-04",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.mistral.ai/inference/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Pricing"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter public model list",
+        "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+      }
+    ],
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    }
+  },
+  {
+    "model_id": "mistral-small-2603",
+    "name": "Mistral Small 4",
+    "display_name": "Mistral Small 4",
+    "model_provider": "mistral",
+    "family": "Mistral",
+    "version": "26.03",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Hybrid model unifying instruct, reasoning, and coding in a single efficient model, released under Apache 2.0.",
+    "context": {
+      "window": 262144,
+      "max_output_tokens": 209715
+    },
+    "capabilities": {
+      "tool_use": null,
+      "vision": null,
+      "reasoning": null,
+      "function_calling": null,
+      "structured_output": null,
+      "json_mode": null,
+      "streaming": null
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.15,
+      "output": 0.6,
+      "cached_input": 0.015
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.mistral.ai/models/mistral-small-4-0-26-03",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.mistral.ai/inference/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Pricing"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter public model list",
+        "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "muse-glimmer-30b",
+    "name": "Muse Glimmer 30B",
+    "display_name": "Muse Glimmer 30B",
+    "model_provider": "meta",
+    "family": "Muse Glimmer",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Meta's 30-billion parameter open-weight multimodal model, distilled from Muse Spark for local agentic workflows; Apache 2.0 license.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "runtime": {
+      "vllm": true,
+      "sglang": true,
+      "llama_cpp": true,
+      "executorch": true,
+      "ollama": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://dev.meta.ai/docs/muse-glimmer",
+        "retrieved_at": "2026-09-26",
+        "title": "Muse Glimmer overview",
+        "notes": "30B dense multimodal model (text + image input, text output), 128K default context window, Apache 2.0 license, runtimes vLLM / SGLang / llama.cpp / ExecuTorch, launch partners including Fireworks AI, Together AI, Hugging Face and Ollama."
+      },
+      {
+        "type": "official",
+        "url": "https://dev.meta.ai/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Meta Model API models",
+        "notes": "Muse Glimmer is open-weight and self-hosted; it is not served over the Meta Model API."
+      },
+      {
+        "type": "official",
+        "url": "https://docs.together.ai/docs/inference-models",
+        "retrieved_at": "2026-09-26",
+        "title": "Together AI available models",
+        "notes": "Served as meta-models/Muse-Glimmer-30B with a 131,072 context window."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window for id meta/muse-glimmer-30b cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "muse-spark-1.2",
+    "name": "Muse Spark 1.2",
+    "display_name": "Muse Spark 1.2",
+    "model_provider": "meta",
+    "family": "Muse Spark",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 943718
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video",
+        "file",
+        "audio"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+        "retrieved_at": "2026-09-26",
+        "title": "Meta dev pricing"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "muse-spark-1.3",
+    "name": "Muse Spark 1.3",
+    "display_name": "Muse Spark 1.3",
+    "model_provider": "meta",
+    "family": "Muse Spark",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 943718
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video",
+        "file",
+        "audio"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+        "retrieved_at": "2026-09-26",
+        "title": "Meta research blog"
+      },
+      {
+        "type": "official",
+        "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+        "retrieved_at": "2026-09-26",
+        "title": "Meta dev pricing"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-3-ultra",
+    "name": "Nemotron 3 Ultra",
+    "display_name": "Nemotron 3 Ultra",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 262144,
+      "max_output_tokens": 182520
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA research page"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities from OpenRouter id nvidia/nemotron-3-ultra-550b-a55b (550B total / 55B active parameters), which matches the NVIDIA model page."
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-3.5-lightning",
+    "name": "Nemotron 3.5 Lightning",
+    "display_name": "Nemotron 3.5 Lightning",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 235929
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developer.nvidia.com/topics/ai/nemotron",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA developer hub"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.5-plus",
+    "name": "Qwen3.5-Plus",
+    "display_name": "Qwen3.5-Plus",
+    "model_provider": "qwen",
+    "family": "Qwen",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://help.aliyun.com/en/model-studio/qwen3-5-plus",
+        "retrieved_at": "2026-09-26",
+        "title": "Alibaba Cloud Model Studio model page"
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.6-plus",
+    "name": "Qwen3.6-Plus",
+    "display_name": "Qwen3.6-Plus",
+    "model_provider": "qwen",
+    "family": "Qwen",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://help.aliyun.com/en/model-studio/qwen3-6-plus",
+        "retrieved_at": "2026-09-26",
+        "title": "Alibaba Cloud Model Studio model page"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.7-max",
+    "name": "Qwen3.7-Max",
+    "display_name": "Qwen3.7-Max",
+    "model_provider": "qwen",
+    "family": "Qwen",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://help.aliyun.com/en/model-studio/qwen3-7-max",
+        "retrieved_at": "2026-09-26",
+        "title": "Alibaba Cloud Model Studio model page"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.7-plus",
+    "name": "Qwen3.7-Plus",
+    "display_name": "Qwen3.7-Plus",
+    "model_provider": "qwen",
+    "family": "Qwen",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://help.aliyun.com/en/model-studio/qwen3-7-plus",
+        "retrieved_at": "2026-09-26",
+        "title": "Alibaba Cloud Model Studio model page"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "display_name": "Qwen3.8-27B",
+    "model_provider": "qwen",
+    "family": "Qwen",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Dense 27B open-weight vision-language model in the Qwen3.8 family: native image and video understanding, thinking mode on by default, Apache 2.0 license.",
+    "context": {
+      "window": 262144
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "retrieved_at": "2026-09-26",
+        "title": "Open-weight release",
+        "notes": "Native context length is 262,144 tokens, extensible to 1,000,000 with RoPE scaling; vision-language model accepting image and video input; Apache 2.0 license; thinking mode is on by default with reasoning_effort control."
+      },
+      {
+        "type": "official",
+        "url": "https://help.aliyun.com/zh/model-studio/billing",
+        "retrieved_at": "2026-09-26",
+        "title": "Model Studio model pricing",
+        "notes": "Alibaba Cloud Model Studio (Beijing region) bills qwen3.8-27b at CNY 3.00 input / CNY 12.00 output per 1M tokens. The price is region- and billing-scheme specific, so no single model-level price is recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://console.groq.com/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Groq supported models",
+        "notes": "Served as qwen/qwen3.8-27b with a 131,072 context window and 16,384 max completion tokens."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Served as qwen/qwen3.8-27b with a 1,000,000 token context window."
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.8-flash",
+    "name": "Qwen3.8-Flash",
+    "display_name": "Qwen3.8-Flash",
+    "model_provider": "qwen",
+    "family": "Qwen",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://help.aliyun.com/en/model-studio/qwen3-8-flash",
+        "retrieved_at": "2026-09-26",
+        "title": "Alibaba Cloud Model Studio model page"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.8-max",
+    "name": "Qwen3.8-Max",
+    "display_name": "Qwen3.8-Max",
+    "model_provider": "qwen",
+    "family": "Qwen",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2.0,
+      "output": 6.0,
+      "cached_input": 0.25
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://github.com/AlibabaCloud-Official/Qwen3.8-max",
+        "retrieved_at": "2026-09-26",
+        "title": "Alibaba Cloud Model Studio model page"
+      },
+      {
+        "type": "official",
+        "url": "https://github.com/AlibabaCloud-Official/Qwen3.8-max",
+        "retrieved_at": "2026-09-26",
+        "notes": "First-party price and context limits from Alibaba's official repository; context window also stated on Alibaba Cloud Model Studio."
+      }
+    ]
+  }
+]

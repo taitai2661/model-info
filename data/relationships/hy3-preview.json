@@ -1,0 +1,58 @@
+{
+  "model_id": "hy3-preview",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "opencode-go",
+      "model_id": "hy3-preview",
+      "pricing": null,
+      "notes": "No price row in the Go pricing table.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "tencent/hy3-preview",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.18,
+        "output": 0.6,
+        "cached_input": 0.06
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 235929
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    }
+  ]
+}

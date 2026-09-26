@@ -1,0 +1,52 @@
+{
+  "id": "xai",
+  "name": "xAI",
+  "types": [
+    "model_provider",
+    "api_provider"
+  ],
+  "website": "https://x.ai",
+  "documentation_url": "https://docs.x.ai/developers/models",
+  "status": "active",
+  "description": "AI company behind the Grok model family; operates the xAI API.",
+  "api": {
+    "base_url": "https://api.x.ai/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization",
+      "notes": "Environment variable XAI_API_KEY. An Anthropic Messages-compatible endpoint is also served at /v1/messages."
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "responses": "/responses",
+      "messages": "/messages",
+      "models": "/models",
+      "embeddings": "/embeddings",
+      "images": "/images/generations",
+      "files": "/files"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.x.ai/developers/models",
+      "retrieved_at": "2026-09-26"
+    },
+    {
+      "type": "official",
+      "url": "https://docs.x.ai/developers/quickstart",
+      "retrieved_at": "2026-09-26",
+      "title": "xAI API quickstart"
+    },
+    {
+      "type": "official",
+      "url": "https://docs.x.ai/openapi.json",
+      "retrieved_at": "2026-09-26",
+      "title": "xAI OpenAPI specification",
+      "notes": "Endpoint paths confirmed against the published OpenAPI document."
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

@@ -1,0 +1,102 @@
+{
+  "model_id": "gpt-5.6-luna",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "openai",
+      "model_id": "gpt-5.6-luna"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-5.6-luna",
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "gpt-5.6-luna",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.2,
+        "output": 1.2,
+        "cached_input": 0.02,
+        "cached_write": 0.25
+      },
+      "notes": ">272K tokens: input $0.40, output $1.80, cached read $0.04, cached write $0.50.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": "gpt-5.6-luna",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.2,
+        "output": 1.2,
+        "cached_input": 0.02,
+        "cached_write": 0.25
+      },
+      "notes": "Go monthly usage limit: $15. >272K tokens: input $0.40, output $1.80, cached read $0.04, cached write $0.50.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "openai.gpt-5.6-luna",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: India Regions, commercial AWS Regions, in.openai.gpt-5.6-luna, us.openai.gpt-5.6-luna; global inference profile ids: global.openai.gpt-5.6-luna."
+    }
+  ]
+}

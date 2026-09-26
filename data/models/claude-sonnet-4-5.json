@@ -1,0 +1,55 @@
+{
+  "model_id": "claude-sonnet-4-5",
+  "name": "Claude Sonnet 4.5",
+  "display_name": "Claude Sonnet 4.5",
+  "model_provider": "anthropic",
+  "family": "Claude",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "context": {
+    "window": 200000,
+    "max_output_tokens": 64000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "file"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 3.0,
+    "output": 15.0,
+    "cached_input": 0.3,
+    "cached_write": 3.75
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://platform.claude.com/docs/en/models/sonnet-4-5/overview",
+      "retrieved_at": "2026-09-26",
+      "title": "Model page"
+    },
+    {
+      "type": "official",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "Anthropic pricing (first-party price)"
+    }
+  ],
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": true,
+    "function_calling": true,
+    "streaming": true,
+    "json_mode": null
+  }
+}

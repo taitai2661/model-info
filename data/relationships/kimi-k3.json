@@ -1,0 +1,133 @@
+{
+  "model_id": "kimi-k3",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "moonshot",
+      "model_id": "kimi-k3"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "moonshotai/kimi-k3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "kimi-k3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": "kimi-k3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3
+      },
+      "notes": "Go monthly usage limit: $15.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "together",
+      "model_id": "moonshotai/Kimi-K3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ]
+    },
+    {
+      "provider_id": "fireworks",
+      "model_id": "accounts/fireworks/models/kimi-k3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.fireworks.ai/serverless/pricing.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
+        }
+      ]
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "moonshotai.kimi-k3",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: us.moonshotai.kimi-k3; global inference profile ids: global.moonshotai.kimi-k3."
+    }
+  ]
+}

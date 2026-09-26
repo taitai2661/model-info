@@ -1,0 +1,26 @@
+{
+  "model_id": "mimo-v2-omni",
+  "name": "MiMo V2 Omni",
+  "display_name": "MiMo V2 Omni",
+  "model_provider": "xiaomi",
+  "family": "MiMo",
+  "version": null,
+  "status": "unknown",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+      "retrieved_at": "2026-09-26",
+      "title": "Xiaomi MiMo model page",
+      "notes": "Not currently listed on Xiaomi's model page; registered from the OpenCode Go catalog."
+    },
+    {
+      "type": "official",
+      "url": "https://opencode.ai/zen/go/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenCode Go model list"
+    }
+  ]
+}

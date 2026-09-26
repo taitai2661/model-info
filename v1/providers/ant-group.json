@@ -1,0 +1,21 @@
+{
+  "provider": {
+    "id": "ant-group",
+    "name": "Ant Group",
+    "types": [
+      "model_provider"
+    ],
+    "documentation_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+    "status": "active",
+    "description": "Ant Group's Ling model family.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+        "retrieved_at": "2026-09-26"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  "model_ids": []
+}

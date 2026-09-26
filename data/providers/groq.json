@@ -1,0 +1,34 @@
+{
+  "id": "groq",
+  "name": "Groq",
+  "types": [
+    "api_provider",
+    "platform"
+  ],
+  "website": "https://groq.com",
+  "documentation_url": "https://console.groq.com/docs/quickstart",
+  "status": "active",
+  "description": "Inference platform serving third-party open models on custom LPU hardware via an OpenAI-compatible API.",
+  "api": {
+    "base_url": "https://api.groq.com/openai/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://console.groq.com/docs/quickstart",
+      "retrieved_at": "2026-09-26",
+      "title": "Groq quickstart"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

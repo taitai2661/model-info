@@ -1,0 +1,59 @@
+{
+  "model_id": "mistral-small-2603",
+  "name": "Mistral Small 4",
+  "display_name": "Mistral Small 4",
+  "model_provider": "mistral",
+  "family": "Mistral",
+  "version": "26.03",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Hybrid model unifying instruct, reasoning, and coding in a single efficient model, released under Apache 2.0.",
+  "context": {
+    "window": 262144,
+    "max_output_tokens": 209715
+  },
+  "capabilities": {
+    "tool_use": null,
+    "vision": null,
+    "reasoning": null,
+    "function_calling": null,
+    "structured_output": null,
+    "json_mode": null,
+    "streaming": null
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 0.15,
+    "output": 0.6,
+    "cached_input": 0.015
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true,
+    "self_hostable": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.mistral.ai/models/mistral-small-4-0-26-03",
+      "retrieved_at": "2026-09-26",
+      "title": "Model page"
+    },
+    {
+      "type": "official",
+      "url": "https://docs.mistral.ai/inference/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "Pricing"
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter public model list",
+      "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+    }
+  ]
+}

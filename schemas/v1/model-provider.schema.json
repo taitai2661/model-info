@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Model Info — Model × Provider relationship",
+  "description": "Which providers serve this model, under which provider-specific model id, and optional per-provider overrides. Override semantics: key omitted = inherit from the model document; key present with null = unknown at this provider; key present with a value = override.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["model_id", "providers"],
+  "properties": {
+    "model_id": {"$ref": "#/$defs/modelId"},
+    "updated_at": {"$ref": "#/$defs/date"},
+    "providers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/providerEntry"}
+    }
+  },
+  "$defs": {
+    "modelId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "providerId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$"
+    },
+    "providerModelId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,255}$",
+      "description": "Model identifier as used by that provider (may differ per provider, e.g. openrouter/deepseek-chat)."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "preview", "experimental", "deprecated", "retired", "unknown"]
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "nullableDate": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "modality": {
+      "type": "string",
+      "enum": ["text", "image", "audio", "video", "file"]
+    },
+    "context": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "window": {"type": ["integer", "null"], "minimum": 0},
+        "max_output_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "max_input_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "reasoning_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "cached_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "tokenizer": {"type": ["string", "null"], "minLength": 1, "maxLength": 64}
+      }
+    },
+    "modalities": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["input", "output"],
+      "properties": {
+        "input": {"type": "array", "items": {"$ref": "#/$defs/modality"}, "uniqueItems": true},
+        "output": {"type": "array", "items": {"$ref": "#/$defs/modality"}, "uniqueItems": true}
+      }
+    },
+    "capabilities": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "tool_use": {"type": ["boolean", "null"]},
+        "vision": {"type": ["boolean", "null"]},
+        "reasoning": {"type": ["boolean", "null"]},
+        "function_calling": {"type": ["boolean", "null"]},
+        "structured_output": {"type": ["boolean", "null"]},
+        "json_mode": {"type": ["boolean", "null"]},
+        "streaming": {"type": ["boolean", "null"]}
+      }
+    },
+    "apiCapabilities": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "streaming": {"type": ["boolean", "null"]},
+        "tool_calling": {"type": ["boolean", "null"]},
+        "structured_output": {"type": ["boolean", "null"]},
+        "json_mode": {"type": ["boolean", "null"]},
+        "prompt_caching": {"type": ["boolean", "null"]},
+        "batch": {"type": ["boolean", "null"]}
+      }
+    },
+    "pricing": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "description": "null = unknown at this provider. Omitted key = inherit model-level pricing.",
+      "properties": {
+        "currency": {"type": ["string", "null"], "pattern": "^[A-Z]{3}$"},
+        "unit": {"type": ["string", "null"], "enum": ["1M_tokens", "1K_tokens", "1_token", "per_request", null]},
+        "input": {"type": ["number", "null"], "minimum": 0},
+        "output": {"type": ["number", "null"], "minimum": 0},
+        "cached_input": {"type": ["number", "null"], "minimum": 0},
+        "cached_write": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "url", "retrieved_at"],
+      "properties": {
+        "type": {"type": "string", "enum": ["official", "documentation", "community", "manual"]},
+        "url": {"type": "string", "pattern": "^https?://"},
+        "retrieved_at": {"$ref": "#/$defs/date"},
+        "title": {"type": ["string", "null"], "maxLength": 256},
+        "notes": {"type": ["string", "null"], "maxLength": 1000}
+      }
+    },
+    "providerEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provider_id", "model_id"],
+      "description": "One provider offering the model. Omitted optional keys inherit from the model document; an explicit null means unknown at this provider.",
+      "properties": {
+        "provider_id": {"$ref": "#/$defs/providerId"},
+        "model_id": {"$ref": "#/$defs/providerModelId"},
+        "status": {"type": ["string", "null"], "enum": ["active", "preview", "experimental", "deprecated", "retired", "unknown", null]},
+        "context": {"$ref": "#/$defs/context"},
+        "modalities": {"$ref": "#/$defs/modalities"},
+        "capabilities": {"$ref": "#/$defs/capabilities"},
+        "api_capabilities": {"$ref": "#/$defs/apiCapabilities"},
+        "pricing": {"$ref": "#/$defs/pricing"},
+        "notes": {"type": ["string", "null"], "maxLength": 2000},
+        "updated_at": {"$ref": "#/$defs/nullableDate"},
+        "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}}
+      }
+    }
+  }
+}

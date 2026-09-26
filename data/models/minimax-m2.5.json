@@ -1,0 +1,39 @@
+{
+  "model_id": "minimax-m2.5",
+  "name": "MiniMax M2.5",
+  "display_name": "MiniMax M2.5",
+  "model_provider": "minimax",
+  "family": "MiniMax",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "context": {
+    "window": 204800,
+    "max_output_tokens": 128000
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://platform.minimax.io/docs/guides/models-intro",
+      "retrieved_at": "2026-09-26",
+      "title": "MiniMax model list",
+      "notes": "MiniMax M2.5 is listed under 'Legacy Models' on the official docs."
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter model list",
+      "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+    }
+  ]
+}

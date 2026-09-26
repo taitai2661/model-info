@@ -1,0 +1,49 @@
+{
+  "id": "anthropic",
+  "name": "Anthropic",
+  "types": [
+    "model_provider",
+    "api_provider"
+  ],
+  "website": "https://www.anthropic.com",
+  "documentation_url": "https://platform.claude.com/docs/en/api/overview",
+  "status": "active",
+  "description": "AI safety company behind the Claude models; operates the first-party Claude API.",
+  "api": {
+    "base_url": "https://api.anthropic.com",
+    "protocol": "https",
+    "api_style": "anthropic",
+    "authentication": {
+      "type": "api_key",
+      "header": "X-Api-Key",
+      "notes": "Requests also require the anthropic-version header."
+    },
+    "endpoints": {
+      "messages": "/v1/messages",
+      "models": "/v1/models",
+      "batches": "/v1/messages/batches"
+    }
+  },
+  "api_capabilities": {
+    "streaming": true,
+    "tool_calling": true,
+    "structured_output": true,
+    "prompt_caching": true,
+    "batch": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://platform.claude.com/docs/en/api/overview",
+      "retrieved_at": "2026-09-26",
+      "title": "Claude API overview"
+    },
+    {
+      "type": "official",
+      "url": "https://docs.anthropic.com/en/api/models-list",
+      "retrieved_at": "2026-09-26",
+      "title": "Models API"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

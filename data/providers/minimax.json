@@ -1,0 +1,41 @@
+{
+  "id": "minimax",
+  "name": "MiniMax",
+  "types": [
+    "model_provider",
+    "api_provider"
+  ],
+  "website": "https://www.minimax.io",
+  "documentation_url": "https://platform.minimax.io/docs/guides/models-intro",
+  "status": "active",
+  "description": "AI company behind the MiniMax model family; operates the MiniMax API.",
+  "api": {
+    "base_url": "https://api.minimax.io/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization",
+      "notes": "Environment variable MINIMAX_API_KEY. An Anthropic-compatible API is served from https://api.minimax.io/anthropic using the X-Api-Key header."
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://platform.minimax.io/docs/guides/models-intro",
+      "retrieved_at": "2026-09-26"
+    },
+    {
+      "type": "official",
+      "url": "https://platform.minimax.io/docs/guides/text-generation",
+      "retrieved_at": "2026-09-26",
+      "title": "MiniMax model invocation",
+      "notes": "OpenAI-compatible base_url https://api.minimax.io/v1 and Anthropic-compatible base_url https://api.minimax.io/anthropic."
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

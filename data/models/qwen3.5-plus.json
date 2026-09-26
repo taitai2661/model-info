@@ -1,0 +1,19 @@
+{
+  "model_id": "qwen3.5-plus",
+  "name": "Qwen3.5-Plus",
+  "display_name": "Qwen3.5-Plus",
+  "model_provider": "qwen",
+  "family": "Qwen",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://help.aliyun.com/en/model-studio/qwen3-5-plus",
+      "retrieved_at": "2026-09-26",
+      "title": "Alibaba Cloud Model Studio model page"
+    }
+  ]
+}

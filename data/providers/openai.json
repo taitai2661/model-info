@@ -1,0 +1,56 @@
+{
+  "id": "openai",
+  "name": "OpenAI",
+  "types": [
+    "model_provider",
+    "api_provider"
+  ],
+  "website": "https://openai.com",
+  "documentation_url": "https://developers.openai.com/api/docs",
+  "status": "active",
+  "description": "AI company behind the GPT series; operates the first-party OpenAI API.",
+  "api": {
+    "base_url": "https://api.openai.com/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "responses": "/responses",
+      "models": "/models",
+      "embeddings": "/embeddings",
+      "completions": "/completions",
+      "images": "/images/generations",
+      "moderation": "/moderations",
+      "batches": "/batch",
+      "files": "/files",
+      "fine_tuning": "/fine_tuning"
+    }
+  },
+  "api_capabilities": {
+    "streaming": true,
+    "tool_calling": true,
+    "structured_output": true,
+    "json_mode": true,
+    "prompt_caching": true,
+    "batch": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/quickstart",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenAI API quickstart"
+    },
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenAI pricing"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

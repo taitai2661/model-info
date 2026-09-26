@@ -1,0 +1,63 @@
+{
+  "model_id": "claude-opus-5",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "anthropic",
+      "model_id": "claude-opus-5"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "anthropic/claude-opus-5",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "claude-opus-5",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 5.0,
+        "output": 25.0,
+        "cached_input": 0.5,
+        "cached_write": 6.25
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "anthropic.claude-opus-5",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-opus-5",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: au.anthropic.claude-opus-5, eu.anthropic.claude-opus-5, us.anthropic.claude-opus-5; global inference profile ids: global.anthropic.claude-opus-5."
+    }
+  ]
+}

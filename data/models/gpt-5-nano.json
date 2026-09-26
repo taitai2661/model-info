@@ -1,0 +1,55 @@
+{
+  "model_id": "gpt-5-nano",
+  "name": "GPT-5 nano",
+  "display_name": "GPT-5 nano",
+  "model_provider": "openai",
+  "family": "GPT-5",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "context": {
+    "window": 400000,
+    "max_output_tokens": 128000,
+    "max_input_tokens": 272000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": true,
+    "function_calling": true,
+    "structured_output": true,
+    "json_mode": true,
+    "streaming": true
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 0.05,
+    "output": 0.4,
+    "cached_input": 0.005
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5-nano",
+      "retrieved_at": "2026-09-26",
+      "title": "Model page"
+    },
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenAI pricing"
+    }
+  ]
+}

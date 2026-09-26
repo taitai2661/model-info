@@ -1,0 +1,85 @@
+{
+  "model_id": "nemotron-3-ultra",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "nvidia",
+      "model_id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://build.nvidia.com/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA API Catalog model list",
+          "notes": "Provider model id is the API Catalog id, which carries the parameter configuration."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.6,
+        "output": 2.4,
+        "cached_input": 0.12
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "nemotron-3-ultra-free",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
+      "notes": "Free (limited time).",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "fireworks",
+      "model_id": "accounts/fireworks/models/nemotron-3-ultra-nvfp4",
+      "notes": "Fireworks lists 'NVIDIA Nemotron 3 Ultra (Preview)' as accounts/fireworks/models/nemotron-3-ultra-nvfp4; NVIDIA documents the model as pretrained in NVFP4, which is what the -nvfp4 suffix denotes.",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.6,
+        "output": 2.4,
+        "cached_input": 0.12
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.fireworks.ai/serverless/pricing.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
+        }
+      ]
+    }
+  ]
+}

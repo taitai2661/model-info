@@ -1,0 +1,64 @@
+{
+  "model_id": "ling-3.0-flash-fin",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "opencode",
+      "model_id": "ling-3.0-flash-fin-free",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
+      "notes": "Free (limited time).",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "inclusionai/ling-3.0-flash-fin",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.06,
+        "output": 0.18,
+        "cached_input": 0.012
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 235929
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    }
+  ]
+}

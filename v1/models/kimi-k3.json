@@ -1,0 +1,471 @@
+{
+  "model": {
+    "model_id": "kimi-k3",
+    "name": "Kimi K3",
+    "display_name": "Kimi K3",
+    "model_provider": "moonshot",
+    "family": "Kimi",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 943718
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.kimi.ai/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Moonshot model list"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "moonshot",
+      "model_id": "kimi-k3",
+      "provider": {
+        "id": "moonshot",
+        "name": "Moonshot AI",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "documentation_url": "https://platform.kimi.ai/docs/models",
+        "status": "active",
+        "description": "AI company behind the Kimi model family; operates the Kimi Open Platform API.",
+        "api": {
+          "base_url": "https://api.moonshot.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "Environment variable MOONSHOT_API_KEY. An Anthropic Messages-compatible API is served from a separate root, https://api.moonshot.ai/anthropic."
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://platform.kimi.ai/docs/models",
+            "retrieved_at": "2026-09-26"
+          },
+          {
+            "type": "official",
+            "url": "https://platform.kimi.ai/docs/api/overview",
+            "retrieved_at": "2026-09-26",
+            "title": "Kimi API overview",
+            "notes": "Service address, protocol compatibility table, and endpoint list."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "moonshotai/kimi-k3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "kimi-k3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode",
+        "name": "OpenCode Zen",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/zen/",
+        "status": "active",
+        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/zen/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": "kimi-k3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3
+      },
+      "notes": "Go monthly usage limit: $15.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode-go",
+        "name": "OpenCode Go",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/go/",
+        "status": "active",
+        "description": "OpenCode's $10/month subscription (Go) serving a curated set of open coding models through a dedicated endpoint; Anthropic-compatible requests are served from the same base path. Usage limits are defined in dollar value per model.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/go/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/go/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Go docs (models, pricing, limits)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/go/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Go public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "together",
+      "model_id": "moonshotai/Kimi-K3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ],
+      "provider": {
+        "id": "together",
+        "name": "Together AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://www.together.ai",
+        "documentation_url": "https://docs.together.ai/docs/serverless",
+        "status": "active",
+        "description": "Cloud platform running open-source third-party models (serverless and dedicated) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.together.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.together.ai/docs/serverless",
+            "retrieved_at": "2026-09-26",
+            "title": "Together serverless inference"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "fireworks",
+      "model_id": "accounts/fireworks/models/kimi-k3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.fireworks.ai/serverless/pricing.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
+        }
+      ],
+      "provider": {
+        "id": "fireworks",
+        "name": "Fireworks AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://fireworks.ai",
+        "documentation_url": "https://docs.fireworks.ai/getting-started/quickstart",
+        "status": "active",
+        "description": "AI cloud platform for open-source models; OpenAI-compatible chat endpoint plus an Anthropic-compatible endpoint served from https://api.fireworks.ai/inference.",
+        "api": {
+          "base_url": "https://api.fireworks.ai/inference/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.fireworks.ai/getting-started/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "Fireworks quickstart"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "moonshotai.kimi-k3",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: us.moonshotai.kimi-k3; global inference profile ids: global.moonshotai.kimi-k3.",
+      "provider": {
+        "id": "aws-bedrock",
+        "name": "Amazon Bedrock",
+        "types": [
+          "api_provider",
+          "gateway"
+        ],
+        "website": "https://aws.amazon.com/bedrock/",
+        "documentation_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+        "status": "active",
+        "description": "AWS's serverless platform for foundation models from many providers: one endpoint over Anthropic, OpenAI, Meta, Mistral, Moonshot AI, MiniMax, Z.ai and xAI models, behind AWS credentials or a Bedrock API key.",
+        "api": {
+          "base_url": "https://bedrock-runtime.{region}.amazonaws.com",
+          "protocol": "https",
+          "api_style": "custom",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "AWS credentials (Signature Version 4) or an Amazon Bedrock API key, sent as Authorization: Bearer. A second endpoint, https://bedrock-mantle.{region}.api.aws, serves the same OpenAI-compatible paths at /v1 plus Anthropic Messages at /anthropic/v1/messages. The OpenAI-compatible GET /models operation is not implemented; use ListFoundationModels and ListInferenceProfiles instead."
+          },
+          "endpoints": {
+            "chat_completions": "/openai/v1/chat/completions",
+            "responses": "/openai/v1/responses"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://aws.amazon.com/bedrock/",
+            "retrieved_at": "2026-09-26",
+            "title": "Amazon Bedrock"
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints",
+            "retrieved_at": "2026-09-26",
+            "title": "Endpoints supported by Amazon Bedrock",
+            "notes": "bedrock-runtime base URL and the /openai/v1 OpenAI-compatible paths."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-chat-completions",
+            "retrieved_at": "2026-09-26",
+            "title": "Chat Completions API",
+            "notes": "Per-region chat-completion URLs and the SigV4 / API-key authentication options."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards",
+            "retrieved_at": "2026-09-26",
+            "title": "Models at a glance",
+            "notes": "Catalogue of model cards used to build the relationship entries."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

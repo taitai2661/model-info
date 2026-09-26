@@ -1,0 +1,47 @@
+{
+  "id": "nvidia",
+  "name": "NVIDIA",
+  "types": [
+    "model_provider",
+    "api_provider"
+  ],
+  "website": "https://www.nvidia.com",
+  "documentation_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+  "status": "active",
+  "description": "NVIDIA's Nemotron model family; hosted NIM endpoints are served by the NVIDIA API Catalog.",
+  "api": {
+    "base_url": "https://integrate.api.nvidia.com/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization",
+      "notes": "Environment variable NVIDIA_API_KEY (issued at build.nvidia.com/settings)."
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models",
+      "embeddings": "/embeddings"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+      "retrieved_at": "2026-09-26"
+    },
+    {
+      "type": "official",
+      "url": "https://developer.nvidia.com/topics/ai/nemotron",
+      "retrieved_at": "2026-09-26"
+    },
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/llms.txt",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA API Catalog overview",
+      "notes": "Shared base URL https://integrate.api.nvidia.com/v1 and Bearer authentication."
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

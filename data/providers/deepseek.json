@@ -1,0 +1,47 @@
+{
+  "id": "deepseek",
+  "name": "DeepSeek",
+  "types": [
+    "model_provider",
+    "api_provider"
+  ],
+  "website": "https://www.deepseek.com",
+  "documentation_url": "https://api-docs.deepseek.com",
+  "status": "active",
+  "description": "AI company behind the DeepSeek models; operates the DeepSeek API in OpenAI format (an Anthropic-compatible endpoint is served from https://api.deepseek.com/anthropic).",
+  "api": {
+    "base_url": "https://api.deepseek.com",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "responses": "/responses",
+      "models": "/models"
+    }
+  },
+  "api_capabilities": {
+    "streaming": true,
+    "tool_calling": true,
+    "json_mode": true,
+    "prompt_caching": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "DeepSeek models & pricing"
+    },
+    {
+      "type": "official",
+      "url": "https://api-docs.deepseek.com/api/create-chat-completion",
+      "retrieved_at": "2026-09-26",
+      "title": "Chat completion API reference"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

@@ -1,0 +1,51 @@
+{
+  "model_id": "glm-5.2",
+  "name": "GLM-5.2",
+  "display_name": "GLM-5.2",
+  "model_provider": "zai",
+  "family": "GLM",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "context": {
+    "window": 1048576,
+    "max_output_tokens": 131072
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 1.4,
+    "output": 4.4,
+    "cached_input": 0.26
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.z.ai/guides/overview/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "Z.ai pricing (first-party price)"
+    },
+    {
+      "type": "official",
+      "url": "https://docs.z.ai/guides/overview/quick-start",
+      "retrieved_at": "2026-09-26",
+      "title": "Z.ai quick start"
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter model list",
+      "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+    }
+  ]
+}

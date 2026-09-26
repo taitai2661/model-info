@@ -1,0 +1,69 @@
+{
+  "model_id": "mistral-medium-3-5",
+  "name": "Mistral Medium 3.5",
+  "display_name": "Mistral Medium 3.5",
+  "model_provider": "mistral",
+  "family": "Mistral",
+  "version": "26.04",
+  "status": "active",
+  "release_date": "2026-04-28",
+  "updated_at": "2026-09-26",
+  "description": "Frontier-class multimodal model optimized for agentic and coding use cases, released as open weights under a Modified MIT license.",
+  "context": {
+    "window": 262144,
+    "max_output_tokens": 209715
+  },
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": null,
+    "function_calling": true,
+    "structured_output": true,
+    "json_mode": null,
+    "streaming": true
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 1.5,
+    "output": 7.5,
+    "cached_input": 0.15
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true,
+    "self_hostable": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.mistral.ai/models/mistral-medium-3-5-26-04",
+      "retrieved_at": "2026-09-26",
+      "title": "Model page"
+    },
+    {
+      "type": "official",
+      "url": "https://docs.mistral.ai/inference/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "Pricing"
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter public model list",
+      "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+    }
+  ],
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "file"
+    ],
+    "output": [
+      "text"
+    ]
+  }
+}

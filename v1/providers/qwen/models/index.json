@@ -1,0 +1,260 @@
+[
+  {
+    "model": {
+      "model_id": "qwen3.5-plus",
+      "name": "Qwen3.5-Plus",
+      "display_name": "Qwen3.5-Plus",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://help.aliyun.com/en/model-studio/qwen3-5-plus",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "qwen",
+      "model_id": "qwen3.5-plus"
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.6-plus",
+      "name": "Qwen3.6-Plus",
+      "display_name": "Qwen3.6-Plus",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 65536
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://help.aliyun.com/en/model-studio/qwen3-6-plus",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "qwen",
+      "model_id": "qwen3.6-plus"
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.7-max",
+      "name": "Qwen3.7-Max",
+      "display_name": "Qwen3.7-Max",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://help.aliyun.com/en/model-studio/qwen3-7-max",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "qwen",
+      "model_id": "qwen3.7-max"
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.7-plus",
+      "name": "Qwen3.7-Plus",
+      "display_name": "Qwen3.7-Plus",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://help.aliyun.com/en/model-studio/qwen3-7-plus",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "qwen",
+      "model_id": "qwen3.7-plus"
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.8-flash",
+      "name": "Qwen3.8-Flash",
+      "display_name": "Qwen3.8-Flash",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://help.aliyun.com/en/model-studio/qwen3-8-flash",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "qwen",
+      "model_id": "qwen3.8-flash"
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.8-max",
+      "name": "Qwen3.8-Max",
+      "display_name": "Qwen3.8-Max",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 6.0,
+        "cached_input": 0.25
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://github.com/AlibabaCloud-Official/Qwen3.8-max",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        },
+        {
+          "type": "official",
+          "url": "https://github.com/AlibabaCloud-Official/Qwen3.8-max",
+          "retrieved_at": "2026-09-26",
+          "notes": "First-party price and context limits from Alibaba's official repository; context window also stated on Alibaba Cloud Model Studio."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "qwen",
+      "model_id": "qwen3.8-max"
+    }
+  }
+]

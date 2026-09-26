@@ -1,0 +1,75 @@
+{
+  "model_id": "qwen3.7-plus",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "qwen",
+      "model_id": "qwen3.7-plus"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "qwen/qwen3.7-plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.32,
+        "output": 1.28,
+        "cached_input": 0.064
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": "qwen3.7-plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.4,
+        "output": 1.6,
+        "cached_input": 0.04,
+        "cached_write": 0.5
+      },
+      "notes": "Go monthly usage limit: $60. >256K tokens: input $1.20, output $4.80, cached read $0.12, cached write $1.50.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "together",
+      "model_id": "Qwen/Qwen3.7-Plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.32,
+        "output": 1.28
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ]
+    }
+  ]
+}

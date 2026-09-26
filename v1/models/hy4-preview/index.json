@@ -1,0 +1,237 @@
+{
+  "model": {
+    "model_id": "hy4-preview",
+    "name": "Hy4 Preview",
+    "display_name": "Hy4 Preview",
+    "model_provider": "tencent",
+    "family": "Hy",
+    "version": null,
+    "status": "preview",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://hy.tencent.ai/research/hy4-preview",
+        "retrieved_at": "2026-09-26",
+        "title": "Tencent Hy4 preview research page",
+        "notes": "Preview release per Tencent's official research page."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "tencent",
+      "model_id": "hy4-preview",
+      "provider": {
+        "id": "tencent",
+        "name": "Tencent",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.tencent.com",
+        "documentation_url": "https://github.com/Tencent-Hunyuan/Hy3",
+        "status": "active",
+        "description": "Tencent's Hy model family (Hunyuan); served by the Tencent MaaS TokenHub platform, which also aggregates third-party models.",
+        "api": {
+          "base_url": "https://tokenhub.tencentmaas.com/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "Environment variable HUNYUAN_API_KEY (created in the TokenHub console). Regional base URLs: https://tokenhub.tencentmaas.com/v1 (Guangzhou) and https://tokenhub-intl.tencentmaas.com/v1 (Singapore). The Anthropic-compatible path /v1/messages authenticates with the x-api-key header instead. The legacy Hunyuan API at https://api.hunyuan.cloud.tencent.com/v1 is scheduled to shut down on 2026-09-30."
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://github.com/Tencent-Hunyuan/Hy3",
+            "retrieved_at": "2026-09-26"
+          },
+          {
+            "type": "official",
+            "url": "https://hy.tencent.ai/research/hy4-preview",
+            "retrieved_at": "2026-09-26"
+          },
+          {
+            "type": "official",
+            "url": "https://cloud.tencent.com/document/product/1823/130079",
+            "retrieved_at": "2026-09-26",
+            "title": "TokenHub language model overview",
+            "notes": "Base URL, protocol paths, and Bearer/x-api-key authentication."
+          },
+          {
+            "type": "official",
+            "url": "https://cloud.tencent.com/document/product/1823/130051",
+            "retrieved_at": "2026-09-26",
+            "title": "TokenHub model list",
+            "notes": "Model ids and context/output token limits for Hy3 and Hy4 preview."
+          },
+          {
+            "type": "official",
+            "url": "https://cloud.tencent.com/document/product/1729/131925",
+            "retrieved_at": "2026-09-26",
+            "title": "Legacy Hunyuan model retirement notice",
+            "notes": "Legacy Tencent Cloud Hunyuan platform shuts down 2026-09-30; migration target is TokenHub."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": "hy4-preview",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.834,
+        "output": 2.501,
+        "cached_input": 0.042
+      },
+      "notes": "Go monthly usage limit: $30.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode-go",
+        "name": "OpenCode Go",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/go/",
+        "status": "active",
+        "description": "OpenCode's $10/month subscription (Go) serving a curated set of open coding models through a dedicated endpoint; Anthropic-compatible requests are served from the same base path. Usage limits are defined in dollar value per model.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/go/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/go/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Go docs (models, pricing, limits)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/go/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Go public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "tencent/hy4-preview",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.834,
+        "output": 2.501,
+        "cached_input": 0.042
+      },
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 64000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

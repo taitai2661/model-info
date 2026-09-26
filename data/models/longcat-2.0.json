@@ -1,0 +1,38 @@
+{
+  "model_id": "longcat-2.0",
+  "name": "LongCat-2.0",
+  "display_name": "LongCat-2.0",
+  "model_provider": "meituan",
+  "family": "LongCat",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "context": {
+    "window": 1048756,
+    "max_output_tokens": 262144
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://github.com/meituan-longcat/LongCat-2.0",
+      "retrieved_at": "2026-09-26",
+      "title": "Meituan LongCat repository"
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter model list",
+      "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+    }
+  ]
+}

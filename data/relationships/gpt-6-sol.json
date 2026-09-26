@@ -1,0 +1,74 @@
+{
+  "model_id": "gpt-6-sol",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "openai",
+      "model_id": "gpt-6-sol"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-6-sol",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "gpt-6-sol",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 10.0,
+        "cached_input": 0.2,
+        "cached_write": 2.5
+      },
+      "notes": ">272K tokens: input $4.00, output $15.00, cached read $0.40, cached write $5.00.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "openai.gpt-6-sol",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-sol",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: us.openai.gpt-6-sol; global inference profile ids: global.openai.gpt-6-sol."
+    }
+  ]
+}

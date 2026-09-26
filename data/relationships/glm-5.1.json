@@ -1,0 +1,82 @@
+{
+  "model_id": "glm-5.1",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "zai",
+      "model_id": "glm-5.1"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "z-ai/glm-5.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.9646,
+        "output": 3.0316,
+        "cached_input": 0.17914
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "glm-5.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.4,
+        "output": 4.4,
+        "cached_input": 0.26
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": "glm-5.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.4,
+        "output": 4.4,
+        "cached_input": 0.26
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  ]
+}

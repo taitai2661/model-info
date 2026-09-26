@@ -1,0 +1,56 @@
+{
+  "model_id": "mimo-v2.5-pro",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "xiaomi",
+      "model_id": "mimo-v2.5-pro"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "xiaomi/mimo-v2.5-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.435,
+        "output": 0.87,
+        "cached_input": 0.0036
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": "mimo-v2.5-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.435,
+        "output": 0.87,
+        "cached_input": 0.003625
+      },
+      "notes": "Go monthly usage limit: $15.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  ]
+}

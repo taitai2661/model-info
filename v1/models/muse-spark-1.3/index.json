@@ -1,0 +1,374 @@
+{
+  "model": {
+    "model_id": "muse-spark-1.3",
+    "name": "Muse Spark 1.3",
+    "display_name": "Muse Spark 1.3",
+    "model_provider": "meta",
+    "family": "Muse Spark",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1048576,
+      "max_output_tokens": 943718
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video",
+        "file",
+        "audio"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+        "retrieved_at": "2026-09-26",
+        "title": "Meta research blog"
+      },
+      {
+        "type": "official",
+        "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+        "retrieved_at": "2026-09-26",
+        "title": "Meta dev pricing"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "meta",
+      "model_id": "muse-spark-1.3",
+      "provider": {
+        "id": "meta",
+        "name": "Meta",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "documentation_url": "https://dev.meta.ai/docs/pricing-rate-limits",
+        "status": "active",
+        "description": "Meta's Muse Spark model family; operates the Meta Model API.",
+        "api": {
+          "base_url": "https://api.meta.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "Environment variable MODEL_API_KEY. An Anthropic Messages-compatible endpoint is also served at /v1/messages."
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models",
+            "files": "/files",
+            "images": "/images/generations"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+            "retrieved_at": "2026-09-26"
+          },
+          {
+            "type": "official",
+            "url": "https://dev.meta.ai/docs/api-reference",
+            "retrieved_at": "2026-09-26",
+            "title": "Meta Model API reference",
+            "notes": "Base URL, auth header, and endpoint list taken from the API reference overview."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "meta/muse-spark-1.3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.25,
+        "output": 4.25,
+        "cached_input": 0.15
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "muse-spark-1.3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.25,
+        "output": 4.25,
+        "cached_input": 0.15
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode",
+        "name": "OpenCode Zen",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/zen/",
+        "status": "active",
+        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/zen/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "muse-spark-1.3-contributor-free",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
+      "notes": "Free (limited time).",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode",
+        "name": "OpenCode Zen",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/zen/",
+        "status": "active",
+        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/zen/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": "muse-spark-1.3-contributor",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.1,
+        "output": 0.2,
+        "cached_input": 0.002
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode-go",
+        "name": "OpenCode Go",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/go/",
+        "status": "active",
+        "description": "OpenCode's $10/month subscription (Go) serving a curated set of open coding models through a dedicated endpoint; Anthropic-compatible requests are served from the same base path. Usage limits are defined in dollar value per model.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/go/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/go/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Go docs (models, pricing, limits)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/go/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Go public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

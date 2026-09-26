@@ -1,0 +1,53 @@
+{
+  "provider": {
+    "id": "zai",
+    "name": "Z.ai",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://z.ai",
+    "documentation_url": "https://docs.z.ai/guides/overview/pricing",
+    "status": "active",
+    "description": "AI company behind the GLM model family (Zhipu AI / Z.ai); operates the Z.AI API.",
+    "api": {
+      "base_url": "https://api.z.ai/api/paas/v4",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "models": "/models",
+        "embeddings": "/embeddings",
+        "images": "/image/generate",
+        "audio": "/audio/transcriptions"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/pricing",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/api-reference/introduction",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.AI API introduction",
+        "notes": "API endpoint and HTTP Bearer authentication."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  "model_ids": [
+    "glm-5",
+    "glm-5.1",
+    "glm-5.2",
+    "glm-5.3",
+    "glm-5.3-flash"
+  ]
+}

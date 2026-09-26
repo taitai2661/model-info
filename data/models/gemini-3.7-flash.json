@@ -1,0 +1,66 @@
+{
+  "model_id": "gemini-3.7-flash",
+  "name": "Gemini 3.7 Flash",
+  "display_name": "Gemini 3.7 Flash",
+  "model_provider": "google",
+  "family": "Gemini",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Google's high-speed, efficient Flash model built for everyday coding, agentic tool use, and reliable multi-step execution.",
+  "context": {
+    "window": 1048576,
+    "max_output_tokens": 65536
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": true,
+    "function_calling": true,
+    "structured_output": true,
+    "json_mode": null,
+    "streaming": true
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 0.75,
+    "output": 3.75,
+    "cached_input": 0.075
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "Gemini API pricing (first-party price)",
+      "notes": "Promotional price valid through 2026-12-31; from 2027-01-01 input $1.50, output $7.50, cached input $0.15 per 1M tokens."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/models",
+      "retrieved_at": "2026-09-26",
+      "title": "Gemini API models"
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter model list",
+      "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+    }
+  ]
+}

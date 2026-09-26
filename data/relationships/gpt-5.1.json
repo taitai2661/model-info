@@ -1,0 +1,58 @@
+{
+  "model_id": "gpt-5.1",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "openai",
+      "model_id": "gpt-5.1"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-5.1",
+      "modalities": {
+        "input": [
+          "image",
+          "text",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "gpt-5.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.07,
+        "output": 8.5,
+        "cached_input": 0.107
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    }
+  ]
+}

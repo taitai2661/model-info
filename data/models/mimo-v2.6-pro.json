@@ -1,0 +1,41 @@
+{
+  "model_id": "mimo-v2.6-pro",
+  "name": "MiMo-V2.6-Pro",
+  "display_name": "MiMo-V2.6-Pro",
+  "model_provider": "xiaomi",
+  "family": "MiMo",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "context": {
+    "window": 1048576,
+    "max_output_tokens": 131072
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "video",
+      "audio"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+      "retrieved_at": "2026-09-26",
+      "title": "Xiaomi MiMo model page"
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter model list",
+      "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+    }
+  ]
+}

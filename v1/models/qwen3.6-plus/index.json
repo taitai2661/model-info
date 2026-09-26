@@ -1,0 +1,349 @@
+{
+  "model": {
+    "model_id": "qwen3.6-plus",
+    "name": "Qwen3.6-Plus",
+    "display_name": "Qwen3.6-Plus",
+    "model_provider": "qwen",
+    "family": "Qwen",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://help.aliyun.com/en/model-studio/qwen3-6-plus",
+        "retrieved_at": "2026-09-26",
+        "title": "Alibaba Cloud Model Studio model page"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "qwen",
+      "model_id": "qwen3.6-plus",
+      "provider": {
+        "id": "qwen",
+        "name": "Qwen",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "documentation_url": "https://help.aliyun.com/en/model-studio/qwen3-8-max",
+        "status": "active",
+        "description": "Alibaba's Qwen model family; served by Alibaba Cloud Model Studio (Bailian).",
+        "api": {
+          "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "Environment variable DASHSCOPE_API_KEY. The DashScope domain is the legacy shared domain; workspace-dedicated domains ([workspace-id].[region].maas.aliyuncs.com/compatible-mode/v1) and regional domains (dashscope-intl/us.aliyuncs.com) are also documented, as is an Anthropic-compatible root at https://dashscope.aliyuncs.com/apps/anthropic."
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "models": "/models",
+            "embeddings": "/embeddings"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://help.aliyun.com/en/model-studio/qwen3-8-max",
+            "retrieved_at": "2026-09-26"
+          },
+          {
+            "type": "official",
+            "url": "https://help.aliyun.com/en/model-studio/base-url",
+            "retrieved_at": "2026-09-26",
+            "title": "Model Studio Base URL overview",
+            "notes": "DashScope, workspace-dedicated, trial, and Token/Coding Plan domains and their OpenAI-compatible and Anthropic-compatible paths."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "qwen/qwen3.6-plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.325,
+        "output": 1.95
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "qwen3.6-plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.5,
+        "output": 3.0,
+        "cached_input": 0.05,
+        "cached_write": 0.625
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode",
+        "name": "OpenCode Zen",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/zen/",
+        "status": "active",
+        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/zen/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": "qwen3.6-plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.5,
+        "output": 3.0,
+        "cached_input": 0.05,
+        "cached_write": 0.625
+      },
+      "notes": "Go monthly usage limit: $60. >256K tokens: input $2.00, output $6.00, cached read $0.20, cached write $2.50.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode-go",
+        "name": "OpenCode Go",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/go/",
+        "status": "active",
+        "description": "OpenCode's $10/month subscription (Go) serving a curated set of open coding models through a dedicated endpoint; Anthropic-compatible requests are served from the same base path. Usage limits are defined in dollar value per model.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/go/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/go/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Go docs (models, pricing, limits)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/go/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Go public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "together",
+      "model_id": "Qwen/Qwen3.6-Plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.5,
+        "output": 3.0
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ],
+      "provider": {
+        "id": "together",
+        "name": "Together AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://www.together.ai",
+        "documentation_url": "https://docs.together.ai/docs/serverless",
+        "status": "active",
+        "description": "Cloud platform running open-source third-party models (serverless and dedicated) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.together.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.together.ai/docs/serverless",
+            "retrieved_at": "2026-09-26",
+            "title": "Together serverless inference"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

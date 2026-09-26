@@ -1,0 +1,62 @@
+{
+  "model_id": "claude-sonnet-5",
+  "name": "Claude Sonnet 5",
+  "display_name": "Claude Sonnet 5",
+  "model_provider": "anthropic",
+  "family": "Claude",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Claude model positioned as the best combination of speed and intelligence.",
+  "context": {
+    "window": 1000000,
+    "max_output_tokens": 128000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": true,
+    "function_calling": true,
+    "structured_output": true,
+    "json_mode": null,
+    "streaming": true
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 2,
+    "output": 10,
+    "cached_input": 0.2,
+    "cached_write": 2.5
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": false,
+    "self_hostable": false
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://platform.claude.com/docs/en/models/overview",
+      "retrieved_at": "2026-09-26",
+      "title": "Models overview"
+    },
+    {
+      "type": "official",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "Pricing"
+    }
+  ]
+}

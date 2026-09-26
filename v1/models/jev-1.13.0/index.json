@@ -1,0 +1,211 @@
+{
+  "model": {
+    "model_id": "jev-1.13.0",
+    "name": "Jev 1.13",
+    "display_name": "Jev 1.13",
+    "model_provider": "typesafe-ai",
+    "family": "Jev",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.typesafe.ai/models",
+        "retrieved_at": "2026-09-26",
+        "title": "TypeSafe AI model list"
+      },
+      {
+        "type": "official",
+        "url": "https://opencode.ai/docs/zen/",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenCode Zen docs",
+        "notes": "Zen documents 'Jev 1.13' (id jev-1.13) and links to TypeSafe AI documentation."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "typesafe-ai",
+      "model_id": "jev-1.13.0",
+      "provider": {
+        "id": "typesafe-ai",
+        "name": "TypeSafe AI",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "documentation_url": "https://docs.typesafe.ai/models",
+        "status": "active",
+        "description": "Maker of the Jev model (System One); operates the TypeSafe System One API.",
+        "api": {
+          "base_url": "https://api.typesafe.ai/v1",
+          "protocol": "https",
+          "api_style": "custom",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "Environment variable TYPESAFE_API_KEY. The evaluation endpoint is POST /v1/systemone, which is not a chat-completion style API."
+          },
+          "endpoints": {
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.typesafe.ai/models",
+            "retrieved_at": "2026-09-26"
+          },
+          {
+            "type": "official",
+            "url": "https://docs.typesafe.ai/api",
+            "retrieved_at": "2026-09-26",
+            "title": "TypeSafe API reference",
+            "notes": "POST https://api.typesafe.ai/v1/systemone with Authorization: Bearer."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "jev-1.13",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.042,
+        "output": 0
+      },
+      "notes": "Output tokens are free.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode",
+        "name": "OpenCode Zen",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/zen/",
+        "status": "active",
+        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/zen/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "jev-1.13-free",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0,
+        "output": 0
+      },
+      "notes": "Free (limited time).",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode",
+        "name": "OpenCode Zen",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/zen/",
+        "status": "active",
+        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/zen/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

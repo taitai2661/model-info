@@ -1,0 +1,368 @@
+{
+  "model": {
+    "model_id": "gpt-oss-120b",
+    "name": "GPT-OSS 120B",
+    "display_name": "GPT-OSS 120B",
+    "model_provider": "openai",
+    "family": "GPT-OSS",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "OpenAI's most powerful open-weight model: 117B parameters with 5.1B active, released under the Apache 2.0 license and sized to fit a single H100 GPU.",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-oss-120b",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI model page",
+        "notes": "Model ID, 131,072 context window, 131,072 max output tokens, text-only modalities, supported features (streaming, structured outputs, function calling), Apache 2.0 license. No OpenAI API token price is published and the page lists a zero rate limit for every usage tier, so no first-party price is recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://huggingface.co/openai/gpt-oss-120b",
+        "retrieved_at": "2026-09-26",
+        "title": "Open-weight release",
+        "notes": "Apache 2.0 weights on Hugging Face."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window for id openai/gpt-oss-120b cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.075
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 65536
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "groq",
+      "model_id": "openai/gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 65536
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://console.groq.com/docs/models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        }
+      ],
+      "provider": {
+        "id": "groq",
+        "name": "Groq",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://groq.com",
+        "documentation_url": "https://console.groq.com/docs/quickstart",
+        "status": "active",
+        "description": "Inference platform serving third-party open models on custom LPU hardware via an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.groq.com/openai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://console.groq.com/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "Groq quickstart"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "together",
+      "model_id": "openai/gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ],
+      "provider": {
+        "id": "together",
+        "name": "Together AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://www.together.ai",
+        "documentation_url": "https://docs.together.ai/docs/serverless",
+        "status": "active",
+        "description": "Cloud platform running open-source third-party models (serverless and dedicated) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.together.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.together.ai/docs/serverless",
+            "retrieved_at": "2026-09-26",
+            "title": "Together serverless inference"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "fireworks",
+      "model_id": "accounts/fireworks/models/gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.015
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.fireworks.ai/serverless/pricing.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
+        }
+      ],
+      "provider": {
+        "id": "fireworks",
+        "name": "Fireworks AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://fireworks.ai",
+        "documentation_url": "https://docs.fireworks.ai/getting-started/quickstart",
+        "status": "active",
+        "description": "AI cloud platform for open-source models; OpenAI-compatible chat endpoint plus an Anthropic-compatible endpoint served from https://api.fireworks.ai/inference.",
+        "api": {
+          "base_url": "https://api.fireworks.ai/inference/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.fireworks.ai/getting-started/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "Fireworks quickstart"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "openai.gpt-oss-120b",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-oss-120b",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "notes": "Amazon Bedrock model ids beyond the one recorded here: bedrock-runtime model id openai.gpt-oss-120b-1:0; cross-Region inference profile ids on bedrock-runtime: us-gov.openai.gpt-oss-120b-1:0.",
+      "provider": {
+        "id": "aws-bedrock",
+        "name": "Amazon Bedrock",
+        "types": [
+          "api_provider",
+          "gateway"
+        ],
+        "website": "https://aws.amazon.com/bedrock/",
+        "documentation_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+        "status": "active",
+        "description": "AWS's serverless platform for foundation models from many providers: one endpoint over Anthropic, OpenAI, Meta, Mistral, Moonshot AI, MiniMax, Z.ai and xAI models, behind AWS credentials or a Bedrock API key.",
+        "api": {
+          "base_url": "https://bedrock-runtime.{region}.amazonaws.com",
+          "protocol": "https",
+          "api_style": "custom",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "AWS credentials (Signature Version 4) or an Amazon Bedrock API key, sent as Authorization: Bearer. A second endpoint, https://bedrock-mantle.{region}.api.aws, serves the same OpenAI-compatible paths at /v1 plus Anthropic Messages at /anthropic/v1/messages. The OpenAI-compatible GET /models operation is not implemented; use ListFoundationModels and ListInferenceProfiles instead."
+          },
+          "endpoints": {
+            "chat_completions": "/openai/v1/chat/completions",
+            "responses": "/openai/v1/responses"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://aws.amazon.com/bedrock/",
+            "retrieved_at": "2026-09-26",
+            "title": "Amazon Bedrock"
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints",
+            "retrieved_at": "2026-09-26",
+            "title": "Endpoints supported by Amazon Bedrock",
+            "notes": "bedrock-runtime base URL and the /openai/v1 OpenAI-compatible paths."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-chat-completions",
+            "retrieved_at": "2026-09-26",
+            "title": "Chat Completions API",
+            "notes": "Per-region chat-completion URLs and the SigV4 / API-key authentication options."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards",
+            "retrieved_at": "2026-09-26",
+            "title": "Models at a glance",
+            "notes": "Catalogue of model cards used to build the relationship entries."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

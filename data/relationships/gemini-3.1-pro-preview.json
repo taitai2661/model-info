@@ -1,0 +1,61 @@
+{
+  "model_id": "gemini-3.1-pro-preview",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "google",
+      "model_id": "gemini-3.1-pro-preview"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "google/gemini-3.1-pro-preview",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "modalities": {
+        "input": [
+          "audio",
+          "file",
+          "image",
+          "text",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "gemini-3.1-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 12.0,
+        "cached_input": 0.2
+      },
+      "notes": ">200K tokens: input $4.00, output $18.00, cached read $0.40.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    }
+  ]
+}

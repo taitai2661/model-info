@@ -1,0 +1,26 @@
+{
+  "model_id": "hy3-preview",
+  "name": "Hy3 Preview",
+  "display_name": "Hy3 Preview",
+  "model_provider": "tencent",
+  "family": "Hy",
+  "version": null,
+  "status": "preview",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://hy.tencent.ai/research/hy3-preview",
+      "retrieved_at": "2026-09-26",
+      "title": "Tencent Hy3 preview research page",
+      "notes": "Preview release per Tencent's official research page and repository."
+    },
+    {
+      "type": "official",
+      "url": "https://github.com/Tencent-Hunyuan/Hy3-Preview",
+      "retrieved_at": "2026-09-26",
+      "title": "Tencent Hy3 preview repository"
+    }
+  ]
+}

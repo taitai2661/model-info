@@ -1,0 +1,41 @@
+{
+  "id": "moonshot",
+  "name": "Moonshot AI",
+  "types": [
+    "model_provider",
+    "api_provider"
+  ],
+  "documentation_url": "https://platform.kimi.ai/docs/models",
+  "status": "active",
+  "description": "AI company behind the Kimi model family; operates the Kimi Open Platform API.",
+  "api": {
+    "base_url": "https://api.moonshot.ai/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization",
+      "notes": "Environment variable MOONSHOT_API_KEY. An Anthropic Messages-compatible API is served from a separate root, https://api.moonshot.ai/anthropic."
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "responses": "/responses",
+      "models": "/models"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://platform.kimi.ai/docs/models",
+      "retrieved_at": "2026-09-26"
+    },
+    {
+      "type": "official",
+      "url": "https://platform.kimi.ai/docs/api/overview",
+      "retrieved_at": "2026-09-26",
+      "title": "Kimi API overview",
+      "notes": "Service address, protocol compatibility table, and endpoint list."
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

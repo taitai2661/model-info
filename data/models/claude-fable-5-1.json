@@ -1,0 +1,55 @@
+{
+  "model_id": "claude-fable-5-1",
+  "name": "Claude Fable 5.1",
+  "display_name": "Claude Fable 5.1",
+  "model_provider": "anthropic",
+  "family": "Claude",
+  "version": null,
+  "status": "preview",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "context": {
+    "window": 1000000,
+    "max_output_tokens": 128000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "file"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 10.0,
+    "output": 50.0,
+    "cached_input": 0.25,
+    "cached_write": 12.5
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
+      "retrieved_at": "2026-09-26",
+      "title": "Model page"
+    },
+    {
+      "type": "official",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "Anthropic pricing (first-party price)"
+    }
+  ],
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": true,
+    "function_calling": true,
+    "streaming": true,
+    "json_mode": null
+  }
+}

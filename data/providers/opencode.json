@@ -1,0 +1,43 @@
+{
+  "id": "opencode",
+  "name": "OpenCode Zen",
+  "types": [
+    "api_provider",
+    "aggregator",
+    "gateway"
+  ],
+  "website": "https://opencode.ai",
+  "documentation_url": "https://opencode.ai/docs/zen/",
+  "status": "active",
+  "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+  "api": {
+    "base_url": "https://opencode.ai/zen/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "responses": "/responses",
+      "messages": "/messages",
+      "models": "/models"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://opencode.ai/docs/zen/",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+    },
+    {
+      "type": "official",
+      "url": "https://opencode.ai/zen/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "Zen public model list"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

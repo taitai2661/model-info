@@ -1,0 +1,192 @@
+{
+  "model": {
+    "model_id": "claude-sonnet-4",
+    "name": "Claude Sonnet 4",
+    "display_name": "Claude Sonnet 4",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "retired",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 200000,
+      "max_output_tokens": 64000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 3.0,
+      "output": 15.0,
+      "cached_input": 0.3,
+      "cached_write": 3.75
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing",
+        "notes": "Listed as retired except on Bedrock and Google Cloud."
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Models overview (legacy models still available)"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window and max output for this retired model come from OpenRouter's public model list."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "anthropic/claude-sonnet-4",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "claude-sonnet-4",
+      "pricing": null,
+      "status": "deprecated",
+      "notes": "No price row in the Zen pricing table. Deprecated on OpenCode Zen on 2026-06-15.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode",
+        "name": "OpenCode Zen",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/zen/",
+        "status": "active",
+        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/zen/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

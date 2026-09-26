@@ -1,0 +1,26 @@
+{
+  "model_id": "jev-1.13.0",
+  "name": "Jev 1.13",
+  "display_name": "Jev 1.13",
+  "model_provider": "typesafe-ai",
+  "family": "Jev",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.typesafe.ai/models",
+      "retrieved_at": "2026-09-26",
+      "title": "TypeSafe AI model list"
+    },
+    {
+      "type": "official",
+      "url": "https://opencode.ai/docs/zen/",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenCode Zen docs",
+      "notes": "Zen documents 'Jev 1.13' (id jev-1.13) and links to TypeSafe AI documentation."
+    }
+  ]
+}

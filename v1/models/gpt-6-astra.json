@@ -1,0 +1,349 @@
+{
+  "model": {
+    "model_id": "gpt-6-astra",
+    "name": "GPT-6 Astra",
+    "display_name": "GPT-6 Astra",
+    "model_provider": "openai",
+    "family": "GPT-6",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "OpenAI's most capable model, built for complex reasoning, coding, computer use, research, and document creation.",
+    "context": {
+      "window": 1050000,
+      "max_input_tokens": 922000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 10,
+      "output": 50,
+      "cached_input": 1,
+      "cached_write": 12.5
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Pricing"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/quickstart",
+        "retrieved_at": "2026-09-26",
+        "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+        "retrieved_at": "2026-09-26",
+        "title": "Structured outputs guide",
+        "notes": "Documents JSON mode (response_format json_object) and structured outputs."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "openai",
+      "model_id": "gpt-6-astra",
+      "provider": {
+        "id": "openai",
+        "name": "OpenAI",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://openai.com",
+        "documentation_url": "https://developers.openai.com/api/docs",
+        "status": "active",
+        "description": "AI company behind the GPT series; operates the first-party OpenAI API.",
+        "api": {
+          "base_url": "https://api.openai.com/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "completions": "/completions",
+            "images": "/images/generations",
+            "moderation": "/moderations",
+            "batches": "/batch",
+            "files": "/files",
+            "fine_tuning": "/fine_tuning"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "json_mode": true,
+          "prompt_caching": true,
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://developers.openai.com/api/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenAI API quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://developers.openai.com/api/docs/pricing",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenAI pricing"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-6-astra",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "gpt-6-astra",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 10.0,
+        "output": 50.0,
+        "cached_input": 1.0,
+        "cached_write": 12.5
+      },
+      "notes": ">272K tokens: input $20.00, output $75.00, cached read $2.00, cached write $25.00.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode",
+        "name": "OpenCode Zen",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/zen/",
+        "status": "active",
+        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/zen/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "openai.gpt-6-astra",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: us.openai.gpt-6-astra; global inference profile ids: global.openai.gpt-6-astra.",
+      "provider": {
+        "id": "aws-bedrock",
+        "name": "Amazon Bedrock",
+        "types": [
+          "api_provider",
+          "gateway"
+        ],
+        "website": "https://aws.amazon.com/bedrock/",
+        "documentation_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+        "status": "active",
+        "description": "AWS's serverless platform for foundation models from many providers: one endpoint over Anthropic, OpenAI, Meta, Mistral, Moonshot AI, MiniMax, Z.ai and xAI models, behind AWS credentials or a Bedrock API key.",
+        "api": {
+          "base_url": "https://bedrock-runtime.{region}.amazonaws.com",
+          "protocol": "https",
+          "api_style": "custom",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "AWS credentials (Signature Version 4) or an Amazon Bedrock API key, sent as Authorization: Bearer. A second endpoint, https://bedrock-mantle.{region}.api.aws, serves the same OpenAI-compatible paths at /v1 plus Anthropic Messages at /anthropic/v1/messages. The OpenAI-compatible GET /models operation is not implemented; use ListFoundationModels and ListInferenceProfiles instead."
+          },
+          "endpoints": {
+            "chat_completions": "/openai/v1/chat/completions",
+            "responses": "/openai/v1/responses"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://aws.amazon.com/bedrock/",
+            "retrieved_at": "2026-09-26",
+            "title": "Amazon Bedrock"
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints",
+            "retrieved_at": "2026-09-26",
+            "title": "Endpoints supported by Amazon Bedrock",
+            "notes": "bedrock-runtime base URL and the /openai/v1 OpenAI-compatible paths."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-chat-completions",
+            "retrieved_at": "2026-09-26",
+            "title": "Chat Completions API",
+            "notes": "Per-region chat-completion URLs and the SigV4 / API-key authentication options."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards",
+            "retrieved_at": "2026-09-26",
+            "title": "Models at a glance",
+            "notes": "Catalogue of model cards used to build the relationship entries."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "provider": {
+    "id": "tencent",
+    "name": "Tencent",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://www.tencent.com",
+    "documentation_url": "https://github.com/Tencent-Hunyuan/Hy3",
+    "status": "active",
+    "description": "Tencent's Hy model family (Hunyuan); served by the Tencent MaaS TokenHub platform, which also aggregates third-party models.",
+    "api": {
+      "base_url": "https://tokenhub.tencentmaas.com/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Environment variable HUNYUAN_API_KEY (created in the TokenHub console). Regional base URLs: https://tokenhub.tencentmaas.com/v1 (Guangzhou) and https://tokenhub-intl.tencentmaas.com/v1 (Singapore). The Anthropic-compatible path /v1/messages authenticates with the x-api-key header instead. The legacy Hunyuan API at https://api.hunyuan.cloud.tencent.com/v1 is scheduled to shut down on 2026-09-30."
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "messages": "/messages",
+        "models": "/models"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://github.com/Tencent-Hunyuan/Hy3",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://hy.tencent.ai/research/hy4-preview",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://cloud.tencent.com/document/product/1823/130079",
+        "retrieved_at": "2026-09-26",
+        "title": "TokenHub language model overview",
+        "notes": "Base URL, protocol paths, and Bearer/x-api-key authentication."
+      },
+      {
+        "type": "official",
+        "url": "https://cloud.tencent.com/document/product/1823/130051",
+        "retrieved_at": "2026-09-26",
+        "title": "TokenHub model list",
+        "notes": "Model ids and context/output token limits for Hy3 and Hy4 preview."
+      },
+      {
+        "type": "official",
+        "url": "https://cloud.tencent.com/document/product/1729/131925",
+        "retrieved_at": "2026-09-26",
+        "title": "Legacy Hunyuan model retirement notice",
+        "notes": "Legacy Tencent Cloud Hunyuan platform shuts down 2026-09-30; migration target is TokenHub."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  "model_ids": [
+    "hy3",
+    "hy4-preview"
+  ]
+}

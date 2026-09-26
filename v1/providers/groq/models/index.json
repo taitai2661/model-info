@@ -1,0 +1,318 @@
+[
+  {
+    "model": {
+      "model_id": "gpt-oss-120b",
+      "name": "GPT-OSS 120B",
+      "display_name": "GPT-OSS 120B",
+      "model_provider": "openai",
+      "family": "GPT-OSS",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "OpenAI's most powerful open-weight model: 117B parameters with 5.1B active, released under the Apache 2.0 license and sized to fit a single H100 GPU.",
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": false,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true,
+        "self_hostable": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-oss-120b",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI model page",
+          "notes": "Model ID, 131,072 context window, 131,072 max output tokens, text-only modalities, supported features (streaming, structured outputs, function calling), Apache 2.0 license. No OpenAI API token price is published and the page lists a zero rate limit for every usage tier, so no first-party price is recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://huggingface.co/openai/gpt-oss-120b",
+          "retrieved_at": "2026-09-26",
+          "title": "Open-weight release",
+          "notes": "Apache 2.0 weights on Hugging Face."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window for id openai/gpt-oss-120b cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "groq",
+      "model_id": "openai/gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 65536
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://console.groq.com/docs/models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "llama-3.3-70b-instruct",
+      "name": "Llama 3.3 70B Instruct",
+      "display_name": "Llama 3.3 70B Instruct",
+      "model_provider": "meta",
+      "family": "Llama",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "Meta's 70-billion parameter instruct model with a 128K context window; open weights released under the Llama 3.3 community license.",
+      "context": {
+        "window": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": false,
+        "reasoning": false,
+        "function_calling": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true,
+        "self_hostable": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-meta-llama-3-3-70b-instruct",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card",
+          "notes": "128K context window; Bedrock caps max output at 4K tokens, other providers publish different output limits, so no single model-level max output is recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct",
+          "retrieved_at": "2026-09-26",
+          "title": "Open-weight release",
+          "notes": "Weights and Llama 3.3 license on Hugging Face."
+        },
+        {
+          "type": "official",
+          "url": "https://console.groq.com/docs/models",
+          "retrieved_at": "2026-09-26",
+          "title": "Groq supported models",
+          "notes": "131,072 context window and 32,768 max completion tokens for llama-3.3-70b-versatile."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window for id meta-llama/llama-3.3-70b-instruct cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "groq",
+      "model_id": "llama-3.3-70b-versatile",
+      "notes": "Groq lists this row as 'Llama 3.3 70B' with provider model id llama-3.3-70b-versatile.",
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://console.groq.com/docs/models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "minimax-m2.7",
+      "name": "MiniMax M2.7",
+      "display_name": "MiniMax M2.7",
+      "model_provider": "minimax",
+      "family": "MiniMax",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-26",
+          "title": "MiniMax model list"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "groq",
+      "model_id": "minimaxai/minimax-m2.7",
+      "context": {
+        "window": 196608,
+        "max_output_tokens": 131072
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://console.groq.com/docs/models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.8-27b",
+      "name": "Qwen3.8-27B",
+      "display_name": "Qwen3.8-27B",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "Dense 27B open-weight vision-language model in the Qwen3.8 family: native image and video understanding, thinking mode on by default, Apache 2.0 license.",
+      "context": {
+        "window": 262144
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "vision": true,
+        "reasoning": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true,
+        "self_hostable": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "retrieved_at": "2026-09-26",
+          "title": "Open-weight release",
+          "notes": "Native context length is 262,144 tokens, extensible to 1,000,000 with RoPE scaling; vision-language model accepting image and video input; Apache 2.0 license; thinking mode is on by default with reasoning_effort control."
+        },
+        {
+          "type": "official",
+          "url": "https://help.aliyun.com/zh/model-studio/billing",
+          "retrieved_at": "2026-09-26",
+          "title": "Model Studio model pricing",
+          "notes": "Alibaba Cloud Model Studio (Beijing region) bills qwen3.8-27b at CNY 3.00 input / CNY 12.00 output per 1M tokens. The price is region- and billing-scheme specific, so no single model-level price is recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://console.groq.com/docs/models",
+          "retrieved_at": "2026-09-26",
+          "title": "Groq supported models",
+          "notes": "Served as qwen/qwen3.8-27b with a 131,072 context window and 16,384 max completion tokens."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Served as qwen/qwen3.8-27b with a 1,000,000 token context window."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "groq",
+      "model_id": "qwen/qwen3.8-27b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.8,
+        "output": 4.0
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 16384
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://console.groq.com/docs/models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        }
+      ]
+    }
+  }
+]

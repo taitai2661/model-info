@@ -1,0 +1,76 @@
+{
+  "model_id": "gpt-6-astra",
+  "name": "GPT-6 Astra",
+  "display_name": "GPT-6 Astra",
+  "model_provider": "openai",
+  "family": "GPT-6",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "OpenAI's most capable model, built for complex reasoning, coding, computer use, research, and document creation.",
+  "context": {
+    "window": 1050000,
+    "max_input_tokens": 922000,
+    "max_output_tokens": 128000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": true,
+    "function_calling": true,
+    "structured_output": true,
+    "json_mode": true,
+    "streaming": true
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 10,
+    "output": 50,
+    "cached_input": 1,
+    "cached_write": 12.5
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": false,
+    "self_hostable": false
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "retrieved_at": "2026-09-26",
+      "title": "Model page"
+    },
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "Pricing"
+    },
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/quickstart",
+      "retrieved_at": "2026-09-26",
+      "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+    },
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+      "retrieved_at": "2026-09-26",
+      "title": "Structured outputs guide",
+      "notes": "Documents JSON mode (response_format json_object) and structured outputs."
+    }
+  ]
+}

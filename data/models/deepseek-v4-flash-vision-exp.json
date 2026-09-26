@@ -1,0 +1,57 @@
+{
+  "model_id": "deepseek-v4-flash-vision-exp",
+  "name": "DeepSeek V4 Flash Vision Exp",
+  "display_name": "DeepSeek V4 Flash Vision Exp",
+  "model_provider": "deepseek",
+  "family": "DeepSeek",
+  "version": null,
+  "status": "retired",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Legacy alias: DeepSeek states requests are served by the DeepSeek-V4.1-Flash model and billed at the flash price; context/max output follow the serving model.",
+  "context": {
+    "window": 1048576,
+    "max_output_tokens": 393216
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": true,
+    "function_calling": true,
+    "structured_output": null,
+    "json_mode": true,
+    "streaming": true
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 0.15,
+    "output": 0.6,
+    "cached_input": 0.003
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "DeepSeek models & pricing",
+      "notes": "Legacy name; DeepSeek serves these requests with the DeepSeek-V4.1-Flash model and bills at the flash price (off-peak). Max output stated as 384K; context/max output follow the serving model."
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter model list",
+      "notes": "Modalities cross-checked against OpenRouter's public model list."
+    }
+  ]
+}

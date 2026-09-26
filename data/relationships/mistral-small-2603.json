@@ -1,0 +1,31 @@
+{
+  "model_id": "mistral-small-2603",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "mistral",
+      "model_id": "mistral-small-2603"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "mistralai/mistral-small-2603",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      }
+    }
+  ]
+}

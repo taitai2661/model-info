@@ -1,0 +1,310 @@
+{
+  "model": {
+    "model_id": "claude-opus-4-7",
+    "name": "Claude Opus 4.7",
+    "display_name": "Claude Opus 4.7",
+    "model_provider": "anthropic",
+    "family": "Claude",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 5.0,
+      "output": 25.0,
+      "cached_input": 0.5,
+      "cached_write": 6.25
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/models/opus-4-7/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Anthropic pricing (first-party price)"
+      }
+    ],
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true,
+      "json_mode": null
+    }
+  },
+  "providers": [
+    {
+      "provider_id": "anthropic",
+      "model_id": "claude-opus-4-7",
+      "provider": {
+        "id": "anthropic",
+        "name": "Anthropic",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.anthropic.com",
+        "documentation_url": "https://platform.claude.com/docs/en/api/overview",
+        "status": "active",
+        "description": "AI safety company behind the Claude models; operates the first-party Claude API.",
+        "api": {
+          "base_url": "https://api.anthropic.com",
+          "protocol": "https",
+          "api_style": "anthropic",
+          "authentication": {
+            "type": "api_key",
+            "header": "X-Api-Key",
+            "notes": "Requests also require the anthropic-version header."
+          },
+          "endpoints": {
+            "messages": "/v1/messages",
+            "models": "/v1/models",
+            "batches": "/v1/messages/batches"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "prompt_caching": true,
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://platform.claude.com/docs/en/api/overview",
+            "retrieved_at": "2026-09-26",
+            "title": "Claude API overview"
+          },
+          {
+            "type": "official",
+            "url": "https://docs.anthropic.com/en/api/models-list",
+            "retrieved_at": "2026-09-26",
+            "title": "Models API"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "anthropic/claude-opus-4.7",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "claude-opus-4-7",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 5.0,
+        "output": 25.0,
+        "cached_input": 0.5,
+        "cached_write": 6.25
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode",
+        "name": "OpenCode Zen",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/zen/",
+        "status": "active",
+        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/zen/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "anthropic.claude-opus-4-7",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-opus-4-7",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: au.anthropic.claude-opus-4-7, eu.anthropic.claude-opus-4-7, jp.anthropic.claude-opus-4-7, us.anthropic.claude-opus-4-7; global inference profile ids: global.anthropic.claude-opus-4-7.",
+      "provider": {
+        "id": "aws-bedrock",
+        "name": "Amazon Bedrock",
+        "types": [
+          "api_provider",
+          "gateway"
+        ],
+        "website": "https://aws.amazon.com/bedrock/",
+        "documentation_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+        "status": "active",
+        "description": "AWS's serverless platform for foundation models from many providers: one endpoint over Anthropic, OpenAI, Meta, Mistral, Moonshot AI, MiniMax, Z.ai and xAI models, behind AWS credentials or a Bedrock API key.",
+        "api": {
+          "base_url": "https://bedrock-runtime.{region}.amazonaws.com",
+          "protocol": "https",
+          "api_style": "custom",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "AWS credentials (Signature Version 4) or an Amazon Bedrock API key, sent as Authorization: Bearer. A second endpoint, https://bedrock-mantle.{region}.api.aws, serves the same OpenAI-compatible paths at /v1 plus Anthropic Messages at /anthropic/v1/messages. The OpenAI-compatible GET /models operation is not implemented; use ListFoundationModels and ListInferenceProfiles instead."
+          },
+          "endpoints": {
+            "chat_completions": "/openai/v1/chat/completions",
+            "responses": "/openai/v1/responses"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://aws.amazon.com/bedrock/",
+            "retrieved_at": "2026-09-26",
+            "title": "Amazon Bedrock"
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints",
+            "retrieved_at": "2026-09-26",
+            "title": "Endpoints supported by Amazon Bedrock",
+            "notes": "bedrock-runtime base URL and the /openai/v1 OpenAI-compatible paths."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-chat-completions",
+            "retrieved_at": "2026-09-26",
+            "title": "Chat Completions API",
+            "notes": "Per-region chat-completion URLs and the SigV4 / API-key authentication options."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards",
+            "retrieved_at": "2026-09-26",
+            "title": "Models at a glance",
+            "notes": "Catalogue of model cards used to build the relationship entries."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

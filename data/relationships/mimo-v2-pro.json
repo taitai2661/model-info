@@ -1,0 +1,27 @@
+{
+  "model_id": "mimo-v2-pro",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "opencode-go",
+      "model_id": "mimo-v2-pro",
+      "pricing": null,
+      "notes": "No price row in the Go pricing table.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "model_id": "gpt-5.6-terra",
+  "name": "GPT-5.6 Terra",
+  "display_name": "GPT-5.6 Terra",
+  "model_provider": "openai",
+  "family": "GPT-5",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "context": {
+    "window": 1050000,
+    "max_output_tokens": 128000,
+    "max_input_tokens": 922000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": true,
+    "function_calling": true,
+    "structured_output": true,
+    "json_mode": true,
+    "streaming": true
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 2.0,
+    "output": 12.0,
+    "cached_input": 0.2,
+    "cached_write": 2.5
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+      "retrieved_at": "2026-09-26",
+      "title": "Model page"
+    },
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenAI pricing",
+      "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "fireworks",
+  "name": "Fireworks AI",
+  "types": [
+    "api_provider",
+    "platform"
+  ],
+  "website": "https://fireworks.ai",
+  "documentation_url": "https://docs.fireworks.ai/getting-started/quickstart",
+  "status": "active",
+  "description": "AI cloud platform for open-source models; OpenAI-compatible chat endpoint plus an Anthropic-compatible endpoint served from https://api.fireworks.ai/inference.",
+  "api": {
+    "base_url": "https://api.fireworks.ai/inference/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "embeddings": "/embeddings",
+      "rerank": "/rerank"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.fireworks.ai/getting-started/quickstart",
+      "retrieved_at": "2026-09-26",
+      "title": "Fireworks quickstart"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

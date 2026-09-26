@@ -1,0 +1,89 @@
+{
+  "model_id": "nemotron-3.5-lightning",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "nvidia",
+      "model_id": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://build.nvidia.com/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA API Catalog model list",
+          "notes": "Provider model id is the API Catalog id, which carries the parameter configuration."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "nvidia/nemotron-3.5-lightning",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.08,
+        "output": 0.2,
+        "cached_input": 0.04
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 131072
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "nemotron-3.5-lightning-free",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
+      "notes": "Free (limited time).",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "fireworks",
+      "model_id": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
+      "notes": "Fireworks lists 'NVIDIA Nemotron 3.5 Lightning 30B A3B' as accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b; NVIDIA documents the model as a 30B MoE with 3B active parameters.",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.05,
+        "output": 0.2,
+        "cached_input": 0.01
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.fireworks.ai/serverless/pricing.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
+        }
+      ]
+    }
+  ]
+}

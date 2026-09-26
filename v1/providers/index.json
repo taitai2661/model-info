@@ -1,0 +1,1031 @@
+[
+  {
+    "id": "ant-group",
+    "name": "Ant Group",
+    "types": [
+      "model_provider"
+    ],
+    "documentation_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+    "status": "active",
+    "description": "Ant Group's Ling model family.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
+        "retrieved_at": "2026-09-26"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "anthropic",
+    "name": "Anthropic",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://www.anthropic.com",
+    "documentation_url": "https://platform.claude.com/docs/en/api/overview",
+    "status": "active",
+    "description": "AI safety company behind the Claude models; operates the first-party Claude API.",
+    "api": {
+      "base_url": "https://api.anthropic.com",
+      "protocol": "https",
+      "api_style": "anthropic",
+      "authentication": {
+        "type": "api_key",
+        "header": "X-Api-Key",
+        "notes": "Requests also require the anthropic-version header."
+      },
+      "endpoints": {
+        "messages": "/v1/messages",
+        "models": "/v1/models",
+        "batches": "/v1/messages/batches"
+      }
+    },
+    "api_capabilities": {
+      "streaming": true,
+      "tool_calling": true,
+      "structured_output": true,
+      "prompt_caching": true,
+      "batch": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.claude.com/docs/en/api/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Claude API overview"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.anthropic.com/en/api/models-list",
+        "retrieved_at": "2026-09-26",
+        "title": "Models API"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "aws-bedrock",
+    "name": "Amazon Bedrock",
+    "types": [
+      "api_provider",
+      "gateway"
+    ],
+    "website": "https://aws.amazon.com/bedrock/",
+    "documentation_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+    "status": "active",
+    "description": "AWS's serverless platform for foundation models from many providers: one endpoint over Anthropic, OpenAI, Meta, Mistral, Moonshot AI, MiniMax, Z.ai and xAI models, behind AWS credentials or a Bedrock API key.",
+    "api": {
+      "base_url": "https://bedrock-runtime.{region}.amazonaws.com",
+      "protocol": "https",
+      "api_style": "custom",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "AWS credentials (Signature Version 4) or an Amazon Bedrock API key, sent as Authorization: Bearer. A second endpoint, https://bedrock-mantle.{region}.api.aws, serves the same OpenAI-compatible paths at /v1 plus Anthropic Messages at /anthropic/v1/messages. The OpenAI-compatible GET /models operation is not implemented; use ListFoundationModels and ListInferenceProfiles instead."
+      },
+      "endpoints": {
+        "chat_completions": "/openai/v1/chat/completions",
+        "responses": "/openai/v1/responses"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://aws.amazon.com/bedrock/",
+        "retrieved_at": "2026-09-26",
+        "title": "Amazon Bedrock"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints",
+        "retrieved_at": "2026-09-26",
+        "title": "Endpoints supported by Amazon Bedrock",
+        "notes": "bedrock-runtime base URL and the /openai/v1 OpenAI-compatible paths."
+      },
+      {
+        "type": "official",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-chat-completions",
+        "retrieved_at": "2026-09-26",
+        "title": "Chat Completions API",
+        "notes": "Per-region chat-completion URLs and the SigV4 / API-key authentication options."
+      },
+      {
+        "type": "official",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards",
+        "retrieved_at": "2026-09-26",
+        "title": "Models at a glance",
+        "notes": "Catalogue of model cards used to build the relationship entries."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://www.deepseek.com",
+    "documentation_url": "https://api-docs.deepseek.com",
+    "status": "active",
+    "description": "AI company behind the DeepSeek models; operates the DeepSeek API in OpenAI format (an Anthropic-compatible endpoint is served from https://api.deepseek.com/anthropic).",
+    "api": {
+      "base_url": "https://api.deepseek.com",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "models": "/models"
+      }
+    },
+    "api_capabilities": {
+      "streaming": true,
+      "tool_calling": true,
+      "json_mode": true,
+      "prompt_caching": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "DeepSeek models & pricing"
+      },
+      {
+        "type": "official",
+        "url": "https://api-docs.deepseek.com/api/create-chat-completion",
+        "retrieved_at": "2026-09-26",
+        "title": "Chat completion API reference"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "fireworks",
+    "name": "Fireworks AI",
+    "types": [
+      "api_provider",
+      "platform"
+    ],
+    "website": "https://fireworks.ai",
+    "documentation_url": "https://docs.fireworks.ai/getting-started/quickstart",
+    "status": "active",
+    "description": "AI cloud platform for open-source models; OpenAI-compatible chat endpoint plus an Anthropic-compatible endpoint served from https://api.fireworks.ai/inference.",
+    "api": {
+      "base_url": "https://api.fireworks.ai/inference/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "embeddings": "/embeddings",
+        "rerank": "/rerank"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.fireworks.ai/getting-started/quickstart",
+        "retrieved_at": "2026-09-26",
+        "title": "Fireworks quickstart"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "google",
+    "name": "Google",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://www.google.com",
+    "documentation_url": "https://ai.google.dev/gemini-api/docs/models",
+    "status": "active",
+    "description": "Google's Gemini models and the Gemini Developer API (Google AI for Developers).",
+    "api": {
+      "base_url": "https://generativelanguage.googleapis.com",
+      "protocol": "https",
+      "api_style": "google_generative_ai",
+      "authentication": {
+        "type": "api_key",
+        "header": "x-goog-api-key"
+      },
+      "endpoints": {
+        "models": "/v1beta/models",
+        "interactions": "/v1beta/interactions"
+      }
+    },
+    "api_capabilities": {
+      "streaming": true,
+      "tool_calling": true,
+      "structured_output": true,
+      "prompt_caching": true,
+      "batch": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/quickstart",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API quickstart"
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API models"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "groq",
+    "name": "Groq",
+    "types": [
+      "api_provider",
+      "platform"
+    ],
+    "website": "https://groq.com",
+    "documentation_url": "https://console.groq.com/docs/quickstart",
+    "status": "active",
+    "description": "Inference platform serving third-party open models on custom LPU hardware via an OpenAI-compatible API.",
+    "api": {
+      "base_url": "https://api.groq.com/openai/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "models": "/models"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://console.groq.com/docs/quickstart",
+        "retrieved_at": "2026-09-26",
+        "title": "Groq quickstart"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "meituan",
+    "name": "Meituan",
+    "types": [
+      "model_provider"
+    ],
+    "documentation_url": "https://github.com/meituan-longcat/LongCat-2.0",
+    "status": "active",
+    "description": "Meituan's LongCat model family.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://github.com/meituan-longcat/LongCat-2.0",
+        "retrieved_at": "2026-09-26"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "meta",
+    "name": "Meta",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "documentation_url": "https://dev.meta.ai/docs/pricing-rate-limits",
+    "status": "active",
+    "description": "Meta's Muse Spark model family; operates the Meta Model API.",
+    "api": {
+      "base_url": "https://api.meta.ai/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Environment variable MODEL_API_KEY. An Anthropic Messages-compatible endpoint is also served at /v1/messages."
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "messages": "/messages",
+        "models": "/models",
+        "files": "/files",
+        "images": "/images/generations"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://dev.meta.ai/docs/api-reference",
+        "retrieved_at": "2026-09-26",
+        "title": "Meta Model API reference",
+        "notes": "Base URL, auth header, and endpoint list taken from the API reference overview."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "minimax",
+    "name": "MiniMax",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://www.minimax.io",
+    "documentation_url": "https://platform.minimax.io/docs/guides/models-intro",
+    "status": "active",
+    "description": "AI company behind the MiniMax model family; operates the MiniMax API.",
+    "api": {
+      "base_url": "https://api.minimax.io/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Environment variable MINIMAX_API_KEY. An Anthropic-compatible API is served from https://api.minimax.io/anthropic using the X-Api-Key header."
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "models": "/models"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.minimax.io/docs/guides/models-intro",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.minimax.io/docs/guides/text-generation",
+        "retrieved_at": "2026-09-26",
+        "title": "MiniMax model invocation",
+        "notes": "OpenAI-compatible base_url https://api.minimax.io/v1 and Anthropic-compatible base_url https://api.minimax.io/anthropic."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "mistral",
+    "name": "Mistral AI",
+    "types": [
+      "model_provider",
+      "api_provider",
+      "platform"
+    ],
+    "website": "https://mistral.ai",
+    "documentation_url": "https://docs.mistral.ai",
+    "status": "active",
+    "description": "European AI company releasing open-weight and commercial models; operates the Mistral API.",
+    "api": {
+      "base_url": "https://api.mistral.ai/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "models": "/models",
+        "batches": "/batch"
+      }
+    },
+    "api_capabilities": {
+      "streaming": true,
+      "tool_calling": true,
+      "structured_output": true,
+      "batch": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.mistral.ai/api",
+        "retrieved_at": "2026-09-26",
+        "title": "Mistral API reference"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.mistral.ai/inference/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Mistral pricing"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "moonshot",
+    "name": "Moonshot AI",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "documentation_url": "https://platform.kimi.ai/docs/models",
+    "status": "active",
+    "description": "AI company behind the Kimi model family; operates the Kimi Open Platform API.",
+    "api": {
+      "base_url": "https://api.moonshot.ai/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Environment variable MOONSHOT_API_KEY. An Anthropic Messages-compatible API is served from a separate root, https://api.moonshot.ai/anthropic."
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "models": "/models"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.kimi.ai/docs/models",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://platform.kimi.ai/docs/api/overview",
+        "retrieved_at": "2026-09-26",
+        "title": "Kimi API overview",
+        "notes": "Service address, protocol compatibility table, and endpoint list."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "nvidia",
+    "name": "NVIDIA",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://www.nvidia.com",
+    "documentation_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+    "status": "active",
+    "description": "NVIDIA's Nemotron model family; hosted NIM endpoints are served by the NVIDIA API Catalog.",
+    "api": {
+      "base_url": "https://integrate.api.nvidia.com/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Environment variable NVIDIA_API_KEY (issued at build.nvidia.com/settings)."
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "models": "/models",
+        "embeddings": "/embeddings"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://developer.nvidia.com/topics/ai/nemotron",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/llms.txt",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA API Catalog overview",
+        "notes": "Shared base URL https://integrate.api.nvidia.com/v1 and Bearer authentication."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "openai",
+    "name": "OpenAI",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://openai.com",
+    "documentation_url": "https://developers.openai.com/api/docs",
+    "status": "active",
+    "description": "AI company behind the GPT series; operates the first-party OpenAI API.",
+    "api": {
+      "base_url": "https://api.openai.com/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "models": "/models",
+        "embeddings": "/embeddings",
+        "completions": "/completions",
+        "images": "/images/generations",
+        "moderation": "/moderations",
+        "batches": "/batch",
+        "files": "/files",
+        "fine_tuning": "/fine_tuning"
+      }
+    },
+    "api_capabilities": {
+      "streaming": true,
+      "tool_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "prompt_caching": true,
+      "batch": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/quickstart",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI API quickstart"
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI pricing"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "opencode",
+    "name": "OpenCode Zen",
+    "types": [
+      "api_provider",
+      "aggregator",
+      "gateway"
+    ],
+    "website": "https://opencode.ai",
+    "documentation_url": "https://opencode.ai/docs/zen/",
+    "status": "active",
+    "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+    "api": {
+      "base_url": "https://opencode.ai/zen/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "messages": "/messages",
+        "models": "/models"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://opencode.ai/docs/zen/",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+      },
+      {
+        "type": "official",
+        "url": "https://opencode.ai/zen/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Zen public model list"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "opencode-go",
+    "name": "OpenCode Go",
+    "types": [
+      "api_provider",
+      "aggregator",
+      "gateway"
+    ],
+    "website": "https://opencode.ai",
+    "documentation_url": "https://opencode.ai/docs/go/",
+    "status": "active",
+    "description": "OpenCode's $10/month subscription (Go) serving a curated set of open coding models through a dedicated endpoint; Anthropic-compatible requests are served from the same base path. Usage limits are defined in dollar value per model.",
+    "api": {
+      "base_url": "https://opencode.ai/zen/go/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "messages": "/messages",
+        "models": "/models"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://opencode.ai/docs/go/",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenCode Go docs (models, pricing, limits)"
+      },
+      {
+        "type": "official",
+        "url": "https://opencode.ai/zen/go/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Go public model list"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "openrouter",
+    "name": "OpenRouter",
+    "types": [
+      "api_provider",
+      "aggregator",
+      "gateway"
+    ],
+    "website": "https://openrouter.ai",
+    "documentation_url": "https://openrouter.ai/docs/quickstart",
+    "status": "active",
+    "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+    "api": {
+      "base_url": "https://openrouter.ai/api/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "models": "/models",
+        "embeddings": "/embeddings",
+        "rerank": "/rerank"
+      }
+    },
+    "api_capabilities": {
+      "batch": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://openrouter.ai/docs/quickstart",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter quickstart"
+      },
+      {
+        "type": "official",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Public model list"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "qwen",
+    "name": "Qwen",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "documentation_url": "https://help.aliyun.com/en/model-studio/qwen3-8-max",
+    "status": "active",
+    "description": "Alibaba's Qwen model family; served by Alibaba Cloud Model Studio (Bailian).",
+    "api": {
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Environment variable DASHSCOPE_API_KEY. The DashScope domain is the legacy shared domain; workspace-dedicated domains ([workspace-id].[region].maas.aliyuncs.com/compatible-mode/v1) and regional domains (dashscope-intl/us.aliyuncs.com) are also documented, as is an Anthropic-compatible root at https://dashscope.aliyuncs.com/apps/anthropic."
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "models": "/models",
+        "embeddings": "/embeddings"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://help.aliyun.com/en/model-studio/qwen3-8-max",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://help.aliyun.com/en/model-studio/base-url",
+        "retrieved_at": "2026-09-26",
+        "title": "Model Studio Base URL overview",
+        "notes": "DashScope, workspace-dedicated, trial, and Token/Coding Plan domains and their OpenAI-compatible and Anthropic-compatible paths."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "tencent",
+    "name": "Tencent",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://www.tencent.com",
+    "documentation_url": "https://github.com/Tencent-Hunyuan/Hy3",
+    "status": "active",
+    "description": "Tencent's Hy model family (Hunyuan); served by the Tencent MaaS TokenHub platform, which also aggregates third-party models.",
+    "api": {
+      "base_url": "https://tokenhub.tencentmaas.com/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Environment variable HUNYUAN_API_KEY (created in the TokenHub console). Regional base URLs: https://tokenhub.tencentmaas.com/v1 (Guangzhou) and https://tokenhub-intl.tencentmaas.com/v1 (Singapore). The Anthropic-compatible path /v1/messages authenticates with the x-api-key header instead. The legacy Hunyuan API at https://api.hunyuan.cloud.tencent.com/v1 is scheduled to shut down on 2026-09-30."
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "messages": "/messages",
+        "models": "/models"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://github.com/Tencent-Hunyuan/Hy3",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://hy.tencent.ai/research/hy4-preview",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://cloud.tencent.com/document/product/1823/130079",
+        "retrieved_at": "2026-09-26",
+        "title": "TokenHub language model overview",
+        "notes": "Base URL, protocol paths, and Bearer/x-api-key authentication."
+      },
+      {
+        "type": "official",
+        "url": "https://cloud.tencent.com/document/product/1823/130051",
+        "retrieved_at": "2026-09-26",
+        "title": "TokenHub model list",
+        "notes": "Model ids and context/output token limits for Hy3 and Hy4 preview."
+      },
+      {
+        "type": "official",
+        "url": "https://cloud.tencent.com/document/product/1729/131925",
+        "retrieved_at": "2026-09-26",
+        "title": "Legacy Hunyuan model retirement notice",
+        "notes": "Legacy Tencent Cloud Hunyuan platform shuts down 2026-09-30; migration target is TokenHub."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "together",
+    "name": "Together AI",
+    "types": [
+      "api_provider",
+      "platform"
+    ],
+    "website": "https://www.together.ai",
+    "documentation_url": "https://docs.together.ai/docs/serverless",
+    "status": "active",
+    "description": "Cloud platform running open-source third-party models (serverless and dedicated) behind an OpenAI-compatible API.",
+    "api": {
+      "base_url": "https://api.together.ai/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "models": "/models",
+        "embeddings": "/embeddings",
+        "rerank": "/rerank"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.together.ai/docs/serverless",
+        "retrieved_at": "2026-09-26",
+        "title": "Together serverless inference"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "typesafe-ai",
+    "name": "TypeSafe AI",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "documentation_url": "https://docs.typesafe.ai/models",
+    "status": "active",
+    "description": "Maker of the Jev model (System One); operates the TypeSafe System One API.",
+    "api": {
+      "base_url": "https://api.typesafe.ai/v1",
+      "protocol": "https",
+      "api_style": "custom",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Environment variable TYPESAFE_API_KEY. The evaluation endpoint is POST /v1/systemone, which is not a chat-completion style API."
+      },
+      "endpoints": {
+        "models": "/models"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.typesafe.ai/models",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.typesafe.ai/api",
+        "retrieved_at": "2026-09-26",
+        "title": "TypeSafe API reference",
+        "notes": "POST https://api.typesafe.ai/v1/systemone with Authorization: Bearer."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "xai",
+    "name": "xAI",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://x.ai",
+    "documentation_url": "https://docs.x.ai/developers/models",
+    "status": "active",
+    "description": "AI company behind the Grok model family; operates the xAI API.",
+    "api": {
+      "base_url": "https://api.x.ai/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Environment variable XAI_API_KEY. An Anthropic Messages-compatible endpoint is also served at /v1/messages."
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "messages": "/messages",
+        "models": "/models",
+        "embeddings": "/embeddings",
+        "images": "/images/generations",
+        "files": "/files"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/models",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/quickstart",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI API quickstart"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/openapi.json",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI OpenAPI specification",
+        "notes": "Endpoint paths confirmed against the published OpenAPI document."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "xiaomi",
+    "name": "Xiaomi",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://mimo.mi.com",
+    "documentation_url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+    "status": "active",
+    "description": "Xiaomi's MiMo model family; operated by the Xiaomi MiMo API Open Platform.",
+    "api": {
+      "base_url": "https://api.xiaomimimo.com/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Environment variable MIMO_API_KEY. An Anthropic-compatible root is served at https://api.xiaomimimo.com/anthropic. Batch inference uses https://batch-api-cn.xiaomimimo.com/v1 and Token Plan subscribers use https://token-plan-cn.xiaomimimo.com/v1."
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "models": "/models"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/first-api-call",
+        "retrieved_at": "2026-09-26",
+        "title": "MiMo first API call",
+        "notes": "Pay-as-you-go base URL and OpenAI/Anthropic protocol compatibility."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "zai",
+    "name": "Z.ai",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "website": "https://z.ai",
+    "documentation_url": "https://docs.z.ai/guides/overview/pricing",
+    "status": "active",
+    "description": "AI company behind the GLM model family (Zhipu AI / Z.ai); operates the Z.AI API.",
+    "api": {
+      "base_url": "https://api.z.ai/api/paas/v4",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "models": "/models",
+        "embeddings": "/embeddings",
+        "images": "/image/generate",
+        "audio": "/audio/transcriptions"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/guides/overview/pricing",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.z.ai/api-reference/introduction",
+        "retrieved_at": "2026-09-26",
+        "title": "Z.AI API introduction",
+        "notes": "API endpoint and HTTP Bearer authentication."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  }
+]

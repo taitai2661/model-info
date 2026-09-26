@@ -1,0 +1,20 @@
+{
+  "model_id": "hy4-preview",
+  "name": "Hy4 Preview",
+  "display_name": "Hy4 Preview",
+  "model_provider": "tencent",
+  "family": "Hy",
+  "version": null,
+  "status": "preview",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://hy.tencent.ai/research/hy4-preview",
+      "retrieved_at": "2026-09-26",
+      "title": "Tencent Hy4 preview research page",
+      "notes": "Preview release per Tencent's official research page."
+    }
+  ]
+}

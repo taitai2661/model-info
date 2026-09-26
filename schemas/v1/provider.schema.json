@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Model Info — Provider",
+  "description": "A provider entity: a model developer, an API provider, an aggregator/gateway, or a runtime/platform. One service can hold several roles via `types`. Unknown values must be null (or the key omitted); never guess.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "types", "status", "updated_at"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$",
+      "description": "Lowercase identifier, unique. Must match the file name data/providers/{id}.json."
+    },
+    "name": {"type": "string", "minLength": 1, "maxLength": 256},
+    "types": {
+      "description": "Roles this service plays. model_provider = develops models; api_provider = sells API access; aggregator/gateway = resells third-party models; runtime/platform = executes models locally or on a platform.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "enum": ["model_provider", "api_provider", "aggregator", "gateway", "runtime", "platform"]}
+    },
+    "website": {"type": ["string", "null"], "pattern": "^https?://"},
+    "documentation_url": {"type": ["string", "null"], "pattern": "^https?://"},
+    "status": {"$ref": "#/$defs/status"},
+    "description": {"type": ["string", "null"], "maxLength": 4000},
+    "api": {"$ref": "#/$defs/api"},
+    "api_capabilities": {"$ref": "#/$defs/apiCapabilities"},
+    "sources": {"$ref": "#/$defs/sources"},
+    "updated_at": {"$ref": "#/$defs/date"}
+  },
+  "$defs": {
+    "status": {
+      "type": "string",
+      "enum": ["active", "preview", "experimental", "deprecated", "retired", "unknown"]
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "nullableDate": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "baseUrl": {
+      "type": ["string", "null"],
+      "pattern": "^https?://[^\\s?#]+$",
+      "description": "API root only (e.g. https://api.example.com/v1). No endpoint path beyond the API root, no query, no fragment."
+    },
+    "endpointPath": {
+      "type": ["string", "null"],
+      "pattern": "^/[^?#]*$",
+      "description": "Absolute path relative to base_url (e.g. /chat/completions). Not a full URL, no query, no fragment."
+    },
+    "api": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "base_url": {"$ref": "#/$defs/baseUrl"},
+        "protocol": {"type": ["string", "null"], "enum": ["https", "http", null]},
+        "api_style": {"type": ["string", "null"], "enum": ["openai_compatible", "anthropic", "google_generative_ai", "custom", null]},
+        "authentication": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["type"],
+          "properties": {
+            "type": {"type": "string", "enum": ["bearer", "api_key", "oauth", "none", "custom"]},
+            "header": {
+              "description": "Header name used for the credential (never the credential itself).",
+              "type": ["string", "null"],
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "notes": {"type": ["string", "null"], "maxLength": 1000}
+          }
+        },
+        "endpoints": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "chat_completions": {"$ref": "#/$defs/endpointPath"},
+            "responses": {"$ref": "#/$defs/endpointPath"},
+            "messages": {"$ref": "#/$defs/endpointPath"},
+            "models": {"$ref": "#/$defs/endpointPath"},
+            "embeddings": {"$ref": "#/$defs/endpointPath"},
+            "completions": {"$ref": "#/$defs/endpointPath"},
+            "rerank": {"$ref": "#/$defs/endpointPath"},
+            "images": {"$ref": "#/$defs/endpointPath"},
+            "audio": {"$ref": "#/$defs/endpointPath"},
+            "moderation": {"$ref": "#/$defs/endpointPath"},
+            "batches": {"$ref": "#/$defs/endpointPath"},
+            "files": {"$ref": "#/$defs/endpointPath"},
+            "fine_tuning": {"$ref": "#/$defs/endpointPath"},
+            "interactions": {"$ref": "#/$defs/endpointPath"}
+          }
+        }
+      }
+    },
+    "apiCapabilities": {
+      "description": "What the provider's API supports (distinct from model capabilities).",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "streaming": {"type": ["boolean", "null"]},
+        "tool_calling": {"type": ["boolean", "null"]},
+        "structured_output": {"type": ["boolean", "null"]},
+        "json_mode": {"type": ["boolean", "null"]},
+        "prompt_caching": {"type": ["boolean", "null"]},
+        "batch": {"type": ["boolean", "null"]}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "url", "retrieved_at"],
+      "properties": {
+        "type": {"type": "string", "enum": ["official", "documentation", "community", "manual"]},
+        "url": {"type": "string", "pattern": "^https?://"},
+        "retrieved_at": {"$ref": "#/$defs/date"},
+        "title": {"type": ["string", "null"], "maxLength": 256},
+        "notes": {"type": ["string", "null"], "maxLength": 1000}
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/source"}
+    }
+  }
+}

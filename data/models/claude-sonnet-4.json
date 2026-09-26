@@ -1,0 +1,55 @@
+{
+  "model_id": "claude-sonnet-4",
+  "name": "Claude Sonnet 4",
+  "display_name": "Claude Sonnet 4",
+  "model_provider": "anthropic",
+  "family": "Claude",
+  "version": null,
+  "status": "retired",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "context": {
+    "window": 200000,
+    "max_output_tokens": 64000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "file"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 3.0,
+    "output": 15.0,
+    "cached_input": 0.3,
+    "cached_write": 3.75
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "Anthropic pricing",
+      "notes": "Listed as retired except on Bedrock and Google Cloud."
+    },
+    {
+      "type": "official",
+      "url": "https://platform.claude.com/docs/en/models/overview",
+      "retrieved_at": "2026-09-26",
+      "title": "Models overview (legacy models still available)"
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter model list",
+      "notes": "Context window and max output for this retired model come from OpenRouter's public model list."
+    }
+  ]
+}

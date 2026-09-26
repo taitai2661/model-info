@@ -1,0 +1,216 @@
+[
+  {
+    "model": {
+      "model_id": "mistral-large-2512",
+      "name": "Mistral Large 3",
+      "display_name": "Mistral Large 3",
+      "model_provider": "mistral",
+      "family": "Mistral",
+      "version": "25.12",
+      "status": "active",
+      "release_date": "2025-12-02",
+      "updated_at": "2026-09-26",
+      "description": "State-of-the-art open-weight general-purpose multimodal model with a granular Mixture-of-Experts architecture (41B active, 675B total parameters), released under Apache 2.0.",
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 209715
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": null,
+        "function_calling": true,
+        "structured_output": true,
+        "json_mode": null,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.5,
+        "output": 1.5,
+        "cached_input": 0.05
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true,
+        "self_hostable": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.mistral.ai/models/mistral-large-3-25-12",
+          "retrieved_at": "2026-09-26",
+          "title": "Model page"
+        },
+        {
+          "type": "official",
+          "url": "https://docs.mistral.ai/inference/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Pricing"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter public model list",
+          "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+        }
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      }
+    },
+    "relationship": {
+      "provider_id": "mistral",
+      "model_id": "mistral-large-2512"
+    }
+  },
+  {
+    "model": {
+      "model_id": "mistral-medium-3-5",
+      "name": "Mistral Medium 3.5",
+      "display_name": "Mistral Medium 3.5",
+      "model_provider": "mistral",
+      "family": "Mistral",
+      "version": "26.04",
+      "status": "active",
+      "release_date": "2026-04-28",
+      "updated_at": "2026-09-26",
+      "description": "Frontier-class multimodal model optimized for agentic and coding use cases, released as open weights under a Modified MIT license.",
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 209715
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": null,
+        "function_calling": true,
+        "structured_output": true,
+        "json_mode": null,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.5,
+        "output": 7.5,
+        "cached_input": 0.15
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true,
+        "self_hostable": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.mistral.ai/models/mistral-medium-3-5-26-04",
+          "retrieved_at": "2026-09-26",
+          "title": "Model page"
+        },
+        {
+          "type": "official",
+          "url": "https://docs.mistral.ai/inference/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Pricing"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter public model list",
+          "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+        }
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      }
+    },
+    "relationship": {
+      "provider_id": "mistral",
+      "model_id": "mistral-medium-3-5"
+    }
+  },
+  {
+    "model": {
+      "model_id": "mistral-small-2603",
+      "name": "Mistral Small 4",
+      "display_name": "Mistral Small 4",
+      "model_provider": "mistral",
+      "family": "Mistral",
+      "version": "26.03",
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "Hybrid model unifying instruct, reasoning, and coding in a single efficient model, released under Apache 2.0.",
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 209715
+      },
+      "capabilities": {
+        "tool_use": null,
+        "vision": null,
+        "reasoning": null,
+        "function_calling": null,
+        "structured_output": null,
+        "json_mode": null,
+        "streaming": null
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.015
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true,
+        "self_hostable": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.mistral.ai/models/mistral-small-4-0-26-03",
+          "retrieved_at": "2026-09-26",
+          "title": "Model page"
+        },
+        {
+          "type": "official",
+          "url": "https://docs.mistral.ai/inference/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Pricing"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter public model list",
+          "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "mistral",
+      "model_id": "mistral-small-2603"
+    }
+  }
+]

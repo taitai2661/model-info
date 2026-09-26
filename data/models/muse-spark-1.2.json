@@ -1,0 +1,42 @@
+{
+  "model_id": "muse-spark-1.2",
+  "name": "Muse Spark 1.2",
+  "display_name": "Muse Spark 1.2",
+  "model_provider": "meta",
+  "family": "Muse Spark",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "context": {
+    "window": 1048576,
+    "max_output_tokens": 943718
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+      "retrieved_at": "2026-09-26",
+      "title": "Meta dev pricing"
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter model list",
+      "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+    }
+  ]
+}

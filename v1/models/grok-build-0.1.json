@@ -1,0 +1,248 @@
+{
+  "model": {
+    "model_id": "grok-build-0.1",
+    "name": "Grok Build 0.1",
+    "display_name": "Grok Build 0.1",
+    "model_provider": "xai",
+    "family": "Grok",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "context": {
+      "window": 256000,
+      "max_output_tokens": 230400
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.0,
+      "output": 2.0,
+      "cached_input": 0.2
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/models",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI model page"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "xAI pricing (first-party price)",
+        "notes": "Base price below the model's long-context threshold (200k tokens; 256k for Grok Build 0.1). Prompts at or above the threshold bill at 2x base rates for the whole request."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter model list",
+        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "xai",
+      "model_id": "grok-build-0.1",
+      "provider": {
+        "id": "xai",
+        "name": "xAI",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://x.ai",
+        "documentation_url": "https://docs.x.ai/developers/models",
+        "status": "active",
+        "description": "AI company behind the Grok model family; operates the xAI API.",
+        "api": {
+          "base_url": "https://api.x.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "Environment variable XAI_API_KEY. An Anthropic Messages-compatible endpoint is also served at /v1/messages."
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "images": "/images/generations",
+            "files": "/files"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.x.ai/developers/models",
+            "retrieved_at": "2026-09-26"
+          },
+          {
+            "type": "official",
+            "url": "https://docs.x.ai/developers/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "xAI API quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://docs.x.ai/openapi.json",
+            "retrieved_at": "2026-09-26",
+            "title": "xAI OpenAPI specification",
+            "notes": "Endpoint paths confirmed against the published OpenAPI document."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "x-ai/grok-build-0.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.0,
+        "output": 2.0,
+        "cached_input": 0.2
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "grok-build-0.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.0,
+        "output": 2.0,
+        "cached_input": 0.2
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode",
+        "name": "OpenCode Zen",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/zen/",
+        "status": "active",
+        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/zen/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

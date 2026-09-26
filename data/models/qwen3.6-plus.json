@@ -1,0 +1,40 @@
+{
+  "model_id": "qwen3.6-plus",
+  "name": "Qwen3.6-Plus",
+  "display_name": "Qwen3.6-Plus",
+  "model_provider": "qwen",
+  "family": "Qwen",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "context": {
+    "window": 1000000,
+    "max_output_tokens": 65536
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://help.aliyun.com/en/model-studio/qwen3-6-plus",
+      "retrieved_at": "2026-09-26",
+      "title": "Alibaba Cloud Model Studio model page"
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter model list",
+      "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+    }
+  ]
+}

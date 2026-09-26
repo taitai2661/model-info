@@ -1,0 +1,50 @@
+{
+  "model_id": "claude-sonnet-4",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "anthropic/claude-sonnet-4",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "modalities": {
+        "input": [
+          "image",
+          "text",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "claude-sonnet-4",
+      "pricing": null,
+      "status": "deprecated",
+      "notes": "No price row in the Zen pricing table. Deprecated on OpenCode Zen on 2026-06-15.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    }
+  ]
+}

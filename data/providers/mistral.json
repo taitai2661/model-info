@@ -1,0 +1,48 @@
+{
+  "id": "mistral",
+  "name": "Mistral AI",
+  "types": [
+    "model_provider",
+    "api_provider",
+    "platform"
+  ],
+  "website": "https://mistral.ai",
+  "documentation_url": "https://docs.mistral.ai",
+  "status": "active",
+  "description": "European AI company releasing open-weight and commercial models; operates the Mistral API.",
+  "api": {
+    "base_url": "https://api.mistral.ai/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models",
+      "batches": "/batch"
+    }
+  },
+  "api_capabilities": {
+    "streaming": true,
+    "tool_calling": true,
+    "structured_output": true,
+    "batch": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.mistral.ai/api",
+      "retrieved_at": "2026-09-26",
+      "title": "Mistral API reference"
+    },
+    {
+      "type": "official",
+      "url": "https://docs.mistral.ai/inference/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "Mistral pricing"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

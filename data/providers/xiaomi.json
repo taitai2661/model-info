@@ -1,0 +1,41 @@
+{
+  "id": "xiaomi",
+  "name": "Xiaomi",
+  "types": [
+    "model_provider",
+    "api_provider"
+  ],
+  "website": "https://mimo.mi.com",
+  "documentation_url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+  "status": "active",
+  "description": "Xiaomi's MiMo model family; operated by the Xiaomi MiMo API Open Platform.",
+  "api": {
+    "base_url": "https://api.xiaomimimo.com/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization",
+      "notes": "Environment variable MIMO_API_KEY. An Anthropic-compatible root is served at https://api.xiaomimimo.com/anthropic. Batch inference uses https://batch-api-cn.xiaomimimo.com/v1 and Token Plan subscribers use https://token-plan-cn.xiaomimimo.com/v1."
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+      "retrieved_at": "2026-09-26"
+    },
+    {
+      "type": "official",
+      "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/first-api-call",
+      "retrieved_at": "2026-09-26",
+      "title": "MiMo first API call",
+      "notes": "Pay-as-you-go base URL and OpenAI/Anthropic protocol compatibility."
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

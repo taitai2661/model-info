@@ -1,0 +1,74 @@
+{
+  "model_id": "gpt-6-astra",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "openai",
+      "model_id": "gpt-6-astra"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-6-astra",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "gpt-6-astra",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 10.0,
+        "output": 50.0,
+        "cached_input": 1.0,
+        "cached_write": 12.5
+      },
+      "notes": ">272K tokens: input $20.00, output $75.00, cached read $2.00, cached write $25.00.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "openai.gpt-6-astra",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: us.openai.gpt-6-astra; global inference profile ids: global.openai.gpt-6-astra."
+    }
+  ]
+}

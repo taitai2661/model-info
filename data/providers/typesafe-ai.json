@@ -1,0 +1,39 @@
+{
+  "id": "typesafe-ai",
+  "name": "TypeSafe AI",
+  "types": [
+    "model_provider",
+    "api_provider"
+  ],
+  "documentation_url": "https://docs.typesafe.ai/models",
+  "status": "active",
+  "description": "Maker of the Jev model (System One); operates the TypeSafe System One API.",
+  "api": {
+    "base_url": "https://api.typesafe.ai/v1",
+    "protocol": "https",
+    "api_style": "custom",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization",
+      "notes": "Environment variable TYPESAFE_API_KEY. The evaluation endpoint is POST /v1/systemone, which is not a chat-completion style API."
+    },
+    "endpoints": {
+      "models": "/models"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.typesafe.ai/models",
+      "retrieved_at": "2026-09-26"
+    },
+    {
+      "type": "official",
+      "url": "https://docs.typesafe.ai/api",
+      "retrieved_at": "2026-09-26",
+      "title": "TypeSafe API reference",
+      "notes": "POST https://api.typesafe.ai/v1/systemone with Authorization: Bearer."
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

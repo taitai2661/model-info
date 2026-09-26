@@ -1,0 +1,43 @@
+{
+  "id": "opencode-go",
+  "name": "OpenCode Go",
+  "types": [
+    "api_provider",
+    "aggregator",
+    "gateway"
+  ],
+  "website": "https://opencode.ai",
+  "documentation_url": "https://opencode.ai/docs/go/",
+  "status": "active",
+  "description": "OpenCode's $10/month subscription (Go) serving a curated set of open coding models through a dedicated endpoint; Anthropic-compatible requests are served from the same base path. Usage limits are defined in dollar value per model.",
+  "api": {
+    "base_url": "https://opencode.ai/zen/go/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "responses": "/responses",
+      "messages": "/messages",
+      "models": "/models"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://opencode.ai/docs/go/",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenCode Go docs (models, pricing, limits)"
+    },
+    {
+      "type": "official",
+      "url": "https://opencode.ai/zen/go/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "Go public model list"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

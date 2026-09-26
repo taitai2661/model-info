@@ -1,0 +1,21 @@
+{
+  "provider": {
+    "id": "meituan",
+    "name": "Meituan",
+    "types": [
+      "model_provider"
+    ],
+    "documentation_url": "https://github.com/meituan-longcat/LongCat-2.0",
+    "status": "active",
+    "description": "Meituan's LongCat model family.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://github.com/meituan-longcat/LongCat-2.0",
+        "retrieved_at": "2026-09-26"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  "model_ids": []
+}

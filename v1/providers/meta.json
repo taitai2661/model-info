@@ -1,0 +1,50 @@
+{
+  "provider": {
+    "id": "meta",
+    "name": "Meta",
+    "types": [
+      "model_provider",
+      "api_provider"
+    ],
+    "documentation_url": "https://dev.meta.ai/docs/pricing-rate-limits",
+    "status": "active",
+    "description": "Meta's Muse Spark model family; operates the Meta Model API.",
+    "api": {
+      "base_url": "https://api.meta.ai/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Environment variable MODEL_API_KEY. An Anthropic Messages-compatible endpoint is also served at /v1/messages."
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "messages": "/messages",
+        "models": "/models",
+        "files": "/files",
+        "images": "/images/generations"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+        "retrieved_at": "2026-09-26"
+      },
+      {
+        "type": "official",
+        "url": "https://dev.meta.ai/docs/api-reference",
+        "retrieved_at": "2026-09-26",
+        "title": "Meta Model API reference",
+        "notes": "Base URL, auth header, and endpoint list taken from the API reference overview."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  "model_ids": [
+    "muse-spark-1.2",
+    "muse-spark-1.3"
+  ]
+}

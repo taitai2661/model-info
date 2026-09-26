@@ -1,0 +1,51 @@
+{
+  "model_id": "qwen3.8-27b",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "qwen/qwen3.8-27b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.42,
+        "output": 3.0,
+        "cached_input": 0.085
+      },
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 131072
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "groq",
+      "model_id": "qwen/qwen3.8-27b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.8,
+        "output": 4.0
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 16384
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://console.groq.com/docs/models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        }
+      ]
+    }
+  ]
+}

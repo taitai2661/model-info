@@ -1,0 +1,38 @@
+{
+  "model_id": "gpt-5-codex",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "openai",
+      "model_id": "gpt-5-codex"
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "gpt-5-codex",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.07,
+        "output": 8.5,
+        "cached_input": 0.107
+      },
+      "status": "deprecated",
+      "notes": "Deprecated on OpenCode Zen on 2026-07-23.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    }
+  ]
+}

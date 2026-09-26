@@ -1,0 +1,94 @@
+{
+  "model": {
+    "model_id": "mimo-v2-pro",
+    "name": "MiMo V2 Pro",
+    "display_name": "MiMo V2 Pro",
+    "model_provider": "xiaomi",
+    "family": "MiMo",
+    "version": null,
+    "status": "unknown",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+        "retrieved_at": "2026-09-26",
+        "title": "Xiaomi MiMo model page",
+        "notes": "Not currently listed on Xiaomi's model page; registered from the OpenCode Go catalog."
+      },
+      {
+        "type": "official",
+        "url": "https://opencode.ai/zen/go/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenCode Go model list"
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "opencode-go",
+      "model_id": "mimo-v2-pro",
+      "pricing": null,
+      "notes": "No price row in the Go pricing table.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode-go",
+        "name": "OpenCode Go",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/go/",
+        "status": "active",
+        "description": "OpenCode's $10/month subscription (Go) serving a curated set of open coding models through a dedicated endpoint; Anthropic-compatible requests are served from the same base path. Usage limits are defined in dollar value per model.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/go/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/go/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Go docs (models, pricing, limits)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/go/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Go public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

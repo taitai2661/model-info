@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Model Info — Model",
+  "description": "A model as developed by its model provider. This schema unifies the response format of the Model Info API for model entities. Unknown values must be null (or the key omitted); never guess.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["model_id", "name", "model_provider", "status", "updated_at"],
+  "properties": {
+    "model_id": {"$ref": "#/$defs/modelId"},
+    "name": {"type": "string", "minLength": 1, "maxLength": 256},
+    "display_name": {"type": ["string", "null"], "minLength": 1, "maxLength": 256},
+    "model_provider": {"$ref": "#/$defs/providerId"},
+    "family": {"type": ["string", "null"], "minLength": 1, "maxLength": 128},
+    "version": {"type": ["string", "null"], "minLength": 1, "maxLength": 128},
+    "status": {"$ref": "#/$defs/status"},
+    "release_date": {"$ref": "#/$defs/nullableDate"},
+    "updated_at": {"$ref": "#/$defs/date"},
+    "description": {"type": ["string", "null"], "maxLength": 4000},
+    "context": {"$ref": "#/$defs/context"},
+    "modalities": {"$ref": "#/$defs/modalities"},
+    "capabilities": {"$ref": "#/$defs/capabilities"},
+    "pricing": {"$ref": "#/$defs/pricing"},
+    "provider_pricing": {
+      "description": "Per-provider pricing overrides keyed by provider_id. Only use for prices that differ from the model-level pricing.",
+      "type": "object",
+      "propertyNames": {"$ref": "#/$defs/providerId"},
+      "additionalProperties": {"$ref": "#/$defs/pricing"}
+    },
+    "runtime": {
+      "description": "Execution environments (not API providers) that can run this model.",
+      "type": "object",
+      "propertyNames": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_]*$"},
+      "additionalProperties": {"type": ["boolean", "null"]}
+    },
+    "availability": {"$ref": "#/$defs/availability"},
+    "sources": {"$ref": "#/$defs/sources"}
+  },
+  "$defs": {
+    "modelId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$",
+      "description": "Canonical identifier of the model, unique across Model Info. Must match the file name data/models/{model_id}.json."
+    },
+    "providerId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$",
+      "description": "Lowercase identifier of a registered provider. Must exist in data/providers/."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "preview", "experimental", "deprecated", "retired", "unknown"]
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "nullableDate": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "window": {"type": ["integer", "null"], "minimum": 0},
+        "max_output_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "max_input_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "reasoning_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "cached_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "tokenizer": {"type": ["string", "null"], "minLength": 1, "maxLength": 64}
+      }
+    },
+    "modality": {
+      "type": "string",
+      "enum": ["text", "image", "audio", "video", "file"]
+    },
+    "modalities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input", "output"],
+      "properties": {
+        "input": {"type": "array", "items": {"$ref": "#/$defs/modality"}, "uniqueItems": true},
+        "output": {"type": "array", "items": {"$ref": "#/$defs/modality"}, "uniqueItems": true}
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tool_use": {"type": ["boolean", "null"]},
+        "vision": {"type": ["boolean", "null"]},
+        "reasoning": {"type": ["boolean", "null"]},
+        "function_calling": {"type": ["boolean", "null"]},
+        "structured_output": {"type": ["boolean", "null"]},
+        "json_mode": {"type": ["boolean", "null"]},
+        "streaming": {"type": ["boolean", "null"]}
+      }
+    },
+    "pricing": {
+      "description": "Prices must be null when unknown; 0 means explicitly free. All prices share currency and unit.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "currency": {"type": ["string", "null"], "pattern": "^[A-Z]{3}$"},
+        "unit": {"type": ["string", "null"], "enum": ["1M_tokens", "1K_tokens", "1_token", "per_request", null]},
+        "input": {"type": ["number", "null"], "minimum": 0},
+        "output": {"type": ["number", "null"], "minimum": 0},
+        "cached_input": {"type": ["number", "null"], "minimum": 0},
+        "cached_write": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "availability": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "api": {"type": ["boolean", "null"]},
+        "cloud": {"type": ["boolean", "null"]},
+        "open_weights": {"type": ["boolean", "null"]},
+        "self_hostable": {"type": ["boolean", "null"]}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "url", "retrieved_at"],
+      "properties": {
+        "type": {"type": "string", "enum": ["official", "documentation", "community", "manual"]},
+        "url": {"type": "string", "pattern": "^https?://"},
+        "retrieved_at": {"$ref": "#/$defs/date"},
+        "title": {"type": ["string", "null"], "maxLength": 256},
+        "notes": {"type": ["string", "null"], "maxLength": 1000}
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/source"}
+    }
+  }
+}

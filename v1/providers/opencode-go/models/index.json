@@ -1,0 +1,2915 @@
+[
+  {
+    "model": {
+      "model_id": "deepseek-flash",
+      "name": "DeepSeek Flash",
+      "display_name": "DeepSeek Flash",
+      "model_provider": "deepseek",
+      "family": "DeepSeek",
+      "version": "DeepSeek-V4.1-Flash",
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "DeepSeek's fast multimodal model (model version DeepSeek-V4.1-Flash) with thinking and non-thinking modes, vision, tool calls, JSON output, and Responses API support.",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 393216
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": null,
+        "json_mode": true,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true,
+        "self_hostable": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Models & pricing",
+          "notes": "Prices are off-peak rates; peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri, excluding PRC public holidays) cost 2x. Max output is stated as 384K."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter public model list",
+          "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+        },
+        {
+          "type": "official",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "retrieved_at": "2026-09-26",
+          "title": "Model weights"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "deepseek-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "notes": "Go monthly usage limit: $60. Peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri) cost 2x: input $0.30, output $1.20, cached read $0.006.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "deepseek-flash",
+      "name": "DeepSeek Flash",
+      "display_name": "DeepSeek Flash",
+      "model_provider": "deepseek",
+      "family": "DeepSeek",
+      "version": "DeepSeek-V4.1-Flash",
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "DeepSeek's fast multimodal model (model version DeepSeek-V4.1-Flash) with thinking and non-thinking modes, vision, tool calls, JSON output, and Responses API support.",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 393216
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": null,
+        "json_mode": true,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true,
+        "self_hostable": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Models & pricing",
+          "notes": "Prices are off-peak rates; peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri, excluding PRC public holidays) cost 2x. Max output is stated as 384K."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter public model list",
+          "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+        },
+        {
+          "type": "official",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "retrieved_at": "2026-09-26",
+          "title": "Model weights"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "deepseek-v4.1-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "notes": "Go monthly usage limit: $60. Peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri) cost 2x: input $0.30, output $1.20, cached read $0.006.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "deepseek-v4-flash",
+      "name": "DeepSeek V4 Flash",
+      "display_name": "DeepSeek V4 Flash",
+      "model_provider": "deepseek",
+      "family": "DeepSeek",
+      "version": null,
+      "status": "retired",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "Legacy alias: DeepSeek states requests are served by the DeepSeek-V4.1-Flash model and billed at the flash price; context/max output follow the serving model.",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 393216
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": false,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": null,
+        "json_mode": true,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "DeepSeek models & pricing",
+          "notes": "Legacy name; DeepSeek serves these requests with the DeepSeek-V4.1-Flash model and bills at the flash price (off-peak). Max output stated as 384K; context/max output follow the serving model."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "deepseek-v4-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "notes": "Go monthly usage limit: $30. Peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri) cost 2x: input $0.30, output $1.20, cached read $0.006.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "deepseek-v4-flash-vision-exp",
+      "name": "DeepSeek V4 Flash Vision Exp",
+      "display_name": "DeepSeek V4 Flash Vision Exp",
+      "model_provider": "deepseek",
+      "family": "DeepSeek",
+      "version": null,
+      "status": "retired",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "Legacy alias: DeepSeek states requests are served by the DeepSeek-V4.1-Flash model and billed at the flash price; context/max output follow the serving model.",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 393216
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": null,
+        "json_mode": true,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "DeepSeek models & pricing",
+          "notes": "Legacy name; DeepSeek serves these requests with the DeepSeek-V4.1-Flash model and bills at the flash price (off-peak). Max output stated as 384K; context/max output follow the serving model."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "deepseek-v4-flash-vision-exp",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "notes": "Go monthly usage limit: $15. Peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri) cost 2x: input $0.30, output $1.20, cached read $0.006. Images are converted to tokens by dimension and billed as input tokens.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "deepseek-v4-pro",
+      "name": "DeepSeek V4 Pro",
+      "display_name": "DeepSeek V4 Pro",
+      "model_provider": "deepseek",
+      "family": "DeepSeek",
+      "version": "DeepSeek-V4-Pro-0813",
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "DeepSeek's flagship Pro model (model version DeepSeek-V4-Pro-0813) with thinking and non-thinking modes, tool calls, JSON output, and Responses API support; no vision input.",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 384000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": false,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": null,
+        "json_mode": true,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.66,
+        "output": 1.98,
+        "cached_input": 0.022
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true,
+        "self_hostable": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Models & pricing",
+          "notes": "Prices are off-peak rates; peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri, excluding PRC public holidays) cost 2x. Max output is stated as 384K."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter public model list",
+          "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+        },
+        {
+          "type": "official",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+          "retrieved_at": "2026-09-26",
+          "title": "Model weights"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "deepseek-v4-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.66,
+        "output": 1.98,
+        "cached_input": 0.022
+      },
+      "notes": "Go monthly usage limit: $15. Peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri) cost 2x: input $1.32, output $3.96, cached read $0.044.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "glm-5",
+      "name": "GLM-5",
+      "display_name": "GLM-5",
+      "model_provider": "zai",
+      "family": "GLM",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.0,
+        "output": 3.2,
+        "cached_input": 0.2
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.z.ai/guides/overview/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Z.ai pricing (first-party price)"
+        },
+        {
+          "type": "official",
+          "url": "https://docs.z.ai/guides/overview/quick-start",
+          "retrieved_at": "2026-09-26",
+          "title": "Z.ai quick start"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "glm-5",
+      "pricing": null,
+      "notes": "No price row in the Go pricing table.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "glm-5.1",
+      "name": "GLM-5.1",
+      "display_name": "GLM-5.1",
+      "model_provider": "zai",
+      "family": "GLM",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.4,
+        "output": 4.4,
+        "cached_input": 0.26
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.z.ai/guides/overview/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Z.ai pricing (first-party price)"
+        },
+        {
+          "type": "official",
+          "url": "https://docs.z.ai/guides/overview/quick-start",
+          "retrieved_at": "2026-09-26",
+          "title": "Z.ai quick start"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "glm-5.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.4,
+        "output": 4.4,
+        "cached_input": 0.26
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "glm-5.2",
+      "name": "GLM-5.2",
+      "display_name": "GLM-5.2",
+      "model_provider": "zai",
+      "family": "GLM",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.4,
+        "output": 4.4,
+        "cached_input": 0.26
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.z.ai/guides/overview/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Z.ai pricing (first-party price)"
+        },
+        {
+          "type": "official",
+          "url": "https://docs.z.ai/guides/overview/quick-start",
+          "retrieved_at": "2026-09-26",
+          "title": "Z.ai quick start"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "glm-5.2",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.4,
+        "output": 4.4,
+        "cached_input": 0.26
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "glm-5.3",
+      "name": "GLM-5.3",
+      "display_name": "GLM-5.3",
+      "model_provider": "zai",
+      "family": "GLM",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1310720,
+        "max_output_tokens": 943717
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.4,
+        "output": 4.4,
+        "cached_input": 0.26
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.z.ai/guides/overview/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Z.ai pricing (first-party price)"
+        },
+        {
+          "type": "official",
+          "url": "https://docs.z.ai/guides/overview/quick-start",
+          "retrieved_at": "2026-09-26",
+          "title": "Z.ai quick start"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "glm-5.3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.4,
+        "output": 4.4,
+        "cached_input": 0.26
+      },
+      "notes": "Go monthly usage limit: $15.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "glm-5.3-flash",
+      "name": "GLM-5.3-Flash",
+      "display_name": "GLM-5.3-Flash",
+      "model_provider": "zai",
+      "family": "GLM",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1310720,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.5,
+        "cached_input": 0.03
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.z.ai/guides/overview/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Z.ai pricing (first-party price)"
+        },
+        {
+          "type": "official",
+          "url": "https://docs.z.ai/guides/overview/quick-start",
+          "retrieved_at": "2026-09-26",
+          "title": "Z.ai quick start"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "glm-5.3-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.5,
+        "cached_input": 0.03
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-5.6-luna",
+      "name": "GPT-5.6 Luna",
+      "display_name": "GPT-5.6 Luna",
+      "model_provider": "openai",
+      "family": "GPT-5",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1050000,
+        "max_output_tokens": 128000,
+        "max_input_tokens": 922000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "json_mode": true,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.2,
+        "output": 1.2,
+        "cached_input": 0.02,
+        "cached_write": 0.125
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+          "retrieved_at": "2026-09-26",
+          "title": "Model page"
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI pricing",
+          "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "gpt-5.6-luna",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.2,
+        "output": 1.2,
+        "cached_input": 0.02,
+        "cached_write": 0.25
+      },
+      "notes": "Go monthly usage limit: $15. >272K tokens: input $0.40, output $1.80, cached read $0.04, cached write $0.50.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-6-luna",
+      "name": "GPT-6 Luna",
+      "display_name": "GPT-6 Luna",
+      "model_provider": "openai",
+      "family": "GPT-6",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "OpenAI's most efficient GPT-6 model for focused, high-volume tasks.",
+      "context": {
+        "window": 1050000,
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "json_mode": true,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.1,
+        "output": 0.5,
+        "cached_input": 0.01,
+        "cached_write": 0.125
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+          "retrieved_at": "2026-09-26",
+          "title": "Model page"
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Pricing"
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/quickstart",
+          "retrieved_at": "2026-09-26",
+          "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+          "retrieved_at": "2026-09-26",
+          "title": "Structured outputs guide",
+          "notes": "Documents JSON mode (response_format json_object) and structured outputs."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "gpt-6-luna",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.1,
+        "output": 0.5,
+        "cached_input": 0.01,
+        "cached_write": 0.125
+      },
+      "notes": "Go monthly usage limit: $15. >272K tokens: input $0.20, output $0.75, cached read $0.02, cached write $0.25.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "grok-4.5",
+      "name": "Grok 4.5",
+      "display_name": "Grok 4.5",
+      "model_provider": "xai",
+      "family": "Grok",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 500000,
+        "max_output_tokens": 450000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 6.0,
+        "cached_input": 0.3
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/models",
+          "retrieved_at": "2026-09-26",
+          "title": "xAI model page"
+        },
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "xAI pricing (first-party price)",
+          "notes": "Base price below the model's long-context threshold (200k tokens; 256k for Grok Build 0.1). Prompts at or above the threshold bill at 2x base rates for the whole request."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "grok-4.5",
+      "pricing": null,
+      "notes": "No price row in the Go pricing table.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "grok-4.6",
+      "name": "Grok 4.6",
+      "display_name": "Grok 4.6",
+      "model_provider": "xai",
+      "family": "Grok",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 500000,
+        "max_output_tokens": 450000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 6.0,
+        "cached_input": 0.5
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/models",
+          "retrieved_at": "2026-09-26",
+          "title": "xAI model page"
+        },
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "xAI pricing (first-party price)",
+          "notes": "Base price below the model's long-context threshold (200k tokens; 256k for Grok Build 0.1). Prompts at or above the threshold bill at 2x base rates for the whole request."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "grok-4.6",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 6.0,
+        "cached_input": 0.5
+      },
+      "notes": "Go monthly usage limit: $15. >200K tokens: input $4.00, output $12.00, cached read $1.00.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "grok-4.7",
+      "name": "Grok 4.7",
+      "display_name": "Grok 4.7",
+      "model_provider": "xai",
+      "family": "Grok",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 500000,
+        "max_output_tokens": 450000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 6.0,
+        "cached_input": 0.5
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/models",
+          "retrieved_at": "2026-09-26",
+          "title": "xAI model page"
+        },
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "xAI pricing (first-party price)",
+          "notes": "Base price below the model's long-context threshold (200k tokens; 256k for Grok Build 0.1). Prompts at or above the threshold bill at 2x base rates for the whole request."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "grok-4.7",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 6.0,
+        "cached_input": 0.5
+      },
+      "notes": "Go monthly usage limit: $15. >200K tokens: input $4.00, output $12.00, cached read $1.00.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "hy3",
+      "name": "Hy3",
+      "display_name": "Hy3",
+      "model_provider": "tencent",
+      "family": "Hy",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://github.com/Tencent-Hunyuan/Hy3",
+          "retrieved_at": "2026-09-26",
+          "title": "Tencent Hy3 repository",
+          "notes": "Hy3 is Tencent's 295B (A21B) reasoning and agent model per the official repository."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "hy3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.14,
+        "output": 0.58,
+        "cached_input": 0.035
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "hy3-preview",
+      "name": "Hy3 Preview",
+      "display_name": "Hy3 Preview",
+      "model_provider": "tencent",
+      "family": "Hy",
+      "version": null,
+      "status": "preview",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://hy.tencent.ai/research/hy3-preview",
+          "retrieved_at": "2026-09-26",
+          "title": "Tencent Hy3 preview research page",
+          "notes": "Preview release per Tencent's official research page and repository."
+        },
+        {
+          "type": "official",
+          "url": "https://github.com/Tencent-Hunyuan/Hy3-Preview",
+          "retrieved_at": "2026-09-26",
+          "title": "Tencent Hy3 preview repository"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "hy3-preview",
+      "pricing": null,
+      "notes": "No price row in the Go pricing table.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "hy4-preview",
+      "name": "Hy4 Preview",
+      "display_name": "Hy4 Preview",
+      "model_provider": "tencent",
+      "family": "Hy",
+      "version": null,
+      "status": "preview",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://hy.tencent.ai/research/hy4-preview",
+          "retrieved_at": "2026-09-26",
+          "title": "Tencent Hy4 preview research page",
+          "notes": "Preview release per Tencent's official research page."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "hy4-preview",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.834,
+        "output": 2.501,
+        "cached_input": 0.042
+      },
+      "notes": "Go monthly usage limit: $30.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "kimi-k2.5",
+      "name": "Kimi K2.5",
+      "display_name": "Kimi K2.5",
+      "model_provider": "moonshot",
+      "family": "Kimi",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 235929
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.kimi.ai/docs/models",
+          "retrieved_at": "2026-09-26",
+          "title": "Moonshot model list"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "kimi-k2.5",
+      "pricing": null,
+      "notes": "No price row in the Go pricing table.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "kimi-k2.6",
+      "name": "Kimi K2.6",
+      "display_name": "Kimi K2.6",
+      "model_provider": "moonshot",
+      "family": "Kimi",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 235929
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.kimi.ai/docs/models",
+          "retrieved_at": "2026-09-26",
+          "title": "Moonshot model list"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "kimi-k2.6",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.95,
+        "output": 4.0,
+        "cached_input": 0.16
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "kimi-k2.7-code",
+      "name": "Kimi K2.7 Code",
+      "display_name": "Kimi K2.7 Code",
+      "model_provider": "moonshot",
+      "family": "Kimi",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 235929
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.kimi.ai/docs/models",
+          "retrieved_at": "2026-09-26",
+          "title": "Moonshot model list"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "kimi-k2.7-code",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.95,
+        "output": 4.0,
+        "cached_input": 0.19
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "kimi-k3",
+      "name": "Kimi K3",
+      "display_name": "Kimi K3",
+      "model_provider": "moonshot",
+      "family": "Kimi",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 943718
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.kimi.ai/docs/models",
+          "retrieved_at": "2026-09-26",
+          "title": "Moonshot model list"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "kimi-k3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3
+      },
+      "notes": "Go monthly usage limit: $15.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "longcat-2.0",
+      "name": "LongCat-2.0",
+      "display_name": "LongCat-2.0",
+      "model_provider": "meituan",
+      "family": "LongCat",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1048756,
+        "max_output_tokens": 262144
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://github.com/meituan-longcat/LongCat-2.0",
+          "retrieved_at": "2026-09-26",
+          "title": "Meituan LongCat repository"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "longcat-2.0",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.006
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "mimo-v2-omni",
+      "name": "MiMo V2 Omni",
+      "display_name": "MiMo V2 Omni",
+      "model_provider": "xiaomi",
+      "family": "MiMo",
+      "version": null,
+      "status": "unknown",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+          "retrieved_at": "2026-09-26",
+          "title": "Xiaomi MiMo model page",
+          "notes": "Not currently listed on Xiaomi's model page; registered from the OpenCode Go catalog."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go model list"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "mimo-v2-omni",
+      "pricing": null,
+      "notes": "No price row in the Go pricing table.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "mimo-v2-pro",
+      "name": "MiMo V2 Pro",
+      "display_name": "MiMo V2 Pro",
+      "model_provider": "xiaomi",
+      "family": "MiMo",
+      "version": null,
+      "status": "unknown",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+          "retrieved_at": "2026-09-26",
+          "title": "Xiaomi MiMo model page",
+          "notes": "Not currently listed on Xiaomi's model page; registered from the OpenCode Go catalog."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go model list"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "mimo-v2-pro",
+      "pricing": null,
+      "notes": "No price row in the Go pricing table.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "mimo-v2.5",
+      "name": "MiMo-V2.5",
+      "display_name": "MiMo-V2.5",
+      "model_provider": "xiaomi",
+      "family": "MiMo",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1050000,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "audio",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+          "retrieved_at": "2026-09-26",
+          "title": "Xiaomi MiMo model page",
+          "notes": "Xiaomi has announced that mimo-v2.5-pro and mimo-v2.5 will be deprecated at 10:00 Beijing time on 2026-10-21."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "mimo-v2.5",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.14,
+        "output": 0.28,
+        "cached_input": 0.0028
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "mimo-v2.5-pro",
+      "name": "MiMo-V2.5-Pro",
+      "display_name": "MiMo-V2.5-Pro",
+      "model_provider": "xiaomi",
+      "family": "MiMo",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1050000,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+          "retrieved_at": "2026-09-26",
+          "title": "Xiaomi MiMo model page",
+          "notes": "Xiaomi has announced that mimo-v2.5-pro and mimo-v2.5 will be deprecated at 10:00 Beijing time on 2026-10-21."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "mimo-v2.5-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.435,
+        "output": 0.87,
+        "cached_input": 0.003625
+      },
+      "notes": "Go monthly usage limit: $15.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "mimo-v2.6-flash",
+      "name": "MiMo-V2.6-Flash",
+      "display_name": "MiMo-V2.6-Flash",
+      "model_provider": "xiaomi",
+      "family": "MiMo",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+          "retrieved_at": "2026-09-26",
+          "title": "Xiaomi MiMo model page"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "mimo-v2.6-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.14,
+        "output": 0.28,
+        "cached_input": 0.0028
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "mimo-v2.6-pro",
+      "name": "MiMo-V2.6-Pro",
+      "display_name": "MiMo-V2.6-Pro",
+      "model_provider": "xiaomi",
+      "family": "MiMo",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/model",
+          "retrieved_at": "2026-09-26",
+          "title": "Xiaomi MiMo model page"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "mimo-v2.6-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.435,
+        "output": 0.87,
+        "cached_input": 0.003625
+      },
+      "notes": "Go monthly usage limit: $15.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "minimax-m2.5",
+      "name": "MiniMax M2.5",
+      "display_name": "MiniMax M2.5",
+      "model_provider": "minimax",
+      "family": "MiniMax",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-26",
+          "title": "MiniMax model list",
+          "notes": "MiniMax M2.5 is listed under 'Legacy Models' on the official docs."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "minimax-m2.5",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.06
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "minimax-m2.7",
+      "name": "MiniMax M2.7",
+      "display_name": "MiniMax M2.7",
+      "model_provider": "minimax",
+      "family": "MiniMax",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-26",
+          "title": "MiniMax model list"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "minimax-m2.7",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.06
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "minimax-m3",
+      "name": "MiniMax M3",
+      "display_name": "MiniMax M3",
+      "model_provider": "minimax",
+      "family": "MiniMax",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 512000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-26",
+          "title": "MiniMax model list"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "minimax-m3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.06
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "muse-spark-1.2",
+      "name": "Muse Spark 1.2",
+      "display_name": "Muse Spark 1.2",
+      "model_provider": "meta",
+      "family": "Muse Spark",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 943718
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "file",
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "retrieved_at": "2026-09-26",
+          "title": "Meta dev pricing"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "muse-spark-1.2-contributor",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.1,
+        "output": 0.2,
+        "cached_input": 0.002
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "muse-spark-1.3",
+      "name": "Muse Spark 1.3",
+      "display_name": "Muse Spark 1.3",
+      "model_provider": "meta",
+      "family": "Muse Spark",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 943718
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "file",
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+          "retrieved_at": "2026-09-26",
+          "title": "Meta research blog"
+        },
+        {
+          "type": "official",
+          "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "retrieved_at": "2026-09-26",
+          "title": "Meta dev pricing"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "muse-spark-1.3-contributor",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.1,
+        "output": 0.2,
+        "cached_input": 0.002
+      },
+      "notes": "Go monthly usage limit: $60.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.5-plus",
+      "name": "Qwen3.5-Plus",
+      "display_name": "Qwen3.5-Plus",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://help.aliyun.com/en/model-studio/qwen3-5-plus",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "qwen3.5-plus",
+      "pricing": null,
+      "notes": "No price row in the Go pricing table.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.6-plus",
+      "name": "Qwen3.6-Plus",
+      "display_name": "Qwen3.6-Plus",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 65536
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://help.aliyun.com/en/model-studio/qwen3-6-plus",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "qwen3.6-plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.5,
+        "output": 3.0,
+        "cached_input": 0.05,
+        "cached_write": 0.625
+      },
+      "notes": "Go monthly usage limit: $60. >256K tokens: input $2.00, output $6.00, cached read $0.20, cached write $2.50.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.7-max",
+      "name": "Qwen3.7-Max",
+      "display_name": "Qwen3.7-Max",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://help.aliyun.com/en/model-studio/qwen3-7-max",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "qwen3.7-max",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.5,
+        "output": 7.5,
+        "cached_input": 0.5,
+        "cached_write": 3.125
+      },
+      "notes": "Go monthly usage limit: $30.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.7-plus",
+      "name": "Qwen3.7-Plus",
+      "display_name": "Qwen3.7-Plus",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://help.aliyun.com/en/model-studio/qwen3-7-plus",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "qwen3.7-plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.4,
+        "output": 1.6,
+        "cached_input": 0.04,
+        "cached_write": 0.5
+      },
+      "notes": "Go monthly usage limit: $60. >256K tokens: input $1.20, output $4.80, cached read $0.12, cached write $1.50.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.8-flash",
+      "name": "Qwen3.8-Flash",
+      "display_name": "Qwen3.8-Flash",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://help.aliyun.com/en/model-studio/qwen3-8-flash",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "qwen3.8-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.47,
+        "cached_input": 0.016,
+        "cached_write": 0.2
+      },
+      "notes": "Go monthly usage limit: $30.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.8-max",
+      "name": "Qwen3.8-Max",
+      "display_name": "Qwen3.8-Max",
+      "model_provider": "qwen",
+      "family": "Qwen",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 6.0,
+        "cached_input": 0.25
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://github.com/AlibabaCloud-Official/Qwen3.8-max",
+          "retrieved_at": "2026-09-26",
+          "title": "Alibaba Cloud Model Studio model page"
+        },
+        {
+          "type": "official",
+          "url": "https://github.com/AlibabaCloud-Official/Qwen3.8-max",
+          "retrieved_at": "2026-09-26",
+          "notes": "First-party price and context limits from Alibaba's official repository; context window also stated on Alibaba Cloud Model Studio."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "qwen3.8-max",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 6.0,
+        "cached_input": 0.25,
+        "cached_write": 2.5
+      },
+      "notes": "Go monthly usage limit: $15.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  }
+]

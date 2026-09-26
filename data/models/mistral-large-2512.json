@@ -1,0 +1,68 @@
+{
+  "model_id": "mistral-large-2512",
+  "name": "Mistral Large 3",
+  "display_name": "Mistral Large 3",
+  "model_provider": "mistral",
+  "family": "Mistral",
+  "version": "25.12",
+  "status": "active",
+  "release_date": "2025-12-02",
+  "updated_at": "2026-09-26",
+  "description": "State-of-the-art open-weight general-purpose multimodal model with a granular Mixture-of-Experts architecture (41B active, 675B total parameters), released under Apache 2.0.",
+  "context": {
+    "window": 262144,
+    "max_output_tokens": 209715
+  },
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": null,
+    "function_calling": true,
+    "structured_output": true,
+    "json_mode": null,
+    "streaming": true
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 0.5,
+    "output": 1.5,
+    "cached_input": 0.05
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true,
+    "self_hostable": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.mistral.ai/models/mistral-large-3-25-12",
+      "retrieved_at": "2026-09-26",
+      "title": "Model page"
+    },
+    {
+      "type": "official",
+      "url": "https://docs.mistral.ai/inference/pricing",
+      "retrieved_at": "2026-09-26",
+      "title": "Pricing"
+    },
+    {
+      "type": "community",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "OpenRouter public model list",
+      "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+    }
+  ],
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text"
+    ]
+  }
+}

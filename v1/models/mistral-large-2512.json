@@ -1,0 +1,261 @@
+{
+  "model": {
+    "model_id": "mistral-large-2512",
+    "name": "Mistral Large 3",
+    "display_name": "Mistral Large 3",
+    "model_provider": "mistral",
+    "family": "Mistral",
+    "version": "25.12",
+    "status": "active",
+    "release_date": "2025-12-02",
+    "updated_at": "2026-09-26",
+    "description": "State-of-the-art open-weight general-purpose multimodal model with a granular Mixture-of-Experts architecture (41B active, 675B total parameters), released under Apache 2.0.",
+    "context": {
+      "window": 262144,
+      "max_output_tokens": 209715
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": null,
+      "function_calling": true,
+      "structured_output": true,
+      "json_mode": null,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.5,
+      "output": 1.5,
+      "cached_input": 0.05
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.mistral.ai/models/mistral-large-3-25-12",
+        "retrieved_at": "2026-09-26",
+        "title": "Model page"
+      },
+      {
+        "type": "official",
+        "url": "https://docs.mistral.ai/inference/pricing",
+        "retrieved_at": "2026-09-26",
+        "title": "Pricing"
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter public model list",
+        "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
+      }
+    ],
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    }
+  },
+  "providers": [
+    {
+      "provider_id": "mistral",
+      "model_id": "mistral-large-2512",
+      "provider": {
+        "id": "mistral",
+        "name": "Mistral AI",
+        "types": [
+          "model_provider",
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://mistral.ai",
+        "documentation_url": "https://docs.mistral.ai",
+        "status": "active",
+        "description": "European AI company releasing open-weight and commercial models; operates the Mistral API.",
+        "api": {
+          "base_url": "https://api.mistral.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "batches": "/batch"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.mistral.ai/api",
+            "retrieved_at": "2026-09-26",
+            "title": "Mistral API reference"
+          },
+          {
+            "type": "official",
+            "url": "https://docs.mistral.ai/inference/pricing",
+            "retrieved_at": "2026-09-26",
+            "title": "Mistral pricing"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "mistralai/mistral-large-2512",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "mistral.mistral-large-3-675b-instruct",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-mistral-ai-mistral-large-3",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ],
+      "provider": {
+        "id": "aws-bedrock",
+        "name": "Amazon Bedrock",
+        "types": [
+          "api_provider",
+          "gateway"
+        ],
+        "website": "https://aws.amazon.com/bedrock/",
+        "documentation_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+        "status": "active",
+        "description": "AWS's serverless platform for foundation models from many providers: one endpoint over Anthropic, OpenAI, Meta, Mistral, Moonshot AI, MiniMax, Z.ai and xAI models, behind AWS credentials or a Bedrock API key.",
+        "api": {
+          "base_url": "https://bedrock-runtime.{region}.amazonaws.com",
+          "protocol": "https",
+          "api_style": "custom",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "AWS credentials (Signature Version 4) or an Amazon Bedrock API key, sent as Authorization: Bearer. A second endpoint, https://bedrock-mantle.{region}.api.aws, serves the same OpenAI-compatible paths at /v1 plus Anthropic Messages at /anthropic/v1/messages. The OpenAI-compatible GET /models operation is not implemented; use ListFoundationModels and ListInferenceProfiles instead."
+          },
+          "endpoints": {
+            "chat_completions": "/openai/v1/chat/completions",
+            "responses": "/openai/v1/responses"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://aws.amazon.com/bedrock/",
+            "retrieved_at": "2026-09-26",
+            "title": "Amazon Bedrock"
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints",
+            "retrieved_at": "2026-09-26",
+            "title": "Endpoints supported by Amazon Bedrock",
+            "notes": "bedrock-runtime base URL and the /openai/v1 OpenAI-compatible paths."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-chat-completions",
+            "retrieved_at": "2026-09-26",
+            "title": "Chat Completions API",
+            "notes": "Per-region chat-completion URLs and the SigV4 / API-key authentication options."
+          },
+          {
+            "type": "official",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards",
+            "retrieved_at": "2026-09-26",
+            "title": "Models at a glance",
+            "notes": "Catalogue of model cards used to build the relationship entries."
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

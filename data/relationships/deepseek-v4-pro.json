@@ -1,0 +1,140 @@
+{
+  "model_id": "deepseek-v4-pro",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "deepseek",
+      "model_id": "deepseek-v4-pro"
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "deepseek/deepseek-v4-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.418818,
+        "output": 0.837636,
+        "cached_input": 0.034902
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "notes": "OpenRouter lists different per-token prices than DeepSeek's own off-peak rates."
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "deepseek-v4-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.74,
+        "output": 3.48,
+        "cached_input": 0.145
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": "deepseek-v4-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.66,
+        "output": 1.98,
+        "cached_input": 0.022
+      },
+      "notes": "Go monthly usage limit: $15. Peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri) cost 2x: input $1.32, output $3.96, cached read $0.044.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "deepseek/deepseek-v4-pro-0813",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.264,
+        "output": 0.792,
+        "cached_input": 0.0088
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "together",
+      "model_id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.32,
+        "output": 3.96,
+        "cached_input": 0.13
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ]
+    },
+    {
+      "provider_id": "fireworks",
+      "model_id": "accounts/fireworks/models/deepseek-v4-pro-0813",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.32,
+        "output": 3.96,
+        "cached_input": 0.044
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.fireworks.ai/serverless/pricing.md",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
+        }
+      ]
+    }
+  ]
+}
