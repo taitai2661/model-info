@@ -1,0 +1,35 @@
+{
+  "model_id": "gpt-realtime-2",
+  "name": "gpt-realtime-2",
+  "model_provider": "openai",
+  "status": "active",
+  "display_name": "gpt-realtime-2",
+  "description": "GPT Realtime 2 is our most capable realtime voice model. It supports speech-to-speech interactions with configurable reasoning effort, stronger instruction following, and more reliable tool use for complex voice-agent workflows.",
+  "modalities": {
+    "input": [
+      "text",
+      "audio"
+    ],
+    "output": [
+      "text",
+      "audio"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-05-07",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

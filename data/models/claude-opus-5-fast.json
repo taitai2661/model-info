@@ -1,0 +1,43 @@
+{
+  "model_id": "claude-opus-5-fast",
+  "name": "Claude Opus 5 (Fast)",
+  "model_provider": "anthropic",
+  "status": "active",
+  "display_name": "Claude Opus 5 (Fast)",
+  "description": "Claude Opus 5 is the latest model in Anthropic's Opus family and a step-change improvement over Opus 4.8. It delivers major gains over Opus 4.8 in agentic coding, professional knowledge work, and long-horizon reasoning, and it is stronger per token across effort levels.",
+  "context": {
+    "window": 1000000,
+    "max_output_tokens": 128000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "file"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "reasoning": true,
+    "vision": true,
+    "structured_output": true,
+    "json_mode": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-07-24",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

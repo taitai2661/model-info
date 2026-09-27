@@ -1,0 +1,25 @@
+{
+  "model_id": "nova-premier-v1",
+  "updated_at": "2026-09-27",
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "amazon/nova-premier-v1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.5,
+        "output": 12.5,
+        "cached_input": 0.625
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "model_id": "nemotron-3-super-120b-a12b",
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-09-27",
   "providers": [
     {
       "provider_id": "nvidia",
@@ -9,9 +9,8 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-26",
-          "title": "NVIDIA NIM public model catalog",
-          "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
     },
@@ -32,8 +31,52 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "nvidia/nemotron-3-super-120b-a12b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.08,
+        "output": 0.45
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 235929
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 235929
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
     }

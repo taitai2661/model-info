@@ -1,0 +1,107 @@
+{
+  "model": {
+    "model_id": "qwen3-embedding-4b",
+    "name": "Qwen3 Embedding 4B",
+    "model_provider": "qwen",
+    "status": "active",
+    "display_name": "Qwen3 Embedding 4B",
+    "description": "The Qwen3 Embedding model series is the latest proprietary model of the Qwen family, specifically designed for text embedding and ranking tasks. Building upon the dense foundational models of the Qwen3 series, it provides a comprehensive range of text embeddings and reranking models in various sizes (0.6B, 4B, and 8B).",
+    "context": {
+      "window": 32768,
+      "max_output_tokens": 32768
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "availability": {
+      "api": true
+    },
+    "release_date": "2025-06-05",
+    "sources": [
+      {
+        "type": "documentation",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Vercel AI Gateway public model list",
+        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      }
+    ],
+    "updated_at": "2026-09-27"
+  },
+  "providers": [
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "alibaba/qwen3-embedding-4b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.02,
+        "output": null
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ],
+      "provider": {
+        "id": "vercel-ai-gateway",
+        "name": "Vercel AI Gateway",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://vercel.com/docs/ai-gateway",
+        "documentation_url": "https://vercel.com/docs/ai-gateway/getting-started",
+        "status": "active",
+        "description": "Vercel's unified AI Gateway: a single OpenAI-compatible endpoint that routes to hundreds of third-party models across OpenAI, Anthropic, Google, Meta, Mistral, xAI, DeepSeek, Moonshot AI and other upstream providers; supports OIDC tokens and provider-specific BYOK keys.",
+        "api": {
+          "base_url": "https://ai-gateway.vercel.sh/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "Either a Vercel OIDC token issued via the AI Gateway (Authorization: Bearer <oidc>), or a per-provider BYOK key (Authorization: Bearer <openai|anthropic|...>). The active provider is selected by the model id prefix."
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "models": "/models",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "json_mode": true,
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://vercel.com/docs/ai-gateway/getting-started",
+            "retrieved_at": "2026-09-26",
+            "title": "Vercel AI Gateway — Getting started"
+          },
+          {
+            "type": "official",
+            "url": "https://ai-gateway.vercel.sh/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list (GET /v1/models)"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

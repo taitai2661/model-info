@@ -1,0 +1,23 @@
+{
+  "provider": {
+    "id": "reka",
+    "name": "Reka AI",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Reka AI, developer of the Reka model family.",
+    "website": "https://www.reka.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.reka.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Reka AI official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  "model_ids": []
+}

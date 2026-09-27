@@ -1,0 +1,23 @@
+{
+  "provider": {
+    "id": "nousresearch",
+    "name": "Nous Research",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Nous Research, developer of the Hermes model family.",
+    "website": "https://nousresearch.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://nousresearch.com",
+        "retrieved_at": "2026-09-27",
+        "title": "Nous Research official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  "model_ids": []
+}

@@ -1,0 +1,40 @@
+{
+  "model_id": "gpt-5.4-image-2",
+  "name": "GPT-5.4 Image 2",
+  "model_provider": "openai",
+  "status": "active",
+  "display_name": "GPT-5.4 Image 2",
+  "context": {
+    "window": 272000,
+    "max_output_tokens": 128000
+  },
+  "modalities": {
+    "input": [
+      "image",
+      "text",
+      "file"
+    ],
+    "output": [
+      "image",
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "json_mode": true,
+    "structured_output": true
+  },
+  "availability": {
+    "api": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

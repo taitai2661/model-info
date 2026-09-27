@@ -1,0 +1,49 @@
+{
+  "model_id": "gemini-3-pro-image",
+  "name": "Nano Banana Pro (Gemini 3 Pro Image)",
+  "model_provider": "google",
+  "status": "active",
+  "display_name": "Nano Banana Pro (Gemini 3 Pro Image)",
+  "description": "Nano Banana Pro (Gemini 3 Pro Image) builds on Nano Banana's generation capabilities into a new era of studio-quality, functional design to help you create and edit high-fidelity, production-ready visuals with unparalleled precision and control. Improvements include enhanced world knowledge and reasoning, dynamic text and translation, and studio level controls.",
+  "context": {
+    "window": 65536,
+    "max_output_tokens": 32768
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text",
+      "image"
+    ]
+  },
+  "capabilities": {
+    "vision": true,
+    "structured_output": true,
+    "reasoning": true,
+    "json_mode": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2025-09-01",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    },
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

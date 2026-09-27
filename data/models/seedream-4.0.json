@@ -1,0 +1,30 @@
+{
+  "model_id": "seedream-4.0",
+  "name": "Seedream 4.0",
+  "model_provider": "bytedance",
+  "status": "active",
+  "display_name": "Seedream 4.0",
+  "description": "Seedream 4.0 is a SOTA multimodal image creation model built on leading architecture. It breaks through the boundaries of traditional text-to-image models by natively supporting text, single-image, and multi-image inputs. Users can freely combine text and images to achieve diverse creative modes within a single model—such as multi-image blending, image editing, and sequentially batch image generation, featuring subject consistency, making image creation more free and controllable.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "image"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2025-09-09",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

@@ -1,0 +1,44 @@
+{
+  "model_id": "codestral-2508",
+  "updated_at": "2026-09-27",
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "mistralai/codestral-2508",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 0.9,
+        "cached_input": 0.03
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "mistralai/codestral-2508:batch",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.45,
+        "cached_input": 0.015
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    }
+  ]
+}

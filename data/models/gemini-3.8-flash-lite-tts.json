@@ -1,0 +1,30 @@
+{
+  "model_id": "gemini-3.8-flash-lite-tts",
+  "name": "Gemini 3.8 Flash-Lite TTS",
+  "model_provider": "google",
+  "status": "active",
+  "display_name": "Gemini 3.8 Flash-Lite TTS",
+  "description": "Gemini 3.8 Flash-Lite TTS is Google’s text-to-speech model optimized for high-volume, cost-efficient audio generation across more than 100 languages. It combines expressive speech with fine-grained control over tone, pacing, and line-by-line delivery, supporting long-form narration and native two-speaker conversations. Built for scale, it helps developers and creators power multilingual dubbing, audio content production, and expressive voice agents.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "audio"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-09-23",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

@@ -1,0 +1,37 @@
+{
+  "model_id": "skyfall-36b-v2",
+  "name": "Skyfall 36B V2",
+  "model_provider": "thedrummer",
+  "status": "active",
+  "display_name": "Skyfall 36B V2",
+  "context": {
+    "window": 32768,
+    "max_output_tokens": 29491
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "json_mode": true,
+    "structured_output": true
+  },
+  "availability": {
+    "api": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

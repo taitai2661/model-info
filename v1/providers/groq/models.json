@@ -78,7 +78,151 @@
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-oss-20b",
+      "name": "GPT-OSS 20B",
+      "display_name": "GPT-OSS 20B",
+      "model_provider": "openai",
+      "family": "GPT-OSS",
+      "version": "20b",
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "OpenAI GPT-OSS 20B: the smaller Mixture-of-Experts (MoE) text-only open-weight LLM for efficient AI reasoning and math.",
+      "context": {
+        "window": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "function_calling": true,
+        "reasoning": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://build.nvidia.com/openai/gpt-oss-20b",
           "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM model page"
+        },
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "groq",
+      "model_id": "openai/gpt-oss-20b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.075,
+        "output": 0.3
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 65536
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://console.groq.com/docs/models.md",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-oss-safeguard-20b",
+      "name": "GPT OSS Safeguard 20B",
+      "model_provider": "openai",
+      "status": "active",
+      "display_name": "GPT OSS Safeguard 20B",
+      "description": "OpenAI's first open weight reasoning model specifically trained for safety classification tasks. Fine-tuned from GPT-OSS, this model helps classify text content based on customizable policies, enabling bring-your-own-policy Trust & Safety AI where your own taxonomy, definitions, and thresholds guide classification decisions.",
+      "context": {
+        "window": 128000,
+        "max_output_tokens": 16000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "reasoning": true,
+        "tool_use": true,
+        "structured_output": true,
+        "json_mode": true
+      },
+      "availability": {
+        "api": true,
+        "open_weights": true
+      },
+      "release_date": "2025-10-29",
+      "sources": [
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        }
+      ],
+      "updated_at": "2026-09-27"
+    },
+    "relationship": {
+      "provider_id": "groq",
+      "model_id": "openai/gpt-oss-safeguard-20b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.075,
+        "output": 0.3
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 65536
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://console.groq.com/docs/models.md",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         }
       ]
@@ -163,7 +307,7 @@
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         }
       ]
@@ -219,7 +363,7 @@
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         }
       ]
@@ -309,7 +453,7 @@
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         }
       ]

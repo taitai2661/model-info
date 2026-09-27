@@ -1,0 +1,226 @@
+{
+  "aliases": {
+    "alibaba": "qwen",
+    "bfl": "black-forest-labs",
+    "bytedance-seed": "bytedance",
+    "ibm-granite": "ibm",
+    "inception": "inception-labs",
+    "inclusionai": "ant-group",
+    "meta-llama": "meta",
+    "mistralai": "mistral",
+    "moonshotai": "moonshot",
+    "rekaai": "reka",
+    "sakana": "sakana-ai",
+    "spacexai": "xai",
+    "thinkingmachines": "thinking-machines",
+    "typesafe": "typesafe-ai",
+    "x-ai": "xai",
+    "z-ai": "zai"
+  },
+  "ignored": {
+    "~anthropic": "OpenRouter routing variant that tracks the vendor's latest release, not a distinct model.",
+    "~deepseek": "OpenRouter routing variant that tracks the vendor's latest release, not a distinct model.",
+    "~google": "OpenRouter routing variant that tracks the vendor's latest release, not a distinct model.",
+    "~moonshotai": "OpenRouter routing variant that tracks the vendor's latest release, not a distinct model.",
+    "~openai": "OpenRouter routing variant that tracks the vendor's latest release, not a distinct model.",
+    "~x-ai": "OpenRouter routing variant that tracks the vendor's latest release, not a distinct model.",
+    "~z-ai": "OpenRouter routing variant that tracks the vendor's latest release, not a distinct model.",
+    "openrouter": "openrouter/auto, /free and /fusion are routers that pick a model at request time, not models."
+  },
+  "providers": {
+    "aion-labs": {
+      "name": "Aion Labs",
+      "website": "https://aionlabs.ai",
+      "description": "Research lab behind the Aion model family."
+    },
+    "amazon": {
+      "name": "Amazon",
+      "website": "https://aws.amazon.com/ai/",
+      "documentation_url": "https://docs.aws.amazon.com/nova/",
+      "description": "Amazon's Nova model family, served through AWS."
+    },
+    "arcee-ai": {
+      "name": "Arcee AI",
+      "website": "https://www.arcee.ai",
+      "documentation_url": "https://docs.arcee.ai",
+      "description": "Arcee AI's model family, including the Trinity models."
+    },
+    "baidu": {
+      "name": "Baidu",
+      "website": "https://cloud.baidu.com/product/wenxinworkshop",
+      "description": "Baidu's ERNIE model family."
+    },
+    "black-forest-labs": {
+      "name": "Black Forest Labs",
+      "website": "https://bfl.ai",
+      "documentation_url": "https://docs.bfl.ai",
+      "description": "Black Forest Labs, developer of the FLUX image models."
+    },
+    "bytedance": {
+      "name": "ByteDance Seed",
+      "website": "https://seed.bytedance.com",
+      "description": "ByteDance's Seed model team, behind the Seed and Seedance model families."
+    },
+    "cognitivecomputations": {
+      "name": "Cognitive Computations",
+      "documentation_url": "https://huggingface.co/cognitivecomputations",
+      "description": "Independent lab behind the Dolphin model family."
+    },
+    "cohere": {
+      "name": "Cohere",
+      "website": "https://cohere.com",
+      "documentation_url": "https://docs.cohere.com",
+      "description": "Cohere's Command model family and embedding models."
+    },
+    "dots-studio": {
+      "name": "Dots Studio",
+      "website": "https://dots.studio",
+      "description": "Dots Studio, developer of the Dots note model."
+    },
+    "fish-audio": {
+      "name": "Fish Audio",
+      "website": "https://fish.audio",
+      "documentation_url": "https://docs.fish.audio",
+      "description": "Fish Audio's speech synthesis and transcription models."
+    },
+    "inception-labs": {
+      "name": "Inception Labs",
+      "website": "https://www.inceptionlabs.ai",
+      "documentation_url": "https://docs.inceptionlabs.ai",
+      "description": "Inception Labs, developer of the Mercury diffusion language models."
+    },
+    "inference-net": {
+      "name": "Inference.net",
+      "website": "https://inference.net",
+      "description": "Inference infrastructure provider publishing the Schematron model family."
+    },
+    "interfaze": {
+      "name": "Interfaze",
+      "website": "https://interfaze.ai",
+      "description": "Interfaze, developer of the Interfaze model."
+    },
+    "klingai": {
+      "name": "Kling AI",
+      "website": "https://klingai.com",
+      "description": "Kling AI's video and image generation models."
+    },
+    "kwaipilot": {
+      "name": "Kwaipilot",
+      "website": "https://ai.kuaishou.com/en/",
+      "documentation_url": "https://huggingface.co/Kwaipilot",
+      "description": "Kwaipilot, Kuaishou's AI-for-software-engineering team, behind the KAT Coder models."
+    },
+    "liquid": {
+      "name": "Liquid AI",
+      "website": "https://liquid.ai",
+      "documentation_url": "https://docs.liquid.ai",
+      "description": "Liquid AI's LFM foundation models."
+    },
+    "mancer": {
+      "name": "Mancer",
+      "website": "https://mancer.tech",
+      "description": "Mancer, developer of the Weaver model."
+    },
+    "mixedbread": {
+      "name": "mixedbread.ai",
+      "website": "https://mixedbread.ai",
+      "description": "mixedbread.ai, developer of the Mixedbread embedding and retrieval models."
+    },
+    "morph": {
+      "name": "Morph",
+      "website": "https://morphllm.com",
+      "documentation_url": "https://docs.morphllm.com",
+      "description": "Morph's apply and v3 models for coding agents."
+    },
+    "nousresearch": {
+      "name": "Nous Research",
+      "website": "https://nousresearch.com",
+      "description": "Nous Research, developer of the Hermes model family."
+    },
+    "perceptron": {
+      "name": "Perceptron",
+      "website": "https://www.perceptron.inc",
+      "documentation_url": "https://docs.perceptron.inc",
+      "description": "Perceptron's vision-language and embodied reasoning models."
+    },
+    "perplexity": {
+      "name": "Perplexity",
+      "website": "https://perplexity.ai",
+      "documentation_url": "https://docs.perplexity.ai",
+      "description": "Perplexity's Sonar search models."
+    },
+    "prism-ml": {
+      "name": "Prism ML",
+      "website": "https://prismml.com",
+      "description": "Prism ML's ternary-quantised model family."
+    },
+    "prodia": {
+      "name": "Prodia",
+      "website": "https://prodia.com",
+      "description": "Prodia's hosted diffusion model family."
+    },
+    "quiverai": {
+      "name": "Quiver AI",
+      "website": "https://quiver.ai",
+      "description": "Quiver AI's vector design models."
+    },
+    "recraft": {
+      "name": "Recraft",
+      "website": "https://www.recraft.ai",
+      "documentation_url": "https://www.recraft.ai/docs",
+      "description": "Recraft's image generation and vector design models."
+    },
+    "reka": {
+      "name": "Reka AI",
+      "website": "https://www.reka.ai",
+      "description": "Reka AI, developer of the Reka model family."
+    },
+    "relace": {
+      "name": "Relace",
+      "website": "https://relace.ai",
+      "description": "Relace's apply and search models for coding agents."
+    },
+    "sakana-ai": {
+      "name": "Sakana AI",
+      "website": "https://sakana.ai",
+      "description": "Sakana AI, a Japanese AI research company, and its Fugu and Namazu models."
+    },
+    "sao10k": {
+      "name": "Sao10K",
+      "documentation_url": "https://huggingface.co/Sao10K",
+      "description": "Independent open-weight fine-tune author publishing roleplay and merge models."
+    },
+    "stepfun": {
+      "name": "StepFun",
+      "website": "https://stepfun.com",
+      "description": "StepFun's Step model family."
+    },
+    "thedrummer": {
+      "name": "TheDrummer",
+      "documentation_url": "https://huggingface.co/TheDrummer",
+      "description": "Independent open-weight fine-tune author publishing creative and roleplay models."
+    },
+    "thinking-machines": {
+      "name": "Thinking Machines Lab",
+      "website": "https://thinkingmachines.ai",
+      "description": "Thinking Machines Lab, developer of the Inkling model family."
+    },
+    "unbiased": {
+      "name": "Unbiased",
+      "website": "https://unbiased.ai",
+      "description": "Unbiased, developer of the Pareto model family."
+    },
+    "upstage": {
+      "name": "Upstage",
+      "website": "https://upstage.ai",
+      "documentation_url": "https://console.upstage.ai/docs",
+      "description": "Upstage's Solar model family."
+    },
+    "voyage": {
+      "name": "Voyage AI",
+      "website": "https://voyageai.com",
+      "documentation_url": "https://docs.voyageai.com",
+      "description": "Voyage AI's embedding and reranking models."
+    }
+  }
+}

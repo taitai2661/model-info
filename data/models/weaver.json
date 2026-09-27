@@ -1,0 +1,35 @@
+{
+  "model_id": "weaver",
+  "name": "Weaver (alpha)",
+  "model_provider": "mancer",
+  "status": "active",
+  "display_name": "Weaver (alpha)",
+  "context": {
+    "window": 8000,
+    "max_output_tokens": 6000
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "json_mode": true
+  },
+  "availability": {
+    "api": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

@@ -1,0 +1,37 @@
+{
+  "model_id": "ernie-4.5-vl-424b-a47b",
+  "name": "ERNIE 4.5 VL 424B A47B",
+  "model_provider": "baidu",
+  "status": "active",
+  "display_name": "ERNIE 4.5 VL 424B A47B",
+  "context": {
+    "window": 123000,
+    "max_output_tokens": 16000
+  },
+  "modalities": {
+    "input": [
+      "image",
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true
+  },
+  "availability": {
+    "api": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

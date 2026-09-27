@@ -1,0 +1,24 @@
+{
+  "model_id": "wizardlm-2-8x22b",
+  "updated_at": "2026-09-27",
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "microsoft/wizardlm-2-8x22b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.62,
+        "output": 0.62
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    }
+  ]
+}

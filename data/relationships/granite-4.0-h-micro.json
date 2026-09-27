@@ -1,0 +1,24 @@
+{
+  "model_id": "granite-4.0-h-micro",
+  "updated_at": "2026-09-27",
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "ibm-granite/granite-4.0-h-micro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.017,
+        "output": 0.112
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    }
+  ]
+}

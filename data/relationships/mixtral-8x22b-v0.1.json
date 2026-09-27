@@ -1,19 +1,18 @@
 {
- "model_id": "mixtral-8x22b-v0.1",
- "updated_at": "2026-09-26",
- "providers": [
-  {
-   "provider_id": "nvidia",
-   "model_id": "mistralai/mixtral-8x22b-v0.1",
-   "sources": [
+  "model_id": "mixtral-8x22b-v0.1",
+  "updated_at": "2026-09-27",
+  "providers": [
     {
-     "type": "official",
-     "url": "https://integrate.api.nvidia.com/v1/models",
-     "retrieved_at": "2026-09-26",
-     "title": "NVIDIA NIM public model catalog",
-     "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+      "provider_id": "nvidia",
+      "model_id": "mistralai/mixtral-8x22b-v0.1",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

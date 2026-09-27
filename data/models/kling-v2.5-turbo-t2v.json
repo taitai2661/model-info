@@ -1,0 +1,30 @@
+{
+  "model_id": "kling-v2.5-turbo-t2v",
+  "name": "Kling v2.5 Turbo Text-to-Video",
+  "model_provider": "klingai",
+  "status": "active",
+  "display_name": "Kling v2.5 Turbo Text-to-Video",
+  "description": "Kling 2.5 Turbo is a major update to the AI video generation model focused on significantly improving speed, video quality, temporal stability, and creative control for creators, making professional-grade AI-generated video faster, more coherent, and easier to direct from text prompts.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "video"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2025-09-23",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

@@ -57,6 +57,26 @@
     "updated_at": "2026-09-26"
   },
   {
+    "id": "aion-labs",
+    "name": "Aion Labs",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Research lab behind the Aion model family.",
+    "website": "https://aionlabs.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://aionlabs.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Aion Labs official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
     "id": "aisingapore",
     "name": "AI Singapore",
     "types": [
@@ -74,6 +94,27 @@
       }
     ],
     "updated_at": "2026-09-26"
+  },
+  {
+    "id": "amazon",
+    "name": "Amazon",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Amazon's Nova model family, served through AWS.",
+    "website": "https://aws.amazon.com/ai/",
+    "documentation_url": "https://docs.aws.amazon.com/nova/",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://aws.amazon.com/ai/",
+        "retrieved_at": "2026-09-27",
+        "title": "Amazon official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
   },
   {
     "id": "ant-group",
@@ -143,6 +184,27 @@
     "updated_at": "2026-09-26"
   },
   {
+    "id": "arcee-ai",
+    "name": "Arcee AI",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Arcee AI's model family, including the Trinity models.",
+    "website": "https://www.arcee.ai",
+    "documentation_url": "https://docs.arcee.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.arcee.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Arcee AI official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
     "id": "aws-bedrock",
     "name": "Amazon Bedrock",
     "types": [
@@ -199,6 +261,26 @@
     "updated_at": "2026-09-26"
   },
   {
+    "id": "baidu",
+    "name": "Baidu",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Baidu's ERNIE model family.",
+    "website": "https://cloud.baidu.com/product/wenxinworkshop",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://cloud.baidu.com/product/wenxinworkshop",
+        "retrieved_at": "2026-09-27",
+        "title": "Baidu official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
     "id": "bigcode",
     "name": "BigCode",
     "types": [
@@ -216,6 +298,88 @@
       }
     ],
     "updated_at": "2026-09-26"
+  },
+  {
+    "id": "black-forest-labs",
+    "name": "Black Forest Labs",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Black Forest Labs, developer of the FLUX image models.",
+    "website": "https://bfl.ai",
+    "documentation_url": "https://docs.bfl.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://bfl.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Black Forest Labs official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "bytedance",
+    "name": "ByteDance Seed",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "ByteDance's Seed model team, behind the Seed and Seedance model families.",
+    "website": "https://seed.bytedance.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://seed.bytedance.com",
+        "retrieved_at": "2026-09-27",
+        "title": "ByteDance Seed official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "cognitivecomputations",
+    "name": "Cognitive Computations",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Independent lab behind the Dolphin model family.",
+    "documentation_url": "https://huggingface.co/cognitivecomputations",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/cognitivecomputations",
+        "retrieved_at": "2026-09-27",
+        "title": "Cognitive Computations official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "cohere",
+    "name": "Cohere",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Cohere's Command model family and embedding models.",
+    "website": "https://cohere.com",
+    "documentation_url": "https://docs.cohere.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://cohere.com",
+        "retrieved_at": "2026-09-27",
+        "title": "Cohere official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
   },
   {
     "id": "databricks",
@@ -284,6 +448,26 @@
     "updated_at": "2026-09-26"
   },
   {
+    "id": "dots-studio",
+    "name": "Dots Studio",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Dots Studio, developer of the Dots note model.",
+    "website": "https://dots.studio",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://dots.studio",
+        "retrieved_at": "2026-09-27",
+        "title": "Dots Studio official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
     "id": "fireworks",
     "name": "Fireworks AI",
     "types": [
@@ -317,6 +501,27 @@
       }
     ],
     "updated_at": "2026-09-26"
+  },
+  {
+    "id": "fish-audio",
+    "name": "Fish Audio",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Fish Audio's speech synthesis and transcription models.",
+    "website": "https://fish.audio",
+    "documentation_url": "https://docs.fish.audio",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://fish.audio",
+        "retrieved_at": "2026-09-27",
+        "title": "Fish Audio official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
   },
   {
     "id": "google",
@@ -417,6 +622,149 @@
       }
     ],
     "updated_at": "2026-09-26"
+  },
+  {
+    "id": "inception-labs",
+    "name": "Inception Labs",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Inception Labs, developer of the Mercury diffusion language models.",
+    "website": "https://www.inceptionlabs.ai",
+    "documentation_url": "https://docs.inceptionlabs.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.inceptionlabs.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Inception Labs official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "inference-net",
+    "name": "Inference.net",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Inference infrastructure provider publishing the Schematron model family.",
+    "website": "https://inference.net",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://inference.net",
+        "retrieved_at": "2026-09-27",
+        "title": "Inference.net official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "interfaze",
+    "name": "Interfaze",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Interfaze, developer of the Interfaze model.",
+    "website": "https://interfaze.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://interfaze.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Interfaze official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "klingai",
+    "name": "Kling AI",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Kling AI's video and image generation models.",
+    "website": "https://klingai.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://klingai.com",
+        "retrieved_at": "2026-09-27",
+        "title": "Kling AI official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "kwaipilot",
+    "name": "Kwaipilot",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Kwaipilot, Kuaishou's AI-for-software-engineering team, behind the KAT Coder models.",
+    "website": "https://ai.kuaishou.com/en/",
+    "documentation_url": "https://huggingface.co/Kwaipilot",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.kuaishou.com/en/",
+        "retrieved_at": "2026-09-27",
+        "title": "Kwaipilot official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "liquid",
+    "name": "Liquid AI",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Liquid AI's LFM foundation models.",
+    "website": "https://liquid.ai",
+    "documentation_url": "https://docs.liquid.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://liquid.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Liquid AI official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "mancer",
+    "name": "Mancer",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Mancer, developer of the Weaver model.",
+    "website": "https://mancer.tech",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://mancer.tech",
+        "retrieved_at": "2026-09-27",
+        "title": "Mancer official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
   },
   {
     "id": "meituan",
@@ -589,6 +937,26 @@
     "updated_at": "2026-09-26"
   },
   {
+    "id": "mixedbread",
+    "name": "mixedbread.ai",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "mixedbread.ai, developer of the Mixedbread embedding and retrieval models.",
+    "website": "https://mixedbread.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://mixedbread.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "mixedbread.ai official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
     "id": "moonshot",
     "name": "Moonshot AI",
     "types": [
@@ -628,6 +996,47 @@
       }
     ],
     "updated_at": "2026-09-26"
+  },
+  {
+    "id": "morph",
+    "name": "Morph",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Morph's apply and v3 models for coding agents.",
+    "website": "https://morphllm.com",
+    "documentation_url": "https://docs.morphllm.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://morphllm.com",
+        "retrieved_at": "2026-09-27",
+        "title": "Morph official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "nousresearch",
+    "name": "Nous Research",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Nous Research, developer of the Hermes model family.",
+    "website": "https://nousresearch.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://nousresearch.com",
+        "retrieved_at": "2026-09-27",
+        "title": "Nous Research official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
   },
   {
     "id": "nvidia",
@@ -872,6 +1281,48 @@
     "updated_at": "2026-09-26"
   },
   {
+    "id": "perceptron",
+    "name": "Perceptron",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Perceptron's vision-language and embodied reasoning models.",
+    "website": "https://www.perceptron.inc",
+    "documentation_url": "https://docs.perceptron.inc",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.perceptron.inc",
+        "retrieved_at": "2026-09-27",
+        "title": "Perceptron official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "perplexity",
+    "name": "Perplexity",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Perplexity's Sonar search models.",
+    "website": "https://perplexity.ai",
+    "documentation_url": "https://docs.perplexity.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://perplexity.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Perplexity official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
     "id": "poolside",
     "name": "Poolside",
     "types": [
@@ -889,6 +1340,66 @@
       }
     ],
     "updated_at": "2026-09-26"
+  },
+  {
+    "id": "prism-ml",
+    "name": "Prism ML",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Prism ML's ternary-quantised model family.",
+    "website": "https://prismml.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://prismml.com",
+        "retrieved_at": "2026-09-27",
+        "title": "Prism ML official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "prodia",
+    "name": "Prodia",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Prodia's hosted diffusion model family.",
+    "website": "https://prodia.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://prodia.com",
+        "retrieved_at": "2026-09-27",
+        "title": "Prodia official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "quiverai",
+    "name": "Quiver AI",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Quiver AI's vector design models.",
+    "website": "https://quiver.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://quiver.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Quiver AI official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
   },
   {
     "id": "qwen",
@@ -933,6 +1444,107 @@
     "updated_at": "2026-09-26"
   },
   {
+    "id": "recraft",
+    "name": "Recraft",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Recraft's image generation and vector design models.",
+    "website": "https://www.recraft.ai",
+    "documentation_url": "https://www.recraft.ai/docs",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.recraft.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Recraft official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "reka",
+    "name": "Reka AI",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Reka AI, developer of the Reka model family.",
+    "website": "https://www.reka.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.reka.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Reka AI official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "relace",
+    "name": "Relace",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Relace's apply and search models for coding agents.",
+    "website": "https://relace.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://relace.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Relace official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "sakana-ai",
+    "name": "Sakana AI",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Sakana AI, a Japanese AI research company, and its Fugu and Namazu models.",
+    "website": "https://sakana.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://sakana.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Sakana AI official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "sao10k",
+    "name": "Sao10K",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Independent open-weight fine-tune author publishing roleplay and merge models.",
+    "documentation_url": "https://huggingface.co/Sao10K",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/Sao10K",
+        "retrieved_at": "2026-09-27",
+        "title": "Sao10K official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
     "id": "snowflake",
     "name": "Snowflake",
     "types": [
@@ -950,6 +1562,26 @@
       }
     ],
     "updated_at": "2026-09-26"
+  },
+  {
+    "id": "stepfun",
+    "name": "StepFun",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "StepFun's Step model family.",
+    "website": "https://stepfun.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://stepfun.com",
+        "retrieved_at": "2026-09-27",
+        "title": "StepFun official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
   },
   {
     "id": "tencent",
@@ -1012,6 +1644,46 @@
       }
     ],
     "updated_at": "2026-09-26"
+  },
+  {
+    "id": "thedrummer",
+    "name": "TheDrummer",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Independent open-weight fine-tune author publishing creative and roleplay models.",
+    "documentation_url": "https://huggingface.co/TheDrummer",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/TheDrummer",
+        "retrieved_at": "2026-09-27",
+        "title": "TheDrummer official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "thinking-machines",
+    "name": "Thinking Machines Lab",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Thinking Machines Lab, developer of the Inkling model family.",
+    "website": "https://thinkingmachines.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://thinkingmachines.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Thinking Machines Lab official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
   },
   {
     "id": "together",
@@ -1089,6 +1761,47 @@
     "updated_at": "2026-09-26"
   },
   {
+    "id": "unbiased",
+    "name": "Unbiased",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Unbiased, developer of the Pareto model family.",
+    "website": "https://unbiased.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://unbiased.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Unbiased official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
+    "id": "upstage",
+    "name": "Upstage",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Upstage's Solar model family.",
+    "website": "https://upstage.ai",
+    "documentation_url": "https://console.upstage.ai/docs",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://upstage.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Upstage official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  {
     "id": "vercel-ai-gateway",
     "name": "Vercel AI Gateway",
     "types": [
@@ -1138,6 +1851,27 @@
       }
     ],
     "updated_at": "2026-09-26"
+  },
+  {
+    "id": "voyage",
+    "name": "Voyage AI",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Voyage AI's embedding and reranking models.",
+    "website": "https://voyageai.com",
+    "documentation_url": "https://docs.voyageai.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://voyageai.com",
+        "retrieved_at": "2026-09-27",
+        "title": "Voyage AI official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
   },
   {
     "id": "writer",

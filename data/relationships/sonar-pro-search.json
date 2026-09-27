@@ -1,0 +1,24 @@
+{
+  "model_id": "sonar-pro-search",
+  "updated_at": "2026-09-27",
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "perplexity/sonar-pro-search",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    }
+  ]
+}

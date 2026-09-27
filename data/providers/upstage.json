@@ -1,0 +1,21 @@
+{
+  "id": "upstage",
+  "name": "Upstage",
+  "types": [
+    "model_provider"
+  ],
+  "status": "active",
+  "description": "Upstage's Solar model family.",
+  "website": "https://upstage.ai",
+  "documentation_url": "https://console.upstage.ai/docs",
+  "updated_at": "2026-09-27",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://upstage.ai",
+      "retrieved_at": "2026-09-27",
+      "title": "Upstage official site",
+      "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+    }
+  ]
+}

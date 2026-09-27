@@ -1,0 +1,40 @@
+{
+  "model_id": "qwen-3-14b",
+  "name": "Qwen3-14B",
+  "model_provider": "qwen",
+  "status": "active",
+  "display_name": "Qwen3-14B",
+  "description": "Qwen3 is the latest generation of large language models in Qwen series, offering a comprehensive suite of dense and mixture-of-experts (MoE) models. Built upon extensive training, Qwen3 delivers groundbreaking advancements in reasoning, instruction-following, agent capabilities, and multilingual support",
+  "context": {
+    "window": 40960,
+    "max_output_tokens": 16384
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "tool_use": true,
+    "structured_output": true,
+    "json_mode": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2025-04-28",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

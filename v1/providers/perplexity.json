@@ -1,0 +1,24 @@
+{
+  "provider": {
+    "id": "perplexity",
+    "name": "Perplexity",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Perplexity's Sonar search models.",
+    "website": "https://perplexity.ai",
+    "documentation_url": "https://docs.perplexity.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://perplexity.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Perplexity official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  "model_ids": []
+}

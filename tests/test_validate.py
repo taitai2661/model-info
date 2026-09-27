@@ -116,6 +116,24 @@ def test_pricing_requires_currency_and_unit(sandbox):
     assert any("currency is required" in e for e in errors)
 
 
+def test_zero_context_is_rejected_as_unknown(sandbox):
+    path = sandbox / "data/models/gpt-6-astra.json"
+    doc = json.loads(path.read_text())
+    doc["context"]["max_output_tokens"] = 0
+    path.write_text(json.dumps(doc))
+    errors, _ = validate_all(sandbox)
+    assert any("not 0" in e and "max_output_tokens" in e for e in errors)
+
+
+def test_zero_price_is_allowed_because_free_is_a_fact(sandbox):
+    path = sandbox / "data/models/gpt-6-astra.json"
+    doc = json.loads(path.read_text())
+    doc["pricing"]["input"] = 0
+    path.write_text(json.dumps(doc))
+    errors, _ = validate_all(sandbox)
+    assert errors == [], "\n".join(errors)
+
+
 def test_stored_secret_is_rejected(sandbox):
     path = sandbox / "data/providers/openai.json"
     doc = json.loads(path.read_text())

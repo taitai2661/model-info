@@ -1,0 +1,50 @@
+{
+  "model_id": "llama-4-maverick",
+  "name": "Llama 4 Maverick 17B Instruct",
+  "model_provider": "meta",
+  "status": "active",
+  "display_name": "Llama 4 Maverick 17B Instruct",
+  "description": "As a general purpose LLM, Llama 4 Maverick contains 17 billion active parameters, 128 experts, and 400 billion total parameters, offering high quality at a lower price compared to Llama 3.3 70B.",
+  "context": {
+    "window": 128000,
+    "max_output_tokens": 8192
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "structured_output": true,
+    "reasoning": true,
+    "json_mode": true
+  },
+  "availability": {
+    "api": true,
+    "open_weights": true
+  },
+  "release_date": "2025-04-05",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    },
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

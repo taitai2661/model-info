@@ -1,0 +1,105 @@
+{
+  "model": {
+    "model_id": "gemma-2-27b-it",
+    "name": "Gemma 2 27B",
+    "model_provider": "google",
+    "status": "active",
+    "display_name": "Gemma 2 27B",
+    "context": {
+      "window": 8192,
+      "max_output_tokens": 2048
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "json_mode": true,
+      "structured_output": true
+    },
+    "availability": {
+      "api": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      }
+    ],
+    "updated_at": "2026-09-27"
+  },
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "google/gemma-2-27b-it",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.65,
+        "output": 0.65
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

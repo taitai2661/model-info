@@ -1,0 +1,49 @@
+{
+  "model_id": "qwen3.8-omni-flash",
+  "name": "Qwen 3.8 Omni Flash",
+  "model_provider": "qwen",
+  "status": "active",
+  "display_name": "Qwen 3.8 Omni Flash",
+  "description": "Qwen3.8-Omni-Flash is Alibaba’s native multimodal model for understanding text, images, audio, and video and generating text. Built on Qwen3.8-Flash-Next, it supports a 1M-token context window, reasoning, and tool calling for coding, knowledge work, and multimedia analysis.",
+  "context": {
+    "window": 1000000,
+    "max_output_tokens": 131072
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "structured_output": true,
+    "tool_use": true,
+    "vision": true,
+    "json_mode": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-09-17",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    },
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

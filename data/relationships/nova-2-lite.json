@@ -1,0 +1,25 @@
+{
+  "model_id": "nova-2-lite",
+  "updated_at": "2026-09-27",
+  "providers": [
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "amazon/nova-2-lite",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 2.5,
+        "cached_input": 0.075
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    }
+  ]
+}

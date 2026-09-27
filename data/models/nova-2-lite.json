@@ -1,0 +1,43 @@
+{
+  "model_id": "nova-2-lite",
+  "name": "Nova 2 Lite",
+  "model_provider": "amazon",
+  "status": "active",
+  "display_name": "Nova 2 Lite",
+  "description": "Nova 2 Lite is a fast, cost-effective reasoning model for everyday workloads that can process text, images, and videos to generate text.",
+  "context": {
+    "window": 1000000,
+    "max_output_tokens": 1000000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "file"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "tool_use": true,
+    "vision": true,
+    "structured_output": true,
+    "json_mode": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2025-12-02",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

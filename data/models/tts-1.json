@@ -1,0 +1,30 @@
+{
+  "model_id": "tts-1",
+  "name": "TTS-1",
+  "model_provider": "openai",
+  "status": "active",
+  "display_name": "TTS-1",
+  "description": "TTS is a model that converts text to natural sounding spoken text.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "audio"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2023-11-06",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

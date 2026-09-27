@@ -1,0 +1,37 @@
+{
+  "model_id": "hy-mt2-30b-a3b",
+  "name": "Hy-MT2-30B-A3B",
+  "model_provider": "tencent",
+  "status": "active",
+  "display_name": "Hy-MT2-30B-A3B",
+  "context": {
+    "window": 8192,
+    "max_output_tokens": 4096
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "json_mode": true,
+    "structured_output": true
+  },
+  "availability": {
+    "api": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

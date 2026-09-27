@@ -1,0 +1,25 @@
+{
+  "model_id": "gpt-5.3-codex-fast",
+  "updated_at": "2026-09-27",
+  "providers": [
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "openai/gpt-5.3-codex-fast",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.5,
+        "output": 28.0,
+        "cached_input": 0.35
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    }
+  ]
+}

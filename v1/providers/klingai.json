@@ -1,0 +1,23 @@
+{
+  "provider": {
+    "id": "klingai",
+    "name": "Kling AI",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Kling AI's video and image generation models.",
+    "website": "https://klingai.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://klingai.com",
+        "retrieved_at": "2026-09-27",
+        "title": "Kling AI official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  "model_ids": []
+}

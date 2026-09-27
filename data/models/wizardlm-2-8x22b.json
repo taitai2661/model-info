@@ -1,0 +1,36 @@
+{
+  "model_id": "wizardlm-2-8x22b",
+  "name": "WizardLM-2 8x22B",
+  "model_provider": "microsoft",
+  "status": "active",
+  "display_name": "WizardLM-2 8x22B",
+  "context": {
+    "window": 65535,
+    "max_output_tokens": 8000
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "json_mode": true
+  },
+  "availability": {
+    "api": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

@@ -1,0 +1,30 @@
+{
+  "model_id": "recraft-v4.1-flash",
+  "name": "Recraft V4.1 Flash",
+  "model_provider": "recraft",
+  "status": "active",
+  "display_name": "Recraft V4.1 Flash",
+  "description": "Recraft V4.1 Flash is a fast, low-cost model with quality close to Recraft V4.1, built for high-volume generation and rapid iteration. Strong use cases include photography, portraits, atmosphere, complex scenes, mixed media, and logo concepts.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "image"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-09-23",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

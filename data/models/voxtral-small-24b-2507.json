@@ -1,0 +1,40 @@
+{
+  "model_id": "voxtral-small-24b-2507",
+  "name": "Voxtral Small 24B 2507",
+  "model_provider": "mistral",
+  "status": "active",
+  "display_name": "Voxtral Small 24B 2507",
+  "context": {
+    "window": 32768,
+    "max_output_tokens": 26214
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "audio",
+      "file"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "json_mode": true,
+    "structured_output": true,
+    "tool_use": true
+  },
+  "availability": {
+    "api": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

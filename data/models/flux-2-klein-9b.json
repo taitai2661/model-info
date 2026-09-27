@@ -1,0 +1,30 @@
+{
+  "model_id": "flux-2-klein-9b",
+  "name": "FLUX.2 [klein] 9B",
+  "model_provider": "black-forest-labs",
+  "status": "active",
+  "display_name": "FLUX.2 [klein] 9B",
+  "description": "FLUX.2 [klein] is Black Forest Labs' fastest image model yet - it unifies image generation and editing in a single, compact model. Delivering state-of-the-art quality with end-to-end inference in less than a second. Enabling interactive workflows, real-time previews, and latency-critical applications.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "image"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-01-15",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

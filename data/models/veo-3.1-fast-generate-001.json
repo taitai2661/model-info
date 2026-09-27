@@ -1,0 +1,30 @@
+{
+  "model_id": "veo-3.1-fast-generate-001",
+  "name": "Veo 3.1 Fast Generate",
+  "model_provider": "google",
+  "status": "active",
+  "display_name": "Veo 3.1 Fast Generate",
+  "description": "Veo 3.1 Fast is a specialized, high-speed variant of Google DeepMind’s Veo 3.1 text-to-video model, optimized for rapid generation of 8-second, high-fidelity videos. It is designed to create cinematic, 1080p, or 720p content with improved prompt adherence and native audio, making it ideal for creating quick, high-quality video clips, social media content, and ad creatives.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "video"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2025-10-15",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

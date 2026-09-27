@@ -1,0 +1,30 @@
+{
+  "model_id": "titan-embed-text-v2",
+  "name": "Titan Text Embeddings V2",
+  "model_provider": "amazon",
+  "status": "active",
+  "display_name": "Titan Text Embeddings V2",
+  "description": "Amazon Titan Text Embeddings V2 is a light weight, efficient multilingual embedding model supporting 1024, 512, and 256 dimensions.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2024-04-30",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

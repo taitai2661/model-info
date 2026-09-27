@@ -1,0 +1,38 @@
+{
+  "model_id": "qwen2.5-vl-72b-instruct",
+  "name": "Qwen2.5 VL 72B Instruct",
+  "model_provider": "qwen",
+  "status": "active",
+  "display_name": "Qwen2.5 VL 72B Instruct",
+  "context": {
+    "window": 128000,
+    "max_output_tokens": 115200
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "json_mode": true,
+    "structured_output": true
+  },
+  "availability": {
+    "api": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

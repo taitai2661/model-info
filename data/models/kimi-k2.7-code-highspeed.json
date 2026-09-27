@@ -1,0 +1,44 @@
+{
+  "model_id": "kimi-k2.7-code-highspeed",
+  "name": "Kimi K2.7 Code High Speed",
+  "model_provider": "moonshot",
+  "status": "active",
+  "display_name": "Kimi K2.7 Code High Speed",
+  "description": "Kimi K2.7 Code HighSpeed is the high-speed version of Kimi K2.7 Code, the same model as Kimi K2.7 Code, but with an output speed of approximately 180 Tokens/s and up to 260 Tokens/s in short context scenarios, delivering a more extreme coding experience.",
+  "context": {
+    "window": 262144,
+    "max_output_tokens": 32768
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "file",
+      "video"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "tool_use": true,
+    "vision": true,
+    "structured_output": true,
+    "json_mode": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-06-15",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

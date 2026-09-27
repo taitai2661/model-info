@@ -1,6 +1,6 @@
 {
   "model_id": "gemma-3-12b-it",
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-09-27",
   "providers": [
     {
       "provider_id": "nvidia",
@@ -9,9 +9,8 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-26",
-          "title": "NVIDIA NIM public model catalog",
-          "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
     },
@@ -26,6 +25,28 @@
           "url": "https://ai.google.dev/gemini-api/docs/models",
           "retrieved_at": "2026-09-26",
           "title": "Gemini API models"
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "google/gemma-3-12b-it",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.05,
+        "output": 0.15
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 16384
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
     }

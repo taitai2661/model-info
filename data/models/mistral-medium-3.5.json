@@ -1,0 +1,42 @@
+{
+  "model_id": "mistral-medium-3.5",
+  "name": "Mistral Medium Latest",
+  "model_provider": "mistral",
+  "status": "active",
+  "display_name": "Mistral Medium Latest",
+  "description": "Mistral's frontier-class multimodal model optimized for agentic and coding use cases.",
+  "context": {
+    "window": 262144,
+    "max_output_tokens": 256000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "tool_use": true,
+    "vision": true,
+    "structured_output": true,
+    "json_mode": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-04-29",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

@@ -1,19 +1,49 @@
 {
- "model_id": "llama-guard-4-12b",
- "updated_at": "2026-09-26",
- "providers": [
-  {
-   "provider_id": "nvidia",
-   "model_id": "meta/llama-guard-4-12b",
-   "sources": [
+  "model_id": "llama-guard-4-12b",
+  "updated_at": "2026-09-27",
+  "providers": [
     {
-     "type": "official",
-     "url": "https://integrate.api.nvidia.com/v1/models",
-     "retrieved_at": "2026-09-26",
-     "title": "NVIDIA NIM public model catalog",
-     "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+      "provider_id": "nvidia",
+      "model_id": "meta/llama-guard-4-12b",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "meta-llama/llama-guard-4-12b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.18,
+        "output": 0.18
+      },
+      "context": {
+        "window": 163840,
+        "max_output_tokens": 16384
+      },
+      "modalities": {
+        "input": [
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

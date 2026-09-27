@@ -1,6 +1,6 @@
 {
   "model_id": "deepseek-flash",
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-09-27",
   "providers": [
     {
       "provider_id": "deepseek",
@@ -13,20 +13,20 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ],
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.14,
-        "output": 0.42,
-        "cached_input": 0.0042
+        "input": 0.035,
+        "output": 0.29,
+        "cached_input": 0.001
       },
       "context": {
         "window": 1048576,
-        "max_output_tokens": 131072
+        "max_output_tokens": 384000
       }
     },
     {
@@ -50,7 +50,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -77,7 +77,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ]
@@ -104,7 +104,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ]
@@ -126,7 +126,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -145,7 +145,7 @@
         {
           "type": "official",
           "url": "https://docs.fireworks.ai/serverless/pricing.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
         }
       ]

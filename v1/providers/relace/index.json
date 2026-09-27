@@ -1,0 +1,23 @@
+{
+  "provider": {
+    "id": "relace",
+    "name": "Relace",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Relace's apply and search models for coding agents.",
+    "website": "https://relace.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://relace.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Relace official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  "model_ids": []
+}

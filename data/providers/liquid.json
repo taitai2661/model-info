@@ -1,0 +1,21 @@
+{
+  "id": "liquid",
+  "name": "Liquid AI",
+  "types": [
+    "model_provider"
+  ],
+  "status": "active",
+  "description": "Liquid AI's LFM foundation models.",
+  "website": "https://liquid.ai",
+  "documentation_url": "https://docs.liquid.ai",
+  "updated_at": "2026-09-27",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://liquid.ai",
+      "retrieved_at": "2026-09-27",
+      "title": "Liquid AI official site",
+      "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+    }
+  ]
+}

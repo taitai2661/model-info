@@ -1,0 +1,37 @@
+{
+  "model_id": "ui-tars-1.5-7b",
+  "name": "UI-TARS 7B",
+  "model_provider": "bytedance",
+  "status": "active",
+  "display_name": "UI-TARS 7B",
+  "context": {
+    "window": 128000,
+    "max_output_tokens": 2048
+  },
+  "modalities": {
+    "input": [
+      "image",
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "structured_output": true
+  },
+  "availability": {
+    "api": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

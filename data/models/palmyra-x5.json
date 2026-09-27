@@ -1,0 +1,32 @@
+{
+  "model_id": "palmyra-x5",
+  "name": "Palmyra X5",
+  "model_provider": "writer",
+  "status": "active",
+  "display_name": "Palmyra X5",
+  "context": {
+    "window": 1040000,
+    "max_output_tokens": 8192
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

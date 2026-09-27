@@ -1,0 +1,30 @@
+{
+  "model_id": "veo-3.0-fast-generate-001",
+  "name": "Veo 3.0 Fast Generate",
+  "model_provider": "google",
+  "status": "active",
+  "display_name": "Veo 3.0 Fast Generate",
+  "description": "Veo 3 Fast is a quicker and more cost effective version of Veo 3, allowing developers to create videos with sound while maintaining high quality and optimizing for speed and business use cases. Veo 3 Fast offers both text-to-video and image-to-video modalities.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "video"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2025-07-31",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

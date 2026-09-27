@@ -1,0 +1,30 @@
+{
+  "model_id": "veo-3.1-lite-generate-001",
+  "name": "Veo 3.1 Lite Generate",
+  "model_provider": "google",
+  "status": "active",
+  "display_name": "Veo 3.1 Lite Generate",
+  "description": "Veo 3.1 Lite Preview is a high-efficiency, developer-first video model providing high-fidelity video generation, editing, and cinematic control. It leverages the state-of-the-art Veo 3.1 model to democratize professional-grade video AI by offering a scalable, programmable interface for creators and enterprises.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "video"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-04-02",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

@@ -1,0 +1,43 @@
+{
+  "model_id": "namazu",
+  "name": "Sakana Namazu",
+  "model_provider": "sakana-ai",
+  "status": "active",
+  "display_name": "Sakana Namazu",
+  "description": "Sakana Namazu is a Japanese-specialized LLM that combines a deep understanding of Japanese culture and business customs with high-performance language capabilities. Built on the open model Kimi K2.6 and refined with Sakana AI's in-house data for Japanese language and business workflows, it handles complex tasks using web search and code execution. Unlike Fugu, which orchestrates multiple frontier models, Sakana Namazu provides a single in-house model as an API.",
+  "context": {
+    "window": 256000,
+    "max_output_tokens": 256000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "file"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "vision": true,
+    "reasoning": true,
+    "structured_output": true,
+    "tool_use": true,
+    "json_mode": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-08-03",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

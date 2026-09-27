@@ -1,0 +1,41 @@
+{
+  "model_id": "step-5-preview",
+  "name": "Step 5 Preview",
+  "model_provider": "stepfun",
+  "status": "active",
+  "display_name": "Step 5 Preview",
+  "description": "Step 5 Preview is StepFun’s flagship AI model for agentic coding, professional knowledge work, and financial analysis. Built on a sparse Mixture-of-Experts architecture with 600B total parameters and 27B active per token, it combines a 1M-token context window with vision input. From building interactive applications and debugging code to conducting research and producing analytical reports, it supports complex workflows that require sustained reasoning, tool use, and iterative refinement.",
+  "context": {
+    "window": 1000000,
+    "max_output_tokens": 1000000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "vision": true,
+    "structured_output": true,
+    "reasoning": true,
+    "json_mode": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-09-20",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

@@ -35,6 +35,8 @@
   },
   "model_ids": [
     "gpt-oss-120b",
+    "gpt-oss-20b",
+    "gpt-oss-safeguard-20b",
     "llama-3.3-70b-instruct",
     "minimax-m2.7",
     "qwen3.8-27b"

@@ -1,0 +1,30 @@
+{
+  "model_id": "kling-v3.0-motion-control",
+  "name": "Kling v3.0 Motion Control",
+  "model_provider": "klingai",
+  "status": "active",
+  "display_name": "Kling v3.0 Motion Control",
+  "description": "Kling 3.0 delivers a major leap in character fidelity for motion-driven generation, with stable facial features across multi-angle and long-duration motion, accurate complex emotions from multi-image face references, identity preservation through partial occlusions (hats, hands, fans), and steady clarity as the camera zooms, pans, or tracks.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "video"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-03-04",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

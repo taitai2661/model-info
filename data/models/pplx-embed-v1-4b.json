@@ -1,0 +1,33 @@
+{
+  "model_id": "pplx-embed-v1-4b",
+  "name": "Embed v1 4b",
+  "model_provider": "perplexity",
+  "status": "active",
+  "display_name": "Embed v1 4b",
+  "description": "pplx-embed-v1 is a state-of-the-art text embedding model optimized for real-world, web-scale retrieval tasks.",
+  "context": {
+    "window": 32000
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-02-26",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

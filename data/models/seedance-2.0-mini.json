@@ -1,0 +1,34 @@
+{
+  "model_id": "seedance-2.0-mini",
+  "name": "Seedance 2.0 Mini",
+  "model_provider": "bytedance",
+  "status": "active",
+  "display_name": "Seedance 2.0 Mini",
+  "description": "Seedance 2.0 Mini is a cost-effective multimodal video creation model, retaining the core functions and advantages of Seedance 2.0 at a lower price.",
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "video"
+    ]
+  },
+  "capabilities": {
+    "vision": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-06-22",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

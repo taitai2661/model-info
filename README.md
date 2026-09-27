@@ -9,6 +9,8 @@ It answers two questions in one place:
 
 Model Info does **not** execute models, proxy API requests, rank models, or recommend models. It stores verified facts, validates them against JSON Schemas, and serves them as static JSON — nothing else.
 
+A static search site for the data lives at the repository root (`index.html` + `web/`), served from the same GitHub Pages deployment. Open the repo root in a browser to browse models and providers by keyword, filter by capability/modalities/status, and view per-provider connection details. No build step, no framework — vanilla HTML/CSS/JS fetching the committed `v1/` JSON at runtime.
+
 日本語版: [README.ja.md](README.ja.md)
 
 ## Core concepts
@@ -43,6 +45,7 @@ model-info/
 │   └── model-provider.schema.json
 ├── v1/                        # generated static API (committed, served by GitHub Pages)
 ├── collector/                 # manual Python collectors (never run automatically)
+│   └── vendors.json           # curated catalogue-vendor -> model_provider map
 ├── scripts/
 │   ├── validate.py            # schema + integrity + secret scanning
 │   └── build.py               # validate -> generate v1/
@@ -124,8 +127,8 @@ Nested objects inside a relationship entry (`pricing`, `context`, `modalities`, 
 
 ## Data rules
 
-- **Never guess.** Unknown context windows, prices, or capabilities are `null` (or the key is omitted) — never `0`, never inferred.
-- **Every fact has sources.** `sources[]` records `type` (`official`/`documentation`/`community`/`manual`), `url`, and `retrieved_at`.
+- **Never guess.** Unknown context windows, prices, or capabilities are `null` (or the key is omitted) — never `0`, never inferred. `0` is only meaningful for a price (an explicitly free tier); a context size of `0` is rejected by `validate.py`, because upstream it means "not applicable" (image, video and embedding models have no token budget).
+- **Every fact has sources.** `sources[]` records `type` (`official`/`documentation`/`community`/`manual`), `url`, and `retrieved_at`. `official` is the vendor's own page; `documentation` is a third party describing the vendor's model, such as an aggregator catalogue.
 - **No secrets, ever.** API keys are never stored. Validation scans all data files for credential-like strings and fails the build.
 - **Enums**: `status` = `active | preview | experimental | deprecated | retired | unknown`; `api_style` = `openai_compatible | anthropic | google_generative_ai | custom`; `authentication.type` = `bearer | api_key | oauth | none | custom`; modalities = `text | image | audio | video | file`.
 - Dates are `YYYY-MM-DD`. Prices are per `unit` (`1M_tokens` by default) in `currency`.
@@ -158,11 +161,33 @@ export OPENAI_API_KEY=...                         # keys live only in your shell
 .venv/bin/python -m collector openai --write
 ```
 
-Available collectors: `openai`, `anthropic`, `google`, `deepseek`, `mistral`, `openrouter` (public, no key), `opencode` (public, no key), `opencode-go` (public, no key), `groq` (public, no key), `together` (public, no key), `fireworks` (public, no key), `nvidia` (public, no key), `vercel-ai-gateway` (public, no key).
+Available collectors: `openai`, `anthropic`, `google`, `deepseek`, `mistral`, `openrouter` (public, no key), `opencode` (public, no key), `opencode-go` (public, no key), `groq` (public, no key), `together` (public, no key), `fireworks` (public, no key), `nvidia` (public, no key), `vercel-ai-gateway` (public, no key), `catalog` (public, no key).
 
 `groq`, `together` and `fireworks` publish their catalogues as Markdown documentation rather than as a JSON API, so they read the `.md` page instead (`collector/docs.py`) — still no key involved. `normalize()` receives the raw text and each collector decides which column is the context window and which one is the price.
 
-Collectors only **update facts they can read from the source**. Anything else keeps its hand-verified value; ids that do not match a registered model are reported as *needs manual review* instead of being invented. A provider model id that *does* resolve to a registered model gets its relationship entry created (vendor prefix, letter case, Fireworks' `p` decimal escape, snapshot suffixes and the model's own `version` are the only rewrites applied) — but a collector never creates a model document. Run `validate.py` and `build.py` afterwards.
+Collectors only **update facts they can read from the source**. Anything else keeps its hand-verified value; ids that do not match a registered model are reported as *needs manual review* instead of being invented. A provider model id that *does* resolve to a registered model gets its relationship entry created (vendor prefix, letter case, Fireworks' `p` decimal escape, route variants such as `:free` / `:batch`, snapshot suffixes and the model's own `version` are the only rewrites applied) — but apart from `catalog` below, a collector never creates a model document. Run `validate.py` and `build.py` afterwards.
+
+### Catalog import (`catalog`)
+
+`catalog` is the one collector that **does** create model documents, and it does so only for models that do not exist yet. It reads the two large public aggregator catalogues (Vercel AI Gateway and OpenRouter) and registers everything in them that is still missing — currently 459 models across 58 model providers, most of them long-tail open-weight releases, embedding models, image/video generation models and community fine-tunes. A model that is already registered is left completely alone, so hand-verified specs are never overwritten by a catalogue.
+
+Three rules keep it from turning the registry into a mirror of an upstream JSON blob:
+
+- **No guessed vendors.** `collector/vendors.json` maps a catalogue vendor key onto a registered `model_provider` (`aliases`), lists vendors that are deliberately skipped (`ignored`), and holds the `providers` entries used to create a `model_provider` document for a vendor that is not registered yet. A vendor that appears in neither file is reported as *needs manual review* and **nothing is written** — the mapping is always a human decision, never a prefix heuristic. To add a vendor, add it to `vendors.json` with a `website` or `documentation_url` to cite, then re-run.
+- **No invented facts.** `model_id` is the catalogue id without its vendor prefix, `name` comes from the catalogue (Vercel's is the clean product name; OpenRouter's `"Vendor: Model"` prefix is dropped because the vendor is already in `model_provider`). `family` and `version` stay unset because no payload states them. Prices are provider facts and therefore only ever land on the relationship entry — never on the model document.
+- **Aggregator ≠ vendor.** A catalogue is a reseller's view, not the developer's own documentation, so model documents imported this way carry `sources[].type = "documentation"` and say so in the note. Hand-written model documents keep `type = "official"` and cite the vendor's own page.
+
+Vercel wins wherever both catalogues report a field (its `owned_by` is the vendor's own identifier and it carries a real `released` timestamp); OpenRouter contributes `hugging_face_id` (open weights) and `expiration_date`. Imported models get `status: "active"` — being listed in a live provider catalogue — unless the catalogue announces a retirement, which downgrades them to `deprecated`. `release_date` is only set from Vercel's `released`; OpenRouter's `created` is when *it* listed the model, which is not a release date, so it is not used.
+
+```bash
+.venv/bin/python -m collector catalog            # dry run
+.venv/bin/python -m collector catalog --write    # import
+.venv/bin/python -m collector catalog --write    # no-op: already imported
+```
+
+Two things are deliberately **not** imported: OpenRouter's `~vendor/…` ids (routing variants that track a vendor's latest release) and `openrouter/auto`, `/free`, `/fusion` (routers that pick a model per request). Both are listed in `vendors.json` under `ignored` with the reason.
+
+After an import, run the other collectors once more — they will attach their own relationship entries to the newly registered models. Their first run rewrites the `sources` note on the two aggregator entries the catalog wrote, so run each one twice to see a clean `unchanged` report.
 
 ### Adding data by hand
 

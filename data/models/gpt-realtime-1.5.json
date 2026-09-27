@@ -1,0 +1,32 @@
+{
+  "model_id": "gpt-realtime-1.5",
+  "name": "GPT-Realtime-1.5",
+  "model_provider": "openai",
+  "status": "active",
+  "display_name": "GPT-Realtime-1.5",
+  "description": "GPT-Realtime-1.5 is our flagship audio model for voice agents and customer support.",
+  "modalities": {
+    "input": [
+      "text",
+      "audio"
+    ],
+    "output": [
+      "text",
+      "audio"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-02-23",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

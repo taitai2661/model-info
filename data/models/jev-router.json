@@ -1,0 +1,35 @@
+{
+  "model_id": "jev-router",
+  "name": "Jev Router",
+  "model_provider": "typesafe-ai",
+  "status": "active",
+  "display_name": "Jev Router",
+  "context": {
+    "window": 1000000
+  },
+  "modalities": {
+    "input": [
+      "audio",
+      "file",
+      "image",
+      "text",
+      "video"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

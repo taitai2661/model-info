@@ -1,0 +1,39 @@
+{
+  "model_id": "nova-2-lite-v1",
+  "name": "Nova 2 Lite",
+  "model_provider": "amazon",
+  "status": "active",
+  "display_name": "Nova 2 Lite",
+  "context": {
+    "window": 1000000,
+    "max_output_tokens": 65535
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "video",
+      "file"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "tool_use": true
+  },
+  "availability": {
+    "api": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

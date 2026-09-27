@@ -1,0 +1,38 @@
+{
+  "model_id": "perceptron-mk1",
+  "name": "Perceptron Mk1",
+  "model_provider": "perceptron",
+  "status": "active",
+  "display_name": "Perceptron Mk1",
+  "context": {
+    "window": 32768,
+    "max_output_tokens": 8192
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "structured_output": true
+  },
+  "availability": {
+    "api": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

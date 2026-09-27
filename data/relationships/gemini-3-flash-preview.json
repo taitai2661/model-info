@@ -1,6 +1,6 @@
 {
   "model_id": "gemini-3-flash-preview",
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-09-27",
   "providers": [
     {
       "provider_id": "google",
@@ -13,7 +13,7 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
@@ -39,8 +39,26 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "google/gemini-3-flash-preview:batch",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.25,
+        "output": 1.5
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
     }

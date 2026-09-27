@@ -9,6 +9,8 @@
 
 Model Infoはモデルを**実行したり、APIをプロキシしたり、ランキングや推薦をしたりしません**。検証済みの事実をJSON Schemaで検証し、静的JSONとして配信するだけです。
 
+同じGitHub Pages配信のリポジトリルート(`index.html` + `web/`)にデータの静的検索サイトがあります。ブラウザでリポジトリルートを開くと、キーワード検索、機能/モダリティ/ステータスでのフィルタ、プロバイダー別接続情報の閲覧ができます。ビルド工程・フレームワークなし — バニラHTML/CSS/JSがコミット済みの `v1/` JSONを実行時にfetchします。
+
 English: [README.md](README.md)
 
 ## 基本概念
@@ -43,6 +45,7 @@ model-info/
 │   └── model-provider.schema.json
 ├── v1/                        # 生成された静的API(GitHub Pagesで配信)
 ├── collector/                 # 手動実行のPython Collector(自動実行なし)
+│   └── vendors.json           # カタログの vendor → model_provider 対応表(手編集)
 ├── scripts/
 │   ├── validate.py            # スキーマ + 整合性 + 秘密情報スキャン
 │   └── build.py               # 検証 -> v1/ 生成
@@ -123,8 +126,8 @@ GitHub Pages 上ではリポジトリルートから `https://<user>.github.io/<
 
 ## データのルール
 
-- **推測しない。** 不明なコンテキスト長・料金・機能は `null`(またはキー自体を省略)。`0` にしない、憶測しない。
-- **出典を必ず記録。** `sources[]` に `type`(`official` / `documentation` / `community` / `manual`)、`url`、`retrieved_at` を保持。
+- **推測しない。** 不明なコンテキスト長・料金・機能は `null`(またはキー自体を省略)。`0` にしない、憶測しない。`0` が意味を持つのは料金(明示的に無料な tier)のみで、コンテキスト長の `0` は `validate.py` が拒否します。上流では「該当なし」(画像・動画・embedding モデルにはトークン上限がない)を意味するからです。
+- **出典を必ず記録。** `sources[]` に `type`(`official` / `documentation` / `community` / `manual`)、`url`、`retrieved_at` を保持。`official` は開発者本人のページ、`documentation` は aggregator カタログのように第三者が開発者のモデルについて説明したものです。
 - **秘密情報は絶対に保存しない。** APIキーは一切書き込みません。検証は全データファイルを資格情報らしき文字列で走査し、検出したらビルドを失敗させます。
 - **enum**: `status` = `active | preview | experimental | deprecated | retired | unknown`、`api_style` = `openai_compatible | anthropic | google_generative_ai | custom`、`authentication.type` = `bearer | api_key | oauth | none | custom`、モダリティ = `text | image | audio | video | file`。
 - 日時は `YYYY-MM-DD`。料金は `currency` + `unit`(既定 `1M_tokens`)単位。
@@ -157,11 +160,33 @@ export OPENAI_API_KEY=...                         # キーはシェルにのみ�
 .venv/bin/python -m collector openai --write
 ```
 
-利用可能: `openai` / `anthropic` / `google` / `deepseek` / `mistral` / `openrouter`(公開・キー不要) / `opencode`(公開・キー不要) / `opencode-go`(公開・キー不要) / `groq`(公開・キー不要) / `together`(公開・キー不要) / `fireworks`(公開・キー不要) / `nvidia`(公開・キー不要) / `vercel-ai-gateway`(公開・キー不要)。
+利用可能: `openai` / `anthropic` / `google` / `deepseek` / `mistral` / `openrouter`(公開・キー不要) / `opencode`(公開・キー不要) / `opencode-go`(公開・キー不要) / `groq`(公開・キー不要) / `together`(公開・キー不要) / `fireworks`(公開・キー不要) / `nvidia`(公開・キー不要) / `vercel-ai-gateway`(公開・キー不要) / `catalog`(公開・キー不要)。
 
 `groq` / `together` / `fireworks` はJSON APIではなくMarkdownのドキュメントでカタログを公開しているため、`.md` ページを直接読みます(`collector/docs.py`)。APIキーは引き続き不要で、どの列がコンテキスト長・料金なのかは各Collectorが判定します。
 
-Collectorはソースから読み取れる情報**だけ**を更新します。読み取れない項目は手検証済みの値を保持します。Provider側のモデルIDが登録済みモデルに解決できる場合は relationship エントリを新規作成します(適用されるのは vendor 接頭辞・大文字小文字・Fireworks の `p` 表記・スナップショット接尾辞・モデル自身の `version` のみ)。モデルドキュメント自体をCollectorが作ることはありません。解決できないIDは従来通り「要手動確認」として報告されます。実行後は `validate.py` と `build.py` を走らせてください。
+Collectorはソースから読み取れる情報**だけ**を更新します。読み取れない項目は手検証済みの値を保持します。Provider側のモデルIDが登録済みモデルに解決できる場合は relationship エントリを新規作成します(適用されるのは vendor 接頭辞・大文字小文字・Fireworks の `p` 表記・`:free` / `:batch` などのルート variant・スナップショット接尾辞・モデル自身の `version` のみ)。下記の `catalog` を除き、モデルドキュメント自体をCollectorが作ることはありません。解決できないIDは従来通り「要手動確認」として報告されます。実行後は `validate.py` と `build.py` を走らせてください。
+
+### カタログ一括 import(`catalog`)
+
+`catalog` は唯一**モデルドキュメントを作成する**Collectorで、それでも「未登録のモデルに限り」作成します。2つの大規模カタログ(Vercel AI Gateway / OpenRouter)を読み、まだ存在しないモデルをすべて登録します(現在 459 モデル / 58 の model provider。オープンウェイトのロングテール、embedding、画像・動画生成モデル、コミュニティの fine-tune が中心です)。登録済みモデルは完全に手を触れないため、手検証済みの specs がカタログで上書きされることはありません。
+
+registry を上流JSONの写しにしないため、3つのルールを課しています。
+
+- **vendor を推測しない。** `collector/vendors.json` が、カタログの vendor キー → 登録済み `model_provider` の対応(`aliases`)、意図的に除外する vendor(`ignored`)、未登録 vendor 用の `model_provider` ドキュメント生成情報(`providers`)を持ちます。どちらにも無い vendor は「要手動確認」として報告され、**一切書き込みません**。対応付けは必ず人の判断であり、接頭辞のヒューリスティックではありません。vendor を追加するには、引用可能な `website` または `documentation_url` 付きで `vendors.json` に追加して再実行します。
+- **事実を捏造しない。** `model_id` は vendor 接頭辞を除いたカタログ ID、`name` はカタログの値(Vercel は製品名のまま。OpenRouter の `"Vendor: Model"` 接頭辞は、vendor が既に `model_provider` にあるため除去)。`family` と `version` はどの payload も述べていないので未設定のままです。料金は provider の事実なので relationship エントリにのみ書き、モデルドキュメントには決して書きません。
+- **aggregator ≠ vendor。** カタログは開発者本人のドキュメントではなく再販売者の視点なので、この経路で import したモデルドキュメントは `sources[].type = "documentation"` とし、その旨を note に明記します。手書きのモデルドキュメントは `type = "official"` のまま開発者本人的ページを参照します。
+
+両カタログの同じ項目については、より信頼できる Vercel を優先します(`owned_by` が vendor 自身の識別子で、`released` に実時刻がある)。OpenRouter は `hugging_face_id`(open weights)と `expiration_date` を補完します。import したモデルの `status` は、生きた provider カタログに載っていることから `active`、退役が告知されている場合のみ `deprecated` になります。`release_date` は Vercel の `released` のみを使用します。OpenRouter の `created` は*OpenRouter が掲載した*時刻であってリリース日ではないため、使用しません。
+
+```bash
+.venv/bin/python -m collector catalog            # dry run
+.venv/bin/python -m collector catalog --write    # import
+.venv/bin/python -m collector catalog --write    # no-op(すでに import 済み)
+```
+
+意図的に **import しない** ものが2つあります。OpenRouter の `~vendor/…` ID(vendor の最新リリースを追う routing variant)と `openrouter/auto`・`/free`・`/fusion`(リクエストごとにモデルを選ぶ router)です。どちらも `vendors.json` の `ignored` に理由を明記しています。
+
+import の後は他のCollectorを再実行してください。新規登録モデルに各Collector自身の relationship エントリが付きます。初回実行では `catalog` が書いた2つの aggregator エントリの `sources` note が上書きされるため、`unchanged` だけになるまで各Collectorを2回走らせてください。
 
 ### 手動でのデータ追加
 

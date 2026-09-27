@@ -1,0 +1,24 @@
+{
+  "provider": {
+    "id": "voyage",
+    "name": "Voyage AI",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Voyage AI's embedding and reranking models.",
+    "website": "https://voyageai.com",
+    "documentation_url": "https://docs.voyageai.com",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://voyageai.com",
+        "retrieved_at": "2026-09-27",
+        "title": "Voyage AI official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  "model_ids": []
+}

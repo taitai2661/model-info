@@ -1,0 +1,37 @@
+{
+  "model_id": "gpt-3.5-turbo-0613",
+  "name": "GPT-3.5 Turbo (older v0613)",
+  "model_provider": "openai",
+  "status": "active",
+  "display_name": "GPT-3.5 Turbo (older v0613)",
+  "context": {
+    "window": 4095,
+    "max_output_tokens": 3685
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "json_mode": true,
+    "structured_output": true,
+    "tool_use": true
+  },
+  "availability": {
+    "api": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

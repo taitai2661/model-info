@@ -20,6 +20,11 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SNAPSHOT_RE = re.compile(r"^\d{4}-?\d{2}-?\d{2}$")
 # Fireworks escapes a decimal point as "p" in model ids (glm-5p3 -> glm-5.3).
 DECIMAL_P_RE = re.compile(r"(?<=\d)p(?=\d)")
+# Aggregators publish the same model under suffixed route ids
+# (``gpt-6-luna:free``, ``claude-opus-5:batch``). Those are alternative ids
+# for one model, not separate models. Only the known route variants are
+# stripped — a trailing ``:0`` is a Bedrock version suffix, not a variant.
+VARIANT_RE = re.compile(r":(?:batch|extended|floor|free|nitro|online|thinking)$")
 
 
 class CollectorError(Exception):
@@ -35,10 +40,11 @@ def id_candidates(api_model_id: str) -> list[str]:
     """Deterministic spellings of a provider model id, most specific first.
 
     Providers differ only in well-known, mechanical ways: a vendor prefix
-    (``Qwen/Qwen3.7-Max``), letter case (``Kimi-K3`` -> ``kimi-k3``) or
-    Fireworks' ``p`` decimal escape (``glm-5p3`` -> ``glm-5.3``). Anything that
-    still does not match a registered model is reported for manual review —
-    nothing here may invent a mapping.
+    (``Qwen/Qwen3.7-Max``), a suffixed route variant (``gpt-6-luna:free``),
+    letter case (``Kimi-K3`` -> ``kimi-k3``) or Fireworks' ``p`` decimal
+    escape (``glm-5p3`` -> ``glm-5.3``). Anything that still does not match a
+    registered model is reported for manual review — nothing here may invent a
+    mapping.
     """
     out: list[str] = []
     seen: set[str] = set()
@@ -51,6 +57,8 @@ def id_candidates(api_model_id: str) -> list[str]:
     add(api_model_id)
     for depth in range(1, api_model_id.count("/") + 1):
         add("/".join(api_model_id.split("/")[depth:]))
+    for candidate in list(out):
+        add(VARIANT_RE.sub("", candidate))
     for candidate in list(out):
         add(DECIMAL_P_RE.sub(".", candidate))
     for candidate in list(out):
@@ -193,8 +201,9 @@ class BaseCollector:
     # -- writing ------------------------------------------------------------
 
     def apply(self, root: Path, results: dict, write: bool = False) -> dict:
-        report = {"created": [], "updated": [], "relationships": [], "aliases": [],
-                  "unmatched": [], "unchanged": [], "invalid": []}
+        report = {"created": [], "updated": [], "providers": [], "relationships": [],
+                  "aliases": [], "unchanged": [], "ignored": [], "unmatched": [],
+                  "invalid": []}
         model_validator = load_schema(root, "model.schema.json")
         rel_validator = load_schema(root, "model-provider.schema.json")
 
@@ -260,14 +269,18 @@ class BaseCollector:
                 rel = {"model_id": canonical, "updated_at": today(), "providers": []}
             changed = fresh
             for patch in entries:
+                # A collector that serves one provider leaves `provider_id` out;
+                # one that merges several catalogues (see catalog.py) sets it per
+                # patch.
+                pid = patch.get("provider_id", self.provider_id)
                 entry = next(
                     (e for e in rel["providers"]
-                     if e["provider_id"] == self.provider_id
+                     if e["provider_id"] == pid
                      and e["model_id"] == patch["model_id"]),
                     None,
                 )
                 if entry is None:
-                    entry = {"provider_id": self.provider_id, "model_id": patch["model_id"]}
+                    entry = {"provider_id": pid, "model_id": patch["model_id"]}
                     rel["providers"].append(entry)
                     changed = True
                 before = json.dumps(entry, sort_keys=True)
@@ -355,10 +368,15 @@ class BaseCollector:
 
     @staticmethod
     def print_report(report: dict, write: bool) -> None:
-        for key in ("created", "updated", "relationships", "aliases", "unchanged"):
+        for key in ("created", "updated", "providers", "relationships", "aliases",
+                    "unchanged"):
             items = report.get(key) or []
             if items:
                 print(f"{key} ({len(items)}): {', '.join(sorted(set(items)))}")
+        if report.get("ignored"):
+            print("skipped (not a model):")
+            for item in report["ignored"]:
+                print(f"  - {item}")
         if report.get("unmatched"):
             print("needs manual review (no matching entry in data/):")
             for item in report["unmatched"][:40]:
@@ -375,8 +393,8 @@ class BaseCollector:
 
 
 def discover():
-    from . import (anthropic, deepseek, fireworks, google, groq, mistral, nvidia,
-                   opencode, opencode_go, openrouter, openai, together,
+    from . import (anthropic, catalog, deepseek, fireworks, google, groq, mistral,
+                   nvidia, opencode, opencode_go, openrouter, openai, together,
                    vercel_ai_gateway)
 
     collectors = [openai.OpenAICollector(), anthropic.AnthropicCollector(),
@@ -385,5 +403,6 @@ def discover():
                   opencode.OpenCodeCollector(), opencode_go.OpenCodeGoCollector(),
                   groq.GroqCollector(), together.TogetherCollector(),
                   fireworks.FireworksCollector(), nvidia.NvidiaCollector(),
-                  vercel_ai_gateway.VercelAIGatewayCollector()]
+                  vercel_ai_gateway.VercelAIGatewayCollector(),
+                  catalog.CatalogCollector()]
     return {c.name: c for c in collectors}

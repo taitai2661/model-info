@@ -1,19 +1,63 @@
 {
- "model_id": "laguna-xs-2.1",
- "updated_at": "2026-09-26",
- "providers": [
-  {
-   "provider_id": "nvidia",
-   "model_id": "poolside/laguna-xs-2.1",
-   "sources": [
+  "model_id": "laguna-xs-2.1",
+  "updated_at": "2026-09-27",
+  "providers": [
     {
-     "type": "official",
-     "url": "https://integrate.api.nvidia.com/v1/models",
-     "retrieved_at": "2026-09-26",
-     "title": "NVIDIA NIM public model catalog",
-     "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+      "provider_id": "nvidia",
+      "model_id": "poolside/laguna-xs-2.1",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "poolside/laguna-xs-2.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.06,
+        "output": 0.12,
+        "cached_input": 0.03
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "poolside/laguna-xs-2.1:free",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

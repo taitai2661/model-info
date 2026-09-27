@@ -1,0 +1,39 @@
+{
+  "model_id": "gemini-3-pro-image-preview",
+  "name": "Nano Banana Pro (Gemini 3 Pro Image Preview)",
+  "model_provider": "google",
+  "status": "active",
+  "display_name": "Nano Banana Pro (Gemini 3 Pro Image Preview)",
+  "context": {
+    "window": 65536,
+    "max_output_tokens": 32768
+  },
+  "modalities": {
+    "input": [
+      "image",
+      "text"
+    ],
+    "output": [
+      "image",
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "json_mode": true,
+    "structured_output": true
+  },
+  "availability": {
+    "api": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

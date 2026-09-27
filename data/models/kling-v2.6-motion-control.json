@@ -1,0 +1,30 @@
+{
+  "model_id": "kling-v2.6-motion-control",
+  "name": "Kling v2.6 Motion Control",
+  "model_provider": "klingai",
+  "status": "active",
+  "display_name": "Kling v2.6 Motion Control",
+  "description": "Kling 2.6 introduces a groundbreaking \"Native Audio\" capability, enabling the generation of complete videos in a single go, including natural voice, action sound effects, and environmental ambient sounds, providing an immersive \"what you see if what you hear\" experience. ",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "video"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2025-12-18",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

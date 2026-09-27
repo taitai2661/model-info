@@ -1,0 +1,20 @@
+{
+  "id": "dots-studio",
+  "name": "Dots Studio",
+  "types": [
+    "model_provider"
+  ],
+  "status": "active",
+  "description": "Dots Studio, developer of the Dots note model.",
+  "website": "https://dots.studio",
+  "updated_at": "2026-09-27",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://dots.studio",
+      "retrieved_at": "2026-09-27",
+      "title": "Dots Studio official site",
+      "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+    }
+  ]
+}

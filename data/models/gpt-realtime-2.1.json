@@ -1,0 +1,39 @@
+{
+  "model_id": "gpt-realtime-2.1",
+  "name": "gpt-realtime-2.1",
+  "model_provider": "openai",
+  "status": "active",
+  "display_name": "gpt-realtime-2.1",
+  "description": "GPT-Realtime-2.1 updates GPT-Realtime-2 with improved alphanumeric recognition, silence and noise handling, and interruption behavior. It supports speech-to-speech interactions with configurable reasoning effort, instruction following, and tool use for complex voice-agent workflows.",
+  "context": {
+    "window": 128000,
+    "max_output_tokens": 32000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "audio"
+    ],
+    "output": [
+      "text",
+      "audio"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-07-09",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

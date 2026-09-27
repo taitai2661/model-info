@@ -1,0 +1,35 @@
+{
+  "model_id": "grok-voice-think-fast-2.0",
+  "name": "Grok Voice Think Fast 2.0",
+  "model_provider": "xai",
+  "status": "active",
+  "display_name": "Grok Voice Think Fast 2.0",
+  "description": "Grok Voice Think Fast 2.0, our next-generation voice model with improved intelligence, transcription accuracy, and conversational capabilities.",
+  "modalities": {
+    "input": [
+      "text",
+      "audio"
+    ],
+    "output": [
+      "text",
+      "audio"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-07-29",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

@@ -1,0 +1,34 @@
+{
+  "model_id": "flux-2-max",
+  "name": "FLUX.2 [max]",
+  "model_provider": "black-forest-labs",
+  "status": "active",
+  "display_name": "FLUX.2 [max]",
+  "description": "FLUX.2 [max] offers image generation and image editing with the highest quality available. It delivers state-of-the-art image generation and advanced image editing with exceptional realism, precision, and consistency. Built for professional use, FLUX.2 [max] produces production-ready outputs for marketing teams, creatives, filmmakers, and creators around the world.",
+  "context": {
+    "window": 67300,
+    "max_output_tokens": 67300
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "image"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2025-12-16",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

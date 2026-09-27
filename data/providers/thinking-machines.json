@@ -1,0 +1,20 @@
+{
+  "id": "thinking-machines",
+  "name": "Thinking Machines Lab",
+  "types": [
+    "model_provider"
+  ],
+  "status": "active",
+  "description": "Thinking Machines Lab, developer of the Inkling model family.",
+  "website": "https://thinkingmachines.ai",
+  "updated_at": "2026-09-27",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://thinkingmachines.ai",
+      "retrieved_at": "2026-09-27",
+      "title": "Thinking Machines Lab official site",
+      "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+    }
+  ]
+}

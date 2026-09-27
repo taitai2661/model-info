@@ -1,0 +1,41 @@
+{
+  "model_id": "qwen3.6-35b-a3b",
+  "name": "Qwen3.6 35B A3B",
+  "model_provider": "qwen",
+  "status": "active",
+  "display_name": "Qwen3.6 35B A3B",
+  "context": {
+    "window": 262144,
+    "max_output_tokens": 235929
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "json_mode": true,
+    "structured_output": true,
+    "tool_use": true
+  },
+  "availability": {
+    "api": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

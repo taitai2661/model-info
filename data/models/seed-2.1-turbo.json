@@ -1,0 +1,41 @@
+{
+  "model_id": "seed-2.1-turbo",
+  "name": "Seed 2.1 Turbo",
+  "model_provider": "bytedance",
+  "status": "active",
+  "display_name": "Seed 2.1 Turbo",
+  "description": "Seed 2.1 Turbo is ByteDance’s multimodal language model supporting text, image, and video inputs with text output. It offers a 262,144-token context window, reasoning, function calling, and structured JSON output.",
+  "context": {
+    "window": 262144,
+    "max_output_tokens": 262144
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "tool_use": true,
+    "vision": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-06-23",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

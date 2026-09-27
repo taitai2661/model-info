@@ -122,6 +122,21 @@ def _check_endpoint(value, where, errors):
         errors.append(f"{where}: endpoint must not contain a query or fragment: {value!r}")
 
 
+def _check_context(context, where, errors):
+    """A context size of 0 is never a fact: it means "not applicable" upstream.
+
+    `0` is meaningful for a price (an explicitly free tier) but not for a token
+    budget, so unknown sizes must stay null or be omitted.
+    """
+    if not isinstance(context, dict):
+        return
+    for key, value in context.items():
+        if value == 0:
+            errors.append(
+                f"{where}.{key}: must be omitted or null when unknown, not 0"
+            )
+
+
 def _check_pricing(pricing, where, errors):
     if pricing is None or not isinstance(pricing, dict):
         return
@@ -161,6 +176,7 @@ def _scan_secrets(path: Path, text: str, errors: list):
 def validate_model_doc(doc, where, errors):
     _check_date(doc.get("updated_at"), f"{where}.updated_at", errors)
     _check_date(doc.get("release_date"), f"{where}.release_date", errors)
+    _check_context(doc.get("context"), where, errors)
     _check_pricing(doc.get("pricing"), f"{where}.pricing", errors)
     for pid, pricing in (doc.get("provider_pricing") or {}).items():
         _check_pricing(pricing, f"{where}.provider_pricing.{pid}", errors)
@@ -202,6 +218,7 @@ def validate_relationship_doc(doc, where, errors, model_ids, provider_ids):
             errors.append(f"{where}: duplicate entry for provider_id {pid!r} with model_id {mid!r}")
         seen.add(key)
         _check_date(entry.get("updated_at"), f"{ewhere}.updated_at", errors)
+        _check_context(entry.get("context"), ewhere, errors)
         _check_pricing(entry.get("pricing"), f"{ewhere}.pricing", errors)
         _iter_sources(entry, ewhere, errors)
 

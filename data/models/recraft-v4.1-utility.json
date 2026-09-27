@@ -1,0 +1,30 @@
+{
+  "model_id": "recraft-v4.1-utility",
+  "name": "Recraft V4.1 Utility",
+  "model_provider": "recraft",
+  "status": "active",
+  "display_name": "Recraft V4.1 Utility",
+  "description": "V4.1 is built on the same visual aesthetic and the same eye for what looks right, just pushed further across every dimension. The photorealism is more natural. The gradients are dreamier. Illustration styles are now possible that simply weren't before. And this is a model that reads a short prompts easier and creates something worth stopping for. V4.1 Utility is designed for when restraint is the aesthetic choice, with flat lighting, front-facing composition, and simple, controlled scenes.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "image"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-05-14",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

@@ -1,0 +1,33 @@
+{
+  "model_id": "voyage-4-lite",
+  "name": "Voyage 4 Lite",
+  "model_provider": "voyage",
+  "status": "active",
+  "display_name": "Voyage 4 Lite",
+  "description": "Optimized for latency and cost. All embeddings created with the 4 series are compatible with each other.",
+  "context": {
+    "window": 32000
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-01-15",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

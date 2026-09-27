@@ -1,0 +1,38 @@
+{
+  "model_id": "qwen-3.6-max-preview",
+  "name": "Qwen 3.6 Max Preview",
+  "model_provider": "qwen",
+  "status": "active",
+  "display_name": "Qwen 3.6 Max Preview",
+  "description": "Compared with the previously released Qwen3-Max and Qwen3.6-Plus, this model features enhanced vibe coding abilities, more efficient coding agent execution, and significantly improved front-end development skills. Additionally, its long-tail knowledge retention has been further upgraded.",
+  "context": {
+    "window": 240000,
+    "max_output_tokens": 64000
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "tool_use": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-04-20",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

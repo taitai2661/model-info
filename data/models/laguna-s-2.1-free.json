@@ -1,0 +1,38 @@
+{
+  "model_id": "laguna-s-2.1-free",
+  "name": "Laguna S 2.1 Free",
+  "model_provider": "poolside",
+  "status": "active",
+  "display_name": "Laguna S 2.1 Free",
+  "description": "Laguna S 2.1 is Poolside's new open-weight model for agentic coding and long-horizon work.",
+  "context": {
+    "window": 256000,
+    "max_output_tokens": 32768
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "tool_use": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-07-21",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

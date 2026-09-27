@@ -1,0 +1,37 @@
+{
+  "model_id": "hermes-4-405b",
+  "name": "Hermes 4 405B",
+  "model_provider": "nousresearch",
+  "status": "active",
+  "display_name": "Hermes 4 405B",
+  "context": {
+    "window": 131072,
+    "max_output_tokens": 117964
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "json_mode": true
+  },
+  "availability": {
+    "api": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

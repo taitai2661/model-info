@@ -423,3 +423,189 @@ def test_vercel_ai_gateway_apply_creates_relationship_for_known_model(sandbox):
                  and e["model_id"] == "openai/gpt-5")
     assert entry["sources"]
 
+
+
+# -- catalog (bulk import from the two aggregator catalogues) ---------------
+
+
+def _catalog():
+    from collector.catalog import CatalogCollector
+
+    return CatalogCollector()
+
+
+def test_registry_includes_catalog(repo_root):
+    collector = discover()["catalog"]
+    assert collector.env_var is None
+    assert collector.creates_models is True
+    assert "openrouter.ai/api/v1/models" in collector.api_url
+    assert "ai-gateway.vercel.sh/v1/models" in collector.api_url
+
+
+def test_id_candidates_strips_route_variants_but_not_bedrock_versions():
+    from collector.base import id_candidates
+
+    assert "claude-opus-5.5" in id_candidates("anthropic/claude-opus-5.5:batch")
+    assert "gpt-6-luna" in id_candidates("openai/gpt-6-luna:free")
+    # A trailing ":0" is a Bedrock model version, never a route variant.
+    assert id_candidates("meta.llama3-3-70b-instruct-v1:0") == [
+        "meta.llama3-3-70b-instruct-v1:0"
+    ]
+
+
+def test_catalog_vendor_map_has_no_dangling_targets(sandbox):
+    from collector.catalog import CatalogCollector
+
+    collector = CatalogCollector()
+    registered = {p.stem for p in (sandbox / "data/providers").glob("*.json")}
+    known = registered | set(collector.new_providers)
+    for vendor, provider_id in collector.aliases.items():
+        assert provider_id in known, f"{vendor} -> {provider_id} is not a provider"
+    for provider_id, spec in collector.new_providers.items():
+        assert spec.get("website") or spec.get("documentation_url"), provider_id
+
+
+def test_catalog_drops_negative_and_unparseable_prices(sandbox):
+    collector = _catalog()
+    assert collector._openrouter_entry(
+        {"id": "a/b", "pricing": {"prompt": "-1", "completion": "0.000002"}}
+    )["pricing"] == {"currency": "USD", "unit": "1M_tokens", "input": None, "output": 2.0}
+    assert collector._openrouter_entry(
+        {"id": "a/b", "pricing": {"prompt": "-1000000", "completion": "-1"}}
+    )["pricing"] is None
+
+
+def test_catalog_prefers_vercel_and_drops_markdown_descriptions(sandbox):
+    collector = _catalog()
+    vercel = collector._vercel_entry({
+        "id": "anthropic/claude-opus-9", "name": "Claude Opus 9", "owned_by": "anthropic",
+        "context_window": 200000, "max_tokens": 64000,
+        "modalities": {"input": ["text", "pdf"], "output": ["text"]},
+        "tags": ["tool-use", "reasoning", "explicit-caching"],
+        "released": 1780000000, "description": "Short blurb.",
+    })
+    openrouter = collector._openrouter_entry({
+        "id": "anthropic/claude-opus-9", "name": "Anthropic: Claude Opus 9",
+        "context_length": 200000, "architecture": {"input_modalities": ["text"],
+                                                    "output_modalities": ["text"]},
+        "description": "# markdown marketing copy",
+    })
+    collector._records = {"claude-opus-9": {
+        "model_id": "claude-opus-9", "provider_id": "anthropic",
+        "entries": [openrouter, vercel],
+    }}
+    results = collector._build_results()
+    model = results["models"]["claude-opus-9"]
+    assert model["name"] == "Claude Opus 9"          # Vercel name, not the prefixed one
+    assert model["description"] == "Short blurb."     # never the markdown copy
+    assert model["context"] == {"window": 200000, "max_output_tokens": 64000}
+    assert model["modalities"] == {"input": ["text", "file"], "output": ["text"]}
+    assert model["capabilities"] == {"tool_use": True, "reasoning": True}
+    assert model["release_date"] == "2026-05-28"
+    assert model["required_fields"]["status"] == "active"
+    # Identical specs are not repeated on the relationship entry.
+    entries = {e["provider_id"]: e for e in results["relationships"]["claude-opus-9"]}
+    assert set(entries) == {"vercel-ai-gateway", "openrouter"}
+    assert "context" not in entries["vercel-ai-gateway"]
+    assert entries["openrouter"]["model_id"] == "anthropic/claude-opus-9"
+
+
+def test_catalog_records_route_variants_as_separate_provider_ids(sandbox):
+    collector = _catalog()
+    base = collector._openrouter_entry({"id": "poolside/laguna-s-2.1", "context_length": 1})
+    free = collector._openrouter_entry(
+        {"id": "poolside/laguna-s-2.1:free", "context_length": 1,
+         "pricing": {"prompt": "0", "completion": "0"}}
+    )
+    collector._records = {"laguna-s-2.1": {
+        "model_id": "laguna-s-2.1", "provider_id": "poolside",
+        "entries": [free, base],
+    }}
+    entries = collector._build_results()["relationships"]["laguna-s-2.1"]
+    assert [e["model_id"] for e in entries] == [
+        "poolside/laguna-s-2.1", "poolside/laguna-s-2.1:free"
+    ]
+    assert entries[1]["pricing"]["input"] == 0.0
+
+
+def test_catalog_downgrades_to_deprecated_on_expiration_date(sandbox):
+    collector = _catalog()
+    entry = collector._openrouter_entry(
+        {"id": "a/b", "expiration_date": 1780000000, "context_length": 1}
+    )
+    collector._records = {"b": {"model_id": "b", "provider_id": "poolside",
+                                "entries": [entry]}}
+    model = collector._build_results()["models"]["b"]
+    assert model["required_fields"]["status"] == "deprecated"
+
+
+def test_catalog_never_creates_models_without_a_vendor_mapping(sandbox):
+    collector = _catalog()
+    entry = collector._openrouter_entry({"id": "nobody/unknown-model", "context_length": 1})
+    records, unmapped, bad_id, ignored, registered = {}, set(), set(), set(), set()
+    collector._add(records, entry, sandbox, registered, unmapped, bad_id, ignored)
+    assert records == {}
+    assert len(unmapped) == 1
+
+
+def test_catalog_skips_routers_and_existing_models(sandbox):
+    collector = _catalog()
+    registered = {p.stem for p in (sandbox / "data/providers").glob("*.json")}
+    records, unmapped, bad_id, ignored = {}, set(), set(), set()
+    # openrouter/auto is a router, and gpt-5 is already registered.
+    for api_id in ("openrouter/auto", "openai/gpt-5"):
+        collector._add(records, collector._openrouter_entry({"id": api_id}), sandbox,
+                       registered, unmapped, bad_id, ignored)
+    assert records == {}
+    assert any("openrouter" in item for item in ignored)
+
+
+def test_catalog_writes_model_provider_document_for_a_new_vendor(sandbox):
+    collector = _catalog()
+    # A synthetic vendor keeps the test independent of which providers the real
+    # catalogues happen to list today.
+    collector.new_providers["test-vendor"] = {
+        "name": "Test Vendor",
+        "website": "https://example.com",
+        "documentation_url": "https://example.com/docs",
+        "description": "A vendor used by the tests.",
+    }
+    collector._records = {"brand-new-model": {
+        "model_id": "brand-new-model", "provider_id": "test-vendor", "entries": [],
+    }}
+    created = collector.ensure_providers(sandbox, write=True)
+    assert created == ["test-vendor"]
+    doc = json.loads((sandbox / "data/providers/test-vendor.json").read_text())
+    assert doc["id"] == "test-vendor"
+    assert doc["name"] == "Test Vendor"
+    assert doc["types"] == ["model_provider"]
+    assert "api" not in doc                      # a model developer, not a service
+    assert doc["sources"][0]["url"] == "https://example.com"
+    # A provider that already has a document is never rewritten.
+    assert collector.ensure_providers(sandbox, write=True) == []
+
+
+def test_catalog_refuses_a_vendor_without_any_citable_url(sandbox):
+    collector = _catalog()
+    collector.new_providers["test-vendor"] = {"name": "Test Vendor"}
+    collector._records = {"brand-new-model": {
+        "model_id": "brand-new-model", "provider_id": "test-vendor", "entries": [],
+    }}
+    with pytest.raises(CollectorError):
+        collector.ensure_providers(sandbox, write=True)
+
+
+def test_catalog_leaves_registered_models_untouched(sandbox):
+    collector = _catalog()
+    before = json.loads((sandbox / "data/models/gpt-5.json").read_text())
+    entry = collector._openrouter_entry({
+        "id": "openai/gpt-5", "context_length": 4242,
+        "pricing": {"prompt": "0.0000099", "completion": "0.000099"},
+    })
+    records, unmapped, bad_id, ignored = {}, set(), set(), set()
+    registered = {p.stem for p in (sandbox / "data/providers").glob("*.json")}
+    collector._add(records, entry, sandbox, registered, unmapped, bad_id, ignored)
+    assert records == {}
+    report = collector.apply(sandbox, collector._build_results(), write=True)
+    assert report["created"] == []
+    assert json.loads((sandbox / "data/models/gpt-5.json").read_text()) == before

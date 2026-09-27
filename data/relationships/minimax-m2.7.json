@@ -1,6 +1,6 @@
 {
   "model_id": "minimax-m2.7",
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-09-27",
   "providers": [
     {
       "provider_id": "minimax",
@@ -21,18 +21,22 @@
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.3,
-        "output": 1.2,
-        "cached_input": 0.06
+        "input": 0.21,
+        "output": 0.84,
+        "cached_input": 0.042
       },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
-      ]
+      ],
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 176947
+      }
     },
     {
       "provider_id": "opencode",
@@ -55,7 +59,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -82,7 +86,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ]
@@ -98,7 +102,7 @@
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         }
       ]
@@ -121,7 +125,7 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ]

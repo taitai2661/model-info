@@ -1,0 +1,23 @@
+{
+  "provider": {
+    "id": "mancer",
+    "name": "Mancer",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Mancer, developer of the Weaver model.",
+    "website": "https://mancer.tech",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://mancer.tech",
+        "retrieved_at": "2026-09-27",
+        "title": "Mancer official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  "model_ids": []
+}

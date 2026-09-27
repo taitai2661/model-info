@@ -1,0 +1,25 @@
+{
+  "model_id": "gpt-5-image",
+  "updated_at": "2026-09-27",
+  "providers": [
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-5-image",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 10.0,
+        "output": 10.0,
+        "cached_input": 1.25
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    }
+  ]
+}

@@ -86,7 +86,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -164,7 +164,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -253,7 +253,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -321,7 +321,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -389,7 +389,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -459,7 +459,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -540,7 +540,159 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "inkling",
+      "name": "Inkling",
+      "model_provider": "thinking-machines",
+      "status": "active",
+      "display_name": "Inkling",
+      "description": "Inkling is a multimodal MoE model (975B total, 41B active, 256k context) reasoning over text, image, and audio inputs.",
+      "context": {
+        "window": 256000,
+        "max_output_tokens": 256000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "reasoning": true,
+        "structured_output": true,
+        "tool_use": true,
+        "vision": true,
+        "json_mode": true
+      },
+      "availability": {
+        "api": true,
+        "open_weights": true
+      },
+      "release_date": "2026-07-15",
+      "sources": [
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        }
+      ],
+      "updated_at": "2026-09-27"
+    },
+    "relationship": {
+      "provider_id": "together",
+      "model_id": "thinkingmachines/Inkling",
+      "context": {
+        "window": 524288
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.0,
+        "output": 4.05,
+        "cached_input": 0.17
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "kimi-k3",
+      "name": "Kimi K3",
+      "display_name": "Kimi K3",
+      "model_provider": "moonshot",
+      "family": "Kimi",
+      "version": "k3",
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "Moonshot Kimi K3: a ~2.8T-parameter hybrid KDA + MLA multimodal MoE for long-horizon coding, agentic tool use, and image understanding.",
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "vision": true,
+        "tool_use": true,
+        "function_calling": true,
+        "reasoning": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://build.nvidia.com/moonshotai/kimi-k3",
           "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM model page"
+        },
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "together",
+      "model_id": "moonshotai/Kimi-K3",
+      "context": {
+        "window": 1048576
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -627,7 +779,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -690,7 +842,139 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "muse-glimmer-30b",
+      "name": "Muse Glimmer 30B",
+      "display_name": "Muse Glimmer 30B",
+      "model_provider": "meta",
+      "family": "Muse",
+      "version": "30b",
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "Muse Glimmer 30B: a multimodal reasoning model accepting text and images, with native tool calling and a separate reasoning output channel.",
+      "context": {
+        "window": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "vision": true,
+        "tool_use": true,
+        "function_calling": true,
+        "reasoning": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://build.nvidia.com/meta/muse-glimmer-30b",
           "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM model page"
+        },
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "together",
+      "model_id": "meta-models/Muse-Glimmer-30B",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.35,
+        "output": 1.5,
+        "cached_input": 0.04
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.5-9b",
+      "name": "Qwen3.5-9B",
+      "model_provider": "qwen",
+      "status": "active",
+      "display_name": "Qwen3.5-9B",
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 32768
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "reasoning": true,
+        "json_mode": true,
+        "structured_output": true,
+        "tool_use": true
+      },
+      "availability": {
+        "api": true,
+        "open_weights": true
+      },
+      "sources": [
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        }
+      ],
+      "updated_at": "2026-09-27"
+    },
+    "relationship": {
+      "provider_id": "together",
+      "model_id": "Qwen/Qwen3.5-9B",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.17,
+        "output": 0.25
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -750,7 +1034,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -809,7 +1093,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -868,7 +1152,78 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "qwen3.8-2.4t-a95b",
+      "name": "Qwen3.8 2.4T A95B",
+      "model_provider": "qwen",
+      "status": "active",
+      "display_name": "Qwen3.8 2.4T A95B",
+      "description": "Qwen 3.8 Max is a 2.4-trillion-parameter MoE model delivering a comprehensive leap in coding and professional work. Autonomously codes and delivers complete projects spanning 10+ days. Handles hundreds of specialized tasks across legal, financial, design, and other professional domains, producing production-grade results end-to-end in a single conversation. Native visual understanding runs through the full cycle of planning, execution, and verification, enabling deep semantic analysis of ultra-long documents and extended video content. In long-horizon tasks, plans autonomously, iterates through closed feedback loops, and continuously evolves.",
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "reasoning": true,
+        "tool_use": true,
+        "structured_output": true,
+        "vision": true,
+        "json_mode": true
+      },
+      "availability": {
+        "api": true,
+        "open_weights": true
+      },
+      "release_date": "2026-08-02",
+      "sources": [
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        }
+      ],
+      "updated_at": "2026-09-27"
+    },
+    "relationship": {
+      "provider_id": "together",
+      "model_id": "Qwen/Qwen3.8-2.4T-A95B",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 6.0,
+        "cached_input": 0.5
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -928,7 +1283,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]

@@ -1,0 +1,23 @@
+{
+  "provider": {
+    "id": "cognitivecomputations",
+    "name": "Cognitive Computations",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Independent lab behind the Dolphin model family.",
+    "documentation_url": "https://huggingface.co/cognitivecomputations",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/cognitivecomputations",
+        "retrieved_at": "2026-09-27",
+        "title": "Cognitive Computations official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  "model_ids": []
+}

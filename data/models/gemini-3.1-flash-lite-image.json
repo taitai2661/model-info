@@ -1,0 +1,47 @@
+{
+  "model_id": "gemini-3.1-flash-lite-image",
+  "name": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite)",
+  "model_provider": "google",
+  "status": "active",
+  "display_name": "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite)",
+  "description": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite) is Google's fastest image generation model enabling rapid creation and iteration.",
+  "context": {
+    "window": 65536,
+    "max_output_tokens": 4096
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "text",
+      "image"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "vision": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-06-30",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    },
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

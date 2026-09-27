@@ -1,0 +1,25 @@
+{
+  "model_id": "minimax-m2.5-highspeed",
+  "updated_at": "2026-09-27",
+  "providers": [
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "minimax/minimax-m2.5-highspeed",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.6,
+        "output": 2.4,
+        "cached_input": 0.03
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    }
+  ]
+}

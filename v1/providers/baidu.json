@@ -1,0 +1,23 @@
+{
+  "provider": {
+    "id": "baidu",
+    "name": "Baidu",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Baidu's ERNIE model family.",
+    "website": "https://cloud.baidu.com/product/wenxinworkshop",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://cloud.baidu.com/product/wenxinworkshop",
+        "retrieved_at": "2026-09-27",
+        "title": "Baidu official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  "model_ids": []
+}

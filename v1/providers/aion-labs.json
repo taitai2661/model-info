@@ -1,0 +1,23 @@
+{
+  "provider": {
+    "id": "aion-labs",
+    "name": "Aion Labs",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Research lab behind the Aion model family.",
+    "website": "https://aionlabs.ai",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://aionlabs.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Aion Labs official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  "model_ids": []
+}

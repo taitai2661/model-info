@@ -1,0 +1,21 @@
+{
+  "id": "perceptron",
+  "name": "Perceptron",
+  "types": [
+    "model_provider"
+  ],
+  "status": "active",
+  "description": "Perceptron's vision-language and embodied reasoning models.",
+  "website": "https://www.perceptron.inc",
+  "documentation_url": "https://docs.perceptron.inc",
+  "updated_at": "2026-09-27",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://www.perceptron.inc",
+      "retrieved_at": "2026-09-27",
+      "title": "Perceptron official site",
+      "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+    }
+  ]
+}

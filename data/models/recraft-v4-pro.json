@@ -1,0 +1,30 @@
+{
+  "model_id": "recraft-v4-pro",
+  "name": "Recraft V4 Pro",
+  "model_provider": "recraft",
+  "status": "active",
+  "display_name": "Recraft V4 Pro",
+  "description": "The model delivers strong photorealism, including realistic skin rendering and natural textures, while avoiding common synthetic artifacts. It produces more distinctive lighting, composition, diverse subjects, contemporary styling, and carefully considered scene elements. For illustration, it generates original characters and forms with sophisticated and unexpected color combinations.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "image"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-02-17",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

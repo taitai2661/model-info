@@ -1,0 +1,34 @@
+{
+  "model_id": "arrow-1.1",
+  "name": "Arrow 1.1",
+  "model_provider": "quiverai",
+  "status": "active",
+  "display_name": "Arrow 1.1",
+  "description": "Best default for speed and quality, with stronger prompt following and more precise SVG structure.",
+  "context": {
+    "window": 131072,
+    "max_output_tokens": 131072
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "image"
+    ]
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-04-16",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

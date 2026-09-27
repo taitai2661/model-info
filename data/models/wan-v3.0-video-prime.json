@@ -1,0 +1,36 @@
+{
+  "model_id": "wan-v3.0-video-prime",
+  "name": "Wan v3.0 Video Prime",
+  "model_provider": "qwen",
+  "status": "active",
+  "display_name": "Wan v3.0 Video Prime",
+  "description": "Wan 3.0 Video Prime is Alibaba’s high-speed, all-in-one AI video generation model for creating polished clips from text, images, video, and audio references. It produces videos up to 30 seconds long with synchronized dialogue, music, and sound effects, while accelerated generation makes it ideal for rapid creative iteration and production workflows.",
+  "modalities": {
+    "input": [
+      "text",
+      "audio",
+      "image",
+      "video"
+    ],
+    "output": [
+      "video"
+    ]
+  },
+  "capabilities": {
+    "vision": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-08-28",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

@@ -1,45 +1,74 @@
 {
- "model_id": "mistral-large-2512",
- "updated_at": "2026-09-26",
- "providers": [
-  {
-   "provider_id": "mistral",
-   "model_id": "mistral-large-2512"
-  },
-  {
-   "provider_id": "openrouter",
-   "model_id": "mistralai/mistral-large-2512",
-   "sources": [
+  "model_id": "mistral-large-2512",
+  "updated_at": "2026-09-27",
+  "providers": [
     {
-     "type": "official",
-     "url": "https://openrouter.ai/api/v1/models",
-     "retrieved_at": "2026-09-26",
-     "notes": "Provider model id, context window, modalities, and prices from the public model list."
-    }
-   ],
-   "modalities": {
-    "input": [
-     "text",
-     "image",
-     "file"
-    ],
-    "output": [
-     "text"
-    ]
-   }
-  },
-  {
-   "provider_id": "aws-bedrock",
-   "model_id": "mistral.mistral-large-3-675b-instruct",
-   "pricing": null,
-   "sources": [
+      "provider_id": "mistral",
+      "model_id": "mistral-large-2512"
+    },
     {
-     "type": "official",
-     "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-mistral-ai-mistral-large-3",
-     "retrieved_at": "2026-09-26",
-     "title": "Amazon Bedrock model card"
+      "provider_id": "openrouter",
+      "model_id": "mistralai/mistral-large-2512",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      }
+    },
+    {
+      "provider_id": "aws-bedrock",
+      "model_id": "mistral.mistral-large-3-675b-instruct",
+      "pricing": null,
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-mistral-ai-mistral-large-3",
+          "retrieved_at": "2026-09-26",
+          "title": "Amazon Bedrock model card"
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "mistralai/mistral-large-2512:batch",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.25,
+        "output": 0.75,
+        "cached_input": 0.025
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

@@ -1,0 +1,21 @@
+{
+  "id": "arcee-ai",
+  "name": "Arcee AI",
+  "types": [
+    "model_provider"
+  ],
+  "status": "active",
+  "description": "Arcee AI's model family, including the Trinity models.",
+  "website": "https://www.arcee.ai",
+  "documentation_url": "https://docs.arcee.ai",
+  "updated_at": "2026-09-27",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://www.arcee.ai",
+      "retrieved_at": "2026-09-27",
+      "title": "Arcee AI official site",
+      "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+    }
+  ]
+}

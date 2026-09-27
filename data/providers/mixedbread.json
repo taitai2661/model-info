@@ -1,0 +1,20 @@
+{
+  "id": "mixedbread",
+  "name": "mixedbread.ai",
+  "types": [
+    "model_provider"
+  ],
+  "status": "active",
+  "description": "mixedbread.ai, developer of the Mixedbread embedding and retrieval models.",
+  "website": "https://mixedbread.ai",
+  "updated_at": "2026-09-27",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://mixedbread.ai",
+      "retrieved_at": "2026-09-27",
+      "title": "mixedbread.ai official site",
+      "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+    }
+  ]
+}

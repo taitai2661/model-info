@@ -1,0 +1,20 @@
+{
+  "id": "bytedance",
+  "name": "ByteDance Seed",
+  "types": [
+    "model_provider"
+  ],
+  "status": "active",
+  "description": "ByteDance's Seed model team, behind the Seed and Seedance model families.",
+  "website": "https://seed.bytedance.com",
+  "updated_at": "2026-09-27",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://seed.bytedance.com",
+      "retrieved_at": "2026-09-27",
+      "title": "ByteDance Seed official site",
+      "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+    }
+  ]
+}

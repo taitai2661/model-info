@@ -1,19 +1,50 @@
 {
- "model_id": "mistral-large",
- "updated_at": "2026-09-26",
- "providers": [
-  {
-   "provider_id": "nvidia",
-   "model_id": "mistralai/mistral-large",
-   "sources": [
+  "model_id": "mistral-large",
+  "updated_at": "2026-09-27",
+  "providers": [
     {
-     "type": "official",
-     "url": "https://integrate.api.nvidia.com/v1/models",
-     "retrieved_at": "2026-09-26",
-     "title": "NVIDIA NIM public model catalog",
-     "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+      "provider_id": "nvidia",
+      "model_id": "mistralai/mistral-large",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "mistralai/mistral-large",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 6.0,
+        "cached_input": 0.2
+      },
+      "context": {
+        "window": 128000,
+        "max_output_tokens": 102400
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

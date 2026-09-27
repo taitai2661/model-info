@@ -1,19 +1,51 @@
 {
- "model_id": "nemotron-3-nano-omni-30b-a3b-reasoning",
- "updated_at": "2026-09-26",
- "providers": [
-  {
-   "provider_id": "nvidia",
-   "model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "sources": [
+  "model_id": "nemotron-3-nano-omni-30b-a3b-reasoning",
+  "updated_at": "2026-09-27",
+  "providers": [
     {
-     "type": "official",
-     "url": "https://integrate.api.nvidia.com/v1/models",
-     "retrieved_at": "2026-09-26",
-     "title": "NVIDIA NIM public model catalog",
-     "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+      "provider_id": "nvidia",
+      "model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context": {
+        "window": 256000,
+        "max_output_tokens": 65536
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "audio",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

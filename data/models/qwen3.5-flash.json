@@ -1,0 +1,41 @@
+{
+  "model_id": "qwen3.5-flash",
+  "name": "Qwen 3.5 Flash",
+  "model_provider": "qwen",
+  "status": "active",
+  "display_name": "Qwen 3.5 Flash",
+  "description": "The Qwen3.5 native vision-language Flash models are built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. Compared to the 3 series, these models deliver a leap forward in performance for both pure text and multimodal tasks, offering fast response times while balancing inference speed and overall performance.",
+  "context": {
+    "window": 1000000,
+    "max_output_tokens": 64000
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "file"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "vision": true,
+    "reasoning": true,
+    "tool_use": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-02-24",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

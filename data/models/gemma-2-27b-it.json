@@ -1,0 +1,37 @@
+{
+  "model_id": "gemma-2-27b-it",
+  "name": "Gemma 2 27B",
+  "model_provider": "google",
+  "status": "active",
+  "display_name": "Gemma 2 27B",
+  "context": {
+    "window": 8192,
+    "max_output_tokens": 2048
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "json_mode": true,
+    "structured_output": true
+  },
+  "availability": {
+    "api": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

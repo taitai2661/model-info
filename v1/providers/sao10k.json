@@ -1,0 +1,23 @@
+{
+  "provider": {
+    "id": "sao10k",
+    "name": "Sao10K",
+    "types": [
+      "model_provider"
+    ],
+    "status": "active",
+    "description": "Independent open-weight fine-tune author publishing roleplay and merge models.",
+    "documentation_url": "https://huggingface.co/Sao10K",
+    "updated_at": "2026-09-27",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/Sao10K",
+        "retrieved_at": "2026-09-27",
+        "title": "Sao10K official site",
+        "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+      }
+    ]
+  },
+  "model_ids": []
+}

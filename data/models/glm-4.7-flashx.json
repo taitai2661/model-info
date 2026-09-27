@@ -1,0 +1,38 @@
+{
+  "model_id": "glm-4.7-flashx",
+  "name": "GLM 4.7 FlashX",
+  "model_provider": "zai",
+  "status": "active",
+  "display_name": "GLM 4.7 FlashX",
+  "description": " GLM-4.7-Flash balances high performance with efficiency, making it the perfect lightweight deployment option. ",
+  "context": {
+    "window": 200000,
+    "max_output_tokens": 128000
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "reasoning": true,
+    "tool_use": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-01-19",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

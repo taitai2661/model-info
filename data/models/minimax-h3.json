@@ -1,0 +1,34 @@
+{
+  "model_id": "minimax-h3",
+  "name": "MiniMax H3",
+  "model_provider": "minimax",
+  "status": "active",
+  "display_name": "MiniMax H3",
+  "description": "H3 is a next-generation open-weights, general-purpose multimodal video model. Rather than being limited to specialized tasks such as generating, editing, or referencing, H3 understands multimodal contexts that bring together text, images, video, and audio. This enables it to interpret creative intent in a unified way and deliver more natural, coherent generation and expression.",
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "video"
+    ]
+  },
+  "capabilities": {
+    "vision": true
+  },
+  "availability": {
+    "api": true
+  },
+  "release_date": "2026-07-30",
+  "sources": [
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

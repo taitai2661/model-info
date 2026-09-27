@@ -1,0 +1,21 @@
+{
+  "id": "recraft",
+  "name": "Recraft",
+  "types": [
+    "model_provider"
+  ],
+  "status": "active",
+  "description": "Recraft's image generation and vector design models.",
+  "website": "https://www.recraft.ai",
+  "documentation_url": "https://www.recraft.ai/docs",
+  "updated_at": "2026-09-27",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://www.recraft.ai",
+      "retrieved_at": "2026-09-27",
+      "title": "Recraft official site",
+      "notes": "Vendor of the models imported from the OpenRouter / Vercel AI Gateway catalogues. Only its role as a model developer is recorded here; it has no API of its own in Model Info."
+    }
+  ]
+}
