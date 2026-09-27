@@ -41,8 +41,6 @@
     "updated_at": "2026-09-26"
   },
   "model_ids": [
-    "kimi-k2.6",
-    "kimi-k2.7-code",
-    "kimi-k3"
+    "kimi-k2.7-code"
   ]
 }

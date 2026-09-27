@@ -1,0 +1,17 @@
+{
+  "id": "ibm",
+  "name": "IBM",
+  "types": ["model_provider"],
+  "website": "https://www.ibm.com",
+  "status": "active",
+  "description": "IBM Research's Granite family of open-weight foundation models for code, language, and enterprise use cases.",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://www.ibm.com",
+      "retrieved_at": "2026-09-26",
+      "title": "IBM homepage"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

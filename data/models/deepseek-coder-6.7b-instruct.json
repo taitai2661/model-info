@@ -1,0 +1,41 @@
+{
+  "model_id": "deepseek-coder-6.7b-instruct",
+  "name": "DeepSeek Coder 6.7B Instruct",
+  "display_name": "DeepSeek Coder 6.7B Instruct",
+  "model_provider": "deepseek",
+  "family": "DeepSeek Coder",
+  "version": "6.7b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "DeepSeek Coder 6.7B Instruct: a 6.7B-parameter code model trained on 2T tokens of permissively licensed source code, instruction-tuned for chat-style code use.",
+  "context": {
+    "window": 16384
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/deepseek-ai/deepseek-coder-6.7b-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

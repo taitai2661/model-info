@@ -1,0 +1,39 @@
+{
+  "model_id": "mistral-large",
+  "name": "Mistral Large",
+  "display_name": "Mistral Large",
+  "model_provider": "mistral",
+  "family": "Mistral",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Mistral Large: Mistral's first-generation flagship LLM for reasoning, code, and tool use.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "function_calling": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/mistralai/mistral-large",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "model_id": "deplot",
+  "name": "DePlot",
+  "display_name": "DePlot",
+  "model_provider": "google",
+  "family": "DePlot",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Google DePlot: a vision-language model that converts a chart or plot image into a linearised table the underlying text model can read.",
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/google/deplot",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

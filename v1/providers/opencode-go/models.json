@@ -465,6 +465,68 @@
   },
   {
     "model": {
+      "model_id": "deepseek-v4.1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "display_name": "DeepSeek V4.1 Flash",
+      "model_provider": "deepseek",
+      "family": "DeepSeek",
+      "version": "v4.1",
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "DeepSeek V4.1 Flash: a 552B-total / 8B-active MoE with native multimodal support and a smaller KV cache for lower API cost.",
+      "context": {
+        "window": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "vision": true,
+        "reasoning": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://build.nvidia.com/deepseek-ai/deepseek-v4.1-flash",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM model page"
+        },
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode-go",
+      "model_id": "deepseek-v4.1-flash",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id from the public Go model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
       "model_id": "glm-5",
       "name": "GLM-5",
       "display_name": "GLM-5",
@@ -1523,63 +1585,53 @@
       "display_name": "Kimi K2.6",
       "model_provider": "moonshot",
       "family": "Kimi",
-      "version": null,
+      "version": "k2.6",
       "status": "active",
       "release_date": null,
       "updated_at": "2026-09-26",
-      "context": {
-        "window": 262144,
-        "max_output_tokens": 235929
-      },
+      "description": "Moonshot Kimi K2.6: MoE LLM tuned for code generation and tool use.",
       "modalities": {
         "input": [
-          "text",
-          "image"
+          "text"
         ],
         "output": [
           "text"
         ]
       },
+      "capabilities": {
+        "tool_use": true,
+        "function_calling": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true
+      },
       "sources": [
         {
           "type": "official",
-          "url": "https://platform.kimi.ai/docs/models",
+          "url": "https://build.nvidia.com/moonshotai/kimi-k2.6",
           "retrieved_at": "2026-09-26",
-          "title": "Moonshot model list"
+          "title": "NVIDIA NIM model page"
         },
         {
-          "type": "community",
-          "url": "https://openrouter.ai/api/v1/models",
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
           "retrieved_at": "2026-09-26",
-          "title": "OpenRouter model list",
-          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+          "title": "NVIDIA NIM public model catalog"
         }
       ]
     },
     "relationship": {
       "provider_id": "opencode-go",
       "model_id": "kimi-k2.6",
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.95,
-        "output": 4.0,
-        "cached_input": 0.16
-      },
-      "notes": "Go monthly usage limit: $60.",
       "sources": [
-        {
-          "type": "official",
-          "url": "https://opencode.ai/docs/go/",
-          "retrieved_at": "2026-09-26",
-          "title": "OpenCode Go docs",
-          "notes": "Price, tier notes, and monthly limit from the Go docs."
-        },
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
           "retrieved_at": "2026-09-26",
-          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+          "notes": "Provider model id from the public Go model list (GET /v1/models)."
         }
       ]
     }
@@ -1659,64 +1711,56 @@
       "display_name": "Kimi K3",
       "model_provider": "moonshot",
       "family": "Kimi",
-      "version": null,
+      "version": "k3",
       "status": "active",
       "release_date": null,
       "updated_at": "2026-09-26",
-      "context": {
-        "window": 1048576,
-        "max_output_tokens": 943718
-      },
+      "description": "Moonshot Kimi K3: a ~2.8T-parameter hybrid KDA + MLA multimodal MoE for long-horizon coding, agentic tool use, and image understanding.",
       "modalities": {
         "input": [
           "text",
-          "image",
-          "video"
+          "image"
         ],
         "output": [
           "text"
         ]
       },
+      "capabilities": {
+        "vision": true,
+        "tool_use": true,
+        "function_calling": true,
+        "reasoning": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true
+      },
       "sources": [
         {
           "type": "official",
-          "url": "https://platform.kimi.ai/docs/models",
+          "url": "https://build.nvidia.com/moonshotai/kimi-k3",
           "retrieved_at": "2026-09-26",
-          "title": "Moonshot model list"
+          "title": "NVIDIA NIM model page"
         },
         {
-          "type": "community",
-          "url": "https://openrouter.ai/api/v1/models",
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
           "retrieved_at": "2026-09-26",
-          "title": "OpenRouter model list",
-          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+          "title": "NVIDIA NIM public model catalog"
         }
       ]
     },
     "relationship": {
       "provider_id": "opencode-go",
       "model_id": "kimi-k3",
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 3.0,
-        "output": 15.0,
-        "cached_input": 0.3
-      },
-      "notes": "Go monthly usage limit: $15.",
       "sources": [
-        {
-          "type": "official",
-          "url": "https://opencode.ai/docs/go/",
-          "retrieved_at": "2026-09-26",
-          "title": "OpenCode Go docs",
-          "notes": "Price, tier notes, and monthly limit from the Go docs."
-        },
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
           "retrieved_at": "2026-09-26",
-          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+          "notes": "Provider model id from the public Go model list (GET /v1/models)."
         }
       ]
     }

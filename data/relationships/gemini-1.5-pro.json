@@ -1,0 +1,10 @@
+{
+ "model_id": "gemini-1.5-pro",
+ "updated_at": "2026-09-26",
+ "providers": [
+  {
+   "provider_id": "google",
+   "model_id": "gemini-1.5-pro"
+  }
+ ]
+}

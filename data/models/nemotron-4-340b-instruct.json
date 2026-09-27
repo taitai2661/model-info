@@ -1,0 +1,41 @@
+{
+  "model_id": "nemotron-4-340b-instruct",
+  "name": "Nemotron 4 340B Instruct",
+  "display_name": "Nemotron 4 340B Instruct",
+  "model_provider": "nvidia",
+  "family": "Nemotron",
+  "version": "4",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "NVIDIA Nemotron-4 340B Instruct: a 340B-parameter bilingual (English / multilingual) base model optimized for high-quality synthetic-data generation and downstream fine-tuning.",
+  "context": {
+    "window": 4096
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/nemotron-4-340b-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

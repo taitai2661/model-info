@@ -1,0 +1,37 @@
+{
+  "model_id": "palmyra-med-70b",
+  "name": "Palmyra Med 70B",
+  "display_name": "Palmyra Med 70B",
+  "model_provider": "writer",
+  "family": "Palmyra",
+  "version": "med",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Writer Palmyra Med 70B: a 70B-parameter LLM tuned for the medical domain.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/writer/palmyra-med-70b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

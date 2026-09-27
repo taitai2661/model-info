@@ -1,0 +1,38 @@
+{
+  "model_id": "sea-lion-7b-instruct",
+  "name": "SEA-LION 7B Instruct",
+  "display_name": "SEA-LION 7B Instruct",
+  "model_provider": "aisingapore",
+  "family": "SEA-LION",
+  "version": "7b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "AI Singapore SEA-LION 7B Instruct: an open-weight LLM further pre-trained and instruction-tuned for Southeast Asian languages.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/aisingapore/sea-lion-7b-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

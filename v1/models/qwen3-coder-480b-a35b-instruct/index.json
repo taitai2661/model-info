@@ -1,0 +1,55 @@
+{
+  "model": {
+    "model_id": "qwen3-coder-480b-a35b-instruct",
+    "name": "Qwen3 Coder 480B A35B Instruct",
+    "display_name": "Qwen3 Coder 480B A35B Instruct",
+    "model_provider": "qwen",
+    "family": "Qwen",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Alibaba's 480B-parameter MoE coding model (35B active) built for agentic coding with a native 262K context window.",
+    "context": {
+      "window": 262144
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": false,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "Open-weight release",
+        "notes": "Context Length 262,144 natively, extendable up to 1M with YaRN."
+      },
+      {
+        "type": "official",
+        "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-coder-480b-a35b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "Alibaba Cloud Model Studio model info",
+        "notes": "Context Window 262144."
+      }
+    ]
+  },
+  "providers": []
+}

@@ -1,0 +1,179 @@
+{
+  "model": {
+    "model_id": "gemma-3-12b-it",
+    "name": "Gemma 3 12B IT",
+    "display_name": "Gemma 3 12B IT",
+    "model_provider": "google",
+    "family": "Gemma",
+    "version": "3",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google Gemma 3 12B IT: a 12B-parameter multimodal instruction-tuned model with vision and 128K context.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/google/gemma-3-12b-it",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "nvidia",
+      "model_id": "google/gemma-3-12b-it",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog",
+          "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "nvidia",
+        "name": "NVIDIA",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.nvidia.com",
+        "documentation_url": "https://build.nvidia.com/llms.txt",
+        "status": "active",
+        "description": "NVIDIA's Nemotron model family plus hosted NIM inference microservices for first- and third-party models. The NIM API Catalog is served at https://integrate.api.nvidia.com/v1 with OpenAI-compatible chat, embedding, vision, speech, retrieval, and safety endpoints.",
+        "api": {
+          "base_url": "https://integrate.api.nvidia.com/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "Environment variable NVIDIA_API_KEY (issued at https://build.nvidia.com/settings)."
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://build.nvidia.com/llms.txt",
+            "retrieved_at": "2026-09-26",
+            "title": "NVIDIA API Catalog overview",
+            "notes": "Shared base URL https://integrate.api.nvidia.com/v1 and Bearer authentication."
+          },
+          {
+            "type": "official",
+            "url": "https://integrate.api.nvidia.com/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "NVIDIA NIM public model catalog",
+            "notes": "Provider model ids for every model served by NIM, returned by GET /v1/models (no authentication required)."
+          },
+          {
+            "type": "official",
+            "url": "https://developer.nvidia.com/topics/ai/nemotron",
+            "retrieved_at": "2026-09-26",
+            "title": "NVIDIA Nemotron topic page"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "google",
+      "model_id": "gemma-3-12b-it",
+      "status": null,
+      "notes": "Open-weights release; no first-party Gemini Developer API access.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai.google.dev/gemini-api/docs/models",
+          "retrieved_at": "2026-09-26",
+          "title": "Gemini API models"
+        }
+      ],
+      "provider": {
+        "id": "google",
+        "name": "Google",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.google.com",
+        "documentation_url": "https://ai.google.dev/gemini-api/docs/models",
+        "status": "active",
+        "description": "Google's Gemini models and the Gemini Developer API (Google AI for Developers).",
+        "api": {
+          "base_url": "https://generativelanguage.googleapis.com",
+          "protocol": "https",
+          "api_style": "google_generative_ai",
+          "authentication": {
+            "type": "api_key",
+            "header": "x-goog-api-key"
+          },
+          "endpoints": {
+            "models": "/v1beta/models",
+            "interactions": "/v1beta/interactions"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "prompt_caching": true,
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://ai.google.dev/gemini-api/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "Gemini API quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://ai.google.dev/gemini-api/docs/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Gemini API models"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

@@ -3,70 +3,43 @@
   "name": "Muse Glimmer 30B",
   "display_name": "Muse Glimmer 30B",
   "model_provider": "meta",
-  "family": "Muse Glimmer",
-  "version": null,
+  "family": "Muse",
+  "version": "30b",
   "status": "active",
   "release_date": null,
   "updated_at": "2026-09-26",
-  "description": "Meta's 30-billion parameter open-weight multimodal model, distilled from Muse Spark for local agentic workflows; Apache 2.0 license.",
+  "description": "Muse Glimmer 30B: a multimodal reasoning model accepting text and images, with native tool calling and a separate reasoning output channel.",
   "context": {
     "window": 131072
   },
   "modalities": {
-    "input": [
-      "text",
-      "image"
-    ],
-    "output": [
-      "text"
-    ]
+    "input": ["text", "image"],
+    "output": ["text"]
   },
   "capabilities": {
     "vision": true,
+    "tool_use": true,
+    "function_calling": true,
     "reasoning": true,
     "streaming": true
   },
   "availability": {
     "api": true,
     "cloud": true,
-    "open_weights": true,
-    "self_hostable": true
-  },
-  "runtime": {
-    "vllm": true,
-    "sglang": true,
-    "llama_cpp": true,
-    "executorch": true,
-    "ollama": true
+    "open_weights": true
   },
   "sources": [
     {
       "type": "official",
-      "url": "https://dev.meta.ai/docs/muse-glimmer",
+      "url": "https://build.nvidia.com/meta/muse-glimmer-30b",
       "retrieved_at": "2026-09-26",
-      "title": "Muse Glimmer overview",
-      "notes": "30B dense multimodal model (text + image input, text output), 128K default context window, Apache 2.0 license, runtimes vLLM / SGLang / llama.cpp / ExecuTorch, launch partners including Fireworks AI, Together AI, Hugging Face and Ollama."
+      "title": "NVIDIA NIM model page"
     },
     {
       "type": "official",
-      "url": "https://dev.meta.ai/docs/models",
+      "url": "https://integrate.api.nvidia.com/v1/models",
       "retrieved_at": "2026-09-26",
-      "title": "Meta Model API models",
-      "notes": "Muse Glimmer is open-weight and self-hosted; it is not served over the Meta Model API."
-    },
-    {
-      "type": "official",
-      "url": "https://docs.together.ai/docs/inference-models",
-      "retrieved_at": "2026-09-26",
-      "title": "Together AI available models",
-      "notes": "Served as meta-models/Muse-Glimmer-30B with a 131,072 context window."
-    },
-    {
-      "type": "community",
-      "url": "https://openrouter.ai/api/v1/models",
-      "retrieved_at": "2026-09-26",
-      "title": "OpenRouter model list",
-      "notes": "Context window for id meta/muse-glimmer-30b cross-checked against OpenRouter's public model list."
+      "title": "NVIDIA NIM public model catalog"
     }
   ]
 }

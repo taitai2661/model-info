@@ -1,0 +1,48 @@
+{
+ "model_id": "gpt-4o",
+ "name": "GPT-4o",
+ "display_name": "GPT-4o",
+ "model_provider": "openai",
+ "family": "GPT",
+ "version": null,
+ "status": "active",
+ "release_date": null,
+ "updated_at": "2026-09-26",
+ "description": "OpenAI's omni flagship model serving text and image input; superseded by the GPT-5 family but still served by the OpenAI API.",
+ "context": {
+  "window": 128000,
+  "max_output_tokens": 16384
+ },
+ "modalities": {
+  "input": [
+   "text",
+   "image"
+  ],
+  "output": [
+   "text"
+  ]
+ },
+ "capabilities": {
+  "tool_use": true,
+  "vision": true,
+  "reasoning": false,
+  "function_calling": true,
+  "structured_output": true,
+  "streaming": true
+ },
+ "availability": {
+  "api": true,
+  "cloud": true,
+  "open_weights": false,
+  "self_hostable": false
+ },
+ "sources": [
+  {
+   "type": "official",
+   "url": "https://developers.openai.com/api/docs/models/gpt-4o",
+   "retrieved_at": "2026-09-26",
+   "title": "OpenAI model page",
+   "notes": "128,000 context window; 16,384 max output tokens."
+  }
+ ]
+}

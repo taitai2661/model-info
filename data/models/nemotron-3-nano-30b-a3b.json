@@ -1,0 +1,51 @@
+{
+ "model_id": "nemotron-3-nano-30b-a3b",
+ "name": "Nemotron 3 Nano 30B A3B",
+ "display_name": "Nemotron 3 Nano 30B A3B",
+ "model_provider": "nvidia",
+ "family": "Nemotron",
+ "version": null,
+ "status": "active",
+ "release_date": null,
+ "updated_at": "2026-09-26",
+ "description": "NVIDIA's efficient 30B total / 3B active Nemotron 3 MoE model for coding, reasoning, and long-context agents.",
+ "context": {
+  "window": 262144
+ },
+ "modalities": {
+  "input": [
+   "text"
+  ],
+  "output": [
+   "text"
+  ]
+ },
+ "capabilities": {
+  "tool_use": true,
+  "vision": false,
+  "reasoning": true,
+  "function_calling": true
+ },
+ "availability": {
+  "api": true,
+  "cloud": true,
+  "open_weights": true,
+  "self_hostable": true
+ },
+ "sources": [
+  {
+   "type": "official",
+   "url": "https://build.nvidia.com/nvidia/nemotron-3-nano-30b-a3b",
+   "retrieved_at": "2026-09-26",
+   "title": "NVIDIA NIM model page",
+   "notes": "Context 262K native; up to 1M requires opt-in flags."
+  },
+  {
+   "type": "community",
+   "url": "https://openrouter.ai/api/v1/models",
+   "retrieved_at": "2026-09-26",
+   "title": "OpenRouter public model list",
+   "notes": "Context window 262,144 reported for nvidia/nemotron-3-nano-30b-a3b."
+  }
+ ]
+}

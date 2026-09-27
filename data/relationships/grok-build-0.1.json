@@ -50,6 +50,31 @@
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "spacexai/grok-build-0.1",
+      "context": {
+        "window": 256000,
+        "max_output_tokens": 256000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
     }
   ]
 }

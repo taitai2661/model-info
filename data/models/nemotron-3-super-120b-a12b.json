@@ -1,0 +1,44 @@
+{
+ "model_id": "nemotron-3-super-120b-a12b",
+ "name": "Nemotron 3 Super 120B A12B",
+ "display_name": "Nemotron 3 Super 120B A12B",
+ "model_provider": "nvidia",
+ "family": "Nemotron",
+ "version": null,
+ "status": "active",
+ "release_date": null,
+ "updated_at": "2026-09-26",
+ "description": "NVIDIA's 120B total / 12B active Nemotron 3 MoE model for agentic workflows and long-context reasoning; native 256K window, up to 1M opt-in.",
+ "context": {
+  "window": 262144
+ },
+ "modalities": {
+  "input": [
+   "text"
+  ],
+  "output": [
+   "text"
+  ]
+ },
+ "capabilities": {
+  "tool_use": true,
+  "vision": false,
+  "reasoning": true,
+  "function_calling": true
+ },
+ "availability": {
+  "api": true,
+  "cloud": true,
+  "open_weights": true,
+  "self_hostable": true
+ },
+ "sources": [
+  {
+   "type": "official",
+   "url": "https://build.nvidia.com/nvidia/nemotron-3-super-120b-a12b",
+   "retrieved_at": "2026-09-26",
+   "title": "NVIDIA NIM model page",
+   "notes": "Context length defaults to 256k (262,144); up to 1M requires opt-in flags."
+  }
+ ]
+}

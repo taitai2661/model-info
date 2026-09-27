@@ -1,0 +1,48 @@
+{
+ "model_id": "gpt-4.1",
+ "name": "GPT-4.1",
+ "display_name": "GPT-4.1",
+ "model_provider": "openai",
+ "family": "GPT",
+ "version": null,
+ "status": "active",
+ "release_date": null,
+ "updated_at": "2026-09-26",
+ "description": "OpenAI's instruction-following model with a 1M token context window and 32K output, without a reasoning step.",
+ "context": {
+  "window": 1047576,
+  "max_output_tokens": 32768
+ },
+ "modalities": {
+  "input": [
+   "text",
+   "image"
+  ],
+  "output": [
+   "text"
+  ]
+ },
+ "capabilities": {
+  "tool_use": true,
+  "vision": true,
+  "reasoning": false,
+  "function_calling": true,
+  "structured_output": true,
+  "streaming": true
+ },
+ "availability": {
+  "api": true,
+  "cloud": true,
+  "open_weights": false,
+  "self_hostable": false
+ },
+ "sources": [
+  {
+   "type": "official",
+   "url": "https://developers.openai.com/api/docs/models/gpt-4.1",
+   "retrieved_at": "2026-09-26",
+   "title": "OpenAI model page",
+   "notes": "1,047,576 context window; 32,768 max output tokens."
+  }
+ ]
+}

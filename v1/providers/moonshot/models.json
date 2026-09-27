@@ -1,51 +1,6 @@
 [
   {
     "model": {
-      "model_id": "kimi-k2.6",
-      "name": "Kimi K2.6",
-      "display_name": "Kimi K2.6",
-      "model_provider": "moonshot",
-      "family": "Kimi",
-      "version": null,
-      "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
-      "context": {
-        "window": 262144,
-        "max_output_tokens": 235929
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://platform.kimi.ai/docs/models",
-          "retrieved_at": "2026-09-26",
-          "title": "Moonshot model list"
-        },
-        {
-          "type": "community",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-26",
-          "title": "OpenRouter model list",
-          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
-        }
-      ]
-    },
-    "relationship": {
-      "provider_id": "moonshot",
-      "model_id": "kimi-k2.6"
-    }
-  },
-  {
-    "model": {
       "model_id": "kimi-k2.7-code",
       "name": "Kimi K2.7 Code",
       "display_name": "Kimi K2.7 Code",
@@ -87,52 +42,6 @@
     "relationship": {
       "provider_id": "moonshot",
       "model_id": "kimi-k2.7-code"
-    }
-  },
-  {
-    "model": {
-      "model_id": "kimi-k3",
-      "name": "Kimi K3",
-      "display_name": "Kimi K3",
-      "model_provider": "moonshot",
-      "family": "Kimi",
-      "version": null,
-      "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
-      "context": {
-        "window": 1048576,
-        "max_output_tokens": 943718
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image",
-          "video"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://platform.kimi.ai/docs/models",
-          "retrieved_at": "2026-09-26",
-          "title": "Moonshot model list"
-        },
-        {
-          "type": "community",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-26",
-          "title": "OpenRouter model list",
-          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
-        }
-      ]
-    },
-    "relationship": {
-      "provider_id": "moonshot",
-      "model_id": "kimi-k3"
     }
   }
 ]

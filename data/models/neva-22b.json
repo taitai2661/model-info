@@ -1,0 +1,38 @@
+{
+  "model_id": "neva-22b",
+  "name": "NeVa 22B",
+  "display_name": "NeVa 22B",
+  "model_provider": "nvidia",
+  "family": "NeVa",
+  "version": "22b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "NVIDIA NeVa 22B: a vision-language model for image captioning, visual question answering, and image-grounded chat.",
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/neva-22b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

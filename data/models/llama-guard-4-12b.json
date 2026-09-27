@@ -1,0 +1,39 @@
+{
+  "model_id": "llama-guard-4-12b",
+  "name": "Llama Guard 4 12B",
+  "display_name": "Llama Guard 4 12B",
+  "model_provider": "meta",
+  "family": "Llama Guard",
+  "version": "4",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Meta Llama Guard 4 12B: a multimodal safety classifier that labels prompt and response pairs as safe or unsafe across a structured taxonomy.",
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/meta/llama-guard-4-12b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

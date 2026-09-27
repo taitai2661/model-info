@@ -1,0 +1,41 @@
+{
+  "model_id": "codestral-22b-instruct-v0.1",
+  "name": "Codestral 22B Instruct v0.1",
+  "display_name": "Codestral 22B Instruct v0.1",
+  "model_provider": "mistral",
+  "family": "Codestral",
+  "version": "v0.1",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Mistral Codestral 22B Instruct v0.1: a 22B code-generation model optimised for fill-in-the-middle and instruction following across many programming languages.",
+  "context": {
+    "window": 32768
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/mistralai/codestral-22b-instruct-v0.1",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

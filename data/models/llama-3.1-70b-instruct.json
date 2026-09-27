@@ -1,0 +1,45 @@
+{
+ "model_id": "llama-3.1-70b-instruct",
+ "name": "Llama 3.1 70B Instruct",
+ "display_name": "Llama 3.1 70B Instruct",
+ "model_provider": "meta",
+ "family": "Llama",
+ "version": null,
+ "status": "active",
+ "release_date": null,
+ "updated_at": "2026-09-26",
+ "description": "Meta's 70-billion parameter instruct model with a 128K context window; open weights under the Llama 3.1 community license.",
+ "context": {
+  "window": 131072
+ },
+ "modalities": {
+  "input": [
+   "text"
+  ],
+  "output": [
+   "text"
+  ]
+ },
+ "availability": {
+  "api": true,
+  "cloud": true,
+  "open_weights": true,
+  "self_hostable": true
+ },
+ "sources": [
+  {
+   "type": "official",
+   "url": "https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct",
+   "retrieved_at": "2026-09-26",
+   "title": "Open-weight release",
+   "notes": "Llama 3.1 models support a 128K (131,072 token) context window."
+  },
+  {
+   "type": "official",
+   "url": "https://build.nvidia.com/meta/llama-3_1-70b-instruct",
+   "retrieved_at": "2026-09-26",
+   "title": "NVIDIA NIM model page",
+   "notes": "Context Length 131K."
+  }
+ ]
+}

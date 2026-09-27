@@ -1,0 +1,19 @@
+{
+ "model_id": "llama-3.1-nemotron-ultra-253b-v1",
+ "updated_at": "2026-09-26",
+ "providers": [
+  {
+   "provider_id": "nvidia",
+   "model_id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
+   "sources": [
+    {
+     "type": "official",
+     "url": "https://integrate.api.nvidia.com/v1/models",
+     "retrieved_at": "2026-09-26",
+     "title": "NVIDIA NIM public model catalog",
+     "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+    }
+   ]
+  }
+ ]
+}

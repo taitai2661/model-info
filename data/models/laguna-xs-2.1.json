@@ -1,0 +1,39 @@
+{
+  "model_id": "laguna-xs-2.1",
+  "name": "Laguna XS 2.1",
+  "display_name": "Laguna XS 2.1",
+  "model_provider": "poolside",
+  "family": "Laguna",
+  "version": "xs-2.1",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Poolside Laguna XS 2.1: an efficient 33B Mixture-of-Experts model for local, long-horizon agentic coding and terminal tasks.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "function_calling": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/poolside/laguna-xs-2.1",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

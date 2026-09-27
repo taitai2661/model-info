@@ -1,0 +1,39 @@
+{
+  "model_id": "fuyu-8b",
+  "name": "Fuyu 8B",
+  "display_name": "Fuyu 8B",
+  "model_provider": "adept",
+  "family": "Fuyu",
+  "version": "8b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Adept Fuyu 8B: a multimodal model designed for image understanding and digital-agent workflows.",
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/adept/fuyu-8b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

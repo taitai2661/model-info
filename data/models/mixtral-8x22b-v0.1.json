@@ -1,0 +1,43 @@
+{
+  "model_id": "mixtral-8x22b-v0.1",
+  "name": "Mixtral 8x22B v0.1",
+  "display_name": "Mixtral 8x22B v0.1",
+  "model_provider": "mistral",
+  "family": "Mixtral",
+  "version": "v0.1",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Mistral Mixtral 8x22B v0.1: a 141B-total / 39B-active sparse Mixture-of-Experts model for chat, code, and tool use.",
+  "context": {
+    "window": 65536
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "function_calling": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/mistralai/mixtral-8x22b-v0.1",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

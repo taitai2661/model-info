@@ -1,0 +1,41 @@
+{
+  "model_id": "gemma-2b",
+  "name": "Gemma 2B",
+  "display_name": "Gemma 2B",
+  "model_provider": "google",
+  "family": "Gemma",
+  "version": "2b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Google Gemma 2B: the 2B-parameter base model of the original Gemma open-weight family.",
+  "context": {
+    "window": 8192
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/google/gemma-2b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

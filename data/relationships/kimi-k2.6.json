@@ -3,11 +3,32 @@
   "updated_at": "2026-09-26",
   "providers": [
     {
-      "provider_id": "moonshot",
-      "model_id": "kimi-k2.6"
+      "provider_id": "nvidia",
+      "model_id": "moonshotai/kimi-k2.6",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog",
+          "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+        }
+      ]
     },
     {
-      "provider_id": "openrouter",
+      "provider_id": "opencode-go",
+      "model_id": "kimi-k2.6",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model id from the public Go model list (GET /v1/models)."
+        }
+      ]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
       "model_id": "moonshotai/kimi-k2.6",
       "pricing": {
         "currency": "USD",
@@ -16,84 +37,26 @@
         "output": 4.0,
         "cached_input": 0.16
       },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-26",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
-        }
-      ]
-    },
-    {
-      "provider_id": "opencode",
-      "model_id": "kimi-k2.6",
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.95,
-        "output": 4.0,
-        "cached_input": 0.16
+      "context": {
+        "window": 262000,
+        "max_output_tokens": 262000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
       },
       "sources": [
         {
           "type": "official",
-          "url": "https://opencode.ai/docs/zen/",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
           "retrieved_at": "2026-09-26",
-          "title": "OpenCode Zen docs",
-          "notes": "Price, availability, and deprecation status from the Zen docs."
-        },
-        {
-          "type": "official",
-          "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-26",
-          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
-        }
-      ]
-    },
-    {
-      "provider_id": "opencode-go",
-      "model_id": "kimi-k2.6",
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.95,
-        "output": 4.0,
-        "cached_input": 0.16
-      },
-      "notes": "Go monthly usage limit: $60.",
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://opencode.ai/docs/go/",
-          "retrieved_at": "2026-09-26",
-          "title": "OpenCode Go docs",
-          "notes": "Price, tier notes, and monthly limit from the Go docs."
-        },
-        {
-          "type": "official",
-          "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-26",
-          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
-        }
-      ]
-    },
-    {
-      "provider_id": "fireworks",
-      "model_id": "accounts/fireworks/models/kimi-k2p6",
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.95,
-        "output": 4.0,
-        "cached_input": 0.16
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://docs.fireworks.ai/serverless/pricing.md",
-          "retrieved_at": "2026-09-26",
-          "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ]
     }

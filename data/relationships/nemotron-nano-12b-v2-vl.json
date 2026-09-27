@@ -1,0 +1,37 @@
+{
+  "model_id": "nemotron-nano-12b-v2-vl",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "nvidia/nemotron-nano-12b-v2-vl",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.2,
+        "output": 0.6
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    }
+  ]
+}

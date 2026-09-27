@@ -1,0 +1,38 @@
+{
+  "model_id": "granite-34b-code-instruct",
+  "name": "Granite 34B Code Instruct",
+  "display_name": "Granite 34B Code Instruct",
+  "model_provider": "ibm",
+  "family": "Granite",
+  "version": "34b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "IBM Granite 34B Code Instruct: a 34B-parameter code-generation and code-completion model for enterprise development workflows.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/ibm/granite-34b-code-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

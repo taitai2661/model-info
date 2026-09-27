@@ -1,0 +1,42 @@
+{
+  "model_id": "nemotron-3-nano-omni-30b-a3b-reasoning",
+  "name": "Nemotron 3 Nano Omni 30B A3B Reasoning",
+  "display_name": "Nemotron 3 Nano Omni 30B A3B Reasoning",
+  "model_provider": "nvidia",
+  "family": "Nemotron",
+  "version": "3",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Omni-modal Nemotron 3 Nano reasoning model: understands images, video, speech and text inputs to produce step-by-step reasoning.",
+  "context": {
+    "window": 131072
+  },
+  "modalities": {
+    "input": ["text", "image", "video", "audio"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "reasoning": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

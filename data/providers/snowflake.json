@@ -1,0 +1,17 @@
+{
+  "id": "snowflake",
+  "name": "Snowflake",
+  "types": ["model_provider"],
+  "website": "https://www.snowflake.com",
+  "status": "active",
+  "description": "Snowflake's open-weight Arctic family of retrieval and embedding models.",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://www.snowflake.com",
+      "retrieved_at": "2026-09-26",
+      "title": "Snowflake homepage"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

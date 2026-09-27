@@ -1,0 +1,43 @@
+{
+  "model_id": "deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "display_name": "DeepSeek V4.1 Flash",
+  "model_provider": "deepseek",
+  "family": "DeepSeek",
+  "version": "v4.1",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "DeepSeek V4.1 Flash: a 552B-total / 8B-active MoE with native multimodal support and a smaller KV cache for lower API cost.",
+  "context": {
+    "window": 131072
+  },
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "reasoning": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/deepseek-ai/deepseek-v4.1-flash",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

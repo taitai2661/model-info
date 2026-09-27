@@ -1,0 +1,22 @@
+{
+  "provider": {
+    "id": "writer",
+    "name": "Writer",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://writer.com",
+    "status": "active",
+    "description": "Enterprise generative-AI company behind the Palmyra family of domain-tuned LLMs (creative, finance, medical).",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://writer.com",
+        "retrieved_at": "2026-09-26",
+        "title": "Writer homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  "model_ids": []
+}

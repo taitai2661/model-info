@@ -1,0 +1,38 @@
+{
+  "model_id": "llama-nemotron-embed-vl-1b-v2",
+  "name": "Llama Nemotron Embed VL 1B v2",
+  "display_name": "Llama Nemotron Embed VL 1B v2",
+  "model_provider": "nvidia",
+  "family": "Nemotron",
+  "version": "v2",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Multimodal retrieval model: encodes the user query as text and the candidate documents as images, producing a similarity score. Output is a vector, not text.",
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/llama-nemotron-embed-vl-1b-v2",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

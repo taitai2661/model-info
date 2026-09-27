@@ -1,0 +1,33 @@
+{
+  "model_id": "codegemma-1.1-7b",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "nvidia",
+      "model_id": "google/codegemma-1.1-7b",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog",
+          "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "google",
+      "model_id": "codegemma-1.1-7b",
+      "status": null,
+      "notes": "Open-weights release; no first-party Gemini Developer API access.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai.google.dev/gemini-api/docs/models",
+          "retrieved_at": "2026-09-26",
+          "title": "Gemini API models"
+        }
+      ]
+    }
+  ]
+}

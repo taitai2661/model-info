@@ -1,5 +1,84 @@
 [
   {
+    "model_id": "ai-synthetic-video-detector",
+    "name": "AI Synthetic Video Detector",
+    "display_name": "AI Synthetic Video Detector",
+    "model_provider": "nvidia",
+    "family": "Detect",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA classifier microservice that flags synthetic (AI-generated) videos.",
+    "modalities": {
+      "input": [
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/ai-synthetic-video-detector",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "arctic-embed-l",
+    "name": "Arctic Embed L",
+    "display_name": "Arctic Embed L",
+    "model_provider": "snowflake",
+    "family": "Arctic",
+    "version": "l",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Snowflake Arctic-Embed-L: a retrieval embedding model optimized for English and multilingual semantic search. Output is a dense vector (not text).",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/snowflake/arctic-embed-l",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
     "model_id": "claude-fable-5",
     "name": "Claude Fable 5",
     "display_name": "Claude Fable 5",
@@ -737,6 +816,322 @@
     ]
   },
   {
+    "model_id": "codegemma-1.1-7b",
+    "name": "CodeGemma 1.1 7B",
+    "display_name": "CodeGemma 1.1 7B",
+    "model_provider": "google",
+    "family": "Gemma",
+    "version": "1.1",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google CodeGemma 1.1 7B: a 7B-parameter Gemma 2 fine-tune for code completion and generation across many programming languages.",
+    "context": {
+      "window": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/google/codegemma-1.1-7b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "codegemma-7b",
+    "name": "CodeGemma 7B",
+    "display_name": "CodeGemma 7B",
+    "model_provider": "google",
+    "family": "Gemma",
+    "version": "7b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google CodeGemma 7B: the original 7B CodeGemma release for code completion and generation.",
+    "context": {
+      "window": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/google/codegemma-7b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "codellama-70b",
+    "name": "Code Llama 70B",
+    "display_name": "Code Llama 70B",
+    "model_provider": "meta",
+    "family": "Llama 2",
+    "version": "70b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Meta Code Llama 70B: a 70B-parameter Llama 2 fine-tune for code generation and infilling across many programming languages.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/meta/codellama-70b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "codestral-22b-instruct-v0.1",
+    "name": "Codestral 22B Instruct v0.1",
+    "display_name": "Codestral 22B Instruct v0.1",
+    "model_provider": "mistral",
+    "family": "Codestral",
+    "version": "v0.1",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Mistral Codestral 22B Instruct v0.1: a 22B code-generation model optimised for fill-in-the-middle and instruction following across many programming languages.",
+    "context": {
+      "window": 32768
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/mistralai/codestral-22b-instruct-v0.1",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "cosmos-reason2-8b",
+    "name": "Cosmos Reason 2 8B",
+    "display_name": "Cosmos Reason 2 8B",
+    "model_provider": "nvidia",
+    "family": "Cosmos",
+    "version": "2",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA Cosmos Reason 2 8B: a vision-language reasoning model for physical-AI workflows, structured scene understanding, and step-by-step planning over video.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/cosmos-reason2-8b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "dbrx-instruct",
+    "name": "DBRX Instruct",
+    "display_name": "DBRX Instruct",
+    "model_provider": "databricks",
+    "family": "DBRX",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Databricks DBRX Instruct: a 132B-total / 36B-active open-weight MoE LLM for instruction following and coding.",
+    "context": {
+      "window": 32768
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/databricks/dbrx-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "deepseek-coder-6.7b-instruct",
+    "name": "DeepSeek Coder 6.7B Instruct",
+    "display_name": "DeepSeek Coder 6.7B Instruct",
+    "model_provider": "deepseek",
+    "family": "DeepSeek Coder",
+    "version": "6.7b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "DeepSeek Coder 6.7B Instruct: a 6.7B-parameter code model trained on 2T tokens of permissively licensed source code, instruction-tuned for chat-style code use.",
+    "context": {
+      "window": 16384
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/deepseek-ai/deepseek-coder-6.7b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
     "model_id": "deepseek-flash",
     "name": "DeepSeek Flash",
     "display_name": "DeepSeek Flash",
@@ -983,6 +1378,273 @@
         "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
         "retrieved_at": "2026-09-26",
         "title": "Model weights"
+      }
+    ]
+  },
+  {
+    "model_id": "deepseek-v4.1-flash",
+    "name": "DeepSeek V4.1 Flash",
+    "display_name": "DeepSeek V4.1 Flash",
+    "model_provider": "deepseek",
+    "family": "DeepSeek",
+    "version": "v4.1",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "DeepSeek V4.1 Flash: a 552B-total / 8B-active MoE with native multimodal support and a smaller KV cache for lower API cost.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/deepseek-ai/deepseek-v4.1-flash",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "deplot",
+    "name": "DePlot",
+    "display_name": "DePlot",
+    "model_provider": "google",
+    "family": "DePlot",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google DePlot: a vision-language model that converts a chart or plot image into a linearised table the underlying text model can read.",
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/google/deplot",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "diffusiongemma-26b-a4b-it",
+    "name": "DiffusionGemma 26B A4B Instruct",
+    "display_name": "DiffusionGemma 26B A4B IT",
+    "model_provider": "google",
+    "family": "Gemma",
+    "version": "26b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google DiffusionGemma 26B A4B Instruct: a 26B-total / 4B-active diffusion-based LLM enabling parallel token generation for real-time text applications.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/google/diffusiongemma-26b-a4b-it",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "embed-qa-4",
+    "name": "EmbedQA 4",
+    "display_name": "EmbedQA 4",
+    "model_provider": "nvidia",
+    "family": "EmbedQA",
+    "version": "4",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA embedding model tuned for retrieval over question/answer pairs. Output is a dense vector (not text).",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/embed-qa-4",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "fuyu-8b",
+    "name": "Fuyu 8B",
+    "display_name": "Fuyu 8B",
+    "model_provider": "adept",
+    "family": "Fuyu",
+    "version": "8b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Adept Fuyu 8B: a multimodal model designed for image understanding and digital-agent workflows.",
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/adept/fuyu-8b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-1.5-pro",
+    "name": "Gemini 1.5 Pro",
+    "display_name": "Gemini 1.5 Pro",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "retired",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google's first long-context multimodal model with a 1M token window; shut down and superseded by the Gemini 2.x and 3.x families.",
+    "context": {
+      "window": 1048576
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/changelog",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini API release notes",
+        "notes": "Gemini 1.5 Pro is listed among the shut-down Gemini 1.5 models."
+      },
+      {
+        "type": "official",
+        "url": "https://blog.google/innovation-and-ai/products/google-gemini-next-generation-model-february-2024/",
+        "retrieved_at": "2026-09-26",
+        "title": "Gemini 1.5 launch",
+        "notes": "1 million token context window."
       }
     ]
   },
@@ -1598,6 +2260,193 @@
     ]
   },
   {
+    "model_id": "gemma-2b",
+    "name": "Gemma 2B",
+    "display_name": "Gemma 2B",
+    "model_provider": "google",
+    "family": "Gemma",
+    "version": "2b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google Gemma 2B: the 2B-parameter base model of the original Gemma open-weight family.",
+    "context": {
+      "window": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/google/gemma-2b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "gemma-3-12b-it",
+    "name": "Gemma 3 12B IT",
+    "display_name": "Gemma 3 12B IT",
+    "model_provider": "google",
+    "family": "Gemma",
+    "version": "3",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google Gemma 3 12B IT: a 12B-parameter multimodal instruction-tuned model with vision and 128K context.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/google/gemma-3-12b-it",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "gemma-3-4b-it",
+    "name": "Gemma 3 4B IT",
+    "display_name": "Gemma 3 4B IT",
+    "model_provider": "google",
+    "family": "Gemma",
+    "version": "3",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google Gemma 3 4B IT: a 4B-parameter multimodal instruction-tuned model with vision and 128K context.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/google/gemma-3-4b-it",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "gemma-4-31b-it",
+    "name": "Gemma 4 31B IT",
+    "display_name": "Gemma 4 31B IT",
+    "model_provider": "google",
+    "family": "Gemma",
+    "version": "4",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google Gemma 4 31B IT: a dense 31B-parameter frontier model for reasoning, coding, agentic workflows, and fine-tuning.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/google/gemma-4-31b-it",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
     "model_id": "glm-5",
     "name": "GLM-5",
     "display_name": "GLM-5",
@@ -1851,6 +2700,197 @@
         "retrieved_at": "2026-09-26",
         "title": "OpenRouter model list",
         "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4-turbo",
+    "name": "GPT-4 Turbo",
+    "display_name": "GPT-4 Turbo",
+    "model_provider": "openai",
+    "family": "GPT",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Legacy GPT-4 class model with vision and a 128K window; OpenAI recommends newer models but the API still serves it.",
+    "context": {
+      "window": 128000,
+      "max_output_tokens": 4096
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": false,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-4-turbo",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI model page",
+        "notes": "128,000 context window; 4,096 max output tokens."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4.1",
+    "name": "GPT-4.1",
+    "display_name": "GPT-4.1",
+    "model_provider": "openai",
+    "family": "GPT",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "OpenAI's instruction-following model with a 1M token context window and 32K output, without a reasoning step.",
+    "context": {
+      "window": 1047576,
+      "max_output_tokens": 32768
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": false,
+      "function_calling": true,
+      "structured_output": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-4.1",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI model page",
+        "notes": "1,047,576 context window; 32,768 max output tokens."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4o",
+    "name": "GPT-4o",
+    "display_name": "GPT-4o",
+    "model_provider": "openai",
+    "family": "GPT",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "OpenAI's omni flagship model serving text and image input; superseded by the GPT-5 family but still served by the OpenAI API.",
+    "context": {
+      "window": 128000,
+      "max_output_tokens": 16384
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": false,
+      "function_calling": true,
+      "structured_output": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-4o",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI model page",
+        "notes": "128,000 context window; 16,384 max output tokens."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4o-mini",
+    "name": "GPT-4o mini",
+    "display_name": "GPT-4o mini",
+    "model_provider": "openai",
+    "family": "GPT",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "OpenAI's small, low-cost omni model for focused tasks; accepts text and image input.",
+    "context": {
+      "window": 128000,
+      "max_output_tokens": 16384
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": false,
+      "function_calling": true,
+      "structured_output": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenAI model page",
+        "notes": "128,000 context window; 16,384 max output tokens."
       }
     ]
   },
@@ -3196,6 +4236,228 @@
     ]
   },
   {
+    "model_id": "gpt-oss-20b",
+    "name": "GPT-OSS 20B",
+    "display_name": "GPT-OSS 20B",
+    "model_provider": "openai",
+    "family": "GPT-OSS",
+    "version": "20b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "OpenAI GPT-OSS 20B: the smaller Mixture-of-Experts (MoE) text-only open-weight LLM for efficient AI reasoning and math.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/openai/gpt-oss-20b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "granite-3.0-3b-a800m-instruct",
+    "name": "Granite 3.0 3B A800M Instruct",
+    "display_name": "Granite 3.0 3B A800M Instruct",
+    "model_provider": "ibm",
+    "family": "Granite",
+    "version": "3.0",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "IBM Granite 3.0 3B A800M Instruct: a 3B-total / 800M-active MoE for instruction following.",
+    "context": {
+      "window": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/ibm/granite-3.0-3b-a800m-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "granite-3.0-8b-instruct",
+    "name": "Granite 3.0 8B Instruct",
+    "display_name": "Granite 3.0 8B Instruct",
+    "model_provider": "ibm",
+    "family": "Granite",
+    "version": "3.0",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "IBM Granite 3.0 8B Instruct: an 8B-parameter enterprise-tuned model for instruction following, RAG, and tool use.",
+    "context": {
+      "window": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/ibm/granite-3.0-8b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "granite-34b-code-instruct",
+    "name": "Granite 34B Code Instruct",
+    "display_name": "Granite 34B Code Instruct",
+    "model_provider": "ibm",
+    "family": "Granite",
+    "version": "34b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "IBM Granite 34B Code Instruct: a 34B-parameter code-generation and code-completion model for enterprise development workflows.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/ibm/granite-34b-code-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "granite-8b-code-instruct",
+    "name": "Granite 8B Code Instruct",
+    "display_name": "Granite 8B Code Instruct",
+    "model_provider": "ibm",
+    "family": "Granite",
+    "version": "8b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "IBM Granite 8B Code Instruct: an 8B-parameter code-generation model for enterprise development workflows.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/ibm/granite-8b-code-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
     "model_id": "grok-4.5",
     "name": "Grok 4.5",
     "display_name": "Grok 4.5",
@@ -3490,6 +4752,100 @@
     ]
   },
   {
+    "model_id": "ising-calibration-1.5-31b",
+    "name": "NVIDIA Ising Calibration 1.5 31B",
+    "display_name": "NVIDIA-Ising-Calibration-1.5-31B",
+    "model_provider": "nvidia",
+    "family": "Ising",
+    "version": "1.5",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Dense multimodal vision-language model based on Gemma 4 31B, fine-tuned to interpret quantum-computing calibration charts and produce structured technical text.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/ising-calibration-1.5-31b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "jamba-1.5-large-instruct",
+    "name": "Jamba 1.5 Large Instruct",
+    "display_name": "Jamba 1.5 Large Instruct",
+    "model_provider": "ai21labs",
+    "family": "Jamba",
+    "version": "1.5",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "AI21 Jamba 1.5 Large Instruct: a hybrid SSM-Transformer production model with a 256K context window for instruction following and tool use.",
+    "context": {
+      "window": 262144
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/ai21labs/jamba-1.5-large-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
     "model_id": "jev-1.13.0",
     "name": "Jev 1.13",
     "display_name": "Jev 1.13",
@@ -3560,36 +4916,41 @@
     "display_name": "Kimi K2.6",
     "model_provider": "moonshot",
     "family": "Kimi",
-    "version": null,
+    "version": "k2.6",
     "status": "active",
     "release_date": null,
     "updated_at": "2026-09-26",
-    "context": {
-      "window": 262144,
-      "max_output_tokens": 235929
-    },
+    "description": "Moonshot Kimi K2.6: MoE LLM tuned for code generation and tool use.",
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
       ],
       "output": [
         "text"
       ]
     },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
     "sources": [
       {
         "type": "official",
-        "url": "https://platform.kimi.ai/docs/models",
+        "url": "https://build.nvidia.com/moonshotai/kimi-k2.6",
         "retrieved_at": "2026-09-26",
-        "title": "Moonshot model list"
+        "title": "NVIDIA NIM model page"
       },
       {
-        "type": "community",
-        "url": "https://openrouter.ai/api/v1/models",
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
         "retrieved_at": "2026-09-26",
-        "title": "OpenRouter model list",
-        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        "title": "NVIDIA NIM public model catalog"
       }
     ]
   },
@@ -3638,37 +4999,131 @@
     "display_name": "Kimi K3",
     "model_provider": "moonshot",
     "family": "Kimi",
-    "version": null,
+    "version": "k3",
     "status": "active",
     "release_date": null,
     "updated_at": "2026-09-26",
-    "context": {
-      "window": 1048576,
-      "max_output_tokens": 943718
-    },
+    "description": "Moonshot Kimi K3: a ~2.8T-parameter hybrid KDA + MLA multimodal MoE for long-horizon coding, agentic tool use, and image understanding.",
     "modalities": {
       "input": [
         "text",
-        "image",
-        "video"
+        "image"
       ],
       "output": [
         "text"
       ]
     },
+    "capabilities": {
+      "vision": true,
+      "tool_use": true,
+      "function_calling": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
     "sources": [
       {
         "type": "official",
-        "url": "https://platform.kimi.ai/docs/models",
+        "url": "https://build.nvidia.com/moonshotai/kimi-k3",
         "retrieved_at": "2026-09-26",
-        "title": "Moonshot model list"
+        "title": "NVIDIA NIM model page"
       },
       {
-        "type": "community",
-        "url": "https://openrouter.ai/api/v1/models",
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
         "retrieved_at": "2026-09-26",
-        "title": "OpenRouter model list",
-        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "kosmos-2",
+    "name": "Kosmos-2",
+    "display_name": "Kosmos-2",
+    "model_provider": "microsoft",
+    "family": "Kosmos",
+    "version": "2",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Microsoft Kosmos-2: a multimodal model that grounds text in image regions for referring expression comprehension and grounded image captioning.",
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/microsoft/kosmos-2",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "laguna-xs-2.1",
+    "name": "Laguna XS 2.1",
+    "display_name": "Laguna XS 2.1",
+    "model_provider": "poolside",
+    "family": "Laguna",
+    "version": "xs-2.1",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Poolside Laguna XS 2.1: an efficient 33B Mixture-of-Experts model for local, long-horizon agentic coding and terminal tasks.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/poolside/laguna-xs-2.1",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
       }
     ]
   },
@@ -3689,6 +5144,518 @@
         "retrieved_at": "2026-09-26",
         "title": "Ant Group model card",
         "notes": "Model card states it is developed by Ant Group (InclusionAI / Ant Ling family)."
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.1-70b-instruct",
+    "name": "Llama 3.1 70B Instruct",
+    "display_name": "Llama 3.1 70B Instruct",
+    "model_provider": "meta",
+    "family": "Llama",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Meta's 70-billion parameter instruct model with a 128K context window; open weights under the Llama 3.1 community license.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "Open-weight release",
+        "notes": "Llama 3.1 models support a 128K (131,072 token) context window."
+      },
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/meta/llama-3_1-70b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page",
+        "notes": "Context Length 131K."
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.1-nemoguard-8b-content-safety",
+    "name": "Llama 3.1 Nemoguard 8B Content Safety",
+    "display_name": "Llama 3.1 Nemoguard 8B Content Safety",
+    "model_provider": "nvidia",
+    "family": "Nemoguard",
+    "version": "8b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA's content-safety classification model built on Llama 3.1 8B; classifies prompts and completions as safe or unsafe across common harm categories.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/llama-3.1-nemoguard-8b-content-safety",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.1-nemoguard-8b-topic-control",
+    "name": "Llama 3.1 Nemoguard 8B Topic Control",
+    "display_name": "Llama 3.1 Nemoguard 8B Topic Control",
+    "model_provider": "nvidia",
+    "family": "Nemoguard",
+    "version": "8b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Topic-control classifier (Llama 3.1 8B base) that keeps conversations on approved topics by detecting off-topic prompts and responses.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/llama-3.1-nemoguard-8b-topic-control",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.1-nemotron-51b-instruct",
+    "name": "Llama 3.1 Nemotron 51B Instruct",
+    "display_name": "Llama 3.1 Nemotron 51B Instruct",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": "51b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA Llama 3.1 Nemotron 51B Instruct: a 51B-parameter Llama 3.1 derivative tuned for instruction following and helpful chat.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/llama-3.1-nemotron-51b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.1-nemotron-70b-instruct",
+    "name": "Llama 3.1 Nemotron 70B Instruct",
+    "display_name": "Llama 3.1 Nemotron 70B Instruct",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA's helpfulness-tuned instruct derivative of Llama 3.1 70B.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "Open-weight release",
+        "notes": "max_position_embeddings 131,072 (128K)."
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.1-nemotron-nano-8b-v1",
+    "name": "Llama 3.1 Nemotron Nano 8B v1",
+    "display_name": "Llama 3.1 Nemotron Nano 8B v1",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA's accuracy-tuned derivative of Llama 3.1 8B Instruct, sized for single-GPU and local inference.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.api.nvidia.com/nim/reference/nvidia-llama-3_1-nemotron-nano-8b-v1",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM API reference",
+        "notes": "Context length up to 131,072 tokens."
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.1-nemotron-safety-guard-8b-v3",
+    "name": "Llama 3.1 Nemotron Safety Guard 8B v3",
+    "display_name": "Llama 3.1 Nemotron Safety Guard 8B v3",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": "v3",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Multilingual content-safety guard built on Llama 3.1 8B; classifies prompts and completions across multiple languages.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.1-nemotron-ultra-253b-v1",
+    "name": "Llama 3.1 Nemotron Ultra 253B v1",
+    "display_name": "Llama 3.1 Nemotron Ultra 253B v1",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA's reasoning-tuned derivative of Llama 3.1 405B Instruct (253B) for reasoning, RAG, and tool calling.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": true,
+      "function_calling": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.api.nvidia.com/nim/reference/nvidia-llama-3_1-nemotron-ultra-253b-v1",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM API reference",
+        "notes": "Context length up to 131,072 tokens."
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.2-11b-vision-instruct",
+    "name": "Llama 3.2 11B Vision Instruct",
+    "display_name": "Llama 3.2 11B Vision Instruct",
+    "model_provider": "meta",
+    "family": "Llama 3",
+    "version": "3.2",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Meta Llama 3.2 11B Vision Instruct: a multimodal Llama 3.2 derivative that handles images and text for visual reasoning, OCR, and grounded chat.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/meta/llama-3.2-11b-vision-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.2-90b-vision-instruct",
+    "name": "Llama 3.2 90B Vision Instruct",
+    "display_name": "Llama 3.2 90B Vision Instruct",
+    "model_provider": "meta",
+    "family": "Llama 3",
+    "version": "3.2",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Meta Llama 3.2 90B Vision Instruct: the largest multimodal Llama 3.2 derivative, suited to high-quality reasoning over images and long documents.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/meta/llama-3.2-90b-vision-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.2-nemoretriever-1b-vlm-embed-v1",
+    "name": "Llama 3.2 Nemoretriever 1B VLM Embed v1",
+    "display_name": "Llama 3.2 Nemoretriever 1B VLM Embed v1",
+    "model_provider": "nvidia",
+    "family": "Nemoretriever",
+    "version": "v1",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Multimodal retrieval embedding model: encodes queries as text and documents as images, returning a dense vector for similarity search. Output is a vector, not text.",
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.2-nv-embedqa-1b-v1",
+    "name": "Llama 3.2 NV-EmbedQA 1B v1",
+    "display_name": "Llama 3.2 NV-EmbedQA 1B v1",
+    "model_provider": "nvidia",
+    "family": "NV-EmbedQA",
+    "version": "v1",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Retrieval embedding model based on Llama 3.2 1B, fine-tuned for question/answer retrieval. Output is a dense vector (not text).",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/llama-3.2-nv-embedqa-1b-v1",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
       }
     ]
   },
@@ -3755,6 +5722,268 @@
         "retrieved_at": "2026-09-26",
         "title": "OpenRouter model list",
         "notes": "Context window for id meta-llama/llama-3.3-70b-instruct cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.3-nemotron-super-49b-v1",
+    "name": "Llama 3.3 Nemotron Super 49B v1",
+    "display_name": "Llama 3.3 Nemotron Super 49B v1",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "First release of NVIDIA's reasoning-tuned derivative of Llama 3.3 70B Instruct (49B).",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": true,
+      "function_calling": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.api.nvidia.com/nim/reference/nvidia-llama-3_3-nemotron-super-49b-v1",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM API reference",
+        "notes": "Context length up to 131,072 tokens."
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.3-nemotron-super-49b-v1.5",
+    "name": "Llama 3.3 Nemotron Super 49B v1.5",
+    "display_name": "Llama 3.3 Nemotron Super 49B v1.5",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA's reasoning-tuned derivative of Llama 3.3 70B Instruct (49B) for reasoning, tool calling, and agentic tasks.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": true,
+      "function_calling": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/llama-3_3-nemotron-super-49b-v1_5",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page",
+        "notes": "Context Length 131,072 tokens."
+      }
+    ]
+  },
+  {
+    "model_id": "llama-guard-4-12b",
+    "name": "Llama Guard 4 12B",
+    "display_name": "Llama Guard 4 12B",
+    "model_provider": "meta",
+    "family": "Llama Guard",
+    "version": "4",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Meta Llama Guard 4 12B: a multimodal safety classifier that labels prompt and response pairs as safe or unsafe across a structured taxonomy.",
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/meta/llama-guard-4-12b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "llama-nemotron-embed-vl-1b-v2",
+    "name": "Llama Nemotron Embed VL 1B v2",
+    "display_name": "Llama Nemotron Embed VL 1B v2",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": "v2",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Multimodal retrieval model: encodes the user query as text and the candidate documents as images, producing a similarity score. Output is a vector, not text.",
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/llama-nemotron-embed-vl-1b-v2",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "llama2-70b",
+    "name": "Llama 2 70B",
+    "display_name": "Llama 2 70B",
+    "model_provider": "meta",
+    "family": "Llama 2",
+    "version": "70b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Meta Llama 2 70B base: the 70B-parameter foundation model of the Llama 2 family, intended for fine-tuning rather than chat.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/meta/llama2-70b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "llama3-chatqa-1.5-70b",
+    "name": "Llama 3 ChatQA 1.5 70B",
+    "display_name": "Llama 3 ChatQA 1.5 70B",
+    "model_provider": "nvidia",
+    "family": "ChatQA",
+    "version": "1.5",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA's ChatQA 1.5 70B: a Llama 3 70B fine-tune optimized for conversational question answering and long-form responses grounded in retrieved context.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/llama3-chatqa-1.5-70b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
       }
     ]
   },
@@ -4129,6 +6358,143 @@
     ]
   },
   {
+    "model_id": "mistral-7b-instruct-v0.3",
+    "name": "Mistral 7B Instruct v0.3",
+    "display_name": "Mistral 7B Instruct v0.3",
+    "model_provider": "mistral",
+    "family": "Mistral",
+    "version": "v0.3",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Mistral 7B Instruct v0.3: the v0.3 revision of Mistral's 7B instruction-tuned model with extended context and function calling.",
+    "context": {
+      "window": 32768
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/mistralai/mistral-7b-instruct-v0.3",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-large",
+    "name": "Mistral Large",
+    "display_name": "Mistral Large",
+    "model_provider": "mistral",
+    "family": "Mistral",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Mistral Large: Mistral's first-generation flagship LLM for reasoning, code, and tool use.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/mistralai/mistral-large",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-large-2-instruct",
+    "name": "Mistral Large 2 Instruct",
+    "display_name": "Mistral Large 2 Instruct",
+    "model_provider": "mistral",
+    "family": "Mistral",
+    "version": "2",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Mistral Large 2 Instruct: second-generation Mistral Large with stronger reasoning, code, and long-context support.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/mistralai/mistral-large-2-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
     "model_id": "mistral-large-2512",
     "name": "Mistral Large 3",
     "display_name": "Mistral Large 3",
@@ -4266,6 +6632,141 @@
     }
   },
   {
+    "model_id": "mistral-nemo-12b-instruct",
+    "name": "Mistral NeMo 12B Instruct",
+    "display_name": "Mistral NeMo 12B Instruct",
+    "model_provider": "mistral",
+    "family": "Mistral NeMo",
+    "version": "12b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Mistral NeMo 12B Instruct: a Mistral × NVIDIA collaboration that pairs Mistral's NeMo base with NVIDIA's instruction-tuning pipeline.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nv-mistralai/mistral-nemo-12b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-nemo-minitron-8b-8k-instruct",
+    "name": "Mistral NeMo Minitron 8B 8K Instruct",
+    "display_name": "Mistral NeMo Minitron 8B 8K Instruct",
+    "model_provider": "nvidia",
+    "family": "Minitron",
+    "version": "8k",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA Minitron 8B distilled from Mistral NeMo 12B; instruction-tuned with an 8K context window for efficient chat.",
+    "context": {
+      "window": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/mistral-nemo-minitron-8b-8k-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-nemotron",
+    "name": "Mistral Nemotron",
+    "display_name": "Mistral Nemotron",
+    "model_provider": "mistral",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Mistral Nemotron: a Mistral × NVIDIA collaboration tuned for agentic workflows, coding, instruction following, and function calling.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/mistralai/mistral-nemotron",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
     "model_id": "mistral-small-2603",
     "name": "Mistral Small 4",
     "display_name": "Mistral Small 4",
@@ -4325,16 +6826,63 @@
     ]
   },
   {
+    "model_id": "mixtral-8x22b-v0.1",
+    "name": "Mixtral 8x22B v0.1",
+    "display_name": "Mixtral 8x22B v0.1",
+    "model_provider": "mistral",
+    "family": "Mixtral",
+    "version": "v0.1",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Mistral Mixtral 8x22B v0.1: a 141B-total / 39B-active sparse Mixture-of-Experts model for chat, code, and tool use.",
+    "context": {
+      "window": 65536
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/mistralai/mixtral-8x22b-v0.1",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
     "model_id": "muse-glimmer-30b",
     "name": "Muse Glimmer 30B",
     "display_name": "Muse Glimmer 30B",
     "model_provider": "meta",
-    "family": "Muse Glimmer",
-    "version": null,
+    "family": "Muse",
+    "version": "30b",
     "status": "active",
     "release_date": null,
     "updated_at": "2026-09-26",
-    "description": "Meta's 30-billion parameter open-weight multimodal model, distilled from Muse Spark for local agentic workflows; Apache 2.0 license.",
+    "description": "Muse Glimmer 30B: a multimodal reasoning model accepting text and images, with native tool calling and a separate reasoning output channel.",
     "context": {
       "window": 131072
     },
@@ -4349,50 +6897,28 @@
     },
     "capabilities": {
       "vision": true,
+      "tool_use": true,
+      "function_calling": true,
       "reasoning": true,
       "streaming": true
     },
     "availability": {
       "api": true,
       "cloud": true,
-      "open_weights": true,
-      "self_hostable": true
-    },
-    "runtime": {
-      "vllm": true,
-      "sglang": true,
-      "llama_cpp": true,
-      "executorch": true,
-      "ollama": true
+      "open_weights": true
     },
     "sources": [
       {
         "type": "official",
-        "url": "https://dev.meta.ai/docs/muse-glimmer",
+        "url": "https://build.nvidia.com/meta/muse-glimmer-30b",
         "retrieved_at": "2026-09-26",
-        "title": "Muse Glimmer overview",
-        "notes": "30B dense multimodal model (text + image input, text output), 128K default context window, Apache 2.0 license, runtimes vLLM / SGLang / llama.cpp / ExecuTorch, launch partners including Fireworks AI, Together AI, Hugging Face and Ollama."
+        "title": "NVIDIA NIM model page"
       },
       {
         "type": "official",
-        "url": "https://dev.meta.ai/docs/models",
+        "url": "https://integrate.api.nvidia.com/v1/models",
         "retrieved_at": "2026-09-26",
-        "title": "Meta Model API models",
-        "notes": "Muse Glimmer is open-weight and self-hosted; it is not served over the Meta Model API."
-      },
-      {
-        "type": "official",
-        "url": "https://docs.together.ai/docs/inference-models",
-        "retrieved_at": "2026-09-26",
-        "title": "Together AI available models",
-        "notes": "Served as meta-models/Muse-Glimmer-30B with a 131,072 context window."
-      },
-      {
-        "type": "community",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-26",
-        "title": "OpenRouter model list",
-        "notes": "Context window for id meta/muse-glimmer-30b cross-checked against OpenRouter's public model list."
+        "title": "NVIDIA NIM public model catalog"
       }
     ]
   },
@@ -4487,6 +7013,192 @@
     ]
   },
   {
+    "model_id": "nemotron-3-embed-1b",
+    "name": "Nemotron 3 Embed 1B",
+    "display_name": "Nemotron 3 Embed 1B",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": "3",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "1B-parameter Nemotron embedding model for semantic search, retrieval, and RAG pipelines. Output is a dense vector (not text).",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nemotron-3-embed-1b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-3-nano-30b-a3b",
+    "name": "Nemotron 3 Nano 30B A3B",
+    "display_name": "Nemotron 3 Nano 30B A3B",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA's efficient 30B total / 3B active Nemotron 3 MoE model for coding, reasoning, and long-context agents.",
+    "context": {
+      "window": 262144
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": true,
+      "function_calling": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nemotron-3-nano-30b-a3b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page",
+        "notes": "Context 262K native; up to 1M requires opt-in flags."
+      },
+      {
+        "type": "community",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "OpenRouter public model list",
+        "notes": "Context window 262,144 reported for nvidia/nemotron-3-nano-30b-a3b."
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-3-nano-omni-30b-a3b-reasoning",
+    "name": "Nemotron 3 Nano Omni 30B A3B Reasoning",
+    "display_name": "Nemotron 3 Nano Omni 30B A3B Reasoning",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": "3",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Omni-modal Nemotron 3 Nano reasoning model: understands images, video, speech and text inputs to produce step-by-step reasoning.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video",
+        "audio"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-3-super-120b-a12b",
+    "name": "Nemotron 3 Super 120B A12B",
+    "display_name": "Nemotron 3 Super 120B A12B",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA's 120B total / 12B active Nemotron 3 MoE model for agentic workflows and long-context reasoning; native 256K window, up to 1M opt-in.",
+    "context": {
+      "window": 262144
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": true,
+      "function_calling": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nemotron-3-super-120b-a12b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page",
+        "notes": "Context length defaults to 256k (262,144); up to 1M requires opt-in flags."
+      }
+    ]
+  },
+  {
     "model_id": "nemotron-3-ultra",
     "name": "Nemotron 3 Ultra",
     "display_name": "Nemotron 3 Ultra",
@@ -4525,6 +7237,49 @@
     ]
   },
   {
+    "model_id": "nemotron-3.5-content-safety",
+    "name": "Nemotron 3.5 Content Safety",
+    "display_name": "Nemotron 3.5 Content Safety",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": "3.5",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Multilingual, multimodal content-safety classifier that flags unsafe or toxic prompts and completions across text and image inputs.",
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nemotron-3.5-content-safety",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
     "model_id": "nemotron-3.5-lightning",
     "name": "Nemotron 3.5 Lightning",
     "display_name": "Nemotron 3.5 Lightning",
@@ -4559,6 +7314,749 @@
         "retrieved_at": "2026-09-26",
         "title": "OpenRouter model list",
         "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-4-340b-instruct",
+    "name": "Nemotron 4 340B Instruct",
+    "display_name": "Nemotron 4 340B Instruct",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": "4",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA Nemotron-4 340B Instruct: a 340B-parameter bilingual (English / multilingual) base model optimized for high-quality synthetic-data generation and downstream fine-tuning.",
+    "context": {
+      "window": 4096
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nemotron-4-340b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-4-340b-reward",
+    "name": "Nemotron 4 340B Reward",
+    "display_name": "Nemotron 4 340B Reward",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": "4",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Nemotron-4 340B Reward: a 340B-parameter reward model that scores a prompt + response pair to drive RLHF and HelpSteer-style preference alignment.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nemotron-4-340b-reward",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-nano-12b-v2-vl",
+    "name": "Nemotron Nano 12B v2 VL",
+    "display_name": "Nemotron Nano 12B v2 VL",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA's 12B vision-language model accepting text, image, and video input with a 128K context.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": null,
+      "vision": true,
+      "reasoning": null,
+      "function_calling": null
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nemotron-nano-12b-v2-vl",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page",
+        "notes": "Context Length 131,072 tokens; combined input and output 128K."
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-nano-3-30b-a3b",
+    "name": "Nemotron Nano 3 30B A3B",
+    "display_name": "Nemotron Nano 3 30B A3B",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": "3",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Nemotron Nano 3 30B A3B: a 30B-total / 3B-active MoE designed for efficient agentic reasoning, coding, and tool calling.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nemotron-nano-3-30b-a3b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-nano-9b-v2",
+    "name": "Nemotron Nano 9B v2",
+    "display_name": "Nemotron Nano 9B v2",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA's compact 9B Nemotron v2 model for efficient instruction following.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://docs.api.nvidia.com/nim/reference/nvidia-nvidia-nemotron-nano-9b-v2",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM API reference",
+        "notes": "Context length up to 128K (131,072 tokens)."
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-parse",
+    "name": "Nemotron Parse",
+    "display_name": "Nemotron Parse",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Vision-language model that retrieves text and structural metadata from document images (receipts, invoices, tables, multi-column layouts).",
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nemotron-parse",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-parse-2.0",
+    "name": "Nemotron Parse 2.0",
+    "display_name": "Nemotron Parse 2.0",
+    "model_provider": "nvidia",
+    "family": "Nemotron",
+    "version": "2.0",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Vision-language model that retrieves text and structural metadata from document images; second generation of Nemotron Parse with improved accuracy on complex layouts.",
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nemotron-parse-2.0",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "neva-22b",
+    "name": "NeVa 22B",
+    "display_name": "NeVa 22B",
+    "model_provider": "nvidia",
+    "family": "NeVa",
+    "version": "22b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA NeVa 22B: a vision-language model for image captioning, visual question answering, and image-grounded chat.",
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/neva-22b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "nv-embedqa-mistral-7b-v2",
+    "name": "NV-EmbedQA Mistral 7B v2",
+    "display_name": "NV-EmbedQA Mistral 7B v2",
+    "model_provider": "nvidia",
+    "family": "NV-EmbedQA",
+    "version": "v2",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Retrieval embedding model based on Mistral 7B, fine-tuned for question/answer retrieval. Output is a dense vector (not text).",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nv-embedqa-mistral-7b-v2",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "nvclip",
+    "name": "NV-CLIP",
+    "display_name": "NV-CLIP",
+    "model_provider": "nvidia",
+    "family": "NV-CLIP",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA vision encoder (CLIP-style) that produces aligned image/text embeddings for retrieval and zero-shot classification. Output is a vector (not text).",
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/nvclip",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "palmyra-creative-122b",
+    "name": "Palmyra Creative 122B",
+    "display_name": "Palmyra Creative 122B",
+    "model_provider": "writer",
+    "family": "Palmyra",
+    "version": "creative",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Writer Palmyra Creative 122B: a 122B-parameter LLM tuned for creative writing and brand-voice generation.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/writer/palmyra-creative-122b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "palmyra-fin-70b-32k",
+    "name": "Palmyra Fin 70B 32K",
+    "display_name": "Palmyra Fin 70B 32K",
+    "model_provider": "writer",
+    "family": "Palmyra",
+    "version": "fin",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Writer Palmyra Fin 70B 32K: a 70B-parameter LLM tuned for financial-domain text generation and analysis with a 32K context window.",
+    "context": {
+      "window": 32768
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/writer/palmyra-fin-70b-32k",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "palmyra-med-70b",
+    "name": "Palmyra Med 70B",
+    "display_name": "Palmyra Med 70B",
+    "model_provider": "writer",
+    "family": "Palmyra",
+    "version": "med",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Writer Palmyra Med 70B: a 70B-parameter LLM tuned for the medical domain.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/writer/palmyra-med-70b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "palmyra-med-70b-32k",
+    "name": "Palmyra Med 70B 32K",
+    "display_name": "Palmyra Med 70B 32K",
+    "model_provider": "writer",
+    "family": "Palmyra",
+    "version": "med",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Writer Palmyra Med 70B 32K: a 70B-parameter LLM tuned for the medical domain, with a 32K context window.",
+    "context": {
+      "window": 32768
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/writer/palmyra-med-70b-32k",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "phi-3-vision-128k-instruct",
+    "name": "Phi-3 Vision 128K Instruct",
+    "display_name": "Phi-3 Vision 128K Instruct",
+    "model_provider": "microsoft",
+    "family": "Phi",
+    "version": "3",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Microsoft Phi-3 Vision 128K Instruct: a multimodal Phi-3 small-language-model for image understanding, chart reasoning, and OCR with a 128K context window.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/microsoft/phi-3-vision-128k-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "phi-3.5-moe-instruct",
+    "name": "Phi-3.5 MoE Instruct",
+    "display_name": "Phi-3.5 MoE Instruct",
+    "model_provider": "microsoft",
+    "family": "Phi",
+    "version": "3.5",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Microsoft Phi-3.5 MoE Instruct: a Mixture-of-Experts small language model from the Phi-3.5 family tuned for instruction following.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/microsoft/phi-3.5-moe-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3-coder-480b-a35b-instruct",
+    "name": "Qwen3 Coder 480B A35B Instruct",
+    "display_name": "Qwen3 Coder 480B A35B Instruct",
+    "model_provider": "qwen",
+    "family": "Qwen",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Alibaba's 480B-parameter MoE coding model (35B active) built for agentic coding with a native 262K context window.",
+    "context": {
+      "window": 262144
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": false,
+      "reasoning": false,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true,
+      "self_hostable": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "Open-weight release",
+        "notes": "Context Length 262,144 natively, extendable up to 1M with YaRN."
+      },
+      {
+        "type": "official",
+        "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-coder-480b-a35b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "Alibaba Cloud Model Studio model info",
+        "notes": "Context Window 262144."
       }
     ]
   },
@@ -4847,6 +8345,389 @@
         "url": "https://github.com/AlibabaCloud-Official/Qwen3.8-max",
         "retrieved_at": "2026-09-26",
         "notes": "First-party price and context limits from Alibaba's official repository; context window also stated on Alibaba Cloud Model Studio."
+      }
+    ]
+  },
+  {
+    "model_id": "recurrentgemma-2b",
+    "name": "RecurrentGemma 2B",
+    "display_name": "RecurrentGemma 2B",
+    "model_provider": "google",
+    "family": "Gemma",
+    "version": "2b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Google RecurrentGemma 2B: a 2B-parameter Gemma variant using linear-recurrent sequence modelling for memory-efficient long-context inference.",
+    "context": {
+      "window": 8192
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/google/recurrentgemma-2b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "riva-translate-4b-instruct",
+    "name": "Riva Translate 4B Instruct",
+    "display_name": "Riva Translate 4B Instruct",
+    "model_provider": "nvidia",
+    "family": "Riva",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA Riva translation model (~4B parameters) for multilingual translation with few-shot example prompts.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/riva-translate-4b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "riva-translate-4b-instruct-v1.1",
+    "name": "Riva Translate 4B Instruct v1.1",
+    "display_name": "Riva Translate 4B Instruct v1.1",
+    "model_provider": "nvidia",
+    "family": "Riva",
+    "version": "v1.1",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Riva translation model (~4B parameters) supporting 12 languages, accepting few-shot example prompts in the chat format.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/riva-translate-4b-instruct-v1.1",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "riva-translate-4b-instruct-v2",
+    "name": "Riva Translate 4B Instruct v2",
+    "display_name": "Riva Translate 4B Instruct v2",
+    "model_provider": "nvidia",
+    "family": "Riva",
+    "version": "v2",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Riva translation model (~4B parameters) supporting 37 languages with few-shot example prompts.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/riva-translate-4b-instruct-v2",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "sea-lion-7b-instruct",
+    "name": "SEA-LION 7B Instruct",
+    "display_name": "SEA-LION 7B Instruct",
+    "model_provider": "aisingapore",
+    "family": "SEA-LION",
+    "version": "7b",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "AI Singapore SEA-LION 7B Instruct: an open-weight LLM further pre-trained and instruction-tuned for Southeast Asian languages.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/aisingapore/sea-lion-7b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "starcoder2-15b",
+    "name": "StarCoder2 15B",
+    "display_name": "StarCoder2 15B",
+    "model_provider": "bigcode",
+    "family": "StarCoder",
+    "version": "2",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "BigCode StarCoder2 15B: a 15B-parameter code LLM trained on permissively licensed source code across 600+ programming languages.",
+    "context": {
+      "window": 16384
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/bigcode/starcoder2-15b",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "vila",
+    "name": "VILA",
+    "display_name": "VILA",
+    "model_provider": "nvidia",
+    "family": "VILA",
+    "version": null,
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "NVIDIA VILA: a vision-language model family for image and video understanding, visual reasoning, and multi-image chat.",
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "vision": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/nvidia/vila",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "yi-large",
+    "name": "Yi Large",
+    "display_name": "Yi Large",
+    "model_provider": "01-ai",
+    "family": "Yi",
+    "version": "large",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "01.AI Yi Large: the flagship bilingual (English / Chinese) Yi chat model for reasoning and instruction following.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/01-ai/yi-large",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
+      }
+    ]
+  },
+  {
+    "model_id": "zamba2-7b-instruct",
+    "name": "Zamba2 7B Instruct",
+    "display_name": "Zamba2 7B Instruct",
+    "model_provider": "zyphra",
+    "family": "Zamba",
+    "version": "2",
+    "status": "active",
+    "release_date": null,
+    "updated_at": "2026-09-26",
+    "description": "Zyphra Zamba2 7B Instruct: a 7B-parameter hybrid SSM-Transformer instruction-tuned model.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://build.nvidia.com/zyphra/zamba2-7b-instruct",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM model page"
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog"
       }
     ]
   }

@@ -1,0 +1,37 @@
+{
+  "model_id": "palmyra-creative-122b",
+  "name": "Palmyra Creative 122B",
+  "display_name": "Palmyra Creative 122B",
+  "model_provider": "writer",
+  "family": "Palmyra",
+  "version": "creative",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Writer Palmyra Creative 122B: a 122B-parameter LLM tuned for creative writing and brand-voice generation.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/writer/palmyra-creative-122b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

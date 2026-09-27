@@ -1,0 +1,42 @@
+{
+  "model_id": "ising-calibration-1.5-31b",
+  "name": "NVIDIA Ising Calibration 1.5 31B",
+  "display_name": "NVIDIA-Ising-Calibration-1.5-31B",
+  "model_provider": "nvidia",
+  "family": "Ising",
+  "version": "1.5",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Dense multimodal vision-language model based on Gemma 4 31B, fine-tuned to interpret quantum-computing calibration charts and produce structured technical text.",
+  "context": {
+    "window": 131072
+  },
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "reasoning": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/ising-calibration-1.5-31b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

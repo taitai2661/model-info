@@ -1,0 +1,22 @@
+{
+  "provider": {
+    "id": "microsoft",
+    "name": "Microsoft",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.microsoft.com",
+    "status": "active",
+    "description": "Microsoft Research's Phi small-language-model family, plus Kosmos multimodal models.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.microsoft.com",
+        "retrieved_at": "2026-09-26",
+        "title": "Microsoft homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  "model_ids": []
+}

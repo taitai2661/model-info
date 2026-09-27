@@ -1,0 +1,41 @@
+{
+  "model_id": "dbrx-instruct",
+  "name": "DBRX Instruct",
+  "display_name": "DBRX Instruct",
+  "model_provider": "databricks",
+  "family": "DBRX",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Databricks DBRX Instruct: a 132B-total / 36B-active open-weight MoE LLM for instruction following and coding.",
+  "context": {
+    "window": 32768
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/databricks/dbrx-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

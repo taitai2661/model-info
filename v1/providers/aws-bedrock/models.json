@@ -1775,62 +1775,6 @@
   },
   {
     "model": {
-      "model_id": "kimi-k3",
-      "name": "Kimi K3",
-      "display_name": "Kimi K3",
-      "model_provider": "moonshot",
-      "family": "Kimi",
-      "version": null,
-      "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
-      "context": {
-        "window": 1048576,
-        "max_output_tokens": 943718
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image",
-          "video"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://platform.kimi.ai/docs/models",
-          "retrieved_at": "2026-09-26",
-          "title": "Moonshot model list"
-        },
-        {
-          "type": "community",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-26",
-          "title": "OpenRouter model list",
-          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
-        }
-      ]
-    },
-    "relationship": {
-      "provider_id": "aws-bedrock",
-      "model_id": "moonshotai.kimi-k3",
-      "pricing": null,
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3",
-          "retrieved_at": "2026-09-26",
-          "title": "Amazon Bedrock model card"
-        }
-      ],
-      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: us.moonshotai.kimi-k3; global inference profile ids: global.moonshotai.kimi-k3."
-    }
-  },
-  {
-    "model": {
       "model_id": "llama-3.3-70b-instruct",
       "name": "Llama 3.3 70B Instruct",
       "display_name": "Llama 3.3 70B Instruct",

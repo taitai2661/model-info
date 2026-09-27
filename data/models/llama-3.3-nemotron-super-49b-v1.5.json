@@ -1,0 +1,44 @@
+{
+ "model_id": "llama-3.3-nemotron-super-49b-v1.5",
+ "name": "Llama 3.3 Nemotron Super 49B v1.5",
+ "display_name": "Llama 3.3 Nemotron Super 49B v1.5",
+ "model_provider": "nvidia",
+ "family": "Nemotron",
+ "version": null,
+ "status": "active",
+ "release_date": null,
+ "updated_at": "2026-09-26",
+ "description": "NVIDIA's reasoning-tuned derivative of Llama 3.3 70B Instruct (49B) for reasoning, tool calling, and agentic tasks.",
+ "context": {
+  "window": 131072
+ },
+ "modalities": {
+  "input": [
+   "text"
+  ],
+  "output": [
+   "text"
+  ]
+ },
+ "capabilities": {
+  "tool_use": true,
+  "vision": false,
+  "reasoning": true,
+  "function_calling": true
+ },
+ "availability": {
+  "api": true,
+  "cloud": true,
+  "open_weights": true,
+  "self_hostable": true
+ },
+ "sources": [
+  {
+   "type": "official",
+   "url": "https://build.nvidia.com/nvidia/llama-3_3-nemotron-super-49b-v1_5",
+   "retrieved_at": "2026-09-26",
+   "title": "NVIDIA NIM model page",
+   "notes": "Context Length 131,072 tokens."
+  }
+ ]
+}

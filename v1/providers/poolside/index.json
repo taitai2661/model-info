@@ -1,0 +1,22 @@
+{
+  "provider": {
+    "id": "poolside",
+    "name": "Poolside",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://poolside.ai",
+    "status": "active",
+    "description": "AI company focused on software-engineering agents; ships the Laguna family of code-focused MoE LLMs.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://poolside.ai",
+        "retrieved_at": "2026-09-26",
+        "title": "Poolside homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  "model_ids": []
+}

@@ -4,37 +4,39 @@
   "display_name": "Kimi K3",
   "model_provider": "moonshot",
   "family": "Kimi",
-  "version": null,
+  "version": "k3",
   "status": "active",
   "release_date": null,
   "updated_at": "2026-09-26",
-  "context": {
-    "window": 1048576,
-    "max_output_tokens": 943718
-  },
+  "description": "Moonshot Kimi K3: a ~2.8T-parameter hybrid KDA + MLA multimodal MoE for long-horizon coding, agentic tool use, and image understanding.",
   "modalities": {
-    "input": [
-      "text",
-      "image",
-      "video"
-    ],
-    "output": [
-      "text"
-    ]
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "tool_use": true,
+    "function_calling": true,
+    "reasoning": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
   },
   "sources": [
     {
       "type": "official",
-      "url": "https://platform.kimi.ai/docs/models",
+      "url": "https://build.nvidia.com/moonshotai/kimi-k3",
       "retrieved_at": "2026-09-26",
-      "title": "Moonshot model list"
+      "title": "NVIDIA NIM model page"
     },
     {
-      "type": "community",
-      "url": "https://openrouter.ai/api/v1/models",
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
       "retrieved_at": "2026-09-26",
-      "title": "OpenRouter model list",
-      "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      "title": "NVIDIA NIM public model catalog"
     }
   ]
 }

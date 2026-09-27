@@ -1,0 +1,46 @@
+{
+ "model_id": "nemotron-nano-12b-v2-vl",
+ "name": "Nemotron Nano 12B v2 VL",
+ "display_name": "Nemotron Nano 12B v2 VL",
+ "model_provider": "nvidia",
+ "family": "Nemotron",
+ "version": null,
+ "status": "active",
+ "release_date": null,
+ "updated_at": "2026-09-26",
+ "description": "NVIDIA's 12B vision-language model accepting text, image, and video input with a 128K context.",
+ "context": {
+  "window": 131072
+ },
+ "modalities": {
+  "input": [
+   "text",
+   "image",
+   "video"
+  ],
+  "output": [
+   "text"
+  ]
+ },
+ "capabilities": {
+  "tool_use": null,
+  "vision": true,
+  "reasoning": null,
+  "function_calling": null
+ },
+ "availability": {
+  "api": true,
+  "cloud": true,
+  "open_weights": true,
+  "self_hostable": true
+ },
+ "sources": [
+  {
+   "type": "official",
+   "url": "https://build.nvidia.com/nvidia/nemotron-nano-12b-v2-vl",
+   "retrieved_at": "2026-09-26",
+   "title": "NVIDIA NIM model page",
+   "notes": "Context Length 131,072 tokens; combined input and output 128K."
+  }
+ ]
+}

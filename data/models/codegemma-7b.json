@@ -1,0 +1,41 @@
+{
+  "model_id": "codegemma-7b",
+  "name": "CodeGemma 7B",
+  "display_name": "CodeGemma 7B",
+  "model_provider": "google",
+  "family": "Gemma",
+  "version": "7b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Google CodeGemma 7B: the original 7B CodeGemma release for code completion and generation.",
+  "context": {
+    "window": 8192
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/google/codegemma-7b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

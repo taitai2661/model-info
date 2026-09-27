@@ -1,0 +1,19 @@
+{
+ "model_id": "mistral-7b-instruct-v0.3",
+ "updated_at": "2026-09-26",
+ "providers": [
+  {
+   "provider_id": "nvidia",
+   "model_id": "mistralai/mistral-7b-instruct-v0.3",
+   "sources": [
+    {
+     "type": "official",
+     "url": "https://integrate.api.nvidia.com/v1/models",
+     "retrieved_at": "2026-09-26",
+     "title": "NVIDIA NIM public model catalog",
+     "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+  "model_id": "gpt-4-turbo",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "openai",
+      "model_id": "gpt-4-turbo"
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "openai/gpt-4-turbo",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 10.0,
+        "output": 30.0
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    }
+  ]
+}

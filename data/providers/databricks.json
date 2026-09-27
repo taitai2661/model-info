@@ -1,0 +1,17 @@
+{
+  "id": "databricks",
+  "name": "Databricks",
+  "types": ["model_provider"],
+  "website": "https://www.databricks.com",
+  "status": "active",
+  "description": "Data + AI company behind the DBRX open-weight MoE language model.",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://www.databricks.com",
+      "retrieved_at": "2026-09-26",
+      "title": "Databricks homepage"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

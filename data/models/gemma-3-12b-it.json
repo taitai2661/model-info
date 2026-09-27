@@ -1,0 +1,42 @@
+{
+  "model_id": "gemma-3-12b-it",
+  "name": "Gemma 3 12B IT",
+  "display_name": "Gemma 3 12B IT",
+  "model_provider": "google",
+  "family": "Gemma",
+  "version": "3",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Google Gemma 3 12B IT: a 12B-parameter multimodal instruction-tuned model with vision and 128K context.",
+  "context": {
+    "window": 131072
+  },
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/google/gemma-3-12b-it",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

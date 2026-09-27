@@ -1,0 +1,37 @@
+{
+  "model_id": "nv-embedqa-mistral-7b-v2",
+  "name": "NV-EmbedQA Mistral 7B v2",
+  "display_name": "NV-EmbedQA Mistral 7B v2",
+  "model_provider": "nvidia",
+  "family": "NV-EmbedQA",
+  "version": "v2",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Retrieval embedding model based on Mistral 7B, fine-tuned for question/answer retrieval. Output is a dense vector (not text).",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/nv-embedqa-mistral-7b-v2",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

@@ -39,66 +39,6 @@
   },
   "providers": [
     {
-      "provider_id": "nvidia",
-      "model_id": "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://build.nvidia.com/models",
-          "retrieved_at": "2026-09-26",
-          "title": "NVIDIA API Catalog model list",
-          "notes": "Provider model id is the API Catalog id, which carries the parameter configuration."
-        }
-      ],
-      "provider": {
-        "id": "nvidia",
-        "name": "NVIDIA",
-        "types": [
-          "model_provider",
-          "api_provider"
-        ],
-        "website": "https://www.nvidia.com",
-        "documentation_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
-        "status": "active",
-        "description": "NVIDIA's Nemotron model family; hosted NIM endpoints are served by the NVIDIA API Catalog.",
-        "api": {
-          "base_url": "https://integrate.api.nvidia.com/v1",
-          "protocol": "https",
-          "api_style": "openai_compatible",
-          "authentication": {
-            "type": "bearer",
-            "header": "Authorization",
-            "notes": "Environment variable NVIDIA_API_KEY (issued at build.nvidia.com/settings)."
-          },
-          "endpoints": {
-            "chat_completions": "/chat/completions",
-            "models": "/models",
-            "embeddings": "/embeddings"
-          }
-        },
-        "sources": [
-          {
-            "type": "official",
-            "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
-            "retrieved_at": "2026-09-26"
-          },
-          {
-            "type": "official",
-            "url": "https://developer.nvidia.com/topics/ai/nemotron",
-            "retrieved_at": "2026-09-26"
-          },
-          {
-            "type": "official",
-            "url": "https://build.nvidia.com/llms.txt",
-            "retrieved_at": "2026-09-26",
-            "title": "NVIDIA API Catalog overview",
-            "notes": "Shared base URL https://integrate.api.nvidia.com/v1 and Bearer authentication."
-          }
-        ],
-        "updated_at": "2026-09-26"
-      }
-    },
-    {
       "provider_id": "openrouter",
       "model_id": "nvidia/nemotron-3.5-lightning",
       "pricing": {
@@ -287,6 +227,147 @@
             "url": "https://docs.fireworks.ai/getting-started/quickstart",
             "retrieved_at": "2026-09-26",
             "title": "Fireworks quickstart"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "nvidia",
+      "model_id": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog",
+          "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "nvidia",
+        "name": "NVIDIA",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.nvidia.com",
+        "documentation_url": "https://build.nvidia.com/llms.txt",
+        "status": "active",
+        "description": "NVIDIA's Nemotron model family plus hosted NIM inference microservices for first- and third-party models. The NIM API Catalog is served at https://integrate.api.nvidia.com/v1 with OpenAI-compatible chat, embedding, vision, speech, retrieval, and safety endpoints.",
+        "api": {
+          "base_url": "https://integrate.api.nvidia.com/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "Environment variable NVIDIA_API_KEY (issued at https://build.nvidia.com/settings)."
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://build.nvidia.com/llms.txt",
+            "retrieved_at": "2026-09-26",
+            "title": "NVIDIA API Catalog overview",
+            "notes": "Shared base URL https://integrate.api.nvidia.com/v1 and Bearer authentication."
+          },
+          {
+            "type": "official",
+            "url": "https://integrate.api.nvidia.com/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "NVIDIA NIM public model catalog",
+            "notes": "Provider model ids for every model served by NIM, returned by GET /v1/models (no authentication required)."
+          },
+          {
+            "type": "official",
+            "url": "https://developer.nvidia.com/topics/ai/nemotron",
+            "retrieved_at": "2026-09-26",
+            "title": "NVIDIA Nemotron topic page"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "nvidia/nemotron-3.5-lightning",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.05,
+        "output": 0.2,
+        "cached_input": 0.01
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 131072
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ],
+      "provider": {
+        "id": "vercel-ai-gateway",
+        "name": "Vercel AI Gateway",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://vercel.com/docs/ai-gateway",
+        "documentation_url": "https://vercel.com/docs/ai-gateway/getting-started",
+        "status": "active",
+        "description": "Vercel's unified AI Gateway: a single OpenAI-compatible endpoint that routes to hundreds of third-party models across OpenAI, Anthropic, Google, Meta, Mistral, xAI, DeepSeek, Moonshot AI and other upstream providers; supports OIDC tokens and provider-specific BYOK keys.",
+        "api": {
+          "base_url": "https://ai-gateway.vercel.sh/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "Either a Vercel OIDC token issued via the AI Gateway (Authorization: Bearer <oidc>), or a per-provider BYOK key (Authorization: Bearer <openai|anthropic|...>). The active provider is selected by the model id prefix."
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "models": "/models",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "json_mode": true,
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://vercel.com/docs/ai-gateway/getting-started",
+            "retrieved_at": "2026-09-26",
+            "title": "Vercel AI Gateway — Getting started"
+          },
+          {
+            "type": "official",
+            "url": "https://ai-gateway.vercel.sh/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list (GET /v1/models)"
           }
         ],
         "updated_at": "2026-09-26"

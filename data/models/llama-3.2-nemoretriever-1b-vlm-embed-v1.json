@@ -1,0 +1,38 @@
+{
+  "model_id": "llama-3.2-nemoretriever-1b-vlm-embed-v1",
+  "name": "Llama 3.2 Nemoretriever 1B VLM Embed v1",
+  "display_name": "Llama 3.2 Nemoretriever 1B VLM Embed v1",
+  "model_provider": "nvidia",
+  "family": "Nemoretriever",
+  "version": "v1",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Multimodal retrieval embedding model: encodes queries as text and documents as images, returning a dense vector for similarity search. Output is a vector, not text.",
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

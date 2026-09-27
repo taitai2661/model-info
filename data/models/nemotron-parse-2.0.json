@@ -1,0 +1,38 @@
+{
+  "model_id": "nemotron-parse-2.0",
+  "name": "Nemotron Parse 2.0",
+  "display_name": "Nemotron Parse 2.0",
+  "model_provider": "nvidia",
+  "family": "Nemotron",
+  "version": "2.0",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Vision-language model that retrieves text and structural metadata from document images; second generation of Nemotron Parse with improved accuracy on complex layouts.",
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/nemotron-parse-2.0",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

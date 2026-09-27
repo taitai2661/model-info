@@ -1,0 +1,17 @@
+{
+  "id": "aisingapore",
+  "name": "AI Singapore",
+  "types": ["model_provider"],
+  "website": "https://aisingapore.org",
+  "status": "active",
+  "description": "Singapore's national AI programme behind the SEA-LION open-weight LLM family tuned for Southeast Asian languages.",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://aisingapore.org",
+      "retrieved_at": "2026-09-26",
+      "title": "AI Singapore homepage"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

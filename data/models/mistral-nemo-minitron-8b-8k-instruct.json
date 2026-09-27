@@ -1,0 +1,41 @@
+{
+  "model_id": "mistral-nemo-minitron-8b-8k-instruct",
+  "name": "Mistral NeMo Minitron 8B 8K Instruct",
+  "display_name": "Mistral NeMo Minitron 8B 8K Instruct",
+  "model_provider": "nvidia",
+  "family": "Minitron",
+  "version": "8k",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "NVIDIA Minitron 8B distilled from Mistral NeMo 12B; instruction-tuned with an 8K context window for efficient chat.",
+  "context": {
+    "window": 8192
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/mistral-nemo-minitron-8b-8k-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

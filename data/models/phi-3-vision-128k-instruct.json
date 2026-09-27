@@ -1,0 +1,42 @@
+{
+  "model_id": "phi-3-vision-128k-instruct",
+  "name": "Phi-3 Vision 128K Instruct",
+  "display_name": "Phi-3 Vision 128K Instruct",
+  "model_provider": "microsoft",
+  "family": "Phi",
+  "version": "3",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Microsoft Phi-3 Vision 128K Instruct: a multimodal Phi-3 small-language-model for image understanding, chart reasoning, and OCR with a 128K context window.",
+  "context": {
+    "window": 131072
+  },
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/microsoft/phi-3-vision-128k-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

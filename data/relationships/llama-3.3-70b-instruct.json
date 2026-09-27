@@ -1,78 +1,78 @@
 {
-  "model_id": "llama-3.3-70b-instruct",
-  "updated_at": "2026-09-26",
-  "providers": [
+ "model_id": "llama-3.3-70b-instruct",
+ "updated_at": "2026-09-26",
+ "providers": [
+  {
+   "provider_id": "openrouter",
+   "model_id": "meta-llama/llama-3.3-70b-instruct",
+   "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 0.1,
+    "output": 0.32
+   },
+   "context": {
+    "window": 131072,
+    "max_output_tokens": 16384
+   },
+   "sources": [
     {
-      "provider_id": "openrouter",
-      "model_id": "meta-llama/llama-3.3-70b-instruct",
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.1,
-        "output": 0.32
-      },
-      "context": {
-        "window": 131072,
-        "max_output_tokens": 16384
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-26",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
-        }
-      ]
-    },
-    {
-      "provider_id": "groq",
-      "model_id": "llama-3.3-70b-versatile",
-      "notes": "Groq lists this row as 'Llama 3.3 70B' with provider model id llama-3.3-70b-versatile.",
-      "context": {
-        "window": 131072,
-        "max_output_tokens": 32768
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-26",
-          "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
-        }
-      ]
-    },
-    {
-      "provider_id": "together",
-      "model_id": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
-      "notes": "Together AI lists 'Llama 3.3 70B Instruct Turbo', its Turbo deployment of Llama 3.3 70B Instruct, as meta-llama/Llama-3.3-70B-Instruct-Turbo.",
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 1.04,
-        "output": 1.04
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-26",
-          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
-        }
-      ]
-    },
-    {
-      "provider_id": "aws-bedrock",
-      "model_id": "meta.llama3-3-70b-instruct-v1:0",
-      "pricing": null,
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-meta-llama-3-3-70b-instruct",
-          "retrieved_at": "2026-09-26",
-          "title": "Amazon Bedrock model card"
-        }
-      ],
-      "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: us.meta.llama3-3-70b-instruct-v1:0."
+     "type": "official",
+     "url": "https://openrouter.ai/api/v1/models",
+     "retrieved_at": "2026-09-26",
+     "notes": "Provider model id, context window, modalities, and prices from the public model list."
     }
-  ]
+   ]
+  },
+  {
+   "provider_id": "groq",
+   "model_id": "llama-3.3-70b-versatile",
+   "notes": "Groq lists this row as 'Llama 3.3 70B' with provider model id llama-3.3-70b-versatile.",
+   "context": {
+    "window": 131072,
+    "max_output_tokens": 32768
+   },
+   "sources": [
+    {
+     "type": "official",
+     "url": "https://console.groq.com/docs/models.md",
+     "retrieved_at": "2026-09-26",
+     "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+    }
+   ]
+  },
+  {
+   "provider_id": "together",
+   "model_id": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+   "notes": "Together AI lists 'Llama 3.3 70B Instruct Turbo', its Turbo deployment of Llama 3.3 70B Instruct, as meta-llama/Llama-3.3-70B-Instruct-Turbo.",
+   "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 1.04,
+    "output": 1.04
+   },
+   "sources": [
+    {
+     "type": "official",
+     "url": "https://docs.together.ai/docs/inference-models.md",
+     "retrieved_at": "2026-09-26",
+     "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+    }
+   ]
+  },
+  {
+   "provider_id": "aws-bedrock",
+   "model_id": "meta.llama3-3-70b-instruct-v1:0",
+   "pricing": null,
+   "sources": [
+    {
+     "type": "official",
+     "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-meta-llama-3-3-70b-instruct",
+     "retrieved_at": "2026-09-26",
+     "title": "Amazon Bedrock model card"
+    }
+   ],
+   "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: us.meta.llama3-3-70b-instruct-v1:0."
+  }
+ ]
 }

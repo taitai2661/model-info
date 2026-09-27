@@ -1,0 +1,37 @@
+{
+  "model_id": "embed-qa-4",
+  "name": "EmbedQA 4",
+  "display_name": "EmbedQA 4",
+  "model_provider": "nvidia",
+  "family": "EmbedQA",
+  "version": "4",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "NVIDIA embedding model tuned for retrieval over question/answer pairs. Output is a dense vector (not text).",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/embed-qa-4",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

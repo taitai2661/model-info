@@ -1,0 +1,44 @@
+{
+  "model_id": "gpt-oss-20b",
+  "name": "GPT-OSS 20B",
+  "display_name": "GPT-OSS 20B",
+  "model_provider": "openai",
+  "family": "GPT-OSS",
+  "version": "20b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "OpenAI GPT-OSS 20B: the smaller Mixture-of-Experts (MoE) text-only open-weight LLM for efficient AI reasoning and math.",
+  "context": {
+    "window": 131072
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "function_calling": true,
+    "reasoning": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/openai/gpt-oss-20b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

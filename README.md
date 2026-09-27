@@ -25,7 +25,7 @@ Model x Provider -> "this model is available through this provider"
 - `data/providers/*.json` — each service (`types` = which roles it plays: `model_provider`, `api_provider`, `aggregator`, `gateway`, `runtime`, `platform`)
 - `data/relationships/*.json` — per-provider availability, including provider-specific model ids and overrides
 
-**OpenCode Zen and OpenCode Go** are two separate providers (`opencode` and `opencode-go`): different base URLs, different model catalogs, different pricing. Because a service can offer several ids for the same model (aliases, free tiers), one relationship may list the same provider more than once, each entry with its own `model_id`.
+**OpenCode Zen and OpenCode Go** are two separate providers (`opencode` and `opencode-go`): different base URLs, different model catalogs, different pricing. Because a service can offer several ids for the same model (aliases, free tiers), one relationship may list the same provider more than once, each entry with its own `model_id`. **Vercel AI Gateway** (`vercel-ai-gateway`) is another such aggregator: one OpenAI-compatible endpoint routing to hundreds of third-party models with vendor-prefixed ids (`openai/gpt-5`, `anthropic/claude-sonnet-4-5`, …), BYOK or OIDC.
 
 Runtimes such as Ollama, llama.cpp, or vLLM are **not** API providers. Runtime support is recorded on the model itself via the optional `runtime` map.
 
@@ -98,6 +98,11 @@ A model detail response bundles everything a client needs to connect:
       "provider_id": "opencode-go",
       "model_id": "deepseek-v4-pro",
       "pricing": { "currency": "USD", "unit": "1M_tokens", "input": 0.66, "output": 1.98, "cached_input": 0.022 }
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "deepseek/deepseek-v4-pro",
+      "context": { "window": 1000000, "max_output_tokens": 384000 }
     }
   ]
 }
@@ -153,7 +158,7 @@ export OPENAI_API_KEY=...                         # keys live only in your shell
 .venv/bin/python -m collector openai --write
 ```
 
-Available collectors: `openai`, `anthropic`, `google`, `deepseek`, `mistral`, `openrouter` (public, no key), `opencode` (public, no key), `opencode-go` (public, no key), `groq` (public, no key), `together` (public, no key), `fireworks` (public, no key).
+Available collectors: `openai`, `anthropic`, `google`, `deepseek`, `mistral`, `openrouter` (public, no key), `opencode` (public, no key), `opencode-go` (public, no key), `groq` (public, no key), `together` (public, no key), `fireworks` (public, no key), `nvidia` (public, no key), `vercel-ai-gateway` (public, no key).
 
 `groq`, `together` and `fireworks` publish their catalogues as Markdown documentation rather than as a JSON API, so they read the `.md` page instead (`collector/docs.py`) — still no key involved. `normalize()` receives the raw text and each collector decides which column is the context window and which one is the price.
 

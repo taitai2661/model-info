@@ -1,0 +1,41 @@
+{
+  "model_id": "starcoder2-15b",
+  "name": "StarCoder2 15B",
+  "display_name": "StarCoder2 15B",
+  "model_provider": "bigcode",
+  "family": "StarCoder",
+  "version": "2",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "BigCode StarCoder2 15B: a 15B-parameter code LLM trained on permissively licensed source code across 600+ programming languages.",
+  "context": {
+    "window": 16384
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/bigcode/starcoder2-15b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

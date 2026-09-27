@@ -1,0 +1,22 @@
+{
+  "provider": {
+    "id": "zyphra",
+    "name": "Zyphra",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.zyphra.ai",
+    "status": "active",
+    "description": "AI research lab behind the Zamba open-weight hybrid SSM-Transformer model family.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.zyphra.ai",
+        "retrieved_at": "2026-09-26",
+        "title": "Zyphra homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  "model_ids": []
+}

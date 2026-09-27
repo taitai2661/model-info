@@ -11,7 +11,8 @@ def test_registry_lists_collectors():
     registry = discover()
     assert {"openai", "anthropic", "google", "deepseek", "mistral",
             "openrouter", "opencode", "opencode-go",
-            "groq", "together", "fireworks"} <= set(registry)
+            "groq", "together", "fireworks", "nvidia",
+            "vercel-ai-gateway"} <= set(registry)
 
 
 def test_docs_collectors_need_no_api_key():
@@ -298,3 +299,127 @@ def test_aggregator_creates_relationship_entry_when_model_resolves(sandbox):
     stored = json.loads(rel_path.read_text())
     entry = next(e for e in stored["providers"] if e["provider_id"] == "openrouter")
     assert entry["model_id"] == "z-ai/glm-5"
+
+
+def test_nvidia_collector_registers_public_endpoint():
+    from collector.nvidia import NvidiaCollector
+
+    registry = discover()
+    collector = registry["nvidia"]
+    assert collector.api_url == "https://integrate.api.nvidia.com/v1/models"
+    assert collector.provider_id == "nvidia"
+    assert collector.env_var is None           # public endpoint, no key
+    assert collector.creates_models is False   # models are hand-authored
+
+
+def test_nvidia_normalize_emits_provider_models():
+    from collector.nvidia import NvidiaCollector
+
+    payload = {"data": [
+        {"id": "nvidia/nemotron-3-ultra-550b-a55b", "owned_by": "nvidia"},
+        {"id": "meta/llama-3.1-70b-instruct", "owned_by": "meta"},
+        {"id": "01-ai/yi-large", "owned_by": "01-ai"},
+    ]}
+    results = NvidiaCollector().normalize(payload)
+    assert set(results["provider_models"]) == {
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "meta/llama-3.1-70b-instruct",
+        "01-ai/yi-large",
+    }
+    sample = results["provider_models"]["nvidia/nemotron-3-ultra-550b-a55b"]
+    assert sample["model_id"] == "nvidia/nemotron-3-ultra-550b-a55b"
+    assert sample["sources"][0]["url"].endswith("/v1/models")
+
+
+def test_nvidia_apply_writes_relationship_entries_for_known_models(sandbox):
+    from collector.nvidia import NvidiaCollector
+
+    # mistralai/mistral-large resolves to a registered model doc (mistral-large)
+    # whose relationship file exists and has no nvidia entry in the sandbox copy.
+    rel_path = sandbox / "data/relationships/mistral-large.json"
+    stored = json.loads(rel_path.read_text())
+    stored["providers"] = [e for e in stored["providers"]
+                           if e["provider_id"] != "nvidia"]
+    rel_path.write_text(json.dumps(stored))
+
+    payload = {"data": [
+        {"id": "mistralai/mistral-large"},
+        {"id": "nvidia/nobody-unknown-12345"},
+    ]}
+    collector = NvidiaCollector()
+    report = collector.apply(sandbox, collector.normalize(payload), write=True)
+    assert report["relationships"] == ["mistral-large"]
+    assert report["created"] == []
+    assert "nvidia/nobody-unknown-12345" in report["unmatched"]
+    stored = json.loads(rel_path.read_text())
+    entry = next(e for e in stored["providers"]
+                 if e["provider_id"] == "nvidia"
+                 and e["model_id"] == "mistralai/mistral-large")
+    assert entry["sources"]
+
+
+def test_vercel_ai_gateway_collector_registers_public_endpoint():
+    from collector.vercel_ai_gateway import VercelAIGatewayCollector
+
+    registry = discover()
+    collector = registry["vercel-ai-gateway"]
+    assert collector.api_url == "https://ai-gateway.vercel.sh/v1/models"
+    assert collector.provider_id == "vercel-ai-gateway"
+    assert collector.env_var is None
+    assert collector.creates_models is False
+
+
+def test_vercel_ai_gateway_normalize_converts_prices():
+    from collector.vercel_ai_gateway import VercelAIGatewayCollector
+
+    payload = {"data": [{
+        "id": "openai/gpt-5",
+        "name": "GPT-5",
+        "owned_by": "openai",
+        "context_window": 1050000,
+        "max_tokens": 128000,
+        "modalities": {"input": ["text", "image"], "output": ["text"]},
+        "pricing": {
+            "input": "0.00000125",
+            "output": "0.00001",
+            "input_cache_read": "0.000000125",
+        },
+    }]}
+    results = VercelAIGatewayCollector().normalize(payload)
+    patch = results["provider_models"]["openai/gpt-5"]
+    assert patch["context"] == {"window": 1050000, "max_output_tokens": 128000}
+    assert patch["modalities"] == {"input": ["text", "image"], "output": ["text"]}
+    assert patch["pricing"] == {
+        "currency": "USD", "unit": "1M_tokens",
+        "input": 1.25, "output": 10.0, "cached_input": 0.125,
+    }
+
+
+def test_vercel_ai_gateway_apply_creates_relationship_for_known_model(sandbox):
+    from collector.vercel_ai_gateway import VercelAIGatewayCollector
+
+    rel_path = sandbox / "data/relationships/gpt-5.json"
+    stored = json.loads(rel_path.read_text())
+    stored["providers"] = [e for e in stored["providers"]
+                           if e["provider_id"] != "vercel-ai-gateway"]
+    rel_path.write_text(json.dumps(stored))
+
+    payload = {"data": [{
+        "id": "openai/gpt-5",
+        "context_window": 1050000,
+        "modalities": {"input": ["text"], "output": ["text"]},
+        "pricing": {"input": "0.00000125", "output": "0.00001"},
+    }, {
+        "id": "nobody/unknown-model",
+    }]}
+    collector = VercelAIGatewayCollector()
+    report = collector.apply(sandbox, collector.normalize(payload), write=True)
+    assert report["relationships"] == ["gpt-5"]
+    assert report["created"] == []
+    assert "nobody/unknown-model" in report["unmatched"]
+    stored = json.loads(rel_path.read_text())
+    entry = next(e for e in stored["providers"]
+                 if e["provider_id"] == "vercel-ai-gateway"
+                 and e["model_id"] == "openai/gpt-5")
+    assert entry["sources"]
+

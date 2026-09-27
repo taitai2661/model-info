@@ -1,0 +1,22 @@
+{
+  "provider": {
+    "id": "bigcode",
+    "name": "BigCode",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.bigcode-project.org",
+    "status": "active",
+    "description": "Open scientific collaboration behind the StarCoder / StarCoder2 family of code LLMs (Hugging Face + ServiceNow).",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.bigcode-project.org",
+        "retrieved_at": "2026-09-26",
+        "title": "BigCode project"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  "model_ids": []
+}

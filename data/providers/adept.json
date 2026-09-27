@@ -1,0 +1,17 @@
+{
+  "id": "adept",
+  "name": "Adept AI",
+  "types": ["model_provider"],
+  "website": "https://www.adept.ai",
+  "status": "active",
+  "description": "AI company that released the Fuyu multimodal model family.",
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://www.adept.ai",
+      "retrieved_at": "2026-09-26",
+      "title": "Adept AI homepage"
+    }
+  ],
+  "updated_at": "2026-09-26"
+}

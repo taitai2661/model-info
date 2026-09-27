@@ -1,6 +1,221 @@
 [
   {
     "model": {
+      "model_id": "gpt-4-turbo",
+      "name": "GPT-4 Turbo",
+      "display_name": "GPT-4 Turbo",
+      "model_provider": "openai",
+      "family": "GPT",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "Legacy GPT-4 class model with vision and a 128K window; OpenAI recommends newer models but the API still serves it.",
+      "context": {
+        "window": 128000,
+        "max_output_tokens": 4096
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": false,
+        "function_calling": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-4-turbo",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI model page",
+          "notes": "128,000 context window; 4,096 max output tokens."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "openai",
+      "model_id": "gpt-4-turbo"
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-4.1",
+      "name": "GPT-4.1",
+      "display_name": "GPT-4.1",
+      "model_provider": "openai",
+      "family": "GPT",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "OpenAI's instruction-following model with a 1M token context window and 32K output, without a reasoning step.",
+      "context": {
+        "window": 1047576,
+        "max_output_tokens": 32768
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": false,
+        "function_calling": true,
+        "structured_output": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-4.1",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI model page",
+          "notes": "1,047,576 context window; 32,768 max output tokens."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "openai",
+      "model_id": "gpt-4.1"
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-4o",
+      "name": "GPT-4o",
+      "display_name": "GPT-4o",
+      "model_provider": "openai",
+      "family": "GPT",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "OpenAI's omni flagship model serving text and image input; superseded by the GPT-5 family but still served by the OpenAI API.",
+      "context": {
+        "window": 128000,
+        "max_output_tokens": 16384
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": false,
+        "function_calling": true,
+        "structured_output": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-4o",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI model page",
+          "notes": "128,000 context window; 16,384 max output tokens."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "openai",
+      "model_id": "gpt-4o"
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-4o-mini",
+      "name": "GPT-4o mini",
+      "display_name": "GPT-4o mini",
+      "model_provider": "openai",
+      "family": "GPT",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "OpenAI's small, low-cost omni model for focused tasks; accepts text and image input.",
+      "context": {
+        "window": 128000,
+        "max_output_tokens": 16384
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": false,
+        "function_calling": true,
+        "structured_output": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI model page",
+          "notes": "128,000 context window; 16,384 max output tokens."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "openai",
+      "model_id": "gpt-4o-mini"
+    }
+  },
+  {
+    "model": {
       "model_id": "gpt-5",
       "name": "GPT-5",
       "display_name": "GPT-5",
@@ -1409,6 +1624,147 @@
     "relationship": {
       "provider_id": "openai",
       "model_id": "gpt-6-sol"
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-oss-120b",
+      "name": "GPT-OSS 120B",
+      "display_name": "GPT-OSS 120B",
+      "model_provider": "openai",
+      "family": "GPT-OSS",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "OpenAI's most powerful open-weight model: 117B parameters with 5.1B active, released under the Apache 2.0 license and sized to fit a single H100 GPU.",
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": false,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true,
+        "self_hostable": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-oss-120b",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI model page",
+          "notes": "Model ID, 131,072 context window, 131,072 max output tokens, text-only modalities, supported features (streaming, structured outputs, function calling), Apache 2.0 license. No OpenAI API token price is published and the page lists a zero rate limit for every usage tier, so no first-party price is recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://huggingface.co/openai/gpt-oss-120b",
+          "retrieved_at": "2026-09-26",
+          "title": "Open-weight release",
+          "notes": "Apache 2.0 weights on Hugging Face."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window for id openai/gpt-oss-120b cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "openai",
+      "model_id": "gpt-oss-120b",
+      "pricing": null,
+      "notes": "Open-weights release under Apache 2.0; no first-party OpenAI API token pricing is published.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-oss-120b",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI model page"
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-oss-20b",
+      "name": "GPT-OSS 20B",
+      "display_name": "GPT-OSS 20B",
+      "model_provider": "openai",
+      "family": "GPT-OSS",
+      "version": "20b",
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "OpenAI GPT-OSS 20B: the smaller Mixture-of-Experts (MoE) text-only open-weight LLM for efficient AI reasoning and math.",
+      "context": {
+        "window": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "function_calling": true,
+        "reasoning": true,
+        "streaming": true
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://build.nvidia.com/openai/gpt-oss-20b",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM model page"
+        },
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "openai",
+      "model_id": "gpt-oss-20b",
+      "pricing": null,
+      "notes": "Open-weights release under Apache 2.0; no first-party OpenAI API token pricing is published.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-oss-20b",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI model page"
+        }
+      ]
     }
   }
 ]

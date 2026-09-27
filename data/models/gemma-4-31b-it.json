@@ -1,0 +1,44 @@
+{
+  "model_id": "gemma-4-31b-it",
+  "name": "Gemma 4 31B IT",
+  "display_name": "Gemma 4 31B IT",
+  "model_provider": "google",
+  "family": "Gemma",
+  "version": "4",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Google Gemma 4 31B IT: a dense 31B-parameter frontier model for reasoning, coding, agentic workflows, and fine-tuning.",
+  "context": {
+    "window": 131072
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "function_calling": true,
+    "reasoning": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/google/gemma-4-31b-it",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "model_id": "jamba-1.5-large-instruct",
+  "name": "Jamba 1.5 Large Instruct",
+  "display_name": "Jamba 1.5 Large Instruct",
+  "model_provider": "ai21labs",
+  "family": "Jamba",
+  "version": "1.5",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "AI21 Jamba 1.5 Large Instruct: a hybrid SSM-Transformer production model with a 256K context window for instruction following and tool use.",
+  "context": {
+    "window": 262144
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "function_calling": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/ai21labs/jamba-1.5-large-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

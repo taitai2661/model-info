@@ -1,0 +1,42 @@
+{
+  "model_id": "llama-3.2-90b-vision-instruct",
+  "name": "Llama 3.2 90B Vision Instruct",
+  "display_name": "Llama 3.2 90B Vision Instruct",
+  "model_provider": "meta",
+  "family": "Llama 3",
+  "version": "3.2",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Meta Llama 3.2 90B Vision Instruct: the largest multimodal Llama 3.2 derivative, suited to high-quality reasoning over images and long documents.",
+  "context": {
+    "window": 131072
+  },
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/meta/llama-3.2-90b-vision-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

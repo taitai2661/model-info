@@ -1,0 +1,38 @@
+{
+  "model_id": "nemotron-parse",
+  "name": "Nemotron Parse",
+  "display_name": "Nemotron Parse",
+  "model_provider": "nvidia",
+  "family": "Nemotron",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Vision-language model that retrieves text and structural metadata from document images (receipts, invoices, tables, multi-column layouts).",
+  "modalities": {
+    "input": ["text", "image"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "vision": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/nemotron-parse",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

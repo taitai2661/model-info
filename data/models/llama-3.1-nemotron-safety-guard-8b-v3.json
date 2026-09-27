@@ -1,0 +1,38 @@
+{
+  "model_id": "llama-3.1-nemotron-safety-guard-8b-v3",
+  "name": "Llama 3.1 Nemotron Safety Guard 8B v3",
+  "display_name": "Llama 3.1 Nemotron Safety Guard 8B v3",
+  "model_provider": "nvidia",
+  "family": "Nemotron",
+  "version": "v3",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Multilingual content-safety guard built on Llama 3.1 8B; classifies prompts and completions across multiple languages.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

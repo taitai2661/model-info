@@ -1,0 +1,47 @@
+{
+ "model_id": "gpt-4-turbo",
+ "name": "GPT-4 Turbo",
+ "display_name": "GPT-4 Turbo",
+ "model_provider": "openai",
+ "family": "GPT",
+ "version": null,
+ "status": "active",
+ "release_date": null,
+ "updated_at": "2026-09-26",
+ "description": "Legacy GPT-4 class model with vision and a 128K window; OpenAI recommends newer models but the API still serves it.",
+ "context": {
+  "window": 128000,
+  "max_output_tokens": 4096
+ },
+ "modalities": {
+  "input": [
+   "text",
+   "image"
+  ],
+  "output": [
+   "text"
+  ]
+ },
+ "capabilities": {
+  "tool_use": true,
+  "vision": true,
+  "reasoning": false,
+  "function_calling": true,
+  "streaming": true
+ },
+ "availability": {
+  "api": true,
+  "cloud": true,
+  "open_weights": false,
+  "self_hostable": false
+ },
+ "sources": [
+  {
+   "type": "official",
+   "url": "https://developers.openai.com/api/docs/models/gpt-4-turbo",
+   "retrieved_at": "2026-09-26",
+   "title": "OpenAI model page",
+   "notes": "128,000 context window; 4,096 max output tokens."
+  }
+ ]
+}

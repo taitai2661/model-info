@@ -1,0 +1,55 @@
+{
+  "model_id": "gpt-oss-20b",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "nvidia",
+      "model_id": "openai/gpt-oss-20b",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog",
+          "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "openai",
+      "model_id": "gpt-oss-20b",
+      "pricing": null,
+      "notes": "Open-weights release under Apache 2.0; no first-party OpenAI API token pricing is published.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-oss-20b",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI model page"
+        }
+      ]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "openai/gpt-oss-20b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.03,
+        "output": 0.14
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 8192
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "model_id": "llama-3.1-nemotron-51b-instruct",
+  "name": "Llama 3.1 Nemotron 51B Instruct",
+  "display_name": "Llama 3.1 Nemotron 51B Instruct",
+  "model_provider": "nvidia",
+  "family": "Nemotron",
+  "version": "51b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "NVIDIA Llama 3.1 Nemotron 51B Instruct: a 51B-parameter Llama 3.1 derivative tuned for instruction following and helpful chat.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/llama-3.1-nemotron-51b-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "model_id": "llama2-70b",
+  "name": "Llama 2 70B",
+  "display_name": "Llama 2 70B",
+  "model_provider": "meta",
+  "family": "Llama 2",
+  "version": "70b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Meta Llama 2 70B base: the 70B-parameter foundation model of the Llama 2 family, intended for fine-tuning rather than chat.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/meta/llama2-70b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

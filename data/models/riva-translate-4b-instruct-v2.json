@@ -1,0 +1,37 @@
+{
+  "model_id": "riva-translate-4b-instruct-v2",
+  "name": "Riva Translate 4B Instruct v2",
+  "display_name": "Riva Translate 4B Instruct v2",
+  "model_provider": "nvidia",
+  "family": "Riva",
+  "version": "v2",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Riva translation model (~4B parameters) supporting 37 languages with few-shot example prompts.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/riva-translate-4b-instruct-v2",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

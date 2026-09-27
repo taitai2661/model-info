@@ -1,0 +1,38 @@
+{
+  "model_id": "llama-3.1-nemoguard-8b-content-safety",
+  "name": "Llama 3.1 Nemoguard 8B Content Safety",
+  "display_name": "Llama 3.1 Nemoguard 8B Content Safety",
+  "model_provider": "nvidia",
+  "family": "Nemoguard",
+  "version": "8b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "NVIDIA's content-safety classification model built on Llama 3.1 8B; classifies prompts and completions as safe or unsafe across common harm categories.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/llama-3.1-nemoguard-8b-content-safety",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

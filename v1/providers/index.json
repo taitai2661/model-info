@@ -1,5 +1,81 @@
 [
   {
+    "id": "01-ai",
+    "name": "01.AI",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.01.ai",
+    "status": "active",
+    "description": "AI company behind the Yi model family; ships open-weight and commercial LLMs.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.01.ai",
+        "retrieved_at": "2026-09-26",
+        "title": "01.AI homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "adept",
+    "name": "Adept AI",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.adept.ai",
+    "status": "active",
+    "description": "AI company that released the Fuyu multimodal model family.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.adept.ai",
+        "retrieved_at": "2026-09-26",
+        "title": "Adept AI homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "ai21labs",
+    "name": "AI21 Labs",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.ai21.com",
+    "status": "active",
+    "description": "Israeli AI lab behind the Jamba hybrid SSM-Transformer model family.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.ai21.com",
+        "retrieved_at": "2026-09-26",
+        "title": "AI21 Labs homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "aisingapore",
+    "name": "AI Singapore",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://aisingapore.org",
+    "status": "active",
+    "description": "Singapore's national AI programme behind the SEA-LION open-weight LLM family tuned for Southeast Asian languages.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://aisingapore.org",
+        "retrieved_at": "2026-09-26",
+        "title": "AI Singapore homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
     "id": "ant-group",
     "name": "Ant Group",
     "types": [
@@ -118,6 +194,44 @@
         "retrieved_at": "2026-09-26",
         "title": "Models at a glance",
         "notes": "Catalogue of model cards used to build the relationship entries."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "bigcode",
+    "name": "BigCode",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.bigcode-project.org",
+    "status": "active",
+    "description": "Open scientific collaboration behind the StarCoder / StarCoder2 family of code LLMs (Hugging Face + ServiceNow).",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.bigcode-project.org",
+        "retrieved_at": "2026-09-26",
+        "title": "BigCode project"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "databricks",
+    "name": "Databricks",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.databricks.com",
+    "status": "active",
+    "description": "Data + AI company behind the DBRX open-weight MoE language model.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.databricks.com",
+        "retrieved_at": "2026-09-26",
+        "title": "Databricks homepage"
       }
     ],
     "updated_at": "2026-09-26"
@@ -286,6 +400,25 @@
     "updated_at": "2026-09-26"
   },
   {
+    "id": "ibm",
+    "name": "IBM",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.ibm.com",
+    "status": "active",
+    "description": "IBM Research's Granite family of open-weight foundation models for code, language, and enterprise use cases.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.ibm.com",
+        "retrieved_at": "2026-09-26",
+        "title": "IBM homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
     "id": "meituan",
     "name": "Meituan",
     "types": [
@@ -343,6 +476,25 @@
         "retrieved_at": "2026-09-26",
         "title": "Meta Model API reference",
         "notes": "Base URL, auth header, and endpoint list taken from the API reference overview."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "microsoft",
+    "name": "Microsoft",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.microsoft.com",
+    "status": "active",
+    "description": "Microsoft Research's Phi small-language-model family, plus Kosmos multimodal models.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.microsoft.com",
+        "retrieved_at": "2026-09-26",
+        "title": "Microsoft homepage"
       }
     ],
     "updated_at": "2026-09-26"
@@ -485,9 +637,9 @@
       "api_provider"
     ],
     "website": "https://www.nvidia.com",
-    "documentation_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+    "documentation_url": "https://build.nvidia.com/llms.txt",
     "status": "active",
-    "description": "NVIDIA's Nemotron model family; hosted NIM endpoints are served by the NVIDIA API Catalog.",
+    "description": "NVIDIA's Nemotron model family plus hosted NIM inference microservices for first- and third-party models. The NIM API Catalog is served at https://integrate.api.nvidia.com/v1 with OpenAI-compatible chat, embedding, vision, speech, retrieval, and safety endpoints.",
     "api": {
       "base_url": "https://integrate.api.nvidia.com/v1",
       "protocol": "https",
@@ -495,7 +647,7 @@
       "authentication": {
         "type": "bearer",
         "header": "Authorization",
-        "notes": "Environment variable NVIDIA_API_KEY (issued at build.nvidia.com/settings)."
+        "notes": "Environment variable NVIDIA_API_KEY (issued at https://build.nvidia.com/settings)."
       },
       "endpoints": {
         "chat_completions": "/chat/completions",
@@ -503,23 +655,30 @@
         "embeddings": "/embeddings"
       }
     },
+    "api_capabilities": {
+      "streaming": true,
+      "tool_calling": true
+    },
     "sources": [
-      {
-        "type": "official",
-        "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
-        "retrieved_at": "2026-09-26"
-      },
-      {
-        "type": "official",
-        "url": "https://developer.nvidia.com/topics/ai/nemotron",
-        "retrieved_at": "2026-09-26"
-      },
       {
         "type": "official",
         "url": "https://build.nvidia.com/llms.txt",
         "retrieved_at": "2026-09-26",
         "title": "NVIDIA API Catalog overview",
         "notes": "Shared base URL https://integrate.api.nvidia.com/v1 and Bearer authentication."
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog",
+        "notes": "Provider model ids for every model served by NIM, returned by GET /v1/models (no authentication required)."
+      },
+      {
+        "type": "official",
+        "url": "https://developer.nvidia.com/topics/ai/nemotron",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA Nemotron topic page"
       }
     ],
     "updated_at": "2026-09-26"
@@ -713,6 +872,25 @@
     "updated_at": "2026-09-26"
   },
   {
+    "id": "poolside",
+    "name": "Poolside",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://poolside.ai",
+    "status": "active",
+    "description": "AI company focused on software-engineering agents; ships the Laguna family of code-focused MoE LLMs.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://poolside.ai",
+        "retrieved_at": "2026-09-26",
+        "title": "Poolside homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
     "id": "qwen",
     "name": "Qwen",
     "types": [
@@ -750,6 +928,25 @@
         "retrieved_at": "2026-09-26",
         "title": "Model Studio Base URL overview",
         "notes": "DashScope, workspace-dedicated, trial, and Token/Coding Plan domains and their OpenAI-compatible and Anthropic-compatible paths."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "snowflake",
+    "name": "Snowflake",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.snowflake.com",
+    "status": "active",
+    "description": "Snowflake's open-weight Arctic family of retrieval and embedding models.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.snowflake.com",
+        "retrieved_at": "2026-09-26",
+        "title": "Snowflake homepage"
       }
     ],
     "updated_at": "2026-09-26"
@@ -892,6 +1089,76 @@
     "updated_at": "2026-09-26"
   },
   {
+    "id": "vercel-ai-gateway",
+    "name": "Vercel AI Gateway",
+    "types": [
+      "api_provider",
+      "aggregator",
+      "gateway"
+    ],
+    "website": "https://vercel.com/docs/ai-gateway",
+    "documentation_url": "https://vercel.com/docs/ai-gateway/getting-started",
+    "status": "active",
+    "description": "Vercel's unified AI Gateway: a single OpenAI-compatible endpoint that routes to hundreds of third-party models across OpenAI, Anthropic, Google, Meta, Mistral, xAI, DeepSeek, Moonshot AI and other upstream providers; supports OIDC tokens and provider-specific BYOK keys.",
+    "api": {
+      "base_url": "https://ai-gateway.vercel.sh/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization",
+        "notes": "Either a Vercel OIDC token issued via the AI Gateway (Authorization: Bearer <oidc>), or a per-provider BYOK key (Authorization: Bearer <openai|anthropic|...>). The active provider is selected by the model id prefix."
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "responses": "/responses",
+        "models": "/models",
+        "embeddings": "/embeddings"
+      }
+    },
+    "api_capabilities": {
+      "streaming": true,
+      "tool_calling": true,
+      "structured_output": true,
+      "json_mode": true,
+      "prompt_caching": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://vercel.com/docs/ai-gateway/getting-started",
+        "retrieved_at": "2026-09-26",
+        "title": "Vercel AI Gateway — Getting started"
+      },
+      {
+        "type": "official",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "Public model list (GET /v1/models)"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "writer",
+    "name": "Writer",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://writer.com",
+    "status": "active",
+    "description": "Enterprise generative-AI company behind the Palmyra family of domain-tuned LLMs (creative, finance, medical).",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://writer.com",
+        "retrieved_at": "2026-09-26",
+        "title": "Writer homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
     "id": "xai",
     "name": "xAI",
     "types": [
@@ -1024,6 +1291,25 @@
         "retrieved_at": "2026-09-26",
         "title": "Z.AI API introduction",
         "notes": "API endpoint and HTTP Bearer authentication."
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  {
+    "id": "zyphra",
+    "name": "Zyphra",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.zyphra.ai",
+    "status": "active",
+    "description": "AI research lab behind the Zamba open-weight hybrid SSM-Transformer model family.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.zyphra.ai",
+        "retrieved_at": "2026-09-26",
+        "title": "Zyphra homepage"
       }
     ],
     "updated_at": "2026-09-26"

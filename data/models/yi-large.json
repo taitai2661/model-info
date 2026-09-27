@@ -1,0 +1,37 @@
+{
+  "model_id": "yi-large",
+  "name": "Yi Large",
+  "display_name": "Yi Large",
+  "model_provider": "01-ai",
+  "family": "Yi",
+  "version": "large",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "01.AI Yi Large: the flagship bilingual (English / Chinese) Yi chat model for reasoning and instruction following.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/01-ai/yi-large",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

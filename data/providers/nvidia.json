@@ -6,9 +6,9 @@
     "api_provider"
   ],
   "website": "https://www.nvidia.com",
-  "documentation_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+  "documentation_url": "https://build.nvidia.com/llms.txt",
   "status": "active",
-  "description": "NVIDIA's Nemotron model family; hosted NIM endpoints are served by the NVIDIA API Catalog.",
+  "description": "NVIDIA's Nemotron model family plus hosted NIM inference microservices for first- and third-party models. The NIM API Catalog is served at https://integrate.api.nvidia.com/v1 with OpenAI-compatible chat, embedding, vision, speech, retrieval, and safety endpoints.",
   "api": {
     "base_url": "https://integrate.api.nvidia.com/v1",
     "protocol": "https",
@@ -16,7 +16,7 @@
     "authentication": {
       "type": "bearer",
       "header": "Authorization",
-      "notes": "Environment variable NVIDIA_API_KEY (issued at build.nvidia.com/settings)."
+      "notes": "Environment variable NVIDIA_API_KEY (issued at https://build.nvidia.com/settings)."
     },
     "endpoints": {
       "chat_completions": "/chat/completions",
@@ -24,23 +24,30 @@
       "embeddings": "/embeddings"
     }
   },
+  "api_capabilities": {
+    "streaming": true,
+    "tool_calling": true
+  },
   "sources": [
-    {
-      "type": "official",
-      "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
-      "retrieved_at": "2026-09-26"
-    },
-    {
-      "type": "official",
-      "url": "https://developer.nvidia.com/topics/ai/nemotron",
-      "retrieved_at": "2026-09-26"
-    },
     {
       "type": "official",
       "url": "https://build.nvidia.com/llms.txt",
       "retrieved_at": "2026-09-26",
       "title": "NVIDIA API Catalog overview",
       "notes": "Shared base URL https://integrate.api.nvidia.com/v1 and Bearer authentication."
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog",
+      "notes": "Provider model ids for every model served by NIM, returned by GET /v1/models (no authentication required)."
+    },
+    {
+      "type": "official",
+      "url": "https://developer.nvidia.com/topics/ai/nemotron",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA Nemotron topic page"
     }
   ],
   "updated_at": "2026-09-26"

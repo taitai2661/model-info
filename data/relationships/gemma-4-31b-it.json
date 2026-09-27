@@ -1,0 +1,65 @@
+{
+  "model_id": "gemma-4-31b-it",
+  "updated_at": "2026-09-26",
+  "providers": [
+    {
+      "provider_id": "nvidia",
+      "model_id": "google/gemma-4-31b-it",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog",
+          "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "google",
+      "model_id": "gemma-4-31b-it",
+      "status": null,
+      "notes": "Open-weights release; no first-party Gemini Developer API access.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai.google.dev/gemini-api/docs/models",
+          "retrieved_at": "2026-09-26",
+          "title": "Gemini API models"
+        }
+      ]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "google/gemma-4-31b-it",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.14,
+        "output": 0.4
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    }
+  ]
+}

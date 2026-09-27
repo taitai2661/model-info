@@ -1,0 +1,38 @@
+{
+  "model_id": "arctic-embed-l",
+  "name": "Arctic Embed L",
+  "display_name": "Arctic Embed L",
+  "model_provider": "snowflake",
+  "family": "Arctic",
+  "version": "l",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Snowflake Arctic-Embed-L: a retrieval embedding model optimized for English and multilingual semantic search. Output is a dense vector (not text).",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/snowflake/arctic-embed-l",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

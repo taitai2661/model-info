@@ -7,9 +7,9 @@
       "api_provider"
     ],
     "website": "https://www.nvidia.com",
-    "documentation_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+    "documentation_url": "https://build.nvidia.com/llms.txt",
     "status": "active",
-    "description": "NVIDIA's Nemotron model family; hosted NIM endpoints are served by the NVIDIA API Catalog.",
+    "description": "NVIDIA's Nemotron model family plus hosted NIM inference microservices for first- and third-party models. The NIM API Catalog is served at https://integrate.api.nvidia.com/v1 with OpenAI-compatible chat, embedding, vision, speech, retrieval, and safety endpoints.",
     "api": {
       "base_url": "https://integrate.api.nvidia.com/v1",
       "protocol": "https",
@@ -17,7 +17,7 @@
       "authentication": {
         "type": "bearer",
         "header": "Authorization",
-        "notes": "Environment variable NVIDIA_API_KEY (issued at build.nvidia.com/settings)."
+        "notes": "Environment variable NVIDIA_API_KEY (issued at https://build.nvidia.com/settings)."
       },
       "endpoints": {
         "chat_completions": "/chat/completions",
@@ -25,29 +25,116 @@
         "embeddings": "/embeddings"
       }
     },
+    "api_capabilities": {
+      "streaming": true,
+      "tool_calling": true
+    },
     "sources": [
-      {
-        "type": "official",
-        "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
-        "retrieved_at": "2026-09-26"
-      },
-      {
-        "type": "official",
-        "url": "https://developer.nvidia.com/topics/ai/nemotron",
-        "retrieved_at": "2026-09-26"
-      },
       {
         "type": "official",
         "url": "https://build.nvidia.com/llms.txt",
         "retrieved_at": "2026-09-26",
         "title": "NVIDIA API Catalog overview",
         "notes": "Shared base URL https://integrate.api.nvidia.com/v1 and Bearer authentication."
+      },
+      {
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA NIM public model catalog",
+        "notes": "Provider model ids for every model served by NIM, returned by GET /v1/models (no authentication required)."
+      },
+      {
+        "type": "official",
+        "url": "https://developer.nvidia.com/topics/ai/nemotron",
+        "retrieved_at": "2026-09-26",
+        "title": "NVIDIA Nemotron topic page"
       }
     ],
     "updated_at": "2026-09-26"
   },
   "model_ids": [
+    "ai-synthetic-video-detector",
+    "arctic-embed-l",
+    "codegemma-1.1-7b",
+    "codegemma-7b",
+    "codellama-70b",
+    "codestral-22b-instruct-v0.1",
+    "cosmos-reason2-8b",
+    "dbrx-instruct",
+    "deepseek-coder-6.7b-instruct",
+    "deepseek-v4.1-flash",
+    "deplot",
+    "diffusiongemma-26b-a4b-it",
+    "embed-qa-4",
+    "fuyu-8b",
+    "gemma-2b",
+    "gemma-3-12b-it",
+    "gemma-3-4b-it",
+    "gemma-4-31b-it",
+    "glm-5.3",
+    "glm-5.3-flash",
+    "gpt-oss-20b",
+    "granite-3.0-3b-a800m-instruct",
+    "granite-3.0-8b-instruct",
+    "granite-34b-code-instruct",
+    "granite-8b-code-instruct",
+    "ising-calibration-1.5-31b",
+    "jamba-1.5-large-instruct",
+    "kimi-k2.6",
+    "kimi-k3",
+    "kosmos-2",
+    "laguna-xs-2.1",
+    "llama-3.1-nemoguard-8b-content-safety",
+    "llama-3.1-nemoguard-8b-topic-control",
+    "llama-3.1-nemotron-51b-instruct",
+    "llama-3.1-nemotron-70b-instruct",
+    "llama-3.1-nemotron-safety-guard-8b-v3",
+    "llama-3.1-nemotron-ultra-253b-v1",
+    "llama-3.2-11b-vision-instruct",
+    "llama-3.2-90b-vision-instruct",
+    "llama-3.2-nemoretriever-1b-vlm-embed-v1",
+    "llama-3.2-nv-embedqa-1b-v1",
+    "llama-guard-4-12b",
+    "llama-nemotron-embed-vl-1b-v2",
+    "llama2-70b",
+    "llama3-chatqa-1.5-70b",
+    "mistral-7b-instruct-v0.3",
+    "mistral-large",
+    "mistral-large-2-instruct",
+    "mistral-nemo-12b-instruct",
+    "mistral-nemo-minitron-8b-8k-instruct",
+    "mistral-nemotron",
+    "mixtral-8x22b-v0.1",
+    "muse-glimmer-30b",
+    "nemotron-3-embed-1b",
+    "nemotron-3-nano-omni-30b-a3b-reasoning",
+    "nemotron-3-super-120b-a12b",
     "nemotron-3-ultra",
-    "nemotron-3.5-lightning"
+    "nemotron-3.5-content-safety",
+    "nemotron-3.5-lightning",
+    "nemotron-4-340b-instruct",
+    "nemotron-4-340b-reward",
+    "nemotron-nano-3-30b-a3b",
+    "nemotron-parse",
+    "nemotron-parse-2.0",
+    "neva-22b",
+    "nv-embedqa-mistral-7b-v2",
+    "nvclip",
+    "palmyra-creative-122b",
+    "palmyra-fin-70b-32k",
+    "palmyra-med-70b",
+    "palmyra-med-70b-32k",
+    "phi-3-vision-128k-instruct",
+    "phi-3.5-moe-instruct",
+    "recurrentgemma-2b",
+    "riva-translate-4b-instruct",
+    "riva-translate-4b-instruct-v1.1",
+    "riva-translate-4b-instruct-v2",
+    "sea-lion-7b-instruct",
+    "starcoder2-15b",
+    "vila",
+    "yi-large",
+    "zamba2-7b-instruct"
   ]
 }

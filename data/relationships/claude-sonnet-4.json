@@ -45,6 +45,36 @@
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
+    },
+    {
+      "provider_id": "anthropic",
+      "model_id": "claude-sonnet-4",
+      "status": "retired",
+      "notes": "Retired from the first-party Anthropic API; remains accessible on Bedrock and Google Cloud.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Anthropic pricing — retired models"
+        }
+      ]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "anthropic/claude-sonnet-4",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 64000
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
     }
   ]
 }

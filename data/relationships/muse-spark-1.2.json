@@ -98,6 +98,39 @@
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "meta/muse-spark-1.2",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.25,
+        "output": 4.25,
+        "cached_input": 0.15
+      },
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 1048576
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
     }
   ]
 }

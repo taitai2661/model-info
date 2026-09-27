@@ -1,0 +1,44 @@
+{
+ "model_id": "llama-3.1-nemotron-ultra-253b-v1",
+ "name": "Llama 3.1 Nemotron Ultra 253B v1",
+ "display_name": "Llama 3.1 Nemotron Ultra 253B v1",
+ "model_provider": "nvidia",
+ "family": "Nemotron",
+ "version": null,
+ "status": "active",
+ "release_date": null,
+ "updated_at": "2026-09-26",
+ "description": "NVIDIA's reasoning-tuned derivative of Llama 3.1 405B Instruct (253B) for reasoning, RAG, and tool calling.",
+ "context": {
+  "window": 131072
+ },
+ "modalities": {
+  "input": [
+   "text"
+  ],
+  "output": [
+   "text"
+  ]
+ },
+ "capabilities": {
+  "tool_use": true,
+  "vision": false,
+  "reasoning": true,
+  "function_calling": true
+ },
+ "availability": {
+  "api": true,
+  "cloud": true,
+  "open_weights": true,
+  "self_hostable": true
+ },
+ "sources": [
+  {
+   "type": "official",
+   "url": "https://docs.api.nvidia.com/nim/reference/nvidia-llama-3_1-nemotron-ultra-253b-v1",
+   "retrieved_at": "2026-09-26",
+   "title": "NVIDIA NIM API reference",
+   "notes": "Context length up to 131,072 tokens."
+  }
+ ]
+}

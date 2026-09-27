@@ -1,0 +1,38 @@
+{
+ "model_id": "nemotron-nano-9b-v2",
+ "name": "Nemotron Nano 9B v2",
+ "display_name": "Nemotron Nano 9B v2",
+ "model_provider": "nvidia",
+ "family": "Nemotron",
+ "version": null,
+ "status": "active",
+ "release_date": null,
+ "updated_at": "2026-09-26",
+ "description": "NVIDIA's compact 9B Nemotron v2 model for efficient instruction following.",
+ "context": {
+  "window": 131072
+ },
+ "modalities": {
+  "input": [
+   "text"
+  ],
+  "output": [
+   "text"
+  ]
+ },
+ "availability": {
+  "api": true,
+  "cloud": true,
+  "open_weights": true,
+  "self_hostable": true
+ },
+ "sources": [
+  {
+   "type": "official",
+   "url": "https://docs.api.nvidia.com/nim/reference/nvidia-nvidia-nemotron-nano-9b-v2",
+   "retrieved_at": "2026-09-26",
+   "title": "NVIDIA NIM API reference",
+   "notes": "Context length up to 128K (131,072 tokens)."
+  }
+ ]
+}

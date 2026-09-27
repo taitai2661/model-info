@@ -3,19 +3,6 @@
   "updated_at": "2026-09-26",
   "providers": [
     {
-      "provider_id": "nvidia",
-      "model_id": "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://build.nvidia.com/models",
-          "retrieved_at": "2026-09-26",
-          "title": "NVIDIA API Catalog model list",
-          "notes": "Provider model id is the API Catalog id, which carries the parameter configuration."
-        }
-      ]
-    },
-    {
       "provider_id": "openrouter",
       "model_id": "nvidia/nemotron-3.5-lightning",
       "pricing": {
@@ -82,6 +69,42 @@
           "url": "https://docs.fireworks.ai/serverless/pricing.md",
           "retrieved_at": "2026-09-26",
           "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
+        }
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "model_id": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog",
+          "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "nvidia/nemotron-3.5-lightning",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.05,
+        "output": 0.2,
+        "cached_input": 0.01
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 131072
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ]
     }

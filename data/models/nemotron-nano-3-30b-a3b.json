@@ -1,0 +1,41 @@
+{
+  "model_id": "nemotron-nano-3-30b-a3b",
+  "name": "Nemotron Nano 3 30B A3B",
+  "display_name": "Nemotron Nano 3 30B A3B",
+  "model_provider": "nvidia",
+  "family": "Nemotron",
+  "version": "3",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Nemotron Nano 3 30B A3B: a 30B-total / 3B-active MoE designed for efficient agentic reasoning, coding, and tool calling.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "reasoning": true,
+    "function_calling": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/nemotron-nano-3-30b-a3b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

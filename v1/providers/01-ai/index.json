@@ -1,0 +1,22 @@
+{
+  "provider": {
+    "id": "01-ai",
+    "name": "01.AI",
+    "types": [
+      "model_provider"
+    ],
+    "website": "https://www.01.ai",
+    "status": "active",
+    "description": "AI company behind the Yi model family; ships open-weight and commercial LLMs.",
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://www.01.ai",
+        "retrieved_at": "2026-09-26",
+        "title": "01.AI homepage"
+      }
+    ],
+    "updated_at": "2026-09-26"
+  },
+  "model_ids": []
+}

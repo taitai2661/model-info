@@ -375,13 +375,15 @@ class BaseCollector:
 
 
 def discover():
-    from . import (anthropic, deepseek, fireworks, google, groq, mistral,
-                   opencode, opencode_go, openrouter, openai, together)
+    from . import (anthropic, deepseek, fireworks, google, groq, mistral, nvidia,
+                   opencode, opencode_go, openrouter, openai, together,
+                   vercel_ai_gateway)
 
     collectors = [openai.OpenAICollector(), anthropic.AnthropicCollector(),
                   google.GoogleCollector(), deepseek.DeepSeekCollector(),
                   mistral.MistralCollector(), openrouter.OpenRouterCollector(),
                   opencode.OpenCodeCollector(), opencode_go.OpenCodeGoCollector(),
                   groq.GroqCollector(), together.TogetherCollector(),
-                  fireworks.FireworksCollector()]
+                  fireworks.FireworksCollector(), nvidia.NvidiaCollector(),
+                  vercel_ai_gateway.VercelAIGatewayCollector()]
     return {c.name: c for c in collectors}

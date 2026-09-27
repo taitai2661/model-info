@@ -1,0 +1,38 @@
+{
+ "model_id": "llama-3.1-nemotron-70b-instruct",
+ "name": "Llama 3.1 Nemotron 70B Instruct",
+ "display_name": "Llama 3.1 Nemotron 70B Instruct",
+ "model_provider": "nvidia",
+ "family": "Nemotron",
+ "version": null,
+ "status": "active",
+ "release_date": null,
+ "updated_at": "2026-09-26",
+ "description": "NVIDIA's helpfulness-tuned instruct derivative of Llama 3.1 70B.",
+ "context": {
+  "window": 131072
+ },
+ "modalities": {
+  "input": [
+   "text"
+  ],
+  "output": [
+   "text"
+  ]
+ },
+ "availability": {
+  "api": true,
+  "cloud": true,
+  "open_weights": true,
+  "self_hostable": true
+ },
+ "sources": [
+  {
+   "type": "official",
+   "url": "https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct",
+   "retrieved_at": "2026-09-26",
+   "title": "Open-weight release",
+   "notes": "max_position_embeddings 131,072 (128K)."
+  }
+ ]
+}

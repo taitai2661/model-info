@@ -1,0 +1,38 @@
+{
+  "model_id": "diffusiongemma-26b-a4b-it",
+  "name": "DiffusionGemma 26B A4B Instruct",
+  "display_name": "DiffusionGemma 26B A4B IT",
+  "model_provider": "google",
+  "family": "Gemma",
+  "version": "26b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Google DiffusionGemma 26B A4B Instruct: a 26B-total / 4B-active diffusion-based LLM enabling parallel token generation for real-time text applications.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/google/diffusiongemma-26b-a4b-it",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

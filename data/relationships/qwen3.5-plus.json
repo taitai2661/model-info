@@ -85,6 +85,39 @@
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "alibaba/qwen3.5-plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.4,
+        "output": 2.4,
+        "cached_input": 0.04
+      },
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 64000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-26",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
     }
   ]
 }

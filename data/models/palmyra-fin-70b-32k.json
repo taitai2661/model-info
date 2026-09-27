@@ -1,0 +1,40 @@
+{
+  "model_id": "palmyra-fin-70b-32k",
+  "name": "Palmyra Fin 70B 32K",
+  "display_name": "Palmyra Fin 70B 32K",
+  "model_provider": "writer",
+  "family": "Palmyra",
+  "version": "fin",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Writer Palmyra Fin 70B 32K: a 70B-parameter LLM tuned for financial-domain text generation and analysis with a 32K context window.",
+  "context": {
+    "window": 32768
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/writer/palmyra-fin-70b-32k",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

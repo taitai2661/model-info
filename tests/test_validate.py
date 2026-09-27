@@ -164,6 +164,25 @@ def test_zen_and_go_are_separate_providers(repo_root):
     assert zen["api"]["base_url"] != go["api"]["base_url"]
 
 
+def test_vercel_ai_gateway_provider_is_openai_compatible(repo_root):
+    doc = json.loads((repo_root / "data/providers/vercel-ai-gateway.json").read_text())
+    assert doc["id"] == "vercel-ai-gateway"
+    assert doc["name"] == "Vercel AI Gateway"
+    assert "aggregator" in doc["types"]
+    assert "gateway" in doc["types"]
+    assert doc["api"]["api_style"] == "openai_compatible"
+    assert doc["api"]["base_url"] == "https://ai-gateway.vercel.sh/v1"
+
+
+def test_vercel_ai_gateway_aggregator_lists_several_model_ids(repo_root):
+    doc = json.loads((repo_root / "data/relationships/deepseek-v4-pro.json").read_text())
+    vercel_ids = sorted(
+        e["model_id"] for e in doc["providers"]
+        if e["provider_id"] == "vercel-ai-gateway"
+    )
+    assert vercel_ids == ["deepseek/deepseek-v4-pro", "deepseek/deepseek-v4-pro-0813"]
+
+
 def test_provider_can_have_several_model_ids(repo_root):
     doc = json.loads((repo_root / "data/relationships/deepseek-flash.json").read_text())
     go_ids = sorted(e["model_id"] for e in doc["providers"]

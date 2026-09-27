@@ -25,7 +25,7 @@ Model × Provider -> 「このモデルはこのProvider経由で利用できる
 - `data/providers/*.json` — 各サービス(`types` = 役割: `model_provider` / `api_provider` / `aggregator` / `gateway` / `runtime` / `platform`)
 - `data/relationships/*.json` — Providerごとの提供情報(Provider固有のモデルIDと上書き)
 
-**OpenCode Zen と OpenCode Go** は別サービス(Base URL・カタログ・料金が異なる)なので、`opencode` と `opencode-go` の2プロバイダとして登録します。同一モデルのエイリアスや無料SKUのように1サービスが複数IDを持つ場合、同一プロバイダを関係ファイルに複数回(各エントリ異なる `model_id`)で列挙します。
+**OpenCode Zen と OpenCode Go** は別サービス(Base URL・カタログ・料金が異なる)なので、`opencode` と `opencode-go` の2プロバイダとして登録します。**Vercel AI Gateway** (`vercel-ai-gateway`)も同じく集約型のアグリゲーターで、1つのOpenAI互換エンドポイントで多数の第三者モデル(OpenAI / Anthropic / Google 等)を `openai/gpt-5` `anthropic/claude-sonnet-4-5` のような vendor-prefixed id として提供します(BYOK or OIDC)。同一モデルのエイリアスや無料SKUのように1サービスが複数IDを持つ場合、同一プロバイダを関係ファイルに複数回(各エントリ異なる `model_id`)で列挙します。
 
 Ollama・llama.cpp・vLLMなどのRuntime / PlatformはAPI Providerではありません。実行環境はモデル側の `runtime` マップに記録します。
 
@@ -97,6 +97,11 @@ GitHub Pages 上ではリポジトリルートから `https://<user>.github.io/<
       "provider_id": "opencode-go",
       "model_id": "deepseek-v4-pro",
       "pricing": { "currency": "USD", "unit": "1M_tokens", "input": 0.66, "output": 1.98, "cached_input": 0.022 }
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "deepseek/deepseek-v4-pro",
+      "context": { "window": 1000000, "max_output_tokens": 384000 }
     }
   ]
 }
@@ -152,7 +157,7 @@ export OPENAI_API_KEY=...                         # キーはシェルにのみ�
 .venv/bin/python -m collector openai --write
 ```
 
-利用可能: `openai` / `anthropic` / `google` / `deepseek` / `mistral` / `openrouter`(公開・キー不要) / `opencode`(公開・キー不要) / `opencode-go`(公開・キー不要) / `groq`(公開・キー不要) / `together`(公開・キー不要) / `fireworks`(公開・キー不要)。
+利用可能: `openai` / `anthropic` / `google` / `deepseek` / `mistral` / `openrouter`(公開・キー不要) / `opencode`(公開・キー不要) / `opencode-go`(公開・キー不要) / `groq`(公開・キー不要) / `together`(公開・キー不要) / `fireworks`(公開・キー不要) / `nvidia`(公開・キー不要) / `vercel-ai-gateway`(公開・キー不要)。
 
 `groq` / `together` / `fireworks` はJSON APIではなくMarkdownのドキュメントでカタログを公開しているため、`.md` ページを直接読みます(`collector/docs.py`)。APIキーは引き続き不要で、どの列がコンテキスト長・料金なのかは各Collectorが判定します。
 

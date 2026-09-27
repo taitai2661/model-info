@@ -5,214 +5,107 @@
     "display_name": "Kimi K2.6",
     "model_provider": "moonshot",
     "family": "Kimi",
-    "version": null,
+    "version": "k2.6",
     "status": "active",
     "release_date": null,
     "updated_at": "2026-09-26",
-    "context": {
-      "window": 262144,
-      "max_output_tokens": 235929
-    },
+    "description": "Moonshot Kimi K2.6: MoE LLM tuned for code generation and tool use.",
     "modalities": {
       "input": [
-        "text",
-        "image"
+        "text"
       ],
       "output": [
         "text"
       ]
     },
+    "capabilities": {
+      "tool_use": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": true
+    },
     "sources": [
       {
         "type": "official",
-        "url": "https://platform.kimi.ai/docs/models",
+        "url": "https://build.nvidia.com/moonshotai/kimi-k2.6",
         "retrieved_at": "2026-09-26",
-        "title": "Moonshot model list"
+        "title": "NVIDIA NIM model page"
       },
       {
-        "type": "community",
-        "url": "https://openrouter.ai/api/v1/models",
+        "type": "official",
+        "url": "https://integrate.api.nvidia.com/v1/models",
         "retrieved_at": "2026-09-26",
-        "title": "OpenRouter model list",
-        "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        "title": "NVIDIA NIM public model catalog"
       }
     ]
   },
   "providers": [
     {
-      "provider_id": "moonshot",
-      "model_id": "kimi-k2.6",
+      "provider_id": "nvidia",
+      "model_id": "moonshotai/kimi-k2.6",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog",
+          "notes": "Provider model id listed by GET /v1/models on the NVIDIA NIM public catalog (no authentication required)."
+        }
+      ],
       "provider": {
-        "id": "moonshot",
-        "name": "Moonshot AI",
+        "id": "nvidia",
+        "name": "NVIDIA",
         "types": [
           "model_provider",
           "api_provider"
         ],
-        "documentation_url": "https://platform.kimi.ai/docs/models",
+        "website": "https://www.nvidia.com",
+        "documentation_url": "https://build.nvidia.com/llms.txt",
         "status": "active",
-        "description": "AI company behind the Kimi model family; operates the Kimi Open Platform API.",
+        "description": "NVIDIA's Nemotron model family plus hosted NIM inference microservices for first- and third-party models. The NIM API Catalog is served at https://integrate.api.nvidia.com/v1 with OpenAI-compatible chat, embedding, vision, speech, retrieval, and safety endpoints.",
         "api": {
-          "base_url": "https://api.moonshot.ai/v1",
+          "base_url": "https://integrate.api.nvidia.com/v1",
           "protocol": "https",
           "api_style": "openai_compatible",
           "authentication": {
             "type": "bearer",
             "header": "Authorization",
-            "notes": "Environment variable MOONSHOT_API_KEY. An Anthropic Messages-compatible API is served from a separate root, https://api.moonshot.ai/anthropic."
-          },
-          "endpoints": {
-            "chat_completions": "/chat/completions",
-            "responses": "/responses",
-            "models": "/models"
-          }
-        },
-        "sources": [
-          {
-            "type": "official",
-            "url": "https://platform.kimi.ai/docs/models",
-            "retrieved_at": "2026-09-26"
-          },
-          {
-            "type": "official",
-            "url": "https://platform.kimi.ai/docs/api/overview",
-            "retrieved_at": "2026-09-26",
-            "title": "Kimi API overview",
-            "notes": "Service address, protocol compatibility table, and endpoint list."
-          }
-        ],
-        "updated_at": "2026-09-26"
-      }
-    },
-    {
-      "provider_id": "openrouter",
-      "model_id": "moonshotai/kimi-k2.6",
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.95,
-        "output": 4.0,
-        "cached_input": 0.16
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-26",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
-        }
-      ],
-      "provider": {
-        "id": "openrouter",
-        "name": "OpenRouter",
-        "types": [
-          "api_provider",
-          "aggregator",
-          "gateway"
-        ],
-        "website": "https://openrouter.ai",
-        "documentation_url": "https://openrouter.ai/docs/quickstart",
-        "status": "active",
-        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
-        "api": {
-          "base_url": "https://openrouter.ai/api/v1",
-          "protocol": "https",
-          "api_style": "openai_compatible",
-          "authentication": {
-            "type": "bearer",
-            "header": "Authorization"
+            "notes": "Environment variable NVIDIA_API_KEY (issued at https://build.nvidia.com/settings)."
           },
           "endpoints": {
             "chat_completions": "/chat/completions",
             "models": "/models",
-            "embeddings": "/embeddings",
-            "rerank": "/rerank"
+            "embeddings": "/embeddings"
           }
         },
         "api_capabilities": {
-          "batch": true
+          "streaming": true,
+          "tool_calling": true
         },
         "sources": [
           {
             "type": "official",
-            "url": "https://openrouter.ai/docs/quickstart",
+            "url": "https://build.nvidia.com/llms.txt",
             "retrieved_at": "2026-09-26",
-            "title": "OpenRouter quickstart"
+            "title": "NVIDIA API Catalog overview",
+            "notes": "Shared base URL https://integrate.api.nvidia.com/v1 and Bearer authentication."
           },
           {
             "type": "official",
-            "url": "https://openrouter.ai/api/v1/models",
+            "url": "https://integrate.api.nvidia.com/v1/models",
             "retrieved_at": "2026-09-26",
-            "title": "Public model list"
-          }
-        ],
-        "updated_at": "2026-09-26"
-      }
-    },
-    {
-      "provider_id": "opencode",
-      "model_id": "kimi-k2.6",
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.95,
-        "output": 4.0,
-        "cached_input": 0.16
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://opencode.ai/docs/zen/",
-          "retrieved_at": "2026-09-26",
-          "title": "OpenCode Zen docs",
-          "notes": "Price, availability, and deprecation status from the Zen docs."
-        },
-        {
-          "type": "official",
-          "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-26",
-          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
-        }
-      ],
-      "provider": {
-        "id": "opencode",
-        "name": "OpenCode Zen",
-        "types": [
-          "api_provider",
-          "aggregator",
-          "gateway"
-        ],
-        "website": "https://opencode.ai",
-        "documentation_url": "https://opencode.ai/docs/zen/",
-        "status": "active",
-        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
-        "api": {
-          "base_url": "https://opencode.ai/zen/v1",
-          "protocol": "https",
-          "api_style": "openai_compatible",
-          "authentication": {
-            "type": "bearer",
-            "header": "Authorization"
-          },
-          "endpoints": {
-            "chat_completions": "/chat/completions",
-            "responses": "/responses",
-            "messages": "/messages",
-            "models": "/models"
-          }
-        },
-        "sources": [
-          {
-            "type": "official",
-            "url": "https://opencode.ai/docs/zen/",
-            "retrieved_at": "2026-09-26",
-            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+            "title": "NVIDIA NIM public model catalog",
+            "notes": "Provider model ids for every model served by NIM, returned by GET /v1/models (no authentication required)."
           },
           {
             "type": "official",
-            "url": "https://opencode.ai/zen/v1/models",
+            "url": "https://developer.nvidia.com/topics/ai/nemotron",
             "retrieved_at": "2026-09-26",
-            "title": "Zen public model list"
+            "title": "NVIDIA Nemotron topic page"
           }
         ],
         "updated_at": "2026-09-26"
@@ -221,27 +114,12 @@
     {
       "provider_id": "opencode-go",
       "model_id": "kimi-k2.6",
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.95,
-        "output": 4.0,
-        "cached_input": 0.16
-      },
-      "notes": "Go monthly usage limit: $60.",
       "sources": [
-        {
-          "type": "official",
-          "url": "https://opencode.ai/docs/go/",
-          "retrieved_at": "2026-09-26",
-          "title": "OpenCode Go docs",
-          "notes": "Price, tier notes, and monthly limit from the Go docs."
-        },
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
           "retrieved_at": "2026-09-26",
-          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+          "notes": "Provider model id from the public Go model list (GET /v1/models)."
         }
       ],
       "provider": {
@@ -289,8 +167,8 @@
       }
     },
     {
-      "provider_id": "fireworks",
-      "model_id": "accounts/fireworks/models/kimi-k2p6",
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "moonshotai/kimi-k2.6",
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -298,45 +176,75 @@
         "output": 4.0,
         "cached_input": 0.16
       },
+      "context": {
+        "window": 262000,
+        "max_output_tokens": 262000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
       "sources": [
         {
           "type": "official",
-          "url": "https://docs.fireworks.ai/serverless/pricing.md",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
           "retrieved_at": "2026-09-26",
-          "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
       "provider": {
-        "id": "fireworks",
-        "name": "Fireworks AI",
+        "id": "vercel-ai-gateway",
+        "name": "Vercel AI Gateway",
         "types": [
           "api_provider",
-          "platform"
+          "aggregator",
+          "gateway"
         ],
-        "website": "https://fireworks.ai",
-        "documentation_url": "https://docs.fireworks.ai/getting-started/quickstart",
+        "website": "https://vercel.com/docs/ai-gateway",
+        "documentation_url": "https://vercel.com/docs/ai-gateway/getting-started",
         "status": "active",
-        "description": "AI cloud platform for open-source models; OpenAI-compatible chat endpoint plus an Anthropic-compatible endpoint served from https://api.fireworks.ai/inference.",
+        "description": "Vercel's unified AI Gateway: a single OpenAI-compatible endpoint that routes to hundreds of third-party models across OpenAI, Anthropic, Google, Meta, Mistral, xAI, DeepSeek, Moonshot AI and other upstream providers; supports OIDC tokens and provider-specific BYOK keys.",
         "api": {
-          "base_url": "https://api.fireworks.ai/inference/v1",
+          "base_url": "https://ai-gateway.vercel.sh/v1",
           "protocol": "https",
           "api_style": "openai_compatible",
           "authentication": {
             "type": "bearer",
-            "header": "Authorization"
+            "header": "Authorization",
+            "notes": "Either a Vercel OIDC token issued via the AI Gateway (Authorization: Bearer <oidc>), or a per-provider BYOK key (Authorization: Bearer <openai|anthropic|...>). The active provider is selected by the model id prefix."
           },
           "endpoints": {
             "chat_completions": "/chat/completions",
-            "embeddings": "/embeddings",
-            "rerank": "/rerank"
+            "responses": "/responses",
+            "models": "/models",
+            "embeddings": "/embeddings"
           }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "json_mode": true,
+          "prompt_caching": true
         },
         "sources": [
           {
             "type": "official",
-            "url": "https://docs.fireworks.ai/getting-started/quickstart",
+            "url": "https://vercel.com/docs/ai-gateway/getting-started",
             "retrieved_at": "2026-09-26",
-            "title": "Fireworks quickstart"
+            "title": "Vercel AI Gateway — Getting started"
+          },
+          {
+            "type": "official",
+            "url": "https://ai-gateway.vercel.sh/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list (GET /v1/models)"
           }
         ],
         "updated_at": "2026-09-26"

@@ -1,0 +1,38 @@
+{
+  "model_id": "codellama-70b",
+  "name": "Code Llama 70B",
+  "display_name": "Code Llama 70B",
+  "model_provider": "meta",
+  "family": "Llama 2",
+  "version": "70b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Meta Code Llama 70B: a 70B-parameter Llama 2 fine-tune for code generation and infilling across many programming languages.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/meta/codellama-70b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

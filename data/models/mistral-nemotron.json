@@ -1,0 +1,39 @@
+{
+  "model_id": "mistral-nemotron",
+  "name": "Mistral Nemotron",
+  "display_name": "Mistral Nemotron",
+  "model_provider": "mistral",
+  "family": "Nemotron",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Mistral Nemotron: a Mistral × NVIDIA collaboration tuned for agentic workflows, coding, instruction following, and function calling.",
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "function_calling": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/mistralai/mistral-nemotron",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

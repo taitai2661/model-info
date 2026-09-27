@@ -1,0 +1,43 @@
+{
+  "model_id": "mistral-large-2-instruct",
+  "name": "Mistral Large 2 Instruct",
+  "display_name": "Mistral Large 2 Instruct",
+  "model_provider": "mistral",
+  "family": "Mistral",
+  "version": "2",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Mistral Large 2 Instruct: second-generation Mistral Large with stronger reasoning, code, and long-context support.",
+  "context": {
+    "window": 131072
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "function_calling": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/mistralai/mistral-large-2-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

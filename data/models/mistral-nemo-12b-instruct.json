@@ -1,0 +1,43 @@
+{
+  "model_id": "mistral-nemo-12b-instruct",
+  "name": "Mistral NeMo 12B Instruct",
+  "display_name": "Mistral NeMo 12B Instruct",
+  "model_provider": "mistral",
+  "family": "Mistral NeMo",
+  "version": "12b",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "Mistral NeMo 12B Instruct: a Mistral × NVIDIA collaboration that pairs Mistral's NeMo base with NVIDIA's instruction-tuning pipeline.",
+  "context": {
+    "window": 131072
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "function_calling": true,
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nv-mistralai/mistral-nemo-12b-instruct",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "model_id": "ai-synthetic-video-detector",
+  "name": "AI Synthetic Video Detector",
+  "display_name": "AI Synthetic Video Detector",
+  "model_provider": "nvidia",
+  "family": "Detect",
+  "version": null,
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "NVIDIA classifier microservice that flags synthetic (AI-generated) videos.",
+  "modalities": {
+    "input": ["video"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/ai-synthetic-video-detector",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}

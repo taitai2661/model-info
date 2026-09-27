@@ -1,0 +1,41 @@
+{
+  "model_id": "llama3-chatqa-1.5-70b",
+  "name": "Llama 3 ChatQA 1.5 70B",
+  "display_name": "Llama 3 ChatQA 1.5 70B",
+  "model_provider": "nvidia",
+  "family": "ChatQA",
+  "version": "1.5",
+  "status": "active",
+  "release_date": null,
+  "updated_at": "2026-09-26",
+  "description": "NVIDIA's ChatQA 1.5 70B: a Llama 3 70B fine-tune optimized for conversational question answering and long-form responses grounded in retrieved context.",
+  "context": {
+    "window": 131072
+  },
+  "modalities": {
+    "input": ["text"],
+    "output": ["text"]
+  },
+  "capabilities": {
+    "streaming": true
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://build.nvidia.com/nvidia/llama3-chatqa-1.5-70b",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM model page"
+    },
+    {
+      "type": "official",
+      "url": "https://integrate.api.nvidia.com/v1/models",
+      "retrieved_at": "2026-09-26",
+      "title": "NVIDIA NIM public model catalog"
+    }
+  ]
+}
