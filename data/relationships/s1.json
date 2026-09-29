@@ -1,6 +1,6 @@
 {
   "model_id": "s1",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-30",
   "providers": [
     {
       "provider_id": "vercel-ai-gateway",
@@ -37,7 +37,7 @@
         {
           "type": "official",
           "url": "https://api.featherless.ai/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         }
       ]

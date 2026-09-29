@@ -1,6 +1,6 @@
 {
   "model_id": "gemini-3.1-pro-preview",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-30",
   "providers": [
     {
       "provider_id": "google",
@@ -13,7 +13,7 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ],
@@ -52,7 +52,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -108,7 +108,7 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]

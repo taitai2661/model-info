@@ -1,6 +1,6 @@
 {
   "model_id": "qwen3-coder-480b-a35b-instruct",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-30",
   "providers": [
     {
       "provider_id": "novita",
@@ -19,7 +19,7 @@
         {
           "type": "official",
           "url": "https://api.novita.ai/v3/openai/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
         }
       ]
@@ -40,7 +40,7 @@
         {
           "type": "official",
           "url": "https://api.featherless.ai/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         },
         {

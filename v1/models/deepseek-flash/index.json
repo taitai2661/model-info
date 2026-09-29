@@ -127,16 +127,16 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ],
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.0295,
-        "output": 0.6,
-        "cached_input": 0.029
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.006
       },
       "context": {
         "window": 1048576,
@@ -210,7 +210,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ],
@@ -280,7 +280,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ],
@@ -350,7 +350,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ],

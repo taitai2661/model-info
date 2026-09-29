@@ -176,7 +176,7 @@ Collectors only **update facts they can read from the source**. Anything else ke
 
 ### Catalog import (`catalog`)
 
-`catalog` is the one collector that **does** create model documents, and it does so only for models that do not exist yet. It reads the two large public aggregator catalogues (Vercel AI Gateway and OpenRouter) and registers everything in them that is still missing — currently 459 models across 58 model providers, most of them long-tail open-weight releases, embedding models, image/video generation models and community fine-tunes. A model that is already registered is left completely alone, so hand-verified specs are never overwritten by a catalogue.
+`catalog` is the one collector that **does** create model documents, and it does so only for models that do not exist yet. It reads the two large public aggregator catalogues (Vercel AI Gateway and OpenRouter) and registers everything in them that is still missing — currently 470 models across 58 model providers, most of them long-tail open-weight releases, embedding models, image/video generation models and community fine-tunes. A model that is already registered is left completely alone, so hand-verified specs are never overwritten by a catalogue.
 
 Three rules keep it from turning the registry into a mirror of an upstream JSON blob:
 

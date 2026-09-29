@@ -1,6 +1,6 @@
 {
   "model_id": "gpt-5-codex",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-30",
   "providers": [
     {
       "provider_id": "openai",
@@ -29,7 +29,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]

@@ -52,10 +52,14 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ],
+      "context": {
+        "window": 163840,
+        "max_output_tokens": 147456
+      },
       "provider": {
         "id": "openrouter",
         "name": "OpenRouter",

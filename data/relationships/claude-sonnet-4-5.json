@@ -1,6 +1,6 @@
 {
   "model_id": "claude-sonnet-4-5",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-30",
   "providers": [
     {
       "provider_id": "anthropic",
@@ -17,10 +17,17 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
-      ]
+      ],
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3
+      }
     },
     {
       "provider_id": "opencode",
@@ -45,7 +52,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -63,6 +70,48 @@
         }
       ],
       "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: au.anthropic.claude-sonnet-4-5-20250929-v1:0, eu.anthropic.claude-sonnet-4-5-20250929-v1:0, jp.anthropic.claude-sonnet-4-5-20250929-v1:0, us.anthropic.claude-sonnet-4-5-20250929-v1:0; global inference profile ids: global.anthropic.claude-sonnet-4-5-20250929-v1:0."
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "anthropic/claude-sonnet-4.5",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 3.0,
+        "output": 15.0,
+        "cached_input": 0.3
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "anthropic/claude-sonnet-4.5:batch",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.5,
+        "output": 7.5,
+        "cached_input": 0.15
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 64000
+      }
     }
   ]
 }

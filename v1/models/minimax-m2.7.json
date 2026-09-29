@@ -98,15 +98,15 @@
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.3,
-        "output": 1.2,
-        "cached_input": 0.06
+        "input": 0.21,
+        "output": 0.84,
+        "cached_input": 0.042
       },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ],
@@ -182,7 +182,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ],
@@ -252,7 +252,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ],
@@ -311,7 +311,7 @@
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         }
       ],
@@ -438,7 +438,7 @@
         {
           "type": "official",
           "url": "https://api.novita.ai/v3/openai/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
         }
       ],
@@ -649,7 +649,7 @@
         {
           "type": "official",
           "url": "https://api.featherless.ai/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         },
         {

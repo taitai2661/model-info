@@ -1,6 +1,6 @@
 {
   "model_id": "glm-4.5v",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-30",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -20,7 +20,7 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
@@ -72,7 +72,7 @@
         {
           "type": "official",
           "url": "https://api.novita.ai/v3/openai/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
         }
       ]

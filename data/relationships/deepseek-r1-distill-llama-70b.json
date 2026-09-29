@@ -1,6 +1,6 @@
 {
   "model_id": "deepseek-r1-distill-llama-70b",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-30",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -70,8 +70,8 @@
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.65,
-        "output": 0.75
+        "input": 2.6,
+        "output": 3.0
       },
       "context": {
         "window": 32768
@@ -83,7 +83,7 @@
         {
           "type": "official",
           "url": "https://api.featherless.ai/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         },
         {
@@ -113,7 +113,7 @@
         {
           "type": "official",
           "url": "https://api.featherless.ai/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         }
       ]

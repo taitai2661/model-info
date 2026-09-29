@@ -1,6 +1,6 @@
 {
   "model_id": "qwen3-30b-a3b-instruct-2507",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-30",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -8,17 +8,21 @@
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.1,
-        "output": 0.3
+        "input": 0.04815,
+        "output": 0.19305
       },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
-      ]
+      ],
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 32000
+      }
     },
     {
       "provider_id": "featherless",
@@ -37,7 +41,7 @@
         {
           "type": "official",
           "url": "https://api.featherless.ai/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         }
       ]

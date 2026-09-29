@@ -77,7 +77,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -91,9 +91,9 @@
       "model_provider": "anthropic",
       "family": "Claude",
       "version": null,
-      "status": "preview",
-      "release_date": null,
-      "updated_at": "2026-09-26",
+      "status": "active",
+      "release_date": "2026-09-01",
+      "updated_at": "2026-09-29",
       "context": {
         "window": 1000000,
         "max_output_tokens": 128000
@@ -120,7 +120,7 @@
         {
           "type": "official",
           "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
-          "retrieved_at": "2026-09-26",
+          "retrieved_at": "2026-09-29",
           "title": "Model page"
         },
         {
@@ -128,6 +128,20 @@
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
           "retrieved_at": "2026-09-26",
           "title": "Anthropic pricing (first-party price)"
+        },
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
         }
       ],
       "capabilities": {
@@ -137,7 +151,8 @@
         "function_calling": true,
         "streaming": true,
         "json_mode": null
-      }
+      },
+      "description": "Claude Fable 5.1 improves on Fable 5 across long-running agentic coding, knowledge work, and research, following instructions precisely over sessions that run unattended for hours."
     },
     "relationship": {
       "provider_id": "opencode",
@@ -161,7 +176,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -176,8 +191,8 @@
       "family": "Claude",
       "version": null,
       "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
+      "release_date": "2025-10-15",
+      "updated_at": "2026-09-29",
       "description": "Claude model positioned as the fastest model with near-frontier intelligence.",
       "context": {
         "window": 200000,
@@ -227,6 +242,20 @@
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
           "retrieved_at": "2026-09-26",
           "title": "Pricing"
+        },
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
         }
       ]
     },
@@ -252,7 +281,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -267,8 +296,8 @@
       "family": "Claude",
       "version": null,
       "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
+      "release_date": "2025-11-24",
+      "updated_at": "2026-09-29",
       "context": {
         "window": 200000,
         "max_output_tokens": 64000
@@ -303,6 +332,20 @@
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
           "retrieved_at": "2026-09-26",
           "title": "Anthropic pricing (first-party price)"
+        },
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
         }
       ],
       "capabilities": {
@@ -312,7 +355,8 @@
         "function_calling": true,
         "streaming": true,
         "json_mode": null
-      }
+      },
+      "description": "Claude Opus 4.5 is Anthropic’s latest model in the Opus series, meant for demanding reasoning tasks and complex problem solving. This model has improvements in general intelligence and vision compared to previous iterations. In addition, it is suited for difficult coding tasks and agentic workflows, especially those with computer use and tool use, and can effectively handle context usage and external memory files."
     },
     "relationship": {
       "provider_id": "opencode",
@@ -336,7 +380,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -351,8 +395,8 @@
       "family": "Claude",
       "version": null,
       "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
+      "release_date": "2026-02-05",
+      "updated_at": "2026-09-29",
       "context": {
         "window": 1000000,
         "max_output_tokens": 128000
@@ -387,6 +431,20 @@
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
           "retrieved_at": "2026-09-26",
           "title": "Anthropic pricing (first-party price)"
+        },
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
         }
       ],
       "capabilities": {
@@ -396,7 +454,8 @@
         "function_calling": true,
         "streaming": true,
         "json_mode": null
-      }
+      },
+      "description": "Opus 4.6 is the world’s best model for coding and professional work, built to power agents that take on whole categories of real-world work. It excels across the entire SDLC, breaking through on hard problems, identifying complex bugs, and demonstrating deeper codebase understanding. It also delivers a step-change in knowledge work, with near-production-ready documents, presentations, and spreadsheets on the first pass."
     },
     "relationship": {
       "provider_id": "opencode",
@@ -420,7 +479,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -435,8 +494,8 @@
       "family": "Claude",
       "version": null,
       "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
+      "release_date": "2026-04-16",
+      "updated_at": "2026-09-29",
       "context": {
         "window": 1000000,
         "max_output_tokens": 128000
@@ -471,6 +530,20 @@
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
           "retrieved_at": "2026-09-26",
           "title": "Anthropic pricing (first-party price)"
+        },
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
         }
       ],
       "capabilities": {
@@ -480,7 +553,8 @@
         "function_calling": true,
         "streaming": true,
         "json_mode": null
-      }
+      },
+      "description": "Opus 4.7 builds on the coding and agentic strengths of Opus 4.6 with stronger performance on complex, multi-step tasks and more reliable agentic execution. It also brings improved performance on knowledge work, from drafting documents to building presentations and analyzing data."
     },
     "relationship": {
       "provider_id": "opencode",
@@ -504,7 +578,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -519,8 +593,8 @@
       "family": "Claude",
       "version": null,
       "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
+      "release_date": "2026-05-28",
+      "updated_at": "2026-09-29",
       "context": {
         "window": 1000000,
         "max_output_tokens": 128000
@@ -555,6 +629,20 @@
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
           "retrieved_at": "2026-09-26",
           "title": "Anthropic pricing (first-party price)"
+        },
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
         }
       ],
       "capabilities": {
@@ -564,7 +652,8 @@
         "function_calling": true,
         "streaming": true,
         "json_mode": null
-      }
+      },
+      "description": "Opus 4.8 is a focused upgrade to Opus 4.7 and is Anthropic's best generally available model for coding, agentic tasks, and enterprise workflows. It builds on the strengths of previous Opus models with stronger performance on complex, multi-step coding tasks. Anthropic recommends using it on long-horizon coding and agentic tasks. It is also stronger on professional work, including document drafting, data analysis, and presentations."
     },
     "relationship": {
       "provider_id": "opencode",
@@ -588,7 +677,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -673,7 +762,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -688,8 +777,8 @@
       "family": "Claude",
       "version": null,
       "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
+      "release_date": "2026-09-22",
+      "updated_at": "2026-09-29",
       "description": "Claude model for long-running agentic coding and knowledge work.",
       "context": {
         "window": 1000000,
@@ -730,15 +819,29 @@
       "sources": [
         {
           "type": "official",
-          "url": "https://platform.claude.com/docs/en/models/overview",
-          "retrieved_at": "2026-09-26",
-          "title": "Models overview"
+          "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+          "retrieved_at": "2026-09-29",
+          "title": "Model page"
         },
         {
           "type": "official",
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
           "retrieved_at": "2026-09-26",
           "title": "Pricing"
+        },
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
         }
       ]
     },
@@ -764,7 +867,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -843,7 +946,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -858,8 +961,8 @@
       "family": "Claude",
       "version": null,
       "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
+      "release_date": "2025-09-29",
+      "updated_at": "2026-09-29",
       "context": {
         "window": 200000,
         "max_output_tokens": 64000
@@ -894,6 +997,20 @@
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
           "retrieved_at": "2026-09-26",
           "title": "Anthropic pricing (first-party price)"
+        },
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
         }
       ],
       "capabilities": {
@@ -903,7 +1020,8 @@
         "function_calling": true,
         "streaming": true,
         "json_mode": null
-      }
+      },
+      "description": "Claude Sonnet 4.5 is the newest model in the Sonnet series, offering improvements and updates over Sonnet 4."
     },
     "relationship": {
       "provider_id": "opencode",
@@ -928,7 +1046,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -943,8 +1061,8 @@
       "family": "Claude",
       "version": null,
       "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
+      "release_date": "2026-02-17",
+      "updated_at": "2026-09-29",
       "context": {
         "window": 1000000,
         "max_output_tokens": 128000
@@ -979,6 +1097,20 @@
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
           "retrieved_at": "2026-09-26",
           "title": "Anthropic pricing (first-party price)"
+        },
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
         }
       ],
       "capabilities": {
@@ -988,7 +1120,8 @@
         "function_calling": true,
         "streaming": true,
         "json_mode": null
-      }
+      },
+      "description": "Claude Sonnet 4.6 is the most capable Sonnet-class model yet, with frontier performance across coding, agents, and professional work. It excels at iterative development, complex codebase navigation, end-to-end project management with memory, polished document creation, and confident computer use for web QA and workflow automation."
     },
     "relationship": {
       "provider_id": "opencode",
@@ -1012,7 +1145,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -1103,7 +1236,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -1200,7 +1333,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -1284,7 +1417,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -1363,7 +1496,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -1449,7 +1582,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -1545,7 +1678,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -1638,7 +1771,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -1738,7 +1871,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -1831,7 +1964,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -1924,7 +2057,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2018,7 +2151,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2112,7 +2245,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2211,7 +2344,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2292,7 +2425,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2371,7 +2504,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2450,7 +2583,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2529,7 +2662,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2610,7 +2743,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2694,7 +2827,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2780,7 +2913,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2863,7 +2996,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -2946,7 +3079,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3031,7 +3164,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3116,7 +3249,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3201,7 +3334,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3284,7 +3417,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3370,7 +3503,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3453,7 +3586,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3537,7 +3670,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3620,7 +3753,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3703,7 +3836,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3785,7 +3918,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3869,7 +4002,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -3951,7 +4084,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4038,7 +4171,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4125,7 +4258,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4212,7 +4345,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4318,7 +4451,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4424,7 +4557,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4530,7 +4663,85 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
+      "display_name": "GPT-6.1 Sol",
+      "model_provider": "openai",
+      "family": "GPT-6",
+      "version": null,
+      "status": "active",
+      "release_date": "2026-09-29",
+      "updated_at": "2026-09-30",
+      "description": "OpenAI reasoning model for complex coding, computer use, and professional workflows, delivering near-Astra performance at a lower cost.",
+      "context": {
+        "window": 1050000,
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 10.0,
+        "cached_input": 0.1,
+        "cached_write": 2.5
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+        },
+        {
+          "type": "official",
+          "url": "https://cdn.openai.com/pdf/38e3efcf-545e-44cd-99ec-2b7eb395f4cc/oai_GPT_6_1_Sol.pdf",
+          "retrieved_at": "2026-09-30",
+          "title": "GPT-6.1 Sol System Card",
+          "notes": "Announced September 29, 2026."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode",
+      "model_id": "gpt-6.1-sol",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4613,7 +4824,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4696,7 +4907,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4779,7 +4990,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4861,7 +5072,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4915,7 +5126,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -4969,7 +5180,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5038,7 +5249,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5096,7 +5307,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5163,7 +5374,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5224,7 +5435,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5273,7 +5484,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5344,7 +5555,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5414,7 +5625,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5483,7 +5694,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5549,7 +5760,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5617,7 +5828,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5687,7 +5898,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5752,7 +5963,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5828,7 +6039,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5905,7 +6116,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -5972,7 +6183,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -6039,7 +6250,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -6087,7 +6298,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -6156,7 +6367,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -6225,7 +6436,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -6300,7 +6511,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]

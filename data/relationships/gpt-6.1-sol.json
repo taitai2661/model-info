@@ -1,0 +1,104 @@
+{
+  "model_id": "gpt-6.1-sol",
+  "updated_at": "2026-09-30",
+  "providers": [
+    {
+      "provider_id": "openai",
+      "model_id": "gpt-6.1-sol",
+      "notes": "Use the Responses API for tool calling; Chat Completions is supported without tool calling."
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-6.1-sol",
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "openai/gpt-6.1-sol",
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model id, context window, modalities, capabilities, and prices from the Vercel AI Gateway public model list (GET /v1/models). Standard rates match OpenAI; long-context and service-tier pricing varies."
+        },
+        {
+          "type": "official",
+          "url": "https://vercel.com/changelog/gpt-6-1-sol-now-available-on-ai-gateway",
+          "retrieved_at": "2026-09-30",
+          "title": "GPT-6.1 Sol now available on AI Gateway"
+        }
+      ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-6.1-sol:batch",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.0,
+        "output": 5.0,
+        "cached_input": 0.05,
+        "cached_write": 1.25
+      },
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "notes": "Prompts over 272K input tokens have higher batch rates.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "gpt-6.1-sol",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    }
+  ]
+}

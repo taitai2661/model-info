@@ -50,6 +50,15 @@ def test_openrouter_normalize_prices_are_per_million():
     assert patch["modalities"] == {"input": ["text", "image"], "output": ["text"]}
 
 
+def test_openrouter_drops_negative_price_sentinels():
+    payload = {"data": [{
+        "id": "jev-router",
+        "pricing": {"prompt": "-1", "completion": "-1"},
+    }]}
+    results = OpenRouterCollector().normalize(payload)
+    assert "pricing" not in results["provider_models"]["jev-router"]
+
+
 def test_openrouter_apply_reports_unmatched_ids(repo_root, sandbox):
     # The context window is deliberately not the stored one so the run always
     # has something to write, whatever state data/ is in.

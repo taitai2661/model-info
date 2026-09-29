@@ -40,11 +40,10 @@
       "model_id": "typesafe/jev-router",
       "sources": [
         {
-          "type": "documentation",
+          "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ],
       "provider": {

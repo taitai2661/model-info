@@ -7,8 +7,8 @@
     "family": "Claude",
     "version": null,
     "status": "active",
-    "release_date": null,
-    "updated_at": "2026-09-26",
+    "release_date": "2026-04-16",
+    "updated_at": "2026-09-29",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -43,6 +43,20 @@
         "url": "https://platform.claude.com/docs/en/about-claude/pricing",
         "retrieved_at": "2026-09-26",
         "title": "Anthropic pricing (first-party price)"
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Vercel AI Gateway public model list",
+        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
     "capabilities": {
@@ -52,7 +66,8 @@
       "function_calling": true,
       "streaming": true,
       "json_mode": null
-    }
+    },
+    "description": "Opus 4.7 builds on the coding and agentic strengths of Opus 4.6 with stronger performance on complex, multi-step tasks and more reliable agentic execution. It also brings improved performance on knowledge work, from drafting documents to building presentations and analyzing data."
   },
   "providers": [
     {
@@ -115,10 +130,17 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ],
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 5.0,
+        "output": 25.0,
+        "cached_input": 0.5
+      },
       "provider": {
         "id": "openrouter",
         "name": "OpenRouter",
@@ -188,7 +210,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ],
@@ -319,7 +341,7 @@
         {
           "type": "official",
           "url": "https://api.deepinfra.com/v1/openai/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids, context window, max output tokens and prices from the public model list (GET /v1/openai/models, no authentication required). Despite the key names, input_tokens / output_tokens / cache_read_tokens are prices per 1M tokens. Non-token prices (per image, per character, per second of audio) are not recorded."
         }
       ],
@@ -373,6 +395,141 @@
           }
         ],
         "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "anthropic/claude-opus-4.7",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 5.0,
+        "output": 25.0,
+        "cached_input": 0.5
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ],
+      "provider": {
+        "id": "vercel-ai-gateway",
+        "name": "Vercel AI Gateway",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://vercel.com/docs/ai-gateway",
+        "documentation_url": "https://vercel.com/docs/ai-gateway/getting-started",
+        "status": "active",
+        "description": "Vercel's unified AI Gateway: a single OpenAI-compatible endpoint that routes to hundreds of third-party models across OpenAI, Anthropic, Google, Meta, Mistral, xAI, DeepSeek, Moonshot AI and other upstream providers; supports OIDC tokens and provider-specific BYOK keys.",
+        "api": {
+          "base_url": "https://ai-gateway.vercel.sh/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization",
+            "notes": "Either a Vercel OIDC token issued via the AI Gateway (Authorization: Bearer <oidc>), or a per-provider BYOK key (Authorization: Bearer <openai|anthropic|...>). The active provider is selected by the model id prefix."
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "models": "/models",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "json_mode": true,
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://vercel.com/docs/ai-gateway/getting-started",
+            "retrieved_at": "2026-09-26",
+            "title": "Vercel AI Gateway — Getting started"
+          },
+          {
+            "type": "official",
+            "url": "https://ai-gateway.vercel.sh/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list (GET /v1/models)"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "anthropic/claude-opus-4.7:batch",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.5,
+        "output": 12.5,
+        "cached_input": 0.25
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
       }
     }
   ]

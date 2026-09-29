@@ -6,8 +6,8 @@
   "family": "Claude",
   "version": null,
   "status": "active",
-  "release_date": null,
-  "updated_at": "2026-09-26",
+  "release_date": "2025-10-15",
+  "updated_at": "2026-09-29",
   "description": "Claude model positioned as the fastest model with near-frontier intelligence.",
   "context": {
     "window": 200000,
@@ -57,6 +57,20 @@
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "retrieved_at": "2026-09-26",
       "title": "Pricing"
+    },
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    },
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
     }
   ]
 }

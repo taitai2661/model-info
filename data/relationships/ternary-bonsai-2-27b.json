@@ -1,6 +1,6 @@
 {
   "model_id": "ternary-bonsai-2-27b",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-30",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -9,13 +9,14 @@
         "currency": "USD",
         "unit": "1M_tokens",
         "input": 0.075,
-        "output": 0.5
+        "output": 0.5,
+        "cached_input": 0.0375
       },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]

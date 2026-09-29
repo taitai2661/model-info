@@ -71,13 +71,14 @@
         "output": 0.6
       },
       "context": {
-        "window": 131072
+        "window": 131072,
+        "max_output_tokens": 65536
       },
       "sources": [
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         },
         {
@@ -152,13 +153,14 @@
         "output": 0.3
       },
       "context": {
-        "window": 131072
+        "window": 131072,
+        "max_output_tokens": 65536
       },
       "sources": [
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         },
         {
@@ -233,13 +235,14 @@
         "output": 0.3
       },
       "context": {
-        "window": 131072
+        "window": 131072,
+        "max_output_tokens": 65536
       },
       "sources": [
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         },
         {
@@ -334,7 +337,7 @@
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         }
       ]
@@ -390,7 +393,7 @@
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         }
       ]
@@ -480,7 +483,7 @@
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         }
       ]

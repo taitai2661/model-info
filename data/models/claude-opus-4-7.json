@@ -6,8 +6,8 @@
   "family": "Claude",
   "version": null,
   "status": "active",
-  "release_date": null,
-  "updated_at": "2026-09-26",
+  "release_date": "2026-04-16",
+  "updated_at": "2026-09-29",
   "context": {
     "window": 1000000,
     "max_output_tokens": 128000
@@ -42,6 +42,20 @@
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "retrieved_at": "2026-09-26",
       "title": "Anthropic pricing (first-party price)"
+    },
+    {
+      "type": "documentation",
+      "url": "https://openrouter.ai/api/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "OpenRouter public model list",
+      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    },
+    {
+      "type": "documentation",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Vercel AI Gateway public model list",
+      "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
     }
   ],
   "capabilities": {
@@ -51,5 +65,6 @@
     "function_calling": true,
     "streaming": true,
     "json_mode": null
-  }
+  },
+  "description": "Opus 4.7 builds on the coding and agentic strengths of Opus 4.6 with stronger performance on complex, multi-step tasks and more reliable agentic execution. It also brings improved performance on knowledge work, from drafting documents to building presentations and analyzing data."
 }

@@ -514,9 +514,9 @@
     "model_provider": "anthropic",
     "family": "Claude",
     "version": null,
-    "status": "preview",
-    "release_date": null,
-    "updated_at": "2026-09-26",
+    "status": "active",
+    "release_date": "2026-09-01",
+    "updated_at": "2026-09-29",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -543,7 +543,7 @@
       {
         "type": "official",
         "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
-        "retrieved_at": "2026-09-26",
+        "retrieved_at": "2026-09-29",
         "title": "Model page"
       },
       {
@@ -551,6 +551,20 @@
         "url": "https://platform.claude.com/docs/en/about-claude/pricing",
         "retrieved_at": "2026-09-26",
         "title": "Anthropic pricing (first-party price)"
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Vercel AI Gateway public model list",
+        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
     "capabilities": {
@@ -560,7 +574,8 @@
       "function_calling": true,
       "streaming": true,
       "json_mode": null
-    }
+    },
+    "description": "Claude Fable 5.1 improves on Fable 5 across long-running agentic coding, knowledge work, and research, following instructions precisely over sessions that run unattended for hours."
   },
   {
     "model_id": "claude-fable-5.1",
@@ -568,7 +583,6 @@
     "model_provider": "anthropic",
     "status": "active",
     "display_name": "Claude Fable 5.1",
-    "description": "Claude Fable 5.1 improves on Fable 5 across long-running agentic coding, knowledge work, and research, following instructions precisely over sessions that run unattended for hours.",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -585,39 +599,30 @@
     },
     "capabilities": {
       "reasoning": true,
-      "tool_use": true,
-      "vision": true,
+      "json_mode": true,
       "structured_output": true,
-      "json_mode": true
+      "tool_use": true
     },
     "availability": {
       "api": true
     },
-    "release_date": "2026-08-31",
     "sources": [
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "claude-haiku-4-5",
@@ -627,8 +632,8 @@
     "family": "Claude",
     "version": null,
     "status": "active",
-    "release_date": null,
-    "updated_at": "2026-09-26",
+    "release_date": "2025-10-15",
+    "updated_at": "2026-09-29",
     "description": "Claude model positioned as the fastest model with near-frontier intelligence.",
     "context": {
       "window": 200000,
@@ -678,6 +683,20 @@
         "url": "https://platform.claude.com/docs/en/about-claude/pricing",
         "retrieved_at": "2026-09-26",
         "title": "Pricing"
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Vercel AI Gateway public model list",
+        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ]
   },
@@ -687,7 +706,6 @@
     "model_provider": "anthropic",
     "status": "active",
     "display_name": "Claude Haiku 4.5",
-    "description": "Claude Haiku 4.5 matches Sonnet 4's performance on coding, computer use, and agent tasks at substantially lower cost and faster speeds. It delivers near-frontier performance and Claude’s unique character at a price point that works for scaled sub-agent deployments, free tier products, and intelligence-sensitive applications with budget constraints.",
     "context": {
       "window": 200000,
       "max_output_tokens": 64000
@@ -704,39 +722,30 @@
     },
     "capabilities": {
       "reasoning": true,
-      "tool_use": true,
-      "vision": true,
+      "json_mode": true,
       "structured_output": true,
-      "json_mode": true
+      "tool_use": true
     },
     "availability": {
       "api": true
     },
-    "release_date": "2025-10-15",
     "sources": [
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "claude-opus-4",
@@ -787,8 +796,8 @@
     "family": "Claude",
     "version": null,
     "status": "active",
-    "release_date": null,
-    "updated_at": "2026-09-26",
+    "release_date": "2025-11-24",
+    "updated_at": "2026-09-29",
     "context": {
       "window": 200000,
       "max_output_tokens": 64000
@@ -823,6 +832,20 @@
         "url": "https://platform.claude.com/docs/en/about-claude/pricing",
         "retrieved_at": "2026-09-26",
         "title": "Anthropic pricing (first-party price)"
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Vercel AI Gateway public model list",
+        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
     "capabilities": {
@@ -832,7 +855,8 @@
       "function_calling": true,
       "streaming": true,
       "json_mode": null
-    }
+    },
+    "description": "Claude Opus 4.5 is Anthropic’s latest model in the Opus series, meant for demanding reasoning tasks and complex problem solving. This model has improvements in general intelligence and vision compared to previous iterations. In addition, it is suited for difficult coding tasks and agentic workflows, especially those with computer use and tool use, and can effectively handle context usage and external memory files."
   },
   {
     "model_id": "claude-opus-4-6",
@@ -842,8 +866,8 @@
     "family": "Claude",
     "version": null,
     "status": "active",
-    "release_date": null,
-    "updated_at": "2026-09-26",
+    "release_date": "2026-02-05",
+    "updated_at": "2026-09-29",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -878,6 +902,20 @@
         "url": "https://platform.claude.com/docs/en/about-claude/pricing",
         "retrieved_at": "2026-09-26",
         "title": "Anthropic pricing (first-party price)"
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Vercel AI Gateway public model list",
+        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
     "capabilities": {
@@ -887,7 +925,8 @@
       "function_calling": true,
       "streaming": true,
       "json_mode": null
-    }
+    },
+    "description": "Opus 4.6 is the world’s best model for coding and professional work, built to power agents that take on whole categories of real-world work. It excels across the entire SDLC, breaking through on hard problems, identifying complex bugs, and demonstrating deeper codebase understanding. It also delivers a step-change in knowledge work, with near-production-ready documents, presentations, and spreadsheets on the first pass."
   },
   {
     "model_id": "claude-opus-4-7",
@@ -897,8 +936,8 @@
     "family": "Claude",
     "version": null,
     "status": "active",
-    "release_date": null,
-    "updated_at": "2026-09-26",
+    "release_date": "2026-04-16",
+    "updated_at": "2026-09-29",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -933,6 +972,20 @@
         "url": "https://platform.claude.com/docs/en/about-claude/pricing",
         "retrieved_at": "2026-09-26",
         "title": "Anthropic pricing (first-party price)"
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Vercel AI Gateway public model list",
+        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
     "capabilities": {
@@ -942,7 +995,8 @@
       "function_calling": true,
       "streaming": true,
       "json_mode": null
-    }
+    },
+    "description": "Opus 4.7 builds on the coding and agentic strengths of Opus 4.6 with stronger performance on complex, multi-step tasks and more reliable agentic execution. It also brings improved performance on knowledge work, from drafting documents to building presentations and analyzing data."
   },
   {
     "model_id": "claude-opus-4-8",
@@ -952,8 +1006,8 @@
     "family": "Claude",
     "version": null,
     "status": "active",
-    "release_date": null,
-    "updated_at": "2026-09-26",
+    "release_date": "2026-05-28",
+    "updated_at": "2026-09-29",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -988,6 +1042,20 @@
         "url": "https://platform.claude.com/docs/en/about-claude/pricing",
         "retrieved_at": "2026-09-26",
         "title": "Anthropic pricing (first-party price)"
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Vercel AI Gateway public model list",
+        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
     "capabilities": {
@@ -997,7 +1065,8 @@
       "function_calling": true,
       "streaming": true,
       "json_mode": null
-    }
+    },
+    "description": "Opus 4.8 is a focused upgrade to Opus 4.7 and is Anthropic's best generally available model for coding, agentic tasks, and enterprise workflows. It builds on the strengths of previous Opus models with stronger performance on complex, multi-step coding tasks. Anthropic recommends using it on long-horizon coding and agentic tasks. It is also stronger on professional work, including document drafting, data analysis, and presentations."
   },
   {
     "model_id": "claude-opus-4.1",
@@ -1050,16 +1119,15 @@
     "model_provider": "anthropic",
     "status": "active",
     "display_name": "Claude Opus 4.5",
-    "description": "Claude Opus 4.5 is Anthropic’s latest model in the Opus series, meant for demanding reasoning tasks and complex problem solving. This model has improvements in general intelligence and vision compared to previous iterations. In addition, it is suited for difficult coding tasks and agentic workflows, especially those with computer use and tool use, and can effectively handle context usage and external memory files.",
     "context": {
       "window": 200000,
       "max_output_tokens": 64000
     },
     "modalities": {
       "input": [
-        "text",
+        "file",
         "image",
-        "file"
+        "text"
       ],
       "output": [
         "text"
@@ -1067,39 +1135,30 @@
     },
     "capabilities": {
       "reasoning": true,
-      "tool_use": true,
-      "vision": true,
+      "json_mode": true,
       "structured_output": true,
-      "json_mode": true
+      "tool_use": true
     },
     "availability": {
       "api": true
     },
-    "release_date": "2025-11-24",
     "sources": [
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "claude-opus-4.6",
@@ -1107,7 +1166,6 @@
     "model_provider": "anthropic",
     "status": "active",
     "display_name": "Claude Opus 4.6",
-    "description": "Opus 4.6 is the world’s best model for coding and professional work, built to power agents that take on whole categories of real-world work. It excels across the entire SDLC, breaking through on hard problems, identifying complex bugs, and demonstrating deeper codebase understanding. It also delivers a step-change in knowledge work, with near-production-ready documents, presentations, and spreadsheets on the first pass.",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -1123,40 +1181,31 @@
       ]
     },
     "capabilities": {
-      "tool_use": true,
       "reasoning": true,
-      "vision": true,
+      "json_mode": true,
       "structured_output": true,
-      "json_mode": true
+      "tool_use": true
     },
     "availability": {
       "api": true
     },
-    "release_date": "2026-02-05",
     "sources": [
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "claude-opus-4.7",
@@ -1164,7 +1213,6 @@
     "model_provider": "anthropic",
     "status": "active",
     "display_name": "Claude Opus 4.7",
-    "description": "Opus 4.7 builds on the coding and agentic strengths of Opus 4.6 with stronger performance on complex, multi-step tasks and more reliable agentic execution. It also brings improved performance on knowledge work, from drafting documents to building presentations and analyzing data.",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -1180,40 +1228,31 @@
       ]
     },
     "capabilities": {
-      "tool_use": true,
       "reasoning": true,
-      "vision": true,
+      "json_mode": true,
       "structured_output": true,
-      "json_mode": true
+      "tool_use": true
     },
     "availability": {
       "api": true
     },
-    "release_date": "2026-04-16",
     "sources": [
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "claude-opus-4.8",
@@ -1221,7 +1260,6 @@
     "model_provider": "anthropic",
     "status": "active",
     "display_name": "Claude Opus 4.8",
-    "description": "Opus 4.8 is a focused upgrade to Opus 4.7 and is Anthropic's best generally available model for coding, agentic tasks, and enterprise workflows. It builds on the strengths of previous Opus models with stronger performance on complex, multi-step coding tasks. Anthropic recommends using it on long-horizon coding and agentic tasks. It is also stronger on professional work, including document drafting, data analysis, and presentations.",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -1237,40 +1275,31 @@
       ]
     },
     "capabilities": {
-      "tool_use": true,
       "reasoning": true,
-      "vision": true,
+      "json_mode": true,
       "structured_output": true,
-      "json_mode": true
+      "tool_use": true
     },
     "availability": {
       "api": true
     },
-    "release_date": "2026-05-28",
     "sources": [
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "claude-opus-4.8-fast",
@@ -1379,8 +1408,8 @@
     "family": "Claude",
     "version": null,
     "status": "active",
-    "release_date": null,
-    "updated_at": "2026-09-26",
+    "release_date": "2026-09-22",
+    "updated_at": "2026-09-29",
     "description": "Claude model for long-running agentic coding and knowledge work.",
     "context": {
       "window": 1000000,
@@ -1421,15 +1450,29 @@
     "sources": [
       {
         "type": "official",
-        "url": "https://platform.claude.com/docs/en/models/overview",
-        "retrieved_at": "2026-09-26",
-        "title": "Models overview"
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+        "retrieved_at": "2026-09-29",
+        "title": "Model page"
       },
       {
         "type": "official",
         "url": "https://platform.claude.com/docs/en/about-claude/pricing",
         "retrieved_at": "2026-09-26",
         "title": "Pricing"
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Vercel AI Gateway public model list",
+        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ]
   },
@@ -1482,7 +1525,6 @@
     "model_provider": "anthropic",
     "status": "active",
     "display_name": "Claude Opus 5.5",
-    "description": "Claude Opus 5.5 is a step-change improvement over Opus 5 for agentic coding, long-running agentic tasks, knowledge work, communication, and vision. It is more token-efficient per completed task and reports progress, findings, and next steps in clear language.",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -1499,37 +1541,30 @@
     },
     "capabilities": {
       "reasoning": true,
-      "tool_use": true,
-      "vision": true
+      "json_mode": true,
+      "structured_output": true,
+      "tool_use": true
     },
     "availability": {
       "api": true
     },
-    "release_date": "2026-09-22",
     "sources": [
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "claude-opus-5.5-fast",
@@ -1635,8 +1670,8 @@
     "family": "Claude",
     "version": null,
     "status": "active",
-    "release_date": null,
-    "updated_at": "2026-09-26",
+    "release_date": "2025-09-29",
+    "updated_at": "2026-09-29",
     "context": {
       "window": 200000,
       "max_output_tokens": 64000
@@ -1671,6 +1706,20 @@
         "url": "https://platform.claude.com/docs/en/about-claude/pricing",
         "retrieved_at": "2026-09-26",
         "title": "Anthropic pricing (first-party price)"
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Vercel AI Gateway public model list",
+        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
     "capabilities": {
@@ -1680,7 +1729,8 @@
       "function_calling": true,
       "streaming": true,
       "json_mode": null
-    }
+    },
+    "description": "Claude Sonnet 4.5 is the newest model in the Sonnet series, offering improvements and updates over Sonnet 4."
   },
   {
     "model_id": "claude-sonnet-4-6",
@@ -1690,8 +1740,8 @@
     "family": "Claude",
     "version": null,
     "status": "active",
-    "release_date": null,
-    "updated_at": "2026-09-26",
+    "release_date": "2026-02-17",
+    "updated_at": "2026-09-29",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -1726,6 +1776,20 @@
         "url": "https://platform.claude.com/docs/en/about-claude/pricing",
         "retrieved_at": "2026-09-26",
         "title": "Anthropic pricing (first-party price)"
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Vercel AI Gateway public model list",
+        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
     "capabilities": {
@@ -1735,7 +1799,8 @@
       "function_calling": true,
       "streaming": true,
       "json_mode": null
-    }
+    },
+    "description": "Claude Sonnet 4.6 is the most capable Sonnet-class model yet, with frontier performance across coding, agents, and professional work. It excels at iterative development, complex codebase navigation, end-to-end project management with memory, polished document creation, and confident computer use for web QA and workflow automation."
   },
   {
     "model_id": "claude-sonnet-4.5",
@@ -1743,7 +1808,6 @@
     "model_provider": "anthropic",
     "status": "active",
     "display_name": "Claude Sonnet 4.5",
-    "description": "Claude Sonnet 4.5 is the newest model in the Sonnet series, offering improvements and updates over Sonnet 4.",
     "context": {
       "window": 1000000,
       "max_output_tokens": 64000
@@ -1760,39 +1824,30 @@
     },
     "capabilities": {
       "reasoning": true,
-      "tool_use": true,
-      "vision": true,
+      "json_mode": true,
       "structured_output": true,
-      "json_mode": true
+      "tool_use": true
     },
     "availability": {
       "api": true
     },
-    "release_date": "2025-09-29",
     "sources": [
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "claude-sonnet-4.6",
@@ -1800,7 +1855,6 @@
     "model_provider": "anthropic",
     "status": "active",
     "display_name": "Claude Sonnet 4.6",
-    "description": "Claude Sonnet 4.6 is the most capable Sonnet-class model yet, with frontier performance across coding, agents, and professional work. It excels at iterative development, complex codebase navigation, end-to-end project management with memory, polished document creation, and confident computer use for web QA and workflow automation.",
     "context": {
       "window": 1000000,
       "max_output_tokens": 128000
@@ -1817,39 +1871,30 @@
     },
     "capabilities": {
       "reasoning": true,
-      "tool_use": true,
-      "vision": true,
+      "json_mode": true,
       "structured_output": true,
-      "json_mode": true
+      "tool_use": true
     },
     "availability": {
       "api": true
     },
-    "release_date": "2026-02-17",
     "sources": [
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
         "type": "documentation",
         "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
+        "retrieved_at": "2026-09-30",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "claude-sonnet-5",
@@ -1912,6 +1957,53 @@
         "title": "Pricing"
       }
     ]
+  },
+  {
+    "model_id": "claude-sonnet-5.5",
+    "name": "Claude Sonnet 5.5",
+    "model_provider": "anthropic",
+    "status": "active",
+    "display_name": "Claude Sonnet 5.5",
+    "context": {
+      "window": 1000000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "reasoning": true,
+      "json_mode": true,
+      "structured_output": true,
+      "tool_use": true
+    },
+    "availability": {
+      "api": true
+    },
+    "sources": [
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-30",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-30",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      }
+    ],
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "codegemma-1.1-7b",
@@ -10322,6 +10414,117 @@
       }
     ],
     "updated_at": "2026-09-27"
+  },
+  {
+    "model_id": "gpt-6.1-sol",
+    "name": "GPT-6.1 Sol",
+    "display_name": "GPT-6.1 Sol",
+    "model_provider": "openai",
+    "family": "GPT-6",
+    "version": null,
+    "status": "active",
+    "release_date": "2026-09-29",
+    "updated_at": "2026-09-30",
+    "description": "OpenAI reasoning model for complex coding, computer use, and professional workflows, delivering near-Astra performance at a lower cost.",
+    "context": {
+      "window": 1050000,
+      "max_input_tokens": 922000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2.0,
+      "output": 10.0,
+      "cached_input": 0.1,
+      "cached_write": 2.5
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+        "retrieved_at": "2026-09-30",
+        "title": "Model page",
+        "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+      },
+      {
+        "type": "official",
+        "url": "https://cdn.openai.com/pdf/38e3efcf-545e-44cd-99ec-2b7eb395f4cc/oai_GPT_6_1_Sol.pdf",
+        "retrieved_at": "2026-09-30",
+        "title": "GPT-6.1 Sol System Card",
+        "notes": "Announced September 29, 2026."
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-6.1-sol-pro",
+    "name": "GPT-6.1 Sol Pro",
+    "model_provider": "openai",
+    "status": "active",
+    "display_name": "GPT-6.1 Sol Pro",
+    "context": {
+      "window": 1050000,
+      "max_output_tokens": 128000
+    },
+    "modalities": {
+      "input": [
+        "file",
+        "image",
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "reasoning": true,
+      "json_mode": true,
+      "structured_output": true,
+      "tool_use": true
+    },
+    "availability": {
+      "api": true
+    },
+    "sources": [
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-30",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "documentation",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-30",
+        "title": "OpenRouter public model list",
+        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      }
+    ],
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "gpt-audio",

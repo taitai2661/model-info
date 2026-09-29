@@ -1,6 +1,6 @@
 {
   "model_id": "gpt-oss-safeguard-20b",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-30",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -20,7 +20,7 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
@@ -53,13 +53,14 @@
         "output": 0.3
       },
       "context": {
-        "window": 131072
+        "window": 131072,
+        "max_output_tokens": 65536
       },
       "sources": [
         {
           "type": "official",
           "url": "https://console.groq.com/docs/models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
         },
         {
@@ -91,7 +92,7 @@
         {
           "type": "official",
           "url": "https://api.featherless.ai/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-09-30",
           "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         }
       ]

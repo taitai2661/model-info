@@ -7,9 +7,12 @@ def _per_million(value):
     if value in (None, ""):
         return None
     try:
-        return round(float(value) * 1_000_000, 6)
+        price = float(value)
     except (TypeError, ValueError):
         return None
+    # OpenRouter uses a negative sentinel for dynamically routed or unpriced
+    # models; it is not a charge and must not become a negative token price.
+    return round(price * 1_000_000, 6) if price >= 0 else None
 
 
 class OpenRouterCollector(BaseCollector):
