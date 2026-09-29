@@ -1,0 +1,40 @@
+{
+  "provider": {
+    "id": "azure-openai",
+    "name": "Azure OpenAI",
+    "types": [
+      "api_provider",
+      "platform"
+    ],
+    "website": "https://azure.microsoft.com/en-us/products/ai-services/openai-service",
+    "documentation_url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/",
+    "status": "active",
+    "description": "Microsoft Azure's OpenAI service, providing access to OpenAI models with enterprise-grade security and compliance.",
+    "api": {
+      "base_url": "https://example.openai.azure.com",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "api_key",
+        "header": "api-key"
+      },
+      "endpoints": {
+        "chat_completions": "/openai/deployments/{deployment}/chat/completions",
+        "models": "/openai/models",
+        "completions": "/openai/deployments/{deployment}/completions",
+        "embeddings": "/openai/deployments/{deployment}/embeddings"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/",
+        "retrieved_at": "2026-09-28",
+        "title": "Azure OpenAI Service documentation",
+        "notes": "API root https://{instance}.openai.azure.com and the available OpenAI-compatible routes. GET /openai/models needs an api-key."
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  "model_ids": []
+}

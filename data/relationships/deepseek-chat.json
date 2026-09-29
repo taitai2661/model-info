@@ -1,6 +1,6 @@
 {
   "model_id": "deepseek-chat",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -8,17 +8,21 @@
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.32,
-        "output": 0.89
+        "input": 0.2574,
+        "output": 1.0287
       },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
-      ]
+      ],
+      "context": {
+        "window": 163840,
+        "max_output_tokens": 16000
+      }
     }
   ]
 }

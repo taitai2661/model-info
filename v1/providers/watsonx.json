@@ -1,0 +1,39 @@
+{
+  "provider": {
+    "id": "watsonx",
+    "name": "IBM WatsonX",
+    "types": [
+      "api_provider",
+      "platform"
+    ],
+    "website": "https://www.ibm.com/products/watsonx-ai",
+    "documentation_url": "https://cloud.ibm.com/apidocs/watsonx-ai",
+    "status": "active",
+    "description": "IBM's AI and data platform for building and deploying AI applications.",
+    "api": {
+      "base_url": "https://us-south.ml.cloud.ibm.com/ml/v1",
+      "protocol": "https",
+      "api_style": "custom",
+      "authentication": {
+        "type": "custom",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "models": "/text/models",
+        "completions": "/text/generation",
+        "embeddings": "/text/embeddings"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://cloud.ibm.com/apidocs/watsonx-ai",
+        "retrieved_at": "2026-09-28",
+        "title": "IBM WatsonX AI API documentation",
+        "notes": "API root https://us-south.ml.cloud.ibm.com/ml/v1 and the available routes."
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  "model_ids": []
+}

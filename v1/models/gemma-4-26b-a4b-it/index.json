@@ -284,6 +284,423 @@
         ],
         "updated_at": "2026-09-26"
       }
+    },
+    {
+      "provider_id": "deepinfra",
+      "model_id": "google/gemma-4-26B-A4B-it",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.07,
+        "output": 0.34
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.deepinfra.com/v1/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and prices from the public model list (GET /v1/openai/models, no authentication required). Despite the key names, input_tokens / output_tokens / cache_read_tokens are prices per 1M tokens. Non-token prices (per image, per character, per second of audio) are not recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 262144
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      },
+      "provider": {
+        "id": "deepinfra",
+        "name": "DeepInfra",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://deepinfra.com",
+        "documentation_url": "https://deepinfra.com/docs",
+        "status": "active",
+        "description": "Serverless inference platform running third-party open-weight and commercial models behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.deepinfra.com/v1/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://deepinfra.com/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "DeepInfra docs",
+            "notes": "API root https://api.deepinfra.com/v1/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.deepinfra.com/v1/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). cache_read_tokens prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "google/gemma-4-26b-a4b-it",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.13,
+        "output": 0.4
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.novita.ai/v3/openai/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "novita",
+        "name": "Novita AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://novita.ai",
+        "documentation_url": "https://novita.ai/docs/guides/introduction",
+        "status": "active",
+        "description": "GPU cloud running open-weight and commercial models (LLM, image, video, audio) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.novita.ai/v3/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://novita.ai/docs/guides/introduction",
+            "retrieved_at": "2026-09-27",
+            "title": "Novita AI docs",
+            "notes": "API root https://api.novita.ai/v3/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.novita.ai/v3/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "google/gemma-4-26B-A4B-it",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.07,
+        "output": 0.34
+      },
+      "context": {
+        "window": 32768,
+        "max_output_tokens": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "provider": {
+        "id": "featherless",
+        "name": "Featherless",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://featherless.ai",
+        "documentation_url": "https://featherless.ai/docs",
+        "status": "active",
+        "description": "Serverless inference platform serving a very large catalogue of open-weight and community fine-tunes behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.featherless.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings",
+            "audio": "/audio/speech"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://featherless.ai/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "Featherless docs",
+            "notes": "API root https://api.featherless.ai/v1 and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.featherless.ai/v1/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication)."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "unsloth/gemma-4-26B-A4B-it",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.4,
+        "output": 0.8
+      },
+      "context": {
+        "window": 32768,
+        "max_output_tokens": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ],
+      "provider": {
+        "id": "featherless",
+        "name": "Featherless",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://featherless.ai",
+        "documentation_url": "https://featherless.ai/docs",
+        "status": "active",
+        "description": "Serverless inference platform serving a very large catalogue of open-weight and community fine-tunes behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.featherless.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings",
+            "audio": "/audio/speech"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://featherless.ai/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "Featherless docs",
+            "notes": "API root https://api.featherless.ai/v1 and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.featherless.ai/v1/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication)."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "google/gemma-4-26B-A4B-it",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 262144
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      },
+      "provider": {
+        "id": "novita",
+        "name": "Novita AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://novita.ai",
+        "documentation_url": "https://novita.ai/docs/guides/introduction",
+        "status": "active",
+        "description": "GPU cloud running open-weight and commercial models (LLM, image, video, audio) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.novita.ai/v3/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://novita.ai/docs/guides/introduction",
+            "retrieved_at": "2026-09-27",
+            "title": "Novita AI docs",
+            "notes": "API root https://api.novita.ai/v3/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.novita.ai/v3/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "huggingface",
+      "model_id": "google/gemma-4-26B-A4B-it",
+      "notes": "Served through the Hugging Face Inference Providers router. The router's price is set per partner provider and differs between them, so no single figure is recorded here; see the partner entries for the context window each one offers.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id from the Hugging Face Inference Providers public model list (GET /v1/models, no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "huggingface",
+        "name": "Hugging Face Inference Providers",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://huggingface.co",
+        "documentation_url": "https://huggingface.co/docs/inference-providers",
+        "status": "active",
+        "description": "Hugging Face's router: one OpenAI-compatible endpoint that forwards a request to whichever partner provider serves that model, with per-provider context and prices.",
+        "api": {
+          "base_url": "https://router.huggingface.co/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "responses": "/responses"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://huggingface.co/docs/inference-providers",
+            "retrieved_at": "2026-09-27",
+            "title": "Hugging Face Inference Providers",
+            "notes": "Router base URL https://router.huggingface.co/v1 and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://router.huggingface.co/v1/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "The router's public model list reports, per model, every partner provider that serves it with that provider's context window, prices and supported features. The prices are what the router charges, not each partner's own list price."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
     }
   ]
 }

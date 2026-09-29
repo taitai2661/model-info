@@ -1,6 +1,6 @@
 {
   "model_id": "llama-3.1-nemotron-70b-instruct",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "nvidia",
@@ -11,6 +11,30 @@
           "url": "https://integrate.api.nvidia.com/v1/models",
           "retrieved_at": "2026-09-27",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "unsloth/Llama-3.1-Nemotron-70B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.88,
+        "output": 2.88
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         }
       ]
     }

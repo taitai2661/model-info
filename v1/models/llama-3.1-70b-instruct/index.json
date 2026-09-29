@@ -112,6 +112,144 @@
         ],
         "updated_at": "2026-09-26"
       }
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "OpenPipe/Llama-3.1-70B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.88,
+        "output": 2.88
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ],
+      "provider": {
+        "id": "featherless",
+        "name": "Featherless",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://featherless.ai",
+        "documentation_url": "https://featherless.ai/docs",
+        "status": "active",
+        "description": "Serverless inference platform serving a very large catalogue of open-weight and community fine-tunes behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.featherless.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings",
+            "audio": "/audio/speech"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://featherless.ai/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "Featherless docs",
+            "notes": "API root https://api.featherless.ai/v1 and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.featherless.ai/v1/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication)."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "meta-llama/Llama-3.1-70B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.88,
+        "output": 2.88
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ],
+      "provider": {
+        "id": "featherless",
+        "name": "Featherless",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://featherless.ai",
+        "documentation_url": "https://featherless.ai/docs",
+        "status": "active",
+        "description": "Serverless inference platform serving a very large catalogue of open-weight and community fine-tunes behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.featherless.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings",
+            "audio": "/audio/speech"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://featherless.ai/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "Featherless docs",
+            "notes": "API root https://api.featherless.ai/v1 and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.featherless.ai/v1/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication)."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
     }
   ]
 }

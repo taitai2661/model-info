@@ -1,6 +1,6 @@
 {
   "model_id": "gemini-3.1-flash-lite",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -32,7 +32,7 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
@@ -51,7 +51,7 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ]
@@ -86,10 +86,32 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
+    },
+    {
+      "provider_id": "deepinfra",
+      "model_id": "google/gemini-3.1-flash-lite",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.25,
+        "output": 1.5
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.deepinfra.com/v1/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and prices from the public model list (GET /v1/openai/models, no authentication required). Despite the key names, input_tokens / output_tokens / cache_read_tokens are prices per 1M tokens. Non-token prices (per image, per character, per second of audio) are not recorded."
+        }
+      ],
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 1000000
+      }
     }
   ]
 }

@@ -99,7 +99,7 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ],
@@ -173,7 +173,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ],
@@ -234,7 +234,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ],
@@ -303,7 +303,7 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
@@ -357,6 +357,86 @@
           }
         ],
         "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "ppio",
+      "model_id": "qwen/qwen3.7-plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 8.0,
+        "cached_input": 0.4
+      },
+      "context": {
+        "window": 991000,
+        "max_output_tokens": 131000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.ppinfra.com/v3/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "ppio",
+        "name": "PPIO",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://ppio.com",
+        "documentation_url": "https://ppio.com/docs",
+        "status": "active",
+        "description": "Distributed cloud provider selling serverless LLM inference (OpenAI-compatible) alongside GPU instances.",
+        "api": {
+          "base_url": "https://api.ppinfra.com/v3/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://ppio.com/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "PPIO docs",
+            "notes": "API root https://api.ppinfra.com/v3/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.ppinfra.com/v3/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
       }
     }
   ]

@@ -1,0 +1,47 @@
+{
+  "id": "novita",
+  "name": "Novita AI",
+  "types": [
+    "api_provider",
+    "platform"
+  ],
+  "website": "https://novita.ai",
+  "documentation_url": "https://novita.ai/docs/guides/introduction",
+  "status": "active",
+  "description": "GPU cloud running open-weight and commercial models (LLM, image, video, audio) behind an OpenAI-compatible API.",
+  "api": {
+    "base_url": "https://api.novita.ai/v3/openai",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models",
+      "completions": "/completions",
+      "embeddings": "/embeddings"
+    }
+  },
+  "api_capabilities": {
+    "prompt_caching": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://novita.ai/docs/guides/introduction",
+      "retrieved_at": "2026-09-27",
+      "title": "Novita AI docs",
+      "notes": "API root https://api.novita.ai/v3/openai and the available OpenAI-compatible routes."
+    },
+    {
+      "type": "official",
+      "url": "https://api.novita.ai/v3/openai/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Public model list",
+      "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

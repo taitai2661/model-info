@@ -1,6 +1,6 @@
 {
   "model_id": "qwen3.7-plus",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "qwen",
@@ -20,7 +20,7 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
@@ -48,7 +48,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ]
@@ -66,7 +66,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -99,8 +99,41 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    },
+    {
+      "provider_id": "ppio",
+      "model_id": "qwen/qwen3.7-plus",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 8.0,
+        "cached_input": 0.4
+      },
+      "context": {
+        "window": 991000,
+        "max_output_tokens": 131000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.ppinfra.com/v3/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
         }
       ]
     }

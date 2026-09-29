@@ -38,6 +38,7 @@
   "model_ids": [
     "deepseek-flash",
     "deepseek-v4-flash",
+    "deepseek-v4-flash-0731",
     "deepseek-v4-pro",
     "glm-5.2",
     "glm-5.3",
@@ -45,6 +46,7 @@
     "gpt-oss-120b",
     "inkling",
     "kimi-k3",
+    "llama-3.3-70b-instruct",
     "llama-3.3-70b-instruct",
     "minimax-m3",
     "muse-glimmer-30b",

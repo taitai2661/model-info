@@ -1,6 +1,6 @@
 {
   "model_id": "glm-5.1",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "zai",
@@ -91,6 +91,122 @@
           "url": "https://ai-gateway.vercel.sh/v1/models",
           "retrieved_at": "2026-09-27",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "zai-org/glm-5.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.38,
+        "output": 4.4,
+        "cached_input": 0.26
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.novita.ai/v3/openai/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "ppio",
+      "model_id": "zai-org/glm-5.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 8.0,
+        "output": 28.0,
+        "cached_input": 2.0
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.ppinfra.com/v3/openai/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "zai-org/GLM-5.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.3,
+        "output": 4.3
+      },
+      "context": {
+        "window": 202752
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ]
+    },
+    {
+      "provider_id": "zai",
+      "model_id": "zai-org/GLM-5.1",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": false
+      }
+    },
+    {
+      "provider_id": "deepinfra",
+      "model_id": "zai-org/GLM-5.1",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 202752
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      }
+    },
+    {
+      "provider_id": "huggingface",
+      "model_id": "zai-org/GLM-5.1",
+      "notes": "Served through the Hugging Face Inference Providers router. The router's price is set per partner provider and differs between them, so no single figure is recorded here; see the partner entries for the context window each one offers.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id from the Hugging Face Inference Providers public model list (GET /v1/models, no authentication required)."
         }
       ]
     }

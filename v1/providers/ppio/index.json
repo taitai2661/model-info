@@ -1,0 +1,110 @@
+{
+  "provider": {
+    "id": "ppio",
+    "name": "PPIO",
+    "types": [
+      "api_provider",
+      "platform"
+    ],
+    "website": "https://ppio.com",
+    "documentation_url": "https://ppio.com/docs",
+    "status": "active",
+    "description": "Distributed cloud provider selling serverless LLM inference (OpenAI-compatible) alongside GPU instances.",
+    "api": {
+      "base_url": "https://api.ppinfra.com/v3/openai",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "models": "/models",
+        "completions": "/completions",
+        "embeddings": "/embeddings"
+      }
+    },
+    "api_capabilities": {
+      "prompt_caching": true
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ppio.com/docs",
+        "retrieved_at": "2026-09-27",
+        "title": "PPIO docs",
+        "notes": "API root https://api.ppinfra.com/v3/openai and the available OpenAI-compatible routes."
+      },
+      {
+        "type": "official",
+        "url": "https://api.ppinfra.com/v3/openai/models",
+        "retrieved_at": "2026-09-27",
+        "title": "Public model list",
+        "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+      }
+    ],
+    "updated_at": "2026-09-27"
+  },
+  "model_ids": [
+    "deepseek-r1-distill-llama-70b",
+    "deepseek-v3.2",
+    "deepseek-v3.2-exp",
+    "deepseek-v4-flash",
+    "deepseek-v4-flash-0731",
+    "deepseek-v4-flash-vision-exp",
+    "deepseek-v4-pro",
+    "deepseek-v4-pro",
+    "deepseek-v4.1-flash",
+    "ernie-4.5-vl-424b-a47b",
+    "glm-4.5-air",
+    "glm-4.5v",
+    "glm-4.6",
+    "glm-4.6v",
+    "glm-4.7",
+    "glm-4.7-flash",
+    "glm-5",
+    "glm-5-turbo",
+    "glm-5.1",
+    "glm-5.2",
+    "glm-5.3",
+    "glm-5.3-flash",
+    "glm-5v-turbo",
+    "kimi-k2-0905",
+    "kimi-k2-thinking",
+    "kimi-k2.5",
+    "kimi-k2.6",
+    "kimi-k2.7-code",
+    "kimi-k3",
+    "mimo-v2.5",
+    "mimo-v2.5-pro",
+    "mimo-v2.6-flash",
+    "mimo-v2.6-pro",
+    "minimax-m2",
+    "minimax-m2.1",
+    "minimax-m2.5",
+    "minimax-m2.5-highspeed",
+    "minimax-m2.7",
+    "minimax-m2.7-highspeed",
+    "minimax-m3",
+    "qwen-2.5-72b-instruct",
+    "qwen3-235b-a22b-thinking-2507",
+    "qwen3-coder-next",
+    "qwen3-max",
+    "qwen3-vl-235b-a22b-instruct",
+    "qwen3.5-122b-a10b",
+    "qwen3.5-27b",
+    "qwen3.5-35b-a3b",
+    "qwen3.5-397b-a17b",
+    "qwen3.5-plus",
+    "qwen3.6-27b",
+    "qwen3.6-35b-a3b",
+    "qwen3.6-plus",
+    "qwen3.7-max",
+    "qwen3.7-plus",
+    "qwen3.8-2.4t-a95b",
+    "qwen3.8-27b",
+    "qwen3.8-flash",
+    "qwen3.8-max"
+  ]
+}

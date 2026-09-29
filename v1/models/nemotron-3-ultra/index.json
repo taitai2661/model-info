@@ -125,7 +125,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ],
@@ -188,7 +188,7 @@
         {
           "type": "official",
           "url": "https://docs.fireworks.ai/serverless/pricing.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
         }
       ],
@@ -235,7 +235,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ],

@@ -1,6 +1,6 @@
 {
   "model_id": "llama-3.1-70b",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "vercel-ai-gateway",
@@ -15,8 +15,29 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "meta-llama/Llama-3.1-70B",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.88,
+        "output": 2.88
+      },
+      "context": {
+        "window": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         }
       ]
     }

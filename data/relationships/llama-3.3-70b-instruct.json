@@ -1,6 +1,6 @@
 {
   "model_id": "llama-3.3-70b-instruct",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -55,7 +55,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ]
@@ -73,6 +73,169 @@
         }
       ],
       "notes": "Amazon Bedrock model ids beyond the one recorded here: cross-Region inference profile ids on bedrock-runtime: us.meta.llama3-3-70b-instruct-v1:0."
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "meta-llama/llama-3.3-70b-instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.135,
+        "output": 0.4
+      },
+      "context": {
+        "window": 12288,
+        "max_output_tokens": 12288
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.novita.ai/v3/openai/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "RedHatAI/Llama-3.3-70B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.6,
+        "output": 3.0
+      },
+      "context": {
+        "window": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.65,
+        "output": 0.75
+      },
+      "context": {
+        "window": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "osllmai-community/Llama-3.3-70B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.88,
+        "output": 2.88
+      },
+      "context": {
+        "window": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "unsloth/Llama-3.3-70B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.6,
+        "output": 3.0
+      },
+      "context": {
+        "window": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 12288
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": false
+      }
+    },
+    {
+      "provider_id": "together",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 131072
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      }
+    },
+    {
+      "provider_id": "huggingface",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "notes": "Served through the Hugging Face Inference Providers router. The router's price is set per partner provider and differs between them, so no single figure is recorded here; see the partner entries for the context window each one offers.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id from the Hugging Face Inference Providers public model list (GET /v1/models, no authentication required)."
+        }
+      ]
     }
   ]
 }

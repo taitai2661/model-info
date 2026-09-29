@@ -1,6 +1,6 @@
 {
   "model_id": "llama-3.2-1b-instruct",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -17,6 +17,556 @@
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "meta-llama/llama-3.2-1b-instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.02,
+        "output": 0.02
+      },
+      "context": {
+        "window": 131000,
+        "max_output_tokens": 32000
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.novita.ai/v3/openai/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "Abdul-Hadi-Jalil/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "AmmarA22/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "JoPmt/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "KJCHUA/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "KingNish/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "PathFinderKR/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "alpindale/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "avk20/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "dmitrybright/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "empathielabs/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "fanherodev/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "kavish218/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "luezzka/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "meta-llama/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.027,
+        "output": 0.201
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "nhatminh/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "osllmai-community/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "renwei87/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "saiscorelabsai/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "tbmod/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "thangtest/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "unsloth/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "withmartian/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.108,
+        "output": 0.804
+      },
+      "context": {
+        "window": 32768
+      },
+      "capabilities": {
+        "tool_use": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         }
       ]
     }

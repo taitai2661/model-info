@@ -130,7 +130,7 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
@@ -196,8 +196,7 @@
         "output": 0.3
       },
       "context": {
-        "window": 131072,
-        "max_output_tokens": 65536
+        "window": 131072
       },
       "sources": [
         {
@@ -205,8 +204,18 @@
           "url": "https://console.groq.com/docs/models.md",
           "retrieved_at": "2026-09-27",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
         }
       ],
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      },
       "provider": {
         "id": "groq",
         "name": "Groq",
@@ -240,6 +249,131 @@
           }
         ],
         "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "openai/gpt-oss-safeguard-20b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.075,
+        "output": 0.3
+      },
+      "context": {
+        "window": 32768,
+        "max_output_tokens": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        }
+      ],
+      "provider": {
+        "id": "featherless",
+        "name": "Featherless",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://featherless.ai",
+        "documentation_url": "https://featherless.ai/docs",
+        "status": "active",
+        "description": "Serverless inference platform serving a very large catalogue of open-weight and community fine-tunes behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.featherless.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings",
+            "audio": "/audio/speech"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://featherless.ai/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "Featherless docs",
+            "notes": "API root https://api.featherless.ai/v1 and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.featherless.ai/v1/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication)."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "huggingface",
+      "model_id": "openai/gpt-oss-safeguard-20b",
+      "notes": "Served through the Hugging Face Inference Providers router. The router's price is set per partner provider and differs between them, so no single figure is recorded here; see the partner entries for the context window each one offers.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id from the Hugging Face Inference Providers public model list (GET /v1/models, no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "huggingface",
+        "name": "Hugging Face Inference Providers",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://huggingface.co",
+        "documentation_url": "https://huggingface.co/docs/inference-providers",
+        "status": "active",
+        "description": "Hugging Face's router: one OpenAI-compatible endpoint that forwards a request to whichever partner provider serves that model, with per-provider context and prices.",
+        "api": {
+          "base_url": "https://router.huggingface.co/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "responses": "/responses"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://huggingface.co/docs/inference-providers",
+            "retrieved_at": "2026-09-27",
+            "title": "Hugging Face Inference Providers",
+            "notes": "Router base URL https://router.huggingface.co/v1 and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://router.huggingface.co/v1/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "The router's public model list reports, per model, every partner provider that serves it with that provider's context window, prices and supported features. The prices are what the router charges, not each partner's own list price."
+          }
+        ],
+        "updated_at": "2026-09-27"
       }
     }
   ]

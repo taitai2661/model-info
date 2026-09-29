@@ -1,0 +1,40 @@
+{
+  "provider": {
+    "id": "cloudflare",
+    "name": "Cloudflare Workers AI",
+    "types": [
+      "api_provider",
+      "platform"
+    ],
+    "website": "https://developers.cloudflare.com/workers-ai/",
+    "documentation_url": "https://developers.cloudflare.com/workers-ai/",
+    "status": "active",
+    "description": "Cloudflare's serverless AI inference platform, running models on Cloudflare's global network.",
+    "api": {
+      "base_url": "https://api.cloudflare.com/client/v4",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/accounts/{account}/ai/v1/chat/completions",
+        "models": "/accounts/{account}/ai/v1/models",
+        "completions": "/accounts/{account}/ai/v1/completions",
+        "embeddings": "/accounts/{account}/ai/v1/embeddings"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://developers.cloudflare.com/workers-ai/",
+        "retrieved_at": "2026-09-28",
+        "title": "Cloudflare Workers AI documentation",
+        "notes": "API root https://api.cloudflare.com/client/v4/accounts/{account}/ai/v1 and the available OpenAI-compatible routes."
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  "model_ids": []
+}

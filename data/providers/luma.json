@@ -1,0 +1,35 @@
+{
+  "id": "luma",
+  "name": "Luma AI",
+  "types": [
+    "api_provider",
+    "platform"
+  ],
+  "website": "https://lumalabs.ai/",
+  "documentation_url": "https://docs.lumalabs.ai/",
+  "status": "active",
+  "description": "AI-powered image and video generation platform.",
+  "api": {
+    "base_url": "https://api.lumalabs.ai/dream-machine/v1",
+    "protocol": "https",
+    "api_style": "custom",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "models": "/models",
+      "images": "/generations"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.lumalabs.ai/",
+      "retrieved_at": "2026-09-28",
+      "title": "Luma AI API documentation",
+      "notes": "API root https://api.lumalabs.ai/dream-machine/v1 and the available routes."
+    }
+  ],
+  "updated_at": "2026-09-28"
+}

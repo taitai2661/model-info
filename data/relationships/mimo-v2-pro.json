@@ -1,6 +1,6 @@
 {
   "model_id": "mimo-v2-pro",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "opencode-go",
@@ -18,7 +18,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ]

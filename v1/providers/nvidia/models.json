@@ -44,7 +44,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -100,7 +100,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -159,7 +159,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -274,7 +274,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -333,7 +333,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -396,7 +396,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -455,7 +455,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -514,7 +514,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -634,7 +634,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -690,7 +690,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -745,7 +745,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -803,7 +803,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -1299,7 +1299,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -1358,7 +1358,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -1414,7 +1414,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -1470,7 +1470,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -1531,7 +1531,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -1592,7 +1592,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -1769,7 +1769,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -1826,7 +1826,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -1882,7 +1882,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -1938,7 +1938,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -1995,7 +1995,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2161,7 +2161,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2222,7 +2222,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2283,7 +2283,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2340,7 +2340,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2395,7 +2395,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2453,7 +2453,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2510,7 +2510,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2566,7 +2566,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2743,7 +2743,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2804,7 +2804,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2865,7 +2865,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2924,7 +2924,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -2981,7 +2981,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3042,7 +3042,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3162,7 +3162,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3225,7 +3225,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3283,7 +3283,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3335,7 +3335,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3444,7 +3444,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3503,7 +3503,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3559,7 +3559,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3618,7 +3618,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3675,7 +3675,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3732,7 +3732,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3789,7 +3789,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3844,7 +3844,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3901,7 +3901,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -3956,7 +3956,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4014,7 +4014,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4069,7 +4069,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4188,7 +4188,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4247,7 +4247,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4306,7 +4306,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4361,7 +4361,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4416,7 +4416,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4471,7 +4471,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4527,7 +4527,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4586,7 +4586,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4645,7 +4645,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4700,7 +4700,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]
@@ -4756,7 +4756,7 @@
         {
           "type": "official",
           "url": "https://integrate.api.nvidia.com/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the NVIDIA NIM public model catalog (GET /v1/models, no authentication required)."
         }
       ]

@@ -47,18 +47,22 @@
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.3125,
-        "output": 1.25,
+        "input": 0.1625,
+        "output": 1.3,
         "cached_input": 0.15625
       },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ],
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 65536
+      },
       "provider": {
         "id": "openrouter",
         "name": "OpenRouter",
@@ -104,6 +108,348 @@
           }
         ],
         "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "deepinfra",
+      "model_id": "Qwen/Qwen3.5-35B-A3B",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.14,
+        "output": 1.0,
+        "cached_input": 0.05
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.deepinfra.com/v1/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and prices from the public model list (GET /v1/openai/models, no authentication required). Despite the key names, input_tokens / output_tokens / cache_read_tokens are prices per 1M tokens. Non-token prices (per image, per character, per second of audio) are not recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 262144
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      },
+      "provider": {
+        "id": "deepinfra",
+        "name": "DeepInfra",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://deepinfra.com",
+        "documentation_url": "https://deepinfra.com/docs",
+        "status": "active",
+        "description": "Serverless inference platform running third-party open-weight and commercial models behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.deepinfra.com/v1/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://deepinfra.com/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "DeepInfra docs",
+            "notes": "API root https://api.deepinfra.com/v1/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.deepinfra.com/v1/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). cache_read_tokens prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "qwen/qwen3.5-35b-a3b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.25,
+        "output": 2.0
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 65536
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.novita.ai/v3/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "novita",
+        "name": "Novita AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://novita.ai",
+        "documentation_url": "https://novita.ai/docs/guides/introduction",
+        "status": "active",
+        "description": "GPU cloud running open-weight and commercial models (LLM, image, video, audio) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.novita.ai/v3/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://novita.ai/docs/guides/introduction",
+            "retrieved_at": "2026-09-27",
+            "title": "Novita AI docs",
+            "notes": "API root https://api.novita.ai/v3/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.novita.ai/v3/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "ppio",
+      "model_id": "qwen/qwen3.5-35b-a3b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.6,
+        "output": 12.8
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 65536
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.ppinfra.com/v3/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "ppio",
+        "name": "PPIO",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://ppio.com",
+        "documentation_url": "https://ppio.com/docs",
+        "status": "active",
+        "description": "Distributed cloud provider selling serverless LLM inference (OpenAI-compatible) alongside GPU instances.",
+        "api": {
+          "base_url": "https://api.ppinfra.com/v3/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://ppio.com/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "PPIO docs",
+            "notes": "API root https://api.ppinfra.com/v3/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.ppinfra.com/v3/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "Qwen/Qwen3.5-35B-A3B",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 262144
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": false
+      },
+      "provider": {
+        "id": "novita",
+        "name": "Novita AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://novita.ai",
+        "documentation_url": "https://novita.ai/docs/guides/introduction",
+        "status": "active",
+        "description": "GPU cloud running open-weight and commercial models (LLM, image, video, audio) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.novita.ai/v3/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://novita.ai/docs/guides/introduction",
+            "retrieved_at": "2026-09-27",
+            "title": "Novita AI docs",
+            "notes": "API root https://api.novita.ai/v3/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.novita.ai/v3/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "huggingface",
+      "model_id": "Qwen/Qwen3.5-35B-A3B",
+      "notes": "Served through the Hugging Face Inference Providers router. The router's price is set per partner provider and differs between them, so no single figure is recorded here; see the partner entries for the context window each one offers.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model id from the Hugging Face Inference Providers public model list (GET /v1/models, no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "huggingface",
+        "name": "Hugging Face Inference Providers",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://huggingface.co",
+        "documentation_url": "https://huggingface.co/docs/inference-providers",
+        "status": "active",
+        "description": "Hugging Face's router: one OpenAI-compatible endpoint that forwards a request to whichever partner provider serves that model, with per-provider context and prices.",
+        "api": {
+          "base_url": "https://router.huggingface.co/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "responses": "/responses"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://huggingface.co/docs/inference-providers",
+            "retrieved_at": "2026-09-27",
+            "title": "Hugging Face Inference Providers",
+            "notes": "Router base URL https://router.huggingface.co/v1 and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://router.huggingface.co/v1/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "The router's public model list reports, per model, every partner provider that serves it with that provider's context window, prices and supported features. The prices are what the router charges, not each partner's own list price."
+          }
+        ],
+        "updated_at": "2026-09-27"
       }
     }
   ]

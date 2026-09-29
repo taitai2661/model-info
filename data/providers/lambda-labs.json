@@ -1,0 +1,37 @@
+{
+  "id": "lambda-labs",
+  "name": "Lambda Labs",
+  "types": [
+    "api_provider",
+    "platform"
+  ],
+  "website": "https://lambda.ai/",
+  "documentation_url": "https://docs.lambda.ai/",
+  "status": "active",
+  "description": "Cloud GPU provider offering serverless inference and dedicated instances for AI workloads.",
+  "api": {
+    "base_url": "https://api.lambda.ai/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models",
+      "completions": "/completions",
+      "embeddings": "/embeddings"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.lambda.ai/",
+      "retrieved_at": "2026-09-28",
+      "title": "Lambda Labs API documentation",
+      "notes": "API root https://api.lambda.ai/v1 and the available OpenAI-compatible routes."
+    }
+  ],
+  "updated_at": "2026-09-28"
+}

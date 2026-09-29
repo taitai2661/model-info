@@ -1,6 +1,6 @@
 {
   "model_id": "gpt-oss-120b",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -35,8 +35,7 @@
         "output": 0.6
       },
       "context": {
-        "window": 131072,
-        "max_output_tokens": 65536
+        "window": 131072
       },
       "sources": [
         {
@@ -44,8 +43,18 @@
           "url": "https://console.groq.com/docs/models.md",
           "retrieved_at": "2026-09-27",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
         }
-      ]
+      ],
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      }
     },
     {
       "provider_id": "together",
@@ -60,10 +69,23 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
         }
-      ]
+      ],
+      "context": {
+        "window": 131072
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      }
     },
     {
       "provider_id": "fireworks",
@@ -79,7 +101,7 @@
         {
           "type": "official",
           "url": "https://docs.fireworks.ai/serverless/pricing.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
         }
       ]
@@ -126,7 +148,7 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ]
@@ -150,6 +172,171 @@
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-27",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    },
+    {
+      "provider_id": "deepinfra",
+      "model_id": "openai/gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.037,
+        "output": 0.17
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.deepinfra.com/v1/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and prices from the public model list (GET /v1/openai/models, no authentication required). Despite the key names, input_tokens / output_tokens / cache_read_tokens are prices per 1M tokens. Non-token prices (per image, per character, per second of audio) are not recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 131072
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      }
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "openai/gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.05,
+        "output": 0.25
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 32768
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.novita.ai/v3/openai/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      }
+    },
+    {
+      "provider_id": "sambanova",
+      "model_id": "gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.22,
+        "output": 0.59
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.sambanova.ai/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, max output tokens and per-token prices from the public model list (GET /v1/models, no authentication required). Prices are converted from per-token to per-million."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "openai/gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ]
+    },
+    {
+      "provider_id": "cerebras",
+      "model_id": "openai/gpt-oss-120b",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 131072
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      }
+    },
+    {
+      "provider_id": "fireworks",
+      "model_id": "openai/gpt-oss-120b",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 131072
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      }
+    },
+    {
+      "provider_id": "huggingface",
+      "model_id": "openai/gpt-oss-120b",
+      "notes": "Served through the Hugging Face Inference Providers router. The router's price is set per partner provider and differs between them, so no single figure is recorded here; see the partner entries for the context window each one offers.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id from the Hugging Face Inference Providers public model list (GET /v1/models, no authentication required)."
         }
       ]
     }

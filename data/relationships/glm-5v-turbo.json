@@ -1,6 +1,6 @@
 {
   "model_id": "glm-5v-turbo",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -30,7 +30,7 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
@@ -51,6 +51,72 @@
           "url": "https://ai-gateway.vercel.sh/v1/models",
           "retrieved_at": "2026-09-27",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "zai-org/glm-5v-turbo",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.2,
+        "output": 4.0,
+        "cached_input": 0.24
+      },
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.novita.ai/v3/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "ppio",
+      "model_id": "zai-org/glm-5v-turbo",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 7.0,
+        "output": 26.0,
+        "cached_input": 1.8
+      },
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.ppinfra.com/v3/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
         }
       ]
     }

@@ -160,9 +160,16 @@ export OPENAI_API_KEY=...                         # キーはシェルにのみ�
 .venv/bin/python -m collector openai --write
 ```
 
-利用可能: `openai` / `anthropic` / `google` / `deepseek` / `mistral` / `openrouter`(公開・キー不要) / `opencode`(公開・キー不要) / `opencode-go`(公開・キー不要) / `groq`(公開・キー不要) / `together`(公開・キー不要) / `fireworks`(公開・キー不要) / `nvidia`(公開・キー不要) / `vercel-ai-gateway`(公開・キー不要) / `catalog`(公開・キー不要)。
+利用可能: `openai` / `anthropic` / `google` / `deepseek` / `mistral` / `openrouter`(公開・キー不要) / `opencode`(公開・キー不要) / `opencode-go`(公開・キー不要) / `groq`(公開・キー不要) / `together`(公開・キー不要) / `fireworks`(公開・キー不要) / `nvidia`(公開・キー不要) / `vercel-ai-gateway`(公開・キー不要) / `deepinfra`(公開・キー不要) / `novita`(公開・キー不要) / `ppio`(公開・キー不要) / `featherless`(公開・キー不要) / `sambanova`(公開・キー不要) / `huggingface`(公開・キー不要) / `catalog`(公開・キー不要)。
 
 `groq` / `together` / `fireworks` はJSON APIではなくMarkdownのドキュメントでカタログを公開しているため、`.md` ページを直接読みます(`collector/docs.py`)。APIキーは引き続き不要で、どの列がコンテキスト長・料金なのかは各Collectorが判定します。
+
+`deepinfra` / `novita` / `ppio` / `featherless` / `sambanova` はいずれも OpenAI 互換の `GET /models` と同じ形式を公開しているため、基底クラス(`collector/openai_compatible.py`)を共有し、どのキーがコンテキスト長でどのキーが料金かだけが違います。どちらかを間違えると単位の読み違いでデータが壊れるため、基底クラスでは次を明示的に禁止しています。
+
+- **トークン単位でない料金をトークン料金に変換しないこと。** これらのカタログは画像・文字・音声の秒数・リクエスト単位でも課金しており、トークンのキーだけを読みます。
+- **単位が明示されている場所からのみ料金を読むこと。** DeepInfra の `input_tokens` はキー名に反して 1M トークンあたりの料金であり、Novita / PPIO の `price_per_m_decimal` は 1M トークンあたりのドル表記です。同じ値を返す `input_token_price_per_m` の単位は 1e-4 $/1M なので、推測した倍率で換算せず無視します。Featherless は同じ値を `prompt` / `completion`（per-token）と `input` / `output`（per-million）の両方で返します。どの解釈を使うか、そしてその理由は各 Collector の docstring に書いてあります。
+
+`huggingface` は Inference Providers のルータを読みます。ルータのペイロードは唯一、**他の provider に関する**情報を持ちます。モデルごとに partner ごとのスロットがあり、そこには partner のコンテキスト長とサポート機能が入っています。その事実は partner 自身の relationship エントリに記録し、ルータ自身のエントリにはルートのみを記録します。ルータの料金は**あえてどこにも記録しません**。partner ごとに異なるため単一の数値は推測にすぎず、partner 自身の料金をルータが代行して述べるものではないためです。Registry が知らない partner キー（`baseten` / `nscale` / `ovhcloud` / `scaleway`）は推測せず要手動確認として報告されます。
 
 Collectorはソースから読み取れる情報**だけ**を更新します。読み取れない項目は手検証済みの値を保持します。Provider側のモデルIDが登録済みモデルに解決できる場合は relationship エントリを新規作成します(適用されるのは vendor 接頭辞・大文字小文字・Fireworks の `p` 表記・`:free` / `:batch` などのルート variant・スナップショット接尾辞・モデル自身の `version` のみ)。下記の `catalog` を除き、モデルドキュメント自体をCollectorが作ることはありません。解決できないIDは従来通り「要手動確認」として報告されます。実行後は `validate.py` と `build.py` を走らせてください。
 

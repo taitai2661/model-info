@@ -1,6 +1,6 @@
 {
   "model_id": "codegemma-7b",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "nvidia",
@@ -25,6 +25,24 @@
           "url": "https://ai.google.dev/gemini-api/docs/models",
           "retrieved_at": "2026-09-26",
           "title": "Gemini API models"
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "TechxGenus/CodeGemma-7b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.431,
+        "output": 1.12
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         }
       ]
     }

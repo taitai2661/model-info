@@ -1,0 +1,47 @@
+{
+  "id": "deepinfra",
+  "name": "DeepInfra",
+  "types": [
+    "api_provider",
+    "platform"
+  ],
+  "website": "https://deepinfra.com",
+  "documentation_url": "https://deepinfra.com/docs",
+  "status": "active",
+  "description": "Serverless inference platform running third-party open-weight and commercial models behind an OpenAI-compatible API.",
+  "api": {
+    "base_url": "https://api.deepinfra.com/v1/openai",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models",
+      "completions": "/completions",
+      "embeddings": "/embeddings"
+    }
+  },
+  "api_capabilities": {
+    "prompt_caching": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://deepinfra.com/docs",
+      "retrieved_at": "2026-09-27",
+      "title": "DeepInfra docs",
+      "notes": "API root https://api.deepinfra.com/v1/openai and the available OpenAI-compatible routes."
+    },
+    {
+      "type": "official",
+      "url": "https://api.deepinfra.com/v1/openai/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Public model list",
+      "notes": "Model list is public (GET /models needs no authentication). cache_read_tokens prices confirm prompt caching is billed."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

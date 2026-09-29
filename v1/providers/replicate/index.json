@@ -1,0 +1,38 @@
+{
+  "provider": {
+    "id": "replicate",
+    "name": "Replicate",
+    "types": [
+      "api_provider",
+      "platform"
+    ],
+    "website": "https://replicate.com/",
+    "documentation_url": "https://replicate.com/docs",
+    "status": "active",
+    "description": "Platform for running and fine-tuning open-source models with a simple API.",
+    "api": {
+      "base_url": "https://api.replicate.com/v1",
+      "protocol": "https",
+      "api_style": "custom",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "models": "/models",
+        "images": "/predictions"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://replicate.com/docs",
+        "retrieved_at": "2026-09-28",
+        "title": "Replicate API documentation",
+        "notes": "API root https://api.replicate.com/v1 and the available routes."
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  "model_ids": []
+}

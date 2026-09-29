@@ -1,0 +1,48 @@
+{
+  "id": "sambanova",
+  "name": "SambaNova Cloud",
+  "types": [
+    "api_provider",
+    "platform"
+  ],
+  "website": "https://sambanova.ai",
+  "documentation_url": "https://docs.sambanova.ai/docs/api-reference/chat-completions",
+  "status": "active",
+  "description": "Inference cloud built on SambaNova's dataflow hardware, serving third-party models behind an OpenAI-compatible API.",
+  "api": {
+    "base_url": "https://api.sambanova.ai/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models",
+      "completions": "/completions",
+      "embeddings": "/embeddings",
+      "rerank": "/rerank"
+    }
+  },
+  "api_capabilities": {
+    "prompt_caching": true
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://docs.sambanova.ai/docs/api-reference/chat-completions",
+      "retrieved_at": "2026-09-27",
+      "title": "SambaNova chat completions API reference",
+      "notes": "API root https://api.sambanova.ai/v1 and the available OpenAI-compatible routes."
+    },
+    {
+      "type": "official",
+      "url": "https://api.sambanova.ai/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Public model list",
+      "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

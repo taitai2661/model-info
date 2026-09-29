@@ -140,8 +140,7 @@
         "output": 0.6
       },
       "context": {
-        "window": 131072,
-        "max_output_tokens": 65536
+        "window": 131072
       },
       "sources": [
         {
@@ -149,8 +148,18 @@
           "url": "https://console.groq.com/docs/models.md",
           "retrieved_at": "2026-09-27",
           "notes": "Provider model id, price, context window, and max completion tokens from Groq's supported-models page."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
         }
       ],
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      },
       "provider": {
         "id": "groq",
         "name": "Groq",
@@ -199,10 +208,23 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
         }
       ],
+      "context": {
+        "window": 131072
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      },
       "provider": {
         "id": "together",
         "name": "Together AI",
@@ -254,7 +276,7 @@
         {
           "type": "official",
           "url": "https://docs.fireworks.ai/serverless/pricing.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
         }
       ],
@@ -448,7 +470,7 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
@@ -570,6 +592,482 @@
           }
         ],
         "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "deepinfra",
+      "model_id": "openai/gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.037,
+        "output": 0.17
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.deepinfra.com/v1/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and prices from the public model list (GET /v1/openai/models, no authentication required). Despite the key names, input_tokens / output_tokens / cache_read_tokens are prices per 1M tokens. Non-token prices (per image, per character, per second of audio) are not recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 131072
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      },
+      "provider": {
+        "id": "deepinfra",
+        "name": "DeepInfra",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://deepinfra.com",
+        "documentation_url": "https://deepinfra.com/docs",
+        "status": "active",
+        "description": "Serverless inference platform running third-party open-weight and commercial models behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.deepinfra.com/v1/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://deepinfra.com/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "DeepInfra docs",
+            "notes": "API root https://api.deepinfra.com/v1/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.deepinfra.com/v1/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). cache_read_tokens prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "openai/gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.05,
+        "output": 0.25
+      },
+      "context": {
+        "window": 131072,
+        "max_output_tokens": 32768
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.novita.ai/v3/openai/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      },
+      "provider": {
+        "id": "novita",
+        "name": "Novita AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://novita.ai",
+        "documentation_url": "https://novita.ai/docs/guides/introduction",
+        "status": "active",
+        "description": "GPU cloud running open-weight and commercial models (LLM, image, video, audio) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.novita.ai/v3/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://novita.ai/docs/guides/introduction",
+            "retrieved_at": "2026-09-27",
+            "title": "Novita AI docs",
+            "notes": "API root https://api.novita.ai/v3/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.novita.ai/v3/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "sambanova",
+      "model_id": "gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.22,
+        "output": 0.59
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.sambanova.ai/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model ids, context window, max output tokens and per-token prices from the public model list (GET /v1/models, no authentication required). Prices are converted from per-token to per-million."
+        }
+      ],
+      "provider": {
+        "id": "sambanova",
+        "name": "SambaNova Cloud",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://sambanova.ai",
+        "documentation_url": "https://docs.sambanova.ai/docs/api-reference/chat-completions",
+        "status": "active",
+        "description": "Inference cloud built on SambaNova's dataflow hardware, serving third-party models behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.sambanova.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.sambanova.ai/docs/api-reference/chat-completions",
+            "retrieved_at": "2026-09-27",
+            "title": "SambaNova chat completions API reference",
+            "notes": "API root https://api.sambanova.ai/v1 and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.sambanova.ai/v1/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "openai/gpt-oss-120b",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
+        },
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "provider": {
+        "id": "featherless",
+        "name": "Featherless",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://featherless.ai",
+        "documentation_url": "https://featherless.ai/docs",
+        "status": "active",
+        "description": "Serverless inference platform serving a very large catalogue of open-weight and community fine-tunes behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.featherless.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings",
+            "audio": "/audio/speech"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://featherless.ai/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "Featherless docs",
+            "notes": "API root https://api.featherless.ai/v1 and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.featherless.ai/v1/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication)."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "cerebras",
+      "model_id": "openai/gpt-oss-120b",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 131072
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      },
+      "provider": {
+        "id": "cerebras",
+        "name": "Cerebras Inference",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://www.cerebras.ai",
+        "documentation_url": "https://inference-docs.cerebras.ai",
+        "status": "active",
+        "description": "Inference service running open-weight models on Cerebras wafer-scale hardware behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.cerebras.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "batches": "/batches"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://inference-docs.cerebras.ai",
+            "retrieved_at": "2026-09-27",
+            "title": "Cerebras Inference docs",
+            "notes": "API root https://api.cerebras.ai/v1 and the available OpenAI-compatible routes. GET /v1/models needs a key, so the model list is not collected directly."
+          },
+          {
+            "type": "documentation",
+            "url": "https://huggingface.co/docs/inference-providers",
+            "retrieved_at": "2026-09-27",
+            "title": "Hugging Face Inference Providers",
+            "notes": "Cerebras listed as a partner provider; the router's public model list reports which models it serves."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "fireworks",
+      "model_id": "openai/gpt-oss-120b",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Which partner providers serve this model, the context window each one offers and the features it reports, as published by the router. The router's own price is not recorded on this entry because it is the router's price, not this provider's list price."
+        }
+      ],
+      "context": {
+        "window": 131072
+      },
+      "api_capabilities": {
+        "tool_calling": true,
+        "structured_output": true
+      },
+      "provider": {
+        "id": "fireworks",
+        "name": "Fireworks AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://fireworks.ai",
+        "documentation_url": "https://docs.fireworks.ai/getting-started/quickstart",
+        "status": "active",
+        "description": "AI cloud platform for open-source models; OpenAI-compatible chat endpoint plus an Anthropic-compatible endpoint served from https://api.fireworks.ai/inference.",
+        "api": {
+          "base_url": "https://api.fireworks.ai/inference/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.fireworks.ai/getting-started/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "Fireworks quickstart"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "huggingface",
+      "model_id": "openai/gpt-oss-120b",
+      "notes": "Served through the Hugging Face Inference Providers router. The router's price is set per partner provider and differs between them, so no single figure is recorded here; see the partner entries for the context window each one offers.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://router.huggingface.co/v1/models",
+          "retrieved_at": "2026-09-27",
+          "notes": "Provider model id from the Hugging Face Inference Providers public model list (GET /v1/models, no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "huggingface",
+        "name": "Hugging Face Inference Providers",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://huggingface.co",
+        "documentation_url": "https://huggingface.co/docs/inference-providers",
+        "status": "active",
+        "description": "Hugging Face's router: one OpenAI-compatible endpoint that forwards a request to whichever partner provider serves that model, with per-provider context and prices.",
+        "api": {
+          "base_url": "https://router.huggingface.co/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "responses": "/responses"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://huggingface.co/docs/inference-providers",
+            "retrieved_at": "2026-09-27",
+            "title": "Hugging Face Inference Providers",
+            "notes": "Router base URL https://router.huggingface.co/v1 and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://router.huggingface.co/v1/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "The router's public model list reports, per model, every partner provider that serves it with that provider's context window, prices and supported features. The prices are what the router charges, not each partner's own list price."
+          }
+        ],
+        "updated_at": "2026-09-27"
       }
     }
   ]

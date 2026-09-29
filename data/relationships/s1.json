@@ -1,6 +1,6 @@
 {
   "model_id": "s1",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "vercel-ai-gateway",
@@ -17,6 +17,28 @@
           "url": "https://ai-gateway.vercel.sh/v1/models",
           "retrieved_at": "2026-09-27",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
+    },
+    {
+      "provider_id": "featherless",
+      "model_id": "zeras141a/s1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.04,
+        "output": 0.08
+      },
+      "context": {
+        "window": 2048,
+        "max_output_tokens": 2048
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.featherless.ai/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and per-million prices from the public model list (GET /v1/models, no authentication required). Per-image and per-request prices are not token prices and are not recorded."
         }
       ]
     }

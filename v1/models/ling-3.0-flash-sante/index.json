@@ -58,7 +58,7 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
@@ -131,7 +131,7 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ],
@@ -180,6 +180,75 @@
           }
         ],
         "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "inclusionai/ling-3.0-flash-sante",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.0,
+        "output": 0.0
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 32768
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.novita.ai/v3/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "novita",
+        "name": "Novita AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://novita.ai",
+        "documentation_url": "https://novita.ai/docs/guides/introduction",
+        "status": "active",
+        "description": "GPU cloud running open-weight and commercial models (LLM, image, video, audio) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.novita.ai/v3/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://novita.ai/docs/guides/introduction",
+            "retrieved_at": "2026-09-27",
+            "title": "Novita AI docs",
+            "notes": "API root https://api.novita.ai/v3/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.novita.ai/v3/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
       }
     }
   ]

@@ -98,7 +98,7 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ],
@@ -172,7 +172,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ],
@@ -234,7 +234,7 @@
         {
           "type": "official",
           "url": "https://docs.together.ai/docs/inference-models.md",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
         }
       ],
@@ -293,7 +293,7 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
@@ -347,6 +347,216 @@
           }
         ],
         "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "deepinfra",
+      "model_id": "Qwen/Qwen3.7-Max",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.5,
+        "output": 7.5,
+        "cached_input": 0.5
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.deepinfra.com/v1/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens and prices from the public model list (GET /v1/openai/models, no authentication required). Despite the key names, input_tokens / output_tokens / cache_read_tokens are prices per 1M tokens. Non-token prices (per image, per character, per second of audio) are not recorded."
+        }
+      ],
+      "context": {
+        "window": 256000,
+        "max_output_tokens": 256000
+      },
+      "provider": {
+        "id": "deepinfra",
+        "name": "DeepInfra",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://deepinfra.com",
+        "documentation_url": "https://deepinfra.com/docs",
+        "status": "active",
+        "description": "Serverless inference platform running third-party open-weight and commercial models behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.deepinfra.com/v1/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://deepinfra.com/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "DeepInfra docs",
+            "notes": "API root https://api.deepinfra.com/v1/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.deepinfra.com/v1/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). cache_read_tokens prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "qwen/qwen3.7-max",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.25,
+        "output": 3.75,
+        "cached_input": 0.25
+      },
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 65536
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.novita.ai/v3/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "novita",
+        "name": "Novita AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://novita.ai",
+        "documentation_url": "https://novita.ai/docs/guides/introduction",
+        "status": "active",
+        "description": "GPU cloud running open-weight and commercial models (LLM, image, video, audio) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.novita.ai/v3/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://novita.ai/docs/guides/introduction",
+            "retrieved_at": "2026-09-27",
+            "title": "Novita AI docs",
+            "notes": "API root https://api.novita.ai/v3/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.novita.ai/v3/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "ppio",
+      "model_id": "qwen/qwen3.7-max",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 6.0,
+        "output": 18.0,
+        "cached_input": 1.2
+      },
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 65536
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.ppinfra.com/v3/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+        }
+      ],
+      "provider": {
+        "id": "ppio",
+        "name": "PPIO",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://ppio.com",
+        "documentation_url": "https://ppio.com/docs",
+        "status": "active",
+        "description": "Distributed cloud provider selling serverless LLM inference (OpenAI-compatible) alongside GPU instances.",
+        "api": {
+          "base_url": "https://api.ppinfra.com/v3/openai",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "completions": "/completions",
+            "embeddings": "/embeddings"
+          }
+        },
+        "api_capabilities": {
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://ppio.com/docs",
+            "retrieved_at": "2026-09-27",
+            "title": "PPIO docs",
+            "notes": "API root https://api.ppinfra.com/v3/openai and the available OpenAI-compatible routes."
+          },
+          {
+            "type": "official",
+            "url": "https://api.ppinfra.com/v3/openai/models",
+            "retrieved_at": "2026-09-27",
+            "title": "Public model list",
+            "notes": "Model list is public (GET /models needs no authentication). input_cache_read prices confirm prompt caching is billed."
+          }
+        ],
+        "updated_at": "2026-09-27"
       }
     }
   ]

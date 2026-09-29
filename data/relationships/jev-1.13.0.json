@@ -1,6 +1,6 @@
 {
   "model_id": "jev-1.13.0",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "providers": [
     {
       "provider_id": "typesafe-ai",
@@ -27,7 +27,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -53,7 +53,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-09-28",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]

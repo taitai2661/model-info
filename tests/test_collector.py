@@ -12,7 +12,8 @@ def test_registry_lists_collectors():
     assert {"openai", "anthropic", "google", "deepseek", "mistral",
             "openrouter", "opencode", "opencode-go",
             "groq", "together", "fireworks", "nvidia",
-            "vercel-ai-gateway"} <= set(registry)
+            "vercel-ai-gateway", "deepinfra", "novita", "ppio", "sambanova",
+            "featherless", "huggingface"} <= set(registry)
 
 
 def test_docs_collectors_need_no_api_key():
@@ -423,6 +424,295 @@ def test_vercel_ai_gateway_apply_creates_relationship_for_known_model(sandbox):
                  and e["model_id"] == "openai/gpt-5")
     assert entry["sources"]
 
+
+
+# -- the public OpenAI-compatible catalogues ---------------------------------
+
+
+NEW_CATALOG_COLLECTORS = ("deepinfra", "novita", "ppio", "sambanova", "featherless")
+
+
+def test_new_public_catalogues_are_registered_and_need_no_key():
+    registry = discover()
+    for name in NEW_CATALOG_COLLECTORS:
+        collector = registry[name]
+        assert collector.env_var is None, f"{name} must not require a key"
+        assert collector.creates_models is False
+        assert collector.api_url.startswith("https://")
+        assert collector.api_url.endswith("/models")
+
+
+def test_deepinfra_prices_are_already_per_million():
+    from collector.deepinfra import DeepInfraCollector
+
+    # Despite the key names, DeepInfra quotes dollars per 1M tokens. Multiplying
+    # by a million here would inflate every price by 10^6.
+    payload = {"data": [{
+        "id": "openai/gpt-oss-120b",
+        "metadata": {
+            "context_length": 131072,
+            "max_tokens": 32768,
+            "pricing": {"input_tokens": 0.037, "output_tokens": 0.17,
+                        "cache_read_tokens": 0.0037},
+            "description": "gpt-oss-120b",
+        },
+    }]}
+    patch = DeepInfraCollector().normalize(payload)["provider_models"]["openai/gpt-oss-120b"]
+    assert patch["pricing"] == {
+        "currency": "USD", "unit": "1M_tokens",
+        "input": 0.037, "output": 0.17, "cached_input": 0.0037,
+    }
+    assert patch["context"] == {"window": 131072, "max_output_tokens": 32768}
+
+
+def test_deepinfra_ignores_non_token_price_units():
+    from collector.deepinfra import DeepInfraCollector
+
+    # per-image, per-character and per-second prices are not token prices and
+    # must never be folded into a token price.
+    payload = {"data": [{
+        "id": "Bria/fibo_edit",
+        "metadata": {"pricing": {"per_image_unit": 0.01, "input_characters": 0.0001,
+                                 "input_seconds": 0.00002}},
+    }]}
+    patch = DeepInfraCollector().normalize(payload)["provider_models"]["Bria/fibo_edit"]
+    assert "pricing" not in patch
+    assert "context" not in patch
+
+
+def test_novita_and_ppio_read_the_decimal_price_only():
+    from collector.novita import NovitaCollector
+    from collector.ppio import PPIOCollector
+
+    item = {
+        "id": "zai-org/glm-5.3-flash",
+        "context_size": 1000000,
+        "max_output_tokens": 65536,
+        "input_modalities": ["text", "image"],
+        "output_modalities": ["text"],
+        # Mirrored in units of 1e-4 $/1M (1500 means $0.15); reading these
+        # directly would be wrong by a factor of 10,000.
+        "input_token_price_per_m": 1500,
+        "output_token_price_per_m": 5000,
+        "pricing": {
+            "prompt": {"price_per_m": 1500, "price_per_m_decimal": "0.15"},
+            "completion": {"price_per_m": 5000, "price_per_m_decimal": "0.5"},
+            "input_cache_read": {"price_per_m": 300, "price_per_m_decimal": "0.03"},
+        },
+    }
+    for collector in (NovitaCollector(), PPIOCollector()):
+        patch = collector.normalize({"data": [item]})["provider_models"]["zai-org/glm-5.3-flash"]
+        assert patch["pricing"] == {
+            "currency": "USD", "unit": "1M_tokens",
+            "input": 0.15, "output": 0.5, "cached_input": 0.03,
+        }, collector.name
+        assert patch["context"] == {"window": 1000000, "max_output_tokens": 65536}
+        assert patch["modalities"] == {"input": ["text", "image"], "output": ["text"]}
+
+
+def test_novita_leaves_price_unset_when_only_the_scaled_mirror_is_present():
+    from collector.novita import NovitaCollector
+
+    payload = {"data": [{"id": "deepseek/deepseek-v3.2",
+                         "input_token_price_per_m": 20000,
+                         "output_token_price_per_m": 30000}]}
+    patch = NovitaCollector().normalize(payload)["provider_models"]["deepseek/deepseek-v3.2"]
+    assert "pricing" not in patch
+
+
+def test_featherless_reads_the_per_million_pair_and_ignores_per_image():
+    from collector.featherless import FeatherlessCollector
+
+    payload = {"data": [{
+        "id": "openai/gpt-oss-120b",
+        "context_length": 131072,
+        "max_completion_tokens": 32768,
+        "features": {"tool_use": True},
+        # prompt/completion are per-token, input/output are the same figures per
+        # million, image/request are not token prices at all.
+        "pricing": {"prompt": "0.00000015", "completion": "0.0000006",
+                    "input": 0.15, "output": 0.6, "image": "0.01", "request": "0"},
+    }]}
+    patch = FeatherlessCollector().normalize(payload)["provider_models"]["openai/gpt-oss-120b"]
+    assert patch["pricing"] == {
+        "currency": "USD", "unit": "1M_tokens", "input": 0.15, "output": 0.6,
+    }
+    assert patch["capabilities"] == {"tool_use": True}
+    assert patch["context"] == {"window": 131072, "max_output_tokens": 32768}
+
+
+def test_sambanova_converts_per_token_prices():
+    from collector.sambanova import SambaNovaCollector
+
+    payload = {"data": [{
+        "id": "DeepSeek-V3.2",
+        "context_length": 32768,
+        "max_completion_tokens": 7168,
+        "pricing": {"prompt": "0.00000450", "completion": "0.00001",
+                    "input_cache_read": "0.00000045"},
+    }]}
+    patch = SambaNovaCollector().normalize(payload)["provider_models"]["DeepSeek-V3.2"]
+    assert patch["pricing"] == {
+        "currency": "USD", "unit": "1M_tokens",
+        "input": 4.5, "output": 10.0, "cached_input": 0.45,
+    }
+
+
+def test_new_catalogues_create_relationship_entries_and_report_unknown_ids(sandbox):
+    from collector.ppio import PPIOCollector
+
+    rel_path = sandbox / "data/relationships/glm-5.json"
+    stored = json.loads(rel_path.read_text())
+    stored["providers"] = [e for e in stored["providers"] if e["provider_id"] != "ppio"]
+    rel_path.write_text(json.dumps(stored))
+
+    payload = {"data": [
+        {"id": "zai-org/glm-5", "context_size": 202800,
+         "pricing": {"prompt": {"price_per_m_decimal": "0.6"},
+                     "completion": {"price_per_m_decimal": "2.4"}}},
+        {"id": "nobody/never-heard-of-it"},
+    ]}
+    collector = PPIOCollector()
+    report = collector.apply(sandbox, collector.normalize(payload), write=True)
+    assert report["relationships"] == ["glm-5"]
+    assert report["created"] == []
+    assert "nobody/never-heard-of-it" in report["unmatched"]
+    doc = json.loads(rel_path.read_text())
+    entry = next(e for e in doc["providers"]
+                 if e["provider_id"] == "ppio" and e["model_id"] == "zai-org/glm-5")
+    assert entry["pricing"]["input"] == 0.6
+    # Kept because it differs from the model document's own window (204800);
+    # a provider value identical to the model value is pruned instead.
+    assert entry["context"]["window"] == 202800
+    assert entry["sources"]
+
+    # A second run over the same payload must change nothing. The unchanged
+    # report is keyed by the provider's own model id.
+    again = collector.apply(sandbox, collector.normalize(payload), write=True)
+    assert again["relationships"] == []
+    assert again["unchanged"] == ["zai-org/glm-5"]
+
+
+def test_provider_context_identical_to_the_model_is_not_stored(sandbox):
+    from collector.ppio import PPIOCollector
+
+    # glm-5's own document already states a 204800 window, so repeating it on
+    # the provider entry would be noise.
+    payload = {"data": [{"id": "zai-org/glm-5", "context_size": 204800,
+                         "max_output_tokens": 128000}]}
+    collector = PPIOCollector()
+    rel_path = sandbox / "data/relationships/glm-5.json"
+    stored = json.loads(rel_path.read_text())
+    stored["providers"] = [e for e in stored["providers"] if e["provider_id"] != "ppio"]
+    rel_path.write_text(json.dumps(stored))
+
+    collector.apply(sandbox, collector.normalize(payload), write=True)
+    doc = json.loads(rel_path.read_text())
+    entry = next(e for e in doc["providers"]
+                 if e["provider_id"] == "ppio" and e["model_id"] == "zai-org/glm-5")
+    assert "context" not in entry
+
+
+def test_nested_objects_merge_instead_of_being_replaced():
+    from collector.base import deep_merge
+
+    # Two sources can each state a different part of the same entry: one
+    # catalogue quotes a context window, a router quotes which tools that same
+    # provider exposes. Replacing the whole object would make the second
+    # collector erase the first one's field on every run.
+    base = {"context": {"window": 131072}, "api_capabilities": {"tool_calling": True}}
+    patch = {"context": {"max_output_tokens": 32768}}
+    merged = deep_merge(base, patch)
+    assert merged["context"] == {"window": 131072, "max_output_tokens": 32768}
+    assert merged["api_capabilities"] == {"tool_calling": True}
+    # Re-applying the same patch changes nothing, so a run converges.
+    assert deep_merge(merged, patch) == merged
+
+
+def test_null_in_a_patch_never_overwrites_a_verified_value():
+    from collector.base import deep_merge
+
+    assert deep_merge({"pricing": {"input": 1.5}}, {"pricing": None}) == {"pricing": {"input": 1.5}}
+
+
+# -- the Hugging Face router ------------------------------------------------
+
+
+def test_registry_includes_huggingface():
+    collector = discover()["huggingface"]
+    assert collector.api_url == "https://router.huggingface.co/v1/models"
+    assert collector.provider_id == "huggingface"
+    assert collector.env_var is None
+    assert collector.creates_models is False
+
+
+def test_huggingface_keeps_router_and_partner_facts_apart(sandbox):
+    from collector.huggingface import HuggingFaceCollector, PARTNER_IDS
+
+    # The router's own partner keys are mapped explicitly; unknown ones are not.
+    assert PARTNER_IDS["featherless-ai"] == "featherless"
+    assert PARTNER_IDS["zai-org"] == "zai"
+
+    payload = {"data": [{
+        "id": "Qwen/Qwen3-8B",
+        "providers": [
+            {"provider": "novita", "context_length": 1000000,
+             "supports_tools": True, "supports_structured_output": False,
+             "pricing": {"input": 0.3, "output": 1.2}},
+            {"provider": "baseten", "context_length": 32768},
+        ],
+    }]}
+
+    collector = HuggingFaceCollector()
+    captured = {}
+    original = collector.apply
+
+    def spy(root, results, write=False):
+        captured.update(results)
+        return original(root, results, write=write)
+
+    collector.apply = spy
+    collector.fetch = lambda: payload
+    report = collector.run(sandbox, write=False)
+
+    entries = {e["provider_id"]: e for e in captured["relationships"]["qwen3-8b"]}
+    assert set(entries) == {"novita", "huggingface"}
+
+    # The partner gets the facts about that partner, and no price: the router's
+    # figure is not the partner's own price.
+    novita = entries["novita"]
+    assert novita["model_id"] == "Qwen/Qwen3-8B"
+    assert novita["context"] == {"window": 1000000}
+    assert novita["api_capabilities"] == {"tool_calling": True, "structured_output": False}
+    assert "pricing" not in novita
+
+    # The router's own entry records the route and explains the missing price.
+    router = entries["huggingface"]
+    assert "pricing" not in router
+    assert "per partner provider" in router["notes"]
+    assert router["sources"]
+
+    # An unregistered partner is reported rather than invented.
+    assert any("baseten" in item for item in report["unmatched"])
+
+
+def test_huggingface_resolves_repository_ids_to_registered_models(sandbox):
+    from collector.huggingface import HuggingFaceCollector
+
+    payload = {"data": [
+        {"id": "Qwen/Qwen3-8B", "providers": [{"provider": "novita",
+                                                "context_length": 1000000}]},
+        {"id": "someone/entirely-unknown", "providers": [{"provider": "novita"}]},
+    ]}
+    collector = HuggingFaceCollector()
+    captured = {}
+    original = collector.apply
+    collector.apply = lambda root, results, write=False: (
+        captured.update(results) or original(root, results, write=write))
+    collector.fetch = lambda: payload
+    collector.run(sandbox, write=False)
+
+    assert list(captured["relationships"]) == ["qwen3-8b"]
 
 
 # -- catalog (bulk import from the two aggregator catalogues) ---------------

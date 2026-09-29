@@ -1,0 +1,50 @@
+{
+  "provider": {
+    "id": "cerebras",
+    "name": "Cerebras Inference",
+    "types": [
+      "api_provider",
+      "platform"
+    ],
+    "website": "https://www.cerebras.ai",
+    "documentation_url": "https://inference-docs.cerebras.ai",
+    "status": "active",
+    "description": "Inference service running open-weight models on Cerebras wafer-scale hardware behind an OpenAI-compatible API.",
+    "api": {
+      "base_url": "https://api.cerebras.ai/v1",
+      "protocol": "https",
+      "api_style": "openai_compatible",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "chat_completions": "/chat/completions",
+        "models": "/models",
+        "completions": "/completions",
+        "batches": "/batches"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://inference-docs.cerebras.ai",
+        "retrieved_at": "2026-09-27",
+        "title": "Cerebras Inference docs",
+        "notes": "API root https://api.cerebras.ai/v1 and the available OpenAI-compatible routes. GET /v1/models needs a key, so the model list is not collected directly."
+      },
+      {
+        "type": "documentation",
+        "url": "https://huggingface.co/docs/inference-providers",
+        "retrieved_at": "2026-09-27",
+        "title": "Hugging Face Inference Providers",
+        "notes": "Cerebras listed as a partner provider; the router's public model list reports which models it serves."
+      }
+    ],
+    "updated_at": "2026-09-27"
+  },
+  "model_ids": [
+    "gpt-oss-120b",
+    "qwen3.8-27b"
+  ]
+}

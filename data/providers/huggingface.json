@@ -1,0 +1,45 @@
+{
+  "id": "huggingface",
+  "name": "Hugging Face Inference Providers",
+  "types": [
+    "api_provider",
+    "aggregator",
+    "gateway"
+  ],
+  "website": "https://huggingface.co",
+  "documentation_url": "https://huggingface.co/docs/inference-providers",
+  "status": "active",
+  "description": "Hugging Face's router: one OpenAI-compatible endpoint that forwards a request to whichever partner provider serves that model, with per-provider context and prices.",
+  "api": {
+    "base_url": "https://router.huggingface.co/v1",
+    "protocol": "https",
+    "api_style": "openai_compatible",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization"
+    },
+    "endpoints": {
+      "chat_completions": "/chat/completions",
+      "models": "/models",
+      "embeddings": "/embeddings",
+      "responses": "/responses"
+    }
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://huggingface.co/docs/inference-providers",
+      "retrieved_at": "2026-09-27",
+      "title": "Hugging Face Inference Providers",
+      "notes": "Router base URL https://router.huggingface.co/v1 and the available OpenAI-compatible routes."
+    },
+    {
+      "type": "official",
+      "url": "https://router.huggingface.co/v1/models",
+      "retrieved_at": "2026-09-27",
+      "title": "Public model list",
+      "notes": "The router's public model list reports, per model, every partner provider that serves it with that provider's context window, prices and supported features. The prices are what the router charges, not each partner's own list price."
+    }
+  ],
+  "updated_at": "2026-09-27"
+}

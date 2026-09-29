@@ -693,6 +693,47 @@ function buildProvidersSection(plist, model) {
     if (!priceIsOverridden && pricing) priceGrid.append(el("div", { class: "price-inherited" }, t("detail.inherit")));
 
     const moreContent = el("div", { class: "connection-more-content" });
+
+    // What this provider actually offers, when the provider states it and it
+    // differs from the model document (which is the default it inherits).
+    const contextOverride = entry.context || null;
+    if (contextOverride) {
+      const parts = [];
+      if (typeof contextOverride.window === "number") {
+        parts.push(`${t("detail.context")}: ${fmtNum(contextOverride.window)}`);
+      }
+      if (typeof contextOverride.max_output_tokens === "number") {
+        parts.push(`${t("detail.max_output")}: ${fmtNum(contextOverride.max_output_tokens)}`);
+      }
+      if (parts.length > 0) {
+        moreContent.append(el("p", { class: "connection-note" },
+          `${t("detail.at_provider")} ${parts.join(" · ")}`));
+      }
+    }
+
+    const entryCaps = [
+      ["capabilities", t("detail.capabilities"), ["tool_use", "vision", "reasoning", "structured_output"]],
+      ["api_capabilities", t("detail.api_capabilities"), ["streaming", "tool_calling", "structured_output", "json_mode", "prompt_caching", "batch"]],
+    ];
+    for (const [field, heading, keys] of entryCaps) {
+      const stated = entry[field];
+      if (!stated) continue;
+      const items = [];
+      for (const k of keys) {
+        const v = stated[k];
+        if (v !== true && v !== false) continue;
+        const cls = v ? "cap-yes" : "cap-no";
+        const label = v ? "✓" : "✗";
+        const name = field === "capabilities" ? t(`cap.${k}`) : t(`api.${k}`);
+        items.push(el("span", { class: `cap-item ${cls}` }, `${label} ${name}`));
+      }
+      if (items.length === 0) continue;
+      const wrap = el("div", { class: "spec-item" });
+      wrap.append(el("div", { class: "spec-label" }, `${t("detail.at_provider")} ${heading}`),
+        el("div", { class: "cap-list" }, ...items));
+      moreContent.append(wrap);
+    }
+
     if (prov?.api?.endpoints) {
       const endpoints = el("div", { class: "endpoint-list" });
       for (const [name, path] of Object.entries(prov.api.endpoints)) {
@@ -1058,8 +1099,17 @@ function updateStaticText() {
   if (footerLicense) footerLicense.textContent = `${t("footer.license")}: MIT`;
 }
 
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register(new URL("../sw.js", import.meta.url)).catch(() => {});
+  });
+}
+
 async function init() {
   const root = document.getElementById("root");
+
+  registerServiceWorker();
 
   const savedTheme = localStorage.getItem("model-info-theme");
   if (savedTheme) {

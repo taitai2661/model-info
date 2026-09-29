@@ -1,0 +1,38 @@
+{
+  "provider": {
+    "id": "stability-ai",
+    "name": "Stability AI",
+    "types": [
+      "api_provider",
+      "platform"
+    ],
+    "website": "https://stability.ai/",
+    "documentation_url": "https://platform.stability.ai/docs",
+    "status": "active",
+    "description": "Open-source AI company specializing in image, video, and audio generation models.",
+    "api": {
+      "base_url": "https://api.stability.ai/v1",
+      "protocol": "https",
+      "api_style": "custom",
+      "authentication": {
+        "type": "bearer",
+        "header": "Authorization"
+      },
+      "endpoints": {
+        "models": "/models",
+        "images": "/generations"
+      }
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://platform.stability.ai/docs",
+        "retrieved_at": "2026-09-28",
+        "title": "Stability AI Platform documentation",
+        "notes": "API root https://api.stability.ai/v1 and the available routes."
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  "model_ids": []
+}

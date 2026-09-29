@@ -99,11 +99,25 @@ def merge_sources(existing: list, incoming: list) -> list:
 
 
 def deep_merge(base: dict, patch: dict) -> dict:
+    """Overlay a patch on a document, never dropping an existing fact.
+
+    A ``None`` in the patch means "the source did not say", so it is skipped and
+    the existing value survives. Nested objects are merged key by key rather
+    than replaced: two sources may each state a different part of the same
+    entry's ``context`` or ``api_capabilities`` — one provider catalogue quoting
+    a context window, a router quoting which tools that provider exposes — and
+    replacing the whole object would make those two collectors erase each
+    other's field on every run.
+    """
     out = dict(base)
     for key, value in patch.items():
         if value is None:
             continue
-        out[key] = value
+        existing = out.get(key)
+        if isinstance(value, dict) and isinstance(existing, dict):
+            out[key] = deep_merge(existing, value)
+        else:
+            out[key] = value
     return out
 
 
@@ -112,6 +126,58 @@ def api_source(url: str, notes: str | None = None) -> dict:
     if notes:
         source["notes"] = notes
     return source
+
+
+class RegistryIndex:
+    """Lazily loaded view of ``data/``, shared for the length of one ``apply()``.
+
+    Matching a provider model id means answering two questions that both need
+    the whole registry: "which registered model is this?" and "which relationship
+    entry already carries it?". Reading the 640 model files and 636 relationship
+    files once per id is fine for a catalogue of a hundred models and far too
+    slow for Featherless, which lists tens of thousands of ids. The index is
+    built at most once and then updated in place as documents are created, so a
+    run that writes still sees its own writes.
+    """
+
+    def __init__(self, root: Path):
+        self.root = root
+        self._models: dict | None = None
+        self._relationships: dict | None = None
+
+    @property
+    def models(self) -> dict:
+        if self._models is None:
+            self._models = {}
+            for path in sorted((self.root / "data" / "models").glob("*.json")):
+                doc = load_json(path)
+                if doc:
+                    self._models[doc.get("model_id", path.stem)] = doc
+        return self._models
+
+    @property
+    def relationships(self) -> dict:
+        if self._relationships is None:
+            self._relationships = {}
+            for path in sorted((self.root / "data" / "relationships").glob("*.json")):
+                doc = load_json(path)
+                if not doc:
+                    continue
+                for entry in doc.get("providers", []):
+                    # First file in sorted order wins, exactly as a linear scan
+                    # over the directory did.
+                    self._relationships.setdefault(
+                        (entry.get("provider_id"), entry.get("model_id")), (path, doc)
+                    )
+        return self._relationships
+
+    def add_relationship(self, path: Path, doc: dict, entry: dict) -> None:
+        if self._relationships is not None:
+            self._relationships[(entry.get("provider_id"), entry.get("model_id"))] = (path, doc)
+
+    def add_model(self, doc: dict) -> None:
+        if self._models is not None:
+            self._models[doc.get("model_id", "")] = doc
 
 
 class BaseCollector:
@@ -155,48 +221,39 @@ class BaseCollector:
 
     # -- matching -----------------------------------------------------------
 
-    def resolve_model(self, root: Path, api_model_id: str):
+    def resolve_model(self, root: Path, api_model_id: str, index: "RegistryIndex | None" = None):
         """Map a provider model id onto a registered model.
 
         Returns ``(model_doc, canonical_id)`` or ``(None, None)``. Lookup order:
         exact file name, vendor-prefix / case / decimal-escape variants, the
         existing snapshot-suffix rule, then the model's own ``version`` field.
         """
+        index = index or RegistryIndex(root)
+        models = index.models
         candidates = id_candidates(api_model_id)
         for candidate in candidates:
-            doc = load_json(root / "data" / "models" / f"{candidate}.json")
+            doc = models.get(candidate)
             if doc:
                 return doc, doc.get("model_id", candidate)
 
-        docs = [load_json(p) for p in sorted((root / "data" / "models").glob("*.json"))]
-        for doc in docs:
-            if not doc:
-                continue
-            canonical = doc.get("model_id", "")
-            for candidate in candidates:
+        for candidate in candidates:
+            for canonical, doc in models.items():
                 if candidate.startswith(canonical + "-") and SNAPSHOT_RE.match(
                     candidate[len(canonical) + 1:]
                 ):
                     return doc, canonical
 
         wanted = {normalize_model_key(c) for c in candidates}
-        for doc in docs:
-            if not doc:
-                continue
+        for doc in models.values():
             version = normalize_model_key(doc.get("version") or "")
             if version and version in wanted:
                 return doc, doc.get("model_id", "")
         return None, None
 
-    def find_relationship(self, root: Path, provider_model_id: str):
-        for path in sorted((root / "data" / "relationships").glob("*.json")):
-            doc = load_json(path)
-            if not doc:
-                continue
-            for entry in doc.get("providers", []):
-                if entry.get("provider_id") == self.provider_id and entry.get("model_id") == provider_model_id:
-                    return path, doc
-        return None, None
+    def find_relationship(self, root: Path, provider_model_id: str,
+                          index: "RegistryIndex | None" = None):
+        index = index or RegistryIndex(root)
+        return index.relationships.get((self.provider_id, provider_model_id), (None, None))
 
     # -- writing ------------------------------------------------------------
 
@@ -206,11 +263,12 @@ class BaseCollector:
                   "invalid": []}
         model_validator = load_schema(root, "model.schema.json")
         rel_validator = load_schema(root, "model-provider.schema.json")
+        registry = RegistryIndex(root)
 
         resolved: set[str] = set()
         for api_id, raw_patch in sorted(results.get("models", {}).items()):
             patch = {k: v for k, v in raw_patch.items() if k != "required_fields"}
-            doc, canonical = self.resolve_model(root, api_id)
+            doc, canonical = self.resolve_model(root, api_id, registry)
             if doc is not None and canonical != api_id:
                 report["aliases"].append(api_id)
                 continue
@@ -228,6 +286,7 @@ class BaseCollector:
                     continue
                 if write:
                     save_json(path, doc)
+                registry.add_model(doc)
                 report["created"].append(api_id)
                 resolved.add(api_id)
                 continue
@@ -252,7 +311,7 @@ class BaseCollector:
             if key in resolved:
                 canonical = key
             else:
-                _, canonical = self.resolve_model(root, key)
+                _, canonical = self.resolve_model(root, key, registry)
                 if canonical is None:
                     report["unmatched"].append(f"{key} (no matching model)")
                     continue
@@ -282,6 +341,7 @@ class BaseCollector:
                 if entry is None:
                     entry = {"provider_id": pid, "model_id": patch["model_id"]}
                     rel["providers"].append(entry)
+                    registry.add_relationship(rel_path, rel, entry)
                     changed = True
                 before = json.dumps(entry, sort_keys=True)
                 merged = deep_merge(entry, patch)
@@ -304,13 +364,13 @@ class BaseCollector:
                 report["unchanged"].append(canonical)
 
         for api_id, patch in sorted(results.get("provider_models", {}).items()):
-            rel_path, rel = self.find_relationship(root, api_id)
+            rel_path, rel = self.find_relationship(root, api_id, registry)
             created = False
             if rel is None:
                 # The provider lists an id we have no entry for yet. Create one
                 # only when the id resolves to a model that is already
                 # registered; otherwise it stays in `unmatched` for review.
-                doc, canonical = self.resolve_model(root, api_id)
+                doc, canonical = self.resolve_model(root, api_id, registry)
                 if doc is None:
                     report["unmatched"].append(api_id)
                     continue
@@ -318,12 +378,12 @@ class BaseCollector:
                 rel = load_json(rel_path)
                 if rel is None:
                     rel = {"model_id": canonical, "updated_at": today(), "providers": []}
-                rel["providers"].append(
-                    {"provider_id": self.provider_id, "model_id": api_id}
-                )
+                created_entry = {"provider_id": self.provider_id, "model_id": api_id}
+                rel["providers"].append(created_entry)
+                registry.add_relationship(rel_path, rel, created_entry)
                 created = True
             canonical = rel["model_id"]
-            model_doc = load_json(root / "data" / "models" / f"{canonical}.json") or {}
+            model_doc = registry.models.get(canonical) or {}
             index = next(
                 i for i, e in enumerate(rel["providers"])
                 if e["provider_id"] == self.provider_id and e["model_id"] == api_id
@@ -393,9 +453,11 @@ class BaseCollector:
 
 
 def discover():
-    from . import (anthropic, catalog, deepseek, fireworks, google, groq, mistral,
-                   nvidia, opencode, opencode_go, openrouter, openai, together,
-                   vercel_ai_gateway)
+    from . import (anthropic, catalog, deepinfra, deepseek, featherless, fireworks,
+                   google, groq, huggingface, mistral, nvidia, novita, opencode,
+                   opencode_go, openrouter, openai, ppio, sambanova, together,
+                   vercel_ai_gateway, azure_openai, cloudflare, lambda_labs,
+                   luma, replicate, stability, watsonx)
 
     collectors = [openai.OpenAICollector(), anthropic.AnthropicCollector(),
                   google.GoogleCollector(), deepseek.DeepSeekCollector(),
@@ -404,5 +466,24 @@ def discover():
                   groq.GroqCollector(), together.TogetherCollector(),
                   fireworks.FireworksCollector(), nvidia.NvidiaCollector(),
                   vercel_ai_gateway.VercelAIGatewayCollector(),
+                  deepinfra.DeepInfraCollector(), novita.NovitaCollector(),
+                  ppio.PPIOCollector(), featherless.FeatherlessCollector(),
+                  sambanova.SambaNovaCollector(), huggingface.HuggingFaceCollector(),
                   catalog.CatalogCollector()]
+
+    optional = [
+        (azure_openai.AzureOpenAICollector, "AZURE_OPENAI_INSTANCE"),
+        (cloudflare.CloudflareWorkersAICollector, "CLOUDFLARE_ACCOUNT_ID"),
+        (watsonx.WatsonXCollector, "WATSONX_PROJECT_ID"),
+    ]
+    for cls, var in optional:
+        if os.environ.get(var):
+            collectors.append(cls())
+        else:
+            collectors.append(cls.__new__(cls))
+
+    collectors.extend([
+        lambda_labs.LambdaLabsCollector(), luma.LumaAICollector(),
+        replicate.ReplicateCollector(), stability.StabilityAICollector(),
+    ])
     return {c.name: c for c in collectors}
