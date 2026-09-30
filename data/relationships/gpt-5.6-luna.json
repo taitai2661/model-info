@@ -148,6 +148,73 @@
           "notes": "Provider model id, context window, modalities, and prices from the public model list."
         }
       ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-5.6-luna-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.2,
+        "output": 1.2,
+        "cached_input": 0.02
+      },
+      "modalities": {
+        "input": ["file", "image", "text"],
+        "output": ["text"]
+      },
+      "api_variant": {"reasoning_mode": "pro"},
+      "sources": [{
+        "type": "official",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-30",
+        "notes": "OpenRouter exposes this ID as GPT-5.6 Luna with reasoning.mode set to pro; prices and effort options from its public model list."
+      }]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-5.6-luna-pro:batch",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.1,
+        "output": 0.6,
+        "cached_input": 0.01
+      },
+      "modalities": {
+        "input": ["file", "image", "text"],
+        "output": ["text"]
+      },
+      "api_variant": {"reasoning_mode": "pro"},
+      "sources": [{
+        "type": "official",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-30",
+        "notes": "OpenRouter batch route for GPT-5.6 Luna Pro; same base model in pro reasoning mode."
+      }]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "openai/gpt-5.6-luna-fast",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.4,
+        "output": 2.4,
+        "cached_input": 0.04
+      },
+      "modalities": {
+        "input": ["text", "image", "file"],
+        "output": ["text"]
+      },
+      "api_variant": {"service_tier": "fast"},
+      "sources": [{
+        "type": "official",
+        "url": "https://vercel.com/ai-gateway/models/gpt-5.6-luna-fast",
+        "retrieved_at": "2026-09-30",
+        "title": "GPT-5.6 Luna (Fast)",
+        "notes": "Vercel's Fast route for the base GPT-5.6 Luna model."
+      }]
     }
   ]
 }

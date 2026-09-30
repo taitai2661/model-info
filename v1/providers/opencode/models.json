@@ -1244,103 +1244,6 @@
   },
   {
     "model": {
-      "model_id": "deepseek-flash",
-      "name": "DeepSeek Flash",
-      "display_name": "DeepSeek Flash",
-      "model_provider": "deepseek",
-      "family": "DeepSeek",
-      "version": "DeepSeek-V4.1-Flash",
-      "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
-      "description": "DeepSeek's fast multimodal model (model version DeepSeek-V4.1-Flash) with thinking and non-thinking modes, vision, tool calls, JSON output, and Responses API support.",
-      "context": {
-        "window": 1048576,
-        "max_output_tokens": 393216
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "capabilities": {
-        "tool_use": true,
-        "vision": true,
-        "reasoning": true,
-        "function_calling": true,
-        "structured_output": null,
-        "json_mode": true,
-        "streaming": true
-      },
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.15,
-        "output": 0.6,
-        "cached_input": 0.003
-      },
-      "availability": {
-        "api": true,
-        "cloud": true,
-        "open_weights": true,
-        "self_hostable": true
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://api-docs.deepseek.com/quick_start/pricing",
-          "retrieved_at": "2026-09-26",
-          "title": "Models & pricing",
-          "notes": "Prices are off-peak rates; peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri, excluding PRC public holidays) cost 2x. Max output is stated as 384K."
-        },
-        {
-          "type": "community",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-26",
-          "title": "OpenRouter public model list",
-          "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
-        },
-        {
-          "type": "official",
-          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-          "retrieved_at": "2026-09-26",
-          "title": "Model weights"
-        }
-      ]
-    },
-    "relationship": {
-      "provider_id": "opencode",
-      "model_id": "deepseek-v4.1-flash",
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.3,
-        "output": 1.2,
-        "cached_input": 0.006
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://opencode.ai/docs/zen/",
-          "retrieved_at": "2026-09-26",
-          "title": "OpenCode Zen docs",
-          "notes": "Price, availability, and deprecation status from the Zen docs."
-        },
-        {
-          "type": "official",
-          "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
-        }
-      ]
-    }
-  },
-  {
-    "model": {
       "model_id": "deepseek-v4-flash",
       "name": "DeepSeek V4 Flash",
       "display_name": "DeepSeek V4 Flash",
@@ -1666,6 +1569,110 @@
         "input": 1.74,
         "output": 3.48,
         "cached_input": 0.145
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "deepseek-v4.1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "display_name": "DeepSeek V4.1 Flash",
+      "model_provider": "deepseek",
+      "family": "DeepSeek",
+      "version": "v4.1",
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "DeepSeek V4.1 Flash: a 552B-total / 8B-active MoE with native multimodal support and a smaller KV cache for lower API cost.",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 393216
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "vision": true,
+        "reasoning": true,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://build.nvidia.com/deepseek-ai/deepseek-v4.1-flash",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM model page"
+        },
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog"
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-30",
+          "title": "DeepSeek models & pricing",
+          "notes": "First-party API model ID is deepseek-flash; context is 1M and max output is 384K. Off-peak per-1M pricing is $0.15 input, $0.003 cache-hit input, and $0.60 output; peak rates are 2x. Legacy V4 Flash IDs route here."
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/guides/thinking_mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Thinking mode",
+          "notes": "The DeepSeek API supports enabling/disabling thinking separately from reasoning effort."
+        },
+        {
+          "type": "official",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "retrieved_at": "2026-09-26",
+          "title": "Model weights"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "opencode",
+      "model_id": "deepseek-v4.1-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.006
       },
       "sources": [
         {
@@ -4124,6 +4131,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -4136,8 +4168,9 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
           "type": "official",
@@ -4145,6 +4178,20 @@
           "retrieved_at": "2026-09-26",
           "title": "OpenAI pricing",
           "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
       ]
     },
@@ -4211,6 +4258,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -4223,8 +4295,9 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
           "type": "official",
@@ -4232,6 +4305,20 @@
           "retrieved_at": "2026-09-26",
           "title": "OpenAI pricing",
           "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
       ]
     },
@@ -4298,6 +4385,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -4310,8 +4422,9 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
           "type": "official",
@@ -4319,6 +4432,20 @@
           "retrieved_at": "2026-09-26",
           "title": "OpenAI pricing",
           "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
       ]
     },
@@ -4361,7 +4488,7 @@
       "version": null,
       "status": "active",
       "release_date": null,
-      "updated_at": "2026-09-26",
+      "updated_at": "2026-09-30",
       "description": "OpenAI's most capable model, built for complex reasoning, coding, computer use, research, and document creation.",
       "context": {
         "window": 1050000,
@@ -4386,6 +4513,32 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex",
+          "ultrafast"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -4404,8 +4557,23 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports low, medium, high, xhigh, and max. The documented supported values do not include none; this model page does not state a default effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models. GPT-6 Astra also supports ultrafast processing."
         },
         {
           "type": "official",
@@ -4467,7 +4635,7 @@
       "version": null,
       "status": "active",
       "release_date": null,
-      "updated_at": "2026-09-26",
+      "updated_at": "2026-09-30",
       "description": "OpenAI's most efficient GPT-6 model for focused, high-volume tasks.",
       "context": {
         "window": 1050000,
@@ -4492,6 +4660,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -4510,8 +4703,23 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models."
         },
         {
           "type": "official",
@@ -4573,7 +4781,7 @@
       "version": null,
       "status": "active",
       "release_date": null,
-      "updated_at": "2026-09-26",
+      "updated_at": "2026-09-30",
       "description": "OpenAI model built to power complex coding and agentic workflows, balancing intelligence and cost.",
       "context": {
         "window": 1050000,
@@ -4598,6 +4806,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -4616,8 +4849,23 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models."
         },
         {
           "type": "official",
@@ -4703,6 +4951,31 @@
         "structured_output": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -4723,7 +4996,21 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
           "retrieved_at": "2026-09-30",
           "title": "Model page",
-          "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+          "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. reasoning.effort supports low, medium, high, xhigh, and max (default medium); none and minimal are unsupported. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast; fast mode is unavailable with EU data residency for GPT-6.1 Sol."
         },
         {
           "type": "official",

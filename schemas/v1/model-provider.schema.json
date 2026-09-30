@@ -78,6 +78,54 @@
         "streaming": {"type": ["boolean", "null"]}
       }
     },
+    "reasoning": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "description": "Provider-specific reasoning controls. Omitted keys inherit from the model document; explicit null values are unknown at this provider.",
+      "properties": {
+        "parameter": {"type": ["string", "null"], "minLength": 1, "maxLength": 128},
+        "effort_levels": {
+          "type": ["array", "null"],
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
+          "uniqueItems": true
+        },
+        "default_effort": {"type": ["string", "null"], "minLength": 1, "maxLength": 64},
+        "supports_none": {"type": ["boolean", "null"]},
+        "mode_parameter": {"type": ["string", "null"], "minLength": 1, "maxLength": 128},
+        "modes": {
+          "type": ["array", "null"],
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
+          "uniqueItems": true
+        },
+        "default_mode": {"type": ["string", "null"], "minLength": 1, "maxLength": 64}
+      }
+    },
+    "apiVariant": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "description": "Provider-specific alias selection for a mode or service tier on the underlying model.",
+      "properties": {
+        "reasoning_mode": {"type": ["string", "null"], "minLength": 1, "maxLength": 64},
+        "reasoning_effort": {"type": ["string", "null"], "minLength": 1, "maxLength": 64},
+        "service_tier": {"type": ["string", "null"], "minLength": 1, "maxLength": 64},
+        "performance_variant": {"type": ["string", "null"], "minLength": 1, "maxLength": 64}
+      }
+    },
+    "serviceTier": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "parameter": {"type": ["string", "null"], "minLength": 1, "maxLength": 128},
+        "options": {
+          "type": ["array", "null"],
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
+          "uniqueItems": true
+        }
+      }
+    },
     "apiCapabilities": {
       "type": ["object", "null"],
       "additionalProperties": false,
@@ -127,6 +175,9 @@
         "context": {"$ref": "#/$defs/context"},
         "modalities": {"$ref": "#/$defs/modalities"},
         "capabilities": {"$ref": "#/$defs/capabilities"},
+        "reasoning": {"$ref": "#/$defs/reasoning"},
+        "service_tier": {"$ref": "#/$defs/serviceTier"},
+        "api_variant": {"$ref": "#/$defs/apiVariant"},
         "api_capabilities": {"$ref": "#/$defs/apiCapabilities"},
         "pricing": {"$ref": "#/$defs/pricing"},
         "notes": {"type": ["string", "null"], "maxLength": 2000},

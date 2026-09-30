@@ -110,6 +110,44 @@ GitHub Pages 上ではリポジトリルートから `https://<user>.github.io/<
 }
 ```
 
+推論モードと推論レベルは別々の設定です。`model.reasoning` に `reasoning.mode` (`standard` / `pro`) と `reasoning.effort` の選択肢を記録し、`model.service_tier` に `fast` などの処理ティアを記録します。`providers[].api_variant` は、同じベースモデルを保ったまま、提供元の別名が特定のモードやティアを選ぶことを表します。
+
+```json
+{
+  "reasoning": {
+    "parameter": "reasoning.effort",
+    "effort_levels": ["low", "medium", "high", "xhigh", "max"],
+    "default_effort": "medium",
+    "supports_none": false,
+    "mode_parameter": "reasoning.mode",
+    "modes": ["standard", "pro"],
+    "default_mode": "standard"
+  },
+  "service_tier": {
+    "parameter": "service_tier",
+    "options": ["fast"]
+  }
+}
+```
+
+プロバイダー固有の別名は `providers[].api_variant` に選択される設定を記録し、プロバイダー側のモデル ID を保持します。推論モードと推論レベル、処理ティアやスループット別名は別々に扱います。
+
+```json
+{
+  "provider_id": "openrouter",
+  "model_id": "openai/gpt-6-sol-pro",
+  "api_variant": { "reasoning_mode": "pro" }
+}
+```
+
+```json
+{
+  "provider_id": "vercel-ai-gateway",
+  "model_id": "moonshotai/kimi-k2.7-code-highspeed",
+  "api_variant": { "performance_variant": "highspeed" }
+}
+```
+
 ### 上書きセマンティクス(Model × Provider)
 
 関係エントリ内の任意キーは次の3値で表現します。
@@ -122,7 +160,7 @@ GitHub Pages 上ではリポジトリルートから `https://<user>.github.io/<
 
 `model.provider_pricing`(model側のショートカット、`provider_id` でキー付け)も同じ意味です。両方に同じProviderの料金が書かれている場合は一致必須で、検証が強制します。
 
-関係エントリ内のネストオブジェクト(`pricing` / `context` / `modalities` / `capabilities` / `api_capabilities`)はモデル本体のオブジェクトを**丸ごと置き換えます**。置換後オブジェクト内で省略されたフィールドは「そのProviderでは不明」であって、継承ではありません。
+関係エントリ内のネストオブジェクト(`pricing` / `context` / `modalities` / `capabilities` / `reasoning` / `service_tier` / `api_variant` / `api_capabilities`)はモデル本体のオブジェクトを**丸ごと置き換えます**。置換後オブジェクト内で省略されたフィールドは「そのProviderでは不明」であって、継承ではありません。
 
 ## データのルール
 
@@ -175,7 +213,7 @@ Collectorはソースから読み取れる情報**だけ**を更新します。�
 
 ### カタログ一括 import(`catalog`)
 
-`catalog` は唯一**モデルドキュメントを作成する**Collectorで、それでも「未登録のモデルに限り」作成します。2つの大規模カタログ(Vercel AI Gateway / OpenRouter)を読み、まだ存在しないモデルをすべて登録します(現在 470 モデル / 58 の model provider。オープンウェイトのロングテール、embedding、画像・動画生成モデル、コミュニティの fine-tune が中心です)。登録済みモデルは完全に手を触れないため、手検証済みの specs がカタログで上書きされることはありません。
+`catalog` は唯一**モデルドキュメントを作成する**Collectorで、それでも「未登録のモデルに限り」作成します。2つの大規模カタログ(Vercel AI Gateway / OpenRouter)を読み、まだ存在しないモデルをすべて登録します(現在 451 モデル / 58 の model provider。オープンウェイトのロングテール、embedding、画像・動画生成モデル、コミュニティの fine-tune が中心です)。登録済みモデルは完全に手を触れないため、手検証済みの specs がカタログで上書きされることはありません。`collector/model_variants.json` の明示的な対応表にある API モード・ティア別名は、重複モデルではなく登録済みベースモデルの提供元別ルートとして扱います。
 
 registry を上流JSONの写しにしないため、3つのルールを課しています。
 

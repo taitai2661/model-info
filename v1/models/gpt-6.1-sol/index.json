@@ -32,6 +32,31 @@
       "structured_output": true,
       "streaming": true
     },
+    "reasoning": {
+      "parameter": "reasoning.effort",
+      "effort_levels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "default_effort": "medium",
+      "supports_none": false,
+      "mode_parameter": "reasoning.mode",
+      "modes": [
+        "standard",
+        "pro"
+      ],
+      "default_mode": "standard"
+    },
+    "service_tier": {
+      "parameter": "service_tier",
+      "options": [
+        "fast",
+        "flex"
+      ]
+    },
     "pricing": {
       "currency": "USD",
       "unit": "1M_tokens",
@@ -52,7 +77,21 @@
         "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
         "retrieved_at": "2026-09-30",
         "title": "Model page",
-        "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+        "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. reasoning.effort supports low, medium, high, xhigh, and max (default medium); none and minimal are unsupported. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/reasoning",
+        "retrieved_at": "2026-09-30",
+        "title": "Reasoning models",
+        "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+        "retrieved_at": "2026-09-30",
+        "title": "Fast mode",
+        "notes": "Documents service_tier fast; fast mode is unavailable with EU data residency for GPT-6.1 Sol."
       },
       {
         "type": "official",
@@ -143,7 +182,7 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "provider": {
@@ -299,7 +338,7 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "provider": {
@@ -399,6 +438,198 @@
             "url": "https://opencode.ai/zen/v1/models",
             "retrieved_at": "2026-09-26",
             "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-6.1-sol-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 10.0,
+        "cached_input": 0.1
+      },
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "api_variant": {
+        "reasoning_mode": "pro"
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "This provider ID is GPT-6.1 Sol with reasoning.mode set to pro."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-6.1-sol-pro:batch",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.0,
+        "output": 5.0,
+        "cached_input": 0.05
+      },
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "api_variant": {
+        "reasoning_mode": "pro"
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "OpenRouter batch route for GPT-6.1 Sol Pro."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
           }
         ],
         "updated_at": "2026-09-26"

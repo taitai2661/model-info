@@ -42,7 +42,9 @@ from .base import (
     VARIANT_RE,
     BaseCollector,
     CollectorError,
+    deep_merge,
     load_schema,
+    normalize_effort_levels,
     save_json,
     today,
 )
@@ -50,6 +52,7 @@ from .base import (
 VERCEL_URL = "https://ai-gateway.vercel.sh/v1/models"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/models"
 VENDOR_MAP = Path(__file__).resolve().parent / "vendors.json"
+MODEL_VARIANTS = Path(__file__).resolve().parent / "model_variants.json"
 
 # A model id is a file name and a URL path segment; anything the catalogues
 # publish that does not fit the schema pattern is reported, not coerced.
@@ -162,6 +165,30 @@ def _capabilities(tags, parameters):
     return out or None
 
 
+def _reasoning_config(efforts, default=None):
+    if not isinstance(efforts, list) or not efforts or not all(
+        isinstance(item, str) for item in efforts
+    ):
+        return None
+    return {
+        "parameter": "reasoning.effort",
+        "effort_levels": normalize_effort_levels(efforts),
+        "default_effort": default,
+        "supports_none": "none" in efforts,
+    }
+
+
+def _vercel_efforts(options):
+    if not isinstance(options, list):
+        return None
+    effort = next(
+        (item for item in options
+         if isinstance(item, dict) and item.get("type") == "effort"),
+        None,
+    )
+    return effort.get("values") if effort else None
+
+
 def _prune(patch: dict) -> dict:
     """Drop unknown facts so they stay absent rather than becoming null."""
     return {k: v for k, v in patch.items() if v is not None}
@@ -179,10 +206,13 @@ class CatalogCollector(BaseCollector):
 
     def __init__(self):
         self.vendors = json.loads(VENDOR_MAP.read_text(encoding="utf-8"))
+        self.model_variants = json.loads(MODEL_VARIANTS.read_text(encoding="utf-8"))
         self.ignored_vendors = self.vendors.get("ignored", {})
         self.aliases = self.vendors.get("aliases", {})
         self.new_providers = self.vendors.get("providers", {})
         self._records: dict[str, dict] = {}
+        self._variant_relationships: dict[str, list[dict]] = {}
+        self._root: Path | None = None
 
     # -- catalogue reading --------------------------------------------------
 
@@ -220,6 +250,7 @@ class CatalogCollector(BaseCollector):
             "modalities": _modalities(modalities.get("input"), modalities.get("output")),
             "capabilities": _capabilities(item.get("tags"),
                                          item.get("supported_parameters")),
+            "reasoning": _reasoning_config(_vercel_efforts(item.get("reasoning_options"))),
             "pricing": _pricing(item.get("pricing")),
         }
 
@@ -252,13 +283,19 @@ class CatalogCollector(BaseCollector):
                                 top.get("max_completion_tokens")),
             "modalities": modalities,
             "capabilities": _capabilities(None, item.get("supported_parameters")),
+            "reasoning": _reasoning_config(
+                (item.get("reasoning") or {}).get("supported_efforts"),
+                (item.get("reasoning") or {}).get("default_effort"),
+            ),
             "pricing": _pricing(item.get("pricing")),
         }
 
     def collect_entries(self, root: Path) -> dict:
         """Group every catalogue row by the model id it would be registered as."""
+        self._root = root
         registered = {p.stem for p in (root / "data" / "providers").glob("*.json")}
         records: dict[str, dict] = {}
+        self._variant_relationships = {}
         unmapped: set[str] = set()
         bad_id: set[str] = set()
         ignored: set[str] = set()
@@ -277,6 +314,20 @@ class CatalogCollector(BaseCollector):
                 "ignored": ignored}
 
     def _add(self, records, entry, root, registered, unmapped, bad_id, ignored) -> None:
+        variant = self.model_variants.get(entry["api_id"])
+        allowed_catalogs = variant.get("providers") if variant else None
+        if allowed_catalogs and entry["catalog"] not in allowed_catalogs:
+            variant = None
+        if variant:
+            canonical = variant["model_id"]
+            if not (root / "data" / "models" / f"{canonical}.json").is_file():
+                unmapped.add(
+                    f"variant {entry['api_id']!r} maps to missing model {canonical!r}"
+                )
+                return
+            self._variant_relationships.setdefault(canonical, []).append(entry)
+            return
+
         vendor = entry["vendor"]
         if vendor in self.ignored_vendors:
             ignored.add(f"{vendor} ({self.ignored_vendors[vendor]})")
@@ -358,8 +409,8 @@ class CatalogCollector(BaseCollector):
                 "retrieved_at": today(),
                 "title": "OpenRouter public model list",
                 "notes": ("Provider model id, name, context window, modalities, "
-                          "capabilities and prices as published by an aggregator rather "
-                          "than by the model developer."),
+                          "capabilities, reasoning effort options and prices as published "
+                          "by an aggregator rather than by the model developer."),
             },
             "vercel-ai-gateway": {
                 "type": "documentation",
@@ -367,8 +418,8 @@ class CatalogCollector(BaseCollector):
                 "retrieved_at": today(),
                 "title": "Vercel AI Gateway public model list",
                 "notes": ("Provider model id, name, release date, context window, "
-                          "modalities, capabilities and prices as published by an "
-                          "aggregator rather than by the model developer."),
+                          "modalities, capabilities, reasoning effort options and prices "
+                          "as published by an aggregator rather than by the model developer."),
             },
         }
         models: dict[str, dict] = {}
@@ -391,6 +442,7 @@ class CatalogCollector(BaseCollector):
             context = primary["context"]
             modalities = primary["modalities"]
             capabilities = primary["capabilities"]
+            reasoning = primary["reasoning"]
 
             name = NAME_PREFIX_RE.sub("", primary.get("name") or "").strip() or canonical
             description = primary.get("description")
@@ -409,6 +461,7 @@ class CatalogCollector(BaseCollector):
                 "context": context,
                 "modalities": modalities,
                 "capabilities": capabilities,
+                "reasoning": reasoning,
                 "availability": availability,
                 "release_date": _unix_to_date(vercel["released"]) if vercel else None,
                 "sources": [sources[e["catalog"]] for e in entries],
@@ -431,10 +484,37 @@ class CatalogCollector(BaseCollector):
                     "pricing": e["pricing"],
                     "context": e["context"] if e["context"] != context else None,
                     "modalities": e["modalities"] if e["modalities"] != modalities else None,
+                    "reasoning": e["reasoning"] if e["reasoning"] != reasoning else None,
                     "sources": [sources[e["catalog"]]],
                 })
                 for e in entries
             ]
+
+        # Known API mode/tier aliases belong to an existing model. Preserve their
+        # provider IDs, prices and source facts without creating another model doc.
+        for canonical, entries in sorted(self._variant_relationships.items()):
+            if self._root is None:
+                raise CollectorError("catalog: alias relationships require collect_entries() first")
+            model_path = self._root / "data" / "models" / f"{canonical}.json"
+            model = json.loads(model_path.read_text(encoding="utf-8"))
+            relationships.setdefault(canonical, [])
+            for entry in sorted(entries, key=lambda e: (e["catalog"], e["api_id"])):
+                model_reasoning = model.get("reasoning") or {}
+                provider_reasoning = entry.get("reasoning")
+                reasoning = (
+                    deep_merge(model_reasoning, provider_reasoning)
+                    if provider_reasoning else None
+                )
+                relationships[canonical].append(_prune({
+                    "provider_id": entry["catalog"],
+                    "model_id": entry["api_id"],
+                    "pricing": entry["pricing"],
+                    "modalities": entry["modalities"] if entry["modalities"] != model.get("modalities") else None,
+                    "context": entry["context"] if entry["context"] != model.get("context") else None,
+                    "reasoning": reasoning if reasoning != model.get("reasoning") else None,
+                    "api_variant": self.model_variants[entry["api_id"]].get("api_variant"),
+                    "sources": [sources[entry["catalog"]]],
+                }))
 
         return {"models": models, "relationships": relationships}
 

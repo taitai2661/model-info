@@ -52,6 +52,9 @@
     "updated_at": "2026-09-26"
   },
   "model_ids": [
+    "grok-4.3",
+    "grok-4.3",
+    "grok-4.3",
     "grok-4.5",
     "grok-4.6",
     "grok-4.7",

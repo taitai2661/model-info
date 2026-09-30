@@ -152,6 +152,62 @@ def test_invalid_modality_is_rejected(sandbox):
     assert any("modalities" in e or "smell" in e for e in errors)
 
 
+def test_reasoning_default_must_be_a_supported_effort(sandbox):
+    path = sandbox / "data/models/gpt-6-astra.json"
+    doc = json.loads(path.read_text())
+    doc["reasoning"] = {
+        "parameter": "reasoning.effort",
+        "effort_levels": ["low", "medium", "high"],
+        "default_effort": "max",
+        "supports_none": False,
+    }
+    path.write_text(json.dumps(doc))
+    errors, _ = validate_all(sandbox)
+    assert any("default_effort" in e and "effort_levels" in e for e in errors)
+
+
+def test_reasoning_none_option_is_not_counted_as_an_effort_level(sandbox):
+    path = sandbox / "data/models/gpt-6-astra.json"
+    doc = json.loads(path.read_text())
+    doc["reasoning"] = {
+        "parameter": "reasoning.effort",
+        "effort_levels": ["none", "low", "medium"],
+        "default_effort": "medium",
+        "supports_none": True,
+    }
+    path.write_text(json.dumps(doc))
+    errors, _ = validate_all(sandbox)
+    assert any("use supports_none" in e for e in errors)
+
+
+def test_reasoning_none_default_is_valid_when_none_is_supported(sandbox):
+    path = sandbox / "data/models/gpt-6-astra.json"
+    doc = json.loads(path.read_text())
+    doc["reasoning"] = {
+        "parameter": "reasoning.effort",
+        "effort_levels": ["low", "medium", "high"],
+        "default_effort": "none",
+        "supports_none": True,
+    }
+    path.write_text(json.dumps(doc))
+    errors, _ = validate_all(sandbox)
+    assert errors == [], "\n".join(errors)
+
+
+def test_api_variant_controls_must_be_supported_by_the_base_model(sandbox):
+    path = sandbox / "data/relationships/gpt-6-sol.json"
+    doc = json.loads(path.read_text())
+    doc["providers"].append({
+        "provider_id": "openrouter",
+        "model_id": "openai/gpt-6-sol-invalid-mode",
+        "api_variant": {"reasoning_mode": "turbo", "service_tier": "ultrafast"},
+    })
+    path.write_text(json.dumps(doc))
+    errors, _ = validate_all(sandbox)
+    assert any("api_variant.reasoning_mode" in e for e in errors)
+    assert any("api_variant.service_tier" in e for e in errors)
+
+
 def test_every_model_has_at_least_one_source(repo_root):
     for path in (repo_root / "data/models").glob("*.json"):
         doc = json.loads(path.read_text())
@@ -202,7 +258,7 @@ def test_vercel_ai_gateway_aggregator_lists_several_model_ids(repo_root):
 
 
 def test_provider_can_have_several_model_ids(repo_root):
-    doc = json.loads((repo_root / "data/relationships/deepseek-flash.json").read_text())
+    doc = json.loads((repo_root / "data/relationships/deepseek-v4.1-flash.json").read_text())
     go_ids = sorted(e["model_id"] for e in doc["providers"]
                     if e["provider_id"] == "opencode-go")
     assert go_ids == ["deepseek-flash", "deepseek-v4.1-flash"]

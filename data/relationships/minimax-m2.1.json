@@ -138,6 +138,75 @@
           "notes": "Provider model id from the Hugging Face Inference Providers public model list (GET /v1/models, no authentication required)."
         }
       ]
+    },
+    {
+      "provider_id": "minimax",
+      "model_id": "MiniMax-M2.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.03,
+        "cached_write": 0.375
+      },
+      "service_tier": {"parameter": "service_tier", "options": ["priority"]},
+      "sources": [{
+        "type": "official",
+        "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+        "retrieved_at": "2026-09-30",
+        "title": "MiniMax Pay as You Go pricing"
+      }]
+    },
+    {
+      "provider_id": "minimax",
+      "model_id": "MiniMax-M2.1-highspeed",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.6,
+        "output": 2.4,
+        "cached_input": 0.03,
+        "cached_write": 0.375
+      },
+      "service_tier": {"parameter": "service_tier", "options": ["priority"]},
+      "api_variant": {"performance_variant": "highspeed"},
+      "notes": "MiniMax documents this as the same M2.1 model with higher inference speed.",
+      "sources": [{
+        "type": "official",
+        "url": "https://platform.minimax.io/docs/guides/models-intro",
+        "retrieved_at": "2026-09-30",
+        "title": "MiniMax models"
+      }, {
+        "type": "official",
+        "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+        "retrieved_at": "2026-09-30",
+        "title": "MiniMax Pay as You Go pricing"
+      }]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "minimax/minimax-m2.1-lightning",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 2.4,
+        "cached_input": 0.03
+      },
+      "api_variant": {"performance_variant": "lightning"},
+      "notes": "Vercel's Lightning alias for MiniMax M2.1; its model page identifies it as the same model with identical outputs and higher throughput.",
+      "sources": [{
+        "type": "official",
+        "url": "https://vercel.com/ai-gateway/models/minimax-m2.1-lightning",
+        "retrieved_at": "2026-09-30",
+        "title": "MiniMax M2.1 Lightning"
+      }, {
+        "type": "official",
+        "url": "https://ai-gateway.vercel.sh/v1/models",
+        "retrieved_at": "2026-09-28",
+        "notes": "Provider route ID, context, modalities and pricing from Vercel AI Gateway."
+      }]
     }
   ]
 }

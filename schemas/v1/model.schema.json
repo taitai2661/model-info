@@ -19,6 +19,8 @@
     "context": {"$ref": "#/$defs/context"},
     "modalities": {"$ref": "#/$defs/modalities"},
     "capabilities": {"$ref": "#/$defs/capabilities"},
+    "reasoning": {"$ref": "#/$defs/reasoning"},
+    "service_tier": {"$ref": "#/$defs/serviceTier"},
     "pricing": {"$ref": "#/$defs/pricing"},
     "provider_pricing": {
       "description": "Per-provider pricing overrides keyed by provider_id. Only use for prices that differ from the model-level pricing.",
@@ -94,6 +96,44 @@
         "structured_output": {"type": ["boolean", "null"]},
         "json_mode": {"type": ["boolean", "null"]},
         "streaming": {"type": ["boolean", "null"]}
+      }
+    },
+    "reasoning": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "description": "Configurable reasoning controls. effort_levels lists intensity levels only; supports_none separately states whether reasoning can be disabled with the API's none value.",
+      "properties": {
+        "parameter": {"type": ["string", "null"], "minLength": 1, "maxLength": 128},
+        "effort_levels": {
+          "type": ["array", "null"],
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
+          "uniqueItems": true
+        },
+        "default_effort": {"type": ["string", "null"], "minLength": 1, "maxLength": 64},
+        "supports_none": {"type": ["boolean", "null"]},
+        "mode_parameter": {"type": ["string", "null"], "minLength": 1, "maxLength": 128},
+        "modes": {
+          "type": ["array", "null"],
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
+          "uniqueItems": true
+        },
+        "default_mode": {"type": ["string", "null"], "minLength": 1, "maxLength": 64}
+      }
+    },
+    "serviceTier": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "description": "Request processing tiers available for this model. Options such as fast are separate from reasoning modes and effort levels.",
+      "properties": {
+        "parameter": {"type": ["string", "null"], "minLength": 1, "maxLength": 128},
+        "options": {
+          "type": ["array", "null"],
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
+          "uniqueItems": true
+        }
       }
     },
     "pricing": {

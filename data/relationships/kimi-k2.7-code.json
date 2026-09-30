@@ -274,6 +274,60 @@
           "notes": "Provider model id from the Hugging Face Inference Providers public model list (GET /v1/models, no authentication required)."
         }
       ]
+    },
+    {
+      "provider_id": "moonshot",
+      "model_id": "kimi-k2.7-code-highspeed",
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 32768
+      },
+      "modalities": {
+        "input": ["text", "image", "video"],
+        "output": ["text"]
+      },
+      "api_variant": {"performance_variant": "highspeed"},
+      "notes": "Moonshot describes this ID as the same Kimi K2.7 Code model with identical thinking behavior and higher output throughput.",
+      "sources": [{
+        "type": "official",
+        "url": "https://platform.moonshot.ai/docs/guide/use-kimi-k2-thinking-model",
+        "retrieved_at": "2026-09-30",
+        "title": "Kimi thinking models"
+      }]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "moonshotai/kimi-k2.7-code-highspeed",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.9,
+        "output": 8.0,
+        "cached_input": 0.38
+      },
+      "context": {
+        "window": 262144,
+        "max_output_tokens": 32768
+      },
+      "modalities": {
+        "input": ["text", "image", "file", "video"],
+        "output": ["text"]
+      },
+      "api_variant": {"performance_variant": "highspeed"},
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider ID, limits, modalities, and pricing for Vercel's HighSpeed route."
+        },
+        {
+          "type": "official",
+          "url": "https://platform.moonshot.ai/docs/guide/use-kimi-k2-thinking-model",
+          "retrieved_at": "2026-09-30",
+          "notes": "Confirms Kimi K2.7 Code HighSpeed is the same model with identical thinking behavior."
+        }
+      ]
     }
   ]
 }

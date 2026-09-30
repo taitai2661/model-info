@@ -132,6 +132,117 @@ def test_detail_exposes_connection_info(repo_root):
     assert bedrock["provider"]["api"]["base_url"].startswith("https://bedrock-runtime.")
 
 
+def test_gpt6_detail_exposes_model_and_provider_reasoning_levels(repo_root):
+    outputs = assemble(repo_root)
+    levels = ["low", "medium", "high", "xhigh", "max"]
+    base_modes = {
+        "gpt-5.6-sol": True,
+        "gpt-5.6-luna": True,
+        "gpt-5.6-terra": True,
+        "gpt-6-astra": False,
+        "gpt-6-sol": True,
+        "gpt-6-luna": True,
+        "gpt-6.1-sol": False,
+    }
+    for model_id, supports_none in base_modes.items():
+        detail = _load_outputs(outputs, f"models/{model_id}.json")
+        expected_default = None if model_id == "gpt-6-astra" else "medium"
+        assert detail["model"]["reasoning"] == {
+            "parameter": "reasoning.effort",
+            "effort_levels": levels,
+            "default_effort": expected_default,
+            "supports_none": supports_none,
+            "mode_parameter": "reasoning.mode",
+            "modes": ["standard", "pro"],
+            "default_mode": "standard",
+        }
+        assert "fast" in detail["model"]["service_tier"]["options"]
+
+    pro_aliases = {
+        "gpt-5.6-sol": ("openai/gpt-5.6-sol-pro", "openai/gpt-5.6-sol-pro:batch"),
+        "gpt-5.6-luna": ("openai/gpt-5.6-luna-pro", "openai/gpt-5.6-luna-pro:batch"),
+        "gpt-5.6-terra": ("openai/gpt-5.6-terra-pro", "openai/gpt-5.6-terra-pro:batch"),
+        "gpt-6-astra": ("openai/gpt-6-astra-pro", "openai/gpt-6-astra-pro:batch"),
+        "gpt-6-sol": ("openai/gpt-6-sol-pro", "openai/gpt-6-sol-pro:batch"),
+        "gpt-6-luna": ("openai/gpt-6-luna-pro", "openai/gpt-6-luna-pro:batch"),
+        "gpt-6.1-sol": ("openai/gpt-6.1-sol-pro", "openai/gpt-6.1-sol-pro:batch"),
+    }
+    for model_id, aliases in pro_aliases.items():
+        detail = _load_outputs(outputs, f"models/{model_id}.json")
+        openrouter = {e["model_id"]: e for e in detail["providers"]
+                      if e["provider_id"] == "openrouter"}
+        assert set(aliases) <= set(openrouter)
+        assert all(openrouter[alias]["api_variant"]["reasoning_mode"] == "pro"
+                   for alias in aliases)
+
+    fast_aliases = {
+        "gpt-5.6-sol": "openai/gpt-5.6-sol-fast",
+        "gpt-5.6-luna": "openai/gpt-5.6-luna-fast",
+        "gpt-5.6-terra": "openai/gpt-5.6-terra-fast",
+        "gpt-6-astra": "openai/gpt-6-astra-fast",
+        "gpt-6-sol": "openai/gpt-6-sol-fast",
+        "gpt-6-luna": "openai/gpt-6-luna-fast",
+    }
+    for model_id, alias in fast_aliases.items():
+        detail = _load_outputs(outputs, f"models/{model_id}.json")
+        vercel = next(e for e in detail["providers"]
+                      if e["provider_id"] == "vercel-ai-gateway"
+                      and e["model_id"] == alias)
+        assert vercel["api_variant"]["service_tier"] == "fast"
+
+    all_models = {m["model_id"] for m in _load_outputs(outputs, "models.json")}
+    pro_model_ids = {alias for group in pro_aliases.values() for alias in group}
+    assert not (pro_model_ids & all_models)
+    assert not (set(fast_aliases.values()) & all_models)
+
+
+def test_verified_non_openai_aliases_are_attached_to_base_models(repo_root):
+    outputs = assemble(repo_root)
+    checks = {
+        "kimi-k2.7-code": {
+            "vercel-ai-gateway": "moonshotai/kimi-k2.7-code-highspeed",
+        },
+        "minimax-m2.1": {
+            "vercel-ai-gateway": "minimax/minimax-m2.1-lightning",
+            "minimax": "MiniMax-M2.1-highspeed",
+        },
+        "minimax-m2.5": {
+            "minimax": "MiniMax-M2.5-highspeed",
+            "vercel-ai-gateway": "minimax/minimax-m2.5-highspeed",
+        },
+        "minimax-m2.7": {
+            "minimax": "MiniMax-M2.7-highspeed",
+            "vercel-ai-gateway": "minimax/minimax-m2.7-highspeed",
+        },
+        "grok-4.3": {
+            "xai": "grok-4-1-fast-reasoning",
+            "vercel-ai-gateway": "spacexai/grok-4.1-fast-reasoning",
+        },
+    }
+    for base_id, aliases in checks.items():
+        detail = _load_outputs(outputs, f"models/{base_id}.json")
+        ids = {(entry["provider_id"], entry["model_id"]): entry
+               for entry in detail["providers"]}
+        for provider_id, model_id in aliases.items():
+            assert (provider_id, model_id) in ids
+            assert ids[(provider_id, model_id)]["api_variant"]
+
+    deepseek = _load_outputs(outputs, "models/deepseek-v4.1-flash.json")
+    assert any(e["provider_id"] == "deepseek" and e["model_id"] == "deepseek-flash"
+               for e in deepseek["providers"])
+
+    all_models = {m["model_id"] for m in _load_outputs(outputs, "models.json")}
+    removed_aliases = {
+        "kimi-k2.7-code-highspeed",
+        "minimax-m2.1-lightning",
+        "minimax-m2.5-highspeed",
+        "minimax-m2.7-highspeed",
+        "grok-4.1-fast-reasoning",
+        "grok-4.1-fast-non-reasoning",
+    }
+    assert not (removed_aliases & all_models)
+
+
 def test_provider_models_endpoint_lists_models_with_overrides(repo_root):
     outputs = assemble(repo_root)
     items = _load_outputs(outputs, "providers/openrouter/models.json")

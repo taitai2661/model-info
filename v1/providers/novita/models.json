@@ -1727,7 +1727,8 @@
       "updated_at": "2026-09-26",
       "description": "DeepSeek V4.1 Flash: a 552B-total / 8B-active MoE with native multimodal support and a smaller KV cache for lower API cost.",
       "context": {
-        "window": 131072
+        "window": 1048576,
+        "max_output_tokens": 393216
       },
       "modalities": {
         "input": [
@@ -1742,6 +1743,13 @@
         "vision": true,
         "reasoning": true,
         "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
       },
       "availability": {
         "api": true,
@@ -1760,6 +1768,26 @@
           "url": "https://integrate.api.nvidia.com/v1/models",
           "retrieved_at": "2026-09-26",
           "title": "NVIDIA NIM public model catalog"
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-30",
+          "title": "DeepSeek models & pricing",
+          "notes": "First-party API model ID is deepseek-flash; context is 1M and max output is 384K. Off-peak per-1M pricing is $0.15 input, $0.003 cache-hit input, and $0.60 output; peak rates are 2x. Legacy V4 Flash IDs route here."
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/guides/thinking_mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Thinking mode",
+          "notes": "The DeepSeek API supports enabling/disabling thinking separately from reasoning effort."
+        },
+        {
+          "type": "official",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "retrieved_at": "2026-09-26",
+          "title": "Model weights"
         }
       ]
     },
@@ -1800,7 +1828,8 @@
       "updated_at": "2026-09-26",
       "description": "DeepSeek V4.1 Flash: a 552B-total / 8B-active MoE with native multimodal support and a smaller KV cache for lower API cost.",
       "context": {
-        "window": 131072
+        "window": 1048576,
+        "max_output_tokens": 393216
       },
       "modalities": {
         "input": [
@@ -1815,6 +1844,13 @@
         "vision": true,
         "reasoning": true,
         "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
       },
       "availability": {
         "api": true,
@@ -1833,6 +1869,26 @@
           "url": "https://integrate.api.nvidia.com/v1/models",
           "retrieved_at": "2026-09-26",
           "title": "NVIDIA NIM public model catalog"
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-30",
+          "title": "DeepSeek models & pricing",
+          "notes": "First-party API model ID is deepseek-flash; context is 1M and max output is 384K. Off-peak per-1M pricing is $0.15 input, $0.003 cache-hit input, and $0.60 output; peak rates are 2x. Legacy V4 Flash IDs route here."
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/guides/thinking_mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Thinking mode",
+          "notes": "The DeepSeek API supports enabling/disabling thinking separately from reasoning effort."
+        },
+        {
+          "type": "official",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "retrieved_at": "2026-09-26",
+          "title": "Model weights"
         }
       ]
     },
@@ -6523,15 +6579,18 @@
   },
   {
     "model": {
-      "model_id": "minimax-m2.5-highspeed",
-      "name": "MiniMax M2.5 High Speed",
+      "model_id": "minimax-m2.5",
+      "name": "MiniMax M2.5",
+      "display_name": "MiniMax M2.5",
       "model_provider": "minimax",
+      "family": "MiniMax",
+      "version": null,
       "status": "active",
-      "display_name": "MiniMax M2.5 High Speed",
-      "description": "M2.5 highspeed: Same performance, faster and more agile (output speed approximately 100 tps)",
+      "release_date": null,
+      "updated_at": "2026-09-26",
       "context": {
         "window": 204800,
-        "max_output_tokens": 131000
+        "max_output_tokens": 128000
       },
       "modalities": {
         "input": [
@@ -6541,26 +6600,22 @@
           "text"
         ]
       },
-      "capabilities": {
-        "reasoning": true,
-        "tool_use": true,
-        "structured_output": true,
-        "json_mode": true
-      },
-      "availability": {
-        "api": true
-      },
-      "release_date": "2026-02-12",
       "sources": [
         {
-          "type": "documentation",
-          "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "Vercel AI Gateway public model list",
-          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-26",
+          "title": "MiniMax model list",
+          "notes": "MiniMax M2.5 is listed under 'Legacy Models' on the official docs."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "novita",
@@ -6576,12 +6631,21 @@
         "window": 204800,
         "max_output_tokens": 131100
       },
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
       "sources": [
         {
           "type": "official",
           "url": "https://api.novita.ai/v3/openai/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+          "notes": "Provider model ID and price for the MiniMax M2.5 HighSpeed route."
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-30",
+          "notes": "MiniMax identifies M2.5 HighSpeed as the same-performance, higher-speed M2.5 variant."
         }
       ]
     }
@@ -6706,15 +6770,18 @@
   },
   {
     "model": {
-      "model_id": "minimax-m2.7-highspeed",
-      "name": "MiniMax M2.7 High Speed",
+      "model_id": "minimax-m2.7",
+      "name": "MiniMax M2.7",
+      "display_name": "MiniMax M2.7",
       "model_provider": "minimax",
+      "family": "MiniMax",
+      "version": null,
       "status": "active",
-      "display_name": "MiniMax M2.7 High Speed",
-      "description": "M2.7 Highspeed: Same performance, faster and more agile (output speed approximately 100 tps)",
+      "release_date": null,
+      "updated_at": "2026-09-26",
       "context": {
         "window": 204800,
-        "max_output_tokens": 131100
+        "max_output_tokens": 131072
       },
       "modalities": {
         "input": [
@@ -6724,26 +6791,21 @@
           "text"
         ]
       },
-      "capabilities": {
-        "reasoning": true,
-        "tool_use": true,
-        "structured_output": true,
-        "json_mode": true
-      },
-      "availability": {
-        "api": true
-      },
-      "release_date": "2026-03-18",
       "sources": [
         {
-          "type": "documentation",
-          "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "Vercel AI Gateway public model list",
-          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-26",
+          "title": "MiniMax model list"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "novita",
@@ -6759,12 +6821,21 @@
         "window": 204800,
         "max_output_tokens": 131072
       },
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
       "sources": [
         {
           "type": "official",
           "url": "https://api.novita.ai/v3/openai/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model ids, context window, max output tokens, modalities and per-million prices from the public model list (GET /v3/openai/models, no authentication required)."
+          "notes": "Provider model ID and price for the MiniMax M2.7 HighSpeed route."
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-30",
+          "notes": "MiniMax lists M2.7 HighSpeed as a same-performance faster variant."
         }
       ]
     }

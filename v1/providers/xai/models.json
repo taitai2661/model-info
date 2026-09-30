@@ -1,6 +1,301 @@
 [
   {
     "model": {
+      "model_id": "grok-4.3",
+      "name": "Grok 4.3",
+      "model_provider": "xai",
+      "status": "active",
+      "display_name": "Grok 4.3",
+      "description": "Grok 4.3 is a new model matching the scale of Grok 4.20 with an improved architecture and a December 2025 knowledge cutoff.",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 1000000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "reasoning": true,
+        "tool_use": true,
+        "vision": true,
+        "structured_output": true,
+        "json_mode": true
+      },
+      "reasoning": {
+        "parameter": "reasoning_effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "default_effort": "low",
+        "supports_none": true
+      },
+      "availability": {
+        "api": true
+      },
+      "release_date": "2026-04-30",
+      "sources": [
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/models/grok-4.3",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok 4.3",
+          "notes": "First-party reasoning efforts are none, low, medium, high, and xhigh; default is low."
+        },
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok model retirement on May 15, 2026",
+          "notes": "Retired Grok 4.1 Fast reasoning and non-reasoning IDs resolve to Grok 4.3 with fixed reasoning efforts."
+        }
+      ],
+      "updated_at": "2026-09-30"
+    },
+    "relationship": {
+      "provider_id": "xai",
+      "model_id": "grok-4.3",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.25,
+        "output": 2.5
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/models/grok-4.3",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok 4.3"
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "grok-4.3",
+      "name": "Grok 4.3",
+      "model_provider": "xai",
+      "status": "active",
+      "display_name": "Grok 4.3",
+      "description": "Grok 4.3 is a new model matching the scale of Grok 4.20 with an improved architecture and a December 2025 knowledge cutoff.",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 1000000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "reasoning": true,
+        "tool_use": true,
+        "vision": true,
+        "structured_output": true,
+        "json_mode": true
+      },
+      "reasoning": {
+        "parameter": "reasoning_effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "default_effort": "low",
+        "supports_none": true
+      },
+      "availability": {
+        "api": true
+      },
+      "release_date": "2026-04-30",
+      "sources": [
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/models/grok-4.3",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok 4.3",
+          "notes": "First-party reasoning efforts are none, low, medium, high, and xhigh; default is low."
+        },
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok model retirement on May 15, 2026",
+          "notes": "Retired Grok 4.1 Fast reasoning and non-reasoning IDs resolve to Grok 4.3 with fixed reasoning efforts."
+        }
+      ],
+      "updated_at": "2026-09-30"
+    },
+    "relationship": {
+      "provider_id": "xai",
+      "model_id": "grok-4-1-fast-reasoning",
+      "status": "deprecated",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.25,
+        "output": 2.5
+      },
+      "api_variant": {
+        "reasoning_effort": "low"
+      },
+      "notes": "Retired xAI alias; requests are routed to Grok 4.3 with low reasoning effort.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok model retirement on May 15, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "grok-4.3",
+      "name": "Grok 4.3",
+      "model_provider": "xai",
+      "status": "active",
+      "display_name": "Grok 4.3",
+      "description": "Grok 4.3 is a new model matching the scale of Grok 4.20 with an improved architecture and a December 2025 knowledge cutoff.",
+      "context": {
+        "window": 1000000,
+        "max_output_tokens": 1000000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "reasoning": true,
+        "tool_use": true,
+        "vision": true,
+        "structured_output": true,
+        "json_mode": true
+      },
+      "reasoning": {
+        "parameter": "reasoning_effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "default_effort": "low",
+        "supports_none": true
+      },
+      "availability": {
+        "api": true
+      },
+      "release_date": "2026-04-30",
+      "sources": [
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/models/grok-4.3",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok 4.3",
+          "notes": "First-party reasoning efforts are none, low, medium, high, and xhigh; default is low."
+        },
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok model retirement on May 15, 2026",
+          "notes": "Retired Grok 4.1 Fast reasoning and non-reasoning IDs resolve to Grok 4.3 with fixed reasoning efforts."
+        }
+      ],
+      "updated_at": "2026-09-30"
+    },
+    "relationship": {
+      "provider_id": "xai",
+      "model_id": "grok-4-1-fast-non-reasoning",
+      "status": "deprecated",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.25,
+        "output": 2.5
+      },
+      "api_variant": {
+        "reasoning_effort": "none"
+      },
+      "notes": "Retired xAI alias; requests are routed to Grok 4.3 with none reasoning effort.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok model retirement on May 15, 2026"
+        }
+      ]
+    }
+  },
+  {
+    "model": {
       "model_id": "grok-4.5",
       "name": "Grok 4.5",
       "display_name": "Grok 4.5",

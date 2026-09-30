@@ -60,6 +60,42 @@ function priceUnit(pricing) {
   return `${currency} / ${unit}`;
 }
 
+function reasoningSummary(config) {
+  if (!config || !Array.isArray(config.effort_levels)) {
+    return t("reasoning.unknown");
+  }
+  const parts = [t("reasoning.level_count", {
+    count: config.effort_levels.length,
+    levels: config.effort_levels.join(" / "),
+  })];
+  if (config.default_effort) {
+    parts.push(t("reasoning.default", { effort: config.default_effort }));
+  }
+  if (config.supports_none === true) parts.push(t("reasoning.none_supported"));
+  else if (config.supports_none === false) parts.push(t("reasoning.none_unsupported"));
+  if (Array.isArray(config.modes)) {
+    parts.push(t("reasoning.modes", { modes: config.modes.join(" / ") }));
+  }
+  if (config.default_mode) parts.push(t("reasoning.default_mode", { mode: config.default_mode }));
+  if (config.parameter) parts.push(`${t("reasoning.effort_parameter")}: ${config.parameter}`);
+  if (config.mode_parameter) parts.push(`${t("reasoning.mode_parameter")}: ${config.mode_parameter}`);
+  return parts.join(" · ");
+}
+
+function serviceTierSummary(config) {
+  if (!config || !Array.isArray(config.options)) return t("reasoning.unknown");
+  return `${config.options.join(" / ")} · ${t("reasoning.mode_parameter")}: ${config.parameter || "service_tier"}`;
+}
+
+function sharedReasoningConfig(model, providers) {
+  if (model.reasoning) return model.reasoning;
+  if (!providers.length || providers.some((entry) => !entry.reasoning)) return null;
+  const first = JSON.stringify(providers[0].reasoning);
+  return providers.every((entry) => JSON.stringify(entry.reasoning) === first)
+    ? providers[0].reasoning
+    : null;
+}
+
 function escape(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -541,7 +577,7 @@ async function renderModelDetail(container, id) {
     m.description ? el("p", { class: "detail-description" }, m.description) : null,
   );
 
-  container.append(buildSpecsSection(m));
+  container.append(buildSpecsSection(m, plist));
   container.append(buildPricingSection(m));
   container.append(buildProvidersSection(plist, m));
 
@@ -556,7 +592,7 @@ async function renderModelDetail(container, id) {
   );
 }
 
-function buildSpecsSection(m) {
+function buildSpecsSection(m, providers = []) {
   const sec = el("div", { class: "detail-section" });
   sec.append(el("h2", {}, t("detail.specs")));
 
@@ -578,6 +614,13 @@ function buildSpecsSection(m) {
   }
   if (m.context && typeof m.context.reasoning_tokens === "number") {
     addSpec(t("detail.reasoning"), fmtNum(m.context.reasoning_tokens));
+  }
+  const reasoning = sharedReasoningConfig(m, providers);
+  if (reasoning || (m.family === "GPT-6" && m.capabilities?.reasoning === true)) {
+    addSpec(t("detail.reasoning_effort"), reasoningSummary(reasoning));
+  }
+  if (m.service_tier) {
+    addSpec(t("detail.service_tier"), serviceTierSummary(m.service_tier));
   }
   if (m.context?.tokenizer) addSpec(t("detail.tokenizer"), m.context.tokenizer);
 
@@ -682,6 +725,21 @@ function buildProvidersSection(plist, model) {
     };
     addInfo(t("detail.base_url"), prov?.api?.base_url, true);
     addInfo(t("detail.auth"), prov?.api?.authentication?.type);
+    if (entry.reasoning) {
+      addInfo(t("detail.reasoning_effort"), reasoningSummary(entry.reasoning));
+    }
+    if (entry.api_variant?.reasoning_mode) {
+      addInfo(t("detail.reasoning_mode"), entry.api_variant.reasoning_mode);
+    }
+    if (entry.api_variant?.reasoning_effort) {
+      addInfo(t("detail.reasoning_effort"), entry.api_variant.reasoning_effort);
+    }
+    if (entry.api_variant?.service_tier) {
+      addInfo(t("detail.service_tier"), entry.api_variant.service_tier);
+    }
+    if (entry.api_variant?.performance_variant) {
+      addInfo(t("detail.performance_variant"), entry.api_variant.performance_variant);
+    }
 
     const priceGrid = el("div", { class: "connection-prices" });
     const priceValue = (key) => typeof pricing?.[key] === "number" ? fmtPrice(pricing[key]) : t("detail.null");

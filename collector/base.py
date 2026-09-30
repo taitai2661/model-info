@@ -17,6 +17,7 @@ import httpx
 from jsonschema import Draft202012Validator
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+MODEL_VARIANTS_FILE = Path(__file__).resolve().parent / "model_variants.json"
 SNAPSHOT_RE = re.compile(r"^\d{4}-?\d{2}-?\d{2}$")
 # Fireworks escapes a decimal point as "p" in model ids (glm-5p3 -> glm-5.3).
 DECIMAL_P_RE = re.compile(r"(?<=\d)p(?=\d)")
@@ -25,6 +26,35 @@ DECIMAL_P_RE = re.compile(r"(?<=\d)p(?=\d)")
 # for one model, not separate models. Only the known route variants are
 # stripped — a trailing ``:0`` is a Bedrock version suffix, not a variant.
 VARIANT_RE = re.compile(r":(?:batch|extended|floor|free|nitro|online|thinking)$")
+REASONING_EFFORT_ORDER = ("minimal", "low", "medium", "high", "xhigh", "max")
+_MODEL_VARIANTS: dict | None = None
+
+
+def _model_variant(api_model_id: str, provider_id: str | None):
+    global _MODEL_VARIANTS
+    if _MODEL_VARIANTS is None:
+        _MODEL_VARIANTS = json.loads(MODEL_VARIANTS_FILE.read_text(encoding="utf-8"))
+    variant = _MODEL_VARIANTS.get(api_model_id)
+    if not variant:
+        return None
+    providers = variant.get("providers")
+    if providers and provider_id not in providers:
+        return None
+    return variant
+
+
+def model_variant(api_model_id: str, provider_id: str | None) -> dict | None:
+    """Return an explicitly curated provider alias mapping, if one exists."""
+    return _model_variant(api_model_id, provider_id)
+
+
+def normalize_effort_levels(values: list[str]) -> list[str] | None:
+    """Return unique effort levels in ascending effort order; keep `none` separate."""
+    levels = {value for value in values if value != "none"}
+    if not levels:
+        return None
+    rank = {value: index for index, value in enumerate(REASONING_EFFORT_ORDER)}
+    return sorted(levels, key=lambda value: (rank.get(value, len(rank)), value))
 
 
 class CollectorError(Exception):
@@ -221,7 +251,9 @@ class BaseCollector:
 
     # -- matching -----------------------------------------------------------
 
-    def resolve_model(self, root: Path, api_model_id: str, index: "RegistryIndex | None" = None):
+    def resolve_model(self, root: Path, api_model_id: str,
+                      index: "RegistryIndex | None" = None,
+                      provider_id: str | None = None):
         """Map a provider model id onto a registered model.
 
         Returns ``(model_doc, canonical_id)`` or ``(None, None)``. Lookup order:
@@ -230,6 +262,12 @@ class BaseCollector:
         """
         index = index or RegistryIndex(root)
         models = index.models
+        variant = _model_variant(api_model_id, provider_id)
+        if variant:
+            canonical = variant.get("model_id")
+            doc = models.get(canonical)
+            if doc:
+                return doc, doc.get("model_id", canonical)
         candidates = id_candidates(api_model_id)
         for candidate in candidates:
             doc = models.get(candidate)
@@ -268,7 +306,7 @@ class BaseCollector:
         resolved: set[str] = set()
         for api_id, raw_patch in sorted(results.get("models", {}).items()):
             patch = {k: v for k, v in raw_patch.items() if k != "required_fields"}
-            doc, canonical = self.resolve_model(root, api_id, registry)
+            doc, canonical = self.resolve_model(root, api_id, registry, self.provider_id)
             if doc is not None and canonical != api_id:
                 report["aliases"].append(api_id)
                 continue
@@ -311,7 +349,7 @@ class BaseCollector:
             if key in resolved:
                 canonical = key
             else:
-                _, canonical = self.resolve_model(root, key, registry)
+                _, canonical = self.resolve_model(root, key, registry, self.provider_id)
                 if canonical is None:
                     report["unmatched"].append(f"{key} (no matching model)")
                     continue
@@ -332,6 +370,9 @@ class BaseCollector:
                 # one that merges several catalogues (see catalog.py) sets it per
                 # patch.
                 pid = patch.get("provider_id", self.provider_id)
+                variant = model_variant(patch.get("model_id", ""), pid)
+                if variant and variant.get("api_variant") and "api_variant" not in patch:
+                    patch = {**patch, "api_variant": variant["api_variant"]}
                 entry = next(
                     (e for e in rel["providers"]
                      if e["provider_id"] == pid
@@ -370,7 +411,7 @@ class BaseCollector:
                 # The provider lists an id we have no entry for yet. Create one
                 # only when the id resolves to a model that is already
                 # registered; otherwise it stays in `unmatched` for review.
-                doc, canonical = self.resolve_model(root, api_id, registry)
+                doc, canonical = self.resolve_model(root, api_id, registry, self.provider_id)
                 if doc is None:
                     report["unmatched"].append(api_id)
                     continue
@@ -399,6 +440,9 @@ class BaseCollector:
                         pruned[key] = value
                 elif key != "model_id" and base_value != value:
                     pruned[key] = value
+            variant = model_variant(api_id, self.provider_id)
+            if variant and variant.get("api_variant"):
+                pruned["api_variant"] = variant["api_variant"]
             before = json.dumps(entry, sort_keys=True)
             merged = deep_merge(entry, pruned)
             if patch.get("sources"):

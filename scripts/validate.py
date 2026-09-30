@@ -177,6 +177,8 @@ def validate_model_doc(doc, where, errors):
     _check_date(doc.get("updated_at"), f"{where}.updated_at", errors)
     _check_date(doc.get("release_date"), f"{where}.release_date", errors)
     _check_context(doc.get("context"), where, errors)
+    _check_reasoning(doc.get("reasoning"), f"{where}.reasoning", errors)
+    _check_service_tier(doc.get("service_tier"), f"{where}.service_tier", errors)
     _check_pricing(doc.get("pricing"), f"{where}.pricing", errors)
     for pid, pricing in (doc.get("provider_pricing") or {}).items():
         _check_pricing(pricing, f"{where}.provider_pricing.{pid}", errors)
@@ -219,8 +221,63 @@ def validate_relationship_doc(doc, where, errors, model_ids, provider_ids):
         seen.add(key)
         _check_date(entry.get("updated_at"), f"{ewhere}.updated_at", errors)
         _check_context(entry.get("context"), ewhere, errors)
+        _check_reasoning(entry.get("reasoning"), f"{ewhere}.reasoning", errors)
+        _check_service_tier(entry.get("service_tier"), f"{ewhere}.service_tier", errors)
+        variant = entry.get("api_variant") or {}
+        model = model_ids.get(doc.get("model_id"), {})
+        reasoning = model.get("reasoning") or {}
+        if (variant.get("reasoning_mode") is not None
+                and reasoning.get("modes") is not None
+                and variant["reasoning_mode"] not in reasoning["modes"]):
+            errors.append(
+                f"{ewhere}.api_variant.reasoning_mode: must be one of model reasoning.modes"
+            )
+        if (variant.get("reasoning_effort") is not None
+                and reasoning.get("effort_levels") is not None
+                and variant["reasoning_effort"] not in reasoning["effort_levels"]
+                and not (variant["reasoning_effort"] == "none"
+                         and reasoning.get("supports_none") is True)):
+            errors.append(
+                f"{ewhere}.api_variant.reasoning_effort: must be a supported model effort"
+            )
+        service_tier = model.get("service_tier") or {}
+        if (variant.get("service_tier") is not None
+                and service_tier.get("options") is not None
+                and variant["service_tier"] not in service_tier["options"]):
+            errors.append(
+                f"{ewhere}.api_variant.service_tier: must be one of model service_tier.options"
+            )
         _check_pricing(entry.get("pricing"), f"{ewhere}.pricing", errors)
         _iter_sources(entry, ewhere, errors)
+
+
+def _check_reasoning(reasoning, where, errors):
+    if not isinstance(reasoning, dict):
+        return
+    levels = reasoning.get("effort_levels")
+    default = reasoning.get("default_effort")
+    supports_none = reasoning.get("supports_none")
+    if default is not None and (
+        (not isinstance(levels, list) or default not in levels)
+        and not (default == "none" and supports_none is True)
+    ):
+        errors.append(f"{where}.default_effort: must be one of effort_levels")
+    if isinstance(levels, list) and "none" in levels:
+        errors.append(f"{where}.effort_levels: use supports_none for the 'none' option")
+    modes = reasoning.get("modes")
+    default_mode = reasoning.get("default_mode")
+    if default_mode is not None and (
+        not isinstance(modes, list) or default_mode not in modes
+    ):
+        errors.append(f"{where}.default_mode: must be one of modes")
+
+
+def _check_service_tier(service_tier, where, errors):
+    if not isinstance(service_tier, dict):
+        return
+    options = service_tier.get("options")
+    if isinstance(options, list) and not options:
+        errors.append(f"{where}.options: must not be empty")
 
 
 def validate_all(root: Path):

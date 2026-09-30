@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .base import BaseCollector, api_source
+from .base import BaseCollector, api_source, normalize_effort_levels
 
 
 def _per_million(value):
@@ -15,6 +15,22 @@ def _per_million(value):
     return round(price * 1_000_000, 6) if price >= 0 else None
 
 
+def _reasoning_config(value):
+    if not isinstance(value, dict):
+        return None
+    supported = value.get("supported_efforts")
+    if not isinstance(supported, list) or not supported or not all(
+        isinstance(item, str) for item in supported
+    ):
+        return None
+    return {
+        "parameter": "reasoning.effort",
+        "effort_levels": normalize_effort_levels(supported),
+        "default_effort": value.get("default_effort"),
+        "supports_none": "none" in supported,
+    }
+
+
 class OpenRouterCollector(BaseCollector):
     name = "openrouter"
     provider_id = "openrouter"
@@ -26,7 +42,7 @@ class OpenRouterCollector(BaseCollector):
     def normalize(self, payload) -> dict:
         source = [api_source(
             self.api_url,
-            "Provider model id, context window, modalities, and prices from the public model list.",
+            "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list.",
         )]
         provider_models = {}
         for item in payload.get("data", []):
@@ -52,6 +68,9 @@ class OpenRouterCollector(BaseCollector):
                 context["max_output_tokens"] = int(top["max_completion_tokens"])
             if context:
                 patch["context"] = context
+            reasoning = _reasoning_config(item.get("reasoning"))
+            if reasoning:
+                patch["reasoning"] = reasoning
             architecture = item.get("architecture") or {}
             input_modalities = architecture.get("input_modalities")
             output_modalities = architecture.get("output_modalities")

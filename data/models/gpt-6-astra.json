@@ -7,7 +7,7 @@
   "version": null,
   "status": "active",
   "release_date": null,
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-09-30",
   "description": "OpenAI's most capable model, built for complex reasoning, coding, computer use, research, and document creation.",
   "context": {
     "window": 1050000,
@@ -32,6 +32,19 @@
     "json_mode": true,
     "streaming": true
   },
+  "reasoning": {
+    "parameter": "reasoning.effort",
+    "effort_levels": ["low", "medium", "high", "xhigh", "max"],
+    "default_effort": null,
+    "supports_none": false,
+    "mode_parameter": "reasoning.mode",
+    "modes": ["standard", "pro"],
+    "default_mode": "standard"
+  },
+  "service_tier": {
+    "parameter": "service_tier",
+    "options": ["fast", "flex", "ultrafast"]
+  },
   "pricing": {
     "currency": "USD",
     "unit": "1M_tokens",
@@ -50,8 +63,23 @@
     {
       "type": "official",
       "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-      "retrieved_at": "2026-09-26",
-      "title": "Model page"
+      "retrieved_at": "2026-09-30",
+      "title": "Model page",
+      "notes": "reasoning.effort supports low, medium, high, xhigh, and max. The documented supported values do not include none; this model page does not state a default effort."
+    },
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/guides/reasoning",
+      "retrieved_at": "2026-09-30",
+      "title": "Reasoning models",
+      "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+    },
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+      "retrieved_at": "2026-09-30",
+      "title": "Fast mode",
+      "notes": "Documents service_tier fast for supported models. GPT-6 Astra also supports ultrafast processing."
     },
     {
       "type": "official",

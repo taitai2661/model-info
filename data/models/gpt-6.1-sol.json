@@ -31,6 +31,19 @@
     "structured_output": true,
     "streaming": true
   },
+  "reasoning": {
+    "parameter": "reasoning.effort",
+    "effort_levels": ["low", "medium", "high", "xhigh", "max"],
+    "default_effort": "medium",
+    "supports_none": false,
+    "mode_parameter": "reasoning.mode",
+    "modes": ["standard", "pro"],
+    "default_mode": "standard"
+  },
+  "service_tier": {
+    "parameter": "service_tier",
+    "options": ["fast", "flex"]
+  },
   "pricing": {
     "currency": "USD",
     "unit": "1M_tokens",
@@ -51,7 +64,21 @@
       "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
       "retrieved_at": "2026-09-30",
       "title": "Model page",
-      "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+      "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. reasoning.effort supports low, medium, high, xhigh, and max (default medium); none and minimal are unsupported. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+    },
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/guides/reasoning",
+      "retrieved_at": "2026-09-30",
+      "title": "Reasoning models",
+      "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+    },
+    {
+      "type": "official",
+      "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+      "retrieved_at": "2026-09-30",
+      "title": "Fast mode",
+      "notes": "Documents service_tier fast; fast mode is unavailable with EU data residency for GPT-6.1 Sol."
     },
     {
       "type": "official",

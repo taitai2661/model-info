@@ -25,7 +25,7 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ]
     },
@@ -84,7 +84,7 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ]
     },
@@ -99,6 +99,68 @@
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-6.1-sol-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 10.0,
+        "cached_input": 0.1
+      },
+      "modalities": {
+        "input": ["file", "image", "text"],
+        "output": ["text"]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": ["low", "medium", "high", "xhigh", "max"],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": ["standard", "pro"],
+        "default_mode": "standard"
+      },
+      "api_variant": {"reasoning_mode": "pro"},
+      "sources": [{
+        "type": "official",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-30",
+        "notes": "This provider ID is GPT-6.1 Sol with reasoning.mode set to pro."
+      }]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-6.1-sol-pro:batch",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 1.0,
+        "output": 5.0,
+        "cached_input": 0.05
+      },
+      "modalities": {
+        "input": ["file", "image", "text"],
+        "output": ["text"]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": ["low", "medium", "high", "xhigh", "max"],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": ["standard", "pro"],
+        "default_mode": "standard"
+      },
+      "api_variant": {"reasoning_mode": "pro"},
+      "sources": [{
+        "type": "official",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-30",
+        "notes": "OpenRouter batch route for GPT-6.1 Sol Pro."
+      }]
     }
   ]
 }

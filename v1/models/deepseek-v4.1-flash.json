@@ -11,7 +11,8 @@
     "updated_at": "2026-09-26",
     "description": "DeepSeek V4.1 Flash: a 552B-total / 8B-active MoE with native multimodal support and a smaller KV cache for lower API cost.",
     "context": {
-      "window": 131072
+      "window": 1048576,
+      "max_output_tokens": 393216
     },
     "modalities": {
       "input": [
@@ -26,6 +27,13 @@
       "vision": true,
       "reasoning": true,
       "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.15,
+      "output": 0.6,
+      "cached_input": 0.003
     },
     "availability": {
       "api": true,
@@ -44,6 +52,26 @@
         "url": "https://integrate.api.nvidia.com/v1/models",
         "retrieved_at": "2026-09-26",
         "title": "NVIDIA NIM public model catalog"
+      },
+      {
+        "type": "official",
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "retrieved_at": "2026-09-30",
+        "title": "DeepSeek models & pricing",
+        "notes": "First-party API model ID is deepseek-flash; context is 1M and max output is 384K. Off-peak per-1M pricing is $0.15 input, $0.003 cache-hit input, and $0.60 output; peak rates are 2x. Legacy V4 Flash IDs route here."
+      },
+      {
+        "type": "official",
+        "url": "https://api-docs.deepseek.com/guides/thinking_mode",
+        "retrieved_at": "2026-09-30",
+        "title": "Thinking mode",
+        "notes": "The DeepSeek API supports enabling/disabling thinking separately from reasoning effort."
+      },
+      {
+        "type": "official",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+        "retrieved_at": "2026-09-26",
+        "title": "Model weights"
       }
     ]
   },
@@ -117,12 +145,27 @@
     {
       "provider_id": "opencode-go",
       "model_id": "deepseek-v4.1-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "notes": "Go monthly usage limit: $60. Peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri) cost 2x: input $0.30, output $1.20, cached read $0.006.",
       "sources": [
         {
           "type": "official",
-          "url": "https://opencode.ai/zen/go/v1/models",
+          "url": "https://opencode.ai/docs/go/",
           "retrieved_at": "2026-09-26",
-          "notes": "Provider model id from the public Go model list (GET /v1/models)."
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ],
       "provider": {
@@ -164,6 +207,326 @@
             "url": "https://opencode.ai/zen/go/v1/models",
             "retrieved_at": "2026-09-26",
             "title": "Go public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": "deepseek-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "notes": "Go monthly usage limit: $60. Peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri) cost 2x: input $0.30, output $1.20, cached read $0.006.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/go/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Go docs",
+          "notes": "Price, tier notes, and monthly limit from the Go docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/go/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model ids from the public Go model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode-go",
+        "name": "OpenCode Go",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/go/",
+        "status": "active",
+        "description": "OpenCode's $10/month subscription (Go) serving a curated set of open coding models through a dedicated endpoint; Anthropic-compatible requests are served from the same base path. Usage limits are defined in dollar value per model.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/go/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/go/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Go docs (models, pricing, limits)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/go/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Go public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "deepseek/deepseek-v4.1-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.006
+      },
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 943718
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ],
+      "provider": {
+        "id": "openrouter",
+        "name": "OpenRouter",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://openrouter.ai",
+        "documentation_url": "https://openrouter.ai/docs/quickstart",
+        "status": "active",
+        "description": "Unified API gateway that routes requests to hundreds of third-party models across many upstream providers.",
+        "api": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "api_capabilities": {
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenRouter quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://openrouter.ai/api/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "opencode",
+      "model_id": "deepseek-v4.1-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.006
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://opencode.ai/docs/zen/",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenCode Zen docs",
+          "notes": "Price, availability, and deprecation status from the Zen docs."
+        },
+        {
+          "type": "official",
+          "url": "https://opencode.ai/zen/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
+        }
+      ],
+      "provider": {
+        "id": "opencode",
+        "name": "OpenCode Zen",
+        "types": [
+          "api_provider",
+          "aggregator",
+          "gateway"
+        ],
+        "website": "https://opencode.ai",
+        "documentation_url": "https://opencode.ai/docs/zen/",
+        "status": "active",
+        "description": "OpenCode's curated pay-as-you-go model catalog (Zen): tested models provided by the OpenCode team through one endpoint; prices are listed per 1M tokens in the docs.",
+        "api": {
+          "base_url": "https://opencode.ai/zen/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "messages": "/messages",
+            "models": "/models"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://opencode.ai/docs/zen/",
+            "retrieved_at": "2026-09-26",
+            "title": "OpenCode Zen docs (endpoints, pricing, deprecated models)"
+          },
+          {
+            "type": "official",
+            "url": "https://opencode.ai/zen/v1/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Zen public model list"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "together",
+      "model_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "context": {
+        "window": 1000000
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.006
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.together.ai/docs/inference-models.md",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model id, context window, and per-1M-token prices from Together AI's available-models page (chat models table)."
+        }
+      ],
+      "provider": {
+        "id": "together",
+        "name": "Together AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://www.together.ai",
+        "documentation_url": "https://docs.together.ai/docs/serverless",
+        "status": "active",
+        "description": "Cloud platform running open-source third-party models (serverless and dedicated) behind an OpenAI-compatible API.",
+        "api": {
+          "base_url": "https://api.together.ai/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "models": "/models",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.together.ai/docs/serverless",
+            "retrieved_at": "2026-09-26",
+            "title": "Together serverless inference"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "fireworks",
+      "model_id": "accounts/fireworks/models/deepseek-v4p1-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.006
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://docs.fireworks.ai/serverless/pricing.md",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model id and Standard-tier prices (input / cached input / output per 1M tokens) from Fireworks' serverless pricing page. Fast, US and Priority rows link to the same model id, so the first (standard, global) row for each id wins."
+        }
+      ],
+      "provider": {
+        "id": "fireworks",
+        "name": "Fireworks AI",
+        "types": [
+          "api_provider",
+          "platform"
+        ],
+        "website": "https://fireworks.ai",
+        "documentation_url": "https://docs.fireworks.ai/getting-started/quickstart",
+        "status": "active",
+        "description": "AI cloud platform for open-source models; OpenAI-compatible chat endpoint plus an Anthropic-compatible endpoint served from https://api.fireworks.ai/inference.",
+        "api": {
+          "base_url": "https://api.fireworks.ai/inference/v1",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "embeddings": "/embeddings",
+            "rerank": "/rerank"
+          }
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://docs.fireworks.ai/getting-started/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "Fireworks quickstart"
           }
         ],
         "updated_at": "2026-09-26"
@@ -781,6 +1144,208 @@
           }
         ],
         "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "provider_id": "deepseek",
+      "model_id": "deepseek-flash",
+      "notes": "Current first-party DeepSeek API model ID for DeepSeek V4.1 Flash. Direct pricing varies between peak and off-peak hours; see the linked pricing source.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-30",
+          "title": "DeepSeek models & pricing"
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/guides/thinking_mode",
+          "retrieved_at": "2026-09-30",
+          "title": "DeepSeek thinking mode"
+        }
+      ],
+      "provider": {
+        "id": "deepseek",
+        "name": "DeepSeek",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.deepseek.com",
+        "documentation_url": "https://api-docs.deepseek.com",
+        "status": "active",
+        "description": "AI company behind the DeepSeek models; operates the DeepSeek API in OpenAI format (an Anthropic-compatible endpoint is served from https://api.deepseek.com/anthropic).",
+        "api": {
+          "base_url": "https://api.deepseek.com",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "models": "/models"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "json_mode": true,
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://api-docs.deepseek.com/quick_start/pricing",
+            "retrieved_at": "2026-09-26",
+            "title": "DeepSeek models & pricing"
+          },
+          {
+            "type": "official",
+            "url": "https://api-docs.deepseek.com/api/create-chat-completion",
+            "retrieved_at": "2026-09-26",
+            "title": "Chat completion API reference"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "deepseek",
+      "model_id": "deepseek-v4-flash",
+      "status": "deprecated",
+      "notes": "Legacy API ID; DeepSeek currently routes requests to DeepSeek V4.1 Flash. Direct pricing varies by peak/off-peak time.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-30",
+          "title": "DeepSeek models & pricing"
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/updates",
+          "retrieved_at": "2026-09-30",
+          "title": "DeepSeek change log",
+          "notes": "The retired V4 Flash name is temporarily routed to V4.1 Flash for compatibility."
+        }
+      ],
+      "provider": {
+        "id": "deepseek",
+        "name": "DeepSeek",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.deepseek.com",
+        "documentation_url": "https://api-docs.deepseek.com",
+        "status": "active",
+        "description": "AI company behind the DeepSeek models; operates the DeepSeek API in OpenAI format (an Anthropic-compatible endpoint is served from https://api.deepseek.com/anthropic).",
+        "api": {
+          "base_url": "https://api.deepseek.com",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "models": "/models"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "json_mode": true,
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://api-docs.deepseek.com/quick_start/pricing",
+            "retrieved_at": "2026-09-26",
+            "title": "DeepSeek models & pricing"
+          },
+          {
+            "type": "official",
+            "url": "https://api-docs.deepseek.com/api/create-chat-completion",
+            "retrieved_at": "2026-09-26",
+            "title": "Chat completion API reference"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    },
+    {
+      "provider_id": "deepseek",
+      "model_id": "deepseek-v4-flash-vision-exp",
+      "status": "deprecated",
+      "notes": "Legacy API ID; DeepSeek currently routes requests to DeepSeek V4.1 Flash. Direct pricing varies by peak/off-peak time.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-30",
+          "title": "DeepSeek models & pricing"
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/updates",
+          "retrieved_at": "2026-09-30",
+          "title": "DeepSeek change log",
+          "notes": "The retired Vision Exp name is temporarily routed to V4.1 Flash for compatibility."
+        }
+      ],
+      "provider": {
+        "id": "deepseek",
+        "name": "DeepSeek",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.deepseek.com",
+        "documentation_url": "https://api-docs.deepseek.com",
+        "status": "active",
+        "description": "AI company behind the DeepSeek models; operates the DeepSeek API in OpenAI format (an Anthropic-compatible endpoint is served from https://api.deepseek.com/anthropic).",
+        "api": {
+          "base_url": "https://api.deepseek.com",
+          "protocol": "https",
+          "api_style": "openai_compatible",
+          "authentication": {
+            "type": "bearer",
+            "header": "Authorization"
+          },
+          "endpoints": {
+            "chat_completions": "/chat/completions",
+            "responses": "/responses",
+            "models": "/models"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "json_mode": true,
+          "prompt_caching": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://api-docs.deepseek.com/quick_start/pricing",
+            "retrieved_at": "2026-09-26",
+            "title": "DeepSeek models & pricing"
+          },
+          {
+            "type": "official",
+            "url": "https://api-docs.deepseek.com/api/create-chat-completion",
+            "retrieved_at": "2026-09-26",
+            "title": "Chat completion API reference"
+          }
+        ],
+        "updated_at": "2026-09-26"
       }
     }
   ]

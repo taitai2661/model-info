@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .base import BaseCollector, api_source
+from .base import BaseCollector, api_source, normalize_effort_levels
 
 
 def _per_million(value):
@@ -32,6 +32,28 @@ def _normalize_modalities(values):
         if canonical in _VALID_MODALITIES and canonical not in out:
             out.append(canonical)
     return out or None
+
+
+def _normalize_reasoning_options(options):
+    if not isinstance(options, list):
+        return None
+    effort = next(
+        (item for item in options
+         if isinstance(item, dict) and item.get("type") == "effort"),
+        None,
+    )
+    values = effort.get("values") if effort else None
+    if not isinstance(values, list) or not values or not all(
+        isinstance(item, str) for item in values
+    ):
+        return None
+    return {
+        "parameter": "reasoning.effort",
+        "effort_levels": normalize_effort_levels(values),
+        # The public catalogue does not publish a default effort.
+        "default_effort": None,
+        "supports_none": "none" in values,
+    }
 
 
 class VercelAIGatewayCollector(BaseCollector):
@@ -79,6 +101,9 @@ class VercelAIGatewayCollector(BaseCollector):
             if mod_in and mod_out:
                 patch["modalities"] = {"input": mod_in, "output": mod_out}
 
+            reasoning = _normalize_reasoning_options(item.get("reasoning_options"))
+            if reasoning:
+                patch["reasoning"] = reasoning
+
             provider_models[api_model_id] = patch
         return {"provider_models": provider_models}
-

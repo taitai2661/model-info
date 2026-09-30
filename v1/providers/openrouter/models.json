@@ -4805,100 +4805,6 @@
   },
   {
     "model": {
-      "model_id": "deepseek-flash",
-      "name": "DeepSeek Flash",
-      "display_name": "DeepSeek Flash",
-      "model_provider": "deepseek",
-      "family": "DeepSeek",
-      "version": "DeepSeek-V4.1-Flash",
-      "status": "active",
-      "release_date": null,
-      "updated_at": "2026-09-26",
-      "description": "DeepSeek's fast multimodal model (model version DeepSeek-V4.1-Flash) with thinking and non-thinking modes, vision, tool calls, JSON output, and Responses API support.",
-      "context": {
-        "window": 1048576,
-        "max_output_tokens": 393216
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "capabilities": {
-        "tool_use": true,
-        "vision": true,
-        "reasoning": true,
-        "function_calling": true,
-        "structured_output": null,
-        "json_mode": true,
-        "streaming": true
-      },
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.15,
-        "output": 0.6,
-        "cached_input": 0.003
-      },
-      "availability": {
-        "api": true,
-        "cloud": true,
-        "open_weights": true,
-        "self_hostable": true
-      },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://api-docs.deepseek.com/quick_start/pricing",
-          "retrieved_at": "2026-09-26",
-          "title": "Models & pricing",
-          "notes": "Prices are off-peak rates; peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri, excluding PRC public holidays) cost 2x. Max output is stated as 384K."
-        },
-        {
-          "type": "community",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-26",
-          "title": "OpenRouter public model list",
-          "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
-        },
-        {
-          "type": "official",
-          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-          "retrieved_at": "2026-09-26",
-          "title": "Model weights"
-        }
-      ]
-    },
-    "relationship": {
-      "provider_id": "openrouter",
-      "model_id": "deepseek/deepseek-v4.1-flash",
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
-        }
-      ],
-      "pricing": {
-        "currency": "USD",
-        "unit": "1M_tokens",
-        "input": 0.3,
-        "output": 1.2,
-        "cached_input": 0.006
-      },
-      "context": {
-        "window": 1048576,
-        "max_output_tokens": 943718
-      }
-    }
-  },
-  {
-    "model": {
       "model_id": "deepseek-r1",
       "name": "DeepSeek-R1",
       "model_provider": "deepseek",
@@ -5722,7 +5628,8 @@
       "updated_at": "2026-09-26",
       "description": "DeepSeek V4.1 Flash: a 552B-total / 8B-active MoE with native multimodal support and a smaller KV cache for lower API cost.",
       "context": {
-        "window": 131072
+        "window": 1048576,
+        "max_output_tokens": 393216
       },
       "modalities": {
         "input": [
@@ -5737,6 +5644,13 @@
         "vision": true,
         "reasoning": true,
         "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
       },
       "availability": {
         "api": true,
@@ -5755,6 +5669,127 @@
           "url": "https://integrate.api.nvidia.com/v1/models",
           "retrieved_at": "2026-09-26",
           "title": "NVIDIA NIM public model catalog"
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-30",
+          "title": "DeepSeek models & pricing",
+          "notes": "First-party API model ID is deepseek-flash; context is 1M and max output is 384K. Off-peak per-1M pricing is $0.15 input, $0.003 cache-hit input, and $0.60 output; peak rates are 2x. Legacy V4 Flash IDs route here."
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/guides/thinking_mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Thinking mode",
+          "notes": "The DeepSeek API supports enabling/disabling thinking separately from reasoning effort."
+        },
+        {
+          "type": "official",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "retrieved_at": "2026-09-26",
+          "title": "Model weights"
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "openrouter",
+      "model_id": "deepseek/deepseek-v4.1-flash",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.006
+      },
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 943718
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "deepseek-v4.1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "display_name": "DeepSeek V4.1 Flash",
+      "model_provider": "deepseek",
+      "family": "DeepSeek",
+      "version": "v4.1",
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "description": "DeepSeek V4.1 Flash: a 552B-total / 8B-active MoE with native multimodal support and a smaller KV cache for lower API cost.",
+      "context": {
+        "window": 1048576,
+        "max_output_tokens": 393216
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "vision": true,
+        "reasoning": true,
+        "streaming": true
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.15,
+        "output": 0.6,
+        "cached_input": 0.003
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": true
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://build.nvidia.com/deepseek-ai/deepseek-v4.1-flash",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM model page"
+        },
+        {
+          "type": "official",
+          "url": "https://integrate.api.nvidia.com/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "NVIDIA NIM public model catalog"
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "retrieved_at": "2026-09-30",
+          "title": "DeepSeek models & pricing",
+          "notes": "First-party API model ID is deepseek-flash; context is 1M and max output is 384K. Off-peak per-1M pricing is $0.15 input, $0.003 cache-hit input, and $0.60 output; peak rates are 2x. Legacy V4 Flash IDs route here."
+        },
+        {
+          "type": "official",
+          "url": "https://api-docs.deepseek.com/guides/thinking_mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Thinking mode",
+          "notes": "The DeepSeek API supports enabling/disabling thinking separately from reasoning effort."
+        },
+        {
+          "type": "official",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "retrieved_at": "2026-09-26",
+          "title": "Model weights"
         }
       ]
     },
@@ -15361,6 +15396,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -15373,8 +15433,9 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
           "type": "official",
@@ -15382,6 +15443,20 @@
           "retrieved_at": "2026-09-26",
           "title": "OpenAI pricing",
           "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
       ]
     },
@@ -15442,6 +15517,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -15454,8 +15554,9 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
           "type": "official",
@@ -15463,6 +15564,20 @@
           "retrieved_at": "2026-09-26",
           "title": "OpenAI pricing",
           "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
       ]
     },
@@ -15498,51 +15613,101 @@
   },
   {
     "model": {
-      "model_id": "gpt-5.6-luna-pro",
-      "name": "GPT-5.6 Luna Pro",
+      "model_id": "gpt-5.6-luna",
+      "name": "GPT-5.6 Luna",
+      "display_name": "GPT-5.6 Luna",
       "model_provider": "openai",
+      "family": "GPT-5",
+      "version": null,
       "status": "active",
-      "display_name": "GPT-5.6 Luna Pro",
+      "release_date": null,
+      "updated_at": "2026-09-26",
       "context": {
         "window": 1050000,
-        "max_output_tokens": 128000
+        "max_output_tokens": 128000,
+        "max_input_tokens": 922000
       },
       "modalities": {
         "input": [
-          "file",
-          "image",
-          "text"
+          "text",
+          "image"
         ],
         "output": [
           "text"
         ]
       },
       "capabilities": {
+        "tool_use": true,
+        "vision": true,
         "reasoning": true,
-        "json_mode": true,
+        "function_calling": true,
         "structured_output": true,
-        "tool_use": true
+        "json_mode": true,
+        "streaming": true
       },
-      "availability": {
-        "api": true
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.2,
+        "output": 1.2,
+        "cached_input": 0.02,
+        "cached_write": 0.125
       },
       "sources": [
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI pricing",
+          "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -15554,27 +15719,6 @@
         "output": 1.2,
         "cached_input": 0.02
       },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
-        }
-      ]
-    }
-  },
-  {
-    "model": {
-      "model_id": "gpt-5.6-luna-pro",
-      "name": "GPT-5.6 Luna Pro",
-      "model_provider": "openai",
-      "status": "active",
-      "display_name": "GPT-5.6 Luna Pro",
-      "context": {
-        "window": 1050000,
-        "max_output_tokens": 128000
-      },
       "modalities": {
         "input": [
           "file",
@@ -15585,32 +15729,116 @@
           "text"
         ]
       },
-      "capabilities": {
-        "reasoning": true,
-        "json_mode": true,
-        "structured_output": true,
-        "tool_use": true
-      },
-      "availability": {
-        "api": true
+      "api_variant": {
+        "reasoning_mode": "pro"
       },
       "sources": [
         {
-          "type": "documentation",
+          "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "retrieved_at": "2026-09-30",
+          "notes": "OpenRouter exposes this ID as GPT-5.6 Luna with reasoning.mode set to pro; prices and effort options from its public model list."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-5.6-luna",
+      "name": "GPT-5.6 Luna",
+      "display_name": "GPT-5.6 Luna",
+      "model_provider": "openai",
+      "family": "GPT-5",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1050000,
+        "max_output_tokens": 128000,
+        "max_input_tokens": 922000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "json_mode": true,
+        "streaming": true
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.2,
+        "output": 1.2,
+        "cached_input": 0.02,
+        "cached_write": 0.125
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI pricing",
+          "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -15622,12 +15850,25 @@
         "output": 0.6,
         "cached_input": 0.01
       },
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "api_variant": {
+        "reasoning_mode": "pro"
+      },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "OpenRouter batch route for GPT-5.6 Luna Pro; same base model in pro reasoning mode."
         }
       ]
     }
@@ -15666,6 +15907,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -15678,8 +15944,9 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
           "type": "official",
@@ -15687,6 +15954,20 @@
           "retrieved_at": "2026-09-26",
           "title": "OpenAI pricing",
           "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
       ]
     },
@@ -15754,6 +16035,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -15766,8 +16072,9 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
           "type": "official",
@@ -15775,6 +16082,20 @@
           "retrieved_at": "2026-09-26",
           "title": "OpenAI pricing",
           "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
       ]
     },
@@ -15810,51 +16131,101 @@
   },
   {
     "model": {
-      "model_id": "gpt-5.6-sol-pro",
-      "name": "GPT-5.6 Sol Pro",
+      "model_id": "gpt-5.6-sol",
+      "name": "GPT-5.6 Sol",
+      "display_name": "GPT-5.6 Sol",
       "model_provider": "openai",
+      "family": "GPT-5",
+      "version": null,
       "status": "active",
-      "display_name": "GPT-5.6 Sol Pro",
+      "release_date": null,
+      "updated_at": "2026-09-26",
       "context": {
         "window": 1050000,
-        "max_output_tokens": 128000
+        "max_output_tokens": 128000,
+        "max_input_tokens": 922000
       },
       "modalities": {
         "input": [
-          "file",
-          "image",
-          "text"
+          "text",
+          "image"
         ],
         "output": [
           "text"
         ]
       },
       "capabilities": {
+        "tool_use": true,
+        "vision": true,
         "reasoning": true,
-        "json_mode": true,
+        "function_calling": true,
         "structured_output": true,
-        "tool_use": true
+        "json_mode": true,
+        "streaming": true
       },
-      "availability": {
-        "api": true
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 4.0,
+        "output": 20.0,
+        "cached_input": 0.4,
+        "cached_write": 5.0
       },
       "sources": [
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI pricing",
+          "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -15866,27 +16237,6 @@
         "output": 20.0,
         "cached_input": 0.4
       },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
-        }
-      ]
-    }
-  },
-  {
-    "model": {
-      "model_id": "gpt-5.6-sol-pro",
-      "name": "GPT-5.6 Sol Pro",
-      "model_provider": "openai",
-      "status": "active",
-      "display_name": "GPT-5.6 Sol Pro",
-      "context": {
-        "window": 1050000,
-        "max_output_tokens": 128000
-      },
       "modalities": {
         "input": [
           "file",
@@ -15897,32 +16247,116 @@
           "text"
         ]
       },
-      "capabilities": {
-        "reasoning": true,
-        "json_mode": true,
-        "structured_output": true,
-        "tool_use": true
-      },
-      "availability": {
-        "api": true
+      "api_variant": {
+        "reasoning_mode": "pro"
       },
       "sources": [
         {
-          "type": "documentation",
+          "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "retrieved_at": "2026-09-30",
+          "notes": "OpenRouter exposes this ID as GPT-5.6 Sol with reasoning.mode set to pro; prices and effort options from its public model list."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-5.6-sol",
+      "name": "GPT-5.6 Sol",
+      "display_name": "GPT-5.6 Sol",
+      "model_provider": "openai",
+      "family": "GPT-5",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1050000,
+        "max_output_tokens": 128000,
+        "max_input_tokens": 922000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "json_mode": true,
+        "streaming": true
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 4.0,
+        "output": 20.0,
+        "cached_input": 0.4,
+        "cached_write": 5.0
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI pricing",
+          "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -15934,12 +16368,25 @@
         "output": 5.0,
         "cached_input": 0.1
       },
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "api_variant": {
+        "reasoning_mode": "pro"
+      },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "OpenRouter batch route for GPT-5.6 Sol Pro; same base model in pro reasoning mode."
         }
       ]
     }
@@ -15978,6 +16425,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -15990,8 +16462,9 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
           "type": "official",
@@ -15999,6 +16472,20 @@
           "retrieved_at": "2026-09-26",
           "title": "OpenAI pricing",
           "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
       ]
     },
@@ -16059,6 +16546,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -16071,8 +16583,9 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
           "type": "official",
@@ -16080,6 +16593,20 @@
           "retrieved_at": "2026-09-26",
           "title": "OpenAI pricing",
           "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
       ]
     },
@@ -16115,51 +16642,101 @@
   },
   {
     "model": {
-      "model_id": "gpt-5.6-terra-pro",
-      "name": "GPT-5.6 Terra Pro",
+      "model_id": "gpt-5.6-terra",
+      "name": "GPT-5.6 Terra",
+      "display_name": "GPT-5.6 Terra",
       "model_provider": "openai",
+      "family": "GPT-5",
+      "version": null,
       "status": "active",
-      "display_name": "GPT-5.6 Terra Pro",
+      "release_date": null,
+      "updated_at": "2026-09-26",
       "context": {
         "window": 1050000,
-        "max_output_tokens": 128000
+        "max_output_tokens": 128000,
+        "max_input_tokens": 922000
       },
       "modalities": {
         "input": [
-          "file",
-          "image",
-          "text"
+          "text",
+          "image"
         ],
         "output": [
           "text"
         ]
       },
       "capabilities": {
+        "tool_use": true,
+        "vision": true,
         "reasoning": true,
-        "json_mode": true,
+        "function_calling": true,
         "structured_output": true,
-        "tool_use": true
+        "json_mode": true,
+        "streaming": true
       },
-      "availability": {
-        "api": true
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 12.0,
+        "cached_input": 0.2,
+        "cached_write": 2.5
       },
       "sources": [
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI pricing",
+          "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -16171,27 +16748,6 @@
         "output": 12.0,
         "cached_input": 0.2
       },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
-        }
-      ]
-    }
-  },
-  {
-    "model": {
-      "model_id": "gpt-5.6-terra-pro",
-      "name": "GPT-5.6 Terra Pro",
-      "model_provider": "openai",
-      "status": "active",
-      "display_name": "GPT-5.6 Terra Pro",
-      "context": {
-        "window": 1050000,
-        "max_output_tokens": 128000
-      },
       "modalities": {
         "input": [
           "file",
@@ -16202,32 +16758,116 @@
           "text"
         ]
       },
-      "capabilities": {
-        "reasoning": true,
-        "json_mode": true,
-        "structured_output": true,
-        "tool_use": true
-      },
-      "availability": {
-        "api": true
+      "api_variant": {
+        "reasoning_mode": "pro"
       },
       "sources": [
         {
-          "type": "documentation",
+          "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "retrieved_at": "2026-09-30",
+          "notes": "OpenRouter exposes this ID as GPT-5.6 Terra with reasoning.mode set to pro; prices and effort options from its public model list."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-5.6-terra",
+      "name": "GPT-5.6 Terra",
+      "display_name": "GPT-5.6 Terra",
+      "model_provider": "openai",
+      "family": "GPT-5",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 1050000,
+        "max_output_tokens": 128000,
+        "max_input_tokens": 922000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "json_mode": true,
+        "streaming": true
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 12.0,
+        "cached_input": 0.2,
+        "cached_write": 2.5
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenAI pricing",
+          "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for GPT-5.6 models."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -16239,12 +16879,25 @@
         "output": 6.0,
         "cached_input": 0.1
       },
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "api_variant": {
+        "reasoning_mode": "pro"
+      },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "OpenRouter batch route for GPT-5.6 Terra Pro; same base model in pro reasoning mode."
         }
       ]
     }
@@ -16259,7 +16912,7 @@
       "version": null,
       "status": "active",
       "release_date": null,
-      "updated_at": "2026-09-26",
+      "updated_at": "2026-09-30",
       "description": "OpenAI's most capable model, built for complex reasoning, coding, computer use, research, and document creation.",
       "context": {
         "window": 1050000,
@@ -16284,6 +16937,32 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex",
+          "ultrafast"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -16302,8 +16981,23 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports low, medium, high, xhigh, and max. The documented supported values do not include none; this model page does not state a default effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models. GPT-6 Astra also supports ultrafast processing."
         },
         {
           "type": "official",
@@ -16334,7 +17028,7 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "modalities": {
@@ -16346,6 +17040,24 @@
         "output": [
           "text"
         ]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
       }
     }
   },
@@ -16359,7 +17071,7 @@
       "version": null,
       "status": "active",
       "release_date": null,
-      "updated_at": "2026-09-26",
+      "updated_at": "2026-09-30",
       "description": "OpenAI's most capable model, built for complex reasoning, coding, computer use, research, and document creation.",
       "context": {
         "window": 1050000,
@@ -16384,6 +17096,32 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex",
+          "ultrafast"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -16402,8 +17140,23 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports low, medium, high, xhigh, and max. The documented supported values do not include none; this model page does not state a default effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models. GPT-6 Astra also supports ultrafast processing."
         },
         {
           "type": "official",
@@ -16451,58 +17204,146 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
-      ]
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      }
     }
   },
   {
     "model": {
-      "model_id": "gpt-6-astra-pro",
-      "name": "GPT-6 Astra Pro",
+      "model_id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "display_name": "GPT-6 Astra",
       "model_provider": "openai",
+      "family": "GPT-6",
+      "version": null,
       "status": "active",
-      "display_name": "GPT-6 Astra Pro",
+      "release_date": null,
+      "updated_at": "2026-09-30",
+      "description": "OpenAI's most capable model, built for complex reasoning, coding, computer use, research, and document creation.",
       "context": {
         "window": 1050000,
+        "max_input_tokens": 922000,
         "max_output_tokens": 128000
       },
       "modalities": {
         "input": [
-          "file",
-          "image",
-          "text"
+          "text",
+          "image"
         ],
         "output": [
           "text"
         ]
       },
       "capabilities": {
+        "tool_use": true,
+        "vision": true,
         "reasoning": true,
-        "json_mode": true,
+        "function_calling": true,
         "structured_output": true,
-        "tool_use": true
+        "json_mode": true,
+        "streaming": true
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex",
+          "ultrafast"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 10,
+        "output": 50,
+        "cached_input": 1,
+        "cached_write": 12.5
       },
       "availability": {
-        "api": true
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
       },
       "sources": [
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports low, medium, high, xhigh, and max. The documented supported values do not include none; this model page does not state a default effort."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models. GPT-6 Astra also supports ultrafast processing."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Pricing"
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/quickstart",
+          "retrieved_at": "2026-09-26",
+          "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+          "retrieved_at": "2026-09-26",
+          "title": "Structured outputs guide",
+          "notes": "Documents JSON mode (response_format json_object) and structured outputs."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -16514,27 +17355,6 @@
         "output": 50.0,
         "cached_input": 1.0
       },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
-        }
-      ]
-    }
-  },
-  {
-    "model": {
-      "model_id": "gpt-6-astra-pro",
-      "name": "GPT-6 Astra Pro",
-      "model_provider": "openai",
-      "status": "active",
-      "display_name": "GPT-6 Astra Pro",
-      "context": {
-        "window": 1050000,
-        "max_output_tokens": 128000
-      },
       "modalities": {
         "input": [
           "file",
@@ -16545,32 +17365,154 @@
           "text"
         ]
       },
-      "capabilities": {
-        "reasoning": true,
-        "json_mode": true,
-        "structured_output": true,
-        "tool_use": true
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
       },
-      "availability": {
-        "api": true
+      "api_variant": {
+        "reasoning_mode": "pro"
       },
       "sources": [
         {
-          "type": "documentation",
+          "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "retrieved_at": "2026-09-30",
+          "notes": "This provider ID is GPT-6 Astra with reasoning.mode set to pro."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "display_name": "GPT-6 Astra",
+      "model_provider": "openai",
+      "family": "GPT-6",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-30",
+      "description": "OpenAI's most capable model, built for complex reasoning, coding, computer use, research, and document creation.",
+      "context": {
+        "window": 1050000,
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "json_mode": true,
+        "streaming": true
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex",
+          "ultrafast"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 10,
+        "output": 50,
+        "cached_input": 1,
+        "cached_write": 12.5
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports low, medium, high, xhigh, and max. The documented supported values do not include none; this model page does not state a default effort."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models. GPT-6 Astra also supports ultrafast processing."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Pricing"
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/quickstart",
+          "retrieved_at": "2026-09-26",
+          "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+          "retrieved_at": "2026-09-26",
+          "title": "Structured outputs guide",
+          "notes": "Documents JSON mode (response_format json_object) and structured outputs."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -16582,12 +17524,43 @@
         "output": 25.0,
         "cached_input": 0.5
       },
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "api_variant": {
+        "reasoning_mode": "pro"
+      },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "OpenRouter batch route for GPT-6 Astra Pro."
         }
       ]
     }
@@ -16602,7 +17575,7 @@
       "version": null,
       "status": "active",
       "release_date": null,
-      "updated_at": "2026-09-26",
+      "updated_at": "2026-09-30",
       "description": "OpenAI's most efficient GPT-6 model for focused, high-volume tasks.",
       "context": {
         "window": 1050000,
@@ -16627,6 +17600,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -16645,8 +17643,23 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models."
         },
         {
           "type": "official",
@@ -16677,7 +17690,7 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "modalities": {
@@ -16702,7 +17715,7 @@
       "version": null,
       "status": "active",
       "release_date": null,
-      "updated_at": "2026-09-26",
+      "updated_at": "2026-09-30",
       "description": "OpenAI's most efficient GPT-6 model for focused, high-volume tasks.",
       "context": {
         "window": 1050000,
@@ -16727,6 +17740,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -16745,8 +17783,23 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models."
         },
         {
           "type": "official",
@@ -16794,58 +17847,127 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ]
     }
   },
   {
     "model": {
-      "model_id": "gpt-6-luna-pro",
-      "name": "GPT-6 Luna Pro",
+      "model_id": "gpt-6-luna",
+      "name": "GPT-6 Luna",
+      "display_name": "GPT-6 Luna",
       "model_provider": "openai",
+      "family": "GPT-6",
+      "version": null,
       "status": "active",
-      "display_name": "GPT-6 Luna Pro",
+      "release_date": null,
+      "updated_at": "2026-09-30",
+      "description": "OpenAI's most efficient GPT-6 model for focused, high-volume tasks.",
       "context": {
         "window": 1050000,
+        "max_input_tokens": 922000,
         "max_output_tokens": 128000
       },
       "modalities": {
         "input": [
-          "file",
-          "image",
-          "text"
+          "text",
+          "image"
         ],
         "output": [
           "text"
         ]
       },
       "capabilities": {
+        "tool_use": true,
+        "vision": true,
         "reasoning": true,
-        "json_mode": true,
+        "function_calling": true,
         "structured_output": true,
-        "tool_use": true
+        "json_mode": true,
+        "streaming": true
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.1,
+        "output": 0.5,
+        "cached_input": 0.01,
+        "cached_write": 0.125
       },
       "availability": {
-        "api": true
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
       },
       "sources": [
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Pricing"
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/quickstart",
+          "retrieved_at": "2026-09-26",
+          "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+          "retrieved_at": "2026-09-26",
+          "title": "Structured outputs guide",
+          "notes": "Documents JSON mode (response_format json_object) and structured outputs."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -16857,27 +17979,6 @@
         "output": 0.5,
         "cached_input": 0.01
       },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
-        }
-      ]
-    }
-  },
-  {
-    "model": {
-      "model_id": "gpt-6-luna-pro",
-      "name": "GPT-6 Luna Pro",
-      "model_provider": "openai",
-      "status": "active",
-      "display_name": "GPT-6 Luna Pro",
-      "context": {
-        "window": 1050000,
-        "max_output_tokens": 128000
-      },
       "modalities": {
         "input": [
           "file",
@@ -16888,32 +17989,153 @@
           "text"
         ]
       },
-      "capabilities": {
-        "reasoning": true,
-        "json_mode": true,
-        "structured_output": true,
-        "tool_use": true
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
       },
-      "availability": {
-        "api": true
+      "api_variant": {
+        "reasoning_mode": "pro"
       },
       "sources": [
         {
-          "type": "documentation",
+          "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "retrieved_at": "2026-09-30",
+          "notes": "This provider ID is GPT-6 Luna with reasoning.mode set to pro."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-6-luna",
+      "name": "GPT-6 Luna",
+      "display_name": "GPT-6 Luna",
+      "model_provider": "openai",
+      "family": "GPT-6",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-30",
+      "description": "OpenAI's most efficient GPT-6 model for focused, high-volume tasks.",
+      "context": {
+        "window": 1050000,
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "json_mode": true,
+        "streaming": true
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.1,
+        "output": 0.5,
+        "cached_input": 0.01,
+        "cached_write": 0.125
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Pricing"
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/quickstart",
+          "retrieved_at": "2026-09-26",
+          "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+          "retrieved_at": "2026-09-26",
+          "title": "Structured outputs guide",
+          "notes": "Documents JSON mode (response_format json_object) and structured outputs."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -16925,12 +18147,43 @@
         "output": 0.25,
         "cached_input": 0.005
       },
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "api_variant": {
+        "reasoning_mode": "pro"
+      },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "OpenRouter batch route for GPT-6 Luna Pro."
         }
       ]
     }
@@ -16945,7 +18198,7 @@
       "version": null,
       "status": "active",
       "release_date": null,
-      "updated_at": "2026-09-26",
+      "updated_at": "2026-09-30",
       "description": "OpenAI model built to power complex coding and agentic workflows, balancing intelligence and cost.",
       "context": {
         "window": 1050000,
@@ -16970,6 +18223,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -16988,8 +18266,23 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models."
         },
         {
           "type": "official",
@@ -17020,7 +18313,7 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "modalities": {
@@ -17045,7 +18338,7 @@
       "version": null,
       "status": "active",
       "release_date": null,
-      "updated_at": "2026-09-26",
+      "updated_at": "2026-09-30",
       "description": "OpenAI model built to power complex coding and agentic workflows, balancing intelligence and cost.",
       "context": {
         "window": 1050000,
@@ -17070,6 +18363,31 @@
         "json_mode": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -17088,8 +18406,23 @@
         {
           "type": "official",
           "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
-          "retrieved_at": "2026-09-26",
-          "title": "Model page"
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models."
         },
         {
           "type": "official",
@@ -17137,58 +18470,127 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ]
     }
   },
   {
     "model": {
-      "model_id": "gpt-6-sol-pro",
-      "name": "GPT-6 Sol Pro",
+      "model_id": "gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "display_name": "GPT-6 Sol",
       "model_provider": "openai",
+      "family": "GPT-6",
+      "version": null,
       "status": "active",
-      "display_name": "GPT-6 Sol Pro",
+      "release_date": null,
+      "updated_at": "2026-09-30",
+      "description": "OpenAI model built to power complex coding and agentic workflows, balancing intelligence and cost.",
       "context": {
         "window": 1050000,
+        "max_input_tokens": 922000,
         "max_output_tokens": 128000
       },
       "modalities": {
         "input": [
-          "file",
-          "image",
-          "text"
+          "text",
+          "image"
         ],
         "output": [
           "text"
         ]
       },
       "capabilities": {
+        "tool_use": true,
+        "vision": true,
         "reasoning": true,
-        "json_mode": true,
+        "function_calling": true,
         "structured_output": true,
-        "tool_use": true
+        "json_mode": true,
+        "streaming": true
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2,
+        "output": 10,
+        "cached_input": 0.2,
+        "cached_write": 2.5
       },
       "availability": {
-        "api": true
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
       },
       "sources": [
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Pricing"
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/quickstart",
+          "retrieved_at": "2026-09-26",
+          "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+          "retrieved_at": "2026-09-26",
+          "title": "Structured outputs guide",
+          "notes": "Documents JSON mode (response_format json_object) and structured outputs."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -17200,27 +18602,6 @@
         "output": 10.0,
         "cached_input": 0.2
       },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
-        }
-      ]
-    }
-  },
-  {
-    "model": {
-      "model_id": "gpt-6-sol-pro",
-      "name": "GPT-6 Sol Pro",
-      "model_provider": "openai",
-      "status": "active",
-      "display_name": "GPT-6 Sol Pro",
-      "context": {
-        "window": 1050000,
-        "max_output_tokens": 128000
-      },
       "modalities": {
         "input": [
           "file",
@@ -17231,32 +18612,153 @@
           "text"
         ]
       },
-      "capabilities": {
-        "reasoning": true,
-        "json_mode": true,
-        "structured_output": true,
-        "tool_use": true
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
       },
-      "availability": {
-        "api": true
+      "api_variant": {
+        "reasoning_mode": "pro"
       },
       "sources": [
         {
-          "type": "documentation",
+          "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "retrieved_at": "2026-09-30",
+          "notes": "This provider ID is GPT-6 Sol with reasoning.mode set to pro."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "display_name": "GPT-6 Sol",
+      "model_provider": "openai",
+      "family": "GPT-6",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-30",
+      "description": "OpenAI model built to power complex coding and agentic workflows, balancing intelligence and cost.",
+      "context": {
+        "window": 1050000,
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "json_mode": true,
+        "streaming": true
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2,
+        "output": 10,
+        "cached_input": 0.2,
+        "cached_write": 2.5
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast for supported models."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "retrieved_at": "2026-09-26",
+          "title": "Pricing"
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/quickstart",
+          "retrieved_at": "2026-09-26",
+          "notes": "Prompts over 272K input tokens are priced at 2x input/cache rates and 1.5x output."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+          "retrieved_at": "2026-09-26",
+          "title": "Structured outputs guide",
+          "notes": "Documents JSON mode (response_format json_object) and structured outputs."
         }
-      ],
-      "updated_at": "2026-09-27"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -17268,12 +18770,43 @@
         "output": 5.0,
         "cached_input": 0.1
       },
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": true,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "api_variant": {
+        "reasoning_mode": "pro"
+      },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "OpenRouter batch route for GPT-6 Sol Pro."
         }
       ]
     }
@@ -17312,6 +18845,31 @@
         "structured_output": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -17332,7 +18890,21 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
           "retrieved_at": "2026-09-30",
           "title": "Model page",
-          "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+          "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. reasoning.effort supports low, medium, high, xhigh, and max (default medium); none and minimal are unsupported. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast; fast mode is unavailable with EU data residency for GPT-6.1 Sol."
         },
         {
           "type": "official",
@@ -17361,7 +18933,7 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ]
     }
@@ -17400,6 +18972,31 @@
         "structured_output": true,
         "streaming": true
       },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
@@ -17420,7 +19017,21 @@
           "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
           "retrieved_at": "2026-09-30",
           "title": "Model page",
-          "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+          "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. reasoning.effort supports low, medium, high, xhigh, and max (default medium); none and minimal are unsupported. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "retrieved_at": "2026-09-30",
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast; fast mode is unavailable with EU data residency for GPT-6.1 Sol."
         },
         {
           "type": "official",
@@ -17458,58 +19069,114 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ]
     }
   },
   {
     "model": {
-      "model_id": "gpt-6.1-sol-pro",
-      "name": "GPT-6.1 Sol Pro",
+      "model_id": "gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
+      "display_name": "GPT-6.1 Sol",
       "model_provider": "openai",
+      "family": "GPT-6",
+      "version": null,
       "status": "active",
-      "display_name": "GPT-6.1 Sol Pro",
+      "release_date": "2026-09-29",
+      "updated_at": "2026-09-30",
+      "description": "OpenAI reasoning model for complex coding, computer use, and professional workflows, delivering near-Astra performance at a lower cost.",
       "context": {
         "window": 1050000,
+        "max_input_tokens": 922000,
         "max_output_tokens": 128000
       },
       "modalities": {
         "input": [
-          "file",
-          "image",
-          "text"
+          "text",
+          "image"
         ],
         "output": [
           "text"
         ]
       },
       "capabilities": {
+        "tool_use": true,
+        "vision": true,
         "reasoning": true,
-        "json_mode": true,
+        "function_calling": true,
         "structured_output": true,
-        "tool_use": true
+        "streaming": true
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 10.0,
+        "cached_input": 0.1,
+        "cached_write": 2.5
       },
       "availability": {
-        "api": true
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
       },
       "sources": [
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
           "retrieved_at": "2026-09-30",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "title": "Model page",
+          "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. reasoning.effort supports low, medium, high, xhigh, and max (default medium); none and minimal are unsupported. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
           "retrieved_at": "2026-09-30",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast; fast mode is unavailable with EU data residency for GPT-6.1 Sol."
+        },
+        {
+          "type": "official",
+          "url": "https://cdn.openai.com/pdf/38e3efcf-545e-44cd-99ec-2b7eb395f4cc/oai_GPT_6_1_Sol.pdf",
+          "retrieved_at": "2026-09-30",
+          "title": "GPT-6.1 Sol System Card",
+          "notes": "Announced September 29, 2026."
         }
-      ],
-      "updated_at": "2026-09-30"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -17521,27 +19188,6 @@
         "output": 10.0,
         "cached_input": 0.1
       },
-      "sources": [
-        {
-          "type": "official",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
-        }
-      ]
-    }
-  },
-  {
-    "model": {
-      "model_id": "gpt-6.1-sol-pro",
-      "name": "GPT-6.1 Sol Pro",
-      "model_provider": "openai",
-      "status": "active",
-      "display_name": "GPT-6.1 Sol Pro",
-      "context": {
-        "window": 1050000,
-        "max_output_tokens": 128000
-      },
       "modalities": {
         "input": [
           "file",
@@ -17552,32 +19198,140 @@
           "text"
         ]
       },
-      "capabilities": {
-        "reasoning": true,
-        "json_mode": true,
-        "structured_output": true,
-        "tool_use": true
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
       },
-      "availability": {
-        "api": true
+      "api_variant": {
+        "reasoning_mode": "pro"
       },
       "sources": [
         {
-          "type": "documentation",
+          "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "notes": "This provider ID is GPT-6.1 Sol with reasoning.mode set to pro."
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
+      "display_name": "GPT-6.1 Sol",
+      "model_provider": "openai",
+      "family": "GPT-6",
+      "version": null,
+      "status": "active",
+      "release_date": "2026-09-29",
+      "updated_at": "2026-09-30",
+      "description": "OpenAI reasoning model for complex coding, computer use, and professional workflows, delivering near-Astra performance at a lower cost.",
+      "context": {
+        "window": 1050000,
+        "max_input_tokens": 922000,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "tool_use": true,
+        "vision": true,
+        "reasoning": true,
+        "function_calling": true,
+        "structured_output": true,
+        "streaming": true
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "fast",
+          "flex"
+        ]
+      },
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 2.0,
+        "output": 10.0,
+        "cached_input": 0.1,
+        "cached_write": 2.5
+      },
+      "availability": {
+        "api": true,
+        "cloud": true,
+        "open_weights": false,
+        "self_hostable": false
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "retrieved_at": "2026-09-30",
+          "title": "Model page",
+          "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. reasoning.effort supports low, medium, high, xhigh, and max (default medium); none and minimal are unsupported. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
           "retrieved_at": "2026-09-30",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "title": "Reasoning models",
+          "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+        },
+        {
+          "type": "official",
+          "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+          "retrieved_at": "2026-09-30",
+          "title": "Fast mode",
+          "notes": "Documents service_tier fast; fast mode is unavailable with EU data residency for GPT-6.1 Sol."
+        },
+        {
+          "type": "official",
+          "url": "https://cdn.openai.com/pdf/38e3efcf-545e-44cd-99ec-2b7eb395f4cc/oai_GPT_6_1_Sol.pdf",
+          "retrieved_at": "2026-09-30",
+          "title": "GPT-6.1 Sol System Card",
+          "notes": "Announced September 29, 2026."
         }
-      ],
-      "updated_at": "2026-09-30"
+      ]
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -17589,12 +19343,43 @@
         "output": 5.0,
         "cached_input": 0.05
       },
+      "modalities": {
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": [
+          "standard",
+          "pro"
+        ],
+        "default_mode": "standard"
+      },
+      "api_variant": {
+        "reasoning_mode": "pro"
+      },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "OpenRouter batch route for GPT-6.1 Sol Pro."
         }
       ]
     }
@@ -18447,6 +20232,17 @@
         "structured_output": true,
         "json_mode": true
       },
+      "reasoning": {
+        "parameter": "reasoning_effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "default_effort": "low",
+        "supports_none": true
+      },
       "availability": {
         "api": true
       },
@@ -18467,14 +20263,21 @@
           "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://docs.x.ai/developers/models/grok-4.3",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok 4.3",
+          "notes": "First-party reasoning efforts are none, low, medium, high, and xhigh; default is low."
+        },
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok model retirement on May 15, 2026",
+          "notes": "Retired Grok 4.1 Fast reasoning and non-reasoning IDs resolve to Grok 4.3 with fixed reasoning efforts."
         }
       ],
-      "updated_at": "2026-09-27"
+      "updated_at": "2026-09-30"
     },
     "relationship": {
       "provider_id": "openrouter",
@@ -18529,6 +20332,17 @@
         "structured_output": true,
         "json_mode": true
       },
+      "reasoning": {
+        "parameter": "reasoning_effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "default_effort": "low",
+        "supports_none": true
+      },
       "availability": {
         "api": true
       },
@@ -18549,14 +20363,21 @@
           "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
         },
         {
-          "type": "documentation",
-          "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-27",
-          "title": "OpenRouter public model list",
-          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+          "type": "official",
+          "url": "https://docs.x.ai/developers/models/grok-4.3",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok 4.3",
+          "notes": "First-party reasoning efforts are none, low, medium, high, and xhigh; default is low."
+        },
+        {
+          "type": "official",
+          "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+          "retrieved_at": "2026-09-30",
+          "title": "Grok model retirement on May 15, 2026",
+          "notes": "Retired Grok 4.1 Fast reasoning and non-reasoning IDs resolve to Grok 4.3 with fixed reasoning efforts."
         }
       ],
-      "updated_at": "2026-09-27"
+      "updated_at": "2026-09-30"
     },
     "relationship": {
       "provider_id": "openrouter",

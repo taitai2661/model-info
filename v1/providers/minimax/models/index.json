@@ -1,6 +1,168 @@
 [
   {
     "model": {
+      "model_id": "minimax-m2.1",
+      "name": "MiniMax M2.1",
+      "model_provider": "minimax",
+      "status": "active",
+      "display_name": "MiniMax M2.1",
+      "description": "MiniMax 2.1 is MiniMax's latest model, optimized specifically for robustness in coding, tool use, instruction following, and long-horizon planning.",
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "reasoning": true,
+        "tool_use": true,
+        "structured_output": true,
+        "json_mode": true
+      },
+      "availability": {
+        "api": true,
+        "open_weights": true
+      },
+      "release_date": "2025-12-23",
+      "sources": [
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        }
+      ],
+      "updated_at": "2026-09-27"
+    },
+    "relationship": {
+      "provider_id": "minimax",
+      "model_id": "MiniMax-M2.1",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.03,
+        "cached_write": 0.375
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "priority"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax Pay as You Go pricing"
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "minimax-m2.1",
+      "name": "MiniMax M2.1",
+      "model_provider": "minimax",
+      "status": "active",
+      "display_name": "MiniMax M2.1",
+      "description": "MiniMax 2.1 is MiniMax's latest model, optimized specifically for robustness in coding, tool use, instruction following, and long-horizon planning.",
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": {
+        "reasoning": true,
+        "tool_use": true,
+        "structured_output": true,
+        "json_mode": true
+      },
+      "availability": {
+        "api": true,
+        "open_weights": true
+      },
+      "release_date": "2025-12-23",
+      "sources": [
+        {
+          "type": "documentation",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "OpenRouter public model list",
+          "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        },
+        {
+          "type": "documentation",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-27",
+          "title": "Vercel AI Gateway public model list",
+          "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        }
+      ],
+      "updated_at": "2026-09-27"
+    },
+    "relationship": {
+      "provider_id": "minimax",
+      "model_id": "MiniMax-M2.1-highspeed",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.6,
+        "output": 2.4,
+        "cached_input": 0.03,
+        "cached_write": 0.375
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "priority"
+        ]
+      },
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
+      "notes": "MiniMax documents this as the same M2.1 model with higher inference speed.",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax models"
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax Pay as You Go pricing"
+        }
+      ]
+    }
+  },
+  {
+    "model": {
       "model_id": "minimax-m2.5",
       "name": "MiniMax M2.5",
       "display_name": "MiniMax M2.5",
@@ -42,6 +204,20 @@
     "relationship": {
       "provider_id": "minimax",
       "model_id": "MiniMax-M2.5",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.03,
+        "cached_write": 0.375
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "priority"
+        ]
+      },
       "sources": [
         {
           "type": "official",
@@ -49,6 +225,89 @@
           "retrieved_at": "2026-09-26",
           "title": "MiniMax models",
           "notes": "Provider model id uses the documented MiniMax-M<version> spelling."
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax Pay as You Go pricing"
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "minimax-m2.5",
+      "name": "MiniMax M2.5",
+      "display_name": "MiniMax M2.5",
+      "model_provider": "minimax",
+      "family": "MiniMax",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 128000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-26",
+          "title": "MiniMax model list",
+          "notes": "MiniMax M2.5 is listed under 'Legacy Models' on the official docs."
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "minimax",
+      "model_id": "MiniMax-M2.5-highspeed",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.6,
+        "output": 2.4,
+        "cached_input": 0.03,
+        "cached_write": 0.375
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "priority"
+        ]
+      },
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax models",
+          "notes": "MiniMax describes M2.5 HighSpeed as the same-performance, faster-inference M2.5 variant."
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax Pay as You Go pricing"
         }
       ]
     }
@@ -95,6 +354,20 @@
     "relationship": {
       "provider_id": "minimax",
       "model_id": "MiniMax-M2.7",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.06,
+        "cached_write": 0.375
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "priority"
+        ]
+      },
       "sources": [
         {
           "type": "official",
@@ -102,6 +375,88 @@
           "retrieved_at": "2026-09-26",
           "title": "MiniMax models",
           "notes": "Provider model id uses the documented MiniMax-M<version> spelling."
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax Pay as You Go pricing"
+        }
+      ]
+    }
+  },
+  {
+    "model": {
+      "model_id": "minimax-m2.7",
+      "name": "MiniMax M2.7",
+      "display_name": "MiniMax M2.7",
+      "model_provider": "minimax",
+      "family": "MiniMax",
+      "version": null,
+      "status": "active",
+      "release_date": null,
+      "updated_at": "2026-09-26",
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-26",
+          "title": "MiniMax model list"
+        },
+        {
+          "type": "community",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-09-26",
+          "title": "OpenRouter model list",
+          "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+        }
+      ]
+    },
+    "relationship": {
+      "provider_id": "minimax",
+      "model_id": "MiniMax-M2.7-highspeed",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.6,
+        "output": 2.4,
+        "cached_input": 0.06,
+        "cached_write": 0.375
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "priority"
+        ]
+      },
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax models",
+          "notes": "MiniMax describes M2.7 HighSpeed as the same-performance, faster-inference M2.7 variant."
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax Pay as You Go pricing"
         }
       ]
     }

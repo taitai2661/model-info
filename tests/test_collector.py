@@ -32,6 +32,20 @@ def test_missing_api_key_raises(monkeypatch):
         collector.fetch()
 
 
+def test_provider_scoped_aliases_resolve_to_the_canonical_model(repo_root):
+    collector = discover()["deepseek"]
+    _, canonical = collector.resolve_model(
+        repo_root, "deepseek-v4-flash", provider_id="deepseek"
+    )
+    assert canonical == "deepseek-v4.1-flash"
+
+    # The same slug on a third-party provider can still denote the archived model.
+    _, canonical = collector.resolve_model(
+        repo_root, "deepseek-v4-flash", provider_id="openrouter"
+    )
+    assert canonical == "deepseek-v4-flash"
+
+
 def test_openrouter_normalize_prices_are_per_million():
     payload = {"data": [{
         "id": "openai/gpt-6-astra",
@@ -57,6 +71,23 @@ def test_openrouter_drops_negative_price_sentinels():
     }]}
     results = OpenRouterCollector().normalize(payload)
     assert "pricing" not in results["provider_models"]["jev-router"]
+
+
+def test_openrouter_normalize_maps_reasoning_effort_options():
+    payload = {"data": [{
+        "id": "openai/gpt-6-sol",
+        "reasoning": {
+            "supported_efforts": ["max", "xhigh", "high", "medium", "low", "none"],
+            "default_effort": "medium",
+        },
+    }]}
+    result = OpenRouterCollector().normalize(payload)
+    assert result["provider_models"]["openai/gpt-6-sol"]["reasoning"] == {
+        "parameter": "reasoning.effort",
+        "effort_levels": ["low", "medium", "high", "xhigh", "max"],
+        "default_effort": "medium",
+        "supports_none": True,
+    }
 
 
 def test_openrouter_apply_reports_unmatched_ids(repo_root, sandbox):
@@ -193,7 +224,7 @@ def test_opencode_go_collector_updates_existing_entry(sandbox):
 
     # Drop the source list so the run has something to repair, whatever state
     # data/ is in.
-    rel_path = sandbox / "data/relationships/deepseek-flash.json"
+    rel_path = sandbox / "data/relationships/deepseek-v4.1-flash.json"
     stored = json.loads(rel_path.read_text())
     stale = next(e for e in stored["providers"]
                  if e["provider_id"] == "opencode-go" and e["model_id"] == "deepseek-v4.1-flash")
@@ -206,7 +237,7 @@ def test_opencode_go_collector_updates_existing_entry(sandbox):
     ]}
     collector = OpenCodeGoCollector()
     report = collector.apply(sandbox, collector.normalize(payload), write=True)
-    assert report["relationships"] == ["deepseek-flash"]
+    assert report["relationships"] == ["deepseek-v4.1-flash"]
     assert report["created"] == []
     assert "brand-new-model" in report["unmatched"]
     doc = json.loads(rel_path.read_text())
@@ -402,6 +433,24 @@ def test_vercel_ai_gateway_normalize_converts_prices():
     assert patch["pricing"] == {
         "currency": "USD", "unit": "1M_tokens",
         "input": 1.25, "output": 10.0, "cached_input": 0.125,
+    }
+
+
+def test_vercel_ai_gateway_normalize_maps_reasoning_effort_options():
+    from collector.vercel_ai_gateway import VercelAIGatewayCollector
+
+    payload = {"data": [{
+        "id": "openai/gpt-6.1-sol",
+        "reasoning_options": [{"type": "effort", "values": ["low", "medium", "high", "xhigh", "max"]}],
+    }]}
+    patch = VercelAIGatewayCollector().normalize(payload)["provider_models"][
+        "openai/gpt-6.1-sol"
+    ]
+    assert patch["reasoning"] == {
+        "parameter": "reasoning.effort",
+        "effort_levels": ["low", "medium", "high", "xhigh", "max"],
+        "default_effort": None,
+        "supports_none": False,
     }
 
 
@@ -764,6 +813,47 @@ def test_catalog_vendor_map_has_no_dangling_targets(sandbox):
         assert spec.get("website") or spec.get("documentation_url"), provider_id
 
 
+def test_catalog_routes_curated_api_variants_to_the_base_model(sandbox):
+    collector = _catalog()
+    pro = {
+        "id": "openai/gpt-6-sol-pro",
+        "name": "OpenAI: GPT-6 Sol Pro",
+        "pricing": {"prompt": "0.000002", "completion": "0.00001"},
+        "context_length": 1050000,
+        "top_provider": {"max_completion_tokens": 128000},
+        "architecture": {"input_modalities": ["text", "image"],
+                          "output_modalities": ["text"]},
+        "reasoning": {"supported_efforts": ["low", "medium", "high", "xhigh", "max"],
+                      "default_effort": "medium"},
+    }
+    batch = {**pro, "id": "openai/gpt-6-sol-pro:batch"}
+    collector._fetch = lambda url: [pro, batch] if url.endswith("/models") and "openrouter" in url else []
+    notes = collector.collect_entries(sandbox)
+    assert "gpt-6-sol-pro" not in collector._records
+    assert "gpt-6-sol" in collector._variant_relationships
+    result = collector._build_results()
+    assert "gpt-6-sol-pro" not in result["models"]
+    aliases = result["relationships"]["gpt-6-sol"]
+    assert {entry["model_id"] for entry in aliases} == {
+        "openai/gpt-6-sol-pro", "openai/gpt-6-sol-pro:batch",
+    }
+    assert all(entry["api_variant"] == {"reasoning_mode": "pro"} for entry in aliases)
+    assert notes["unmapped"] == set()
+
+
+def test_catalog_variant_map_covers_verified_non_openai_aliases():
+    from collector.catalog import CatalogCollector
+
+    variants = CatalogCollector().model_variants
+    expected = {
+        "moonshotai/kimi-k2.7-code-highspeed": "kimi-k2.7-code",
+        "minimax/minimax-m2.5-highspeed": "minimax-m2.5",
+        "minimax/minimax-m2.7-highspeed": "minimax-m2.7",
+        "spacexai/grok-4.1-fast-reasoning": "grok-4.3",
+    }
+    assert {key: variants[key]["model_id"] for key in expected} == expected
+
+
 def test_catalog_drops_negative_and_unparseable_prices(sandbox):
     collector = _catalog()
     assert collector._openrouter_entry(
@@ -780,13 +870,17 @@ def test_catalog_prefers_vercel_and_drops_markdown_descriptions(sandbox):
         "id": "anthropic/claude-opus-9", "name": "Claude Opus 9", "owned_by": "anthropic",
         "context_window": 200000, "max_tokens": 64000,
         "modalities": {"input": ["text", "pdf"], "output": ["text"]},
+        "reasoning_options": [{"type": "effort", "values": ["low", "medium", "high"]}],
         "tags": ["tool-use", "reasoning", "explicit-caching"],
         "released": 1780000000, "description": "Short blurb.",
     })
     openrouter = collector._openrouter_entry({
         "id": "anthropic/claude-opus-9", "name": "Anthropic: Claude Opus 9",
-        "context_length": 200000, "architecture": {"input_modalities": ["text"],
-                                                    "output_modalities": ["text"]},
+        "context_length": 200000, "reasoning": {
+            "supported_efforts": ["low", "medium", "high", "none"],
+            "default_effort": "medium",
+        }, "architecture": {"input_modalities": ["text"],
+                                                     "output_modalities": ["text"]},
         "description": "# markdown marketing copy",
     })
     collector._records = {"claude-opus-9": {
@@ -799,6 +893,12 @@ def test_catalog_prefers_vercel_and_drops_markdown_descriptions(sandbox):
     assert model["description"] == "Short blurb."     # never the markdown copy
     assert model["context"] == {"window": 200000, "max_output_tokens": 64000}
     assert model["modalities"] == {"input": ["text", "file"], "output": ["text"]}
+    assert model["reasoning"] == {
+        "parameter": "reasoning.effort",
+        "effort_levels": ["low", "medium", "high"],
+        "default_effort": None,
+        "supports_none": False,
+    }
     assert model["capabilities"] == {"tool_use": True, "reasoning": True}
     assert model["release_date"] == "2026-05-28"
     assert model["required_fields"]["status"] == "active"
@@ -807,6 +907,12 @@ def test_catalog_prefers_vercel_and_drops_markdown_descriptions(sandbox):
     assert set(entries) == {"vercel-ai-gateway", "openrouter"}
     assert "context" not in entries["vercel-ai-gateway"]
     assert entries["openrouter"]["model_id"] == "anthropic/claude-opus-9"
+    assert entries["openrouter"]["reasoning"] == {
+        "parameter": "reasoning.effort",
+        "effort_levels": ["low", "medium", "high"],
+        "default_effort": "medium",
+        "supports_none": True,
+    }
 
 
 def test_catalog_records_route_variants_as_separate_provider_ids(sandbox):

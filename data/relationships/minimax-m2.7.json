@@ -5,6 +5,20 @@
     {
       "provider_id": "minimax",
       "model_id": "MiniMax-M2.7",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.06,
+        "cached_write": 0.375
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "priority"
+        ]
+      },
       "sources": [
         {
           "type": "official",
@@ -12,6 +26,12 @@
           "retrieved_at": "2026-09-26",
           "title": "MiniMax models",
           "notes": "Provider model id uses the documented MiniMax-M<version> spelling."
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax Pay as You Go pricing"
         }
       ]
     },
@@ -272,6 +292,136 @@
           "url": "https://router.huggingface.co/v1/models",
           "retrieved_at": "2026-09-28",
           "notes": "Provider model id from the Hugging Face Inference Providers public model list (GET /v1/models, no authentication required)."
+        }
+      ]
+    },
+    {
+      "provider_id": "minimax",
+      "model_id": "MiniMax-M2.7-highspeed",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.6,
+        "output": 2.4,
+        "cached_input": 0.06,
+        "cached_write": 0.375
+      },
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "priority"
+        ]
+      },
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax models",
+          "notes": "MiniMax describes M2.7 HighSpeed as the same-performance, faster-inference M2.7 variant."
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax Pay as You Go pricing"
+        }
+      ]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "minimax/minimax-m2.7-highspeed",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.6,
+        "output": 2.4,
+        "cached_input": 0.06
+      },
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://vercel.com/ai-gateway/models/minimax-m2.7-highspeed",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax M2.7 High Speed",
+          "notes": "Vercel presents the highspeed ID as a throughput-optimized route for MiniMax M2.7."
+        },
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider route ID and pricing from the public model catalog."
+        }
+      ]
+    },
+    {
+      "provider_id": "novita",
+      "model_id": "minimax/minimax-m2.7-highspeed",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.6,
+        "output": 2.4,
+        "cached_input": 0.06
+      },
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 131072
+      },
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.novita.ai/v3/openai/models",
+          "retrieved_at": "2026-09-30",
+          "notes": "Provider model ID and price for the MiniMax M2.7 HighSpeed route."
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-30",
+          "notes": "MiniMax lists M2.7 HighSpeed as a same-performance faster variant."
+        }
+      ]
+    },
+    {
+      "provider_id": "ppio",
+      "model_id": "minimax/minimax-m2.7-highspeed",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 4.2,
+        "output": 16.8,
+        "cached_input": 0.42,
+        "cached_write": 2.625
+      },
+      "context": {
+        "window": 204800,
+        "max_output_tokens": 131072
+      },
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://api.ppinfra.com/v3/openai/models",
+          "retrieved_at": "2026-09-28",
+          "notes": "Provider model ID and price for the MiniMax M2.7 HighSpeed route."
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-30",
+          "notes": "MiniMax lists M2.7 HighSpeed as a same-performance faster variant."
         }
       ]
     }

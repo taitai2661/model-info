@@ -1,0 +1,154 @@
+{
+  "openai/gpt-5.6-sol-pro": {
+    "model_id": "gpt-5.6-sol",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-5.6-sol-pro:batch": {
+    "model_id": "gpt-5.6-sol",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-5.6-luna-pro": {
+    "model_id": "gpt-5.6-luna",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-5.6-luna-pro:batch": {
+    "model_id": "gpt-5.6-luna",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-5.6-terra-pro": {
+    "model_id": "gpt-5.6-terra",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-5.6-terra-pro:batch": {
+    "model_id": "gpt-5.6-terra",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-6-astra-pro": {
+    "model_id": "gpt-6-astra",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-6-astra-pro:batch": {
+    "model_id": "gpt-6-astra",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-6-sol-pro": {
+    "model_id": "gpt-6-sol",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-6-sol-pro:batch": {
+    "model_id": "gpt-6-sol",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-6-luna-pro": {
+    "model_id": "gpt-6-luna",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-6-luna-pro:batch": {
+    "model_id": "gpt-6-luna",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-6.1-sol-pro": {
+    "model_id": "gpt-6.1-sol",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-6.1-sol-pro:batch": {
+    "model_id": "gpt-6.1-sol",
+    "api_variant": {"reasoning_mode": "pro"}
+  },
+  "openai/gpt-5.6-sol-fast": {
+    "model_id": "gpt-5.6-sol",
+    "api_variant": {"service_tier": "fast"}
+  },
+  "openai/gpt-5.6-luna-fast": {
+    "model_id": "gpt-5.6-luna",
+    "api_variant": {"service_tier": "fast"}
+  },
+  "openai/gpt-5.6-terra-fast": {
+    "model_id": "gpt-5.6-terra",
+    "api_variant": {"service_tier": "fast"}
+  },
+  "openai/gpt-6-astra-fast": {
+    "model_id": "gpt-6-astra",
+    "api_variant": {"service_tier": "fast"}
+  },
+  "openai/gpt-6-sol-fast": {
+    "model_id": "gpt-6-sol",
+    "api_variant": {"service_tier": "fast"}
+  },
+  "openai/gpt-6-luna-fast": {
+    "model_id": "gpt-6-luna",
+    "api_variant": {"service_tier": "fast"}
+  },
+  "deepseek-flash": {
+    "model_id": "deepseek-v4.1-flash",
+    "providers": ["deepseek"]
+  },
+  "deepseek-v4-flash": {
+    "model_id": "deepseek-v4.1-flash",
+    "providers": ["deepseek"]
+  },
+  "deepseek-v4-flash-vision-exp": {
+    "model_id": "deepseek-v4.1-flash",
+    "providers": ["deepseek"]
+  },
+  "kimi-k2.7-code-highspeed": {
+    "model_id": "kimi-k2.7-code",
+    "providers": ["moonshot"],
+    "api_variant": {"performance_variant": "highspeed"}
+  },
+  "moonshotai/kimi-k2.7-code-highspeed": {
+    "model_id": "kimi-k2.7-code",
+    "providers": ["vercel-ai-gateway"],
+    "api_variant": {"performance_variant": "highspeed"}
+  },
+  "MiniMax-M2.1-highspeed": {
+    "model_id": "minimax-m2.1",
+    "providers": ["minimax"],
+    "api_variant": {"performance_variant": "highspeed"}
+  },
+  "MiniMax-M2.5-highspeed": {
+    "model_id": "minimax-m2.5",
+    "providers": ["minimax"],
+    "api_variant": {"performance_variant": "highspeed"}
+  },
+  "MiniMax-M2.7-highspeed": {
+    "model_id": "minimax-m2.7",
+    "providers": ["minimax"],
+    "api_variant": {"performance_variant": "highspeed"}
+  },
+  "grok-4-1-fast-reasoning": {
+    "model_id": "grok-4.3",
+    "providers": ["xai"],
+    "api_variant": {"reasoning_effort": "low"}
+  },
+  "grok-4-1-fast-non-reasoning": {
+    "model_id": "grok-4.3",
+    "providers": ["xai"],
+    "api_variant": {"reasoning_effort": "none"}
+  },
+  "spacexai/grok-4.1-fast-reasoning": {
+    "model_id": "grok-4.3",
+    "providers": ["vercel-ai-gateway"],
+    "api_variant": {"reasoning_effort": "low"}
+  },
+  "spacexai/grok-4.1-fast-non-reasoning": {
+    "model_id": "grok-4.3",
+    "providers": ["vercel-ai-gateway"],
+    "api_variant": {"reasoning_effort": "none"}
+  },
+  "minimax/minimax-m2.1-lightning": {
+    "model_id": "minimax-m2.1",
+    "providers": ["vercel-ai-gateway"],
+    "api_variant": {"performance_variant": "lightning"}
+  },
+  "minimax/minimax-m2.5-highspeed": {
+    "model_id": "minimax-m2.5",
+    "providers": ["vercel-ai-gateway", "novita", "ppio"],
+    "api_variant": {"performance_variant": "highspeed"}
+  },
+  "minimax/minimax-m2.7-highspeed": {
+    "model_id": "minimax-m2.7",
+    "providers": ["vercel-ai-gateway", "novita", "ppio"],
+    "api_variant": {"performance_variant": "highspeed"}
+  }
+}

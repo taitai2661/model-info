@@ -26,6 +26,12 @@
     "structured_output": true,
     "json_mode": true
   },
+  "reasoning": {
+    "parameter": "reasoning_effort",
+    "effort_levels": ["low", "medium", "high", "xhigh"],
+    "default_effort": "low",
+    "supports_none": true
+  },
   "availability": {
     "api": true
   },
@@ -46,12 +52,19 @@
       "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
     },
     {
-      "type": "documentation",
-      "url": "https://openrouter.ai/api/v1/models",
-      "retrieved_at": "2026-09-27",
-      "title": "OpenRouter public model list",
-      "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      "type": "official",
+      "url": "https://docs.x.ai/developers/models/grok-4.3",
+      "retrieved_at": "2026-09-30",
+      "title": "Grok 4.3",
+      "notes": "First-party reasoning efforts are none, low, medium, high, and xhigh; default is low."
+    },
+    {
+      "type": "official",
+      "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+      "retrieved_at": "2026-09-30",
+      "title": "Grok model retirement on May 15, 2026",
+      "notes": "Retired Grok 4.1 Fast reasoning and non-reasoning IDs resolve to Grok 4.3 with fixed reasoning efforts."
     }
   ],
-  "updated_at": "2026-09-27"
+  "updated_at": "2026-09-30"
 }

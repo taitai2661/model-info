@@ -111,6 +111,44 @@ A model detail response bundles everything a client needs to connect:
 }
 ```
 
+Reasoning mode and effort are separate controls. `model.reasoning` describes the supported `reasoning.mode` options (`standard`, `pro`) and `reasoning.effort` levels; `model.service_tier` describes request processing options such as `fast`. `providers[].api_variant` identifies a provider-specific alias that selects a mode or tier while remaining attached to the same base model.
+
+```json
+{
+  "reasoning": {
+    "parameter": "reasoning.effort",
+    "effort_levels": ["low", "medium", "high", "xhigh", "max"],
+    "default_effort": "medium",
+    "supports_none": false,
+    "mode_parameter": "reasoning.mode",
+    "modes": ["standard", "pro"],
+    "default_mode": "standard"
+  },
+  "service_tier": {
+    "parameter": "service_tier",
+    "options": ["fast"]
+  }
+}
+```
+
+A provider-specific alias keeps its provider model ID and the setting selected by that alias in `providers[].api_variant`. The selected reasoning effort and non-parameter throughput variants are also represented separately:
+
+```json
+{
+  "provider_id": "openrouter",
+  "model_id": "openai/gpt-6-sol-pro",
+  "api_variant": { "reasoning_mode": "pro" }
+}
+```
+
+```json
+{
+  "provider_id": "vercel-ai-gateway",
+  "model_id": "moonshotai/kimi-k2.7-code-highspeed",
+  "api_variant": { "performance_variant": "highspeed" }
+}
+```
+
 ### Override semantics (Model × Provider)
 
 For optional keys inside a relationship entry:
@@ -123,7 +161,7 @@ For optional keys inside a relationship entry:
 
 The same rule applies to `model.provider_pricing` (a model-level shortcut keyed by `provider_id`); if both are present they must agree — validation enforces it.
 
-Nested objects inside a relationship entry (`pricing`, `context`, `modalities`, `capabilities`, `api_capabilities`) **replace the model-level object wholesale**: fields omitted inside the replacement are unknown at that provider, not inherited.
+Nested objects inside a relationship entry (`pricing`, `context`, `modalities`, `capabilities`, `reasoning`, `service_tier`, `api_variant`, `api_capabilities`) **replace the model-level object wholesale**: fields omitted inside the replacement are unknown at that provider, not inherited.
 
 ## Data rules
 
@@ -176,7 +214,7 @@ Collectors only **update facts they can read from the source**. Anything else ke
 
 ### Catalog import (`catalog`)
 
-`catalog` is the one collector that **does** create model documents, and it does so only for models that do not exist yet. It reads the two large public aggregator catalogues (Vercel AI Gateway and OpenRouter) and registers everything in them that is still missing — currently 470 models across 58 model providers, most of them long-tail open-weight releases, embedding models, image/video generation models and community fine-tunes. A model that is already registered is left completely alone, so hand-verified specs are never overwritten by a catalogue.
+`catalog` is the one collector that **does** create model documents, and it does so only for models that do not exist yet. It reads the two large public aggregator catalogues (Vercel AI Gateway and OpenRouter) and registers everything in them that is still missing — currently 451 models across 58 model providers, most of them long-tail open-weight releases, embedding models, image/video generation models and community fine-tunes. A model that is already registered is left completely alone, so hand-verified specs are never overwritten by a catalogue. Explicit entries in `collector/model_variants.json` route API mode/tier aliases to their registered base model instead of importing duplicate model documents.
 
 Three rules keep it from turning the registry into a mirror of an upstream JSON blob:
 

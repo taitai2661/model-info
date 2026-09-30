@@ -2784,75 +2784,6 @@
     ]
   },
   {
-    "model_id": "deepseek-flash",
-    "name": "DeepSeek Flash",
-    "display_name": "DeepSeek Flash",
-    "model_provider": "deepseek",
-    "family": "DeepSeek",
-    "version": "DeepSeek-V4.1-Flash",
-    "status": "active",
-    "release_date": null,
-    "updated_at": "2026-09-26",
-    "description": "DeepSeek's fast multimodal model (model version DeepSeek-V4.1-Flash) with thinking and non-thinking modes, vision, tool calls, JSON output, and Responses API support.",
-    "context": {
-      "window": 1048576,
-      "max_output_tokens": 393216
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "tool_use": true,
-      "vision": true,
-      "reasoning": true,
-      "function_calling": true,
-      "structured_output": null,
-      "json_mode": true,
-      "streaming": true
-    },
-    "pricing": {
-      "currency": "USD",
-      "unit": "1M_tokens",
-      "input": 0.15,
-      "output": 0.6,
-      "cached_input": 0.003
-    },
-    "availability": {
-      "api": true,
-      "cloud": true,
-      "open_weights": true,
-      "self_hostable": true
-    },
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://api-docs.deepseek.com/quick_start/pricing",
-        "retrieved_at": "2026-09-26",
-        "title": "Models & pricing",
-        "notes": "Prices are off-peak rates; peak hours (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri, excluding PRC public holidays) cost 2x. Max output is stated as 384K."
-      },
-      {
-        "type": "community",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-26",
-        "title": "OpenRouter public model list",
-        "notes": "Context window, max output, and modality values cross-checked against OpenRouter's public model list."
-      },
-      {
-        "type": "official",
-        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-        "retrieved_at": "2026-09-26",
-        "title": "Model weights"
-      }
-    ]
-  },
-  {
     "model_id": "deepseek-r1",
     "name": "DeepSeek-R1",
     "model_provider": "deepseek",
@@ -3425,7 +3356,8 @@
     "updated_at": "2026-09-26",
     "description": "DeepSeek V4.1 Flash: a 552B-total / 8B-active MoE with native multimodal support and a smaller KV cache for lower API cost.",
     "context": {
-      "window": 131072
+      "window": 1048576,
+      "max_output_tokens": 393216
     },
     "modalities": {
       "input": [
@@ -3440,6 +3372,13 @@
       "vision": true,
       "reasoning": true,
       "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.15,
+      "output": 0.6,
+      "cached_input": 0.003
     },
     "availability": {
       "api": true,
@@ -3458,6 +3397,26 @@
         "url": "https://integrate.api.nvidia.com/v1/models",
         "retrieved_at": "2026-09-26",
         "title": "NVIDIA NIM public model catalog"
+      },
+      {
+        "type": "official",
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "retrieved_at": "2026-09-30",
+        "title": "DeepSeek models & pricing",
+        "notes": "First-party API model ID is deepseek-flash; context is 1M and max output is 384K. Off-peak per-1M pricing is $0.15 input, $0.003 cache-hit input, and $0.60 output; peak rates are 2x. Legacy V4 Flash IDs route here."
+      },
+      {
+        "type": "official",
+        "url": "https://api-docs.deepseek.com/guides/thinking_mode",
+        "retrieved_at": "2026-09-30",
+        "title": "Thinking mode",
+        "notes": "The DeepSeek API supports enabling/disabling thinking separately from reasoning effort."
+      },
+      {
+        "type": "official",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+        "retrieved_at": "2026-09-26",
+        "title": "Model weights"
       }
     ]
   },
@@ -9509,6 +9468,31 @@
       "json_mode": true,
       "streaming": true
     },
+    "reasoning": {
+      "parameter": "reasoning.effort",
+      "effort_levels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "default_effort": "medium",
+      "supports_none": true,
+      "mode_parameter": "reasoning.mode",
+      "modes": [
+        "standard",
+        "pro"
+      ],
+      "default_mode": "standard"
+    },
+    "service_tier": {
+      "parameter": "service_tier",
+      "options": [
+        "fast",
+        "flex"
+      ]
+    },
     "pricing": {
       "currency": "USD",
       "unit": "1M_tokens",
@@ -9521,8 +9505,9 @@
       {
         "type": "official",
         "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
-        "retrieved_at": "2026-09-26",
-        "title": "Model page"
+        "retrieved_at": "2026-09-30",
+        "title": "Model page",
+        "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
       },
       {
         "type": "official",
@@ -9530,98 +9515,22 @@
         "retrieved_at": "2026-09-26",
         "title": "OpenAI pricing",
         "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
-      }
-    ]
-  },
-  {
-    "model_id": "gpt-5.6-luna-fast",
-    "name": "GPT 5.6 Luna (Fast)",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT 5.6 Luna (Fast)",
-    "description": "GPT-5.6 Luna is a fast, affordable GPT-5.6 model that brings strong capability at the lowest cost in the series.",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image",
-        "file"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "tool_use": true,
-      "vision": true,
-      "structured_output": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2026-07-09",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
-    "model_id": "gpt-5.6-luna-pro",
-    "name": "GPT-5.6 Luna Pro",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT-5.6 Luna Pro",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "file",
-        "image",
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "json_mode": true,
-      "structured_output": true,
-      "tool_use": true
-    },
-    "availability": {
-      "api": true
-    },
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/reasoning",
+        "retrieved_at": "2026-09-30",
+        "title": "Reasoning models",
+        "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+        "retrieved_at": "2026-09-30",
+        "title": "Fast mode",
+        "notes": "Documents service_tier fast for GPT-5.6 models."
       }
-    ],
-    "updated_at": "2026-09-27"
+    ]
   },
   {
     "model_id": "gpt-5.6-sol",
@@ -9656,6 +9565,31 @@
       "json_mode": true,
       "streaming": true
     },
+    "reasoning": {
+      "parameter": "reasoning.effort",
+      "effort_levels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "default_effort": "medium",
+      "supports_none": true,
+      "mode_parameter": "reasoning.mode",
+      "modes": [
+        "standard",
+        "pro"
+      ],
+      "default_mode": "standard"
+    },
+    "service_tier": {
+      "parameter": "service_tier",
+      "options": [
+        "fast",
+        "flex"
+      ]
+    },
     "pricing": {
       "currency": "USD",
       "unit": "1M_tokens",
@@ -9668,8 +9602,9 @@
       {
         "type": "official",
         "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
-        "retrieved_at": "2026-09-26",
-        "title": "Model page"
+        "retrieved_at": "2026-09-30",
+        "title": "Model page",
+        "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
       },
       {
         "type": "official",
@@ -9677,98 +9612,22 @@
         "retrieved_at": "2026-09-26",
         "title": "OpenAI pricing",
         "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
-      }
-    ]
-  },
-  {
-    "model_id": "gpt-5.6-sol-fast",
-    "name": "GPT 5.6 Sol (Fast)",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT 5.6 Sol (Fast)",
-    "description": "GPT-5.6 Sol is the flagship of OpenAI's GPT-5.6 series, its most capable model for long-horizon agentic work across coding, biology, and cybersecurity.",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image",
-        "file"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "tool_use": true,
-      "vision": true,
-      "structured_output": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2026-07-09",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
-    "model_id": "gpt-5.6-sol-pro",
-    "name": "GPT-5.6 Sol Pro",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT-5.6 Sol Pro",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "file",
-        "image",
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "json_mode": true,
-      "structured_output": true,
-      "tool_use": true
-    },
-    "availability": {
-      "api": true
-    },
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/reasoning",
+        "retrieved_at": "2026-09-30",
+        "title": "Reasoning models",
+        "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+        "retrieved_at": "2026-09-30",
+        "title": "Fast mode",
+        "notes": "Documents service_tier fast for GPT-5.6 models."
       }
-    ],
-    "updated_at": "2026-09-27"
+    ]
   },
   {
     "model_id": "gpt-5.6-terra",
@@ -9803,6 +9662,31 @@
       "json_mode": true,
       "streaming": true
     },
+    "reasoning": {
+      "parameter": "reasoning.effort",
+      "effort_levels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "default_effort": "medium",
+      "supports_none": true,
+      "mode_parameter": "reasoning.mode",
+      "modes": [
+        "standard",
+        "pro"
+      ],
+      "default_mode": "standard"
+    },
+    "service_tier": {
+      "parameter": "service_tier",
+      "options": [
+        "fast",
+        "flex"
+      ]
+    },
     "pricing": {
       "currency": "USD",
       "unit": "1M_tokens",
@@ -9815,8 +9699,9 @@
       {
         "type": "official",
         "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
-        "retrieved_at": "2026-09-26",
-        "title": "Model page"
+        "retrieved_at": "2026-09-30",
+        "title": "Model page",
+        "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max (default medium)."
       },
       {
         "type": "official",
@@ -9824,98 +9709,22 @@
         "retrieved_at": "2026-09-26",
         "title": "OpenAI pricing",
         "notes": ">272K input tokens are priced at 2x input/cache rates and 1.5x output."
-      }
-    ]
-  },
-  {
-    "model_id": "gpt-5.6-terra-fast",
-    "name": "GPT 5.6 Terra (Fast)",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT 5.6 Terra (Fast)",
-    "description": "GPT-5.6 Terra is a balanced GPT-5.6 model for everyday work, with performance comparable to the previous generation at half the cost.",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image",
-        "file"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "tool_use": true,
-      "vision": true,
-      "structured_output": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2026-07-09",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
-    "model_id": "gpt-5.6-terra-pro",
-    "name": "GPT-5.6 Terra Pro",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT-5.6 Terra Pro",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "file",
-        "image",
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "json_mode": true,
-      "structured_output": true,
-      "tool_use": true
-    },
-    "availability": {
-      "api": true
-    },
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/reasoning",
+        "retrieved_at": "2026-09-30",
+        "title": "Reasoning models",
+        "notes": "GPT-5.6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+        "retrieved_at": "2026-09-30",
+        "title": "Fast mode",
+        "notes": "Documents service_tier fast for GPT-5.6 models."
       }
-    ],
-    "updated_at": "2026-09-27"
+    ]
   },
   {
     "model_id": "gpt-6-astra",
@@ -9926,7 +9735,7 @@
     "version": null,
     "status": "active",
     "release_date": null,
-    "updated_at": "2026-09-26",
+    "updated_at": "2026-09-30",
     "description": "OpenAI's most capable model, built for complex reasoning, coding, computer use, research, and document creation.",
     "context": {
       "window": 1050000,
@@ -9951,6 +9760,32 @@
       "json_mode": true,
       "streaming": true
     },
+    "reasoning": {
+      "parameter": "reasoning.effort",
+      "effort_levels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "default_effort": null,
+      "supports_none": false,
+      "mode_parameter": "reasoning.mode",
+      "modes": [
+        "standard",
+        "pro"
+      ],
+      "default_mode": "standard"
+    },
+    "service_tier": {
+      "parameter": "service_tier",
+      "options": [
+        "fast",
+        "flex",
+        "ultrafast"
+      ]
+    },
     "pricing": {
       "currency": "USD",
       "unit": "1M_tokens",
@@ -9969,8 +9804,23 @@
       {
         "type": "official",
         "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-        "retrieved_at": "2026-09-26",
-        "title": "Model page"
+        "retrieved_at": "2026-09-30",
+        "title": "Model page",
+        "notes": "reasoning.effort supports low, medium, high, xhigh, and max. The documented supported values do not include none; this model page does not state a default effort."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/reasoning",
+        "retrieved_at": "2026-09-30",
+        "title": "Reasoning models",
+        "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+        "retrieved_at": "2026-09-30",
+        "title": "Fast mode",
+        "notes": "Documents service_tier fast for supported models. GPT-6 Astra also supports ultrafast processing."
       },
       {
         "type": "official",
@@ -9994,96 +9844,6 @@
     ]
   },
   {
-    "model_id": "gpt-6-astra-fast",
-    "name": "GPT-6 Astra (Fast)",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT-6 Astra (Fast)",
-    "description": "GPT-6 Astra is OpenAI's most capable model for complex reasoning, coding, computer use, research, and document creation.",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image",
-        "file"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "tool_use": true,
-      "vision": true,
-      "structured_output": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2026-09-04",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
-    "model_id": "gpt-6-astra-pro",
-    "name": "GPT-6 Astra Pro",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT-6 Astra Pro",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "file",
-        "image",
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "json_mode": true,
-      "structured_output": true,
-      "tool_use": true
-    },
-    "availability": {
-      "api": true
-    },
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
     "model_id": "gpt-6-luna",
     "name": "GPT-6 Luna",
     "display_name": "GPT-6 Luna",
@@ -10092,7 +9852,7 @@
     "version": null,
     "status": "active",
     "release_date": null,
-    "updated_at": "2026-09-26",
+    "updated_at": "2026-09-30",
     "description": "OpenAI's most efficient GPT-6 model for focused, high-volume tasks.",
     "context": {
       "window": 1050000,
@@ -10117,6 +9877,31 @@
       "json_mode": true,
       "streaming": true
     },
+    "reasoning": {
+      "parameter": "reasoning.effort",
+      "effort_levels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "default_effort": "medium",
+      "supports_none": true,
+      "mode_parameter": "reasoning.mode",
+      "modes": [
+        "standard",
+        "pro"
+      ],
+      "default_mode": "standard"
+    },
+    "service_tier": {
+      "parameter": "service_tier",
+      "options": [
+        "fast",
+        "flex"
+      ]
+    },
     "pricing": {
       "currency": "USD",
       "unit": "1M_tokens",
@@ -10135,8 +9920,23 @@
       {
         "type": "official",
         "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
-        "retrieved_at": "2026-09-26",
-        "title": "Model page"
+        "retrieved_at": "2026-09-30",
+        "title": "Model page",
+        "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/reasoning",
+        "retrieved_at": "2026-09-30",
+        "title": "Reasoning models",
+        "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+        "retrieved_at": "2026-09-30",
+        "title": "Fast mode",
+        "notes": "Documents service_tier fast for supported models."
       },
       {
         "type": "official",
@@ -10160,96 +9960,6 @@
     ]
   },
   {
-    "model_id": "gpt-6-luna-fast",
-    "name": "GPT-6 Luna (Fast)",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT-6 Luna (Fast)",
-    "description": "GPT-6 Luna is OpenAI's efficient reasoning model for focused, high-volume tasks. It accepts text and images, generates text, and supports a 1,050,000-token context window with up to 128,000 output tokens. Configurable reasoning effort, structured outputs, prompt caching, and Responses API tools support cost-sensitive applications, coding tasks, and automated workflows.",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image",
-        "file"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "structured_output": true,
-      "tool_use": true,
-      "vision": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2026-09-22",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
-    "model_id": "gpt-6-luna-pro",
-    "name": "GPT-6 Luna Pro",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT-6 Luna Pro",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "file",
-        "image",
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "json_mode": true,
-      "structured_output": true,
-      "tool_use": true
-    },
-    "availability": {
-      "api": true
-    },
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
     "model_id": "gpt-6-sol",
     "name": "GPT-6 Sol",
     "display_name": "GPT-6 Sol",
@@ -10258,7 +9968,7 @@
     "version": null,
     "status": "active",
     "release_date": null,
-    "updated_at": "2026-09-26",
+    "updated_at": "2026-09-30",
     "description": "OpenAI model built to power complex coding and agentic workflows, balancing intelligence and cost.",
     "context": {
       "window": 1050000,
@@ -10283,6 +9993,31 @@
       "json_mode": true,
       "streaming": true
     },
+    "reasoning": {
+      "parameter": "reasoning.effort",
+      "effort_levels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "default_effort": "medium",
+      "supports_none": true,
+      "mode_parameter": "reasoning.mode",
+      "modes": [
+        "standard",
+        "pro"
+      ],
+      "default_mode": "standard"
+    },
+    "service_tier": {
+      "parameter": "service_tier",
+      "options": [
+        "fast",
+        "flex"
+      ]
+    },
     "pricing": {
       "currency": "USD",
       "unit": "1M_tokens",
@@ -10301,8 +10036,23 @@
       {
         "type": "official",
         "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
-        "retrieved_at": "2026-09-26",
-        "title": "Model page"
+        "retrieved_at": "2026-09-30",
+        "title": "Model page",
+        "notes": "reasoning.effort supports none, low, medium, high, xhigh, and max; default is medium."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/reasoning",
+        "retrieved_at": "2026-09-30",
+        "title": "Reasoning models",
+        "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+        "retrieved_at": "2026-09-30",
+        "title": "Fast mode",
+        "notes": "Documents service_tier fast for supported models."
       },
       {
         "type": "official",
@@ -10324,96 +10074,6 @@
         "notes": "Documents JSON mode (response_format json_object) and structured outputs."
       }
     ]
-  },
-  {
-    "model_id": "gpt-6-sol-fast",
-    "name": "GPT-6 Sol (Fast)",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT-6 Sol (Fast)",
-    "description": "GPT-6 Sol is OpenAI's reasoning model for complex coding and agentic workflows. It accepts text and images, generates text, and supports a 1,050,000-token context window with up to 128,000 output tokens. Configurable reasoning effort, structured outputs, prompt caching, and Responses API tools make it suited to software development and multi-step automation.",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image",
-        "file"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "structured_output": true,
-      "tool_use": true,
-      "vision": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2026-09-22",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
-    "model_id": "gpt-6-sol-pro",
-    "name": "GPT-6 Sol Pro",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT-6 Sol Pro",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "file",
-        "image",
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "json_mode": true,
-      "structured_output": true,
-      "tool_use": true
-    },
-    "availability": {
-      "api": true
-    },
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
   },
   {
     "model_id": "gpt-6.1-sol",
@@ -10448,6 +10108,31 @@
       "structured_output": true,
       "streaming": true
     },
+    "reasoning": {
+      "parameter": "reasoning.effort",
+      "effort_levels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "default_effort": "medium",
+      "supports_none": false,
+      "mode_parameter": "reasoning.mode",
+      "modes": [
+        "standard",
+        "pro"
+      ],
+      "default_mode": "standard"
+    },
+    "service_tier": {
+      "parameter": "service_tier",
+      "options": [
+        "fast",
+        "flex"
+      ]
+    },
     "pricing": {
       "currency": "USD",
       "unit": "1M_tokens",
@@ -10468,7 +10153,21 @@
         "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
         "retrieved_at": "2026-09-30",
         "title": "Model page",
-        "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+        "notes": "Model ID, context limits, modalities, supported features, and standard token pricing. reasoning.effort supports low, medium, high, xhigh, and max (default medium); none and minimal are unsupported. Prompts over 272K input tokens use 2x input/cache rates and 1.5x output rates for the full request."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/reasoning",
+        "retrieved_at": "2026-09-30",
+        "title": "Reasoning models",
+        "notes": "GPT-6 supports standard and pro reasoning modes; mode is independent of reasoning.effort."
+      },
+      {
+        "type": "official",
+        "url": "https://developers.openai.com/api/docs/guides/fast-mode",
+        "retrieved_at": "2026-09-30",
+        "title": "Fast mode",
+        "notes": "Documents service_tier fast; fast mode is unavailable with EU data residency for GPT-6.1 Sol."
       },
       {
         "type": "official",
@@ -10478,53 +10177,6 @@
         "notes": "Announced September 29, 2026."
       }
     ]
-  },
-  {
-    "model_id": "gpt-6.1-sol-pro",
-    "name": "GPT-6.1 Sol Pro",
-    "model_provider": "openai",
-    "status": "active",
-    "display_name": "GPT-6.1 Sol Pro",
-    "context": {
-      "window": 1050000,
-      "max_output_tokens": 128000
-    },
-    "modalities": {
-      "input": [
-        "file",
-        "image",
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "json_mode": true,
-      "structured_output": true,
-      "tool_use": true
-    },
-    "availability": {
-      "api": true
-    },
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-30",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      },
-      {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-30",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-30"
   },
   {
     "model_id": "gpt-audio",
@@ -11470,92 +11122,6 @@
     ]
   },
   {
-    "model_id": "grok-4.1-fast-non-reasoning",
-    "name": "Grok 4.1 Fast Non-Reasoning",
-    "model_provider": "xai",
-    "status": "active",
-    "display_name": "Grok 4.1 Fast Non-Reasoning",
-    "description": "",
-    "context": {
-      "window": 1000000,
-      "max_output_tokens": 1000000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image",
-        "file"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "tool_use": true,
-      "vision": true,
-      "structured_output": true,
-      "reasoning": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2025-11-19",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
-    "model_id": "grok-4.1-fast-reasoning",
-    "name": "Grok 4.1 Fast Reasoning",
-    "model_provider": "xai",
-    "status": "active",
-    "display_name": "Grok 4.1 Fast Reasoning",
-    "description": "",
-    "context": {
-      "window": 1000000,
-      "max_output_tokens": 1000000
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image",
-        "file"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "vision": true,
-      "tool_use": true,
-      "structured_output": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2025-11-19",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
     "model_id": "grok-4.20",
     "name": "Grok 4.20",
     "model_provider": "xai",
@@ -11888,6 +11454,17 @@
       "structured_output": true,
       "json_mode": true
     },
+    "reasoning": {
+      "parameter": "reasoning_effort",
+      "effort_levels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "default_effort": "low",
+      "supports_none": true
+    },
     "availability": {
       "api": true
     },
@@ -11908,14 +11485,21 @@
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
       },
       {
-        "type": "documentation",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "OpenRouter public model list",
-        "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+        "type": "official",
+        "url": "https://docs.x.ai/developers/models/grok-4.3",
+        "retrieved_at": "2026-09-30",
+        "title": "Grok 4.3",
+        "notes": "First-party reasoning efforts are none, low, medium, high, and xhigh; default is low."
+      },
+      {
+        "type": "official",
+        "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+        "retrieved_at": "2026-09-30",
+        "title": "Grok model retirement on May 15, 2026",
+        "notes": "Retired Grok 4.1 Fast reasoning and non-reasoning IDs resolve to Grok 4.3 with fixed reasoning efforts."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-30"
   },
   {
     "model_id": "grok-4.5",
@@ -13462,50 +13046,6 @@
         "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
       }
     ]
-  },
-  {
-    "model_id": "kimi-k2.7-code-highspeed",
-    "name": "Kimi K2.7 Code High Speed",
-    "model_provider": "moonshot",
-    "status": "active",
-    "display_name": "Kimi K2.7 Code High Speed",
-    "description": "Kimi K2.7 Code HighSpeed is the high-speed version of Kimi K2.7 Code, the same model as Kimi K2.7 Code, but with an output speed of approximately 180 Tokens/s and up to 260 Tokens/s in short context scenarios, delivering a more extreme coding experience.",
-    "context": {
-      "window": 262144,
-      "max_output_tokens": 32768
-    },
-    "modalities": {
-      "input": [
-        "text",
-        "image",
-        "file",
-        "video"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "tool_use": true,
-      "vision": true,
-      "structured_output": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2026-06-15",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
   },
   {
     "model_id": "kimi-k3",
@@ -16348,46 +15888,6 @@
     "updated_at": "2026-09-27"
   },
   {
-    "model_id": "minimax-m2.1-lightning",
-    "name": "MiniMax M2.1 Lightning",
-    "model_provider": "minimax",
-    "status": "active",
-    "display_name": "MiniMax M2.1 Lightning",
-    "description": "MiniMax-M2.1-lightning is a faster version of MiniMax-M2.1, offering the same performance but with significantly higher throughput (output speed ~100 TPS, MiniMax-M2 output speed ~60 TPS).",
-    "context": {
-      "window": 204800,
-      "max_output_tokens": 131072
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "tool_use": true,
-      "structured_output": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2025-12-23",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
     "model_id": "minimax-m2.5",
     "name": "MiniMax M2.5",
     "display_name": "MiniMax M2.5",
@@ -16427,46 +15927,6 @@
     ]
   },
   {
-    "model_id": "minimax-m2.5-highspeed",
-    "name": "MiniMax M2.5 High Speed",
-    "model_provider": "minimax",
-    "status": "active",
-    "display_name": "MiniMax M2.5 High Speed",
-    "description": "M2.5 highspeed: Same performance, faster and more agile (output speed approximately 100 tps)",
-    "context": {
-      "window": 204800,
-      "max_output_tokens": 131000
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "tool_use": true,
-      "structured_output": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2026-02-12",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
-  },
-  {
     "model_id": "minimax-m2.7",
     "name": "MiniMax M2.7",
     "display_name": "MiniMax M2.7",
@@ -16503,46 +15963,6 @@
         "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
       }
     ]
-  },
-  {
-    "model_id": "minimax-m2.7-highspeed",
-    "name": "MiniMax M2.7 High Speed",
-    "model_provider": "minimax",
-    "status": "active",
-    "display_name": "MiniMax M2.7 High Speed",
-    "description": "M2.7 Highspeed: Same performance, faster and more agile (output speed approximately 100 tps)",
-    "context": {
-      "window": 204800,
-      "max_output_tokens": 131100
-    },
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": {
-      "reasoning": true,
-      "tool_use": true,
-      "structured_output": true,
-      "json_mode": true
-    },
-    "availability": {
-      "api": true
-    },
-    "release_date": "2026-03-18",
-    "sources": [
-      {
-        "type": "documentation",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-27",
-        "title": "Vercel AI Gateway public model list",
-        "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
-      }
-    ],
-    "updated_at": "2026-09-27"
   },
   {
     "model_id": "minimax-m3",

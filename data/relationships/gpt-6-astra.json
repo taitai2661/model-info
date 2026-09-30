@@ -14,7 +14,7 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "modalities": {
@@ -26,6 +26,21 @@
         "output": [
           "text"
         ]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": ["standard", "pro"],
+        "default_mode": "standard"
       }
     },
     {
@@ -117,9 +132,109 @@
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
           "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
-      ]
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": ["standard", "pro"],
+        "default_mode": "standard"
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-6-astra-pro",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 10.0,
+        "output": 50.0,
+        "cached_input": 1.0
+      },
+      "modalities": {
+        "input": ["file", "image", "text"],
+        "output": ["text"]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": ["low", "medium", "high", "xhigh", "max"],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": ["standard", "pro"],
+        "default_mode": "standard"
+      },
+      "api_variant": {"reasoning_mode": "pro"},
+      "sources": [{
+        "type": "official",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-30",
+        "notes": "This provider ID is GPT-6 Astra with reasoning.mode set to pro."
+      }]
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "openai/gpt-6-astra-pro:batch",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 5.0,
+        "output": 25.0,
+        "cached_input": 0.5
+      },
+      "modalities": {
+        "input": ["file", "image", "text"],
+        "output": ["text"]
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": ["low", "medium", "high", "xhigh", "max"],
+        "default_effort": "medium",
+        "supports_none": false,
+        "mode_parameter": "reasoning.mode",
+        "modes": ["standard", "pro"],
+        "default_mode": "standard"
+      },
+      "api_variant": {"reasoning_mode": "pro"},
+      "sources": [{
+        "type": "official",
+        "url": "https://openrouter.ai/api/v1/models",
+        "retrieved_at": "2026-09-30",
+        "notes": "OpenRouter batch route for GPT-6 Astra Pro."
+      }]
+    },
+    {
+      "provider_id": "vercel-ai-gateway",
+      "model_id": "openai/gpt-6-astra-fast",
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 20.0,
+        "output": 100.0,
+        "cached_input": 2.0
+      },
+      "modalities": {
+        "input": ["text", "image", "file"],
+        "output": ["text"]
+      },
+      "api_variant": {"service_tier": "fast"},
+      "sources": [{
+        "type": "official",
+        "url": "https://vercel.com/ai-gateway/models/gpt-6-astra-fast",
+        "retrieved_at": "2026-09-30",
+        "title": "GPT-6 Astra (Fast)",
+        "notes": "Vercel route for GPT-6 Astra using the Fast processing tier."
+      }]
     }
   ]
 }
