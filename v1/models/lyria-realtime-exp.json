@@ -1,0 +1,106 @@
+{
+  "model": {
+    "model_id": "lyria-realtime-exp",
+    "name": "Lyria RealTime",
+    "display_name": "Lyria RealTime",
+    "model_provider": "google",
+    "family": "Lyria",
+    "version": null,
+    "status": "experimental",
+    "release_date": "2025-05-20",
+    "updated_at": "2026-10-01",
+    "description": "Experimental engine for high-fidelity musical synthesis, generating and transforming audio with deep control over melody and rhythm and no vocals. Streams 48 kHz stereo raw 16-bit PCM at a maximum control latency of 2 seconds.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "audio"
+      ]
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/lyria-realtime-exp",
+        "retrieved_at": "2026-10-01",
+        "title": "Lyria RealTime model page",
+        "notes": "Experimental model code and streaming limits (48kHz stereo, maximum 2 second control latency). The page states no token limits, so no context is recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Lists lyria-realtime-exp with a May 20, 2025 release date and no shutdown date announced."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "google",
+      "model_id": "lyria-realtime-exp",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai.google.dev/gemini-api/docs/models/lyria-realtime-exp",
+          "retrieved_at": "2026-10-01",
+          "title": "Gemini API model page",
+          "notes": "Provider model id as published on the Gemini Developer API model page."
+        }
+      ],
+      "provider": {
+        "id": "google",
+        "name": "Google",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.google.com",
+        "documentation_url": "https://ai.google.dev/gemini-api/docs/models",
+        "status": "active",
+        "description": "Google's Gemini models and the Gemini Developer API (Google AI for Developers).",
+        "api": {
+          "base_url": "https://generativelanguage.googleapis.com",
+          "protocol": "https",
+          "api_style": "google_generative_ai",
+          "authentication": {
+            "type": "api_key",
+            "header": "x-goog-api-key"
+          },
+          "endpoints": {
+            "models": "/v1beta/models",
+            "interactions": "/v1beta/interactions"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "prompt_caching": true,
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://ai.google.dev/gemini-api/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "Gemini API quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://ai.google.dev/gemini-api/docs/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Gemini API models"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

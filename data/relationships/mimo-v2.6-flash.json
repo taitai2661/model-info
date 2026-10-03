@@ -1,6 +1,6 @@
 {
   "model_id": "mimo-v2.6-flash",
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "providers": [
     {
       "provider_id": "xiaomi",
@@ -20,10 +20,14 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
-      ]
+      ],
+      "context": {
+        "window": 1050000,
+        "max_output_tokens": 131072
+      }
     },
     {
       "provider_id": "opencode",
@@ -47,7 +51,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -74,7 +78,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ]
@@ -104,10 +108,21 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-27",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
-      ]
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "minimal",
+          "low",
+          "medium",
+          "high"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      }
     },
     {
       "provider_id": "deepinfra",

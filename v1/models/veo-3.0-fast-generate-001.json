@@ -3,7 +3,7 @@
     "model_id": "veo-3.0-fast-generate-001",
     "name": "Veo 3.0 Fast Generate",
     "model_provider": "google",
-    "status": "active",
+    "status": "retired",
     "display_name": "Veo 3.0 Fast Generate",
     "description": "Veo 3 Fast is a quicker and more cost effective version of Veo 3, allowing developers to create videos with sound while maintaining high quality and optimizing for speed and business use cases. Veo 3 Fast offers both text-to-video and image-to-video modalities.",
     "modalities": {
@@ -15,7 +15,7 @@
       ]
     },
     "availability": {
-      "api": true
+      "api": false
     },
     "release_date": "2025-07-31",
     "sources": [
@@ -25,9 +25,16 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Shut down June 30, 2026; recommended replacement is veo-3.1-fast-generate-preview or the GA models on the Gemini Enterprise Agent Platform."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   "providers": [
     {
@@ -37,7 +44,7 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],

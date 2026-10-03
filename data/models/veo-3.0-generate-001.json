@@ -2,7 +2,7 @@
   "model_id": "veo-3.0-generate-001",
   "name": "Veo 3.0",
   "model_provider": "google",
-  "status": "active",
+  "status": "retired",
   "display_name": "Veo 3.0",
   "description": "Veo 3 is designed to handle a range of video generation tasks, from cinematic narratives to dynamic character animations. With Veo 3, you can create more immersive experiences by not only generating stunning visuals, but also audio like dialogue and sound effects.",
   "modalities": {
@@ -14,7 +14,7 @@
     ]
   },
   "availability": {
-    "api": true
+    "api": false
   },
   "release_date": "2025-05-20",
   "sources": [
@@ -24,7 +24,14 @@
       "retrieved_at": "2026-09-27",
       "title": "Vercel AI Gateway public model list",
       "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini deprecations",
+      "notes": "Shut down June 30, 2026; recommended replacement is veo-3.1-generate-preview or the GA models on the Gemini Enterprise Agent Platform."
     }
   ],
-  "updated_at": "2026-09-27"
+  "updated_at": "2026-10-01"
 }

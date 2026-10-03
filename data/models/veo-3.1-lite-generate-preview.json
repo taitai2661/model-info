@@ -1,0 +1,54 @@
+{
+  "model_id": "veo-3.1-lite-generate-preview",
+  "name": "Veo 3.1 Lite Preview",
+  "display_name": "Veo 3.1 Lite Preview",
+  "model_provider": "google",
+  "family": "Veo",
+  "version": null,
+  "status": "deprecated",
+  "release_date": "2026-03-31",
+  "updated_at": "2026-10-01",
+  "description": "High-efficiency, developer-first video model providing video generation, editing, and cinematic control at the best Veo 3.1 prices for high-volume applications. Does not support 4K output or video extension. Shuts down on October 22, 2026; the recommended replacement is Gemini Omni Flash.",
+  "context": {
+    "window": 1024
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "video",
+      "audio"
+    ]
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": false,
+    "self_hostable": false
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/models/veo-3.1-lite-generate-preview",
+      "retrieved_at": "2026-10-01",
+      "title": "Veo 3.1 Lite Preview model page",
+      "notes": "Preview model code, supported data types, and the 1,024 token text input limit."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini Developer API pricing",
+      "notes": "Billed per second of output video, not per token, so no token pricing is recorded."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini deprecations",
+      "notes": "Recommended replacement is gemini-omni-1.1-flash; shutdown date October 22, 2026."
+    }
+  ]
+}

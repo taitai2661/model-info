@@ -9,7 +9,7 @@
 
 Model Infoはモデルを**実行したり、APIをプロキシしたり、ランキングや推薦をしたりしません**。検証済みの事実をJSON Schemaで検証し、静的JSONとして配信するだけです。
 
-同じGitHub Pages配信のリポジトリルート(`index.html` + `web/`)にデータの静的検索サイトがあります。ブラウザでリポジトリルートを開くと、キーワード検索、機能/モダリティ/ステータスでのフィルタ、プロバイダー別接続情報の閲覧ができます。ビルド工程・フレームワークなし — バニラHTML/CSS/JSがコミット済みの `v1/` JSONを実行時にfetchします。
+同じリポジトリルート(`index.html` + `web/`)にデータの静的検索サイトがあり、同一のファイルを2つの静的ホスト(**Cloudflare Pages** https://model-info.ta26.top/ と **GitHub Pages** https://taitai2661.github.io/model-info/)で配信しています。ブラウザでリポジトリルートを開くと、キーワード検索、機能/モダリティ/ステータスでのフィルタ、プロバイダー別接続情報の閲覧ができます。ビルド工程・フレームワークなし — バニラHTML/CSS/JSがコミット済みの `v1/` JSONを実行時にfetchします。`v1/` ファイルの解説ページは `api.html` です(日英対応)。
 
 English: [README.md](README.md)
 
@@ -31,11 +31,13 @@ Model × Provider -> 「このモデルはこのProvider経由で利用できる
 
 Ollama・llama.cpp・vLLMなどのRuntime / PlatformはAPI Providerではありません。実行環境はモデル側の `runtime` マップに記録します。
 
+**すべての事実は手作業で記入します。** Collector・スクレイパー・取込ジョブはありません。人が一次情報を読んでJSONを書きます。手順は[手動でのデータ追加](#手動でのデータ追加)を参照してください。
+
 ## リポジトリ構成
 
 ```text
 model-info/
-├── data/                      # 信頼できるソース(手作業 / collector 出力)
+├── data/                      # 信頼できるソース(すべて手編集)
 │   ├── models/{model_id}.json
 │   ├── providers/{provider_id}.json
 │   └── relationships/{model_id}.json
@@ -43,12 +45,14 @@ model-info/
 │   ├── model.schema.json
 │   ├── provider.schema.json
 │   └── model-provider.schema.json
-├── v1/                        # 生成された静的API(GitHub Pagesで配信)
-├── collector/                 # 手動実行のPython Collector(自動実行なし)
-│   └── vendors.json           # カタログの vendor → model_provider 対応表(手編集)
+├── v1/                        # 生成された静的API(Cloudflare Pages と GitHub Pages で配信)
 ├── scripts/
+│   ├── new.py                 # model / provider / relationship のひな形を作成
 │   ├── validate.py            # スキーマ + 整合性 + 秘密情報スキャン
-│   └── build.py               # 検証 -> v1/ 生成
+│   ├── build.py               # 検証 -> v1/ 生成
+│   └── make_icons.py          # favicon.svg からPNGアイコンを再生成
+├── web/                       # 検索サイト(HTML/CSS/JS)+ api.html
+├── favicon.svg / icon-*.png   # サイトアイコン一式
 ├── tests/                     # pytest
 ├── README.md / README.ja.md
 └── .nojekyll
@@ -56,7 +60,7 @@ model-info/
 
 ## API(静的ファイル)
 
-論理エンドポイントごとに `….json` と `…/index.json` の2形式を生成します(GitHub Pagesは拡張子なしURLを配信できないため)。
+論理エンドポイントごとに `….json` と `…/index.json` の2形式を生成します(静的ホスティングは拡張子なしURLを配信できないため)。
 
 | 論理リクエスト | 静的ファイル |
 | --- | --- |
@@ -66,7 +70,9 @@ model-info/
 | `GET /v1/providers/{provider_id}` | `v1/providers/{provider_id}.json` または `…/index.json` |
 | `GET /v1/providers/{provider_id}/models` | `v1/providers/{provider_id}/models.json` または `…/models/index.json` |
 
-GitHub Pages 上ではリポジトリルートから `https://<user>.github.io/<repo>/v1/models.json` のように取得できます。
+どちらのホストも配信ルートから同一のファイルを返します。例えば `https://model-info.ta26.top/v1/models.json` と `https://taitai2661.github.io/model-info/v1/models.json` は同じ内容です。
+
+このセクションは `api.html` でブラウザから読める形にしています(エンドポイント表、コピー可能なリクエスト例、JSON Schema へのリンク付き)。
 
 モデル詳細レスポンスには接続に必要な情報をまとめて含めます。
 
@@ -165,7 +171,7 @@ GitHub Pages 上ではリポジトリルートから `https://<user>.github.io/<
 ## データのルール
 
 - **推測しない。** 不明なコンテキスト長・料金・機能は `null`(またはキー自体を省略)。`0` にしない、憶測しない。`0` が意味を持つのは料金(明示的に無料な tier)のみで、コンテキスト長の `0` は `validate.py` が拒否します。上流では「該当なし」(画像・動画・embedding モデルにはトークン上限がない)を意味するからです。
-- **出典を必ず記録。** `sources[]` に `type`(`official` / `documentation` / `community` / `manual`)、`url`、`retrieved_at` を保持。`official` は開発者本人のページ、`documentation` は aggregator カタログのように第三者が開発者のモデルについて説明したものです。
+- **出典を必ず記録。** `sources[]` に `type`(`official` / `documentation` / `community` / `manual`)、`url`、`retrieved_at` を保持。`official` は開発者本人のページ、`documentation` は第三者が開発者のモデルについて説明したものです。
 - **秘密情報は絶対に保存しない。** APIキーは一切書き込みません。検証は全データファイルを資格情報らしき文字列で走査し、検出したらビルドを失敗させます。
 - **enum**: `status` = `active | preview | experimental | deprecated | retired | unknown`、`api_style` = `openai_compatible | anthropic | google_generative_ai | custom`、`authentication.type` = `bearer | api_key | oauth | none | custom`、モダリティ = `text | image | audio | video | file`。
 - 日時は `YYYY-MM-DD`。料金は `currency` + `unit`(既定 `1M_tokens`)単位。
@@ -174,11 +180,12 @@ GitHub Pages 上ではリポジトリルートから `https://<user>.github.io/<
 
 ## ワークフロー
 
-自動化は一切しません。GitHub Actions・cron・自動更新・更新ボタン・管理画面は作りません。
+自動化は一切しません。GitHub Actions・cron・自動更新・スクレイパー・管理画面は作りません。
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
+.venv/bin/python scripts/new.py ...     # ドキュメントのひな形を作成(推奨)
 .venv/bin/python scripts/validate.py    # data/ をスキーマ+ルールで検証
 .venv/bin/python scripts/build.py       # v1/ を再生成(エラー時は生成しない)
 .venv/bin/python -m pytest              # テスト
@@ -186,64 +193,84 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 `data/` の変更は生成済み `v1/` と一緒にコミットします。
 
-### Collector(手動)
+## 手動でのデータ追加
 
-Collectorは公式エンドポイントから取得 → 正規化 → `data/` へマージまでを行います。コミットはせず、APIキーも保存しません(環境変数のみ参照)。
+データを追加する唯一の方法です。1つの事実につき3つのドキュメントを、この順に書きます。数値には必ず出典を付けます。
 
-```bash
-.venv/bin/python -m collector --list
-.venv/bin/python -m collector openrouter          # dry run(キー不要)
-.venv/bin/python -m collector openrouter --write  # 適用
-export OPENAI_API_KEY=...                         # キーはシェルにのみ存在
-.venv/bin/python -m collector openai --write
-```
+### 1. Provider — `data/providers/{provider_id}.json`
 
-利用可能: `openai` / `anthropic` / `google` / `deepseek` / `mistral` / `openrouter`(公開・キー不要) / `opencode`(公開・キー不要) / `opencode-go`(公開・キー不要) / `groq`(公開・キー不要) / `together`(公開・キー不要) / `fireworks`(公開・キー不要) / `nvidia`(公開・キー不要) / `vercel-ai-gateway`(公開・キー不要) / `deepinfra`(公開・キー不要) / `novita`(公開・キー不要) / `ppio`(公開・キー不要) / `featherless`(公開・キー不要) / `sambanova`(公開・キー不要) / `huggingface`(公開・キー不要) / `catalog`(公開・キー不要)。
+必須: `id`, `name`, `types`, `status`, `updated_at`。1つのサービスが複数の役割を持つので、当てはまるものをすべて列挙します。
 
-`groq` / `together` / `fireworks` はJSON APIではなくMarkdownのドキュメントでカタログを公開しているため、`.md` ページを直接読みます(`collector/docs.py`)。APIキーは引き続き不要で、どの列がコンテキスト長・料金なのかは各Collectorが判定します。
+| type | 意味 |
+| --- | --- |
+| `model_provider` | モデルを開発する |
+| `api_provider` | 自身(または他社)のモデルのAPIアクセスを販売する |
+| `aggregator` / `gateway` | 1つのエンドポイントで多数の第三者モデルを再販売する |
+| `runtime` / `platform` | モデルを実行する(Ollama、vLLM 等)。API Providerではない |
 
-`deepinfra` / `novita` / `ppio` / `featherless` / `sambanova` はいずれも OpenAI 互換の `GET /models` と同じ形式を公開しているため、基底クラス(`collector/openai_compatible.py`)を共有し、どのキーがコンテキスト長でどのキーが料金かだけが違います。どちらかを間違えると単位の読み違いでデータが壊れるため、基底クラスでは次を明示的に禁止しています。
+接続情報は `api` 配下に置きます。`base_url`(APIルートのみ。パス・クエリ・フラグメントは含めない)、`api_style`(`openai_compatible` / `anthropic` / `google_generative_ai` / `custom`)、`authentication.type`、そして `endpoints` には**パス**を書きます(例: `"chat_completions": "/chat/completions"`。URLではなくパス)。
 
-- **トークン単位でない料金をトークン料金に変換しないこと。** これらのカタログは画像・文字・音声の秒数・リクエスト単位でも課金しており、トークンのキーだけを読みます。
-- **単位が明示されている場所からのみ料金を読むこと。** DeepInfra の `input_tokens` はキー名に反して 1M トークンあたりの料金であり、Novita / PPIO の `price_per_m_decimal` は 1M トークンあたりのドル表記です。同じ値を返す `input_token_price_per_m` の単位は 1e-4 $/1M なので、推測した倍率で換算せず無視します。Featherless は同じ値を `prompt` / `completion`（per-token）と `input` / `output`（per-million）の両方で返します。どの解釈を使うか、そしてその理由は各 Collector の docstring に書いてあります。
+### 2. Model — `data/models/{model_id}.json`
 
-`huggingface` は Inference Providers のルータを読みます。ルータのペイロードは唯一、**他の provider に関する**情報を持ちます。モデルごとに partner ごとのスロットがあり、そこには partner のコンテキスト長とサポート機能が入っています。その事実は partner 自身の relationship エントリに記録し、ルータ自身のエントリにはルートのみを記録します。ルータの料金は**あえてどこにも記録しません**。partner ごとに異なるため単一の数値は推測にすぎず、partner 自身の料金をルータが代行して述べるものではないためです。Registry が知らない partner キー（`baseten` / `nscale` / `ovhcloud` / `scaleway`）は推測せず要手動確認として報告されます。
+必須: `model_id`, `name`, `model_provider`, `status`, `updated_at`。`model_provider` は `model_provider` タイプを持つ登録済みProviderである必要があります。`model_id` はファイル名と一致し、`^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$` に従います。
 
-Collectorはソースから読み取れる情報**だけ**を更新します。読み取れない項目は手検証済みの値を保持します。Provider側のモデルIDが登録済みモデルに解決できる場合は relationship エントリを新規作成します(適用されるのは vendor 接頭辞・大文字小文字・Fireworks の `p` 表記・`:free` / `:batch` などのルート variant・スナップショット接尾辞・モデル自身の `version` のみ)。下記の `catalog` を除き、モデルドキュメント自体をCollectorが作ることはありません。解決できないIDは従来通り「要手動確認」として報告されます。実行後は `validate.py` と `build.py` を走らせてください。
+任意ですが有用: `context`(`window` / `max_output_tokens` / `max_input_tokens` / `reasoning_tokens` など)、`modalities`、`capabilities`、`reasoning`、`service_tier`、`pricing`、`runtime`、`availability`、`release_date`、`family`、`version`、`provider_pricing`。
 
-### カタログ一括 import(`catalog`)
+### 3. Relationship — `data/relationships/{model_id}.json`
 
-`catalog` は唯一**モデルドキュメントを作成する**Collectorで、それでも「未登録のモデルに限り」作成します。2つの大規模カタログ(Vercel AI Gateway / OpenRouter)を読み、まだ存在しないモデルをすべて登録します(現在 451 モデル / 58 の model provider。オープンウェイトのロングテール、embedding、画像・動画生成モデル、コミュニティの fine-tune が中心です)。登録済みモデルは完全に手を触れないため、手検証済みの specs がカタログで上書きされることはありません。`collector/model_variants.json` の明示的な対応表にある API モード・ティア別名は、重複モデルではなく登録済みベースモデルの提供元別ルートとして扱います。
+必須: `model_id`, `providers[]`(1件以上)。各エントリは `provider_id` と、そのProvider側での `model_id`、そしてProvider固有の上書き([上書きセマンティクス](#上書きセマンティクスmodel--provider)参照)を持ちます。エイリアスや無料SKUは、同じProviderを `model_id` 違いで複数回列挙します。
 
-registry を上流JSONの写しにしないため、3つのルールを課しています。
+vendor接頭辞を持つID(例: OpenRouter の `deepseek/deepseek-v4-pro`)はそのままここに記録します。正規のモデルドキュメントは1つのままです。
 
-- **vendor を推測しない。** `collector/vendors.json` が、カタログの vendor キー → 登録済み `model_provider` の対応(`aliases`)、意図的に除外する vendor(`ignored`)、未登録 vendor 用の `model_provider` ドキュメント生成情報(`providers`)を持ちます。どちらにも無い vendor は「要手動確認」として報告され、**一切書き込みません**。対応付けは必ず人の判断であり、接頭辞のヒューリスティックではありません。vendor を追加するには、引用可能な `website` または `documentation_url` 付きで `vendors.json` に追加して再実行します。
-- **事実を捏造しない。** `model_id` は vendor 接頭辞を除いたカタログ ID、`name` はカタログの値(Vercel は製品名のまま。OpenRouter の `"Vendor: Model"` 接頭辞は、vendor が既に `model_provider` にあるため除去)。`family` と `version` はどの payload も述べていないので未設定のままです。料金は provider の事実なので relationship エントリにのみ書き、モデルドキュメントには決して書きません。
-- **aggregator ≠ vendor。** カタログは開発者本人のドキュメントではなく再販売者の視点なので、この経路で import したモデルドキュメントは `sources[].type = "documentation"` とし、その旨を note に明記します。手書きのモデルドキュメントは `type = "official"` のまま開発者本人的ページを参照します。
+### JSONを手で書かずにひな形を作る
 
-両カタログの同じ項目については、より信頼できる Vercel を優先します(`owned_by` が vendor 自身の識別子で、`released` に実時刻がある)。OpenRouter は `hugging_face_id`(open weights)と `expiration_date` を補完します。import したモデルの `status` は、生きた provider カタログに載っていることから `active`、退役が告知されている場合のみ `deprecated` になります。`release_date` は Vercel の `released` のみを使用します。OpenRouter の `created` は*OpenRouter が掲載した*時刻であってリリース日ではないため、使用しません。
+`scripts/new.py` がスキーマ準拠のひな形を正しい場所に作成し、その場で検証まで走らせます。
 
 ```bash
-.venv/bin/python -m collector catalog            # dry run
-.venv/bin/python -m collector catalog --write    # import
-.venv/bin/python -m collector catalog --write    # no-op(すでに import 済み)
+# Provider(役割が複数なら --type を繰り返す)
+.venv/bin/python scripts/new.py provider acme \
+  --name "Acme AI" --type model_provider --type api_provider \
+  --website https://acme.example --base-url https://api.acme.example/v1 \
+  --api-style openai_compatible --auth bearer \
+  --source https://acme.example/docs
+
+# そのProviderが開発するモデル
+.venv/bin/python scripts/new.py model acme-1 \
+  --name "Acme One" --provider acme --context 200000 --modalities text,image \
+  --source https://acme.example/models/acme-1
+
+# 提供元(provider[:provider_model_id])。複数指定可
+.venv/bin/python scripts/new.py relationship acme-1 \
+  --entry acme:acme-1-2026 --entry openrouter:acme/acme-1 \
+  --source https://acme.example/docs
+
+.venv/bin/python scripts/new.py list     # 登録済みProvider・モデルの一覧
 ```
 
-意図的に **import しない** ものが2つあります。OpenRouter の `~vendor/…` ID(vendor の最新リリースを追う routing variant)と `openrouter/auto`・`/free`・`/fusion`(リクエストごとにモデルを選ぶ router)です。どちらも `vendors.json` の `ignored` に理由を明記しています。
+`new.py` は既存ドキュメントを `--force` なしでは上書きせず、未登録の model_provider を勝手に作ることもありません。`relationship` を再実行すると、指定した新規Providerを既存ファイルに**追記**します。ひな形を作ったあと、出典から分かる事実を埋めてから:
 
-import の後は他のCollectorを再実行してください。新規登録モデルに各Collector自身の relationship エントリが付きます。初回実行では `catalog` が書いた2つの aggregator エントリの `sources` note が上書きされるため、`unchanged` だけになるまで各Collectorを2回走らせてください。
+```bash
+.venv/bin/python scripts/validate.py    # スキーマ・整合性の誤りを検出
+.venv/bin/python scripts/build.py       # v1/ を再生成
+```
 
-### 手動でのデータ追加
+### 公開
 
-1. **Model**: `data/models/{model_id}.json` を作成(必須: `model_id`, `name`, `model_provider`, `status`, `updated_at`)。
-2. **Provider**: `data/providers/{provider_id}.json` を作成(必須: `id`, `name`, `types`, `status`, `updated_at`)。`base_url`・`api_style`・Endpoint・認証は `api` 配下。
-3. **Relationship**: `data/relationships/{model_id}.json` に、そのモデルを提供する全Provider(Provider固有の `model_id` 含む)を記載。
-4. `scripts/validate.py` → `scripts/build.py` → `data/` と `v1/` をコミット。
+同じコミット済みファイル群を、同一内容で配信する**2つの静的ホスト**で公開しています。
 
-### GitHub Pagesでの公開
+- **Cloudflare Pages** — https://model-info.ta26.top/(リポジトリをPagesプロジェクトに接続し、ビルドコマンドなし・出力ディレクトリをリポジトリルートに設定)
+- **GitHub Pages** — https://taitai2661.github.io/model-info/(ブランチルートから配信)
 
-ブランチルートからPagesを有効化するだけです。`.nojekyll` 同梱、Actionsは不要(作りません)。更新は `data/` を編集し、ビルドしてコミットしたときだけ起きます。
+すべて静的ファイルなのでコンパイルは不要です(`.nojekyll` はGitHub Pages用に同梱)。Actionsは不要(作りません)。更新は `data/` を編集し、ビルドしてコミットしたときだけ起き、両ホストが再デプロイされます。
+
+## サイトアイコン
+
+アイコンの原本は `favicon.svg` で、ブラウザはこれを直接利用します。`scripts/make_icons.py` が同じデザインを `apple-touch-icon.png` / `icon-192.png` / `icon-512.png`(`site.webmanifest` が参照)へ書き出します。外部依存はありません。
+
+```bash
+python3 scripts/make_icons.py
+```
 
 ## 実装しないもの
 
-自動更新、定期スクレイピング、GitHub Actions、更新ボタン、管理画面、Web上でのデータ編集、DB、サーバーサイドAPI、cron、AIによる情報収集・推測、モデル実行、APIプロキシ、APIキー管理、ランキング、推薦、自動ベンチマーク、使用量計測。
+Collector、自動更新、定期スクレイピング、GitHub Actions、更新ボタン、管理画面、Web上でのデータ編集、DB、サーバーサイドAPI、cron、AIによる情報収集・推測、モデル実行、APIプロキシ、APIキー管理、ランキング、推薦、自動ベンチマーク、使用量計測。

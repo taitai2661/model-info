@@ -1,6 +1,6 @@
 {
   "model_id": "gpt-5.6-sol",
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "providers": [
     {
       "provider_id": "openai",
@@ -30,8 +30,8 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ]
     },
@@ -58,7 +58,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -94,10 +94,23 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
-      ]
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      }
     },
     {
       "provider_id": "openrouter",
@@ -123,8 +136,8 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ]
     },
@@ -139,16 +152,26 @@
         "cached_input": 0.4
       },
       "modalities": {
-        "input": ["file", "image", "text"],
-        "output": ["text"]
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
       },
-      "api_variant": {"reasoning_mode": "pro"},
-      "sources": [{
-        "type": "official",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-30",
-        "notes": "OpenRouter exposes this ID as GPT-5.6 Sol with reasoning.mode set to pro; prices and effort options from its public model list."
-      }]
+      "api_variant": {
+        "reasoning_mode": "pro"
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
+        }
+      ]
     },
     {
       "provider_id": "openrouter",
@@ -161,16 +184,26 @@
         "cached_input": 0.1
       },
       "modalities": {
-        "input": ["file", "image", "text"],
-        "output": ["text"]
+        "input": [
+          "file",
+          "image",
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
       },
-      "api_variant": {"reasoning_mode": "pro"},
-      "sources": [{
-        "type": "official",
-        "url": "https://openrouter.ai/api/v1/models",
-        "retrieved_at": "2026-09-30",
-        "notes": "OpenRouter batch route for GPT-5.6 Sol Pro; same base model in pro reasoning mode."
-      }]
+      "api_variant": {
+        "reasoning_mode": "pro"
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://openrouter.ai/api/v1/models",
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
+        }
+      ]
     },
     {
       "provider_id": "vercel-ai-gateway",
@@ -183,17 +216,46 @@
         "cached_input": 0.8
       },
       "modalities": {
-        "input": ["text", "image", "file"],
-        "output": ["text"]
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
       },
-      "api_variant": {"service_tier": "fast"},
-      "sources": [{
-        "type": "official",
-        "url": "https://vercel.com/ai-gateway/models/gpt-5.6-sol-fast",
-        "retrieved_at": "2026-09-30",
-        "title": "GPT-5.6 Sol (Fast)",
-        "notes": "Vercel's Fast route for the base GPT-5.6 Sol model."
-      }]
+      "api_variant": {
+        "service_tier": "fast"
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://vercel.com/ai-gateway/models/gpt-5.6-sol-fast",
+          "retrieved_at": "2026-09-30",
+          "title": "GPT-5.6 Sol (Fast)",
+          "notes": "Vercel's Fast route for the base GPT-5.6 Sol model."
+        },
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      }
     }
   ]
 }

@@ -2,7 +2,7 @@
   "model_id": "gemini-3.1-flash-image-preview",
   "name": "Gemini 3.1 Flash Image Preview (Nano Banana 2)",
   "model_provider": "google",
-  "status": "active",
+  "status": "retired",
   "display_name": "Gemini 3.1 Flash Image Preview (Nano Banana 2)",
   "description": "Gemini 3.1 Flash Image (Nano Banana 2) is optimized for image understanding and generation and offers a balance of price and performance.",
   "context": {
@@ -26,7 +26,7 @@
     "json_mode": true
   },
   "availability": {
-    "api": true
+    "api": false
   },
   "release_date": "2026-02-26",
   "sources": [
@@ -43,7 +43,14 @@
       "retrieved_at": "2026-09-27",
       "title": "Vercel AI Gateway public model list",
       "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini deprecations",
+      "notes": "Shut down June 25, 2026; recommended replacement is gemini-3.1-flash-image."
     }
   ],
-  "updated_at": "2026-09-27"
+  "updated_at": "2026-10-01"
 }

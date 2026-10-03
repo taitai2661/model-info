@@ -174,8 +174,8 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "provider": {
@@ -248,7 +248,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ],
@@ -383,10 +383,23 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      },
       "provider": {
         "id": "vercel-ai-gateway",
         "name": "Vercel AI Gateway",
@@ -463,8 +476,8 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "provider": {
@@ -541,8 +554,8 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "OpenRouter exposes this ID as GPT-5.6 Terra with reasoning.mode set to pro; prices and effort options from its public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "provider": {
@@ -619,8 +632,8 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "OpenRouter batch route for GPT-5.6 Terra Pro; same base model in pro reasoning mode."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "provider": {
@@ -700,8 +713,27 @@
           "retrieved_at": "2026-09-30",
           "title": "GPT-5.6 Terra (Fast)",
           "notes": "Vercel's Fast route for the base GPT-5.6 Terra model."
+        },
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      },
       "provider": {
         "id": "vercel-ai-gateway",
         "name": "Vercel AI Gateway",

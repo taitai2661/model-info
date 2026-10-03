@@ -1,0 +1,42 @@
+{
+  "model_id": "lyria-realtime-exp",
+  "name": "Lyria RealTime",
+  "display_name": "Lyria RealTime",
+  "model_provider": "google",
+  "family": "Lyria",
+  "version": null,
+  "status": "experimental",
+  "release_date": "2025-05-20",
+  "updated_at": "2026-10-01",
+  "description": "Experimental engine for high-fidelity musical synthesis, generating and transforming audio with deep control over melody and rhythm and no vocals. Streams 48 kHz stereo raw 16-bit PCM at a maximum control latency of 2 seconds.",
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "audio"
+    ]
+  },
+  "availability": {
+    "api": true,
+    "cloud": false,
+    "open_weights": false,
+    "self_hostable": false
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/models/lyria-realtime-exp",
+      "retrieved_at": "2026-10-01",
+      "title": "Lyria RealTime model page",
+      "notes": "Experimental model code and streaming limits (48kHz stereo, maximum 2 second control latency). The page states no token limits, so no context is recorded."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini deprecations",
+      "notes": "Lists lyria-realtime-exp with a May 20, 2025 release date and no shutdown date announced."
+    }
+  ]
+}

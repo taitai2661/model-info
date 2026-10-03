@@ -1,6 +1,6 @@
 {
   "model_id": "gpt-realtime-2.1",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-10-01",
   "providers": [
     {
       "provider_id": "vercel-ai-gateway",
@@ -16,10 +16,22 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
-      ]
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "default_effort": null,
+        "supports_none": false
+      }
     }
   ]
 }

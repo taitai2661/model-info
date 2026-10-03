@@ -1,0 +1,59 @@
+{
+  "model_id": "gemini-2.5-flash-preview-tts",
+  "name": "Gemini 2.5 Flash TTS",
+  "display_name": "Gemini 2.5 Flash TTS",
+  "model_provider": "google",
+  "family": "Gemini",
+  "version": null,
+  "status": "deprecated",
+  "release_date": "2025-05-20",
+  "updated_at": "2026-10-01",
+  "description": "Text-to-speech preview model for fast, controllable high-fidelity speech synthesis, positioned for real-time assistants, high-volume narration, and conversational use cases that need fine-grained control over voice style and pacing.",
+  "context": {
+    "window": 8192,
+    "max_output_tokens": 16384
+  },
+  "modalities": {
+    "input": [
+      "text"
+    ],
+    "output": [
+      "audio"
+    ]
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 0.5,
+    "output": 10.0
+  },
+  "availability": {
+    "api": true,
+    "cloud": false,
+    "open_weights": false,
+    "self_hostable": false
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash-preview-tts",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini 2.5 Flash TTS model page",
+      "notes": "Preview model code and the 8,192 input / 16,384 output token limits."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini Developer API pricing",
+      "notes": "Standard tier: $0.50 text input, $10.00 audio output per 1M tokens."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini deprecations",
+      "notes": "Recommended replacements are gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts. No shutdown date announced."
+    }
+  ]
+}

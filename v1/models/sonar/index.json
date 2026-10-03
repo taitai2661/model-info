@@ -64,8 +64,8 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "provider": {
@@ -122,10 +122,28 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
+      "pricing": {
+        "currency": "USD",
+        "unit": "1M_tokens",
+        "input": 0.25,
+        "output": 2.5
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      },
       "provider": {
         "id": "vercel-ai-gateway",
         "name": "Vercel AI Gateway",

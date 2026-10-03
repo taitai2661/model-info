@@ -1,6 +1,6 @@
 {
   "model_id": "qwen3.8-max",
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "providers": [
     {
       "provider_id": "qwen",
@@ -28,7 +28,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -56,7 +56,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ]
@@ -93,10 +93,20 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
-      ]
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "xhigh"
+        ],
+        "default_effort": null,
+        "supports_none": false
+      }
     },
     {
       "provider_id": "deepinfra",

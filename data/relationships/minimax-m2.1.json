@@ -1,6 +1,6 @@
 {
   "model_id": "minimax-m2.1",
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -16,8 +16,8 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ]
     },
@@ -35,7 +35,7 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ]
@@ -150,13 +150,20 @@
         "cached_input": 0.03,
         "cached_write": 0.375
       },
-      "service_tier": {"parameter": "service_tier", "options": ["priority"]},
-      "sources": [{
-        "type": "official",
-        "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
-        "retrieved_at": "2026-09-30",
-        "title": "MiniMax Pay as You Go pricing"
-      }]
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "priority"
+        ]
+      },
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax Pay as You Go pricing"
+        }
+      ]
     },
     {
       "provider_id": "minimax",
@@ -169,20 +176,30 @@
         "cached_input": 0.03,
         "cached_write": 0.375
       },
-      "service_tier": {"parameter": "service_tier", "options": ["priority"]},
-      "api_variant": {"performance_variant": "highspeed"},
+      "service_tier": {
+        "parameter": "service_tier",
+        "options": [
+          "priority"
+        ]
+      },
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
       "notes": "MiniMax documents this as the same M2.1 model with higher inference speed.",
-      "sources": [{
-        "type": "official",
-        "url": "https://platform.minimax.io/docs/guides/models-intro",
-        "retrieved_at": "2026-09-30",
-        "title": "MiniMax models"
-      }, {
-        "type": "official",
-        "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
-        "retrieved_at": "2026-09-30",
-        "title": "MiniMax Pay as You Go pricing"
-      }]
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/models-intro",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax models"
+        },
+        {
+          "type": "official",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax Pay as You Go pricing"
+        }
+      ]
     },
     {
       "provider_id": "vercel-ai-gateway",
@@ -194,19 +211,24 @@
         "output": 2.4,
         "cached_input": 0.03
       },
-      "api_variant": {"performance_variant": "lightning"},
+      "api_variant": {
+        "performance_variant": "lightning"
+      },
       "notes": "Vercel's Lightning alias for MiniMax M2.1; its model page identifies it as the same model with identical outputs and higher throughput.",
-      "sources": [{
-        "type": "official",
-        "url": "https://vercel.com/ai-gateway/models/minimax-m2.1-lightning",
-        "retrieved_at": "2026-09-30",
-        "title": "MiniMax M2.1 Lightning"
-      }, {
-        "type": "official",
-        "url": "https://ai-gateway.vercel.sh/v1/models",
-        "retrieved_at": "2026-09-28",
-        "notes": "Provider route ID, context, modalities and pricing from Vercel AI Gateway."
-      }]
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://vercel.com/ai-gateway/models/minimax-m2.1-lightning",
+          "retrieved_at": "2026-09-30",
+          "title": "MiniMax M2.1 Lightning"
+        },
+        {
+          "type": "official",
+          "url": "https://ai-gateway.vercel.sh/v1/models",
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,118 @@
+{
+  "model": {
+    "model_id": "veo-3.1-generate-preview",
+    "name": "Veo 3.1",
+    "display_name": "Veo 3.1",
+    "model_provider": "google",
+    "family": "Veo",
+    "version": null,
+    "status": "deprecated",
+    "release_date": "2025-10-15",
+    "updated_at": "2026-10-01",
+    "description": "Cinematic video generation model for high-end creative storytelling and experimental video production, supporting professional-grade 4K output, natively synchronized audio, and complex camera movements. Shuts down on October 22, 2026; the recommended replacement is Gemini Omni Flash.",
+    "context": {
+      "window": 1024
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "video",
+        "audio"
+      ]
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/veo-3.1-generate-preview",
+        "retrieved_at": "2026-10-01",
+        "title": "Veo 3.1 model page",
+        "notes": "Preview model code veo-3.1-generate-preview, supported data types, and the 1,024 token text input limit. The page also lists veo-3.1-fast-generate-preview under the same entry."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Billed per second of output video, not per token, so no token pricing is recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Recommended replacement is gemini-omni-1.1-flash; shutdown date October 22, 2026."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "google",
+      "model_id": "veo-3.1-generate-preview",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai.google.dev/gemini-api/docs/models/veo-3.1-generate-preview",
+          "retrieved_at": "2026-10-01",
+          "title": "Gemini API model page",
+          "notes": "Provider model id as published on the Gemini Developer API model page."
+        }
+      ],
+      "provider": {
+        "id": "google",
+        "name": "Google",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.google.com",
+        "documentation_url": "https://ai.google.dev/gemini-api/docs/models",
+        "status": "active",
+        "description": "Google's Gemini models and the Gemini Developer API (Google AI for Developers).",
+        "api": {
+          "base_url": "https://generativelanguage.googleapis.com",
+          "protocol": "https",
+          "api_style": "google_generative_ai",
+          "authentication": {
+            "type": "api_key",
+            "header": "x-goog-api-key"
+          },
+          "endpoints": {
+            "models": "/v1beta/models",
+            "interactions": "/v1beta/interactions"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "prompt_caching": true,
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://ai.google.dev/gemini-api/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "Gemini API quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://ai.google.dev/gemini-api/docs/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Gemini API models"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

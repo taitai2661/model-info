@@ -4469,12 +4469,12 @@
     "model_id": "gemini-2.5-flash-image",
     "name": "Nano Banana (Gemini 2.5 Flash Image)",
     "model_provider": "google",
-    "status": "active",
+    "status": "deprecated",
     "display_name": "Nano Banana (Gemini 2.5 Flash Image)",
     "description": "Nano Banana (Gemini 2.5 Flash Image) is Google's first fully hybrid reasoning model, letting developers turn thinking on or off and set thinking budgets to balance quality, cost, and latency. Upgraded for rapid creative workflows, it can generate interleaved text and images and supports conversational, multi‑turn image editing in natural language. It’s also locale‑aware, enabling culturally and linguistically appropriate image generation for audiences worldwide.",
     "context": {
-      "window": 32768,
-      "max_output_tokens": 65535
+      "window": 65536,
+      "max_output_tokens": 32768
     },
     "modalities": {
       "input": [
@@ -4508,9 +4508,23 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash-image",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini 2.5 Flash image (Nano Banana) model page",
+        "notes": "Token limits corrected to the official 65,536 input / 32,768 output; the aggregator figure was reversed."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Shut down October 2, 2026; recommended replacement is gemini-3.1-flash-image."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   {
     "model_id": "gemini-2.5-flash-lite",
@@ -4568,6 +4582,134 @@
       }
     ],
     "updated_at": "2026-09-27"
+  },
+  {
+    "model_id": "gemini-2.5-flash-native-audio-preview-12-2025",
+    "name": "Gemini 2.5 Flash Live Preview",
+    "display_name": "Gemini 2.5 Flash Live Preview",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "deprecated",
+    "release_date": "2025-12-12",
+    "updated_at": "2026-10-01",
+    "description": "Preview model for the Live API that processes continuous streams of audio, video, or text to deliver immediate spoken responses for low-latency, real-time voice and video interactions.",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 8192
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "output": [
+        "text",
+        "audio"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.5,
+      "output": 2.0
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash-native-audio-preview-12-2025",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini 2.5 Flash Live Preview model page",
+        "notes": "Preview model code, supported data types, and the 131,072 input / 8,192 output token limits."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "$0.50 text input or $3.00 audio and video input; $2.00 text output or $12.00 audio output per 1M tokens. Only the text prices are recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Recommended replacement is gemini-3.8-live. No shutdown date announced."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-2.5-flash-preview-tts",
+    "name": "Gemini 2.5 Flash TTS",
+    "display_name": "Gemini 2.5 Flash TTS",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "deprecated",
+    "release_date": "2025-05-20",
+    "updated_at": "2026-10-01",
+    "description": "Text-to-speech preview model for fast, controllable high-fidelity speech synthesis, positioned for real-time assistants, high-volume narration, and conversational use cases that need fine-grained control over voice style and pacing.",
+    "context": {
+      "window": 8192,
+      "max_output_tokens": 16384
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "audio"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.5,
+      "output": 10.0
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash-preview-tts",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini 2.5 Flash TTS model page",
+        "notes": "Preview model code and the 8,192 input / 16,384 output token limits."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Standard tier: $0.50 text input, $10.00 audio output per 1M tokens."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Recommended replacements are gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts. No shutdown date announced."
+      }
+    ]
   },
   {
     "model_id": "gemini-2.5-pro",
@@ -4680,6 +4822,65 @@
       }
     ],
     "updated_at": "2026-09-27"
+  },
+  {
+    "model_id": "gemini-2.5-pro-preview-tts",
+    "name": "Gemini 2.5 Pro TTS",
+    "display_name": "Gemini 2.5 Pro TTS",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "deprecated",
+    "release_date": "2025-05-20",
+    "updated_at": "2026-10-01",
+    "description": "Text-to-speech preview model for studio-quality speech synthesis with high-fidelity audio and sophisticated generation, positioned for long-form content, professional narration, and complex creative workflows that need the highest level of vocal clarity and natural prosody.",
+    "context": {
+      "window": 8192,
+      "max_output_tokens": 16384
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "audio"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.0,
+      "output": 20.0
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-pro-preview-tts",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini 2.5 Pro TTS model page",
+        "notes": "Preview model code and the 8,192 input / 16,384 output token limits."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Standard tier: $1.00 text input, $20.00 audio output per 1M tokens."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Recommended replacements are gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts. No shutdown date announced."
+      }
+    ]
   },
   {
     "model_id": "gemini-3-flash",
@@ -4842,7 +5043,7 @@
     "model_id": "gemini-3-pro-image-preview",
     "name": "Nano Banana Pro (Gemini 3 Pro Image Preview)",
     "model_provider": "google",
-    "status": "active",
+    "status": "retired",
     "display_name": "Nano Banana Pro (Gemini 3 Pro Image Preview)",
     "context": {
       "window": 65536,
@@ -4864,7 +5065,7 @@
       "structured_output": true
     },
     "availability": {
-      "api": true
+      "api": false
     },
     "sources": [
       {
@@ -4873,9 +5074,16 @@
         "retrieved_at": "2026-09-27",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Shut down June 25, 2026; recommended replacement is gemini-3-pro-image."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   {
     "model_id": "gemini-3.1-flash-image",
@@ -4930,7 +5138,7 @@
     "model_id": "gemini-3.1-flash-image-preview",
     "name": "Gemini 3.1 Flash Image Preview (Nano Banana 2)",
     "model_provider": "google",
-    "status": "active",
+    "status": "retired",
     "display_name": "Gemini 3.1 Flash Image Preview (Nano Banana 2)",
     "description": "Gemini 3.1 Flash Image (Nano Banana 2) is optimized for image understanding and generation and offers a balance of price and performance.",
     "context": {
@@ -4954,7 +5162,7 @@
       "json_mode": true
     },
     "availability": {
-      "api": true
+      "api": false
     },
     "release_date": "2026-02-26",
     "sources": [
@@ -4971,9 +5179,16 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Shut down June 25, 2026; recommended replacement is gemini-3.1-flash-image."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   {
     "model_id": "gemini-3.1-flash-lite",
@@ -5083,7 +5298,7 @@
     "model_id": "gemini-3.1-flash-lite-preview",
     "name": "Gemini 3.1 Flash Lite Preview",
     "model_provider": "google",
-    "status": "active",
+    "status": "retired",
     "display_name": "Gemini 3.1 Flash Lite Preview",
     "context": {
       "window": 1048576,
@@ -5108,7 +5323,7 @@
       "tool_use": true
     },
     "availability": {
-      "api": true
+      "api": false
     },
     "sources": [
       {
@@ -5117,9 +5332,144 @@
         "retrieved_at": "2026-09-27",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Shut down May 25, 2026; recommended replacement is gemini-3.1-flash-lite."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
+  },
+  {
+    "model_id": "gemini-3.1-flash-live-preview",
+    "name": "Gemini 3.1 Flash Live Preview",
+    "display_name": "Gemini 3.1 Flash Live Preview",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "deprecated",
+    "release_date": "2026-03-11",
+    "updated_at": "2026-10-01",
+    "description": "Legacy preview model for real-time dialogue and voice-first applications over the Live API. Google recommends migrating to Gemini 3.8 Live, which is the default option for most low-latency voice agent experiences.",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "output": [
+        "text",
+        "audio"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.75,
+      "output": 4.5
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-live-preview",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini 3.1 Flash Live Preview model page",
+        "notes": "Preview model code, supported data types, and the 131,072 input / 65,536 output token limits. The page states the model is legacy and recommends Gemini 3.8 Live."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Priced together with Gemini 3.8 Live: $0.75 text input, $3.00 or $0.005 per minute audio input, $1.00 or $0.002 per minute image/video input; $4.50 text output, $12.00 or $0.018 per minute audio output. Only the text prices are recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Recommended replacement is gemini-3.8-live. No shutdown date announced."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3.1-flash-tts-preview",
+    "name": "Gemini 3.1 Flash TTS Preview",
+    "display_name": "Gemini 3.1 Flash TTS Preview",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "deprecated",
+    "release_date": "2026-02-26",
+    "updated_at": "2026-10-01",
+    "description": "Legacy preview text-to-speech model offering low-latency speech generation with steerable prompts and expressive audio tags for precise narration control. Google recommends Gemini 3.8 Flash TTS or Gemini 3.8 Flash-Lite TTS for new and production workloads.",
+    "context": {
+      "window": 8192,
+      "max_output_tokens": 16384
+    },
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "audio"
+      ]
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.0,
+      "output": 20.0
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-tts-preview",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini 3.1 Flash TTS Preview model page",
+        "notes": "Preview model code and the 8,192 input / 16,384 output token limits. The page states the model is legacy and recommends the 3.8 TTS models."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Standard tier: $1.00 text input, $20.00 audio output per 1M tokens."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Recommended replacements are gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts. No shutdown date announced."
+      }
+    ]
   },
   {
     "model_id": "gemini-3.1-pro-preview",
@@ -5361,6 +5711,69 @@
         "retrieved_at": "2026-09-26",
         "title": "OpenRouter model list",
         "notes": "Context window, max output, and modalities cross-checked against OpenRouter's public model list."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3.5-live-translate-preview",
+    "name": "Gemini 3.5 Live Translate",
+    "display_name": "Gemini 3.5 Live Translate",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "preview",
+    "release_date": "2026-06-30",
+    "updated_at": "2026-10-01",
+    "description": "Low-latency audio-to-audio model optimized for real-time translation of spoken conversations, providing bidirectional translation with natural voice output and a text transcript alongside the translated audio.",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "audio"
+      ],
+      "output": [
+        "audio",
+        "text"
+      ]
+    },
+    "capabilities": {
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 3.5,
+      "output": 21.0
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.5-live-translate-preview",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini 3.5 Live Translate model page",
+        "notes": "Preview model code, supported data types, and the 131,072 input / 65,536 output token limits. Live API supported, live translation supported, thinking not supported."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Standard tier: $3.50 input or $0.0053 per minute of audio, $21.00 output or $0.0315 per minute. Only the per-token prices are recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Lists gemini-3.5-live-translate-preview as a preview model with a June 2026 release date and no shutdown date announced."
       }
     ]
   },
@@ -5633,6 +6046,10 @@
     "model_provider": "google",
     "status": "active",
     "display_name": "Gemini 3.8 Flash-Lite TTS",
+    "context": {
+      "window": 8192,
+      "max_output_tokens": 16384
+    },
     "description": "Gemini 3.8 Flash-Lite TTS is Google’s text-to-speech model optimized for high-volume, cost-efficient audio generation across more than 100 languages. It combines expressive speech with fine-grained control over tone, pacing, and line-by-line delivery, supporting long-form narration and native two-speaker conversations. Built for scale, it helps developers and creators power multilingual dubbing, audio content production, and expressive voice agents.",
     "modalities": {
       "input": [
@@ -5653,9 +6070,16 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-lite-tts",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini API model page",
+        "notes": "Token limits 8,192 input / 16,384 output as published on the model page."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   {
     "model_id": "gemini-3.8-flash-tts",
@@ -5663,6 +6087,10 @@
     "model_provider": "google",
     "status": "active",
     "display_name": "Gemini 3.8 Flash TTS",
+    "context": {
+      "window": 8192,
+      "max_output_tokens": 16384
+    },
     "description": "Gemini 3.8 Flash TTS is Google’s text-to-speech model for expressive voice generation and custom character design across more than 100 languages. It creates original voices from natural language prompts and offers granular control over acting cues, pacing, accents, and conversational reactions. Long-form audio and native two-speaker dialogue make it well suited to immersive audiobooks, games, podcasts, and interactive media",
     "modalities": {
       "input": [
@@ -5683,9 +6111,16 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-tts",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini API model page",
+        "notes": "Token limits 8,192 input / 16,384 output as published on the model page."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   {
     "model_id": "gemini-3.8-live",
@@ -5693,6 +6128,10 @@
     "model_provider": "google",
     "status": "active",
     "display_name": "Gemini 3.8 Live",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 65536
+    },
     "description": "Gemini 3.8 Live is Google's model for real-time audio conversations. It supports spoken interactions for developers building voice assistants, conversational experiences, and applications that respond to users through audio.",
     "modalities": {
       "input": [
@@ -5718,9 +6157,16 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini API model page",
+        "notes": "Token limits 131,072 input / 65,536 output as published on the model page."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   {
     "model_id": "gemini-3.8-live-extended-thinking",
@@ -5728,6 +6174,10 @@
     "model_provider": "google",
     "status": "active",
     "display_name": "Gemini 3.8 Live Extended Thinking",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 65536
+    },
     "description": "Gemini 3.8 Live Extended Thinking is Google's real-time audio model with extended thinking capabilities. It combines spoken interaction with additional reasoning for voice assistants and other conversational applications.",
     "modalities": {
       "input": [
@@ -5753,9 +6203,67 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live-extended-thinking",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini API model page",
+        "notes": "Token limits 131,072 input / 65,536 output as published on the model page."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
+  },
+  {
+    "model_id": "gemini-4-argon",
+    "name": "Gemini 4 Argon",
+    "display_name": "Gemini 4 Argon",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "experimental",
+    "release_date": "2026-09-30",
+    "updated_at": "2026-10-01",
+    "description": "Google's next frontier model, built for deep reasoning across long-horizon workflows such as real-world software engineering, enterprise knowledge work, and cybersecurity defense. Argon is rolling out first to trusted cyber defenders through the Fairwind Program, then to paid API customers and Google AI Ultra subscribers. The model_id is not yet published in the Gemini API documentation, so the identifier here is provisional.",
+    "context": {
+      "max_output_tokens": 1000000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "reasoning": true,
+      "tool_use": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2.0,
+      "output": 10.0,
+      "cached_input": 0.1
+    },
+    "availability": {
+      "api": false,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini 4 Argon: our next era of frontier intelligence",
+        "notes": "Announcement states the 1M token output limit, the introductory $2 input / $10 output price, and cached input at 95% off the input price. No model_id, context window, or endpoint is published yet, so no relationship entry is recorded."
+      }
+    ]
   },
   {
     "model_id": "gemini-embedding-001",
@@ -5805,7 +6313,7 @@
     "availability": {
       "api": true
     },
-    "release_date": "2026-03-10",
+    "release_date": "2026-04-22",
     "sources": [
       {
         "type": "documentation",
@@ -5813,15 +6321,127 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Stable gemini-embedding-2 released April 22, 2026. The earlier March 10, 2026 date is the preview model, which shut down on August 10, 2026."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
+  },
+  {
+    "model_id": "gemini-embedding-2-preview",
+    "name": "Gemini Embedding 2 Preview",
+    "display_name": "Gemini Embedding 2 Preview",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "retired",
+    "release_date": "2026-03-10",
+    "updated_at": "2026-10-01",
+    "description": "Preview of Google's first multimodal embedding model, mapping text, images, video, audio, and PDFs into a single unified embedding space. Shut down on August 10, 2026; the replacement is Gemini Embedding 2.",
+    "context": {
+      "window": 8192
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "availability": {
+      "api": false,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-embedding-2",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Embedding 2 model page",
+        "notes": "Supported data types and the 8,192 input token limit. Output dimension is flexible from 128 to 3072, which is not a token budget."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "embedding-2-preview released March 10, 2026, shut down August 10, 2026, recommended replacement gemini-embedding-2."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-omni-1.1-flash",
+    "name": "Gemini Omni Flash",
+    "display_name": "Gemini Omni Flash",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "active",
+    "release_date": "2026-08-27",
+    "updated_at": "2026-10-01",
+    "description": "High-performance model for fast, conversational video generation and editing over the Interactions API. Turns text and images into video, refines results through natural-language conversation, and adds video extension, first-plus-last-frame interpolation, and 360p to 4K resolution control.",
+    "context": {
+      "window": 1048576
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "video"
+      ]
+    },
+    "capabilities": {
+      "vision": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.5,
+      "output": 9.0
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Omni Flash model page",
+        "notes": "Stable model code, supported data types, and the 1,048,576 token context window. Output video is 3-10s at 360p/720p/1080p/4K, 24 FPS, which is not a token budget."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Standard tier: $1.50 input, $9.00 text output, $17.50 video output per 1M tokens. Only the text output price is recorded here."
+      }
+    ]
   },
   {
     "model_id": "gemini-omni-flash-preview",
     "name": "Gemini Omni Flash Preview",
     "model_provider": "google",
-    "status": "active",
+    "status": "retired",
     "display_name": "Gemini Omni Flash Preview",
     "description": "Gemini Omni Flash (Preview) is a multimodal model designed for video, image, and text tasks. It is optimized for video generation, offering video output alongside text responses in a single model.",
     "context": {
@@ -5857,9 +6477,191 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/changelog",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini API release notes",
+        "notes": "The gemini-omni-flash-preview endpoint was deprecated on September 30, 2026. The GA replacement is gemini-omni-1.1-flash."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
+  },
+  {
+    "model_id": "gemini-robotics-er-1.6-preview",
+    "name": "Gemini Robotics ER 1.6 Preview",
+    "display_name": "Gemini Robotics ER 1.6 Preview",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "retired",
+    "release_date": "2026-04-14",
+    "updated_at": "2026-10-01",
+    "description": "Embodied reasoning model that understands physical spaces and plans multi-step tasks for robotic agents, with instrument reading and improved spatial and physical reasoning. Shut down on August 31, 2026; the replacement is Gemini Robotics ER 2.",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "availability": {
+      "api": false,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-robotics-er-2-preview",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Robotics ER 1.6 Preview model page",
+        "notes": "Preview model code, supported data types, and the 131,072 input / 65,536 output token limits."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Released April 14, 2026, shut down August 31, 2026, recommended replacement gemini-robotics-er-2-preview."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-robotics-er-2-preview",
+    "name": "Gemini Robotics ER 2 Preview",
+    "display_name": "Gemini Robotics ER 2 Preview",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "preview",
+    "release_date": "2026-07-30",
+    "updated_at": "2026-10-01",
+    "description": "Vision-language model for robotics accepting text, image, video, and audio input, with spatial reasoning, video understanding, agentic code execution, multi-step tool orchestration, and multi-robot coordination.",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "structured_output": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 1.0,
+      "output": 5.0,
+      "cached_input": 0.1
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-robotics-er-2-preview",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Robotics ER 2 Preview model page",
+        "notes": "Preview model code, supported data types, and the 131,072 input / 65,536 output token limits. Function calling, code execution, file search, computer use, and thinking are supported."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Standard tier: $1.00 input, $5.00 output, $0.10 cached input through December 31, 2026; $2.00 / $10.00 / $0.20 starting January 1, 2027."
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-robotics-er-2-streaming-preview",
+    "name": "Gemini Robotics ER 2 Streaming Preview",
+    "display_name": "Gemini Robotics ER 2 Streaming Preview",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "preview",
+    "release_date": "2026-07-30",
+    "updated_at": "2026-10-01",
+    "description": "Robotics endpoint optimized for real-time text streaming over the Live API, enabling low-latency robot agents with bidirectional audio and video input. Function calling uses blocking behavior for physical robot actions.",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "function_calling": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.5,
+      "output": 2.5,
+      "cached_input": 0.05
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-robotics-er-2-preview",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Robotics ER 2 Streaming Preview model page",
+        "notes": "Preview model code, supported data types, and the 131,072 input / 65,536 output token limits. Function calling and Live API are supported; caching, code execution, and file search are not."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Standard tier: $0.50 input, $2.50 output, $0.05 cached input through December 31, 2026; $1.00 / $5.00 / $0.10 starting January 1, 2027."
+      }
+    ]
   },
   {
     "model_id": "gemma-2-27b-it",
@@ -15221,6 +16023,95 @@
       }
     ],
     "updated_at": "2026-09-27"
+  },
+  {
+    "model_id": "lyria-3.5",
+    "name": "Lyria 3.5",
+    "display_name": "Lyria 3.5",
+    "model_provider": "google",
+    "family": "Lyria",
+    "version": null,
+    "status": "active",
+    "release_date": "2026-09-03",
+    "updated_at": "2026-10-01",
+    "description": "Google's flagship music generation model, optimized for full-length songs with complex structural coherence including multiple verses, choruses, and bridges. Generates 44.1 kHz stereo audio from text prompts or image inputs and returns MP3 audio with lyric text.",
+    "context": {
+      "window": 131072
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "audio",
+        "text"
+      ]
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/lyria-3.5",
+        "retrieved_at": "2026-10-01",
+        "title": "Lyria 3.5 model page",
+        "notes": "Stable model code, supported data types, and the 131,072 token input limit. The page states an input token limit only, so no output limit is recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Billed at $0.08 per generated song, not per token, so no token pricing is recorded."
+      }
+    ]
+  },
+  {
+    "model_id": "lyria-realtime-exp",
+    "name": "Lyria RealTime",
+    "display_name": "Lyria RealTime",
+    "model_provider": "google",
+    "family": "Lyria",
+    "version": null,
+    "status": "experimental",
+    "release_date": "2025-05-20",
+    "updated_at": "2026-10-01",
+    "description": "Experimental engine for high-fidelity musical synthesis, generating and transforming audio with deep control over melody and rhythm and no vocals. Streams 48 kHz stereo raw 16-bit PCM at a maximum control latency of 2 seconds.",
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "audio"
+      ]
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/lyria-realtime-exp",
+        "retrieved_at": "2026-10-01",
+        "title": "Lyria RealTime model page",
+        "notes": "Experimental model code and streaming limits (48kHz stereo, maximum 2 second control latency). The page states no token limits, so no context is recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Lists lyria-realtime-exp with a May 20, 2025 release date and no shutdown date announced."
+      }
+    ]
   },
   {
     "model_id": "mercury-2",
@@ -25402,7 +26293,7 @@
     "model_id": "veo-3.0-fast-generate-001",
     "name": "Veo 3.0 Fast Generate",
     "model_provider": "google",
-    "status": "active",
+    "status": "retired",
     "display_name": "Veo 3.0 Fast Generate",
     "description": "Veo 3 Fast is a quicker and more cost effective version of Veo 3, allowing developers to create videos with sound while maintaining high quality and optimizing for speed and business use cases. Veo 3 Fast offers both text-to-video and image-to-video modalities.",
     "modalities": {
@@ -25414,7 +26305,7 @@
       ]
     },
     "availability": {
-      "api": true
+      "api": false
     },
     "release_date": "2025-07-31",
     "sources": [
@@ -25424,15 +26315,22 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Shut down June 30, 2026; recommended replacement is veo-3.1-fast-generate-preview or the GA models on the Gemini Enterprise Agent Platform."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   {
     "model_id": "veo-3.0-generate-001",
     "name": "Veo 3.0",
     "model_provider": "google",
-    "status": "active",
+    "status": "retired",
     "display_name": "Veo 3.0",
     "description": "Veo 3 is designed to handle a range of video generation tasks, from cinematic narratives to dynamic character animations. With Veo 3, you can create more immersive experiences by not only generating stunning visuals, but also audio like dialogue and sound effects.",
     "modalities": {
@@ -25444,7 +26342,7 @@
       ]
     },
     "availability": {
-      "api": true
+      "api": false
     },
     "release_date": "2025-05-20",
     "sources": [
@@ -25454,9 +26352,16 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Shut down June 30, 2026; recommended replacement is veo-3.1-generate-preview or the GA models on the Gemini Enterprise Agent Platform."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   {
     "model_id": "veo-3.1-fast-generate-001",
@@ -25519,6 +26424,60 @@
     "updated_at": "2026-09-27"
   },
   {
+    "model_id": "veo-3.1-generate-preview",
+    "name": "Veo 3.1",
+    "display_name": "Veo 3.1",
+    "model_provider": "google",
+    "family": "Veo",
+    "version": null,
+    "status": "deprecated",
+    "release_date": "2025-10-15",
+    "updated_at": "2026-10-01",
+    "description": "Cinematic video generation model for high-end creative storytelling and experimental video production, supporting professional-grade 4K output, natively synchronized audio, and complex camera movements. Shuts down on October 22, 2026; the recommended replacement is Gemini Omni Flash.",
+    "context": {
+      "window": 1024
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "video",
+        "audio"
+      ]
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/veo-3.1-generate-preview",
+        "retrieved_at": "2026-10-01",
+        "title": "Veo 3.1 model page",
+        "notes": "Preview model code veo-3.1-generate-preview, supported data types, and the 1,024 token text input limit. The page also lists veo-3.1-fast-generate-preview under the same entry."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Billed per second of output video, not per token, so no token pricing is recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Recommended replacement is gemini-omni-1.1-flash; shutdown date October 22, 2026."
+      }
+    ]
+  },
+  {
     "model_id": "veo-3.1-lite-generate-001",
     "name": "Veo 3.1 Lite Generate",
     "model_provider": "google",
@@ -25547,6 +26506,60 @@
       }
     ],
     "updated_at": "2026-09-27"
+  },
+  {
+    "model_id": "veo-3.1-lite-generate-preview",
+    "name": "Veo 3.1 Lite Preview",
+    "display_name": "Veo 3.1 Lite Preview",
+    "model_provider": "google",
+    "family": "Veo",
+    "version": null,
+    "status": "deprecated",
+    "release_date": "2026-03-31",
+    "updated_at": "2026-10-01",
+    "description": "High-efficiency, developer-first video model providing video generation, editing, and cinematic control at the best Veo 3.1 prices for high-volume applications. Does not support 4K output or video extension. Shuts down on October 22, 2026; the recommended replacement is Gemini Omni Flash.",
+    "context": {
+      "window": 1024
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "video",
+        "audio"
+      ]
+    },
+    "availability": {
+      "api": true,
+      "cloud": true,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/veo-3.1-lite-generate-preview",
+        "retrieved_at": "2026-10-01",
+        "title": "Veo 3.1 Lite Preview model page",
+        "notes": "Preview model code, supported data types, and the 1,024 token text input limit."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "Billed per second of output video, not per token, so no token pricing is recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Recommended replacement is gemini-omni-1.1-flash; shutdown date October 22, 2026."
+      }
+    ]
   },
   {
     "model_id": "vila",

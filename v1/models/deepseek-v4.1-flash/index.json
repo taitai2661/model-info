@@ -164,7 +164,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ],
@@ -234,7 +234,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ],
@@ -288,9 +288,9 @@
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.3,
-        "output": 1.2,
-        "cached_input": 0.006
+        "input": 0.015543,
+        "output": 0.396,
+        "cached_input": 0.00291
       },
       "context": {
         "window": 1048576,
@@ -300,10 +300,20 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "high",
+          "max"
+        ],
+        "default_effort": "high",
+        "supports_none": false
+      },
       "provider": {
         "id": "openrouter",
         "name": "OpenRouter",
@@ -372,7 +382,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ],
@@ -550,10 +560,19 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "high",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      },
       "provider": {
         "id": "vercel-ai-gateway",
         "name": "Vercel AI Gateway",
@@ -624,10 +643,20 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "high",
+          "max"
+        ],
+        "default_effort": "high",
+        "supports_none": false
+      },
       "provider": {
         "id": "openrouter",
         "name": "OpenRouter",

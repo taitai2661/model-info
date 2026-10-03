@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v3";
 const SHELL_CACHE = `model-info-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `model-info-data-${CACHE_VERSION}`;
 const DATA_CACHE_LIMIT = 400;
@@ -6,9 +6,17 @@ const DATA_CACHE_LIMIT = 400;
 const SHELL_ASSETS = [
   "./",
   "./index.html",
+  "./api.html",
   "./web/style.css",
+  "./web/api.css",
   "./web/app.js",
+  "./web/api.js",
   "./web/i18n.js",
+  "./favicon.svg",
+  "./apple-touch-icon.png",
+  "./icon-192.png",
+  "./icon-512.png",
+  "./site.webmanifest",
 ];
 
 const offlineResponse = (path) => new Response(

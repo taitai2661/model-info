@@ -1,6 +1,6 @@
 {
   "model_id": "gpt-5-codex",
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "providers": [
     {
       "provider_id": "openai",
@@ -29,7 +29,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -58,10 +58,20 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
-      ]
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "default_effort": null,
+        "supports_none": false
+      }
     }
   ]
 }

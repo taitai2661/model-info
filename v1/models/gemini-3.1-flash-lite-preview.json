@@ -3,7 +3,7 @@
     "model_id": "gemini-3.1-flash-lite-preview",
     "name": "Gemini 3.1 Flash Lite Preview",
     "model_provider": "google",
-    "status": "active",
+    "status": "retired",
     "display_name": "Gemini 3.1 Flash Lite Preview",
     "context": {
       "window": 1048576,
@@ -28,7 +28,7 @@
       "tool_use": true
     },
     "availability": {
-      "api": true
+      "api": false
     },
     "sources": [
       {
@@ -37,9 +37,16 @@
         "retrieved_at": "2026-09-27",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Shut down May 25, 2026; recommended replacement is gemini-3.1-flash-lite."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   "providers": [
     {
@@ -56,10 +63,21 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "minimal",
+          "low",
+          "medium",
+          "high"
+        ],
+        "default_effort": "minimal",
+        "supports_none": false
+      },
       "provider": {
         "id": "openrouter",
         "name": "OpenRouter",

@@ -1,0 +1,113 @@
+{
+  "model": {
+    "model_id": "gemini-robotics-er-1.6-preview",
+    "name": "Gemini Robotics ER 1.6 Preview",
+    "display_name": "Gemini Robotics ER 1.6 Preview",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "retired",
+    "release_date": "2026-04-14",
+    "updated_at": "2026-10-01",
+    "description": "Embodied reasoning model that understands physical spaces and plans multi-step tasks for robotic agents, with instrument reading and improved spatial and physical reasoning. Shut down on August 31, 2026; the replacement is Gemini Robotics ER 2.",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 65536
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "availability": {
+      "api": false,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-robotics-er-2-preview",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Robotics ER 1.6 Preview model page",
+        "notes": "Preview model code, supported data types, and the 131,072 input / 65,536 output token limits."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Released April 14, 2026, shut down August 31, 2026, recommended replacement gemini-robotics-er-2-preview."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "google",
+      "model_id": "gemini-robotics-er-1.6-preview",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-robotics-er-2-preview",
+          "retrieved_at": "2026-10-01",
+          "title": "Gemini API model page",
+          "notes": "Provider model id as published on the Gemini Developer API model page."
+        }
+      ],
+      "provider": {
+        "id": "google",
+        "name": "Google",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.google.com",
+        "documentation_url": "https://ai.google.dev/gemini-api/docs/models",
+        "status": "active",
+        "description": "Google's Gemini models and the Gemini Developer API (Google AI for Developers).",
+        "api": {
+          "base_url": "https://generativelanguage.googleapis.com",
+          "protocol": "https",
+          "api_style": "google_generative_ai",
+          "authentication": {
+            "type": "api_key",
+            "header": "x-goog-api-key"
+          },
+          "endpoints": {
+            "models": "/v1beta/models",
+            "interactions": "/v1beta/interactions"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "prompt_caching": true,
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://ai.google.dev/gemini-api/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "Gemini API quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://ai.google.dev/gemini-api/docs/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Gemini API models"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

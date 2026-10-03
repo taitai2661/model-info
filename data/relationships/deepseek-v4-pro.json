@@ -1,6 +1,6 @@
 {
   "model_id": "deepseek-v4-pro",
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "providers": [
     {
       "provider_id": "deepseek",
@@ -12,19 +12,28 @@
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.915936,
-        "output": 1.831872,
-        "cached_input": 0.076328
+        "input": 0.783,
+        "output": 1.566,
+        "cached_input": 0.06525
       },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
-      "notes": "OpenRouter lists different per-token prices than DeepSeek's own off-peak rates."
+      "notes": "OpenRouter lists different per-token prices than DeepSeek's own off-peak rates.",
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "high",
+          "xhigh"
+        ],
+        "default_effort": "high",
+        "supports_none": false
+      }
     },
     {
       "provider_id": "opencode",
@@ -47,7 +56,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -74,7 +83,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ]
@@ -85,21 +94,31 @@
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.3915,
-        "output": 3.49,
-        "cached_input": 0.3132
+        "input": 1.32,
+        "output": 3.96,
+        "cached_input": 0.044
       },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "context": {
         "window": 1048576,
-        "max_output_tokens": 943718
+        "max_output_tokens": 393216
+      },
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "high",
+          "max"
+        ],
+        "default_effort": "high",
+        "supports_none": false
       }
     },
     {
@@ -164,10 +183,19 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
-      ]
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "high",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      }
     },
     {
       "provider_id": "vercel-ai-gateway",
@@ -187,10 +215,19 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
-      ]
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "high",
+          "max"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      }
     },
     {
       "provider_id": "deepinfra",

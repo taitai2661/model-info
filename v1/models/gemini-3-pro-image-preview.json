@@ -3,7 +3,7 @@
     "model_id": "gemini-3-pro-image-preview",
     "name": "Nano Banana Pro (Gemini 3 Pro Image Preview)",
     "model_provider": "google",
-    "status": "active",
+    "status": "retired",
     "display_name": "Nano Banana Pro (Gemini 3 Pro Image Preview)",
     "context": {
       "window": 65536,
@@ -25,7 +25,7 @@
       "structured_output": true
     },
     "availability": {
-      "api": true
+      "api": false
     },
     "sources": [
       {
@@ -34,9 +34,16 @@
         "retrieved_at": "2026-09-27",
         "title": "OpenRouter public model list",
         "notes": "Provider model id, name, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Shut down June 25, 2026; recommended replacement is gemini-3-pro-image."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   "providers": [
     {
@@ -53,8 +60,8 @@
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ],
       "provider": {

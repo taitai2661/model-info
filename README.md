@@ -9,7 +9,7 @@ It answers two questions in one place:
 
 Model Info does **not** execute models, proxy API requests, rank models, or recommend models. It stores verified facts, validates them against JSON Schemas, and serves them as static JSON — nothing else.
 
-A static search site for the data lives at the repository root (`index.html` + `web/`), served from the same GitHub Pages deployment. Open the repo root in a browser to browse models and providers by keyword, filter by capability/modalities/status, and view per-provider connection details. No build step, no framework — vanilla HTML/CSS/JS fetching the committed `v1/` JSON at runtime.
+A static search site for the data lives at the repository root (`index.html` + `web/`), published by two static hosts that serve the same files: **Cloudflare Pages** at https://model-info.ta26.top/ and **GitHub Pages** at https://taitai2661.github.io/model-info/. Open the repo root in a browser to browse models and providers by keyword, filter by capability/modalities/status, and view per-provider connection details. No build step, no framework — vanilla HTML/CSS/JS fetching the committed `v1/` JSON at runtime. A standalone, bilingual reference for the `v1/` files is at `api.html`.
 
 日本語版: [README.ja.md](README.ja.md)
 
@@ -31,11 +31,13 @@ Model x Provider -> "this model is available through this provider"
 
 Runtimes such as Ollama, llama.cpp, or vLLM are **not** API providers. Runtime support is recorded on the model itself via the optional `runtime` map.
 
+**Every fact is entered by hand.** There are no collectors, no scrapers and no import jobs — a person reads a source and writes the JSON. See [Adding data by hand](#adding-data-by-hand).
+
 ## Repository layout
 
 ```text
 model-info/
-├── data/                      # source of truth (hand-edited / collector output)
+├── data/                      # source of truth, hand-edited
 │   ├── models/{model_id}.json
 │   ├── providers/{provider_id}.json
 │   └── relationships/{model_id}.json
@@ -43,12 +45,14 @@ model-info/
 │   ├── model.schema.json
 │   ├── provider.schema.json
 │   └── model-provider.schema.json
-├── v1/                        # generated static API (committed, served by GitHub Pages)
-├── collector/                 # manual Python collectors (never run automatically)
-│   └── vendors.json           # curated catalogue-vendor -> model_provider map
+├── v1/                        # generated static API (committed, served by Cloudflare Pages + GitHub Pages)
 ├── scripts/
+│   ├── new.py                 # scaffold a model / provider / relationship document
 │   ├── validate.py            # schema + integrity + secret scanning
-│   └── build.py               # validate -> generate v1/
+│   ├── build.py               # validate -> generate v1/
+│   └── make_icons.py          # regenerate the PNG app icons from favicon.svg
+├── web/                       # search site (HTML/CSS/JS) + api.html
+├── favicon.svg / icon-*.png   # site icon set
 ├── tests/                     # pytest
 ├── README.md / README.ja.md
 └── .nojekyll
@@ -56,7 +60,7 @@ model-info/
 
 ## API (static files)
 
-Model Info is served as plain files — each logical endpoint has two URLs: `….json` and `…/index.json` (GitHub Pages cannot serve extensionless paths).
+Model Info is served as plain files — each logical endpoint has two URLs: `….json` and `…/index.json` (static hosting cannot serve extensionless paths).
 
 | Logical request | Static file |
 | --- | --- |
@@ -66,8 +70,12 @@ Model Info is served as plain files — each logical endpoint has two URLs: `…
 | `GET /v1/providers/{provider_id}` | `v1/providers/{provider_id}.json` or `v1/providers/{provider_id}/index.json` |
 | `GET /v1/providers/{provider_id}/models` | `v1/providers/{provider_id}/models.json` or `…/models/index.json` |
 
-On GitHub Pages the files are served from the repository root, e.g.
-`https://<user>.github.io/<repo>/v1/models.json`.
+Both hosts publish identical files from the deployment root, e.g.
+`https://model-info.ta26.top/v1/models.json` and
+`https://taitai2661.github.io/model-info/v1/models.json`.
+
+`api.html` renders this section as a browsable page, with the endpoint table,
+copyable request examples and links to the JSON Schemas.
 
 A model detail response bundles everything a client needs to connect:
 
@@ -166,7 +174,7 @@ Nested objects inside a relationship entry (`pricing`, `context`, `modalities`, 
 ## Data rules
 
 - **Never guess.** Unknown context windows, prices, or capabilities are `null` (or the key is omitted) — never `0`, never inferred. `0` is only meaningful for a price (an explicitly free tier); a context size of `0` is rejected by `validate.py`, because upstream it means "not applicable" (image, video and embedding models have no token budget).
-- **Every fact has sources.** `sources[]` records `type` (`official`/`documentation`/`community`/`manual`), `url`, and `retrieved_at`. `official` is the vendor's own page; `documentation` is a third party describing the vendor's model, such as an aggregator catalogue.
+- **Every fact has sources.** `sources[]` records `type` (`official`/`documentation`/`community`/`manual`), `url`, and `retrieved_at`. `official` is the vendor's own page; `documentation` is a third party describing the vendor's model.
 - **No secrets, ever.** API keys are never stored. Validation scans all data files for credential-like strings and fails the build.
 - **Enums**: `status` = `active | preview | experimental | deprecated | retired | unknown`; `api_style` = `openai_compatible | anthropic | google_generative_ai | custom`; `authentication.type` = `bearer | api_key | oauth | none | custom`; modalities = `text | image | audio | video | file`.
 - Dates are `YYYY-MM-DD`. Prices are per `unit` (`1M_tokens` by default) in `currency`.
@@ -175,11 +183,12 @@ See `schemas/v1/*.schema.json` for the full field reference — the schemas are 
 
 ## Workflow
 
-Everything is manual by design: no GitHub Actions, no cron, no auto-update, no admin UI.
+Everything is manual by design: no GitHub Actions, no cron, no auto-update, no scrapers, no admin UI.
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
+.venv/bin/python scripts/new.py ...     # scaffold a document (optional but recommended)
 .venv/bin/python scripts/validate.py    # validate data/ against the schemas + rules
 .venv/bin/python scripts/build.py       # regenerate v1/ (refuses to build on errors)
 .venv/bin/python -m pytest              # tests
@@ -187,64 +196,84 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 Commit `data/` changes together with the regenerated `v1/` output.
 
-### Collectors (manual)
+## Adding data by hand
 
-Collectors fetch official endpoints, normalize the response, and merge it into `data/` — they never commit and never store keys (keys come from environment variables only).
+This is the only way data gets added. Three documents describe each fact; write them in this order and cite a source for every number.
 
-```bash
-.venv/bin/python -m collector --list
-.venv/bin/python -m collector openrouter          # dry run (no key required)
-.venv/bin/python -m collector openrouter --write  # apply
-export OPENAI_API_KEY=...                         # keys live only in your shell
-.venv/bin/python -m collector openai --write
-```
+### 1. Provider — `data/providers/{provider_id}.json`
 
-Available collectors: `openai`, `anthropic`, `google`, `deepseek`, `mistral`, `openrouter` (public, no key), `opencode` (public, no key), `opencode-go` (public, no key), `groq` (public, no key), `together` (public, no key), `fireworks` (public, no key), `nvidia` (public, no key), `vercel-ai-gateway` (public, no key), `deepinfra` (public, no key), `novita` (public, no key), `ppio` (public, no key), `featherless` (public, no key), `sambanova` (public, no key), `huggingface` (public, no key), `catalog` (public, no key).
+Required: `id`, `name`, `types`, `status`, `updated_at`. A provider can hold several roles at once — list every one that applies:
 
-`groq`, `together` and `fireworks` publish their catalogues as Markdown documentation rather than as a JSON API, so they read the `.md` page instead (`collector/docs.py`) — still no key involved. `normalize()` receives the raw text and each collector decides which column is the context window and which one is the price.
+| type | Meaning |
+| --- | --- |
+| `model_provider` | develops the models |
+| `api_provider` | sells API access to its own (or others') models |
+| `aggregator` / `gateway` | resells many third-party models through one endpoint |
+| `runtime` / `platform` | executes models (Ollama, vLLM, …) — never an API provider |
 
-`deepinfra`, `novita`, `ppio`, `featherless` and `sambanova` all publish the same OpenAI-compatible `GET /models` envelope, so they share one base class (`collector/openai_compatible.py`) and differ only in which keys hold the context and the prices. Two things that base class refuses to do, because getting either wrong silently corrupts the price:
+Connection details live under `api`: `base_url` (the API root only, no path, query or fragment), `api_style` (`openai_compatible` / `anthropic` / `google_generative_ai` / `custom`), `authentication.type`, and endpoint **paths** under `endpoints` (e.g. `"chat_completions": "/chat/completions"` — a path, never a URL).
 
-- **A non-token price is never converted into a token price.** These catalogues bill per image, per character, per second of audio and per request as well; only the token keys are read.
-- **A price is only read where the payload states its unit.** DeepInfra's `input_tokens` is a price *per 1M tokens* despite the key name, Novita's and PPIO's `price_per_m_decimal` is dollars per 1M while the flat `input_token_price_per_m` mirroring it is in units of 1e-4 $/1M, and Featherless quotes each figure twice — per-token under `prompt`/`completion` and per-million under `input`/`output`. Each collector's docstring records which reading it uses and why; a mirrored field in a different unit is ignored rather than rescaled by a guessed factor.
+### 2. Model — `data/models/{model_id}.json`
 
-`huggingface` reads the Inference Providers router, which is the one collector whose payload describes *other* providers: it reports, per model, one slot per partner with that partner's context window and supported features. Those facts are recorded on the partner's own relationship entry, while the router's own entry records only the route. The router's price is deliberately **not** recorded anywhere, because it is set per partner and differs between them — any single figure would be invented, and a partner's own price is not the router's to state. Partner keys the registry does not know (`baseten`, `nscale`, `ovhcloud`, `scaleway`) are reported for manual review rather than guessed at.
+Required: `model_id`, `name`, `model_provider`, `status`, `updated_at`. `model_provider` must be a registered provider whose types include `model_provider`. `model_id` must equal the file name and follow `^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$`.
 
-Collectors only **update facts they can read from the source**. Anything else keeps its hand-verified value; ids that do not match a registered model are reported as *needs manual review* instead of being invented. A provider model id that *does* resolve to a registered model gets its relationship entry created (vendor prefix, letter case, Fireworks' `p` decimal escape, route variants such as `:free` / `:batch`, snapshot suffixes and the model's own `version` are the only rewrites applied) — but apart from `catalog` below, a collector never creates a model document. Run `validate.py` and `build.py` afterwards.
+Optional but valuable: `context` (`window`, `max_output_tokens`, `max_input_tokens`, `reasoning_tokens`, …), `modalities`, `capabilities`, `reasoning`, `service_tier`, `pricing`, `runtime`, `availability`, `release_date`, `family`, `version`, `provider_pricing`.
 
-### Catalog import (`catalog`)
+### 3. Relationship — `data/relationships/{model_id}.json`
 
-`catalog` is the one collector that **does** create model documents, and it does so only for models that do not exist yet. It reads the two large public aggregator catalogues (Vercel AI Gateway and OpenRouter) and registers everything in them that is still missing — currently 451 models across 58 model providers, most of them long-tail open-weight releases, embedding models, image/video generation models and community fine-tunes. A model that is already registered is left completely alone, so hand-verified specs are never overwritten by a catalogue. Explicit entries in `collector/model_variants.json` route API mode/tier aliases to their registered base model instead of importing duplicate model documents.
+Required: `model_id`, `providers[]` (at least one entry). Each entry lists a `provider_id` and that provider's own `model_id` for the model, plus any per-provider override (see [override semantics](#override-semantics-model--provider)). List the same provider multiple times to record aliases or free tiers — one entry per `model_id`.
 
-Three rules keep it from turning the registry into a mirror of an upstream JSON blob:
+Providers whose id resolves through a vendor prefix (e.g. OpenRouter's `deepseek/deepseek-v4-pro`) keep that id here; the canonical model stays one document.
 
-- **No guessed vendors.** `collector/vendors.json` maps a catalogue vendor key onto a registered `model_provider` (`aliases`), lists vendors that are deliberately skipped (`ignored`), and holds the `providers` entries used to create a `model_provider` document for a vendor that is not registered yet. A vendor that appears in neither file is reported as *needs manual review* and **nothing is written** — the mapping is always a human decision, never a prefix heuristic. To add a vendor, add it to `vendors.json` with a `website` or `documentation_url` to cite, then re-run.
-- **No invented facts.** `model_id` is the catalogue id without its vendor prefix, `name` comes from the catalogue (Vercel's is the clean product name; OpenRouter's `"Vendor: Model"` prefix is dropped because the vendor is already in `model_provider`). `family` and `version` stay unset because no payload states them. Prices are provider facts and therefore only ever land on the relationship entry — never on the model document.
-- **Aggregator ≠ vendor.** A catalogue is a reseller's view, not the developer's own documentation, so model documents imported this way carry `sources[].type = "documentation"` and say so in the note. Hand-written model documents keep `type = "official"` and cite the vendor's own page.
+### Scaffold it instead of typing JSON
 
-Vercel wins wherever both catalogues report a field (its `owned_by` is the vendor's own identifier and it carries a real `released` timestamp); OpenRouter contributes `hugging_face_id` (open weights) and `expiration_date`. Imported models get `status: "active"` — being listed in a live provider catalogue — unless the catalogue announces a retirement, which downgrades them to `deprecated`. `release_date` is only set from Vercel's `released`; OpenRouter's `created` is when *it* listed the model, which is not a release date, so it is not used.
+`scripts/new.py` writes a correctly shaped, schema-valid stub and then runs validation:
 
 ```bash
-.venv/bin/python -m collector catalog            # dry run
-.venv/bin/python -m collector catalog --write    # import
-.venv/bin/python -m collector catalog --write    # no-op: already imported
+# a provider (repeat --type for several roles)
+.venv/bin/python scripts/new.py provider acme \
+  --name "Acme AI" --type model_provider --type api_provider \
+  --website https://acme.example --base-url https://api.acme.example/v1 \
+  --api-style openai_compatible --auth bearer \
+  --source https://acme.example/docs
+
+# a model owned by that provider
+.venv/bin/python scripts/new.py model acme-1 \
+  --name "Acme One" --provider acme --context 200000 --modalities text,image \
+  --source https://acme.example/models/acme-1
+
+# one or more providers that serve it (provider[:provider_model_id])
+.venv/bin/python scripts/new.py relationship acme-1 \
+  --entry acme:acme-1-2026 --entry openrouter:acme/acme-1 \
+  --source https://acme.example/docs
+
+.venv/bin/python scripts/new.py list     # list registered providers and models
 ```
 
-Two things are deliberately **not** imported: OpenRouter's `~vendor/…` ids (routing variants that track a vendor's latest release) and `openrouter/auto`, `/free`, `/fusion` (routers that pick a model per request). Both are listed in `vendors.json` under `ignored` with the reason.
+`new.py` never overwrites an existing document unless you pass `--force`, and it will not let you invent a model provider that is not registered. Re-running `relationship` **extends** an existing file with any new providers you name. After scaffolding, fill in the facts you know from the cited source, then:
 
-After an import, run the other collectors once more — they will attach their own relationship entries to the newly registered models. Their first run rewrites the `sources` note on the two aggregator entries the catalog wrote, so run each one twice to see a clean `unchanged` report.
+```bash
+.venv/bin/python scripts/validate.py    # catches schema and integrity mistakes
+.venv/bin/python scripts/build.py       # regenerate v1/
+```
 
-### Adding data by hand
+### Publishing
 
-1. **Model**: create `data/models/{model_id}.json` (required: `model_id`, `name`, `model_provider`, `status`, `updated_at`).
-2. **Provider**: create `data/providers/{provider_id}.json` (required: `id`, `name`, `types`, `status`, `updated_at`); put `base_url`, `api_style`, endpoints, and authentication under `api`.
-3. **Relationship**: create `data/relationships/{model_id}.json` listing every provider that serves the model (with its provider-specific `model_id`).
-4. Run `scripts/validate.py`, then `scripts/build.py`, then commit both `data/` and `v1/`.
+The same committed files are published by **two static hosts** that serve identical content:
 
-### Publishing on GitHub Pages
+- **Cloudflare Pages** — https://model-info.ta26.top/ (connect the repository to a Pages project with no build command and the repository root as the output directory).
+- **GitHub Pages** — https://taitai2661.github.io/model-info/ (serve from the branch root).
 
-Push the repository and enable GitHub Pages (serve from the branch root). `.nojekyll` is included; no Actions workflow is needed or wanted. Updates happen only when someone edits `data/`, runs the build, and commits.
+The tree is plain static files, so nothing needs compiling; `.nojekyll` is included for GitHub Pages. No Actions workflow is needed or wanted. Updates happen only when someone edits `data/`, runs the build, and commits — both hosts then redeploy.
+
+## Site icons
+
+`favicon.svg` is the source of truth for the icon and is used directly by browsers. `scripts/make_icons.py` renders the same design to `apple-touch-icon.png`, `icon-192.png` and `icon-512.png` (referenced by `site.webmanifest`) with no third-party dependencies:
+
+```bash
+python3 scripts/make_icons.py
+```
 
 ## Non-goals
 
-No auto-updates, no scraping schedules, no GitHub Actions, no update buttons, no admin panel, no database, no server-side API, no API key storage, no proxying, no rankings, no recommendations, no benchmarks, no usage metering.
+No collectors, no auto-updates, no scraping schedules, no GitHub Actions, no update buttons, no admin panel, no database, no server-side API, no API key storage, no proxying, no rankings, no recommendations, no benchmarks, no usage metering.

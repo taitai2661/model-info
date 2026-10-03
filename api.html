@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API — Model Info</title>
+  <meta name="description" content="Model Info の静的 JSON API リファレンス。エンドポイント、レスポンス例、上書き規則、enum、JSON Schema をまとめて解説します。">
+  <link rel="canonical" href="https://model-info.ta26.top/api.html">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141618" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="API — Model Info">
+  <meta property="og:description" content="Static JSON API reference for AI model specs, pricing and provider connection details.">
+  <meta property="og:url" content="https://model-info.ta26.top/api.html">
+  <link rel="stylesheet" href="web/style.css">
+  <link rel="stylesheet" href="web/api.css">
+</head>
+<body class="api-page">
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="./index.html"><img class="logo-mark" src="./favicon.svg" alt="" width="24" height="24" aria-hidden="true">Model Info</a>
+      <nav>
+        <a href="./index.html#/"><span data-lang="ja">モデル</span><span data-lang="en">Models</span></a>
+        <a href="./index.html#/providers"><span data-lang="ja">プロバイダー</span><span data-lang="en">Providers</span></a>
+        <a href="./api.html" class="active"><span data-lang="ja">API</span><span data-lang="en">API</span></a>
+      </nav>
+      <div class="spacer"></div>
+      <div class="header-controls">
+        <button class="btn-icon" id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+        <button class="btn-icon" id="lang-toggle" type="button" aria-label="Switch language">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <a class="back-link" href="./index.html">← <span data-lang="ja">検索サイトへ戻る</span><span data-lang="en">Back to the search site</span></a>
+
+    <section class="api-hero">
+      <div class="eyebrow">STATIC JSON API · v1</div>
+      <h1><span data-lang="ja">Model Info API</span><span data-lang="en">Model Info API</span></h1>
+      <p class="api-hero-copy">
+        <span data-lang="ja">Model Info は検証済みの事実を静的 JSON として配信します。サーバーサイド API はなく、すべてのエンドポイントはコミット済みファイルです。ここでは取得方法とデータの形を説明します。</span>
+        <span data-lang="en">Model Info serves verified facts as static JSON. There is no server-side API — every endpoint is a committed file. This page documents how to fetch the data and what shape it takes.</span>
+      </p>
+      <div class="api-hero-badges">
+        <span class="badge badge-modality">read-only</span>
+        <span class="badge badge-modality">no API key</span>
+        <span class="badge badge-provider">JSON Schema · draft 2020-12</span>
+      </div>
+    </section>
+
+    <nav class="toc" aria-label="On this page">
+      <span class="toc-label"><span data-lang="ja">目次</span><span data-lang="en">On this page</span></span>
+      <a href="#base-url"><span data-lang="ja">Base URL</span><span data-lang="en">Base URL</span></a>
+      <a href="#endpoints"><span data-lang="ja">エンドポイント</span><span data-lang="en">Endpoints</span></a>
+      <a href="#examples"><span data-lang="ja">リクエスト例</span><span data-lang="en">Examples</span></a>
+      <a href="#overrides"><span data-lang="ja">上書き規則</span><span data-lang="en">Overrides</span></a>
+      <a href="#rules"><span data-lang="ja">データ規則</span><span data-lang="en">Data rules</span></a>
+      <a href="#schemas"><span data-lang="ja">スキーマ</span><span data-lang="en">Schemas</span></a>
+    </nav>
+
+    <section class="doc-section" id="base-url">
+      <h2>Base URL</h2>
+      <p data-lang="ja">同一のファイルを2つの静的ホスト(Cloudflare Pages と GitHub Pages)で配信しています。どちらの配信ルートからも同じ内容が取得できます。サイト自身と同じく、ローカルにクローンしてもそのまま動きます。</p>
+      <p data-lang="en">Identical files are served by two static hosts (Cloudflare Pages and GitHub Pages); either deployment root returns the same content. The same paths also work from a local clone.</p>
+      <div class="code-wrap">
+        <button class="btn-copy code-copy" type="button"><span data-lang="ja">コピー</span><span data-lang="en">Copy</span></button>
+        <pre class="code-block"><code>https://model-info.ta26.top/v1/
+https://taitai2661.github.io/model-info/v1/</code></pre>
+      </div>
+      <p class="doc-note">
+        <span data-lang="ja">論理エンドポイントごとに <code>….json</code> と <code>…/index.json</code> の2形式があります（静的ホスティングは拡張子なし URL を配信できないため）。どちらも同じ内容です。</span>
+        <span data-lang="en">Each logical endpoint has two forms: <code>….json</code> and <code>…/index.json</code> (static hosting cannot serve extensionless paths). Both return the same content.</span>
+      </p>
+    </section>
+
+    <section class="doc-section" id="endpoints">
+      <h2><span data-lang="ja">エンドポイント</span><span data-lang="en">Endpoints</span></h2>
+      <div class="table-scroll">
+        <table class="endpoint-table">
+          <thead>
+            <tr>
+              <th><span data-lang="ja">論理リクエスト</span><span data-lang="en">Logical request</span></th>
+              <th><span data-lang="ja">静的ファイル</span><span data-lang="en">Static file</span></th>
+              <th><span data-lang="ja">内容</span><span data-lang="en">Returns</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>GET /v1/models</code></td>
+              <td><code>v1/models.json</code><br><code>v1/models/index.json</code></td>
+              <td><span data-lang="ja">全モデルの配列</span><span data-lang="en">Array of every model</span></td>
+            </tr>
+            <tr>
+              <td><code>GET /v1/models/{model_id}</code></td>
+              <td><code>v1/models/{model_id}.json</code><br><code>v1/models/{model_id}/index.json</code></td>
+              <td><span data-lang="ja">モデル本体＋提供プロバイダー一式</span><span data-lang="en">Model plus its provider bundle</span></td>
+            </tr>
+            <tr>
+              <td><code>GET /v1/providers</code></td>
+              <td><code>v1/providers.json</code><br><code>v1/providers/index.json</code></td>
+              <td><span data-lang="ja">全プロバイダーの配列</span><span data-lang="en">Array of every provider</span></td>
+            </tr>
+            <tr>
+              <td><code>GET /v1/providers/{provider_id}</code></td>
+              <td><code>v1/providers/{provider_id}.json</code></td>
+              <td><span data-lang="ja">プロバイダー詳細（API 情報を含む）</span><span data-lang="en">Provider detail (including API info)</span></td>
+            </tr>
+            <tr>
+              <td><code>GET /v1/providers/{provider_id}/models</code></td>
+              <td><code>v1/providers/{provider_id}/models.json</code></td>
+              <td><span data-lang="ja">そのプロバイダーが提供するモデル</span><span data-lang="en">Models served by that provider</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="examples">
+      <h2><span data-lang="ja">リクエスト例</span><span data-lang="en">Examples</span></h2>
+      <p data-lang="ja">認証は不要です。公開ファイルをそのまま取得できます。</p>
+      <p data-lang="en">No authentication is required — fetch the public files directly.</p>
+
+      <h3>curl</h3>
+      <div class="code-wrap">
+        <button class="btn-copy code-copy" type="button"><span data-lang="ja">コピー</span><span data-lang="en">Copy</span></button>
+        <pre class="code-block"><code>curl https://model-info.ta26.top/v1/models.json
+curl https://model-info.ta26.top/v1/models/gpt-5.json
+curl https://model-info.ta26.top/v1/providers/openrouter/models.json</code></pre>
+      </div>
+
+      <h3>JavaScript (fetch)</h3>
+      <div class="code-wrap">
+        <button class="btn-copy code-copy" type="button"><span data-lang="ja">コピー</span><span data-lang="en">Copy</span></button>
+        <pre class="code-block"><code>const base = "https://model-info.ta26.top/v1";
+
+const models = await (await fetch(`${base}/models.json`)).json();
+const detail = await (await fetch(`${base}/models/gpt-5.json`)).json();
+
+// detail.model  -> specs (context, capabilities, pricing, ...)
+// detail.providers -> per-provider model_id, base_url, auth, pricing</code></pre>
+      </div>
+
+      <h3><span data-lang="ja">レスポンス例（モデル詳細）</span><span data-lang="en">Response example (model detail)</span></h3>
+      <p data-lang="ja">モデル詳細は、接続に必要な情報を1レスポンスにまとめて返します。</p>
+      <p data-lang="en">A model detail response bundles everything a client needs to connect.</p>
+      <div class="code-wrap">
+        <button class="btn-copy code-copy" type="button"><span data-lang="ja">コピー</span><span data-lang="en">Copy</span></button>
+        <pre class="code-block"><code>{
+  "model": {
+    "model_id": "deepseek-v4-pro",
+    "context": { "window": 1048576 },
+    "status": "active"
+  },
+  "providers": [
+    {
+      "provider_id": "deepseek",
+      "model_id": "deepseek-v4-pro",
+      "provider": {
+        "api": {
+          "base_url": "https://api.deepseek.com",
+          "api_style": "openai_compatible",
+          "authentication": { "type": "bearer" }
+        }
+      }
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": "deepseek/deepseek-v4-pro",
+      "pricing": { "currency": "USD", "unit": "1M_tokens", "input": 0.7433, "output": 1.4867 },
+      "provider": { "...": "..." }
+    }
+  ]
+}</code></pre>
+      </div>
+    </section>
+
+    <section class="doc-section" id="overrides">
+      <h2><span data-lang="ja">上書き規則 (Model × Provider)</span><span data-lang="en">Override semantics (Model × Provider)</span></h2>
+      <p data-lang="ja">関係エントリ内の任意キーは3値で表現します。</p>
+      <p data-lang="en">Optional keys inside a relationship entry use a three-state convention.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th><span data-lang="ja">形式</span><span data-lang="en">Form</span></th>
+              <th><span data-lang="ja">意味</span><span data-lang="en">Meaning</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>key omitted</code></td><td><span data-lang="ja">モデル定義の値を継承</span><span data-lang="en">Inherit the value from the model document</span></td></tr>
+            <tr><td><code>null</code></td><td><span data-lang="ja">このプロバイダーでは不明</span><span data-lang="en">Unknown at this provider</span></td></tr>
+            <tr><td><code>value</code></td><td><span data-lang="ja">モデル側の値を上書き</span><span data-lang="en">Override the model-level value</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="doc-note">
+        <span data-lang="ja">ネストしたオブジェクト（<code>pricing</code> / <code>context</code> / <code>modalities</code> / <code>capabilities</code> / <code>reasoning</code> / <code>service_tier</code> / <code>api_variant</code> / <code>api_capabilities</code>）は丸ごと置き換わります。置換後に省略されたフィールドは「不明」であり、継承ではありません。</span>
+        <span data-lang="en">Nested objects (<code>pricing</code>, <code>context</code>, <code>modalities</code>, <code>capabilities</code>, <code>reasoning</code>, <code>service_tier</code>, <code>api_variant</code>, <code>api_capabilities</code>) replace the model-level object wholesale. Fields omitted inside the replacement are unknown, not inherited.</span>
+      </p>
+    </section>
+
+    <section class="doc-section" id="rules">
+      <h2><span data-lang="ja">データ規則と enum</span><span data-lang="en">Data rules &amp; enums</span></h2>
+      <ul class="doc-list">
+        <li>
+          <strong><span data-lang="ja">推測しない。</span><span data-lang="en">Never guess.</span></strong>
+          <span data-lang="ja">不明なコンテキスト長・料金・機能は <code>null</code>（またはキー省略）。<code>0</code> が意味を持つのは明示的な無料料金のみです。</span>
+          <span data-lang="en">Unknown context windows, prices or capabilities are <code>null</code> (or omitted). <code>0</code> is meaningful only for an explicitly free price.</span>
+        </li>
+        <li>
+          <strong><span data-lang="ja">出典を必ず記録。</span><span data-lang="en">Every fact has sources.</span></strong>
+          <span data-lang="ja"><code>sources[]</code> に <code>type</code>・<code>url</code>・<code>retrieved_at</code> を保持します。</span>
+          <span data-lang="en"><code>sources[]</code> records <code>type</code>, <code>url</code> and <code>retrieved_at</code>.</span>
+        </li>
+        <li>
+          <strong><span data-lang="ja">秘密情報は保存しない。</span><span data-lang="en">No secrets, ever.</span></strong>
+          <span data-lang="ja">API キーは一切保存しません。検証が資格情報らしき文字列を走査します。</span>
+          <span data-lang="en">API keys are never stored. Validation scans all data for credential-like strings.</span>
+        </li>
+      </ul>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th><span data-lang="ja">フィールド</span><span data-lang="en">Field</span></th>
+              <th><span data-lang="ja">値</span><span data-lang="en">Values</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>status</code></td><td><code>active | preview | experimental | deprecated | retired | unknown</code></td></tr>
+            <tr><td><code>api_style</code></td><td><code>openai_compatible | anthropic | google_generative_ai | custom</code></td></tr>
+            <tr><td><code>authentication.type</code></td><td><code>bearer | api_key | oauth | none | custom</code></td></tr>
+            <tr><td><code>modalities</code></td><td><code>text | image | audio | video | file</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="doc-note">
+        <span data-lang="ja">日時は <code>YYYY-MM-DD</code>。料金は <code>currency</code> + <code>unit</code>（既定 <code>1M_tokens</code>）単位です。</span>
+        <span data-lang="en">Dates are <code>YYYY-MM-DD</code>. Prices are per <code>unit</code> (default <code>1M_tokens</code>) in <code>currency</code>.</span>
+      </p>
+    </section>
+
+    <section class="doc-section" id="schemas">
+      <h2><span data-lang="ja">スキーマ</span><span data-lang="en">Schemas</span></h2>
+      <p data-lang="ja">フィールドの完全な定義は JSON Schema が契約です。</p>
+      <p data-lang="en">The JSON Schemas are the contract for every field.</p>
+      <div class="link-grid">
+        <a class="doc-link" href="./schemas/v1/model.schema.json" target="_blank" rel="noopener">
+          <span class="doc-link-title">model.schema.json</span>
+          <span class="doc-link-desc"><span data-lang="ja">モデル本体の仕様</span><span data-lang="en">Model specs</span></span>
+        </a>
+        <a class="doc-link" href="./schemas/v1/provider.schema.json" target="_blank" rel="noopener">
+          <span class="doc-link-title">provider.schema.json</span>
+          <span class="doc-link-desc"><span data-lang="ja">サービス・API 情報</span><span data-lang="en">Service &amp; API info</span></span>
+        </a>
+        <a class="doc-link" href="./schemas/v1/model-provider.schema.json" target="_blank" rel="noopener">
+          <span class="doc-link-title">model-provider.schema.json</span>
+          <span class="doc-link-desc"><span data-lang="ja">モデル×プロバイダーの提供情報</span><span data-lang="en">Model × provider availability</span></span>
+        </a>
+      </div>
+      <div class="code-wrap">
+        <button class="btn-copy code-copy" type="button"><span data-lang="ja">コピー</span><span data-lang="en">Copy</span></button>
+        <pre class="code-block"><code>import json, urllib.request
+
+url = "https://model-info.ta26.top/v1/models.json"
+models = json.load(urllib.request.urlopen(url))
+print(len(models), "models")</code></pre>
+      </div>
+    </section>
+
+    <section class="doc-section promo-mini">
+      <div class="promo-mini-body">
+        <div class="promo-mini-text">
+          <div class="promo-tag">PR</div>
+          <h2>MIX-agent</h2>
+          <p>
+            <span data-lang="ja">セルフホストのAIワークスペース。Model Info が扱う Provider と Capability（Context Window / Reasoning / Vision / Tool Calling）を自動検出し、自分のサーバーで会話や作業を行えます。AI モデルは付属しないため、クラウド API キーまたは Ollama などを自分で接続します。</span>
+            <span data-lang="en">A self-hosted AI workspace. It auto-detects the providers and capabilities Model Info describes (context window, reasoning, vision, tool calling) and runs entirely on your own server. AI models are not bundled — connect a cloud API key or a local runtime such as Ollama.</span>
+          </p>
+          <div class="promo-actions">
+            <a class="button-primary" href="https://mix-agent.ta26.top/" target="_blank" rel="noopener">MIX-agent <span data-lang="ja">を試す</span><span data-lang="en">site</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <div>
+      <a href="https://github.com/taitai2661/model-info" target="_blank" rel="noopener"><span data-lang="ja">リポジトリ</span><span data-lang="en">Repository</span></a>
+      ·
+      <a href="./api.html">API</a>
+      ·
+      <a href="https://mix-agent.ta26.top/" target="_blank" rel="noopener">MIX-agent <span class="promo-pill">PR</span></a>
+    </div>
+    <div>
+      <span data-lang="ja">データ: 静的 v1 API (JSON)</span><span data-lang="en">Data: static v1 API (JSON)</span>
+      · <span data-lang="ja">ライセンス</span><span data-lang="en">License</span>: MIT
+    </div>
+  </footer>
+
+  <script src="web/api.js"></script>
+</body>
+</html>

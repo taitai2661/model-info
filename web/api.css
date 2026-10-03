@@ -1,0 +1,91 @@
+/* API documentation page — shares design tokens with web/style.css */
+
+/* Bilingual content: show only the active language. */
+html[data-lang="ja"] [data-lang="en"],
+html[data-lang="en"] [data-lang="ja"] { display: none !important; }
+
+.api-page main { padding-bottom: 3rem; }
+
+.api-hero {
+  margin: 1rem 0 1.25rem;
+  padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1.1rem, 4vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: radial-gradient(ellipse at 85% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 45%), var(--bg-card);
+  box-shadow: var(--shadow);
+}
+.api-hero h1 { margin-top: .55rem; font-size: clamp(1.6rem, 4vw, 2.3rem); letter-spacing: -.045em; }
+.api-hero-copy { max-width: 60ch; margin: .7rem 0 1rem; color: var(--text-muted); line-height: 1.75; }
+.api-hero-badges { display: flex; flex-wrap: wrap; gap: .4rem; }
+
+.toc {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .9rem;
+  margin: 0 0 1.5rem; padding: .7rem .9rem;
+  border: 1px solid var(--border); border-radius: 12px; background: var(--bg-card);
+  font-size: .8rem;
+}
+.toc-label { color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: .68rem; }
+.toc a { color: var(--text-muted); font-weight: 600; }
+.toc a:hover { color: var(--accent); }
+
+.doc-section {
+  margin-bottom: 1.25rem; padding: 1.35rem 1.4rem;
+  border: 1px solid var(--border); border-radius: 14px; background: var(--bg-card); box-shadow: var(--shadow);
+}
+.doc-section h2 {
+  font-size: 1.08rem; letter-spacing: -.01em; margin-bottom: .8rem;
+  padding-bottom: .5rem; border-bottom: 1px solid var(--border);
+}
+.doc-section h3 { font-size: .92rem; margin: 1.1rem 0 .5rem; color: var(--text); }
+.doc-section p { color: var(--text-muted); line-height: 1.75; font-size: .9rem; margin-bottom: .6rem; }
+.doc-section p code, .doc-list code, .doc-note code {
+  padding: .1rem .35rem; border-radius: 5px; background: var(--bg-alt); color: var(--text);
+  font-family: "SF Mono", "Monaco", "Consolas", monospace; font-size: .82em;
+}
+.doc-note { font-size: .85rem !important; }
+
+.doc-list { list-style: none; display: grid; gap: .55rem; margin: .3rem 0 .8rem; }
+.doc-list li { color: var(--text-muted); font-size: .88rem; line-height: 1.65; }
+.doc-list strong { color: var(--text); }
+
+.table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 11px; margin: .3rem 0 .8rem; }
+.table-scroll table { border-collapse: collapse; width: 100%; }
+.table-scroll th, .table-scroll td { white-space: nowrap; border-bottom: 1px solid var(--border); }
+.table-scroll tr:last-child td { border-bottom: none; }
+.endpoint-table td code { color: var(--text); }
+
+.code-wrap { position: relative; margin: .4rem 0 1rem; }
+.code-block {
+  overflow-x: auto; padding: 1rem 1.1rem; border: 1px solid var(--border); border-radius: 11px;
+  background: var(--bg-alt); color: var(--text); font-size: .8rem; line-height: 1.65;
+  font-family: "SF Mono", "Monaco", "Consolas", monospace;
+}
+.code-block code { white-space: pre; }
+.code-copy { position: absolute; top: .55rem; right: .55rem; background: var(--bg-card); }
+
+.link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .6rem; margin: .4rem 0 1rem; }
+.doc-link {
+  display: grid; gap: .2rem; padding: .8rem .9rem; border: 1px solid var(--border); border-radius: 11px;
+  background: var(--bg); color: var(--text); text-decoration: none;
+}
+.doc-link:hover { border-color: var(--accent); text-decoration: none; }
+.doc-link-title { font-weight: 650; font-size: .88rem; font-family: "SF Mono", "Monaco", "Consolas", monospace; }
+.doc-link-desc { color: var(--text-muted); font-size: .78rem; }
+
+.promo-tag {
+  display: inline-block; padding: .12rem .4rem; border-radius: 4px;
+  background: var(--accent-soft); color: var(--accent); font-size: .66rem; font-weight: 750; letter-spacing: .05em;
+}
+.promo-pill {
+  display: inline-block; padding: 0 .3rem; border-radius: 4px;
+  background: var(--accent-soft); color: var(--accent); font-size: .62rem; font-weight: 750; vertical-align: middle;
+}
+.promo-mini { background: radial-gradient(ellipse at 0% 0%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 55%), var(--bg-card); }
+.promo-mini h2 { margin-top: .5rem; border-bottom: none; padding-bottom: 0; }
+.promo-actions { margin-top: .3rem; }
+.promo-actions .button-primary { display: inline-block; text-decoration: none; padding: .5rem .9rem; border-radius: 9px; font-weight: 650; font-size: .85rem; }
+
+@media (max-width: 700px) {
+  .api-hero { border-radius: 15px; }
+  .toc { font-size: .76rem; }
+}

@@ -17,7 +17,7 @@
     "availability": {
       "api": true
     },
-    "release_date": "2026-03-10",
+    "release_date": "2026-04-22",
     "sources": [
       {
         "type": "documentation",
@@ -25,9 +25,16 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Stable gemini-embedding-2 released April 22, 2026. The earlier March 10, 2026 date is the preview model, which shut down on August 10, 2026."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   "providers": [
     {
@@ -43,7 +50,7 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],

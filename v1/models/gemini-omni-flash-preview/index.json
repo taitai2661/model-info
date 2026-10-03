@@ -3,7 +3,7 @@
     "model_id": "gemini-omni-flash-preview",
     "name": "Gemini Omni Flash Preview",
     "model_provider": "google",
-    "status": "active",
+    "status": "retired",
     "display_name": "Gemini Omni Flash Preview",
     "description": "Gemini Omni Flash (Preview) is a multimodal model designed for video, image, and text tasks. It is optimized for video generation, offering video output alongside text responses in a single model.",
     "context": {
@@ -39,9 +39,16 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/changelog",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini API release notes",
+        "notes": "The gemini-omni-flash-preview endpoint was deprecated on September 30, 2026. The GA replacement is gemini-omni-1.1-flash."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   "providers": [
     {
@@ -57,10 +64,20 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      },
       "provider": {
         "id": "vercel-ai-gateway",
         "name": "Vercel AI Gateway",

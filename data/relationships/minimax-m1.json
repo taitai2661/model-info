@@ -1,6 +1,6 @@
 {
   "model_id": "minimax-m1",
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "providers": [
     {
       "provider_id": "openrouter",
@@ -8,15 +8,15 @@
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.4,
+        "input": 0.55,
         "output": 2.2
       },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ]
     }

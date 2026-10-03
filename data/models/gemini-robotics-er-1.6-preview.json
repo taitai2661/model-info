@@ -1,0 +1,49 @@
+{
+  "model_id": "gemini-robotics-er-1.6-preview",
+  "name": "Gemini Robotics ER 1.6 Preview",
+  "display_name": "Gemini Robotics ER 1.6 Preview",
+  "model_provider": "google",
+  "family": "Gemini",
+  "version": null,
+  "status": "retired",
+  "release_date": "2026-04-14",
+  "updated_at": "2026-10-01",
+  "description": "Embodied reasoning model that understands physical spaces and plans multi-step tasks for robotic agents, with instrument reading and improved spatial and physical reasoning. Shut down on August 31, 2026; the replacement is Gemini Robotics ER 2.",
+  "context": {
+    "window": 131072,
+    "max_output_tokens": 65536
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "availability": {
+    "api": false,
+    "cloud": false,
+    "open_weights": false,
+    "self_hostable": false
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/models/gemini-robotics-er-2-preview",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini Robotics ER 1.6 Preview model page",
+      "notes": "Preview model code, supported data types, and the 131,072 input / 65,536 output token limits."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini deprecations",
+      "notes": "Released April 14, 2026, shut down August 31, 2026, recommended replacement gemini-robotics-er-2-preview."
+    }
+  ]
+}

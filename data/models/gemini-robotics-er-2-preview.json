@@ -1,0 +1,63 @@
+{
+  "model_id": "gemini-robotics-er-2-preview",
+  "name": "Gemini Robotics ER 2 Preview",
+  "display_name": "Gemini Robotics ER 2 Preview",
+  "model_provider": "google",
+  "family": "Gemini",
+  "version": null,
+  "status": "preview",
+  "release_date": "2026-07-30",
+  "updated_at": "2026-10-01",
+  "description": "Vision-language model for robotics accepting text, image, video, and audio input, with spatial reasoning, video understanding, agentic code execution, multi-step tool orchestration, and multi-robot coordination.",
+  "context": {
+    "window": 131072,
+    "max_output_tokens": 65536
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": true,
+    "function_calling": true,
+    "structured_output": true
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 1.0,
+    "output": 5.0,
+    "cached_input": 0.1
+  },
+  "availability": {
+    "api": true,
+    "cloud": false,
+    "open_weights": false,
+    "self_hostable": false
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/models/gemini-robotics-er-2-preview",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini Robotics ER 2 Preview model page",
+      "notes": "Preview model code, supported data types, and the 131,072 input / 65,536 output token limits. Function calling, code execution, file search, computer use, and thinking are supported."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini Developer API pricing",
+      "notes": "Standard tier: $1.00 input, $5.00 output, $0.10 cached input through December 31, 2026; $2.00 / $10.00 / $0.20 starting January 1, 2027."
+    }
+  ]
+}

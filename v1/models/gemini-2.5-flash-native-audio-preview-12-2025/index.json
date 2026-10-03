@@ -1,0 +1,133 @@
+{
+  "model": {
+    "model_id": "gemini-2.5-flash-native-audio-preview-12-2025",
+    "name": "Gemini 2.5 Flash Live Preview",
+    "display_name": "Gemini 2.5 Flash Live Preview",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "deprecated",
+    "release_date": "2025-12-12",
+    "updated_at": "2026-10-01",
+    "description": "Preview model for the Live API that processes continuous streams of audio, video, or text to deliver immediate spoken responses for low-latency, real-time voice and video interactions.",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 8192
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "output": [
+        "text",
+        "audio"
+      ]
+    },
+    "capabilities": {
+      "tool_use": true,
+      "vision": true,
+      "reasoning": true,
+      "streaming": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 0.5,
+      "output": 2.0
+    },
+    "availability": {
+      "api": true,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash-native-audio-preview-12-2025",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini 2.5 Flash Live Preview model page",
+        "notes": "Preview model code, supported data types, and the 131,072 input / 8,192 output token limits."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini Developer API pricing",
+        "notes": "$0.50 text input or $3.00 audio and video input; $2.00 text output or $12.00 audio output per 1M tokens. Only the text prices are recorded."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini deprecations",
+        "notes": "Recommended replacement is gemini-3.8-live. No shutdown date announced."
+      }
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "google",
+      "model_id": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash-native-audio-preview-12-2025",
+          "retrieved_at": "2026-10-01",
+          "title": "Gemini API model page",
+          "notes": "Provider model id as published on the Gemini Developer API model page."
+        }
+      ],
+      "provider": {
+        "id": "google",
+        "name": "Google",
+        "types": [
+          "model_provider",
+          "api_provider"
+        ],
+        "website": "https://www.google.com",
+        "documentation_url": "https://ai.google.dev/gemini-api/docs/models",
+        "status": "active",
+        "description": "Google's Gemini models and the Gemini Developer API (Google AI for Developers).",
+        "api": {
+          "base_url": "https://generativelanguage.googleapis.com",
+          "protocol": "https",
+          "api_style": "google_generative_ai",
+          "authentication": {
+            "type": "api_key",
+            "header": "x-goog-api-key"
+          },
+          "endpoints": {
+            "models": "/v1beta/models",
+            "interactions": "/v1beta/interactions"
+          }
+        },
+        "api_capabilities": {
+          "streaming": true,
+          "tool_calling": true,
+          "structured_output": true,
+          "prompt_caching": true,
+          "batch": true
+        },
+        "sources": [
+          {
+            "type": "official",
+            "url": "https://ai.google.dev/gemini-api/docs/quickstart",
+            "retrieved_at": "2026-09-26",
+            "title": "Gemini API quickstart"
+          },
+          {
+            "type": "official",
+            "url": "https://ai.google.dev/gemini-api/docs/models",
+            "retrieved_at": "2026-09-26",
+            "title": "Gemini API models"
+          }
+        ],
+        "updated_at": "2026-09-26"
+      }
+    }
+  ]
+}

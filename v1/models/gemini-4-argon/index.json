@@ -1,0 +1,54 @@
+{
+  "model": {
+    "model_id": "gemini-4-argon",
+    "name": "Gemini 4 Argon",
+    "display_name": "Gemini 4 Argon",
+    "model_provider": "google",
+    "family": "Gemini",
+    "version": null,
+    "status": "experimental",
+    "release_date": "2026-09-30",
+    "updated_at": "2026-10-01",
+    "description": "Google's next frontier model, built for deep reasoning across long-horizon workflows such as real-world software engineering, enterprise knowledge work, and cybersecurity defense. Argon is rolling out first to trusted cyber defenders through the Fairwind Program, then to paid API customers and Google AI Ultra subscribers. The model_id is not yet published in the Gemini API documentation, so the identifier here is provisional.",
+    "context": {
+      "max_output_tokens": 1000000
+    },
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": {
+      "reasoning": true,
+      "tool_use": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "unit": "1M_tokens",
+      "input": 2.0,
+      "output": 10.0,
+      "cached_input": 0.1
+    },
+    "availability": {
+      "api": false,
+      "cloud": false,
+      "open_weights": false,
+      "self_hostable": false
+    },
+    "sources": [
+      {
+        "type": "official",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini 4 Argon: our next era of frontier intelligence",
+        "notes": "Announcement states the 1M token output limit, the introductory $2 input / $10 output price, and cached input at 95% off the input price. No model_id, context window, or endpoint is published yet, so no relationship entry is recorded."
+      }
+    ]
+  },
+  "providers": []
+}

@@ -5,6 +5,10 @@
     "model_provider": "google",
     "status": "active",
     "display_name": "Gemini 3.8 Live",
+    "context": {
+      "window": 131072,
+      "max_output_tokens": 65536
+    },
     "description": "Gemini 3.8 Live is Google's model for real-time audio conversations. It supports spoken interactions for developers building voice assistants, conversational experiences, and applications that respond to users through audio.",
     "modalities": {
       "input": [
@@ -30,9 +34,16 @@
         "retrieved_at": "2026-09-27",
         "title": "Vercel AI Gateway public model list",
         "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+      },
+      {
+        "type": "official",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live",
+        "retrieved_at": "2026-10-01",
+        "title": "Gemini API model page",
+        "notes": "Token limits 131,072 input / 65,536 output as published on the model page."
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-10-01"
   },
   "providers": [
     {
@@ -48,10 +59,19 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
       ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "high"
+        ],
+        "default_effort": null,
+        "supports_none": false
+      },
       "provider": {
         "id": "vercel-ai-gateway",
         "name": "Vercel AI Gateway",

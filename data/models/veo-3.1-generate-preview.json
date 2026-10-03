@@ -1,0 +1,54 @@
+{
+  "model_id": "veo-3.1-generate-preview",
+  "name": "Veo 3.1",
+  "display_name": "Veo 3.1",
+  "model_provider": "google",
+  "family": "Veo",
+  "version": null,
+  "status": "deprecated",
+  "release_date": "2025-10-15",
+  "updated_at": "2026-10-01",
+  "description": "Cinematic video generation model for high-end creative storytelling and experimental video production, supporting professional-grade 4K output, natively synchronized audio, and complex camera movements. Shuts down on October 22, 2026; the recommended replacement is Gemini Omni Flash.",
+  "context": {
+    "window": 1024
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image"
+    ],
+    "output": [
+      "video",
+      "audio"
+    ]
+  },
+  "availability": {
+    "api": true,
+    "cloud": true,
+    "open_weights": false,
+    "self_hostable": false
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/models/veo-3.1-generate-preview",
+      "retrieved_at": "2026-10-01",
+      "title": "Veo 3.1 model page",
+      "notes": "Preview model code veo-3.1-generate-preview, supported data types, and the 1,024 token text input limit. The page also lists veo-3.1-fast-generate-preview under the same entry."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini Developer API pricing",
+      "notes": "Billed per second of output video, not per token, so no token pricing is recorded."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini deprecations",
+      "notes": "Recommended replacement is gemini-omni-1.1-flash; shutdown date October 22, 2026."
+    }
+  ]
+}

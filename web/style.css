@@ -70,6 +70,9 @@ header {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-weight: 700;
   font-size: 1.15rem;
   color: var(--text);
@@ -77,6 +80,13 @@ header {
   white-space: nowrap;
 }
 .logo:hover { color: var(--accent); }
+.logo-mark {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 5px;
+  display: block;
+  flex: 0 0 auto;
+}
 
 nav { display: flex; gap: 0.25rem; margin-left: 0.5rem; }
 nav a {
@@ -459,10 +469,6 @@ body { background: var(--bg); }
 header { backdrop-filter: blur(16px); background: color-mix(in srgb, var(--bg) 90%, transparent); }
 .header-inner { min-height: 64px; }
 .logo { letter-spacing: -.03em; }
-.logo::before {
-  content: "M"; display: inline-grid; place-items: center; width: 29px; height: 29px;
-  margin-right: .5rem; border-radius: 9px; background: var(--accent); color: white; font-size: .8rem;
-}
 main { max-width: 1180px; padding-top: 1.25rem; }
 .search-hero {
   padding: clamp(1.5rem, 4vw, 3.25rem) clamp(1.1rem, 4vw, 3rem) 1.5rem;
@@ -590,6 +596,36 @@ button:focus-visible, a:focus-visible, select:focus-visible, summary:focus-visib
   .card { padding: .85rem; }
   .connection-details-grid { grid-template-columns: 1fr; }
   .provider-controls .sort-wrap { flex: 1 1 150px; min-width: 0; }
+}
+
+/* Mix-agent promotion */
+.promo-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap;
+  margin: 1rem 0; padding: 1.15rem 1.35rem;
+  border: 1px solid var(--border); border-radius: 16px;
+  background: radial-gradient(ellipse at 0% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 55%), var(--bg-card);
+  box-shadow: var(--shadow);
+}
+.promo-banner-main { display: flex; gap: .9rem; align-items: flex-start; }
+.promo-banner-tag {
+  flex: 0 0 auto; margin-top: .15rem; padding: .16rem .42rem; border-radius: 5px;
+  background: var(--accent-soft); color: var(--accent); font-size: .66rem; font-weight: 750; letter-spacing: .06em;
+}
+.promo-banner-eyebrow { color: var(--accent); font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.promo-banner-title { margin: .1rem 0 .35rem; font-size: 1.15rem; letter-spacing: -.02em; }
+.promo-banner-body { max-width: 62ch; color: var(--text-muted); font-size: .86rem; line-height: 1.65; }
+.promo-banner-note { margin-top: .35rem; color: var(--text-muted); font-size: .74rem; }
+.promo-banner-actions { flex: 0 0 auto; display: flex; gap: .5rem; align-items: center; }
+.promo-banner-actions .button-primary { display: inline-flex; align-items: center; text-decoration: none; }
+
+/* Detail page footer links */
+.detail-links { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; font-size: .85rem; }
+.detail-links-sep { color: var(--text-muted); }
+.spec-value .btn-copy { margin-left: .4rem; vertical-align: middle; }
+
+@media (max-width: 700px) {
+  .promo-banner { flex-direction: column; align-items: stretch; }
+  .promo-banner-actions { justify-content: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {

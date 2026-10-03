@@ -1,6 +1,6 @@
 {
   "model_id": "kimi-k2.7-code",
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "providers": [
     {
       "provider_id": "moonshot",
@@ -12,16 +12,16 @@
       "pricing": {
         "currency": "USD",
         "unit": "1M_tokens",
-        "input": 0.6562,
-        "output": 3.3,
+        "input": 0.6712,
+        "output": 3.35,
         "cached_input": 0.18
       },
       "sources": [
         {
           "type": "official",
           "url": "https://openrouter.ai/api/v1/models",
-          "retrieved_at": "2026-09-30",
-          "notes": "Provider model id, context window, modalities, and prices from the public model list."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model id, context window, modalities, prices, and supported reasoning effort values/defaults from the public model list."
         }
       ]
     },
@@ -46,7 +46,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Zen model list (GET /v1/models)."
         }
       ]
@@ -73,7 +73,7 @@
         {
           "type": "official",
           "url": "https://opencode.ai/zen/go/v1/models",
-          "retrieved_at": "2026-09-30",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids from the public Go model list (GET /v1/models)."
         }
       ]
@@ -126,10 +126,20 @@
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
+          "retrieved_at": "2026-10-01",
           "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         }
-      ]
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      }
     },
     {
       "provider_id": "novita",
@@ -283,17 +293,27 @@
         "max_output_tokens": 32768
       },
       "modalities": {
-        "input": ["text", "image", "video"],
-        "output": ["text"]
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
       },
-      "api_variant": {"performance_variant": "highspeed"},
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
       "notes": "Moonshot describes this ID as the same Kimi K2.7 Code model with identical thinking behavior and higher output throughput.",
-      "sources": [{
-        "type": "official",
-        "url": "https://platform.moonshot.ai/docs/guide/use-kimi-k2-thinking-model",
-        "retrieved_at": "2026-09-30",
-        "title": "Kimi thinking models"
-      }]
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://platform.moonshot.ai/docs/guide/use-kimi-k2-thinking-model",
+          "retrieved_at": "2026-09-30",
+          "title": "Kimi thinking models"
+        }
+      ]
     },
     {
       "provider_id": "vercel-ai-gateway",
@@ -310,16 +330,25 @@
         "max_output_tokens": 32768
       },
       "modalities": {
-        "input": ["text", "image", "file", "video"],
-        "output": ["text"]
+        "input": [
+          "text",
+          "image",
+          "file",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
       },
-      "api_variant": {"performance_variant": "highspeed"},
+      "api_variant": {
+        "performance_variant": "highspeed"
+      },
       "sources": [
         {
           "type": "official",
           "url": "https://ai-gateway.vercel.sh/v1/models",
-          "retrieved_at": "2026-09-28",
-          "notes": "Provider ID, limits, modalities, and pricing for Vercel's HighSpeed route."
+          "retrieved_at": "2026-10-01",
+          "notes": "Provider model ids, context window, modalities, capabilities and prices from the Vercel AI Gateway public model list (GET /v1/models). Pricing values are converted from per-token to per-million."
         },
         {
           "type": "official",
@@ -327,7 +356,17 @@
           "retrieved_at": "2026-09-30",
           "notes": "Confirms Kimi K2.7 Code HighSpeed is the same model with identical thinking behavior."
         }
-      ]
+      ],
+      "reasoning": {
+        "parameter": "reasoning.effort",
+        "effort_levels": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "default_effort": null,
+        "supports_none": true
+      }
     }
   ]
 }

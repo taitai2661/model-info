@@ -102,6 +102,24 @@ function escape(s) {
   }[c]));
 }
 
+function debounce(fn, wait = 150) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), wait);
+  };
+}
+
+function copyButton(text, label) {
+  return el("button", {
+    class: "btn-copy",
+    type: "button",
+    title: t("detail.copy"),
+    "aria-label": label || t("detail.copy"),
+    onclick: (e) => { e.stopPropagation(); copyText(text); },
+  }, "⧉");
+}
+
 async function fetchJSON(path) {
   const res = await fetch(path);
   if (!res.ok) throw new Error(`HTTP ${res.status} ${path}`);
@@ -282,18 +300,24 @@ function renderHome(container) {
   const modalities = ["text", "image", "audio", "video", "file"];
   const capabilities = ["tool_use", "vision", "reasoning", "function_calling", "structured_output", "json_mode", "streaming"];
 
+  const runSearch = debounce((value) => {
+    state.query = value;
+    state.visibleLimit = 24;
+    renderResults();
+  }, 150);
   const searchInput = el("input", {
     class: "search-input",
     type: "search",
     placeholder: t("search.placeholder"),
     value: state.query,
     "aria-label": t("search.placeholder"),
-    oninput: (e) => { state.query = e.target.value; state.visibleLimit = 24; renderResults(); },
+    oninput: (e) => runSearch(e.target.value),
   });
   const clearSearch = el("button", { class: "search-clear", type: "button", title: t("search.clear"), "aria-label": t("search.clear"), onclick: () => {
     state.query = "";
     searchInput.value = "";
     searchInput.focus();
+    state.visibleLimit = 24;
     renderResults();
   } }, "×");
 
@@ -399,6 +423,7 @@ function renderHome(container) {
         el("span", {}, t("home.data_note")),
       ),
     ),
+    buildMixAgentPromo(),
     el("section", { class: "search-workspace" },
       el("div", { class: "toolbar" },
         el("label", { class: "select-wrap" }, el("span", {}, t("filter.provider")), providerSelect),
@@ -586,8 +611,10 @@ async function renderModelDetail(container, id) {
   }
 
   container.append(
-    el("div", { class: "detail-section" },
+    el("div", { class: "detail-section detail-links" },
       el("a", { href: `./v1/models/${encodeURIComponent(m.model_id)}.json`, target: "_blank", rel: "noopener" }, t("detail.json_link")),
+      el("span", { class: "detail-links-sep" }, "·"),
+      el("a", { href: "./api.html" }, t("detail.api_docs")),
     ),
   );
 }
@@ -723,7 +750,14 @@ function buildProvidersSection(plist, model) {
         el("div", { class: `spec-value${mono ? " mono" : ""}` }, value || "—"),
       ));
     };
-    addInfo(t("detail.base_url"), prov?.api?.base_url, true);
+    const baseUrl = prov?.api?.base_url;
+    detailsGrid.append(el("div", { class: "spec-item" },
+      el("div", { class: "spec-label" }, t("detail.base_url")),
+      el("div", { class: "spec-value mono" },
+        baseUrl || "—",
+        baseUrl ? copyButton(baseUrl, t("detail.copy_base_url")) : null,
+      ),
+    ));
     addInfo(t("detail.auth"), prov?.api?.authentication?.type);
     if (entry.reasoning) {
       addInfo(t("detail.reasoning_effort"), reasoningSummary(entry.reasoning));
@@ -852,7 +886,9 @@ function renderProviderCard(p) {
     } },
     el("div", { class: "prov-card-name" }, p.name),
     typeBadges,
-    el("div", { class: "card-meta" }, el("strong", {}, count !== null ? `${count}` : "…"), document.createTextNode(` ${t("prov.model_count_label")}`)),
+    el("div", { class: "card-meta" },
+      el("strong", { class: "prov-card-count", data: { providerId: p.id } }, count !== null ? `${count}` : "…"),
+      document.createTextNode(` ${t("prov.model_count_label")}`)),
     p.description ? el("div", { class: "prov-card-desc" }, p.description) : null,
   );
 }
@@ -937,18 +973,38 @@ function renderProviderList(container) {
 }
 
 const providerCountCache = new Map();
+const PROVIDER_COUNT_CONCURRENCY = 6;
 
+// Load each provider's model count lazily with a bounded number of parallel
+// requests, filling cards in as the numbers arrive instead of firing ~175
+// requests at once on page load.
 async function loadProviderCounts() {
-  if (state.providerCountsLoaded) return;
-  state.providerCountsLoaded = true;
+  if (state.providerCountsStarted) return;
+  state.providerCountsStarted = true;
   const root = ".";
-  const results = await Promise.allSettled(
-    state.providers.map(async (p) => {
-      const data = await fetchJSON(`${root}/v1/providers/${p.id}.json`);
-      providerCountCache.set(p.id, data.model_ids ? data.model_ids.length : 0);
-    }),
-  );
-  if (window.location.hash === "#/providers") render();
+  const ids = state.providers.map((p) => p.id);
+  let cursor = 0;
+  const worker = async () => {
+    while (cursor < ids.length) {
+      const id = ids[cursor++];
+      try {
+        const data = await fetchJSON(`${root}/v1/providers/${id}.json`);
+        providerCountCache.set(id, Array.isArray(data.model_ids) ? data.model_ids.length : 0);
+      } catch (e) {
+        providerCountCache.set(id, null);
+      }
+      updateProviderCardCount(id);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(PROVIDER_COUNT_CONCURRENCY, ids.length) }, worker));
+  if (window.location.hash.startsWith("#/providers")) render();
+}
+
+function updateProviderCardCount(id) {
+  const node = document.querySelector(`.prov-card-count[data-provider-id="${CSS.escape(id)}"]`);
+  if (!node) return;
+  const count = countProviderModels(id);
+  node.textContent = count !== null ? `${count}` : "…";
 }
 
 function countProviderModels(providerId) {
@@ -1004,7 +1060,10 @@ async function renderProviderDetail(container, id) {
     const a = prov.api;
     grid.append(el("div", { class: "spec-item" },
       el("div", { class: "spec-label" }, t("detail.base_url")),
-      el("div", { class: "spec-value mono" }, a.base_url),
+      el("div", { class: "spec-value mono" },
+        a.base_url || "—",
+        a.base_url ? copyButton(a.base_url, t("detail.copy_base_url")) : null,
+      ),
     ));
     grid.append(el("div", { class: "spec-item" },
       el("div", { class: "spec-label" }, t("detail.api_style")),
@@ -1074,6 +1133,14 @@ async function renderProviderDetail(container, id) {
     modelsSec.append(table);
   }
   container.append(modelsSec);
+
+  container.append(
+    el("div", { class: "detail-section detail-links" },
+      el("a", { href: `./v1/providers/${encodeURIComponent(id)}.json`, target: "_blank", rel: "noopener" }, t("detail.json_link")),
+      el("span", { class: "detail-links-sep" }, "·"),
+      el("a", { href: "./api.html" }, t("detail.api_docs")),
+    ),
+  );
 }
 
 function navigate(hash) {
@@ -1095,6 +1162,24 @@ async function copyText(text) {
   } catch (e) {}
 }
 
+function buildMixAgentPromo() {
+  const card = el("section", { class: "promo-banner" },
+    el("div", { class: "promo-banner-main" },
+      el("div", { class: "promo-banner-tag" }, t("mix_agent.tag")),
+      el("div", { class: "promo-banner-text" },
+        el("div", { class: "promo-banner-eyebrow" }, t("mix_agent.eyebrow")),
+        el("h2", { class: "promo-banner-title" }, "MIX-agent"),
+        el("p", { class: "promo-banner-body" }, t("mix_agent.body")),
+        el("p", { class: "promo-banner-note" }, t("mix_agent.note")),
+      ),
+    ),
+    el("div", { class: "promo-banner-actions" },
+      el("a", { class: "button-primary", href: "https://mix-agent.ta26.top/", target: "_blank", rel: "noopener" }, t("mix_agent.cta")),
+    ),
+  );
+  return card;
+}
+
 function buildHeader() {
   const langBtn = el("button", { class: "btn-icon", title: t("lang.label"), onclick: () => {
     setLang(getLang() === "ja" ? "en" : "ja");
@@ -1104,10 +1189,14 @@ function buildHeader() {
 
   const header = el("header", {},
     el("div", { class: "header-inner" },
-      el("a", { class: "logo", href: "#/" }, t("app.title")),
+      el("a", { class: "logo", href: "#/" },
+        el("img", { class: "logo-mark", src: "./favicon.svg", alt: "", width: "24", height: "24", "aria-hidden": "true" }),
+        el("span", { class: "logo-text" }, t("app.title")),
+      ),
       el("nav", {},
         el("a", { href: "#/" }, t("nav.models")),
         el("a", { href: "#/providers" }, t("nav.providers")),
+        el("a", { href: "./api.html" }, t("nav.api")),
       ),
       el("div", { class: "spacer" }),
       el("div", { class: "header-controls" }, themeBtn, langBtn),
@@ -1135,24 +1224,36 @@ function toggleTheme() {
 
 function buildFooter() {
   return el("footer", { id: "site-footer" },
-    el("div", {}, el("a", { id: "footer-repo", href: "https://github.com/daichikato/model-info", target: "_blank", rel: "noopener" }, t("footer.repo"))),
+    el("div", {},
+      el("a", { id: "footer-repo", href: "https://github.com/taitai2661/model-info", target: "_blank", rel: "noopener" }, t("footer.repo")),
+      " · ",
+      el("a", { id: "footer-api", href: "./api.html" }, t("footer.api")),
+      " · ",
+      el("a", { id: "footer-mix-agent", href: "https://mix-agent.ta26.top/", target: "_blank", rel: "noopener" }, t("footer.mix_agent")),
+    ),
     el("div", {}, el("span", { id: "footer-data" }, t("footer.data")), " · ", el("span", { id: "footer-license" }, `${t("footer.license")}: MIT`)),
   );
 }
 
 function updateStaticText() {
-  const logo = document.querySelector(".logo");
+  const logo = document.querySelector(".logo-text");
   if (logo) logo.textContent = t("app.title");
   const navModels = $('nav a[href="#/"]');
   const navProviders = $('nav a[href="#/providers"]');
   if (navModels) navModels.textContent = t("nav.models");
   if (navProviders) navProviders.textContent = t("nav.providers");
+  const navApi = $('nav a[href="./api.html"]');
+  if (navApi) navApi.textContent = t("nav.api");
   const langBtn = document.querySelector(".header-controls .btn-icon:last-child");
   if (langBtn) langBtn.textContent = getLang() === "ja" ? "EN" : "JA";
   const footerRepo = $("#footer-repo");
+  const footerApi = $("#footer-api");
+  const footerMix = $("#footer-mix-agent");
   const footerData = $("#footer-data");
   const footerLicense = $("#footer-license");
   if (footerRepo) footerRepo.textContent = t("footer.repo");
+  if (footerApi) footerApi.textContent = t("footer.api");
+  if (footerMix) footerMix.textContent = t("footer.mix_agent");
   if (footerData) footerData.textContent = t("footer.data");
   if (footerLicense) footerLicense.textContent = `${t("footer.license")}: MIT`;
 }

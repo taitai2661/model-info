@@ -4,6 +4,10 @@
   "model_provider": "google",
   "status": "active",
   "display_name": "Gemini 3.8 Flash TTS",
+  "context": {
+    "window": 8192,
+    "max_output_tokens": 16384
+  },
   "description": "Gemini 3.8 Flash TTS is Google’s text-to-speech model for expressive voice generation and custom character design across more than 100 languages. It creates original voices from natural language prompts and offers granular control over acting cues, pacing, accents, and conversational reactions. Long-form audio and native two-speaker dialogue make it well suited to immersive audiobooks, games, podcasts, and interactive media",
   "modalities": {
     "input": [
@@ -24,7 +28,14 @@
       "retrieved_at": "2026-09-27",
       "title": "Vercel AI Gateway public model list",
       "notes": "Provider model id, name, release date, context window, modalities, capabilities and prices as published by an aggregator rather than by the model developer."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-tts",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini API model page",
+      "notes": "Token limits 8,192 input / 16,384 output as published on the model page."
     }
   ],
-  "updated_at": "2026-09-27"
+  "updated_at": "2026-10-01"
 }

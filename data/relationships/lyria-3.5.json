@@ -1,0 +1,19 @@
+{
+  "model_id": "lyria-3.5",
+  "updated_at": "2026-10-01",
+  "providers": [
+    {
+      "provider_id": "google",
+      "model_id": "lyria-3.5",
+      "sources": [
+        {
+          "type": "official",
+          "url": "https://ai.google.dev/gemini-api/docs/models/lyria-3.5",
+          "retrieved_at": "2026-10-01",
+          "title": "Gemini API model page",
+          "notes": "Provider model id as published on the Gemini Developer API model page."
+        }
+      ]
+    }
+  ]
+}

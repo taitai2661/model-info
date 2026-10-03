@@ -1,0 +1,63 @@
+{
+  "model_id": "gemini-robotics-er-2-streaming-preview",
+  "name": "Gemini Robotics ER 2 Streaming Preview",
+  "display_name": "Gemini Robotics ER 2 Streaming Preview",
+  "model_provider": "google",
+  "family": "Gemini",
+  "version": null,
+  "status": "preview",
+  "release_date": "2026-07-30",
+  "updated_at": "2026-10-01",
+  "description": "Robotics endpoint optimized for real-time text streaming over the Live API, enabling low-latency robot agents with bidirectional audio and video input. Function calling uses blocking behavior for physical robot actions.",
+  "context": {
+    "window": 131072,
+    "max_output_tokens": 65536
+  },
+  "modalities": {
+    "input": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output": [
+      "text"
+    ]
+  },
+  "capabilities": {
+    "tool_use": true,
+    "vision": true,
+    "reasoning": true,
+    "function_calling": true,
+    "streaming": true
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "1M_tokens",
+    "input": 0.5,
+    "output": 2.5,
+    "cached_input": 0.05
+  },
+  "availability": {
+    "api": true,
+    "cloud": false,
+    "open_weights": false,
+    "self_hostable": false
+  },
+  "sources": [
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/models/gemini-robotics-er-2-preview",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini Robotics ER 2 Streaming Preview model page",
+      "notes": "Preview model code, supported data types, and the 131,072 input / 65,536 output token limits. Function calling and Live API are supported; caching, code execution, and file search are not."
+    },
+    {
+      "type": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "retrieved_at": "2026-10-01",
+      "title": "Gemini Developer API pricing",
+      "notes": "Standard tier: $0.50 input, $2.50 output, $0.05 cached input through December 31, 2026; $1.00 / $5.00 / $0.10 starting January 1, 2027."
+    }
+  ]
+}
